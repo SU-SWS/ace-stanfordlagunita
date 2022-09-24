@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile\Config;
+namespace Drupal\sul_profile\Config;
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -12,7 +12,7 @@ use Drupal\Core\State\StateInterface;
 /**
  * Config overrides for stanford profile.
  *
- * @package Drupal\stanford_profile\Config
+ * @package Drupal\sul_profile\Config
  */
 class ConfigOverrides implements ConfigFactoryOverrideInterface {
 

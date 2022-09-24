@@ -232,11 +232,11 @@ module:
   menu_link_weight: 10
   stanford_profile_helper: 10
   paragraphs: 11
-  stanford_profile: 1000
+  sul_profile: 1000
 theme:
   stable: 0
   seven: 0
   stanford_basic: 0
   stable9: 0
   minimally_branded_subtheme: 0
-profile: stanford_profile
+profile: sul_profile
