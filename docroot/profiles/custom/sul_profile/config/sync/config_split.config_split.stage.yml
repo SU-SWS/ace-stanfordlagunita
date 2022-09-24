@@ -1,0 +1,23 @@
+uuid: bf62e340-52fc-470b-9eae-afa434d83081
+langcode: en
+status: false
+dependencies: {  }
+id: stage
+label: 'Staging Environment'
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/envs/stage
+module:
+  acquia_purge: 0
+  paranoia: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_processor_lateruntime: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

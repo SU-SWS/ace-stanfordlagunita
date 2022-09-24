@@ -1,0 +1,23 @@
+uuid: 1d313eef-d93a-453e-b98b-0f2e8bc00bc4
+langcode: en
+status: false
+dependencies: {  }
+id: prod
+label: 'Production Environment'
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/envs/prod
+module:
+  acquia_purge: 0
+  paranoia: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_processor_lateruntime: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

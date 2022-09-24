@@ -1,0 +1,67 @@
+uuid: 3929869d-e06e-494a-8804-6b60b0bd9b09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_news_components
+    - node.type.stanford_news
+    - paragraphs.paragraphs_type.stanford_accordion
+    - paragraphs.paragraphs_type.stanford_person_cta
+    - paragraphs.paragraphs_type.stanford_schedule
+    - paragraphs.paragraphs_type.stanford_spacer
+  module:
+    - entity_reference_revisions
+id: node.stanford_news.su_news_components
+field_name: su_news_components
+entity_type: node
+bundle: stanford_news
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_person_cta: stanford_person_cta
+      stanford_accordion: stanford_accordion
+      stanford_schedule: stanford_schedule
+      stanford_spacer: stanford_spacer
+    negate: 1
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 12
+        enabled: true
+      stanford_banner:
+        weight: 7
+        enabled: false
+      stanford_card:
+        weight: 8
+        enabled: false
+      stanford_entity:
+        weight: 13
+        enabled: false
+      stanford_gallery:
+        weight: 14
+        enabled: false
+      stanford_lists:
+        weight: 15
+        enabled: false
+      stanford_media_caption:
+        weight: 9
+        enabled: false
+      stanford_person_cta:
+        weight: 11
+        enabled: true
+      stanford_schedule:
+        weight: 12
+        enabled: true
+      stanford_spacer:
+        weight: 13
+        enabled: true
+      stanford_wysiwyg:
+        weight: -7
+        enabled: false
+field_type: entity_reference_revisions
