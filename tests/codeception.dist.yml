@@ -1,0 +1,48 @@
+paths:
+  tests: codeception
+  output: ../artifacts
+  data: ../artifacts/_data
+  support: codeception/_support
+  envs: codeception/_envs
+actor_suffix: Tester
+extensions:
+  enabled:
+    - Codeception\Extension\RunFailed
+modules:
+  enabled:
+    - Codeception\Module\Asserts
+    - StanfordCaravan\Codeception\Drupal\DrupalBootstrap:
+        root: '${docroot}'
+        server:
+          HTTP_HOST: '${project.local.hostname}'
+    - StanfordCaravan\Codeception\Drupal\DrupalDrush:
+        drush: '${repo.root}/vendor/bin/drush'
+        options:
+          uri: '${project.local.hostname}'
+    - PhpBrowser:
+        url: '${project.local.protocol}://${project.local.hostname}/'
+    - WebDriver:
+        wait: 1
+        log_js_errors: true
+        debug_log_entries: 10
+        browser: chrome
+        url: '${project.local.protocol}://${project.local.hostname}/'
+    - StanfordCaravan\Codeception\Drupal\DrupalEntity:
+        cleanup_test: true
+        cleanup_failed: false
+        cleanup_suite: true
+        route_entities:
+          - node
+          - taxonomy_term
+          - media
+    - StanfordCaravan\Codeception\Drupal\DrupalUser:
+        drush: '${repo.root}/vendor/bin/drush'
+        default_role: 'authenticated'
+        driver: 'WebDriver'
+        cleanup_entities:
+          - node
+          - media
+          - file
+        cleanup_test: true
+        cleanup_failed: false
+        cleanup_suite: true

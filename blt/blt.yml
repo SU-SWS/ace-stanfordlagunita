@@ -1,0 +1,94 @@
+project:
+  prefix: sulgryphon
+  human_name: 'Stanford HR D9 Projects'
+  profile:
+    name: stanford_profile
+  local: {  }
+git:
+  default_branch: main
+  remotes: {  }
+deploy:
+  tag_source: false
+  exclude_file: '${repo.root}/blt/deploy/rsync-exclude.txt'
+  gitignore_file: '${repo.root}/blt/deploy/.gitignore'
+  dir: '${repo.root}/deploy'
+drush:
+  aliases:
+    ci: self
+  default_alias: '${drush.aliases.local}'
+modules:
+  local:
+    enable:
+      - stanford_ssp
+      - environment_indicator
+    uninstall:
+      - acquia_purge
+  ci:
+    enable:
+      - nobots
+    uninstall:
+      - simplesamlphp_auth
+  dev:
+    enable:
+      - nobots
+      - environment_indicator
+    uninstall: {  }
+  test:
+    enable:
+      - nobots
+      - environment_indicator
+    uninstall:
+      - views_ui
+  prod:
+    enable:
+      - environment_indicator
+    uninstall:
+      - views_ui
+simplesamlphp: true
+cm:
+  strategy: config-split
+  allow-overrides: true
+multisites:
+  - cardinalatwork
+  - default
+behat:
+  selenium:
+    url: 'http://localhost:4444/wd/hub'
+  chromedriver:
+    url: 'http://localhost'
+  web-driver: selenium
+  paths:
+    - '${docroot}/profiles/custom'
+    - '${repo.root}/tests/behat/features'
+tests:
+  reports:
+    localDir: '${repo.root}/artifacts'
+    coveragePass: 90
+  phpunit:
+    -
+      path: '${docroot}'
+      config: '${docroot}/core/phpunit.xml'
+      directory: '${docroot}/modules/custom'
+      bootstrap: '${docroot}/core/tests/bootstrap.php'
+      filter: /(Unit|Kernel)/
+  codeception:
+    sulgryphon:
+      suites:
+        - acceptance
+        - functional
+      directory: '${docroot}/profiles/custom/sulgryphon/tests/codeception'
+validate:
+  twig:
+    functions:
+      - drupal_block
+      - drupal_field
+      - pattern
+    filters:
+      - render_clean
+cloud:
+  appId: null
+keys_rsync:
+  ssh: null
+  files:
+    - /mnt/gfs/sulgryphon.prod/nobackup/simplesamlphp/
+    - /mnt/gfs/sulgryphon.prod/secrets.settings.php

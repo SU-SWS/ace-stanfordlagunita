@@ -1,0 +1,63 @@
+local:
+  uri: cardinalatwork
+  root: '${env.cwd}/docroot'
+dev:
+  root: /var/www/html/hrgryphon.dev/docroot
+  ac-site: hrgryphon
+  ac-env: dev
+  ac-realm: prod
+  uri: cardinalatwork-dev.stanford.edu
+  dev.livedev:
+    parent: '@hrgryphon.dev'
+    root: /mnt/gfs/hrgryphon.dev/livedev/docroot
+  host: hrgryphondev.ssh.prod.acquia-sites.com
+  user: hrgryphon.dev
+  paths:
+    drush-script: drush9
+  ssh:
+    tty: 0
+prod:
+  root: /var/www/html/hrgryphon.prod/docroot
+  ac-site: hrgryphon
+  ac-env: prod
+  ac-realm: prod
+  uri: cardinalatwork.stanford.edu
+  prod.livedev:
+    parent: '@hrgryphon.prod'
+    root: /mnt/gfs/hrgryphon.prod/livedev/docroot
+  host: hrgryphon.ssh.prod.acquia-sites.com
+  user: hrgryphon.prod
+  paths:
+    drush-script: drush9
+  ssh:
+    tty: 0
+ra:
+  root: /var/www/html/hrgryphon.ra/docroot
+  ac-site: hrgryphon
+  ac-env: ra
+  ac-realm: prod
+  uri: cardinalatwork.stanford.edu
+  ra.livedev:
+    parent: '@hrgryphon.ra'
+    root: /mnt/gfs/hrgryphon.ra/livedev/docroot
+  host: hrgryphonra.ssh.prod.acquia-sites.com
+  user: hrgryphon.ra
+  paths:
+    drush-script: drush9
+  ssh:
+    tty: 0
+test:
+  root: /var/www/html/hrgryphon.test/docroot
+  ac-site: hrgryphon
+  ac-env: test
+  ac-realm: prod
+  uri: cardinalatwork-test.stanford.edu
+  test.livedev:
+    parent: '@hrgryphon.test'
+    root: /mnt/gfs/hrgryphon.test/livedev/docroot
+  host: hrgryphonstg.ssh.prod.acquia-sites.com
+  user: hrgryphon.test
+  paths:
+    drush-script: drush9
+  ssh:
+    tty: 0

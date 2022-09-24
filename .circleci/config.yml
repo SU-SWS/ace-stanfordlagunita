@@ -1,0 +1,148 @@
+version: 2
+# CircleCI integration with Drupal 8.
+
+# Reusable steps.
+
+## Add SSH Key
+add_ssh: &add_ssh
+  add_ssh_keys:
+    fingerprints:
+      - "6f:84:bf:38:2c:c5:fe:25:46:14:94:54:f3:22:42:f5"
+
+## Defines the cache restoring mechanism.
+restore_caches: &restore_caches
+  restore_cache:
+    # We use the composer.lock as a way to determine if we can cache our build.
+    keys:
+      - sul-cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "composer.lock" }}
+      # fallback to using the latest cache if no exact match is found
+      - sul-cache-{{ .Environment.CACHE_VERSION }}-
+
+## Defines the cache saving mechanism.
+save_caches: &save_caches
+  save_cache:
+    paths:
+      - ./vendor
+      - ./docroot/modules/contrib
+      - ./docroot/modules/custom
+      - ./docroot/profiles/contrib
+      - ./docroot/profiles/custom
+      - ./docroot/themes/contrib
+      - ./docroot/themes/custom
+      - ./docroot/libraries
+      - ./docroot/core
+    key: sul-cache-{{ .Environment.CACHE_VERSION }}-{{ checksum "composer.lock" }}
+
+## Defines images and working directory.
+defaults: &defaults
+  docker:
+    - image: pookmish/drupal8ci:latest
+    - image: selenium/standalone-chrome:latest
+    - image: circleci/mysql:5.7
+      command: ['--max-allowed-packet=67108864']
+      environment:
+        MYSQL_DATABASE: drupal
+        MYSQL_USER: drupal
+        MYSQL_PASSWORD: drupal
+        MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  working_directory: /var/www/html
+
+
+sul_profile_prep: &sul_profile_prep
+  <<: *defaults
+  steps:
+    - checkout
+    - *restore_caches
+    - run:
+        name: Site Prep
+        command: |
+          composer install --no-interaction
+          blt blt:telemetry:disable --no-interaction
+          mkdir -p artifacts/_data
+          blt circleci:drupal:install --profile=sul_profile --no-interaction
+          drush xmlsitemap-regenerate
+          drush pm:uninstall simplesamlphp_auth
+          drush sql-dump > sul.sql
+    - persist_to_workspace:
+        root: .
+        paths:
+          - .
+
+sul_profile_codeception_acceptance: &sul_profile_codeception_acceptance
+  <<: *defaults
+  steps:
+    - attach_workspace:
+        at: .
+    - run:
+        name: Run Codeception Acceptance Tests
+        command: |
+          dockerize -wait tcp://localhost:3306 -timeout 1m
+          apachectl stop && apachectl start
+          drush sql-cli < sul.sql
+          blt tests:codeception --test=sul_profile --suite=acceptance --no-interaction
+    - *save_caches
+    - store_test_results:
+        path: artifacts
+    - store_artifacts:
+        path: artifacts
+
+sul_profile_codeception_functional: &sul_profile_codeception_functional
+  <<: *defaults
+  steps:
+    - attach_workspace:
+        at: .
+    - run:
+        name: Run Codeception Acceptance Tests
+        command: |
+          dockerize -wait tcp://localhost:3306 -timeout 1m
+          apachectl stop && apachectl start
+          drush sql-cli < sul.sql
+          blt tests:codeception --test=sul_profile --suite=functional --no-interaction
+    - *save_caches
+    - store_test_results:
+        path: artifacts
+    - store_artifacts:
+        path: artifacts
+
+phpunit_coverage: &phpunit_coverage
+  <<: *defaults
+  steps:
+    - checkout
+    - *restore_caches
+    - run:
+        name: Run PHPUnit Coverage Tests
+        command: |
+          composer install --no-interaction
+          blt blt:telemetry:disable --no-interaction
+          blt circleci:drupal:setup --no-interaction
+          blt tests:phpunit:coverage --no-interaction
+    - *save_caches
+    - store_test_results:
+        path: artifacts/phpunit
+    - store_artifacts:
+        path: artifacts/phpunit
+
+# Declare all jobs we should run.
+jobs:
+  'Setup sul':
+    <<: *sul_profile_prep
+  'Codeception Acceptance Tests':
+    <<: *sul_profile_codeception_acceptance
+  'Codeception Functional Tests':
+    <<: *sul_profile_codeception_functional
+  'PHP Unit Coverage Tests':
+    <<: *phpunit_coverage
+
+# Declare a workflow that runs all of our jobs in parallel.
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - 'Setup sul'
+      - 'Codeception Acceptance Tests':
+          requires:
+            - 'Setup sul'
+      - 'Codeception Functional Tests':
+          requires:
+            - 'Setup sul'
+      - 'PHP Unit Coverage Tests'

@@ -1,0 +1,23 @@
+# Override any settings as necessary by copying to local.blt.yml
+project:
+  local:
+    protocol: https
+    hostname: cardinalservice.lndo.site
+    uri: https://cardinalservice.lndo.site
+  profile:
+    name: sul_profile
+drupal:
+  db:
+    username: drupal
+    password: drupal
+    host: cardinalservice
+    database: cardinalservice
+    port: 3306
+tests:
+  selenium:
+    url: http://chromedriver:4444/wd/hub
+behat:
+  selenium:
+    url: http://chromedriver:4444/wd/hub
+  chromedriver:
+    url: http://chromedriver

@@ -1,0 +1,6 @@
+project:
+  machine_name: ace-gryphon
+drush:
+  aliases:
+    local: self
+    remote: ace-gryphon.test

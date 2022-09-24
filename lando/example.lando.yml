@@ -1,0 +1,76 @@
+name: gryphon
+recipe: drupal8
+config:
+  webroot: docroot
+  php: '7.3'
+  xdebug: false
+proxy:
+  appserver:
+    - gryphon.lndo.site
+    - cardinalservice.lndo.site
+services:
+  appserver:
+    build_as_root:
+      - pecl install pcov
+      - docker-php-ext-enable pcov
+    ssl: true
+    config:
+      php: lando/php.ini
+    # Uncomment the below for behat testing
+    # overrides:
+    #   environment:
+    #       BEHAT_PARAMS: >-
+    #         {
+    #           "extensions" : {
+    #             "Behat\\MinkExtension" : {
+    #               "base_url" : "https://appserver/"
+    #             }
+    #           }
+    #         }
+  database:
+    creds:
+      user: drupal
+      password: drupal
+      database: drupal
+  cardinalservice:
+    type: mysql:5.7
+    creds:
+      user: drupal
+      password: drupal
+      database: cardinalservice
+  #  gryphon:
+  #    creds:
+  #      user: drupal
+  #      password: drupal
+  #      database: gryphon
+  # Uncomment the below for behat testing.
+  # chromedriver:
+  #   type: compose
+  #   services:
+  #     image: robcherry/docker-chromedriver:latest
+  #     expose:
+  #       - "4444"
+  #     environment:
+  #       CHROMEDRIVER_WHITELISTED_IPS: ""
+  #       CHROMEDRIVER_URL_BASE: "/wd/hub"
+  #     security_opt:
+  #       - seccomp:unconfined
+  #     command: ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
+  # testresults:
+  #   type: nginx
+  #   webroot: artifacts
+tooling:
+  blt:
+    service: appserver
+    cmd: /app/vendor/bin/blt
+  git:
+    service: appserver
+  phpcs:
+    service: appserver
+    cmd: "/app/vendor/bin/phpcs --standard=Drupal,DrupalPractice"
+    options:
+    description: Run phpcs for given folder or file.
+  phpunit:
+    service: appserver
+    cmd: "/app/vendor/bin/phpunit -c /app/docroot/core"
+    description: Run phpunit tests

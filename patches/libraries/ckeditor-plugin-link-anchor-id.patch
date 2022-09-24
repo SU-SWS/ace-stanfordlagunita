@@ -1,0 +1,19 @@
+diff --git a/dialogs/anchor.js b/dialogs/anchor.js
+index f89b634..9a4de57 100644
+--- a/dialogs/anchor.js
++++ b/dialogs/anchor.js
+@@ -45,10 +45,11 @@ CKEDITOR.dialog.add( 'anchor', function( editor ) {
+ 		},
+ 		onOk: function() {
+ 			var name = CKEDITOR.tools.trim( this.getValueOf( 'info', 'txtName' ) ),
++				id = name.replace(/\W/g, '-'),
+ 				attributes = {
+-					id: name,
+-					name: name,
+-					'data-cke-saved-name': name
++					id: id,
++					name: id,
++					'data-cke-saved-name': id
+ 				},
+ 				selectedElement = this.getModel( editor );
+ 

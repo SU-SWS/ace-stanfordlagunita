@@ -1,0 +1,231 @@
+{
+    "name": "su-sws/ace-gryphon",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/a11ychecker",
+                "version": "1.1.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/a11ychecker/releases/a11ychecker_1.1.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/balloonpanel",
+                "version": "4.14.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/balloonpanel/releases/balloonpanel_4.14.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/link",
+                "version": "4.14.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.14.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/fakeobjects",
+                "version": "4.14.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.14.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "citation-style-language/locales",
+                "version": "1.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/citation-style-language/locales.git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "citation-style-language/styles-distribution",
+                "version": "1.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/citation-style-language/styles-distribution.git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "acquia/blt": "^13.5",
+        "acquia/blt-simplesamlphp": "^1.0",
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.6",
+        "drupal/acquia_connector": "dev-4.x",
+        "drupal/acquia_purge": "^1.1",
+        "drupal/core": "^9.4",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-recommended": "^9.0",
+        "drupal/domain_301_redirect": "2.0.1 as 1.0.0",
+        "drupal/editor_advanced_link": "^1.8",
+        "drupal/mysql56": "^1.1",
+        "drupal/paranoia": "^1.9",
+        "drush/drush": "^11.1",
+        "simplesamlphp/simplesamlphp": "^1.19"
+    },
+    "require-dev": {
+        "acquia/blt-drupal-test": "^1.0",
+        "acquia/blt-multisite": "^1.0",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "su-sws/blt-sws": "dev-main",
+        "su-sws/drupal-dev": "^8.2"
+    },
+    "replace": {
+        "drupal/coder": "*"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "discard-changes": true,
+        "allow-plugins": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "docroot/"
+            },
+            "file-mapping": {
+                "[web-root]/INSTALL.txt": false,
+                "[web-root]/README.txt": false
+            },
+            "gitignore": false
+        },
+        "installer-paths": {
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "docroot/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "custom-installer": {
+            "docroot/libraries/{$name}/": [
+                "type:component",
+                "ckeditor/ckeditor",
+                "enyo/dropzone",
+                "components/jquery",
+                "harvesthq/chosen"
+            ],
+            "vendor/{$vendor}/{$name}/": [
+                "type:library"
+            ],
+            "docroot/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ]
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/paranoia": {
+                "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
+            },
+            "drupal/ui_patterns": {
+                "Ui Patterns Views Fixes": "patches/contrib/ui_patterns_views-preview.patch"
+            },
+            "ckeditor-plugin/link": {
+                "http://github.com/ckeditor/ckeditor4/pull/3965": "patches/libraries/ckeditor-plugin-link-anchor-id.patch",
+                "Disable double click double modal": "patches/libraries/ckeditor-plugin-link-disable-double.patch"
+            }
+        }
+    },
+    "scripts": {
+        "post-drupal-scaffold-cmd": [
+            "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/htaccess.patch"
+        ],
+        "init-lando": [
+            "cp lando/example.env .env",
+            "cp lando/example.lando.yml .lando.yml",
+            "cp lando/example.local.blt.yml blt/local.blt.yml",
+            "cp lando/example.php.ini lando/php.ini",
+            "blt blt:init:settings",
+            "blt source:build:simplesamlphp-config"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Gryphon\\": "blt/src/"
+        }
+    }
+}
