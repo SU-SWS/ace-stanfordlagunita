@@ -1,0 +1,18 @@
+uuid: 1a57a5a5-bbec-4b9b-8339-fbf2dc3c0e3e
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/envs/local
+module:
+  dblog: 0
+  devel: 0
+  devel_php: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

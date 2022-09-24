@@ -1,0 +1,31 @@
+uuid: 1497b449-5b81-4752-ab4b-a543431405e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - media
+    - system
+    - ui_patterns_library
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access patterns page'
+  - 'view field_media_embeddable_code'
+  - 'view media'
+  - 'view own field_media_embeddable_code'
+  - 'view own su_metatags'
+  - 'view own su_site_403'
+  - 'view own su_site_404'
+  - 'view own su_site_home'
+  - 'view own su_site_url'
+  - 'view su_metatags'
+  - 'view su_site_403'
+  - 'view su_site_404'
+  - 'view su_site_home'
+  - 'view su_site_url'

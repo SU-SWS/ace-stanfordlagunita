@@ -1,0 +1,113 @@
+uuid: 48020ae6-83c9-410d-8104-1c14da0d99c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_basic_site_settings
+    - field.field.config_pages.stanford_basic_site_settings.su_google_analytics
+    - field.field.config_pages.stanford_basic_site_settings.su_hide_site_search
+    - field.field.config_pages.stanford_basic_site_settings.su_site_403
+    - field.field.config_pages.stanford_basic_site_settings.su_site_404
+    - field.field.config_pages.stanford_basic_site_settings.su_site_dropdowns
+    - field.field.config_pages.stanford_basic_site_settings.su_site_email
+    - field.field.config_pages.stanford_basic_site_settings.su_site_home
+    - field.field.config_pages.stanford_basic_site_settings.su_site_menu_levels
+    - field.field.config_pages.stanford_basic_site_settings.su_site_name
+    - field.field.config_pages.stanford_basic_site_settings.su_site_url
+  module:
+    - link
+id: config_pages.stanford_basic_site_settings.default
+targetEntityType: config_pages
+bundle: stanford_basic_site_settings
+mode: default
+content:
+  su_google_analytics:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  su_hide_site_search:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  su_site_403:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  su_site_404:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  su_site_dropdowns:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  su_site_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  su_site_home:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  su_site_menu_levels:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  su_site_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  su_site_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

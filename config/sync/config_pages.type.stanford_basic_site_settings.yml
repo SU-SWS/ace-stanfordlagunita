@@ -1,0 +1,89 @@
+uuid: b3e6e228-0d21-4c60-aee1-061149d51778
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages_overrides
+third_party_settings:
+  config_pages_overrides:
+    3c7aa10e-4113-469b-aa20-897c85d14579:
+      field: su_site_url
+      delta: 0
+      column: uri
+      config_name: domain_301_redirect.settings
+      config_item: domain
+    39cd74f1-a878-442a-b8d6-ba1673a58065:
+      field: su_site_url
+      delta: 0
+      column: uri
+      config_name: domain_301_redirect.settings
+      config_item: enabled
+    35535d67-a065-45b8-9a80-f1df8648dc31:
+      field: su_site_name
+      delta: 0
+      column: value
+      config_name: system.site
+      config_item: name
+    4f299f64-4626-48dd-8632-02b7db6a5010:
+      field: su_site_email
+      delta: 0
+      column: value
+      config_name: system.site
+      config_item: mail
+    ba5fafac-2f0e-4e9f-a27a-f3dfb9d8893e:
+      field: su_google_analytics
+      delta: 0
+      column: value
+      config_name: google_analytics.settings
+      config_item: account
+    6768a2b9-0c36-46de-aef2-7ca5a548c2a2:
+      field: su_site_dropdowns
+      delta: 0
+      column: value
+      config_name: stanford_basic.settings
+      config_item: nav_dropdown_enabled
+    0f41ca24-623b-4ce2-8c31-b60d4b80186f:
+      field: su_site_home
+      delta: 0
+      column: target_id
+      config_name: system.site
+      config_item: page.front
+      prefix: /node/
+      suffix: ''
+    633b7eec-13ab-4b85-b582-3adb9f83c232:
+      field: su_site_403
+      delta: 0
+      column: target_id
+      config_name: system.site
+      config_item: page.403
+      prefix: /node/
+      suffix: ''
+    9c6c3994-b5e0-4425-af8d-b5ed4f6c129c:
+      field: su_site_404
+      delta: 0
+      column: target_id
+      config_name: system.site
+      config_item: page.404
+      prefix: /node/
+      suffix: ''
+    204f6874-bb28-482d-b8e2-3193dd2cb120:
+      field: su_site_menu_levels
+      delta: 0
+      column: value
+      config_name: block.block.stanford_basic_main_navigation
+      config_item: settings.depth
+      prefix: ''
+      suffix: ''
+id: stanford_basic_site_settings
+label: 'Site Settings'
+token: null
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/system/basic-site-settings
+  weight: 0
+  description: ''

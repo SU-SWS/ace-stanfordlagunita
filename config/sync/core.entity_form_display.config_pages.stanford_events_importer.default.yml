@@ -1,0 +1,86 @@
+uuid: e36a4070-52cc-49aa-8f40-0f9cdf9dd83a
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_events_importer
+    - field.field.config_pages.stanford_events_importer.su_event_empty
+    - field.field.config_pages.stanford_events_importer.su_event_xml_url
+    - field.field.config_pages.stanford_events_importer.su_localist_bookmark
+    - field.field.config_pages.stanford_events_importer.su_localist_url
+  module:
+    - field_group
+    - link
+    - stanford_events_importer
+    - stanford_fields
+    - text
+third_party_settings:
+  field_group:
+    group_import_events:
+      children:
+        - su_localist_url
+        - su_localist_bookmark
+      label: 'Import Events'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: 'Use the following options to import events from https://events-legacy.stanford.edu/. Go to https://events-legacy.stanford.edu/ to browse the events that would be included in each of the options below. Events will be imported and updated daily or you can use the Save & Import button to execute an update immediately. '
+        required_fields: false
+    group_deprecated:
+      children:
+        - su_event_xml_url
+      label: Deprecated
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'These settings will be removed in a later release.'
+        required_fields: false
+id: config_pages.stanford_events_importer.default
+targetEntityType: config_pages
+bundle: stanford_events_importer
+mode: default
+content:
+  su_event_empty:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  su_event_xml_url:
+    type: stanford_events_importer_apiurl_field_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  su_localist_bookmark:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  su_localist_url:
+    type: localist_url
+    weight: 2
+    region: content
+    settings:
+      base_url: 'https://events.stanford.edu'
+      placeholder_url: ''
+      placeholder_title: ''
+      select_distinct: false
+    third_party_settings: {  }
+hidden:
+  label: true

@@ -1,0 +1,67 @@
+uuid: f39b1966-cf48-4f82-bbf6-e923619f763c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_event_series_components
+    - node.type.stanford_event_series
+    - paragraphs.paragraphs_type.stanford_accordion
+    - paragraphs.paragraphs_type.stanford_person_cta
+    - paragraphs.paragraphs_type.stanford_schedule
+    - paragraphs.paragraphs_type.stanford_spacer
+  module:
+    - entity_reference_revisions
+id: node.stanford_event_series.su_event_series_components
+field_name: su_event_series_components
+entity_type: node
+bundle: stanford_event_series
+label: Components
+description: 'Add additional content that displays under the body text on the series node page. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_spacer: stanford_spacer
+      stanford_person_cta: stanford_person_cta
+      stanford_accordion: stanford_accordion
+      stanford_schedule: stanford_schedule
+    negate: 1
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 12
+        enabled: true
+      stanford_banner:
+        weight: 6
+        enabled: false
+      stanford_card:
+        weight: 7
+        enabled: false
+      stanford_entity:
+        weight: 13
+        enabled: false
+      stanford_gallery:
+        weight: 14
+        enabled: false
+      stanford_lists:
+        weight: 15
+        enabled: false
+      stanford_media_caption:
+        weight: 8
+        enabled: false
+      stanford_person_cta:
+        weight: 11
+        enabled: true
+      stanford_schedule:
+        weight: 12
+        enabled: true
+      stanford_spacer:
+        weight: 9
+        enabled: true
+      stanford_wysiwyg:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions
