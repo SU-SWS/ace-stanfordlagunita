@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
     - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
@@ -204,7 +203,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  layout_builder__layout: true
   layout_selection: true
   path: true
   promote: true

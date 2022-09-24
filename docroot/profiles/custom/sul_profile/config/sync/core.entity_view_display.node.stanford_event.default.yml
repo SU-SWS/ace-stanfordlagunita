@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.base_field_override.node.stanford_event.title
     - field.field.node.stanford_event.body
-    - field.field.node.stanford_event.layout_builder__layout
     - field.field.node.stanford_event.stanford_intranet__access
     - field.field.node.stanford_event.su_event_alt_loc
     - field.field.node.stanford_event.su_event_audience
@@ -14,14 +13,19 @@ dependencies:
     - field.field.node.stanford_event.su_event_date_time
     - field.field.node.stanford_event.su_event_dek
     - field.field.node.stanford_event.su_event_email
+    - field.field.node.stanford_event.su_event_groups
+    - field.field.node.stanford_event.su_event_keywords
     - field.field.node.stanford_event.su_event_location
     - field.field.node.stanford_event.su_event_map_link
     - field.field.node.stanford_event.su_event_schedule
     - field.field.node.stanford_event.su_event_source
     - field.field.node.stanford_event.su_event_sponsor
     - field.field.node.stanford_event.su_event_subheadline
+    - field.field.node.stanford_event.su_event_subject
     - field.field.node.stanford_event.su_event_telephone
     - field.field.node.stanford_event.su_event_type
+    - field.field.node.stanford_event.su_metatags
+    - field.field.node.stanford_event.su_shared_tags
     - node.type.stanford_event
     - views.view.stanford_events
   module:
@@ -40,7 +44,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: true
+    allow_custom: false
     sections:
       -
         layout_id: defaults
@@ -554,6 +558,7 @@ third_party_settings:
       - 'Stanford Profile Helper'
       - 'Stanford SimpleSAML PHP'
       - System
+      - 'Taxonomy Terms (Views)'
       - Views
       - core
     entity_view_mode_restriction:
@@ -599,8 +604,8 @@ third_party_settings:
           - 'field_block:user:user:name'
           - 'field_block:user:user:preferred_admin_langcode'
           - 'field_block:user:user:preferred_langcode'
-          - 'field_block:user:user:role_change'
           - 'field_block:user:user:roles'
+          - 'field_block:user:user:role_change'
           - 'extra_field_block:user:user:search_api_excerpt'
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
@@ -611,12 +616,12 @@ third_party_settings:
           - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
           - 'system_menu_block:main'
-          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
+          - 'system_menu_block:stanford-publication-topics'
           - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
         System:
           - system_breadcrumb_block
         core:
@@ -631,6 +636,7 @@ third_party_settings:
         - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
         - 'Stanford SimpleSAML PHP'
+        - 'Taxonomy Terms (Views)'
         - Views
 id: node.stanford_event.default
 targetEntityType: node

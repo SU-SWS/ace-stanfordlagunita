@@ -71,8 +71,8 @@ dependencies:
     - seckit
     - shortcut
     - stanford_media
-    - sul_profile
     - stanford_publication
+    - sul_profile
     - system
     - taxonomy
     - toolbar
