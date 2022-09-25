@@ -89,7 +89,8 @@ class JumpstartUITwig extends AbstractExtension {
       $tags .= '<drupal-render-placeholder>';
     }
     // Use a markup to flag it as "safe".
-    $result = is_string($rendered) ? trim(strip_tags($rendered, $tags)) : null;
+
+    $result = is_null($rendered) ? '' : trim(strip_tags($rendered, $tags));
     return $result ? ['#markup' => $result] : NULL;
   }
 

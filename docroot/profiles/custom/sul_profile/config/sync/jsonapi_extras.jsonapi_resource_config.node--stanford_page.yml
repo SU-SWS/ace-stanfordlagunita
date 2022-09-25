@@ -9,7 +9,7 @@ dependencies:
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - su_page_components.su_page_components
+      - su_page_components
       - su_page_banner.su_banner_image.field_media_image
       - su_page_image.field_media_image
     default_filter:
@@ -182,12 +182,6 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  layout_builder__layout:
-    disabled: false
-    fieldName: layout_builder__layout
-    publicName: layout_builder__layout
-    enhancer:
-      id: ''
   layout_selection:
     disabled: false
     fieldName: layout_selection
@@ -204,6 +198,12 @@ resourceFields:
     disabled: false
     fieldName: su_basic_page_type
     publicName: su_basic_page_type
+    enhancer:
+      id: ''
+  su_metatags:
+    disabled: false
+    fieldName: su_metatags
+    publicName: su_metatags
     enhancer:
       id: ''
   su_page_banner:
