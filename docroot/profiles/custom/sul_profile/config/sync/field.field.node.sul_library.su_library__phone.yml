@@ -1,0 +1,21 @@
+uuid: 1ba3b79c-7c05-4786-8ef2-ba4e3c086465
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_library__phone
+    - node.type.sul_library
+  module:
+    - telephone
+id: node.sul_library.su_library__phone
+field_name: su_library__phone
+entity_type: node
+bundle: sul_library
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

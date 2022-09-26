@@ -1,0 +1,15 @@
+.layout--sul-one-column {
+
+}
+
+.layout--sul-one-column .paragraph,
+.layout--sul-one-column .ds-entity--paragraph:not(.ds-entity--stanford-banner) {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.layout--sul-one-column .paragraph.paragraph--type--stanford-wysiwyg,
+.layout--sul-one-column .ds-entity--paragraph.ds-entity--stanford-card {
+  max-width: 980px;
+  margin: 0 auto;
+}

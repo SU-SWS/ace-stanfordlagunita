@@ -1,0 +1,19 @@
+uuid: c69a8a26-3a05-4a38-8cd6-7d0673525c10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_library__email
+    - node.type.sul_library
+id: node.sul_library.su_library__email
+field_name: su_library__email
+entity_type: node
+bundle: sul_library
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

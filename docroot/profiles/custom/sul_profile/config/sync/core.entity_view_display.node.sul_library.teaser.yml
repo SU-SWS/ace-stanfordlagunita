@@ -1,0 +1,43 @@
+uuid: c98afc90-9173-4038-9504-ee3e6ae2e510
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sul_library.body
+    - field.field.node.sul_library.su_library__access
+    - field.field.node.sul_library.su_library__accessibility
+    - field.field.node.sul_library.su_library__email
+    - field.field.node.sul_library.su_library__equipment
+    - field.field.node.sul_library.su_library__location
+    - field.field.node.sul_library.su_library__parking
+    - field.field.node.sul_library.su_library__phone
+    - field.field.node.sul_library.su_library__short_name
+    - field.field.node.sul_library.su_library__type
+    - field.field.node.sul_library.su_library__url_name
+    - node.type.sul_library
+  module:
+    - user
+id: node.sul_library.teaser
+targetEntityType: node
+bundle: sul_library
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  search_api_excerpt: true
+  su_library__access: true
+  su_library__accessibility: true
+  su_library__email: true
+  su_library__equipment: true
+  su_library__location: true
+  su_library__parking: true
+  su_library__phone: true
+  su_library__short_name: true
+  su_library__type: true
+  su_library__url_name: true

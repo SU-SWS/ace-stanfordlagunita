@@ -1,0 +1,289 @@
+uuid: fefe0ef3-3d2a-48d5-9860-174a3485fef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sul_library.body
+    - field.field.node.sul_library.su_library__access
+    - field.field.node.sul_library.su_library__accessibility
+    - field.field.node.sul_library.su_library__email
+    - field.field.node.sul_library.su_library__equipment
+    - field.field.node.sul_library.su_library__location
+    - field.field.node.sul_library.su_library__parking
+    - field.field.node.sul_library.su_library__phone
+    - field.field.node.sul_library.su_library__short_name
+    - field.field.node.sul_library.su_library__type
+    - field.field.node.sul_library.su_library__url_name
+    - node.type.sul_library
+  module:
+    - jumpstart_ui
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: jumpstart_ui_one_column
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          extra_classes: ''
+          centered: centered-container
+          columns: default
+        components:
+          04b0e1f6-6d1a-45f8-abf0-88d594f98916:
+            uuid: 04b0e1f6-6d1a-45f8-abf0-88d594f98916
+            region: main
+            configuration:
+              id: 'field_block:node:sul_library:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: hidden
+                settings:
+                  tag: h1
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 0
+            additional: {  }
+          7cdfef8a-c6ed-46cf-a853-38a6f776cd22:
+            uuid: 7cdfef8a-c6ed-46cf-a853-38a6f776cd22
+            region: main
+            configuration:
+              id: 'field_block:node:sul_library:body'
+              label: About
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 1
+            additional: {  }
+          c9eb07dd-38fe-492a-a3b0-8bd979c1c7e6:
+            uuid: c9eb07dd-38fe-492a-a3b0-8bd979c1c7e6
+            region: main
+            configuration:
+              id: 'field_block:node:sul_library:su_library__location'
+              label: Location
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 2
+            additional: {  }
+          930d77dc-2108-4b12-ab2e-35774b11b27c:
+            uuid: 930d77dc-2108-4b12-ab2e-35774b11b27c
+            region: main
+            configuration:
+              id: 'field_block:node:sul_library:su_library__parking'
+              label: 'Transit and Parking'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 3
+            additional: {  }
+          2e720135-1d10-4fa2-baf5-ef777bc9eb92:
+            uuid: 2e720135-1d10-4fa2-baf5-ef777bc9eb92
+            region: main
+            configuration:
+              id: 'field_block:node:sul_library:su_library__accessibility'
+              label: Accessibility
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 4
+            additional: {  }
+          79a787b0-63f4-4992-9ec4-aa5c5862a575:
+            uuid: 79a787b0-63f4-4992-9ec4-aa5c5862a575
+            region: main
+            configuration:
+              id: 'field_block:node:sul_library:su_library__access'
+              label: Access
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: 5
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories:
+      - 'Basic Page Type Lists (Views)'
+      - 'Chaos Tools'
+      - 'Config Pages'
+      - 'Content fields'
+      - 'Custom block types'
+      - 'Custom blocks'
+      - Devel
+      - 'Devel PHP'
+      - 'Events Lists (Views)'
+      - Forms
+      - Help
+      - 'Inline blocks'
+      - 'Jumpstart UI'
+      - 'Lists (Views)'
+      - Menus
+      - 'News Lists (Views)'
+      - 'PDB React'
+      - 'People Lists (Views)'
+      - 'Publication (Views)'
+      - React
+      - 'SimpleSAMLphp Authentication'
+      - 'Stanford News'
+      - 'Stanford Profile Helper'
+      - 'Stanford SimpleSAML PHP'
+      - System
+      - 'Taxonomy Terms (Views)'
+      - Views
+      - core
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - jumpstart_ui_one_column
+        - jumpstart_ui_two_column
+        - jumpstart_ui_three_column
+      denylisted_blocks:
+        'Content fields':
+          - 'field_block:node:sul_library:uid'
+          - 'field_block:node:sul_library:created'
+          - 'field_block:node:sul_library:changed'
+          - 'field_block:node:sul_library:type'
+          - 'field_block:node:sul_library:revision_default'
+          - 'field_block:node:sul_library:default_langcode'
+          - 'field_block:node:sul_library:nid'
+          - 'field_block:node:sul_library:langcode'
+          - 'extra_field_block:node:sul_library:links'
+          - 'field_block:node:sul_library:menu_link'
+          - 'field_block:node:sul_library:promote'
+          - 'field_block:node:sul_library:status'
+          - 'field_block:node:sul_library:publish_on'
+          - 'field_block:node:sul_library:rh_action'
+          - 'field_block:node:sul_library:rh_redirect_fallback_action'
+          - 'field_block:node:sul_library:rh_redirect'
+          - 'field_block:node:sul_library:rh_redirect_response'
+          - 'field_block:node:sul_library:revision_timestamp'
+          - 'field_block:node:sul_library:vid'
+          - 'field_block:node:sul_library:revision_log'
+          - 'field_block:node:sul_library:revision_translation_affected'
+          - 'field_block:node:sul_library:revision_uid'
+          - 'extra_field_block:node:sul_library:search_api_excerpt'
+          - 'field_block:node:sul_library:sticky'
+          - 'field_block:node:sul_library:unpublish_on'
+          - 'field_block:user:user:changed'
+          - 'field_block:user:user:created'
+          - 'field_block:user:user:default_langcode'
+          - 'field_block:user:user:su_display_name'
+          - 'field_block:user:user:mail'
+          - 'field_block:user:user:init'
+          - 'field_block:user:user:langcode'
+          - 'field_block:user:user:access'
+          - 'field_block:user:user:login'
+          - 'extra_field_block:user:user:member_for'
+          - 'field_block:user:user:name'
+          - 'field_block:user:user:preferred_admin_langcode'
+          - 'field_block:user:user:preferred_langcode'
+          - 'field_block:user:user:roles'
+          - 'field_block:user:user:role_change'
+          - 'extra_field_block:user:user:search_api_excerpt'
+          - 'field_block:user:user:timezone'
+          - 'field_block:user:user:uid'
+          - 'field_block:user:user:status'
+      allowlisted_blocks:
+        Menus:
+          - 'menu_block:stanford-event-types'
+          - 'system_menu_block:stanford-event-types'
+          - 'menu_block:main'
+          - 'system_menu_block:main'
+          - 'menu_block:stanford-person-type'
+          - 'system_menu_block:stanford-person-type'
+          - 'menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-publication-topics'
+          - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
+        System:
+          - system_breadcrumb_block
+        core:
+          - page_title_block
+      restricted_categories:
+        - 'Chaos Tools'
+        - 'Config Pages'
+        - Forms
+        - Help
+        - 'Lists (Views)'
+        - React
+        - 'SimpleSAMLphp Authentication'
+        - 'Stanford Profile Helper'
+        - 'Stanford SimpleSAML PHP'
+        - 'Taxonomy Terms (Views)'
+        - Views
+id: node.sul_library.default
+targetEntityType: node
+bundle: sul_library
+mode: default
+content: {  }
+hidden:
+  body: true
+  links: true
+  search_api_excerpt: true
+  su_library__access: true
+  su_library__accessibility: true
+  su_library__email: true
+  su_library__equipment: true
+  su_library__location: true
+  su_library__parking: true
+  su_library__phone: true
+  su_library__short_name: true
+  su_library__type: true
+  su_library__url_name: true

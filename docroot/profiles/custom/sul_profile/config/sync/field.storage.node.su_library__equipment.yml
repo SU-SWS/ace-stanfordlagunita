@@ -1,0 +1,20 @@
+uuid: b89a1938-6045-4de7-81bd-79edbd0a8089
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.su_library__equipment
+field_name: su_library__equipment
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -109,8 +109,19 @@ third_party_settings:
               suggestion: secondary_nav
             weight: 0
             additional: {  }
-          9ec5b37b-33a4-4aca-b787-7f0584234d1a:
-            uuid: 9ec5b37b-33a4-4aca-b787-7f0584234d1a
+          c40ac234-fff7-4c9d-8a34-03fb9d335617:
+            uuid: c40ac234-fff7-4c9d-8a34-03fb9d335617
+            region: main
+            configuration:
+              id: jumpstart_ui_skipnav_main_anchor
+              label: 'Main content anchor target'
+              label_display: '0'
+              provider: jumpstart_ui
+              context_mapping: {  }
+            weight: -10
+            additional: {  }
+          c1801f51-70a5-4404-a218-bbff40812451:
+            uuid: c1801f51-70a5-4404-a218-bbff40812451
             region: main
             configuration:
               id: 'field_block:node:stanford_page:su_page_components'
@@ -129,17 +140,6 @@ third_party_settings:
                   field_formatter_class:
                     class: ''
             weight: -9
-            additional: {  }
-          c40ac234-fff7-4c9d-8a34-03fb9d335617:
-            uuid: c40ac234-fff7-4c9d-8a34-03fb9d335617
-            region: main
-            configuration:
-              id: jumpstart_ui_skipnav_main_anchor
-              label: 'Main content anchor target'
-              label_display: '0'
-              provider: jumpstart_ui
-              context_mapping: {  }
-            weight: -10
             additional: {  }
         third_party_settings: {  }
   layout_library:
