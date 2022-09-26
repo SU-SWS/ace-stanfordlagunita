@@ -16,3 +16,4 @@ $config['stanford_ssp.settings'] = [
   'workgroup_api_cert' => DRUPAL_ROOT . '/../keys/workgroup_api.cert',
   'workgroup_api_key' => DRUPAL_ROOT . '/../keys/workgroup_api.key',
 ];
+error_reporting(E_ALL & ~E_DEPRECATED);
