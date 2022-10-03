@@ -14,6 +14,7 @@ sul_helper_1_column:
 sul_helper_2_column:
   label: '2 Column'
   category: 'SUL Layouts'
+  class: '\Drupal\sul_helper\Layouts\SulTwoColumn'
   path: layouts/two_column
   template: sul-two-column
   library: sul_helper/two_column
@@ -29,6 +30,7 @@ sul_helper_2_column:
 sul_helper_3_column:
   label: '3 Column'
   category: 'SUL Layouts'
+  class: '\Drupal\sul_helper\Layouts\SulThreeColumn'
   path: layouts/three_column
   template: sul-three-column
   library: sul_helper/three_column
