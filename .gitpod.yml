@@ -53,12 +53,14 @@ tasks:
       composer install --no-interaction &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
+      blt source:build:simplesamlphp-config &&
       blt drupal:install -n &&
       git clone git@github.com:SU-SWS/sulgryphon-nextjs.git frontend &&
       cd frontend && yarn
     command: |
-      apache2ctl restart
-      gp ports await 8001
+      cd $GITPOD_REPO_ROOT &&
+      apache2ctl restart &&
+      gp ports await 8001 &&
       find docroot -name 'local.drush.yml' | xargs rm &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
@@ -81,4 +83,8 @@ tasks:
       sed -i -e "s|\${DRUPAL_SITE_ID}|Next JS|g" .env.local &&
       drush sul-profile:set-consumer-secret dc98f394-68ef-4e11-bab2-fd0e2931bca1 $CLIENT_SECRET &&
       drush sul-profile:create-nextjs-site Gitpod `gp url 3000` '/api/preview' $PREVIEW_SECRET &&
-      yarn dev
+      drush simple-oauth:generate-keys $GITPOD_REPO_ROOT/keys &&
+      mv $GITPOD_REPO_ROOT/keys/private.key $GITPOD_REPO_ROOT/keys/oauth_private.key &&
+      mv $GITPOD_REPO_ROOT/keys/public.key $GITPOD_REPO_ROOT/keys/oauth_public.key &&
+      yarn dev &
+      gp url 3000 | xargs gp preview --external
