@@ -46,6 +46,7 @@ tasks:
       echo $GITCONFIG | base64 -d > ~/.gitconfig &&
       chmod 644 ~/.gitconfig
     init: >
+      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
