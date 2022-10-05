@@ -8,11 +8,15 @@
   <coverage includeUncoveredFiles="true">
     <include>
       <directory>../modules/custom</directory>
+      <directory>../profiles/custom</directory>
     </include>
     <exclude>
       <directory suffix=".post_update.php">../modules/custom/*</directory>
+      <directory suffix=".post_update.php">../profiles/custom/*</directory>
       <directory>../modules/custom/*/tests</directory>
       <directory>../modules/custom/*/modules/*/tests</directory>
+      <directory>../profiles/custom/*/tests</directory>
+      <directory>../profiles/custom/*/modules/*/tests</directory>
     </exclude>
   </coverage>
   <!-- set printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter" once
