@@ -6,6 +6,7 @@ new database on Acquia. This can also ran manually by `blt gryphon:create-databa
 The machine name of the site and the database should match. BLT automatically
 connects to the database if it has the same name. see https://github.com/acquia/blt/blob/12.x/settings/blt.settings.php#L125
 - `blt gryphon:add-domain` can be used to add custom domains to any environment except RA.
+- `blt gryphon:create-cron` creates a standard cron job for a specific site that will run every 6 hours.
 
 
 # Additional Resources

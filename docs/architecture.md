@@ -22,3 +22,11 @@ There are three options a site can choose from:
 2. Modify the configuration sync directory to a desired directory such as another profile.
 3. Modify the configuration sync directory to point to an empty directory. This
 will bypass any configuration management strategy and the site's configuration will be updated via update hooks.
+
+
+# Frontend Development
+The frontend is build using [NextJS]() and is managed in the github repository [su-sws/sulgryphon-nextjs](https://github.com/SU-SWS/sulgryphon-nextjs). It's suggested to clone that repository into the root of this repository for easy development. See the documentation in that repository for more information.
+
+# SSL Certificate
+A wildcard certificate will be used with a 12 month expiration. This certificate will be updated
+automatically via other tools.
