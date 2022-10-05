@@ -47,25 +47,28 @@ tasks:
       blt drupal:install -n &&
       git clone git@github.com:SU-SWS/sulgryphon-nextjs.git frontend &&
       cd frontend && yarn && 
+      export PREVIEW_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
+      export CLIENT_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
       cp .env.example .env.local &&
       sed -i -e "s|\${NEXT_PUBLIC_DRUPAL_BASE_URL}|${PREVIEW_FULL_URL}|g" .env.local &&
       sed -i -e "s|\${NEXT_IMAGE_DOMAIN}|${PREVIEW_URL}|g" .env.local &&
       sed -i -e "s|\${NEXT_PUBLIC_SITE_NAME}|Gitpod|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_FRONT_PAGE}|${PREVIEW_FULL_URL}|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_PREVIEW_SECRET}|${PREVIEW_FULL_URL}|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_CLIENT_ID}|${PREVIEW_FULL_URL}|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_CLIENT_SECRET}|${PREVIEW_FULL_URL}|g" .env.local &&
-      yarn dev &
+      sed -i -e "s|\${DRUPAL_FRONT_PAGE}|72f0069b-f1ec-4122-af73-6aa841faea90|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_PREVIEW_SECRET}|${PREVIEW_SECRET}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_CLIENT_ID}|dc98f394-68ef-4e11-bab2-fd0e2931bca1|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_CLIENT_SECRET}|${CLIENT_SECRET}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_SITE_ID}|Next JS|g" .env.local &&
+      drush sul-profile:set-consumer-secret dc98f394-68ef-4e11-bab2-fd0e2931bca1 $CLIENT_SECRET
+      drush sul-profile:create-nextjs-site Gitpod `gp url 3000` '/api/preview' $PREVIEW_SECRET
     command: |
       apache2ctl restart
       gp await-port 8001
       find docroot -name 'local.drush.yml' | xargs rm &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
-      blt settings
-      drush uli
-      drush uli | xargs gp preview --external
-      git config core.fileMode false
-      blt blt:telemetry:disable --no-interaction
-  - name: Frontend Prep
-    init: >
+      blt blt:telemetry:disable --no-interaction &&
+      blt settings &&
+      drush uli --uri=$PREVIEW_FULL_URL &&
+      drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
+      git config core.fileMode false &&
+      cd frontend && yarn dev
