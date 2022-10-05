@@ -49,7 +49,6 @@ cm:
   strategy: config-split
   allow-overrides: true
 multisites:
-  - cardinalatwork
   - default
 behat:
   selenium:

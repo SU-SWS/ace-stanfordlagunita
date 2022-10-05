@@ -22,7 +22,8 @@ ports:
     visibility: public
 image: pookmish/drupal8ci:gitpod
 tasks:
-  - before: >
+  - name: Drupal Prep
+    before: >
       rm -rf ~/.ssh/id_rsa &&
       rm -rf ~/.ssh/id_rsa.pub &&
       eval $(command gp env -e) &&
@@ -43,7 +44,18 @@ tasks:
       composer install --no-interaction &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      blt drupal:install -n
+      blt drupal:install -n &&
+      git clone git@github.com:SU-SWS/sulgryphon-nextjs.git frontend &&
+      cd frontend && yarn && 
+      cp .env.example .env.local &&
+      sed -i -e "s|\${NEXT_PUBLIC_DRUPAL_BASE_URL}|${PREVIEW_FULL_URL}|g" .env.local &&
+      sed -i -e "s|\${NEXT_IMAGE_DOMAIN}|${PREVIEW_URL}|g" .env.local &&
+      sed -i -e "s|\${NEXT_PUBLIC_SITE_NAME}|Gitpod|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_FRONT_PAGE}|${PREVIEW_FULL_URL}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_PREVIEW_SECRET}|${PREVIEW_FULL_URL}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_CLIENT_ID}|${PREVIEW_FULL_URL}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_CLIENT_SECRET}|${PREVIEW_FULL_URL}|g" .env.local &&
+      yarn dev &
     command: |
       apache2ctl restart
       gp await-port 8001
@@ -55,3 +67,5 @@ tasks:
       drush uli | xargs gp preview --external
       git config core.fileMode false
       blt blt:telemetry:disable --no-interaction
+  - name: Frontend Prep
+    init: >
