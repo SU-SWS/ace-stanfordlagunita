@@ -3,12 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.node.stanford_event.default
-    - core.entity_view_display.node.stanford_event_series.default
-    - core.entity_view_display.node.stanford_news.default
-    - core.entity_view_display.node.stanford_page.default
-    - core.entity_view_display.node.stanford_person.default
-    - core.entity_view_display.node.stanford_publication.default
     - core.entity_view_display.taxonomy_term.stanford_event_types.default
     - core.entity_view_display.taxonomy_term.stanford_news_topics.default
     - core.entity_view_display.taxonomy_term.stanford_person_types.default

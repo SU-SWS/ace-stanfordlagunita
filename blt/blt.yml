@@ -2,7 +2,7 @@ project:
   prefix: sulgryphon
   human_name: 'Stanford HR D9 Projects'
   profile:
-    name: stanford_profile
+    name: sul_profile
   local: {  }
 git:
   default_branch: main
@@ -89,6 +89,6 @@ cloud:
   appId: null
 keys_rsync:
   ssh: null
-  files:
-    - /mnt/gfs/sulgryphon.prod/nobackup/simplesamlphp/
-    - /mnt/gfs/sulgryphon.prod/secrets.settings.php
+  files: {  }
+#    - /mnt/gfs/sulgryphon.prod/nobackup/simplesamlphp/
+#    - /mnt/gfs/sulgryphon.prod/secrets.settings.php

@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
+    - field.field.node.stanford_page.su_metatags
     - field.field.node.stanford_page.su_page_banner
     - field.field.node.stanford_page.su_page_components
     - field.field.node.stanford_page.su_page_description
     - field.field.node.stanford_page.su_page_image
+    - field.field.node.stanford_page.su_shared_tags
     - node.type.stanford_page
     - system.menu.main
   module:
@@ -24,7 +25,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: true
+    allow_custom: false
     sections:
       -
         layout_id: jumpstart_ui_one_column
@@ -103,31 +104,10 @@ third_party_settings:
               follow_parent: child
               level: 2
               depth: 0
+              expand: true
               parent: 'main:'
               suggestion: secondary_nav
-              expand: true
             weight: 0
-            additional: {  }
-          9ec5b37b-33a4-4aca-b787-7f0584234d1a:
-            uuid: 9ec5b37b-33a4-4aca-b787-7f0584234d1a
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_page:su_page_components'
-              label: Paragraphs
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  ds:
-                    ds_limit: ''
-            weight: -9
             additional: {  }
           c40ac234-fff7-4c9d-8a34-03fb9d335617:
             uuid: c40ac234-fff7-4c9d-8a34-03fb9d335617
@@ -139,6 +119,27 @@ third_party_settings:
               provider: jumpstart_ui
               context_mapping: {  }
             weight: -10
+            additional: {  }
+          c1801f51-70a5-4404-a218-bbff40812451:
+            uuid: c1801f51-70a5-4404-a218-bbff40812451
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_page:su_page_components'
+              label: Paragraphs
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: layout_paragraphs
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: -9
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -303,7 +304,6 @@ content:
     weight: 5
     region: main
 hidden:
-  layout_builder__layout: true
   layout_selection: true
   search_api_excerpt: true
   stanford_intranet__access: true

@@ -1,5 +1,6 @@
 # https://blog.martinhujer.cz/17-tips-for-using-composer-efficiently/#tip-%239%3A-do-not-attempt-to-merge-%60composer.lock%60-when-rebasing-or-merging
 /composer.lock -merge
+frontend
 
 # Ignore configuration files that may contain sensitive information.
 local.settings.php
@@ -39,7 +40,8 @@ docroot/sites/*/private
 # Ignore stanford contrib items.
 docroot/modules/custom
 docroot/themes/custom
-docroot/profiles/custom
+docroot/profiles/custom/*
+!docroot/profiles/custom/sul_profile
 
 # Ignore contrib modules. These should be created during build process.
 docroot/modules/contrib

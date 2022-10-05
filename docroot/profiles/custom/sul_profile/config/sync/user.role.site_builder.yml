@@ -3,12 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.node.stanford_event.default
-    - core.entity_view_display.node.stanford_event_series.default
-    - core.entity_view_display.node.stanford_news.default
-    - core.entity_view_display.node.stanford_page.default
-    - core.entity_view_display.node.stanford_person.default
-    - core.entity_view_display.node.stanford_publication.default
     - media.type.embeddable
     - media.type.file
     - media.type.google_form
@@ -60,8 +54,8 @@ dependencies:
     - scheduler
     - shortcut
     - stanford_media
-    - stanford_profile
     - stanford_publication
+    - sul_profile
     - system
     - taxonomy
     - toolbar

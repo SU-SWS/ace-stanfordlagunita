@@ -3,13 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.stanford_publication.layout_builder__layout
     - field.field.node.stanford_publication.stanford_intranet__access
+    - field.field.node.stanford_publication.su_metatags
+    - field.field.node.stanford_publication.su_publication_author_ref
     - field.field.node.stanford_publication.su_publication_citation
     - field.field.node.stanford_publication.su_publication_components
     - field.field.node.stanford_publication.su_publication_cta
     - field.field.node.stanford_publication.su_publication_image
     - field.field.node.stanford_publication.su_publication_topics
+    - field.field.node.stanford_publication.su_shared_tags
     - node.type.stanford_publication
     - views.view.stanford_publications
   module:
@@ -22,7 +24,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: true
+    allow_custom: false
     sections:
       -
         layout_id: defaults
@@ -91,7 +93,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: entity_reference_revisions_entity_view
+                type: layout_paragraphs
                 label: hidden
                 settings:
                   view_mode: default
@@ -223,6 +225,7 @@ third_party_settings:
       - 'Stanford Profile Helper'
       - 'Stanford SimpleSAML PHP'
       - System
+      - 'Taxonomy Terms (Views)'
       - Views
       - core
     entity_view_mode_restriction:
@@ -276,14 +279,14 @@ third_party_settings:
           - 'field_block:user:user:status'
       allowlisted_blocks:
         Menus:
-          - 'system_menu_block:stanford-event-types'
           - 'menu_block:stanford-event-types'
+          - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
           - 'system_menu_block:main'
-          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-publication-topics'
           - 'menu_block:news-topics'
           - 'system_menu_block:news-topics'
         System:
@@ -300,6 +303,7 @@ third_party_settings:
         - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
         - 'Stanford SimpleSAML PHP'
+        - 'Taxonomy Terms (Views)'
         - Views
 id: node.stanford_publication.default
 targetEntityType: node

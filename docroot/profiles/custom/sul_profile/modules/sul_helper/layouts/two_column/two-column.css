@@ -1,0 +1,14 @@
+.layout--sul-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.layout--sul-two-column.sul-two-column--33-67 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.layout--sul-two-column.sul-two-column--67-33 {
+  grid-template-columns: 2fr 1fr;
+}
+

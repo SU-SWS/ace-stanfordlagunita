@@ -1,0 +1,14 @@
+services:
+  plugin.manager.install_tasks:
+    class: Drupal\sul_profile\InstallTaskManager
+    parent: default_plugin_manager
+  sul_profile.event_subscriber:
+    class: '\Drupal\sul_profile\EventSubscriber\EventSubscriber'
+    arguments: ['@file_system', '@logger.factory']
+    tags:
+      - { name: 'event_subscriber' }
+  sul_profile.config_overrider:
+    class: Drupal\sul_profile\Config\ConfigOverrides
+    arguments: ['@state', '@config.factory']
+    tags:
+      - {name: config.factory.override, priority: -5}

@@ -1,0 +1,46 @@
+sul_helper_1_column:
+  label: '1 Column'
+  category: 'SUL Layouts'
+  path: layouts/one_column
+  template: sul-one-column
+  library: sul_helper/one_column
+  regions:
+    main:
+      label: Main content
+  default_region: main
+  icon_map:
+    - [main]
+
+sul_helper_2_column:
+  label: '2 Column'
+  category: 'SUL Layouts'
+  class: '\Drupal\sul_helper\Layouts\SulTwoColumn'
+  path: layouts/two_column
+  template: sul-two-column
+  library: sul_helper/two_column
+  regions:
+    left:
+      label: Left
+    right:
+      label: Right
+  default_region: left
+  icon_map:
+    - [left, right]
+
+sul_helper_3_column:
+  label: '3 Column'
+  category: 'SUL Layouts'
+  class: '\Drupal\sul_helper\Layouts\SulThreeColumn'
+  path: layouts/three_column
+  template: sul-three-column
+  library: sul_helper/three_column
+  regions:
+    left:
+      label: Left
+    main:
+      label: Main content
+    right:
+      label: Right
+  default_region: main
+  icon_map:
+    - [left, main, right]

@@ -4,10 +4,12 @@ _meta:
   uuid: 4b8018dc-49a6-4018-9c54-e8c3e462beee
   bundle: stanford_page
   default_langcode: en
+  depends:
+    671d13ba-480e-4eee-bf14-b3e2ba68adb4: user
 default:
   revision_uid:
     -
-      target_id: 1
+      entity: 671d13ba-480e-4eee-bf14-b3e2ba68adb4
   status:
     -
       value: true
@@ -34,14 +36,23 @@ default:
       alias: /access-denied
       langcode: en
       pathauto: 1
+  rh_action:
+    -
+      value: bundle_default
+  rh_redirect_response:
+    -
+      value: 301
+  rh_redirect_fallback_action:
+    -
+      value: bundle_default
   su_page_components:
     -
       entity:
         _meta:
           version: '1.0'
-          entity_type: paragraph_row
-          uuid: b9027856-bb49-4c3b-9367-87a4e3731421
-          bundle: node_stanford_page_row
+          entity_type: paragraph
+          uuid: 1499c60f-be9b-4823-bf8a-5dd381220bad
+          bundle: layout
           default_langcode: en
         default:
           status:
@@ -49,39 +60,44 @@ default:
               value: true
           created:
             -
-              value: 1598294778
+              value: 1664053365
           behavior_settings:
             -
-              value: {  }
+              value:
+                layout_paragraphs:
+                  layout: sul_helper_1_column
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
           revision_translation_affected:
             -
               value: true
-          su_page_components:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 25f42b98-d5ba-483e-ba0c-b20567b81d69
+          bundle: stanford_wysiwyg
+          default_langcode: en
+        default:
+          status:
             -
-              entity:
-                _meta:
-                  version: '1.0'
-                  entity_type: paragraph
-                  uuid: 9df33d0d-239e-4b51-9d97-8703187629b4
-                  bundle: stanford_wysiwyg
-                  default_langcode: en
-                default:
-                  status:
-                    -
-                      value: true
-                  created:
-                    -
-                      value: 1566506311
-                  behavior_settings:
-                    -
-                      value:
-                        react:
-                          width: 12
-                          label: 'Text Area'
-                  revision_translation_affected:
-                    -
-                      value: true
-                  su_wysiwyg_text:
-                    -
-                      value: "<p>The page you have requested is restricted. If you believe you have encountered this by error, please contact someone.</p>\r\n"
-                      format: stanford_html
+              value: true
+          created:
+            -
+              value: 1664053378
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 1499c60f-be9b-4823-bf8a-5dd381220bad
+                  region: main
+          revision_translation_affected:
+            -
+              value: true
+          su_wysiwyg_text:
+            -
+              value: "<p>The page you have requested is restricted. If you believe you have encountered this by error, please contact someone.</p>\r\n"
+              format: stanford_html

@@ -1,0 +1,6 @@
+services:
+  sul_helper.event_subscriber:
+    class: Drupal\sul_helper\EventSubscriber\SulHelperSubscriber
+    arguments: ['@http_client', '@entity_type.manager', '@logger.factory']
+    tags:
+      - { name: event_subscriber }

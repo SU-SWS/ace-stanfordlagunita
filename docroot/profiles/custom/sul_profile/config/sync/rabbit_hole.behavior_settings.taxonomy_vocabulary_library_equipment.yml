@@ -1,0 +1,14 @@
+uuid: 4ef100bd-49de-42be-b61f-b2f3035cf067
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.library_equipment
+id: taxonomy_vocabulary_library_equipment
+entity_type_id: taxonomy_vocabulary
+entity_id: library_equipment
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

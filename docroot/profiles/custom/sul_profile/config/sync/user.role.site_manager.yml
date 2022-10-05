@@ -41,8 +41,8 @@ dependencies:
     - role_delegation
     - scheduler
     - stanford_migrate
-    - stanford_profile
     - stanford_publication
+    - sul_profile
     - system
     - taxonomy
     - toolbar
