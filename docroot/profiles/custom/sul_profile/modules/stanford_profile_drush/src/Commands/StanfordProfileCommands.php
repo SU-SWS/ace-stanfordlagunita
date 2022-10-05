@@ -13,7 +13,7 @@ use Drush\Commands\DrushCommands;
 /**
  * Class StanfordProfileCommands.
  *
- * @package Drupal\stanford_profile\Commands
+ * @package Drupal\sul_profile\Commands
  */
 class StanfordProfileCommands extends DrushCommands {
 
@@ -88,7 +88,7 @@ class StanfordProfileCommands extends DrushCommands {
 
   /**
    * Set the secret string on the consumer entity.
-   * 
+   *
    * @param string $uuid
    *   Consumer entity uuid.
    * @param string $secret
@@ -117,7 +117,7 @@ class StanfordProfileCommands extends DrushCommands {
 
   /**
    * Create a NextJS site entity.
-   * 
+   *
    * @param string $label
    *   Label of the site entity.
    * @param string $base_url
@@ -126,7 +126,7 @@ class StanfordProfileCommands extends DrushCommands {
    *   Preview URL.
    * @param string $preview_secret
    *   Preview Secret.
-   * 
+   *
    * @command sul-profile:create-nextjs-site
    */
   public function createNextJsSite(string $label, string $base_url, string $preview_url = NULL, string $preview_secret = NULL) {

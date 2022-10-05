@@ -67,7 +67,7 @@ tests:
     -
       path: '${docroot}'
       config: '${docroot}/core/phpunit.xml'
-      directory: '${docroot}/modules/custom'
+      testsuite: stanford
       bootstrap: '${docroot}/core/tests/bootstrap.php'
       filter: /(Unit|Kernel)/
   codeception:

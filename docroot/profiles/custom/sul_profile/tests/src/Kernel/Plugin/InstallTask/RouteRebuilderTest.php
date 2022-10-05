@@ -1,15 +1,15 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\sul_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\stanford_profile\Plugin\InstallTask\RouteRebuilder;
+use Drupal\sul_profile\Plugin\InstallTask\RouteRebuilder;
 
 /**
  * Class RouteRebuilderTest.
  *
- * @coversDefaultClass \Drupal\stanford_profile\Plugin\InstallTask\RouteRebuilder
+ * @coversDefaultClass \Drupal\sul_profile\Plugin\InstallTask\RouteRebuilder
  */
 class RouteRebuilderTest extends KernelTestBase {
 
