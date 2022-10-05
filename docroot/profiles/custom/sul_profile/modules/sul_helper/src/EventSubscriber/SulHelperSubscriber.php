@@ -118,7 +118,6 @@ class SulHelperSubscriber implements EventSubscriberInterface {
       try {
         $this->guzzle->request('GET', '/api/revalidate', $request_options);
       } catch (\Throwable $e) {
-        dpm($e);
         $this->logger->error($e->getMessage());
       }
     }
