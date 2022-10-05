@@ -130,8 +130,18 @@ class StanfordProfileCommands extends DrushCommands {
    * @command sul-profile:create-nextjs-site
    */
   public function createNextJsSite(string $label, string $base_url, string $preview_url = NULL, string $preview_secret = NULL) {
-    $this->entityTypeManager->getStorage('next_site')->create([
-      'id' => preg_replace('/[^a-z\d]/', '_', strtolower($label)),
+    $id = preg_replace('/[^a-z\d]/', '_', strtolower($label));
+    $storage = $this->entityTypeManager->getStorage('next_site');
+    /** @var \Drupal\next\Entity\NextSiteInterface */
+    if ($entity = $storage->load($id)) {
+      $entity->set('base_url', $base_url);
+      $entity->set('preview_url', $preview_url);
+      $entity->set('preview_secret', $preview_secret);
+      $entity->save();
+      return;
+    }
+    $storage->create([
+      'id' => $id,
       'label' => $label,
       'base_url' => $base_url,
       'preview_url' => $preview_url,
