@@ -19,16 +19,22 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: ${{ hashFiles('composer.lock') }}-v1
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt setup:settings
-          drush sql-connect
-          drush site:install minimal -v -y
-#          blt tests:phpunit:coverage --no-interaction
+          blt tests:phpunit:coverage --no-interaction
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: failure()
