@@ -23,7 +23,6 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
-          cp .github/github.blt.yml blt/ci.blt.yml
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt setup:settings
