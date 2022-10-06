@@ -60,7 +60,6 @@ class PersonCest {
   /**
    * Test that content that gets created has the right url, header, and shows
    * up in the all view.
-   * @group testme
    */
   public function testCreatePerson(AcceptanceTester $I) {
     $term = $I->createEntity([
