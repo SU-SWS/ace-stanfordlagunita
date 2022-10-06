@@ -40,7 +40,7 @@ jobs:
         if: failure()
         with:
           name: unit-tests-results
-          path: ${GITHUB_WORKSPACE}/artifacts
+          path: $GITHUB_WORKSPACE/artifacts
   acceptance:
     name: Codeception Acceptance Tests
     runs-on: ubuntu-latest
@@ -75,6 +75,7 @@ jobs:
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
       - name: Run tests
         run: |
+          rm -rf /var/www/html && ln -snf $GITHUB_WORKSPACE /var/www/html
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt drupal:install -n
@@ -86,7 +87,7 @@ jobs:
         if: always()
         with:
           name: acceptance-tests-results
-          path: ${GITHUB_WORKSPACE}/artifacts
+          path: $GITHUB_WORKSPACE/artifacts
 #  functional:
 #    name: Codeception Functional Tests
 #    runs-on: ubuntu-latest
