@@ -27,7 +27,7 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: ${{ hashFiles('composer.lock') }}-v1
+          key: 1.x-${{ GITHUB_REF_NAME }}-${{ hashFiles('composer.lock') }}
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
