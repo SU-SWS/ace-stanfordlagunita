@@ -5,6 +5,8 @@ use Faker\Factory;
 
 /**
  * Test the events + importer functionality.
+ *
+ * @group content
  */
 class EventsCest {
 
@@ -33,7 +35,7 @@ class EventsCest {
    *
    * @group D8CORE-4858
    */
-  public function testListIntro(AcceptanceTester $I) {
+  protected function testListIntro(AcceptanceTester $I) {
     // Start with no events.
     $nodes = \Drupal::entityTypeManager()
       ->getStorage('node')

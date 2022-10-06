@@ -64,12 +64,22 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
       - name: Run tests
         run: |
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
+          drush xmlsitemap:rebuild
           blt codeception --suite=acceptance
       - name: Save Test Results
         uses: actions/upload-artifact@v3

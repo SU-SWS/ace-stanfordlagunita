@@ -91,7 +91,7 @@ class SubThemeCest {
    * Test the changes are there.
    * @group minimal-subtheme-test
    */
-  public function testMinimalSubtheme(AcceptanceTester $I) {
+  protected function testMinimalSubtheme(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/appearance');
     $I->click('Set as default', 'a[title="Set Stanford Minimally Branded Subtheme as default theme"]');

@@ -71,11 +71,11 @@ tests:
       bootstrap: '${docroot}/core/tests/bootstrap.php'
       filter: /(Unit|Kernel)/
   codeception:
-    sulgryphon:
+    sul_profile:
       suites:
         - acceptance
         - functional
-      directory: '${docroot}/profiles/custom/sulgryphon/tests/codeception'
+      directory: '${docroot}/profiles/custom/sul_profile/tests/codeception'
 validate:
   twig:
     functions:

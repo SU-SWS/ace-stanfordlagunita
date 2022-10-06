@@ -156,6 +156,8 @@ class MediaCest {
 
   /**
    * Administrative file listing can delete files.
+   *
+   * @group testthis
    */
   public function testDeleteFiles(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');

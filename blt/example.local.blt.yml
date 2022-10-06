@@ -25,6 +25,10 @@
 #cloud:
 #  key: '****'
 #  secret: '****'
+project:
+  local:
+    protocol: http
+    hostname: localhost
 
 drupal:
   account:

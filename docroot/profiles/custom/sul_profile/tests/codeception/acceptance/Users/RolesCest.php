@@ -4,6 +4,7 @@
  * Class RolesCest.
  *
  * @group users
+ * @group testthis
  */
 class RolesCest {
 

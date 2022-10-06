@@ -63,7 +63,7 @@ class PublicationsCest {
   /**
    * Test out the list pages.
    */
-  public function testAllPublicationListPage(AcceptanceTester $I) {
+  protected function testAllPublicationListPage(AcceptanceTester $I) {
     $this->testBookCitation($I);
 
     $I->amOnPage('/publications');
@@ -122,7 +122,7 @@ class PublicationsCest {
   /**
    * Publication list should be in date order.
    */
-  public function testListSort(AcceptanceTester $I) {
+  protected function testListSort(AcceptanceTester $I) {
     $this->values['a_node_title'] = 'A' . $this->faker->words(3, TRUE);
     $this->values['b_node_title'] = 'B' . $this->faker->words(3, TRUE);
     $this->values['c_node_title'] = 'C' . $this->faker->words(3, TRUE);
