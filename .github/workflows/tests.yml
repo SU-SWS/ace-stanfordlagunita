@@ -26,8 +26,8 @@ jobs:
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt setup:settings
-          drush site:install minimal -v -y
           drush sql-connect
+          drush site:install minimal -v -y
 #          blt tests:phpunit:coverage --no-interaction
       - name: Save Test Results
         uses: actions/upload-artifact@v3
