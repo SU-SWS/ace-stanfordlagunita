@@ -1,29 +1,27 @@
-defaults: &defaults
-  runs-on: ubuntu-latest
-  env:
-    DRUPAL_DATABASE_NAME: drupal
-    DRUPAL_DATABASE_USERNAME: drupal
-    DRUPAL_DATABASE_PASSWORD: drupal
-    DRUPAL_DATABASE_HOST: mysql
-  container:
-    image: pookmish/drupal8ci:latest
-  services:
-    mysql:
-      image: mysql:5.7
-      env:
-        MYSQL_DATABASE: drupal
-        MYSQL_USER: drupal
-        MYSQL_PASSWORD: drupal
-        MYSQL_ROOT_PASSWORD: drupal
-      ports:
-        - 33306:3306
-      options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
 name: PHPUnit and Acceptance Tests
 on: [push]
 jobs:
   phpunit:
     name: PHPUnit Coverage Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
@@ -50,6 +48,25 @@ jobs:
           path: $GITHUB_WORKSPACE/artifacts
   acceptance:
     name: Codeception Acceptance Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
@@ -80,9 +97,26 @@ jobs:
           name: acceptance-tests-results
           path: artifacts
   functional:
-    <<: *defaults
     name: Codeception Functional Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
     services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
       selenium:
         image: selenium/standalone-chrome:latest
     steps:
@@ -115,9 +149,16 @@ jobs:
           name: acceptance-tests-results
           path: artifacts
   deploy:
-    <<: *defaults
     name: Deploy Artifact
     needs: [phpunit, acceptance, functional]
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
