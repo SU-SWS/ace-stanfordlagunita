@@ -75,7 +75,10 @@ jobs:
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
       - name: Run tests
         run: |
-          rm -rf /var/www/html && ln -snf $GITHUB_WORKSPACE /var/www/html
+          rm -rf /var/www/html
+          ln -snf $GITHUB_WORKSPACE /var/www/html
+          apachectl stop
+          apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt drupal:install -n
