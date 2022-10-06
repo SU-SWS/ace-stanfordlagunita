@@ -156,8 +156,6 @@ class MediaCest {
 
   /**
    * Administrative file listing can delete files.
-   *
-   * @group testthis
    */
   public function testDeleteFiles(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
@@ -175,7 +173,7 @@ class MediaCest {
 
     $name = $this->faker->words(2, TRUE);
     $I->fillField('Name', $name);
-    $I->attachFile('File', $this->filePath);
+    $I->attachFile('Add a new file', $this->filePath);
     $I->click('Save');
     $I->canSee('has been created.');
     $I->amOnPage('/admin/content/files');

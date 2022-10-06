@@ -77,15 +77,14 @@ jobs:
         run: |
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
-          ls -alh /var/www
-#          apachectl stop
-#          apachectl start
-#          composer install -n
-#          blt blt:telemetry:disable --no-interaction
-#          blt drupal:install -n
-#          drush pm:uninstall simplesamlphp_auth -y
-#          drush xmlsitemap:rebuild
-#          blt codeception --suite=acceptance
+          apachectl stop
+          apachectl start
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          blt drupal:install -n
+          drush pm:uninstall simplesamlphp_auth -y
+          drush xmlsitemap:rebuild
+          blt codeception --suite=acceptance
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
