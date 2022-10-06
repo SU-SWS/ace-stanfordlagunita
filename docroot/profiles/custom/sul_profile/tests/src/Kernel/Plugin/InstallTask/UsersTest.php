@@ -27,7 +27,7 @@ class UsersTest extends KernelTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
-    $this->setInstallProfile('stanford_profile');
+    $this->setInstallProfile('sul_profile');
 
     $this->installEntitySchema('user');
     $this->installEntitySchema('user_role');
