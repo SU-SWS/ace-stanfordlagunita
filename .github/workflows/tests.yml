@@ -134,6 +134,11 @@ jobs:
             docroot/modules/contrib
             docroot/modules/custom
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+      - name: 'BrowserStack Local Tunnel Setup'
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: start
+          local-identifier: random
       - name: Install Site
         run: |
           rm -rf /var/www/html
@@ -145,11 +150,6 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
-      - name: 'BrowserStack Local Tunnel Setup'
-        uses: browserstack/github-actions/setup-local@master
-        with:
-          local-testing: start
-          local-identifier: random
       - name: Run tests
         run: blt codeception --suite=functional
       - name: 'BrowserStackLocal Stop'

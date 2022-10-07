@@ -60,5 +60,6 @@ env:
             os_version: 11
             'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
             'browserstack.key': '${ci.BROWSERSTACK_ACCESS_KEY}'
-            'browserstack.local': true
+            'browserstack.local': true\
+            name: '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
 
