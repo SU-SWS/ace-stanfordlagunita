@@ -106,6 +106,9 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
+      ports:
+        - 80:80
+        - 8080:8080
     strategy:
       matrix:
         browser: ['chrome']
