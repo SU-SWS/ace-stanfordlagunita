@@ -146,6 +146,7 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
+          curl -I http://localhost
           blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
