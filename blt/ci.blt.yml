@@ -16,17 +16,6 @@ project:
   local:
     protocol: http
     hostname: localhost
-tests:
-  config:
-    codeception:
-      host: 'hub.browserstack.com'
-      port: 80
-      capabilities:
-        os: Windows
-        os_version: 11
-        browserstack.local: true
-        'browserstack.user': '${env.BROWSERSTACK_USER}'
-        'browserstack.key': '${env.BROWSERSTACK_KEY}'
 
 drupal:
   db:

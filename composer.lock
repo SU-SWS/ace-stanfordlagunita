@@ -26153,12 +26153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/blt-sws.git",
-                "reference": "1b56b18973e78df7b666aaa982a805ad3f345bab"
+                "reference": "d5d1ea0b235c3c7921b520ad692ca63d1794c57d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/1b56b18973e78df7b666aaa982a805ad3f345bab",
-                "reference": "1b56b18973e78df7b666aaa982a805ad3f345bab",
+                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/d5d1ea0b235c3c7921b520ad692ca63d1794c57d",
+                "reference": "d5d1ea0b235c3c7921b520ad692ca63d1794c57d",
                 "shasum": ""
             },
             "require": {
@@ -26186,7 +26186,7 @@
                 "issues": "https://github.com/SU-SWS/blt-sws/issues",
                 "source": "https://github.com/SU-SWS/blt-sws/tree/main"
             },
-            "time": "2022-10-05T18:25:27+00:00"
+            "time": "2022-10-07T21:50:15+00:00"
         },
         {
             "name": "su-sws/drupal-dev",

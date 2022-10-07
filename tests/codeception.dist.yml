@@ -28,14 +28,6 @@ modules:
         browser: chrome
         restart: true
         url: '${project.local.protocol}://${project.local.hostname}/'
-        host: '${tests.config.codeception.host}'
-        port: '${tests.config.codeception.port}'
-        capabilities:
-          os: Windows
-          os_version: 11
-          'browserstack.local': true
-          'browserstack.user': '${env.BROWSERSTACK_USER}'
-          'browserstack.key': '${env.BROWSERSTACK_KEY}'
     - StanfordCaravan\Codeception\Drupal\DrupalEntity:
         cleanup_test: true
         cleanup_failed: false
@@ -55,3 +47,18 @@ modules:
         cleanup_test: true
         cleanup_failed: false
         cleanup_suite: true
+env:
+  ci:
+    modules:
+      config:
+        WebDriver:
+          url: '${project.local.protocol}://${project.local.hostname}/'
+          host: 'hub.browserstack.com'
+          port: 80
+          capabilities:
+            os: Windows
+            os_version: 11
+            'browserstack.local': true
+            'browserstack.user': '${env.BROWSERSTACK_USERNAME}'
+            'browserstack.key': '${env.BROWSERSTACK_ACCESS_KEY}'
+            name: '${env.BROWSERSTACK_BUILD_NAME}'

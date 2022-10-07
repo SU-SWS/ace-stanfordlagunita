@@ -123,11 +123,6 @@ jobs:
         with:
           username: ${{ secrets.BROWSERSTACK_USER }}
           access-key: ${{ secrets.BROWSERSTACK_KEY }}
-      - name: 'BrowserStack Local Tunnel Setup'
-        uses: browserstack/github-actions/setup-local@master
-        with:
-          local-testing: start
-          local-identifier: random
       - uses: actions/checkout@v3
       - name: Restore Cache
         uses: actions/cache@v3
@@ -140,9 +135,6 @@ jobs:
             docroot/modules/custom
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
       - name: Install Site
-        env:
-          BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
-          BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_KEY }}
         run: |
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
@@ -153,6 +145,11 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
+      - name: 'BrowserStack Local Tunnel Setup'
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: start
+          local-identifier: random
       - name: Run tests
         run: blt codeception --suite=functional
       - name: 'BrowserStackLocal Stop'
