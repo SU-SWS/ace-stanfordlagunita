@@ -141,7 +141,6 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt codeception --suite=functional
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
