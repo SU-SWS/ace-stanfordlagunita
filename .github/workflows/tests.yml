@@ -146,6 +146,7 @@ jobs:
           drush xmlsitemap:rebuild
       - name: Start Selenium
         run: |
+          apt update && apt install default-jre -y
           npm install selenium-standalone -g
           selenium-standalone install
           selenium-standalone start &
