@@ -106,9 +106,6 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
-    strategy:
-      matrix:
-        browser: ['chrome']
     services:
       mysql:
         image: mysql:5.7
@@ -120,13 +117,6 @@ jobs:
         ports:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-      selenium:
-        image: selenium/standalone-${{ matrix.browser }}
-        ports:
-          - 4444:4444
-          - 80:80
-        env:
-          JAVA_OPTS: '-Dwebdriver.chrome.whitelistedIps='
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
@@ -138,6 +128,8 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+      - name: Setup Chromedriver
+        uses: nanasess/setup-chromedriver@v1
       - name: Run tests
         run: |
           rm -rf /var/www/html
@@ -149,6 +141,7 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
+          chromedriver --url-base=/wd/hub &
           blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
