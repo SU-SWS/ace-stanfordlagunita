@@ -131,9 +131,7 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-      - name: Start selenoid
-        uses: Xotabu4/selenoid-github-action@v2
-      - name: Run tests
+      - name: Install Site
         run: |
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
@@ -144,7 +142,10 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
-          blt codeception --suite=functional
+      - name: Start selenoid
+        uses: Xotabu4/selenoid-github-action@v2
+      - name: Run tests
+        run: blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
