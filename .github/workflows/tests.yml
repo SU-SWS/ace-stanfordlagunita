@@ -123,7 +123,7 @@ jobs:
       selenium:
         image: selenium/standalone-${{ matrix.browser }}
         ports:
-          - 4445:4444
+          - 4444:4444
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
@@ -146,7 +146,6 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
-          curl -I http://localhost
           blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3

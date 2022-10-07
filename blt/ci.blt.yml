@@ -19,7 +19,7 @@ project:
 tests:
   config:
     codeception:
-      host: 127.0.0.1
+      host: selenium
       port: 4444
 drupal:
   db:
