@@ -122,6 +122,8 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
       selenium:
         image: selenium/standalone-${{ matrix.browser }}
+        options:
+          add-host: host.docker.internal:host-gateway
         ports:
           - 4444:4444
     steps:
