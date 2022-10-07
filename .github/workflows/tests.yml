@@ -132,6 +132,7 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
+            docroot/modules/custom
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
       - name: Install Site
         run: |

@@ -22,6 +22,9 @@ tests:
       host: selenium
 #      host: localhost
       port: 4444
+      http_proxy: localhost
+      http_proxy_port: 80
+
 drupal:
   db:
     host: mysql

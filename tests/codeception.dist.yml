@@ -30,6 +30,8 @@ modules:
         url: '${project.local.protocol}://${project.local.hostname}/'
         host: '${tests.config.codeception.host}'
         port: '${tests.config.codeception.port}'
+        http_proxy: '${tests.config.codeception.http_proxy}'
+        http_proxy_port: '${tests.config.codeception.http_proxy_port}'
     - StanfordCaravan\Codeception\Drupal\DrupalEntity:
         cleanup_test: true
         cleanup_failed: false
