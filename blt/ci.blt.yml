@@ -15,7 +15,7 @@ environment: ci
 project:
   local:
     protocol: http
-    hostname: localhost
+    hostname: 127.0.0.1
 tests:
   config:
     codeception:

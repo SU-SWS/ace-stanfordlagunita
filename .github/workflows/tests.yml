@@ -124,9 +124,6 @@ jobs:
         image: selenium/standalone-${{ matrix.browser }}
         ports:
           - 4444:4444
-          - 80:80
-        env:
-          JAVA_OPTS: '-Dwebdriver.chrome.whitelistedIps='
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
