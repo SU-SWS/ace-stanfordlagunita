@@ -58,7 +58,7 @@ env:
           capabilities:
             os: Windows
             os_version: 11
+            'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
+            'browserstack.key': '${ci.BROWSERSTACK_ACCESS_KEY}'
             'browserstack.local': true
-            'browserstack.user': '${env.BROWSERSTACK_USERNAME}'
-            'browserstack.key': '${env.BROWSERSTACK_ACCESS_KEY}'
-            name: '${env.BROWSERSTACK_BUILD_NAME}'
+

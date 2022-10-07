@@ -24,3 +24,7 @@ drupal:
     username: drupal
     password: drupal
     database: drupal
+
+ci:
+  BROWSERSTACK_USERNAME: '${env.BROWSERSTACK_USERNAME}'
+  BROWSERSTACK_ACCESS_KEY: '${env.BROWSERSTACK_ACCESS_KEY}'
