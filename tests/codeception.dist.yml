@@ -26,7 +26,10 @@ modules:
         log_js_errors: true
         debug_log_entries: 10
         browser: chrome
+        restart: true
         url: '${project.local.protocol}://${project.local.hostname}/'
+        host: '${tests.config.codeception.host}'
+        port: '${tests.config.codeception.port}'
     - StanfordCaravan\Codeception\Drupal\DrupalEntity:
         cleanup_test: true
         cleanup_failed: false

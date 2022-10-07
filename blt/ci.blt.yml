@@ -16,7 +16,11 @@ project:
   local:
     protocol: http
     hostname: localhost
-
+tests:
+  config:
+    codeception:
+      host: selenium
+      port: 4444
 drupal:
   db:
     host: mysql

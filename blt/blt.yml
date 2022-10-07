@@ -60,6 +60,10 @@ behat:
     - '${docroot}/profiles/custom'
     - '${repo.root}/tests/behat/features'
 tests:
+  config:
+    codeception:
+      host: 127.0.0.1
+      port: 4444
   reports:
     localDir: '${repo.root}/artifacts'
     coveragePass: 90
