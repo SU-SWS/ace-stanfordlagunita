@@ -125,8 +125,8 @@ jobs:
         ports:
           - 4444:4444
           - 5900:5900
-        environment:
-          - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
+        env:
+          JAVA_OPTS: '-Dwebdriver.chrome.whitelistedIps='
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
