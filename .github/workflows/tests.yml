@@ -128,8 +128,6 @@ jobs:
         options: '--add-host=host.docker.internal:host-gateway'
         ports:
           - 4444:4444
-          - 80:80
-          - 8080:8080
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
