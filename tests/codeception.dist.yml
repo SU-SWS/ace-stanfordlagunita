@@ -28,10 +28,13 @@ modules:
         browser: chrome
         restart: true
         url: '${project.local.protocol}://${project.local.hostname}/'
-        host: '${tests.config.codeception.host}'
-        port: '${tests.config.codeception.port}'
-        http_proxy: '${tests.config.codeception.http_proxy}'
-        http_proxy_port: '${tests.config.codeception.http_proxy_port}'
+        window_size: 2000x1000
+        port: 9515
+        capabilities:
+          chromeOptions:
+            args: ["--headless", "--disable-gpu"]
+            prefs:
+              download.default_directory: "/tmp"
     - StanfordCaravan\Codeception\Drupal\DrupalEntity:
         cleanup_test: true
         cleanup_failed: false
