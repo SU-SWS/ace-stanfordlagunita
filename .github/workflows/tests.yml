@@ -146,9 +146,11 @@ jobs:
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
       - name: Install Chrome
-        uses: browser-actions/setup-chrome@latest
+        uses: nanasess/setup-chromedriver@v1
       - name: Run tests
-        run: blt codeception --suite=functional
+        run: |
+          chromedriver --url-base=/wd/hub &
+          blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
