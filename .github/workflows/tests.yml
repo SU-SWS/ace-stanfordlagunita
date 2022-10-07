@@ -106,9 +106,6 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
-      ports:
-        - 80:80
-        - 8080:8080
     strategy:
       matrix:
         browser: ['chrome']
@@ -123,11 +120,6 @@ jobs:
         ports:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-      selenium:
-        image: selenium/standalone-${{ matrix.browser }}
-        options: '--add-host=host.docker.internal:host-gateway'
-        ports:
-          - 4444:4444
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
@@ -139,6 +131,8 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+      - name: Start selenoid
+        uses: Xotabu4/selenoid-github-action@v2
       - name: Run tests
         run: |
           rm -rf /var/www/html
