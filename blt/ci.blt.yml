@@ -19,11 +19,14 @@ project:
 tests:
   config:
     codeception:
-      host: selenium
-#      host: localhost
-#      port: 4444
-#      http_proxy: localhost
-#      http_proxy_port: 80
+      host: 'hub.browserstack.com'
+      port: 80
+      capabilities:
+        os: Windows
+        os_version: 11
+        browserstack.local: true
+        'browserstack.user': '${env.BROWSERSTACK_USER}'
+        'browserstack.key': '${env.BROWSERSTACK_KEY}'
 
 drupal:
   db:

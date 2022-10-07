@@ -106,12 +106,7 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
-    strategy:
-      matrix:
-        browser: ['chrome']
     services:
-#      selenium:
-#        image: selenium/standalone-${{ matrix.browser }}
       mysql:
         image: mysql:5.7
         env:
@@ -123,6 +118,16 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
+      - name: 'BrowserStack Env Setup'
+        uses: 'browserstack/github-actions/setup-env@master'
+        with:
+          username: ${{ secrets.BROWSERSTACK_USER }}
+          access-key: ${{ secrets.BROWSERSTACK_KEY }}
+      - name: 'BrowserStack Local Tunnel Setup'
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: start
+          local-identifier: random
       - uses: actions/checkout@v3
       - name: Restore Cache
         uses: actions/cache@v3
@@ -135,6 +140,9 @@ jobs:
             docroot/modules/custom
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
       - name: Install Site
+        env:
+          BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+          BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_KEY }}
         run: |
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
@@ -145,12 +153,13 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
-      - name: Install Chrome
-        uses: nanasess/setup-chromedriver@v1
       - name: Run tests
-        run: |
-          chromedriver --url-base=/wd/hub &
-          blt codeception --suite=functional
+        run: blt codeception --suite=functional
+      - name: 'BrowserStackLocal Stop'
+        uses: browserstack/github-actions/setup-local@master
+        if: always()
+        with:
+          local-testing: stop
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
