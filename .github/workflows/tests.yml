@@ -110,6 +110,8 @@ jobs:
       matrix:
         browser: ['chrome']
     services:
+#      selenium:
+#        image: selenium/standalone-${{ matrix.browser }}
       mysql:
         image: mysql:5.7
         env:
@@ -142,8 +144,11 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
-      - name: Start selenoid
-        uses: Xotabu4/selenoid-github-action@v2
+      - name: Start Selenium
+        run: |
+          npm install selenium-standalone -g
+          selenium-standalone install
+          selenium-standalone start &
       - name: Run tests
         run: blt codeception --suite=functional
       - name: Save Test Results
