@@ -123,7 +123,7 @@ jobs:
       selenium:
         image: selenium/standalone-${{ matrix.browser }}
         ports:
-          - 4444:4444
+          - 4445:4444
     steps:
       - uses: actions/checkout@v3
       - name: Restore Cache
