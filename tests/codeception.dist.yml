@@ -61,6 +61,8 @@ env:
             'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
             'browserstack.key': '${ci.BROWSERSTACK_ACCESS_KEY}'
             'browserstack.local': true
-            'browserstack.tunnel': true
+            'browserstack.tunnel': '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
+            local_identifier: '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
+            'browserstack.local_identifier': '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
             name: '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
 
