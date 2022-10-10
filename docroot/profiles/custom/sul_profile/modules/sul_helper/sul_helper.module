@@ -68,6 +68,13 @@ function sul_helper_preprocess(&$variables, $hook) {
 }
 
 /**
+ * Implements hook_ckeditor_plugin_info_alter().
+ */
+function sul_helper_ckeditor_plugin_info_alter(array &$plugins) {
+  unset($plugins['fixed_toolbar']);
+}
+
+/**
  * Is the user currently on editing the layout paragraphs?
  *
  * @return bool

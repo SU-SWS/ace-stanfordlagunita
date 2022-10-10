@@ -93,8 +93,8 @@ class WYSIWYGCest {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('contributor');
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
 
     // Wait a second for any click events to be applied.
@@ -116,8 +116,8 @@ class WYSIWYGCest {
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
 
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeLink($url);
 
@@ -135,8 +135,8 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-page-components img');
     $I->click('Edit', '.local-tasks-block');
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
 
     // Wait a second for any click events to be applied.
@@ -190,8 +190,8 @@ class WYSIWYGCest {
     $I->logInWithRole('site_manager');
     $I->amOnPage($node->toUrl('edit-form')->toString());
 
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
 
     // Wait a second for any click events to be applied.
@@ -229,8 +229,8 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('iframe');
     $I->click('Edit', '.local-tasks-block');
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
 
     // Wait a second for any click events to be applied.
@@ -257,8 +257,8 @@ class WYSIWYGCest {
     $I->fillField('Name', 'Test Youtube Video');
     $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
     $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeNumberOfElements('iframe', 1);
   }
@@ -272,8 +272,8 @@ class WYSIWYGCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-page-components a');
     $I->click('Edit', '.local-tasks-block');
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
 
     // Wait a second for any click events to be applied.
@@ -290,8 +290,8 @@ class WYSIWYGCest {
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
     $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeElement('.su-page-components a');
   }
@@ -317,20 +317,20 @@ class WYSIWYGCest {
       ],
     ], 'paragraph');
 
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
-    ], 'paragraph_row');
+//    $row = $I->createEntity([
+//      'type' => 'node_stanford_page_row',
+//      'su_page_components' => [
+//        'target_id' => $paragraph->id(),
+//        'entity' => $paragraph,
+//      ],
+//    ], 'paragraph_row');
 
     return $I->createEntity([
       'type' => 'stanford_page',
       'title' => $faker->text(30),
       'su_page_components' => [
-        'target_id' => $row->id(),
-        'entity' => $row,
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
       ],
     ]);
   }

@@ -48,20 +48,20 @@ class BannerCest {
       'su_banner_body' => $field_values['body'],
     ], 'paragraph');
 
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
-    ], 'paragraph_row');
+//    $row = $I->createEntity([
+//      'type' => 'node_stanford_page_row',
+//      'su_page_components' => [
+//        'target_id' => $paragraph->id(),
+//        'entity' => $paragraph,
+//      ],
+//    ], 'paragraph_row');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(4, TRUE),
       'su_page_components' => [
-        'target_id' => $row->id(),
-        'entity' => $row,
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
       ],
     ]);
 
@@ -76,18 +76,19 @@ class BannerCest {
     $I->logInWithRole('site_manager');
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
-    $I->waitForText('Style');
-    $I->click('Style');
-    $I->waitForText('Text Overlay Position');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Text Overlay Position', 'Right');
+//    $I->waitForText('Text Overlay Position');
+//
+//    $I->clickWithLeftButton('#overlay_position');
+//    $I->wait(1);
+//    $I->clickWithLeftButton('li[data-value="right"]');
 
-    $I->clickWithLeftButton('#overlay_position');
-    $I->wait(1);
-    $I->clickWithLeftButton('li[data-value="right"]');
-
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeElement('.overlay-right');
   }

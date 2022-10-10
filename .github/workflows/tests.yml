@@ -134,17 +134,11 @@ jobs:
             docroot/modules/contrib
             docroot/modules/custom
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#      - name: 'BrowserStack Local Tunnel Setup'
-#        uses: browserstack/github-actions/setup-local@master
-#        with:
-#          local-testing: start
-#          local-identifier: random
-#          local-logging-level: all-logs
       - name: Setup BrowserStack
         run: |
           curl -o BrowserStackLocal.zip 'https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip'
           unzip BrowserStackLocal.zip && rm BrowserStackLocal.zip
-          ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY &
+          ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --local-identifier $BROWSERSTACK_BUILD_NAME &
       - name: Install Site
         run: |
           rm -rf /var/www/html
@@ -158,11 +152,6 @@ jobs:
           drush xmlsitemap:rebuild
       - name: Run tests
         run: blt codeception --suite=functional
-#      - name: 'BrowserStackLocal Stop'
-#        uses: browserstack/github-actions/setup-local@master
-#        if: always()
-#        with:
-#          local-testing: stop
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()

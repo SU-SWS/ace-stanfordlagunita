@@ -5,7 +5,7 @@ use Drupal\config_pages\Entity\ConfigPages;
 /**
  * Test the external link module functionality.
  */
-class ExtLinkCest {
+abstract class ExtLinkCest {
   /**
    * Start with a clean config page.
    *
