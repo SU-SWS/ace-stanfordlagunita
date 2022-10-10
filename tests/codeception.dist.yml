@@ -52,7 +52,7 @@ env:
     modules:
       config:
         WebDriver:
-          url: '${project.local.protocol}://${project.local.hostname}/'
+          url: 'http://localhost/'
           host: 'hub.browserstack.com'
           port: 80
           capabilities:

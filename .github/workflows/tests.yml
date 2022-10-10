@@ -139,6 +139,7 @@ jobs:
         with:
           local-testing: start
           local-identifier: random
+          local-logging-level: all-logs
       - name: Install Site
         run: |
           rm -rf /var/www/html
