@@ -148,11 +148,15 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt drupal:install -n
-          drush pm:uninstall simplesamlphp_auth -y
-          drush xmlsitemap:rebuild
-      - name: Run tests
-        run: blt codeception --suite=functional
+          blt codeception --suite=functional
+      - name: debug
+        if: always()
+        run: cat tests/codeception.yml
+#          blt drupal:install -n
+#          drush pm:uninstall simplesamlphp_auth -y
+#          drush xmlsitemap:rebuild
+#      - name: Run tests
+#        run: blt codeception --suite=functional
       - name: 'BrowserStackLocal Stop'
         uses: browserstack/github-actions/setup-local@master
         if: always()
