@@ -138,7 +138,7 @@ jobs:
         run: |
           curl -o BrowserStackLocal.zip 'https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip'
           unzip BrowserStackLocal.zip && rm BrowserStackLocal.zip
-          ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --local-identifier $BROWSERSTACK_BUILD_NAME &
+          ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --local-identifier $GITHUB_SHA &
       - name: Install Site
         run: |
           rm -rf /var/www/html

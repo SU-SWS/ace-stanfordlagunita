@@ -61,3 +61,7 @@ env:
             'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
             'browserstack.key': '${ci.BROWSERSTACK_ACCESS_KEY}'
             'browserstack.local': true
+            local_identifier: '${ci.GITHUB_SHA}'
+            'browserstack.local_identifier': '${ci.GITHUB_SHA}'
+            name: '${ci.GITHUB_SHA}'
+
