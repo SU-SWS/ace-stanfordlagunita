@@ -113,8 +113,9 @@ class WYSIWYGCest {
     $I->waitForText('Add Link');
     $url = $this->faker->url;
     $I->fillField('[name="attributes[href]"]', $url);
-    $I->click('Save', '.ui-dialog-buttonpane');
-    $I->waitForElementNotVisible('.ui-dialog');
+
+    $I->click('Save', '.editor-link-dialog .ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.editor-link-dialog');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
@@ -146,11 +147,14 @@ class WYSIWYGCest {
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->click('Upload and Continue');
     $I->waitForText('Decorative Image');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
+    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.media-library-widget-modal');
+    $I->wait(1);
+
+    $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
     $I->click('Save');
+    $I->canSee($node->label(), 'h1');
     $I->canSeeElement('.su-page-components img');
   }
 
@@ -255,8 +259,10 @@ class WYSIWYGCest {
 
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->fillField('Name', 'Test Youtube Video');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
-    $I->waitForAjaxToFinish();
+    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.media-library-widget-modal');
+    $I->wait(1);
+
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
@@ -288,8 +294,9 @@ class WYSIWYGCest {
     $I->dropFileInDropzone(__DIR__ . '/test.txt');
     $I->click('Upload and Continue');
     $I->waitForText('The media item has been created but has not yet been saved');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
-    $I->waitForAjaxToFinish();
+    $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.media-library-widget-modal');
+    $I->wait(1);
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
