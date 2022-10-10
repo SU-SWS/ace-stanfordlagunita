@@ -138,11 +138,7 @@ jobs:
         uses: 'browserstack/github-actions/setup-local@master'
         with:
           local-testing: start
-#      - name: Setup BrowserStack
-#        run: |
-#          curl -o BrowserStackLocal.zip 'https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip'
-#          unzip BrowserStackLocal.zip && rm BrowserStackLocal.zip
-#          ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --local-identifier $GITHUB_SHA &
+          local-identifier: random
       - name: Install Site
         run: |
           rm -rf /var/www/html
@@ -154,6 +150,7 @@ jobs:
           blt drupal:install -n
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
+          mkdir -p artifacts/_data/
       - name: Run tests
         run: blt codeception --suite=functional
       - name: 'Start BrowserStackLocal Tunnel'

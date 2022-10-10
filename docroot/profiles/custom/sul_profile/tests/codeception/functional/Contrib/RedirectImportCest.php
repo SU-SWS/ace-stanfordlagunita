@@ -21,7 +21,7 @@ class RedirectImportCest {
    */
   public function testRedirectImports(FunctionalTester $I) {
 
-    $file = fopen(codecept_data_dir('/redirects.csv'), 'w+');
+    $file = fopen(codecept_data_dir('redirects.csv'), 'w+');
     fputcsv($file, ['from', 'to']);
     fputcsv($file, ['/foo', '/bar']);
     fclose($file);
