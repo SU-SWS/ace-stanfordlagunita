@@ -1,0 +1,21 @@
+uuid: 28c79629-5f7e-4892-81b4-61575564b54c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.layout
+id: paragraph.layout.default
+targetEntityType: paragraph
+bundle: layout
+mode: default
+content:
+  layout_paragraphs_fields:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  publish_on: true
+  status: true
+  unpublish_on: true

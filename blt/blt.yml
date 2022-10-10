@@ -49,7 +49,6 @@ cm:
   strategy: config-split
   allow-overrides: true
 multisites:
-  - cardinalatwork
   - default
 behat:
   selenium:
@@ -61,6 +60,11 @@ behat:
     - '${docroot}/profiles/custom'
     - '${repo.root}/tests/behat/features'
 tests:
+  config:
+    codeception:
+      host: 127.0.0.1
+      port: 4444
+      capabilities: {}
   reports:
     localDir: '${repo.root}/artifacts'
     coveragePass: 90
@@ -68,15 +72,15 @@ tests:
     -
       path: '${docroot}'
       config: '${docroot}/core/phpunit.xml'
-      directory: '${docroot}/modules/custom'
+      testsuite: stanford
       bootstrap: '${docroot}/core/tests/bootstrap.php'
       filter: /(Unit|Kernel)/
   codeception:
-    sulgryphon:
+    sul_profile:
       suites:
         - acceptance
         - functional
-      directory: '${docroot}/profiles/custom/sulgryphon/tests/codeception'
+      directory: '${docroot}/profiles/custom/sul_profile/tests/codeception'
 validate:
   twig:
     functions:

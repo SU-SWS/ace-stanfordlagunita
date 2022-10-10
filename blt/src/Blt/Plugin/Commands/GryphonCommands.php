@@ -28,7 +28,8 @@ class GryphonCommands extends BltTasks {
     foreach ($this->getConfigValue('multisites') as $site) {
       $commands->addTask($this->taskDrush()
         ->alias("$site.$environment")
-        ->drush('en ' . $modules));
+        ->drush('en')
+        ->arg($modules));
     }
 
     $commands->run();

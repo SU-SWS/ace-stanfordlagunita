@@ -18,9 +18,9 @@ $databases = array(
     'default' =>
     array(
       'database' => $db_name,
-      'username' => 'root',
-      'password' => '',
-      'host' => '127.0.0.1',
+      'username' => 'drupal',
+      'password' => 'drupal',
+      'host' => 'mysql',
       'port' => '3306',
       'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
       'driver' => 'mysql',

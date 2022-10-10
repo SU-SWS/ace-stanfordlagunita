@@ -1,5 +1,9 @@
 # Custom module library for general purposes.
 
+layout_paragraphs:
+  js:
+    js/sul_helper.layout_paragraphs.js: {}
+
 one_column:
   css:
     component:

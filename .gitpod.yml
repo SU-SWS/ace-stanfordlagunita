@@ -8,21 +8,30 @@ github:
     addComment: false
     addBadge: false
 ports:
-  - port: 3306
+  - name: database
+    description: Mysql database
+    port: 3306
     onOpen: ignore
     visibility: private
   - port: 33060
     onOpen: ignore
     visibility: private
-  - port: 8001
+  - name: drupal
+    description: Drupal backend layer
+    port: 8001
     onOpen: ignore
     visibility: public
-  - port: 3000
+  - name: frontend
+    description: NextJS frontend layer
+    port: 3000
     onOpen: ignore
     visibility: public
+  - port: 8002-9999
+    onOpen: ignore
 image: pookmish/drupal8ci:gitpod
 tasks:
-  - before: >
+  - name: Drupal Prep
+    before: >
       rm -rf ~/.ssh/id_rsa &&
       rm -rf ~/.ssh/id_rsa.pub &&
       eval $(command gp env -e) &&
@@ -37,21 +46,45 @@ tasks:
       echo $GITCONFIG | base64 -d > ~/.gitconfig &&
       chmod 644 ~/.gitconfig
     init: >
+      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       composer install --no-interaction &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      blt drupal:install -n
+      blt source:build:simplesamlphp-config &&
+      blt drupal:install -n &&
+      git clone git@github.com:SU-SWS/sulgryphon-nextjs.git frontend &&
+      cd frontend && yarn
     command: |
-      apache2ctl restart
-      gp await-port 8001
+      cd $GITPOD_REPO_ROOT &&
+      apache2ctl restart &&
+      gp ports await 8001 &&
       find docroot -name 'local.drush.yml' | xargs rm &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
-      blt settings
-      drush uli
-      drush uli | xargs gp preview --external
-      git config core.fileMode false
-      blt blt:telemetry:disable --no-interaction
+      blt blt:telemetry:disable --no-interaction &&
+      blt settings &&
+      drush uli --uri=$PREVIEW_FULL_URL &&
+      drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
+      git config core.fileMode false &&
+      cd frontend && 
+      export PREVIEW_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
+      export CLIENT_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
+      cp .env.example .env.local &&
+      sed -i -e "s|\${NEXT_PUBLIC_DRUPAL_BASE_URL}|${PREVIEW_FULL_URL}|g" .env.local &&
+      sed -i -e "s|\${NEXT_IMAGE_DOMAIN}|${PREVIEW_URL}|g" .env.local &&
+      sed -i -e "s|\${NEXT_PUBLIC_SITE_NAME}|Gitpod|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_FRONT_PAGE}|72f0069b-f1ec-4122-af73-6aa841faea90|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_PREVIEW_SECRET}|${PREVIEW_SECRET}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_CLIENT_ID}|dc98f394-68ef-4e11-bab2-fd0e2931bca1|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_CLIENT_SECRET}|${CLIENT_SECRET}|g" .env.local &&
+      sed -i -e "s|\${DRUPAL_SITE_ID}|Next JS|g" .env.local &&
+      drush sul-profile:set-consumer-secret dc98f394-68ef-4e11-bab2-fd0e2931bca1 $CLIENT_SECRET &&
+      drush sul-profile:create-nextjs-site Gitpod `gp url 3000` '/api/preview' $PREVIEW_SECRET &&
+      drush simple-oauth:generate-keys $GITPOD_REPO_ROOT/keys &&
+      mv $GITPOD_REPO_ROOT/keys/private.key $GITPOD_REPO_ROOT/keys/oauth_private.key &&
+      mv $GITPOD_REPO_ROOT/keys/public.key $GITPOD_REPO_ROOT/keys/oauth_public.key &&
+      yarn dev &
+      gp url 3000 | xargs gp preview --external

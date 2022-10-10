@@ -203,6 +203,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/ckeditor/issues/3065095": "https://git.drupalcode.org/project/drupal/-/merge_requests/863.diff"
+            },
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3309551": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/105.patch"
             },
@@ -229,6 +232,9 @@
             "cp lando/example.php.ini lando/php.ini",
             "blt blt:init:settings",
             "blt source:build:simplesamlphp-config"
+        ],
+        "pull-profile": [
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/custom/sul_profile --squash stanford_profile 9.x"
         ]
     },
     "autoload": {

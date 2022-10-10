@@ -5,7 +5,7 @@ use Faker\Factory;
 /**
  * Test for the lockup settings
  */
-class NavigationDropDownsCest {
+abstract class NavigationDropDownsCest {
 
   /**
    * Create some content and test the dropdown menu.

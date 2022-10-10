@@ -2,6 +2,7 @@
 
 namespace Drupal\sul_helper\EventSubscriber;
 
+use Acquia\DrupalEnvironmentDetector\AcquiaDrupalEnvironmentDetector;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\core_event_dispatcher\EntityHookEvents;
@@ -76,7 +77,7 @@ class SulHelperSubscriber implements EventSubscriberInterface {
   public function onEntityCrud(AbstractEntityEvent $event): void {
     $entity = $event->getEntity();
 
-    if ($entity instanceof NodeInterface) {
+    if ($entity instanceof NodeInterface && AcquiaDrupalEnvironmentDetector::isAhProdEnv()) {
       try {
         $this->triggerRevalidation($entity->toUrl()->toString());
       } catch (\Exception $e) {
@@ -109,7 +110,7 @@ class SulHelperSubscriber implements EventSubscriberInterface {
         ],
         'headers' => [
           'Accept' => '*/*',
-          'User-Agent' => $_SERVER['HTTP_USER_AGENT'],
+          'User-Agent' => $_SERVER['HTTP_USER_AGENT'] ?? '',
         ],
         'timeout' => 3,
         'base_uri' => $next_site->getBaseUrl(),
@@ -118,7 +119,6 @@ class SulHelperSubscriber implements EventSubscriberInterface {
       try {
         $this->guzzle->request('GET', '/api/revalidate', $request_options);
       } catch (\Throwable $e) {
-        dpm($e);
         $this->logger->error($e->getMessage());
       }
     }

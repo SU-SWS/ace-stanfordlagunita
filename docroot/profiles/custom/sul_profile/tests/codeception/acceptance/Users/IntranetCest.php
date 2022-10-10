@@ -6,7 +6,7 @@
  * @group users
  * @group no-parallel
  */
-class IntranetCest {
+abstract class IntranetCest {
 
   /**
    * Save the Intranet state before the tests and reset after the tests.
@@ -46,7 +46,7 @@ class IntranetCest {
   /**
    * Simple full site access check.
    */
-  public function testIntranet(AcceptanceTester $I) {
+  protected function testIntranet(AcceptanceTester $I) {
     if (!$this->intranetWasEnabled) {
       $I->runDrush('sset stanford_intranet 1');
     }

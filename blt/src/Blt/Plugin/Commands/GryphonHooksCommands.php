@@ -101,7 +101,7 @@ class GryphonHooksCommands extends BltTasks {
     // Databases should correlate directly to the site name. Except the default
     // directory which has a different database name. This allows the db scrub
     // drush command to operate on the correct database.
-    $site = $args_options['db_name'] == 'hrgryphon' ? 'default' : $args_options['db_name'];
+    $site = $args_options['db_name'] == 'sulgryphon' ? 'default' : $args_options['db_name'];
     $this->switchSiteContext($site);
   }
 
@@ -119,23 +119,9 @@ class GryphonHooksCommands extends BltTasks {
         $this->switchSiteContext($multisite);
         $this->taskDrush()
           ->drush('state:set nobots 1')
-          ->drush('sqlq')
-          ->arg('truncate config_pages__su_site_url')
           ->run();
       }
     }
-  }
-
-  /**
-   * Perform actions after a site has been synced locally.
-   *
-   * @hook post-command drupal:sync:default:site
-   */
-  public function postDrupalSync(){
-    $this->taskDrush()
-      ->drush('sqlq')
-      ->arg('truncate config_pages__su_site_url')
-      ->run();
   }
 
 }

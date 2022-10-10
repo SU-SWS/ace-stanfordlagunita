@@ -13,7 +13,7 @@ use Drush\Commands\DrushCommands;
 /**
  * Class StanfordProfileCommands.
  *
- * @package Drupal\stanford_profile\Commands
+ * @package Drupal\sul_profile\Commands
  */
 class StanfordProfileCommands extends DrushCommands {
 
@@ -84,6 +84,69 @@ class StanfordProfileCommands extends DrushCommands {
     $this->bundleInfo = $bundleInfo;
     $this->fieldManager = $fieldManager;
     $this->fieldTypeManager = $fieldTypeManager;
+  }
+
+  /**
+   * Set the secret string on the consumer entity.
+   *
+   * @param string $uuid
+   *   Consumer entity uuid.
+   * @param string $secret
+   *   Consumer secret string.
+   *
+   * @command sul-profile:set-consumer-secret
+   */
+  public function setConsumerSecret(string $uuid, string $secret) {
+    $consumer_storage = $this->entityTypeManager->getstorage('consumer');
+    $consumer = $consumer_storage->loadByProperties(['uuid' => $uuid]);
+    if (empty($consumer)) {
+      $consumer_storage->create([
+        'uuid' => $uuid,
+        'label' => 'NextJS Consumer',
+        'description' => '',
+        'is_default' => TRUE,
+        'secret' => $secret,
+      ]);
+      return;
+    }
+    /** @var \Drupal\consumers\Entity\Consumer */
+    $consumer = reset($consumer);
+    $consumer->set('secret', $secret);
+    $consumer->save();
+  }
+
+  /**
+   * Create a NextJS site entity.
+   *
+   * @param string $label
+   *   Label of the site entity.
+   * @param string $base_url
+   *   URL for the nextjs site.
+   * @param string $preview_url
+   *   Preview URL.
+   * @param string $preview_secret
+   *   Preview Secret.
+   *
+   * @command sul-profile:create-nextjs-site
+   */
+  public function createNextJsSite(string $label, string $base_url, string $preview_url = NULL, string $preview_secret = NULL) {
+    $id = preg_replace('/[^a-z\d]/', '_', strtolower($label));
+    $storage = $this->entityTypeManager->getStorage('next_site');
+    /** @var \Drupal\next\Entity\NextSiteInterface */
+    if ($entity = $storage->load($id)) {
+      $entity->set('base_url', $base_url);
+      $entity->set('preview_url', $preview_url);
+      $entity->set('preview_secret', $preview_secret);
+      $entity->save();
+      return;
+    }
+    $storage->create([
+      'id' => $id,
+      'label' => $label,
+      'base_url' => $base_url,
+      'preview_url' => $preview_url,
+      'preview_secret' => $preview_secret,
+    ])->save();
   }
 
   /**

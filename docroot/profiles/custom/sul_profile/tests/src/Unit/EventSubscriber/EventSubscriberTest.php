@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Unit\EventSubscriber;
+namespace Drupal\Tests\sul_profile\Unit\EventSubscriber;
 
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\default_content\Event\ImportEvent;
 use Drupal\file\FileInterface;
 use Drupal\node\NodeInterface;
-use Drupal\stanford_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
+use Drupal\sul_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
 use Drupal\Tests\UnitTestCase;
 
 if (!defined('DRUPAL_ROOT')) {
@@ -18,14 +18,14 @@ if (!defined('DRUPAL_ROOT')) {
  * Class EventSubscriberTest.
  *
  * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+ * @coversDefaultClass \Drupal\sul_profile\EventSubscriber\EventSubscriber
  */
 class EventSubscriberTest extends UnitTestCase {
 
   /**
    * Event subscriber object.
    *
-   * @var \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+   * @var \Drupal\sul_profile\EventSubscriber\EventSubscriber
    */
   protected $eventSubscriber;
 

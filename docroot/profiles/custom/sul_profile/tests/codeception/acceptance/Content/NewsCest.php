@@ -4,6 +4,8 @@ use Faker\Factory;
 
 /**
  * Test the news functionality.
+ *
+ * @group content
  */
 class NewsCest {
 
@@ -64,7 +66,7 @@ class NewsCest {
   /**
    * Test that the view pages exist.
    */
-  public function testViewPagesExist(AcceptanceTester $I) {
+  protected function testViewPagesExist(AcceptanceTester $I) {
     $I->amOnPage("/news");
     $I->seeLink('Announcement');
     $I->click("a[href='/news/announcement']");

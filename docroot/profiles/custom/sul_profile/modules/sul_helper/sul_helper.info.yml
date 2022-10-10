@@ -3,3 +3,5 @@ type: module
 description: Provides additional functionality for the site.
 package: Stanford
 core_version_requirement: ^9 || ^10
+dependencies:
+  - layout_paragraphs:layout_paragraphs

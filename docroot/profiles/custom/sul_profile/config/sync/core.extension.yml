@@ -221,7 +221,6 @@ module:
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0
-  webp: 0
   xmlsitemap_engines: 0
   ds: 1
   extlink: 1
@@ -236,9 +235,8 @@ module:
   paragraphs: 11
   sul_profile: 1000
 theme:
+  claro: 0
   stable: 0
-  seven: 0
   stanford_basic: 0
   stable9: 0
-  minimally_branded_subtheme: 0
 profile: sul_profile

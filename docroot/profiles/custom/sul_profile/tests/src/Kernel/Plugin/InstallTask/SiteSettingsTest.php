@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\sul_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\config_pages\Entity\ConfigPagesType;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -15,12 +15,12 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Drupal\stanford_profile\Plugin\InstallTask\SiteSettings;
+use Drupal\sul_profile\Plugin\InstallTask\SiteSettings;
 
 /**
  * Class SiteSettingsTest.
  *
- * @coversDefaultClass \Drupal\stanford_profile\Plugin\InstallTask\SiteSettings
+ * @coversDefaultClass \Drupal\sul_profile\Plugin\InstallTask\SiteSettings
  */
 class SiteSettingsTest extends KernelTestBase {
 
@@ -51,7 +51,7 @@ class SiteSettingsTest extends KernelTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
-    $this->setInstallProfile('stanford_profile');
+    $this->setInstallProfile('sul_profile');
 
     $this->installEntitySchema('user');
     $this->installEntitySchema('user_role');
