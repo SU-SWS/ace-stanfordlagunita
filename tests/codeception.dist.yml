@@ -53,12 +53,14 @@ env:
       config:
         WebDriver:
           url: 'http://localhost/'
-          host: 'hub.browserstack.com'
-          port: 80
-          capabilities:
-            os: Windows
-            os_version: 11
-            'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
-            'browserstack.key': '${ci.BROWSERSTACK_ACCESS_KEY}'
-            'browserstack.localIdentifier': '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
-            'browserstack.local': true
+          browser: chrome
+          host: selenium
+          port: 4444
+          restart: true
+#          capabilities:
+#            os: Windows
+#            os_version: 11
+#            'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
+#            'browserstack.key': '${ci.BROWSERSTACK_ACCESS_KEY}'
+#            'browserstack.localIdentifier': '${ci.BROWSERSTACK_LOCAL_IDENTIFIER}'
+#            'browserstack.local': true
