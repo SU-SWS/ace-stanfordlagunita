@@ -115,7 +115,7 @@ jobs:
     container:
       image: pookmish/drupal8ci:latest
       ports:
-        - 80:8080
+        - 8080:80
     services:
       selenium:
         image: selenium/standalone-chrome
