@@ -11,6 +11,33 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function stanford_basic_theme_suggestions_book_tree_alter(array &$suggestions, array $variables, $hook) {
+  $suggestions[] = $hook . '__secondary_nav';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function stanford_basic_preprocess_node(&$variables) {
+  $node_bundle = $variables['node']->bundle();
+  $variables['#attached']['library'][] = 'stanford_basic/content.' . $node_bundle;
+  unset($variables['content']['book_navigation']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function stanford_basic_preprocess_breadcrumb(&$variables) {
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')
+    ->getTitle($request, $route_match->getRouteObject());
+  $variables['breadcrumb'][] = ['text' => $page_title];
+}
+
+/**
  * Implements hook_page_attachments_alter().
  *
  * Because hook_page_attachments() is only executed in modules, not themes.
@@ -270,8 +297,11 @@ function stanford_basic_preprocess_menu(&$variables, $hook) {
 function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   foreach ($submenu as &$item) {
     $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString();
-    if ($item_path == $current_path ||
-        (_stanford_basic_path_is_home($item_path) && \Drupal::service('path.matcher')->isFrontPage())) {
+    $is_front = \Drupal::service('path.matcher')->isFrontPage();
+    if (
+      $item_path == $current_path ||
+      (_stanford_basic_path_is_home($item_path) && $is_front)
+    ) {
       $item['is_active'] = TRUE;
     }
 
@@ -301,11 +331,13 @@ function _stanford_basic_path_is_home(string $path) {
   $front_uri = $config->get('page.front');
   $alias = \Drupal::service('path_alias.manager')->getAliasByPath($front_uri);
 
-  if ($normal_path == base_path() ||
-      $normal_path == $front_uri ||
-      $normal_path == $alias ||
-      $normal_path == '<front>') {
-        return TRUE;
+  if (
+    $normal_path == base_path() ||
+    $normal_path == $front_uri ||
+    $normal_path == $alias ||
+    $normal_path == '<front>'
+  ) {
+    return TRUE;
   }
   return FALSE;
 }
