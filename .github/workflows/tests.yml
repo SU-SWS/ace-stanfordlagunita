@@ -115,6 +115,8 @@ jobs:
     container:
       image: pookmish/drupal8ci:latest
       options: '--network-alias drupal8ci'
+      ports:
+        - 80:80
     services:
       selenium:
         image: selenium/standalone-chrome
