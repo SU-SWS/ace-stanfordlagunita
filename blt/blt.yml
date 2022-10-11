@@ -16,55 +16,13 @@ drush:
   aliases:
     ci: self
   default_alias: '${drush.aliases.local}'
-modules:
-  local:
-    enable:
-      - stanford_ssp
-      - environment_indicator
-    uninstall:
-      - acquia_purge
-  ci:
-    enable:
-      - nobots
-    uninstall:
-      - simplesamlphp_auth
-  dev:
-    enable:
-      - nobots
-      - environment_indicator
-    uninstall: {  }
-  test:
-    enable:
-      - nobots
-      - environment_indicator
-    uninstall:
-      - views_ui
-  prod:
-    enable:
-      - environment_indicator
-    uninstall:
-      - views_ui
 simplesamlphp: true
 cm:
   strategy: config-split
   allow-overrides: true
 multisites:
   - default
-behat:
-  selenium:
-    url: 'http://localhost:4444/wd/hub'
-  chromedriver:
-    url: 'http://localhost'
-  web-driver: selenium
-  paths:
-    - '${docroot}/profiles/custom'
-    - '${repo.root}/tests/behat/features'
 tests:
-  config:
-    codeception:
-      host: 127.0.0.1
-      port: 4444
-      capabilities: {}
   reports:
     localDir: '${repo.root}/artifacts'
     coveragePass: 90
