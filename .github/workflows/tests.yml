@@ -120,6 +120,9 @@ jobs:
     services:
       selenium:
         image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
+          - 7900:7900
       mysql:
         image: mysql:5.7
         env:
