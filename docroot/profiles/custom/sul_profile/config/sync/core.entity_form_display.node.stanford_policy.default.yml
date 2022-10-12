@@ -269,7 +269,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  layout_builder__layout: true
   promote: true
   scheduler_settings: true
   sticky: true
