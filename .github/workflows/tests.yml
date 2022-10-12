@@ -115,15 +115,10 @@ jobs:
     container:
       image: pookmish/drupal8ci:latest
       options: '--network-alias drupal8ci'
-      ports:
-        - 80:80
     services:
       selenium:
         image: selenium/standalone-chrome
         options: '--shm-size="2g"'
-        ports:
-          - 4444:4444
-          - 7900:7900
       mysql:
         image: mysql:5.7
         env:
