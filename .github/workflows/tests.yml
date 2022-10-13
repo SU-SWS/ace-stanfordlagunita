@@ -33,6 +33,10 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -78,6 +82,10 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
       - name: Run tests
         run: |
           rm -rf /var/www/html
@@ -106,7 +114,11 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
+      options: '--network-alias drupal8ci'
     services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: '--shm-size="2g"'
       mysql:
         image: mysql:5.7
         env:
@@ -118,11 +130,6 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - name: 'BrowserStack Env Setup'
-        uses: 'browserstack/github-actions/setup-env@master'
-        with:
-          username: ${{ secrets.BROWSERSTACK_USER }}
-          access-key: ${{ secrets.BROWSERSTACK_KEY }}
       - uses: actions/checkout@v3
       - name: Restore Cache
         uses: actions/cache@v3
@@ -134,6 +141,10 @@ jobs:
             docroot/modules/contrib
             docroot/modules/custom
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
       - name: Install Site
         run: |
           rm -rf /var/www/html
@@ -146,18 +157,8 @@ jobs:
           drush pm:uninstall simplesamlphp_auth -y
           drush xmlsitemap:rebuild
           mkdir -p artifacts/_data/
-      - name: 'Start BrowserStackLocal Tunnel'
-        uses: 'browserstack/github-actions/setup-local@master'
-        with:
-          local-testing: start
-          local-identifier: random
       - name: Run tests
         run: blt codeception --suite=functional
-      - name: 'Stop BrowserStackLocal Tunnel'
-        uses: 'browserstack/github-actions/setup-local@master'
-        if: always()
-        with:
-          local-testing: stop
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
@@ -186,6 +187,10 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
           key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
       - name: Deploy Artifact
         run: |
           composer install -n
