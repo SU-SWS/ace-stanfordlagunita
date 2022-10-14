@@ -74,23 +74,8 @@ tasks:
       drush uli --uri=$PREVIEW_FULL_URL &&
       drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
       git config core.fileMode false &&
+      blt gryphon:connect-nextjs $PREVIEW_URL frontend &&
       cd frontend &&
-      export PREVIEW_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
-      export CLIENT_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
-      cp .env.example .env.local &&
-      sed -i -e "s|\${NEXT_PUBLIC_DRUPAL_BASE_URL}|${PREVIEW_FULL_URL}|g" .env.local &&
-      sed -i -e "s|\${NEXT_IMAGE_DOMAIN}|${PREVIEW_URL}|g" .env.local &&
-      sed -i -e "s|\${NEXT_PUBLIC_SITE_NAME}|Gitpod|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_FRONT_PAGE}|72f0069b-f1ec-4122-af73-6aa841faea90|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_PREVIEW_SECRET}|${PREVIEW_SECRET}|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_CLIENT_ID}|dc98f394-68ef-4e11-bab2-fd0e2931bca1|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_CLIENT_SECRET}|${CLIENT_SECRET}|g" .env.local &&
-      sed -i -e "s|\${DRUPAL_SITE_ID}|Next JS|g" .env.local &&
-      drush sul-profile:set-consumer-secret dc98f394-68ef-4e11-bab2-fd0e2931bca1 $CLIENT_SECRET &&
-      drush sul-profile:create-nextjs-site Gitpod `gp url 3000` '/api/preview' $PREVIEW_SECRET &&
-      drush simple-oauth:generate-keys $GITPOD_REPO_ROOT/keys &&
-      mv $GITPOD_REPO_ROOT/keys/private.key $GITPOD_REPO_ROOT/keys/oauth_private.key &&
-      mv $GITPOD_REPO_ROOT/keys/public.key $GITPOD_REPO_ROOT/keys/oauth_public.key &&
       yarn dev &
       gp ports await 3000 &&
       gp url 3000 | xargs gp preview --external
