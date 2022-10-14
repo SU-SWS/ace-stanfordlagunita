@@ -1,3 +1,6 @@
+additionalRepositories:
+  - url: https://github.com/SU-SWS/sulgryphon-nextjs.git
+    checkoutLocation: frontend
 github:
   prebuilds:
     master: true
@@ -6,7 +9,7 @@ github:
     pullRequestsFromForks: false
     addCheck: false
     addComment: false
-    addBadge: false
+    addBadge: true
 ports:
   - name: database
     description: Mysql database
@@ -55,8 +58,10 @@ tasks:
       blt settings &&
       blt source:build:simplesamlphp-config &&
       blt drupal:install -n &&
-      git clone git@github.com:SU-SWS/sulgryphon-nextjs.git frontend &&
-      cd frontend && yarn
+      rsync -r /workspace/frontend/ frontend &&
+      cd frontend &&
+      git remote set-url origin git@github.com:SU-SWS/sulgryphon-nextjs.git &&
+      yarn
     command: |
       cd $GITPOD_REPO_ROOT &&
       apache2ctl restart &&
@@ -69,7 +74,7 @@ tasks:
       drush uli --uri=$PREVIEW_FULL_URL &&
       drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
       git config core.fileMode false &&
-      cd frontend && 
+      cd frontend &&
       export PREVIEW_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
       export CLIENT_SECRET=`echo $RANDOM | md5sum | head -c 20; echo` &&
       cp .env.example .env.local &&
@@ -87,4 +92,5 @@ tasks:
       mv $GITPOD_REPO_ROOT/keys/private.key $GITPOD_REPO_ROOT/keys/oauth_private.key &&
       mv $GITPOD_REPO_ROOT/keys/public.key $GITPOD_REPO_ROOT/keys/oauth_public.key &&
       yarn dev &
+      gp ports await 3000 &&
       gp url 3000 | xargs gp preview --external
