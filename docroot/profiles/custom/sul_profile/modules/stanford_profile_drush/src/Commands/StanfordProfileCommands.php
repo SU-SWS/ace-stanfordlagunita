@@ -2,6 +2,7 @@
 
 namespace Drupal\stanford_profile_drush\Commands;
 
+use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
@@ -98,7 +99,7 @@ class StanfordProfileCommands extends DrushCommands {
    */
   public function setConsumerSecret(string $uuid, string $secret) {
     $consumer_storage = $this->entityTypeManager->getstorage('consumer');
-    $consumer = $consumer_storage->loadByProperties(['uuid' => $uuid]);
+    $consumer = $consumer_storage->loadByProperties(['client_id' => $uuid]);
     if (empty($consumer)) {
       $consumer_storage->create([
         'uuid' => $uuid,
