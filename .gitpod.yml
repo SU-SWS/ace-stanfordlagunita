@@ -74,7 +74,7 @@ tasks:
       drush uli --uri=$PREVIEW_FULL_URL &&
       drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
       git config core.fileMode false &&
-      blt gryphon:connect-nextjs $PREVIEW_URL /workspace/frontend &&
+      blt gryphon:connect-nextjs $PREVIEW_URL frontend &&
       cd frontend &&
       yarn dev &
       gp ports await 3000 &&
