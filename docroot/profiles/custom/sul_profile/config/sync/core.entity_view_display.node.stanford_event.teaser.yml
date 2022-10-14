@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.stanford_event.su_event_alt_loc
     - field.field.node.stanford_event.su_event_audience
     - field.field.node.stanford_event.su_event_components
+    - field.field.node.stanford_event.su_event_contact_info
     - field.field.node.stanford_event.su_event_cta
     - field.field.node.stanford_event.su_event_date_time
     - field.field.node.stanford_event.su_event_dek
@@ -182,6 +183,7 @@ hidden:
   stanford_intranet__access: true
   su_event_audience: true
   su_event_components: true
+  su_event_contact_info: true
   su_event_cta: true
   su_event_email: true
   su_event_groups: true
