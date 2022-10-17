@@ -19,12 +19,13 @@ class GryphonCommands extends BltTasks {
    *
    * @command gryphon:connect-nextjs
    */
-  public function connectNextJs(string $local_domain, string $front_dir) {
+  public function connectNextJs(string $local_domain, string $front_dir, string $preview_domain = null) {
     if (!file_exists("$front_dir/tailwind.config.js")) {
       throw new \Exception("$front_dir does not appear to be correct");
     }
+    $front_dir = rtrim($front_dir, '/');
     $this->taskFilesystemStack()
-      ->copy("$front_dir/.env.example", "$front_dir/.env.local")->run();
+      ->copy("$front_dir/.env.example", "$front_dir/.env.local", TRUE)->run();
 
     $preview_secret = md5(random_int(1000, 5000));
     $client_secret = md5(random_int(1000, 5000));
@@ -46,8 +47,9 @@ class GryphonCommands extends BltTasks {
       ->run();
     $this->taskDrush()
       ->drush('sul-profile:create-nextjs-site')
-      ->arg('Gitpod')
-      ->arg('http://localhost:3000/api/preview')
+      ->arg(getenv('GITPOD') ? 'Gitpod' : 'Local')
+      ->arg($preview_domain ?: 'http://localhost:3000')
+      ->arg($preview_domain ? $preview_domain . '/apio/preview' : 'http://localhost:3000/api/preview')
       ->arg($preview_secret)
       ->run();
 
@@ -56,10 +58,17 @@ class GryphonCommands extends BltTasks {
       ->drush('simple-oauth:generate-keys')
       ->arg("$repo_root/keys")
       ->run();
-    $this->taskFilesystemStack()
+    $copy_files = $this->taskFilesystemStack()
       ->rename("$repo_root/keys/private.key", "$repo_root/keys/oauth_private.key")
       ->rename("$repo_root/keys/public.key", "$repo_root/keys/oauth_public.key")
       ->run();
+
+    if (!$copy_files->wasSuccessful()) {
+      $this->taskFilesystemStack()
+        ->remove("$repo_root/keys/private.key")
+        ->remove("$repo_root/keys/public.key")
+        ->run();
+    }
   }
 
   /**

@@ -1,0 +1,9 @@
+uuid: f258885d-8e99-4122-a9ca-fb25261ccc9d
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_policy
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local

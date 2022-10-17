@@ -1,0 +1,9 @@
+uuid: 7daa0b9d-95ce-46d3-9146-24a9fb01a8ee
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_course
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local

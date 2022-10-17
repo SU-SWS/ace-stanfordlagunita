@@ -1,0 +1,9 @@
+uuid: 27466114-0740-4924-bd44-b63be2d3a1f7
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_event_series
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local

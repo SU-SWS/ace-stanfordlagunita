@@ -21,7 +21,6 @@ module:
   ckeditor_a11ychecker: 0
   ckeditor_balloonpanel: 0
   ckeditor_blockimagepaste: 0
-  color: 0
   colorbox: 0
   components: 0
   conditional_fields: 0
@@ -243,6 +242,5 @@ module:
 theme:
   claro: 0
   stable: 0
-  stanford_basic: 0
   stable9: 0
 profile: sul_profile

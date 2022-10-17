@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
 use Drupal\field\FieldConfigInterface;
+use Drupal\next\Entity\NextEntityTypeConfig;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -123,31 +124,48 @@ class StanfordProfileCommands extends DrushCommands {
    *   Label of the site entity.
    * @param string $base_url
    *   URL for the nextjs site.
-   * @param string $preview_url
+   * @param string|null $preview_url
    *   Preview URL.
-   * @param string $preview_secret
+   * @param string|null $preview_secret
    *   Preview Secret.
    *
    * @command sul-profile:create-nextjs-site
    */
   public function createNextJsSite(string $label, string $base_url, string $preview_url = NULL, string $preview_secret = NULL) {
-    $id = preg_replace('/[^a-z\d]/', '_', strtolower($label));
-    $storage = $this->entityTypeManager->getStorage('next_site');
-    /** @var \Drupal\next\Entity\NextSiteInterface */
-    if ($entity = $storage->load($id)) {
-      $entity->set('base_url', $base_url);
-      $entity->set('preview_url', $preview_url);
-      $entity->set('preview_secret', $preview_secret);
+    $next_site_id = preg_replace('/[^a-z\d]/', '_', strtolower($label));
+    $next_storage = $this->entityTypeManager->getStorage('next_site');
+    /** @var \Drupal\next\Entity\NextSiteInterface $entity */
+    if ($entity = $next_storage->load($next_site_id)) {
+      $entity->setBaseUrl($base_url);
+      $entity->setPreviewUrl($preview_url);
+      $entity->setPreviewSecret($preview_secret);
       $entity->save();
-      return;
     }
-    $storage->create([
-      'id' => $id,
-      'label' => $label,
-      'base_url' => $base_url,
-      'preview_url' => $preview_url,
-      'preview_secret' => $preview_secret,
-    ])->save();
+    else {
+      $entity = $next_storage->create([
+        'id' => $next_site_id,
+        'label' => $label,
+        'base_url' => $base_url,
+        'preview_url' => $preview_url,
+        'preview_secret' => $preview_secret,
+      ]);
+      $entity->save();
+    }
+    $this->connectNextEntityTypes($next_site_id);
+  }
+
+  protected function connectNextEntityTypes($next_site_id) {
+    /** @var \Drupal\node\NodeTypeInterface[] $node_types */
+    $node_types = $this->entityTypeManager->getStorage('node_type')
+      ->loadMultiple();
+    foreach (array_keys($node_types) as $node_type_id) {
+      /** @var \Drupal\next\Entity\NextEntityTypeConfigInterface $next_entity_config */
+      $next_entity_config = $this->entityTypeManager->getStorage('next_entity_type_config')
+        ->load("node.$node_type_id");
+
+      $next_entity_config->setConfiguration(['sites' => [$next_site_id => $next_site_id]])
+        ->save();
+    }
   }
 
   /**
@@ -355,8 +373,7 @@ class StanfordProfileCommands extends DrushCommands {
 
       try {
         $sample_value = $field_type_definition['class']::generateSampleValue($field_definition);
-      }
-      catch (\Exception $e) {
+      } catch (\Exception $e) {
         // Move on to the next field.
         continue;
       }

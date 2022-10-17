@@ -1,0 +1,9 @@
+uuid: 15fb740d-95fa-4698-a534-6cda5c026636
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_publication
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local
