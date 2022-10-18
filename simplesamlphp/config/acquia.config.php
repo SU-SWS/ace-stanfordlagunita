@@ -10,6 +10,7 @@
  */
 
 use Acquia\Blt\Robo\Common\EnvironmentDetector;
+use SimpleSAML\Logger;
 
 /**
  * Defines Acquia account specific options in $config keys.
@@ -88,15 +89,15 @@ $config['baseurlpath'] = 'simplesaml/';
 // Setup basic logging.
 $config['logging.handler'] = 'file';
 // phpcs:ignore
-$config['loggingdir'] = dirname(getenv('ACQUIA_HOSTING_DRUPAL_LOG'));
+$config['loggingdir'] = (file_exists('/shared/logs/')) ? '/shared/logs/' : dirname(getenv('ACQUIA_HOSTING_DRUPAL_LOG'));
 $config['logging.logfile'] = 'simplesamlphp-' . date('Ymd') . '.log';
 $creds_json = file_get_contents('/var/www/site-php/' . $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'] . '/creds.json');
 $databases = json_decode($creds_json, TRUE);
 $creds = $databases['databases'][$_ENV['AH_SITE_GROUP']];
-if (substr($_ENV['AH_SITE_ENVIRONMENT'], 0, 3) === 'ode') {
-  $creds['host'] = key($creds['db_url_ha']);
-}
-else {
+
+// On Cloud Classic, the current active database host is determined by a DNS lookup,
+// so we add a DNS resolver if and only if we are on Cloud Classic.
+if (isset($creds['db_cluster_id'])) {
   require_once "/usr/share/php/Net/DNS2_wrapper.php";
   try {
     $resolver = new Net_DNS2_Resolver([
@@ -109,7 +110,7 @@ else {
     $creds['host'] = $response->answer[0]->cname;
   }
   catch (Net_DNS2_Exception $e) {
-    $creds['host'] = "";
+    Logger::warning('DNS entry not found');
   }
 }
 $config['store.type'] = 'sql';

@@ -5,7 +5,6 @@ dependencies:
   module:
     - field_permissions
     - media
-    - system
     - ui_patterns_library
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -14,7 +13,6 @@ label: 'Anonymous user'
 weight: -9
 is_admin: false
 permissions:
-  - 'access content'
   - 'access patterns page'
   - 'view field_media_embeddable_code'
   - 'view media'
