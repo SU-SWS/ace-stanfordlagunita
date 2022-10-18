@@ -65,7 +65,7 @@ class GryphonCommands extends BltTasks {
       ->drush('sul-profile:create-nextjs-site')
       ->arg(getenv('GITPOD') ? 'Gitpod' : 'Local')
       ->arg($preview_domain ?: 'http://localhost:3000')
-      ->arg($preview_domain ? $preview_domain . '/apio/preview' : 'http://localhost:3000/api/preview')
+      ->arg($preview_domain ? $preview_domain . '/api/preview' : 'http://localhost:3000/api/preview')
       ->arg($this->nextjsConfig['preview_secret'])
       ->run();
 
