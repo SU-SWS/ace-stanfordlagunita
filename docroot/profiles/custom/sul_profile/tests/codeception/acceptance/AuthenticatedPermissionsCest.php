@@ -74,7 +74,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee($site_manager->getDisplayName());
     $I->click(['link' => $site_manager->getDisplayName()]);
-    $I->click('.roles.tabs__tab a');
+    $I->click('Roles', '.tabs');
     $I->canSeeInCurrentUrl("/user/$site_manager_id/roles");
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
@@ -89,7 +89,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee('Morgan');
     $I->click('Morgan');
-    $I->click('.roles.tabs__tab a');
+    $I->click('Roles', '.tabs');
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
     $I->dontSee('Site Developer');
@@ -117,7 +117,8 @@ class AuthenticatedPermissionsCest {
     $I->fillField('#edit-title-0-value', '<?php echo("injection test"); die(); ?>');
     $I->click('Save');
     $I->seeInCurrentUrl('node');
-    $I->seeElement('.su-global-footer__copyright');
+    $I->canSee('injection test', 'h1');
+    // $I->seeElement('.su-global-footer__copyright');
   }
 
   /**

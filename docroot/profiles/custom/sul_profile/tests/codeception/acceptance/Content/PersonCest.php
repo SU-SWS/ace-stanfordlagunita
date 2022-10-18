@@ -26,7 +26,7 @@ class PersonCest {
   /**
    * Test that the default content has installed and is unpublished.
    */
-  public function testDefaultContentExists(AcceptanceTester $I) {
+  protected function testDefaultContentExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/content');
     $I->see('Haley Jackson');
@@ -256,10 +256,8 @@ class PersonCest {
 
   /**
    * Unpublished profiles should not display in the list.
-   *
-   * @group tester
    */
-  public function testPublishedStatus(AcceptanceTester $I) {
+  protected function testPublishedStatus(AcceptanceTester $I) {
     $term = $I->createEntity([
       'name' => $this->faker->words(2, TRUE),
       'vid' => 'stanford_person_types',

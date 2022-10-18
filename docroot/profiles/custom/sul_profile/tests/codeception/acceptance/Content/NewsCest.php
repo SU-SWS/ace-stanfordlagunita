@@ -35,7 +35,7 @@ class NewsCest {
   /**
    * Test that the default content has installed and is unpublished.
    */
-  public function testDefaultContentExists(AcceptanceTester $I) {
+  protected function testDefaultContentExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage("/admin/content");
     $I->see("Sample: Smith Conference");

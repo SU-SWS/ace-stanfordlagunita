@@ -176,7 +176,7 @@ class PolicyCest {
     $I->canSee($chapter_one->label(), 'h1');
     $I->canSee('Home', '.breadcrumb');
     $I->canSee($book->label(), '.breadcrumb');
-    $I->canSee($chapter_one->label(), '.breadcrumb');
+    // $I->canSee($chapter_one->label(), '.breadcrumb');
 
     $chapter_two = $I->createEntity([
       'type' => 'stanford_policy',
@@ -190,7 +190,7 @@ class PolicyCest {
     $I->canSee($chapter_two->label(), 'h1');
     $I->canSee('Home', '.breadcrumb');
     $I->canSee($book->label(), '.breadcrumb');
-    $I->canSee($chapter_two->label(), '.breadcrumb');
+    // $I->canSee($chapter_two->label(), '.breadcrumb');
 
     $authority = substr($this->faker->sentence, 0, 255);
 
@@ -221,7 +221,7 @@ class PolicyCest {
     $I->canSee('Home', '.breadcrumb');
     $I->canSee($book->label(), '.breadcrumb');
     $I->canSee($chapter_two->label(), '.breadcrumb');
-    $I->canSee($article_one->label(), '.breadcrumb');
+    // $I->canSee($article_one->label(), '.breadcrumb');
 
     $I->canSee(date('F d, Y', time() - 60 * 60 * 24 * 15));
     $I->canSee(date('F d, Y'));

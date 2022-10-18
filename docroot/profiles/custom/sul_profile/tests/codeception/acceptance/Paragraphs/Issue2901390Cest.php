@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group paragraphs
  * @group bug_fix
-
+ *
  * @link https://www.drupal.org/node/2901390
  */
 class Issue2901390Cest {
