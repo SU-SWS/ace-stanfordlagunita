@@ -1,9 +1,0 @@
-uuid: 4c15a500-8c3f-410d-af58-9e53dae3fbc2
-langcode: en
-status: true
-dependencies: {  }
-id: node.stanford_event
-site_resolver: site_selector
-configuration:
-  sites:
-    local: local

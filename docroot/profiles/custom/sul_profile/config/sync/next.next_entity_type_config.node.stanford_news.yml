@@ -1,9 +1,0 @@
-uuid: adaba590-cb2b-4d88-b1b8-67625f8cccf4
-langcode: en
-status: true
-dependencies: {  }
-id: node.stanford_news
-site_resolver: site_selector
-configuration:
-  sites:
-    local: local

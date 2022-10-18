@@ -1,9 +1,0 @@
-uuid: 94f6997e-6446-4951-9ae6-b84a854856c4
-langcode: en
-status: true
-dependencies: {  }
-id: node.stanford_person
-site_resolver: site_selector
-configuration:
-  sites:
-    local: local

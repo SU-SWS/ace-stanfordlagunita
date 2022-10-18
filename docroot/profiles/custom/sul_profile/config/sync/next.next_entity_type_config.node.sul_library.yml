@@ -1,9 +1,0 @@
-uuid: a83a3855-3130-49c7-a8a1-5f0325fb48f8
-langcode: en
-status: true
-dependencies: {  }
-id: node.sul_library
-site_resolver: site_selector
-configuration:
-  sites:
-    local: local
