@@ -9,7 +9,7 @@ require_once __DIR__ . '/../TestFilesTrait.php';
  *
  * @group local_footer
  */
-class LocalFooterLockupCest {
+abstract class LocalFooterLockupCest {
 
   use TestFilesTrait;
 

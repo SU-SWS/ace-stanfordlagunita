@@ -1,4 +1,4 @@
-# Setup Local Environment 
+# Setup Local Environment
 
 * [Gitpod](gitpod.md)
 * [Lando](lando.md)
@@ -30,3 +30,8 @@ If you wish to not provide statistics and user information back to Acquia run
      ```
     $ blt blt:telemetry:disable --no-interaction
 
+## Connecting Frontend
+The front repository is https://github.com/SU-SWS/sulgryphon-nextjs. Clone the repo into a desired location.
+run the command `blt gryphon:connect-nextjs [path-to-frontend-dir] [drupal-backend-domain]`. This command
+will create the NextJS entities and configurations as well as establish the NextJS environment variables
+necessary to connect to the Drupal backend.

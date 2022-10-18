@@ -41,8 +41,8 @@ class EntityReferenceCest {
 
     $node = $this->getNodeWithReferenceParagraph($I);
 
-    $I->amOnPage($node->toUrl()->toString());
-    $I->click('Edit', '.local-tasks-block');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    //$I->click('Edit', '.local-tasks-block');
 
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');

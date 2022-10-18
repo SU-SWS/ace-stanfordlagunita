@@ -134,8 +134,8 @@ class WYSIWYGCest {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('.su-page-components img');
-    $I->click('Edit', '.local-tasks-block');
+    $I->cantSeeElement('.su-wysiwyg-text img');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
@@ -155,7 +155,7 @@ class WYSIWYGCest {
     $I->waitForAjaxToFinish();
     $I->click('Save');
     $I->canSee($node->label(), 'h1');
-    $I->canSeeElement('.su-page-components img');
+    $I->canSeeElement('.su-wysiwyg-text img');
   }
 
   /**
@@ -232,7 +232,7 @@ class WYSIWYGCest {
     $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('iframe');
-    $I->click('Edit', '.local-tasks-block');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
@@ -276,8 +276,8 @@ class WYSIWYGCest {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('.su-page-components a');
-    $I->click('Edit', '.local-tasks-block');
+    $I->cantSeeElement('.su-wysiwyg-text a');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
     $I->waitForElementVisible('.cke_inner');
@@ -300,7 +300,7 @@ class WYSIWYGCest {
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
-    $I->canSeeElement('.su-page-components a');
+    $I->canSeeElement('.su-wysiwyg-text a');
   }
 
   /**

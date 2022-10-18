@@ -36,7 +36,7 @@ class EventsSeriesCest {
   /**
    * Test Page Title Conditions.
    */
-  public function testPageTitleIgnoreCondition(AcceptanceTester $I) {
+  protected function testPageTitleIgnoreCondition(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     // Todo: make theme name dynamic.
     $I->amOnPage('/admin/structure/block/manage/stanford_basic_pagetitle');

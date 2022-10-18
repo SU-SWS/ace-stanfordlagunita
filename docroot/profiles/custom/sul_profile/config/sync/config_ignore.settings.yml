@@ -1,15 +1,10 @@
 _core:
   default_config_hash: v7E8C8wJWeAW2BGohMNY1tZSBc4bexM6O62tGxecTfE
 ignored_config_entities:
-  - 'core.extension:theme'
-  - 'system.theme:default'
-  - '~block.block.seven_*'
-  - '~block.block.stanford_basic_*'
-  - '~block.block.claro_*'
-  - 'block.block.*'
   - 'google_tag.container.*'
   - 'user.role.custm_*'
   - 'system.action.user_add_role_action.custm_*'
   - 'system.action.user_remove_role_action.custm_*'
   - 'next.next_site.*'
+  - 'next.next_entity_type_config.*'
 enable_export_filtering: false

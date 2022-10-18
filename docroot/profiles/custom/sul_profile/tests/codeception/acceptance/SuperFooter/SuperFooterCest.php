@@ -3,7 +3,7 @@
 /**
  * Test for the Super Footer.
  */
-class SuperFooterCest {
+abstract class SuperFooterCest {
 
   public function _after(AcceptanceTester $I){
     $config_page = \Drupal::entityTypeManager()
