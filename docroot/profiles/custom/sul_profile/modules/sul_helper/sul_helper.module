@@ -14,6 +14,9 @@ function sul_helper_library_info_alter(&$libraries, $extension) {
   if ($extension == 'layout_paragraphs') {
     $libraries['builder']['dependencies'][] = 'sul_helper/layout_paragraphs';
   }
+  if ($extension == 'node') {
+    $libraries['drupal.node']['dependencies'][] = 'sul_helper/node_form';
+  }
 }
 
 /**

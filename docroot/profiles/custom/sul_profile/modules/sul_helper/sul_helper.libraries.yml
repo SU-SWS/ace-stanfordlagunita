@@ -1,5 +1,10 @@
 # Custom module library for general purposes.
 
+node_form:
+  css:
+    component:
+      css/sul_helper.node_form.css: {}
+
 layout_paragraphs:
   js:
     js/sul_helper.layout_paragraphs.js: {}

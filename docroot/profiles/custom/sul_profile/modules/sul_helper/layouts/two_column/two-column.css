@@ -4,6 +4,10 @@
   grid-gap: 30px;
 }
 
+.layout--sul-two-column > * {
+  min-width: 0;
+}
+
 .layout--sul-two-column.sul-two-column--33-67 {
   grid-template-columns: 1fr 2fr;
 }
