@@ -46,8 +46,9 @@ if (EnvironmentDetector::isAhEnv()) {
   include __DIR__ . '/acquia.config.php';
 }
 else {
+  
   // Local environment configs.
-  if (file_exists(__DIR__ . "/local.config.php")) {
+  if (!getenv('GITPOD_WORKSPACE') && file_exists(__DIR__ . "/local.config.php")) {
     include __DIR__ . "/local.config.php";
   }
 }
