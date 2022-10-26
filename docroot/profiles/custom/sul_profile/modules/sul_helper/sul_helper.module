@@ -22,6 +22,13 @@ function sul_helper_preprocess_image(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function sul_helper_preprocess_file_link(&$variables) {
+  $variables['link']['#url']->setAbsolute();
+}
+
+/**
  * Implements hook_library_info_alter().
  */
 function sul_helper_library_info_alter(&$libraries, $extension) {
