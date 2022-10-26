@@ -34,22 +34,7 @@ ports:
 image: pookmish/drupal8ci:gitpod
 tasks:
   - name: Drupal Prep
-    before: >
-      rm -rf ~/.ssh/id_rsa &&
-      rm -rf ~/.ssh/id_rsa.pub &&
-      eval $(command gp env -e) &&
-      mkdir -p ~/.ssh &&
-      [[ ! -z $SSH_PUBLIC_KEY  ]] &&
-      echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub &&
-      chmod 644 ~/.ssh/id_rsa.pub &&
-      [[ ! -z $SSH_PRIVATE_KEY  ]] &&
-      echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa &&
-      chmod 600 ~/.ssh/id_rsa &&
-      [[ ! -z $GITCONFIG  ]] &&
-      echo $GITCONFIG | base64 -d > ~/.gitconfig &&
-      chmod 644 ~/.gitconfig
     init: >
-      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
@@ -60,7 +45,6 @@ tasks:
       blt drupal:install -n &&
       rsync -r /workspace/frontend/ frontend &&
       cd frontend &&
-      git remote set-url origin git@github.com:SU-SWS/sulgryphon-nextjs.git &&
       yarn
     command: |
       cd $GITPOD_REPO_ROOT &&
@@ -79,3 +63,22 @@ tasks:
       yarn dev &
       gp ports await 3000 &&
       gp url 3000 | xargs gp preview --external
+  - name: SSH Keys
+    command: |
+      rm -rf ~/.ssh/id_rsa &&
+      rm -rf ~/.ssh/id_rsa.pub &&
+      eval $(command gp env -e) &&
+      mkdir -p ~/.ssh &&
+      [[ ! -z $SSH_PUBLIC_KEY  ]] &&
+      echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub &&
+      chmod 644 ~/.ssh/id_rsa.pub &&
+      [[ ! -z $SSH_PRIVATE_KEY  ]] &&
+      echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa &&
+      chmod 600 ~/.ssh/id_rsa &&
+      cd $GITPOD_REPO_ROOT &&
+      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
+      cd frontend &&
+      git remote set-url origin git@github.com:SU-SWS/sulgryphon-nextjs.git &&
+      [[ ! -z $GITCONFIG  ]] &&
+      echo $GITCONFIG | base64 -d > ~/.gitconfig &&
+      chmod 644 ~/.gitconfig
