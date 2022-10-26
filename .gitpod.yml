@@ -35,7 +35,6 @@ image: pookmish/drupal8ci:gitpod
 tasks:
   - name: Drupal Prep
     init: >
-      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
@@ -46,7 +45,6 @@ tasks:
       blt drupal:install -n &&
       rsync -r /workspace/frontend/ frontend &&
       cd frontend &&
-      git remote set-url origin git@github.com:SU-SWS/sulgryphon-nextjs.git &&
       yarn
     command: |
       cd $GITPOD_REPO_ROOT &&
@@ -77,6 +75,10 @@ tasks:
       [[ ! -z $SSH_PRIVATE_KEY  ]] &&
       echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa &&
       chmod 600 ~/.ssh/id_rsa &&
+      cd $GITPOD_REPO_ROOT &&
+      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
+      cd frontend &&
+      git remote set-url origin git@github.com:SU-SWS/sulgryphon-nextjs.git &&
       [[ ! -z $GITCONFIG  ]] &&
       echo $GITCONFIG | base64 -d > ~/.gitconfig &&
       chmod 644 ~/.gitconfig
