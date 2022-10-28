@@ -5,6 +5,7 @@ dependencies:
   module:
     - linkit
     - responsive_tables_filter
+    - sul_helper
 name: 'Minimal HTML'
 format: stanford_minimal_html
 weight: 0
@@ -15,7 +16,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class id> <div class id> <em> <strong> <cite> <blockquote cite> <code> <dd> <a href aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title class id>'
+      allowed_html: '<br> <p id class> <div id class> <em> <strong> <cite> <blockquote cite> <code> <dd> <a href aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -39,3 +40,9 @@ filters:
     settings:
       tablesaw_type: stack
       tablesaw_persist: '1'
+  sul_clean_html:
+    id: sul_clean_html
+    provider: sul_helper
+    status: true
+    weight: 99
+    settings: {  }

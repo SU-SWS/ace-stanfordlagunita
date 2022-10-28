@@ -35,7 +35,6 @@ settings:
       styles: "a.su-button|Button\r\na.su-button--big|Big Button\r\na.su-button--secondary|Secondary Button\r\na.su-link--action|Action Link"
     blockimagepaste:
       block_image_paste_enabled: true
-      show_alert: false
 image_upload:
   status: false
   scheme: public
