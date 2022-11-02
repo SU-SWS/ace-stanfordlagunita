@@ -1,7 +1,9 @@
-.layout--sul-three-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+@media screen and (min-width: 1200px) {
+  .layout--sul-three-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+  }
 }
 
 .layout--sul-three-column > * {
