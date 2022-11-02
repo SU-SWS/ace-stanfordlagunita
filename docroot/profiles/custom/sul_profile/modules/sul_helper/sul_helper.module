@@ -5,7 +5,102 @@
  * Primary module hooks for SUL Helper module.
  */
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\Html;
+use Drupal\jsonapi\JsonApiResource\JsonApiDocumentTopLevel;
+use Drupal\jsonapi\JsonApiResource\Link;
+use Drupal\jsonapi\JsonApiResource\LinkCollection;
+use Drupal\jsonapi\JsonApiResource\NullIncludedData;
+use Drupal\jsonapi\JsonApiResource\ResourceObject;
+use Drupal\jsonapi\JsonApiResource\ResourceObjectData;
+use Drupal\paragraphs\ParagraphInterface;
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function sul_helper_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+  $entity_types['paragraph']->setLinkTemplate('canonical', '/admin/paragraph/{paragraph}');
+  $entity_types['paragraph']->setHandlerClass('route_provider', ['html' => '\Drupal\Core\Entity\Routing\AdminHtmlRouteProvider']);
+}
+
+/**
+ * Implements hook_entity_display_build_alter().
+ */
+function sul_helper_entity_display_build_alter(&$build, $context) {
+  if($context['entity'] instanceof ParagraphInterface){
+    $cloned_entity = clone $context['entity'];
+    if (!$cloned_entity->id()) {
+      $cloned_entity->set('id', random_int(9999, 99999999));
+    }
+
+    /** @var \Drupal\next\NextEntityTypeManagerInterface $next_entity_manager */
+    $next_entity_manager = \Drupal::service('next.entity_type.manager');
+    $config = $next_entity_manager->getConfigForEntityType('paragraph', $cloned_entity->bundle());
+
+    if ($config) {
+      /** @var \Drupal\jsonapi_extras\Entity\JsonapiResourceConfig[] $json_resource */
+      $json_resource = \Drupal::entityTypeManager()
+        ->getStorage('jsonapi_resource_config')
+        ->loadByProperties(['resourceType' => 'paragraph--' . $cloned_entity->bundle()]);
+
+      $include_fields = ['paragraph_type'];
+      if ($json_resource) {
+        $include = $json_resource['paragraph--' . $cloned_entity->bundle()]->getThirdPartySetting('jsonapi_defaults', 'default_include');
+        $include_fields = array_merge($include_fields, $include);
+      }
+      /** @var \Drupal\jsonapi\ResourceType\ResourceTypeRepository $resource_repo */
+      $resource_repo = \Drupal::service('jsonapi.resource_type.repository');
+      $resource_type = $resource_repo->get('paragraph', $cloned_entity->bundle());
+
+      $resource_object = ResourceObject::createFromEntity($resource_type, $cloned_entity);
+
+      /** @var \Drupal\jsonapi\IncludeResolver $include_resolver */
+      $include_resolver = \Drupal::service('jsonapi.include_resolver');
+      $includes = $include_resolver->resolve($resource_object, implode(',', $include_fields));
+
+      $data = new ResourceObjectData([$resource_object], 1);
+      $api_document = new JsonApiDocumentTopLevel($data, $includes, new LinkCollection([]));
+
+      /** @var \Drupal\jsonapi\Serializer\Serializer $serializer */
+      $serializer = \Drupal::service('jsonapi.serializer');
+      /** @var \Drupal\jsonapi\Normalizer\Value\CacheableNormalization $data */
+      $data = $serializer->normalize($api_document, 'api_json', ['resource_type' => $resource_object]);
+
+      $sites = $config->getSiteResolver()->getSitesForEntity($cloned_entity);
+
+      /** @var \Drupal\next\NextSettingsManagerInterface $next_settings */
+      $next_settings = \Drupal::service('next.settings.manager');
+
+      $build = [];
+      foreach ($sites as $site) {
+        $site_preview_url = $next_settings->getPreviewUrlGenerator()
+          ->generate($site, $cloned_entity);
+
+        $build[$site->id()] = [
+          '#type' => 'html_tag',
+          '#tag' => 'iframe',
+          '#attributes' => [
+            'id' => Html::getUniqueId($site->id() . '-' . $cloned_entity->bundle() . '-' . $cloned_entity->id()),
+            'class' => ['next-site-preview'],
+            'src' => $site_preview_url->toString(),
+            'width' => '100%',
+            'height' => 50,
+            'edit-data' => $serializer->serialize($data->getNormalization(), 'api_json'),
+          ],
+        ];
+      }
+
+      $context['display']->unsetThirdPartySetting('ds', 'layout');
+      $context['display']->unsetThirdPartySetting('ds', 'regions');
+      $context['display']->unsetThirdPartySetting('ds', 'layout');
+    }
+
+
+    unset($cloned_entity);
+  }
+}
 
 /**
  * Implements hook_ckeditor_css_alter().

@@ -4,6 +4,8 @@ node_form:
   css:
     component:
       css/sul_helper.node_form.css: {}
+  js:
+    js/sul_helper.paragraph_preview.js: {}
 
 layout_paragraphs:
   js:
