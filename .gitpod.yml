@@ -1,3 +1,4 @@
+
 additionalRepositories:
   - url: https://github.com/SU-SWS/sulgryphon-nextjs.git
     checkoutLocation: frontend
@@ -82,3 +83,7 @@ tasks:
       [[ ! -z $GITCONFIG  ]] &&
       echo $GITCONFIG | base64 -d > ~/.gitconfig &&
       chmod 644 ~/.gitconfig
+
+vscode:
+  extensions:
+    - bradlc.vscode-tailwindcss
