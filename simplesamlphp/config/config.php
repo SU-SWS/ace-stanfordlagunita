@@ -48,7 +48,7 @@ if (EnvironmentDetector::isAhEnv()) {
 else {
   
   // Local environment configs.
-  if (!getenv('GITPOD_WORKSPACE') && file_exists(__DIR__ . "/local.config.php")) {
+  if (!getenv('GITPOD_WORKSPACE_ID') && file_exists(__DIR__ . "/local.config.php")) {
     include __DIR__ . "/local.config.php";
   }
 }
