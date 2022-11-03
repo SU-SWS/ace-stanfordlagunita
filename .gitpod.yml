@@ -49,18 +49,23 @@ tasks:
       yarn
     command: |
       cd $GITPOD_REPO_ROOT &&
+      echo 'Restarting Apache' &&
       apache2ctl restart &&
       gp ports await 8001 &&
       find docroot -name 'local.drush.yml' | xargs rm &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
       blt blt:telemetry:disable --no-interaction &&
+      echo 'Establishing Settings' &&
       blt settings &&
+      echo 'Logging Into Drupal' &&
       drush uli --uri=$PREVIEW_FULL_URL &&
       drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
       git config core.fileMode false &&
+      echo 'Connecting Drupal to Frontend' &&
       blt gryphon:connect-nextjs frontend "$PREVIEW_URL" "`gp url 3000`" &&
       cd frontend &&
+      echo 'Starting Frontend' &&
       yarn dev &
       gp ports await 3000 &&
       gp url 3000 | xargs gp preview --external
