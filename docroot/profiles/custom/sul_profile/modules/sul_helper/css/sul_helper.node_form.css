@@ -26,4 +26,5 @@
 iframe.next-site-preview {
   outline: none;
   border: none;
+  margin: 1px;
 }

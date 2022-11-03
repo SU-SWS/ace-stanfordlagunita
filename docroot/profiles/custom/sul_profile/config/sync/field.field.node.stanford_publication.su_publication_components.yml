@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.su_publication_components
     - node.type.stanford_publication
+    - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.stanford_banner
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.stanford_entity
@@ -29,6 +30,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      layout: layout
       stanford_banner: stanford_banner
       stanford_card: stanford_card
       stanford_entity: stanford_entity
@@ -41,7 +43,7 @@ settings:
     target_bundles_drag_drop:
       layout:
         weight: 13
-        enabled: false
+        enabled: true
       stanford_accordion:
         weight: 14
         enabled: false
