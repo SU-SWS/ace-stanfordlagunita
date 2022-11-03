@@ -59,7 +59,10 @@ tasks:
       echo 'Establishing Settings' &&
       blt settings &&
       echo 'Logging Into Drupal' &&
+      drush st &&
+      echo "drush uli --uri=$PREVIEW_FULL_URL" &&
       drush uli --uri=$PREVIEW_FULL_URL &&
+      echo "drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external" &&
       drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
       git config core.fileMode false &&
       echo 'Connecting Drupal to Frontend' &&
