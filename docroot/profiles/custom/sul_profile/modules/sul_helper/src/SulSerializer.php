@@ -13,6 +13,7 @@ use Drupal\jsonapi\JsonApiResource\ResourceObject;
 use Drupal\jsonapi\JsonApiResource\ResourceObjectData;
 use Drupal\jsonapi\Normalizer\Value\CacheableNormalization;
 use Drupal\jsonapi\ResourceType\ResourceTypeRepositoryInterface;
+use Drupal\next\Entity\NextSiteInterface;
 use Drupal\next\NextEntityTypeManagerInterface;
 use Drupal\next\NextSettingsManagerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -71,32 +72,16 @@ class SulSerializer {
       return;
     }
 
-    // Get the normalized data of the entity. If anything fails, don't edit
-    // the original build.
-    try {
-      $data = $this->getJsonApiNormalized($cloned_entity);
-    } catch (\Exception $e) {
+    $new_build = [];
+    foreach ($sites as $site) {
+      $new_build[$site->id()] = $this->getIframeForSite($site, $cloned_entity);
+    }
+    // If something went wrong building the iframes, don't modify the build or
+    // the display settings.
+    if (!array_filter($new_build)) {
       return;
     }
-
-    $build = [];
-    foreach ($sites as $site) {
-      $site_preview_url = $this->nextSettingsManager->getPreviewUrlGenerator()
-        ->generate($site, $cloned_entity);
-
-      $build[$site->id()] = [
-        '#type' => 'html_tag',
-        '#tag' => 'iframe',
-        '#attributes' => [
-          'id' => Html::getUniqueId($site->id() . '-' . $cloned_entity->bundle() . '-' . $cloned_entity->id()),
-          'class' => ['next-site-preview'],
-          'src' => $site_preview_url->toString(),
-          'width' => '100%',
-          'height' => 100,
-          'edit-data' => $this->serializer->serialize($data->getNormalization(), 'api_json'),
-        ],
-      ];
-    }
+    $build = $new_build;
 
     // Remove any third party settings for the Display Suite module since it
     // does some altering of its own after this.
@@ -105,6 +90,44 @@ class SulSerializer {
     $display->unsetThirdPartySetting('ds', 'layout');
 
     unset($cloned_entity);
+  }
+
+  /**
+   * Get the iframe render array for the given site and entity.
+   *
+   * @param \Drupal\next\Entity\NextSiteInterface $site
+   *   Next site entity.
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *   Content entity object.
+   *
+   * @return array
+   *   Iframe render array.
+   */
+  protected function getIframeForSite(NextSiteInterface $site, ContentEntityInterface $entity): array {
+    // Get the normalized data of the entity. If anything fails, don't edit
+    // the original build.
+    try {
+      $json_data = $this->getJsonApiNormalized($entity);
+    }
+    catch (\Exception $e) {
+      return [];
+    }
+
+    $site_preview_url = $this->nextSettingsManager->getPreviewUrlGenerator()
+      ->generate($site, $entity);
+
+    return [
+      '#type' => 'html_tag',
+      '#tag' => 'iframe',
+      '#attributes' => [
+        'id' => Html::getUniqueId($site->id() . '-' . $entity->bundle() . '-' . $entity->id()),
+        'class' => ['next-site-preview'],
+        'src' => $site_preview_url->toString(),
+        'width' => '100%',
+        'height' => 100,
+        'edit-data' => $this->serializer->serialize($json_data->getNormalization(), 'api_json'),
+      ],
+    ];
   }
 
   /**
