@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "989705ed4ee5acf8f25e9fd2e36c5226",
+    "content-hash": "93dfa35fc4cf61c7f95c5f713ce0b0b9",
     "packages": [
         {
             "name": "acquia/blt",
@@ -27403,16 +27403,16 @@
         },
         {
             "name": "su-sws/blt-sws",
-            "version": "dev-cc-report",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/blt-sws.git",
-                "reference": "3b86d8bc21206e6f3dea461f3be90c5064a8b214"
+                "reference": "bfbecf4099b9db1b4ffa25eb88a633b55c37dd26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/3b86d8bc21206e6f3dea461f3be90c5064a8b214",
-                "reference": "3b86d8bc21206e6f3dea461f3be90c5064a8b214",
+                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/bfbecf4099b9db1b4ffa25eb88a633b55c37dd26",
+                "reference": "bfbecf4099b9db1b4ffa25eb88a633b55c37dd26",
                 "shasum": ""
             },
             "require": {
@@ -27420,6 +27420,7 @@
                 "davidrjonas/composer-lock-diff": "^1.0@dev",
                 "typhonius/acquia-php-sdk-v2": "^2.0"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -27437,9 +27438,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SU-SWS/blt-sws/issues",
-                "source": "https://github.com/SU-SWS/blt-sws/tree/cc-report"
+                "source": "https://github.com/SU-SWS/blt-sws/tree/main"
             },
-            "time": "2022-11-07T18:50:59+00:00"
+            "time": "2022-11-07T19:07:21+00:00"
         },
         {
             "name": "su-sws/drupal-dev",

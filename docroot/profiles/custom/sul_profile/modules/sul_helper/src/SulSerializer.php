@@ -159,7 +159,7 @@ class SulSerializer {
       $include = $json_resource[$entity->getEntityTypeId() . '--' . $entity->bundle()]->getThirdPartySetting('jsonapi_defaults', 'default_include') ?: [];
       $include_fields = [...$include_fields, ...$include];
     }
-    $includes = $this->includeResolver->resolve($resource_object, implode(',', $include_fields));
+    $includes = $this->includeResolver->resolve($resource_object, implode(',', array_unique($include_fields)));
 
     $data = new ResourceObjectData([$resource_object], 1);
     $api_document = new JsonApiDocumentTopLevel($data, $includes, new LinkCollection([]));

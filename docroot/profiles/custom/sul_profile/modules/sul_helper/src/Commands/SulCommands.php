@@ -5,8 +5,19 @@ namespace Drupal\sul_helper\Commands;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drush\Commands\DrushCommands;
 
+/**
+ * Sul Helper Drush Commands.
+ *
+ * @codeCoverageIgnore
+ */
 class SulCommands extends DrushCommands {
 
+  /**
+   * Command constructor.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Entity type manager service.
+   */
   public function __construct(protected EntityTypeManagerInterface $entityTypeManager) {
   }
 
