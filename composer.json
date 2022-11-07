@@ -234,7 +234,7 @@
             "blt source:build:simplesamlphp-config"
         ],
         "pull-profile": [
-            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/custom/sul_profile --squash stanford_profile 9.x"
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/custom/sul_profile --squash stanford_profile 9.x; composer update n"
         ]
     },
     "autoload": {
