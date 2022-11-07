@@ -197,9 +197,9 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
-          known_hosts: ''
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
           config: |
-            Host *.acquia.com
+            Host *.acquia-sites.com
                 StrictHostKeyChecking no
                 UserKnownHostsFile=/dev/null
       - name: Deploy Artifact
