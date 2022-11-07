@@ -1,20 +1,11 @@
-<<<<<<< HEAD:docroot/profiles/custom/sul_profile/config/sync/field.storage.node.su_library__short_name.yml
 uuid: 4dbf09f1-81cb-4320-8221-03066627b1d6
-=======
-uuid: 34e3b8b1-42e0-433e-a6d8-8aee37612333
->>>>>>> 21fa38f752e654137c45ac577338727d11bcf07d:docroot/profiles/custom/sul_profile/config/sync/field.storage.node.su_event_contact_info.yml
 langcode: en
 status: true
 dependencies:
   module:
     - node
-<<<<<<< HEAD:docroot/profiles/custom/sul_profile/config/sync/field.storage.node.su_library__short_name.yml
 id: node.su_library__short_name
 field_name: su_library__short_name
-=======
-id: node.su_event_contact_info
-field_name: su_event_contact_info
->>>>>>> 21fa38f752e654137c45ac577338727d11bcf07d:docroot/profiles/custom/sul_profile/config/sync/field.storage.node.su_event_contact_info.yml
 entity_type: node
 type: string
 settings:
