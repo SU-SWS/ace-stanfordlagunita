@@ -197,6 +197,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
+          known_hosts: ''
           config: |
             Host *.acquia.com
                 StrictHostKeyChecking no
