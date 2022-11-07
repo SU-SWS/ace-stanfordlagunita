@@ -169,7 +169,7 @@ jobs:
           path: artifacts
   deploy:
     name: Deploy Artifact
-    needs: [phpunit, acceptance, functional]
+#    needs: [phpunit, acceptance, functional]
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -193,6 +193,14 @@ jobs:
             1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             1.x-${{ hashFiles('composer.json') }}-
             1.x-
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          config: |
+            Host *.acquia.com
+                StrictHostKeyChecking no
+                UserKnownHostsFile=/dev/null
       - name: Deploy Artifact
         run: |
           git config --global user.email "sws-developers@lists.stanford.edu"
