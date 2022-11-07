@@ -6,6 +6,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\jsonapi\IncludeResolver;
 use Drupal\jsonapi\JsonApiResource\JsonApiDocumentTopLevel;
 use Drupal\jsonapi\JsonApiResource\LinkCollection;
@@ -22,6 +23,13 @@ use Symfony\Component\Serializer\SerializerInterface;
  * Sul Helper Serializer to build Next preview iframes.
  */
 class SulSerializer {
+
+  /**
+   * Logger service.
+   *
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
+   */
+  protected $logger;
 
   /**
    * Serializer constructor.
@@ -45,8 +53,10 @@ class SulSerializer {
     protected ResourceTypeRepositoryInterface $jsonApiResourceTypeRepo,
     protected IncludeResolver                 $includeResolver,
     protected SerializerInterface             $serializer,
-    protected NextSettingsManagerInterface    $nextSettingsManager
+    protected NextSettingsManagerInterface    $nextSettingsManager,
+    LoggerChannelFactoryInterface             $logger_factory
   ) {
+    $this->logger = $logger_factory->get('sul_helper');
   }
 
   /**
@@ -74,14 +84,16 @@ class SulSerializer {
 
     $new_build = [];
     foreach ($sites as $site) {
-      $new_build[$site->id()] = $this->getIframeForSite($site, $cloned_entity);
+      try {
+        $new_build[$site->id()] = $this->getIframeForSite($site, $cloned_entity);
+      }
+      catch (\Exception $e) {
+        $this->logger->error('Unable to generate entity preview. %e', ['%e' => $e->getMessage()]);
+      }
     }
     // If something went wrong building the iframes, don't modify the build or
     // the display settings.
-    if (!array_filter($new_build)) {
-      return;
-    }
-    $build = $new_build;
+    $build = array_filter($new_build) ?: $new_build;
 
     // Remove any third party settings for the Display Suite module since it
     // does some altering of its own after this.
@@ -104,14 +116,8 @@ class SulSerializer {
    *   Iframe render array.
    */
   protected function getIframeForSite(NextSiteInterface $site, ContentEntityInterface $entity): array {
-    // Get the normalized data of the entity. If anything fails, don't edit
-    // the original build.
-    try {
-      $json_data = $this->getJsonApiNormalized($entity);
-    }
-    catch (\Exception $e) {
-      return [];
-    }
+    // Get the normalized data of the entity.
+    $json_data = $this->getJsonApiNormalized($entity);
 
     $site_preview_url = $this->nextSettingsManager->getPreviewUrlGenerator()
       ->generate($site, $entity);
