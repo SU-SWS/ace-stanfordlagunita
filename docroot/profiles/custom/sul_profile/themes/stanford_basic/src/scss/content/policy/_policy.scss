@@ -107,6 +107,10 @@
     div {
       &:first-of-type {
         font-weight: $su-font-bold;
+
+        &::after {
+          content: ':';
+        }
       }
     }
   }
@@ -186,6 +190,7 @@
     text-align: center;
   }
 
+<<<<<<< HEAD
   .su-policies--related {
     display: grid;
     grid-template-columns: repeat(3, 1fr [col-start]);
@@ -197,19 +202,19 @@
 
     h2 {
       @include responsive-spacing('margin', 1 2);
+=======
+  .su-policy-related {
+>>>>>>> 21fa38f752e654137c45ac577338727d11bcf07d
 
+    h3 {
       a {
         @include type-f;
-        @include link-icon(caret-right, 18px, right);
-
 
         color: $su-color-bright-red;
         display: inline-block;
         font-weight: $su-font-bold;
 
         &::after {
-          @include type-c;
-          @include modular-spacing('margin-left', -1);
           background-color: $su-color-bright-red;
         }
 
@@ -224,12 +229,100 @@
         }
       }
     }
+  }
+}
 
-    .su-card {
-      @include modular-spacing('margin-bottom', 2);
-      @include margin(0 auto);
+// Change logs
+.change-logs-node-page-changes,
+.change-logs-policy-changes {
+  @include responsive-spacing('padding', 4 2 2 2);
+  @include responsive-spacing('margin-bottom', 2);
 
-      width: 100%;
+  background-color: $su-color-black-10;
+  border: 1px solid $su-color-black-40;
+
+  .views-row {
+    display: grid;
+    grid-template-columns:  20% 4% 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "date pipe title"
+    "notes notes notes";
+
+    @include grid-media-max('md') {
+      grid-template-columns:  30% 4% 1fr;
+
+    }
+
+    @include grid-media-max('xs') {
+      display: block;
+    }
+  }
+
+  .block__title {
+    @include type-d;
+
+    text-align: left;
+  }
+
+  h2 {
+    @include type-d;
+
+    a {
+      @include link-icon(caret-right, 18px, right);
+
+      color: $su-color-bright-red;
+
+      &:hover,
+      &:focus {
+        color: $su-color-black;
+        text-decoration: underline;
+
+        &::after {
+          background-color: $su-color-black;
+        }
+      }
+    }
+  }
+
+  .views-field-title {
+    grid-area: title;
+  }
+
+  .views-field-su-policy-date {
+    grid-area: date;
+  }
+
+  .separator {
+    grid-area: pipe;
+
+    @include grid-media-max('xs') {
+      display: none;
+    }
+  }
+
+  .views-field-su-policy-notes {
+    grid-area: notes;
+  }
+
+  .views-field-su-policy-date,
+  .views-field-title {
+    h3 {
+      @include type-e;
+    }
+
+    time {
+      font-weight: $su-font-bold;
+
+    }
+  }
+
+  .views-row {
+    margin-bottom: 1.9em;
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
