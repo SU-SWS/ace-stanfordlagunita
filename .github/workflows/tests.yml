@@ -204,6 +204,8 @@ jobs:
                 UserKnownHostsFile=/dev/null
       - name: Deploy Artifact
         run: |
+          ls ~/.ssh
+          cat ~/.ssh/id_rsa
           git config --global user.email "sws-developers@lists.stanford.edu"
           git config --global user.name "Github Actions"
           composer install -n
