@@ -167,44 +167,44 @@ jobs:
         with:
           name: functional-tests-results
           path: artifacts
-  deploy:
-    name: Deploy Artifact
+#  deploy:
+#    name: Deploy Artifact
 #    needs: [phpunit, acceptance, functional]
-    runs-on: ubuntu-latest
-    env:
-      DRUPAL_DATABASE_NAME: drupal
-      DRUPAL_DATABASE_USERNAME: drupal
-      DRUPAL_DATABASE_PASSWORD: drupal
-      DRUPAL_DATABASE_HOST: mysql
-    container:
-      image: pookmish/drupal8ci:latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Restore Cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
-      - name: Deploy Artifact
-        env:
-          SSH_KEY: ${{secrets.SSH_KEY}}
-        run: |
-          mkdir -p ~/.ssh
-          echo $SSH_KEY | base64 -d > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          eval `ssh-agent -s`
-          ssh-add ~/.ssh/id_rsa
-          ssh-keyscan svn-23450.prod.hosting.acquia.com > ~/.ssh/known_hosts
-          git config --global user.email "sws-developers@lists.stanford.edu"
-          git config --global user.name "Github Actions"
-          composer install -n
-          blt blt:telemetry:disable --no-interaction
-          blt deploy -v -n
+#    runs-on: ubuntu-latest
+#    env:
+#      DRUPAL_DATABASE_NAME: drupal
+#      DRUPAL_DATABASE_USERNAME: drupal
+#      DRUPAL_DATABASE_PASSWORD: drupal
+#      DRUPAL_DATABASE_HOST: mysql
+#    container:
+#      image: pookmish/drupal8ci:latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Restore Cache
+#        uses: actions/cache@v3
+#        with:
+#          path: |
+#            vendor
+#            docroot/core
+#            docroot/libraries
+#            docroot/modules/contrib
+#          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+#          restore-keys: |
+#            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+#            1.x-${{ hashFiles('composer.json') }}-
+#            1.x-
+#      - name: Deploy Artifact
+#        env:
+#          SSH_KEY: ${{secrets.SSH_KEY}}
+#        run: |
+#          mkdir -p ~/.ssh
+#          echo $SSH_KEY | base64 -d > ~/.ssh/id_rsa
+#          chmod 600 ~/.ssh/id_rsa
+#          eval `ssh-agent -s`
+#          ssh-add ~/.ssh/id_rsa
+#          ssh-keyscan svn-23450.prod.hosting.acquia.com > ~/.ssh/known_hosts
+#          git config --global user.email "sws-developers@lists.stanford.edu"
+#          git config --global user.name "Github Actions"
+#          composer install -n
+#          blt blt:telemetry:disable --no-interaction
+#          blt deploy -v -n
