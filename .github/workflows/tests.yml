@@ -201,7 +201,7 @@ jobs:
           config: |
             Host *.acquia-sites.com
                 StrictHostKeyChecking no
-                UserKnownHostsFile=/dev/null
+                IdentityFile /root/.ssh/id_rsa
       - name: Deploy Artifact
         run: |
           ls ~/.ssh
