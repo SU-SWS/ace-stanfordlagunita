@@ -193,17 +193,14 @@ jobs:
             1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             1.x-${{ hashFiles('composer.json') }}-
             1.x-
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          config: |
-            Host *.acquia-sites.com
-                StrictHostKeyChecking no
-                IdentityFile /root/.ssh/id_rsa
       - name: Deploy Artifact
+        env:
+          SSH_KEY: ${{secrets.SSH_KEY}}
         run: |
+          mkdir -p ~/.ssh
+          echo $SSH_KEY > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-add ~/.ssh/id_rsa
           git config --global user.email "sws-developers@lists.stanford.edu"
           git config --global user.name "Github Actions"
           composer install -n
