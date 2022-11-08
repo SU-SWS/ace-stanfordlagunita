@@ -204,8 +204,8 @@ jobs:
                 IdentityFile /root/.ssh/id_rsa
       - name: Deploy Artifact
         run: |
-          ls ~/.ssh
-          cat ~/.ssh/id_rsa
+          ls /root/.ssh/.ssh
+          cat /root/.ssh/id_rsa
           git config --global user.email "sws-developers@lists.stanford.edu"
           git config --global user.name "Github Actions"
           composer install -n
