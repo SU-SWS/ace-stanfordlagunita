@@ -2,61 +2,31 @@ local:
   uri: default
   root: '${env.cwd}/docroot'
 dev:
-  root: /var/www/html/hrgryphon.dev/docroot
-  ac-site: hrgryphon
+  root: /var/www/html/stanfordgryphon.dev/docroot
+  ac-site: stanfordgryphon
   ac-env: dev
   ac-realm: prod
-  uri: hrgryphondev.prod.acquia-sites.com
+  uri: stanfordgryphondev.prod.acquia-sites.com
   dev.livedev:
-    parent: '@hrgryphon.dev'
-    root: /mnt/gfs/hrgryphon.dev/livedev/docroot
-  host: hrgryphondev.ssh.prod.acquia-sites.com
-  user: hrgryphon.dev
-  paths:
-    drush-script: drush9
-  ssh:
-    tty: 0
-prod:
-  root: /var/www/html/hrgryphon.prod/docroot
-  ac-site: hrgryphon
-  ac-env: prod
-  ac-realm: prod
-  uri: hrgryphon.prod.acquia-sites.com
-  prod.livedev:
-    parent: '@hrgryphon.prod'
-    root: /mnt/gfs/hrgryphon.prod/livedev/docroot
-  host: hrgryphon.ssh.prod.acquia-sites.com
-  user: hrgryphon.prod
-  paths:
-    drush-script: drush9
-  ssh:
-    tty: 0
-ra:
-  root: /var/www/html/hrgryphon.ra/docroot
-  ac-site: hrgryphon
-  ac-env: ra
-  ac-realm: prod
-  uri: hrgryphonra.prod.acquia-sites.com
-  ra.livedev:
-    parent: '@hrgryphon.ra'
-    root: /mnt/gfs/hrgryphon.ra/livedev/docroot
-  host: hrgryphonra.ssh.prod.acquia-sites.com
-  user: hrgryphon.ra
+    parent: '@stanfordgryphon.dev'
+    root: /mnt/gfs/stanfordgryphon.dev/livedev/docroot
+  host: stanfordgryphondev.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.dev
   paths:
     drush-script: drush9
   ssh:
     tty: 0
 test:
-  root: /var/www/html/hrgryphon.test/docroot
-  ac-site: hrgryphon
+  root: /var/www/html/stanfordgryphon.test/docroot
+  ac-site: stanfordgryphon
   ac-env: test
   ac-realm: prod
-  uri: hrgryphonstg.prod.acquia-sites.com
+  uri: stanfordgryphonstg.prod.acquia-sites.com
   test.livedev:
-    parent: '@hrgryphon.test'
-    root: /mnt/gfs/hrgryphon.test/livedev/docroot
-  host: hrgryphonstg.ssh.prod.acquia-sites.com
-  user: hrgryphon.test
+    parent: '@stanfordgryphon.test'
+    root: /mnt/gfs/stanfordgryphon.test/livedev/docroot
+  host: stanfordgryphonstg.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.test
   paths:
     drush-script: drush9
   ssh:

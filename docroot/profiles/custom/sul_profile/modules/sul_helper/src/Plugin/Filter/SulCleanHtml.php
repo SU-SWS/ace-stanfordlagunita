@@ -27,7 +27,7 @@ class SulCleanHtml extends FilterBase {
     $text = preg_replace('/<!--.*?>/', '', $text);
     // Remove white space between tags.
     $text = preg_replace('/> +?</', '><', $text);
-    return new FilterProcessResult($text);
+    return new FilterProcessResult(trim($text));
   }
 
 }

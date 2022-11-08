@@ -1,7 +1,5 @@
 @charset 'UTF-8';
 
-// $caret-right: '/dist/assets/svg/caret-right.svg';
-
 .policy {
   @include responsive-spacing('padding-bottom', 9);
 
@@ -190,21 +188,7 @@
     text-align: center;
   }
 
-<<<<<<< HEAD
-  .su-policies--related {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr [col-start]);
-    gap: 45px;
-
-    @include grid-media-max('md') {
-      grid-template-columns: 1fr;
-    }
-
-    h2 {
-      @include responsive-spacing('margin', 1 2);
-=======
   .su-policy-related {
->>>>>>> 21fa38f752e654137c45ac577338727d11bcf07d
 
     h3 {
       a {
@@ -308,61 +292,6 @@
 
   .views-field-su-policy-date,
   .views-field-title {
-    h3 {
-      @include type-e;
-    }
-
-    time {
-      font-weight: $su-font-bold;
-
-    }
-  }
-
-  .views-row {
-    margin-bottom: 1.9em;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
-}
-
-// Change logs
-.change-logs-node-page-changes,
-.change-logs-policy-changes {
-  @include responsive-spacing('padding', 4 2 2 2);
-  @include responsive-spacing('margin-bottom', 2);
-
-  background-color: $su-color-black-10;
-  border: 1px solid $su-color-black-40;
-
-  .block__title {
-    @include type-d;
-
-    text-align: left;
-  }
-
-  h2 {
-    @include type-d;
-
-    a {
-      @include link-icon(caret-right, 18px, right);
-
-      color: $su-color-bright-red;
-
-      &:hover,
-      &:focus {
-        color: $su-color-black;
-        text-decoration: underline;
-
-        &::after {
-          background-color: $su-color-black;
-        }
-      }
-    }
-  }
-
-  .views-field-su-policy-date {
     h3 {
       @include type-e;
     }

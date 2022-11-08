@@ -108,6 +108,7 @@ exclude_patterns:
   - "docroot/"
   - "!docroot/profiles/custom"
   - "tests/"
+  - "**/tests"
   - "simplesamlphp"
   - "patches"
   - "hooks"

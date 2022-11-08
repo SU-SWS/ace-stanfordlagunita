@@ -6,7 +6,9 @@ project:
   local: {  }
 git:
   default_branch: main
-  remotes: {  }
+  remotes:
+    # This is temporary until an appropriate application is available.
+    - stanfordgryphon@svn-23450.prod.hosting.acquia.com:stanfordgryphon.git
 deploy:
   tag_source: false
   exclude_file: '${repo.root}/blt/deploy/rsync-exclude.txt'

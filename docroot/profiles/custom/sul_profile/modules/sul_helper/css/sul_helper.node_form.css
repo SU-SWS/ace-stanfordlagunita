@@ -15,10 +15,16 @@
 .layout-node-form .layout-region--node-main .layout-region__content,
 .layout-node-form .layout-region--node-footer .layout-region__content {
   max-width: 100%;
-  width:100%;
+  width: 100%;
 }
 
 .ds-entity--paragraph .su-media .su-media__caption {
-  float:none;
+  float: none;
   max-width: 100%;
+}
+
+iframe.next-site-preview {
+  outline: none;
+  border: none;
+  margin: 1px;
 }

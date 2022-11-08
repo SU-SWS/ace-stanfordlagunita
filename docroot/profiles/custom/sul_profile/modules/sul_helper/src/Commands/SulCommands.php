@@ -5,8 +5,19 @@ namespace Drupal\sul_helper\Commands;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drush\Commands\DrushCommands;
 
+/**
+ * Sul Helper Drush Commands.
+ *
+ * @codeCoverageIgnore
+ */
 class SulCommands extends DrushCommands {
 
+  /**
+   * Command constructor.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Entity type manager service.
+   */
   public function __construct(protected EntityTypeManagerInterface $entityTypeManager) {
   }
 
@@ -76,23 +87,35 @@ class SulCommands extends DrushCommands {
    * Connect entity types to the NextJS site ID.
    */
   protected function connectEntityTypes($next_site_id) {
-    $node_types = $this->entityTypeManager->getStorage('node_type')
-      ->loadMultiple();
+    $entities = [
+      'node' => $this->entityTypeManager->getStorage('node_type')
+        ->loadMultiple(),
+      'paragraph' => $this->entityTypeManager->getStorage('paragraphs_type')
+        ->loadMultiple(),
+    ];
+
+    $entities['paragraph'] = array_filter($entities['paragraph'], function ($p_type) {
+      return !in_array($p_type->id(), ['layout']);
+    });
+
     $next_storage = $this->entityTypeManager->getStorage('next_entity_type_config');
-    foreach (array_keys($node_types) as $node_type) {
-      /** @var \Drupal\next\Entity\NextEntityTypeConfigInterface $entity */
-      $entity = $next_storage->load("node.$node_type");
-      if (!$entity) {
-        $entity = $next_storage->create(['id' => "node.$node_type"]);
+
+    foreach ($entities as $entity_type => $bundles) {
+      foreach (array_keys($bundles) as $bundle) {
+        /** @var \Drupal\next\Entity\NextEntityTypeConfigInterface $entity */
+        $entity = $next_storage->load("$entity_type.$bundle");
+        if (!$entity) {
+          $entity = $next_storage->create(['id' => "$entity_type.$bundle"]);
+        }
+        $entity->setSiteResolver('site_selector')
+          ->setConfiguration(['sites' => [$next_site_id => $next_site_id]]);
+
+        /** @var \Drupal\next\Plugin\ConfigurableSiteResolverInterface $site_resolver */
+        $site_resolver = $entity->getSiteResolver();
+        $site_resolver->setConfiguration(['sites' => [$next_site_id => $next_site_id]]);
+
+        $entity->save();
       }
-      $entity->setSiteResolver('site_selector')
-        ->setConfiguration(['sites' => [$next_site_id => $next_site_id]]);
-
-      /** @var \Drupal\next\Plugin\ConfigurableSiteResolverInterface $site_resolver */
-      $site_resolver = $entity->getSiteResolver();
-      $site_resolver->setConfiguration(['sites' => [$next_site_id => $next_site_id]]);
-
-      $entity->save();
     }
   }
 

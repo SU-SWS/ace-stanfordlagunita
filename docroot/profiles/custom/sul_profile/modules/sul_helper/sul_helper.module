@@ -6,6 +6,26 @@
  */
 
 use Drupal\Core\Template\Attribute;
+use Drupal\paragraphs\ParagraphInterface;
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function sul_helper_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+  $entity_types['paragraph']->setLinkTemplate('canonical', '/admin/paragraph/{paragraph}');
+  $entity_types['paragraph']->setHandlerClass('route_provider', ['html' => '\Drupal\Core\Entity\Routing\AdminHtmlRouteProvider']);
+}
+
+/**
+ * Implements hook_entity_display_build_alter().
+ */
+function sul_helper_entity_display_build_alter(&$build, $context) {
+  if (!($context['entity'] instanceof ParagraphInterface)) {
+    return;
+  }
+  \Drupal::service('sul_helper.jsonapi_serializer')->alterEntityBuild($build, $context['entity'], $context['display']);
+}
 
 /**
  * Implements hook_ckeditor_css_alter().

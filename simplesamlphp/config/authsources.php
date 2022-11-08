@@ -346,6 +346,6 @@ $config = [
   */
 ];
 
-if (!EnvironmentDetector::isAhEnv() && file_exists(__DIR__ . '/local.authsources.php')) {
+if (!EnvironmentDetector::isAhEnv() && !getenv('GITPOD_WORKSPACE_ID') && file_exists(__DIR__ . '/local.authsources.php')) {
   require __DIR__ . '/local.authsources.php';
 }
