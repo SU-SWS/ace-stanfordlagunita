@@ -202,6 +202,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           eval `ssh-agent -s`
           ssh-add ~/.ssh/id_rsa
+          ssh-keyscan svn-23450.prod.hosting.acquia.com > ~/.ssh/known_hosts
           git config --global user.email "sws-developers@lists.stanford.edu"
           git config --global user.name "Github Actions"
           composer install -n
