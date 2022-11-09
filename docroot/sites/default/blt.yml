@@ -3,4 +3,4 @@ project:
 drush:
   aliases:
     local: self
-    remote: ace-gryphon.test
+    remote: default.dev
