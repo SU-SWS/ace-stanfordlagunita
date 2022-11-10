@@ -1,25 +1,18 @@
-uuid: 899b1e78-9c8c-4319-adb1-5cd9667d6d56
+uuid: da606bbd-c4b6-483f-90fc-c05f3e88ecfa
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.stanford_event_series
+    - node.type.stanford_policy
   module:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
-    default_include:
-      - su_event_series_components
-      - su_event_series_event
-      - su_event_series_type
-      - su_shared_tags
-    default_filter:
-      'filter:status': '1'
     page_limit: 50
-id: node--stanford_event_series
+id: node--stanford_policy
 disabled: false
-path: node/stanford_event_series
-resourceType: node--stanford_event_series
+path: node/stanford_policy
+resourceType: node--stanford_policy
 resourceFields:
   nid:
     disabled: true
@@ -183,57 +176,69 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  stanford_intranet__access:
-    disabled: true
-    fieldName: stanford_intranet__access
-    publicName: stanford_intranet__access
+  body:
+    disabled: false
+    fieldName: body
+    publicName: body
     enhancer:
       id: ''
-  su_event_series_components:
+  su_policy_authority:
     disabled: false
-    fieldName: su_event_series_components
-    publicName: su_event_series_components
+    fieldName: su_policy_authority
+    publicName: su_policy_authority
     enhancer:
       id: ''
-  su_event_series_dek:
+  su_policy_auto_prefix:
     disabled: false
-    fieldName: su_event_series_dek
-    publicName: su_event_series_dek
+    fieldName: su_policy_auto_prefix
+    publicName: su_policy_auto_prefix
     enhancer:
       id: ''
-  su_event_series_event:
+  su_policy_changelog:
     disabled: false
-    fieldName: su_event_series_event
-    publicName: su_event_series_event
+    fieldName: su_policy_changelog
+    publicName: su_policy_changelog
     enhancer:
       id: ''
-  su_event_series_subheadline:
+  su_policy_chapter:
     disabled: false
-    fieldName: su_event_series_subheadline
-    publicName: su_event_series_subheadline
+    fieldName: su_policy_chapter
+    publicName: su_policy_chapter
     enhancer:
       id: ''
-  su_event_series_type:
+  su_policy_effective:
     disabled: false
-    fieldName: su_event_series_type
-    publicName: su_event_series_type
+    fieldName: su_policy_effective
+    publicName: su_policy_effective
     enhancer:
       id: ''
-  su_event_series_weight:
+  su_policy_policy_num:
     disabled: false
-    fieldName: su_event_series_weight
-    publicName: su_event_series_weight
+    fieldName: su_policy_policy_num
+    publicName: su_policy_policy_num
     enhancer:
       id: ''
-  su_metatags:
+  su_policy_related:
     disabled: false
-    fieldName: su_metatags
-    publicName: su_metatags
+    fieldName: su_policy_related
+    publicName: su_policy_related
     enhancer:
       id: ''
-  su_shared_tags:
+  su_policy_subchapter:
     disabled: false
-    fieldName: su_shared_tags
-    publicName: su_shared_tags
+    fieldName: su_policy_subchapter
+    publicName: su_policy_subchapter
+    enhancer:
+      id: ''
+  su_policy_title:
+    disabled: false
+    fieldName: su_policy_title
+    publicName: su_policy_title
+    enhancer:
+      id: ''
+  su_policy_updated:
+    disabled: false
+    fieldName: su_policy_updated
+    publicName: su_policy_updated
     enhancer:
       id: ''

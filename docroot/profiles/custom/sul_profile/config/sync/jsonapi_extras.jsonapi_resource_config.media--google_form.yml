@@ -1,25 +1,23 @@
-uuid: 8b111007-cd0b-4bae-8e4b-1da6beede338
+uuid: 281cade3-a6da-45b0-b509-2899ecdd78df
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.stanford_card
+    - media.type.google_form
   module:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
-    default_include:
-      - su_card_media.field_media_image
     page_limit: 50
-id: paragraph--stanford_card
+id: media--google_form
 disabled: false
-path: paragraph/stanford_card
-resourceType: paragraph--stanford_card
+path: media/google_form
+resourceType: media--google_form
 resourceFields:
-  id:
+  mid:
     disabled: true
-    fieldName: id
-    publicName: id
+    fieldName: mid
+    publicName: mid
     enhancer:
       id: ''
   uuid:
@@ -28,10 +26,10 @@ resourceFields:
     publicName: uuid
     enhancer:
       id: ''
-  revision_id:
+  vid:
     disabled: true
-    fieldName: revision_id
-    publicName: revision_id
+    fieldName: vid
+    publicName: vid
     enhancer:
       id: ''
   langcode:
@@ -40,10 +38,28 @@ resourceFields:
     publicName: langcode
     enhancer:
       id: ''
-  type:
+  bundle:
     disabled: false
-    fieldName: type
-    publicName: type
+    fieldName: bundle
+    publicName: bundle
+    enhancer:
+      id: ''
+  revision_created:
+    disabled: true
+    fieldName: revision_created
+    publicName: revision_created
+    enhancer:
+      id: ''
+  revision_user:
+    disabled: true
+    fieldName: revision_user
+    publicName: revision_user
+    enhancer:
+      id: ''
+  revision_log_message:
+    disabled: true
+    fieldName: revision_log_message
+    publicName: revision_log_message
     enhancer:
       id: ''
   status:
@@ -52,34 +68,34 @@ resourceFields:
     publicName: status
     enhancer:
       id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  name:
+    disabled: false
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+  thumbnail:
+    disabled: false
+    fieldName: thumbnail
+    publicName: thumbnail
+    enhancer:
+      id: ''
   created:
     disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
-  parent_id:
+  changed:
     disabled: true
-    fieldName: parent_id
-    publicName: parent_id
-    enhancer:
-      id: ''
-  parent_type:
-    disabled: true
-    fieldName: parent_type
-    publicName: parent_type
-    enhancer:
-      id: ''
-  parent_field_name:
-    disabled: true
-    fieldName: parent_field_name
-    publicName: parent_field_name
-    enhancer:
-      id: ''
-  behavior_settings:
-    disabled: false
-    fieldName: behavior_settings
-    publicName: behavior_settings
+    fieldName: changed
+    publicName: changed
     enhancer:
       id: ''
   default_langcode:
@@ -106,41 +122,33 @@ resourceFields:
     publicName: metatag
     enhancer:
       id: ''
-  su_card_body:
-    disabled: false
-    fieldName: su_card_body
-    publicName: su_card_body
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
     enhancer:
       id: ''
-  su_card_header:
-    disabled: false
-    fieldName: su_card_header
-    publicName: su_card_header
+  publish_on:
+    disabled: true
+    fieldName: publish_on
+    publicName: publish_on
     enhancer:
       id: ''
-  su_card_link:
-    disabled: false
-    fieldName: su_card_link
-    publicName: su_card_link
-    enhancer:
-      id: url_link
-      settings:
-        absolute_url: 0
-  su_card_link_display:
-    disabled: false
-    fieldName: su_card_link_display
-    publicName: su_card_link_display
+  unpublish_on:
+    disabled: true
+    fieldName: unpublish_on
+    publicName: unpublish_on
     enhancer:
       id: ''
-  su_card_media:
+  field_media_google_form:
     disabled: false
-    fieldName: su_card_media
-    publicName: su_card_media
+    fieldName: field_media_google_form
+    publicName: field_media_google_form
     enhancer:
       id: ''
-  su_card_super_header:
+  field_media_google_form_hgt:
     disabled: false
-    fieldName: su_card_super_header
-    publicName: su_card_super_header
+    fieldName: field_media_google_form_hgt
+    publicName: field_media_google_form_hgt
     enhancer:
       id: ''

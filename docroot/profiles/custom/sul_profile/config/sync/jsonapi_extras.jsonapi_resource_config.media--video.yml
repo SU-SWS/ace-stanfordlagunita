@@ -1,25 +1,23 @@
-uuid: 5e5d5ed3-c47f-42d1-91ed-145ab4e97acf
+uuid: bf1b8655-7245-41ad-8601-0ab98ccdd241
 langcode: en
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.stanford_banner
+    - media.type.video
   module:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
-    default_include:
-      - su_banner_image.field_media_image
     page_limit: 50
-id: paragraph--stanford_banner
+id: media--video
 disabled: false
-path: paragraph/stanford_banner
-resourceType: paragraph--stanford_banner
+path: media/video
+resourceType: media--video
 resourceFields:
-  id:
+  mid:
     disabled: true
-    fieldName: id
-    publicName: id
+    fieldName: mid
+    publicName: mid
     enhancer:
       id: ''
   uuid:
@@ -28,10 +26,10 @@ resourceFields:
     publicName: uuid
     enhancer:
       id: ''
-  revision_id:
+  vid:
     disabled: true
-    fieldName: revision_id
-    publicName: revision_id
+    fieldName: vid
+    publicName: vid
     enhancer:
       id: ''
   langcode:
@@ -40,10 +38,28 @@ resourceFields:
     publicName: langcode
     enhancer:
       id: ''
-  type:
+  bundle:
     disabled: false
-    fieldName: type
-    publicName: type
+    fieldName: bundle
+    publicName: bundle
+    enhancer:
+      id: ''
+  revision_created:
+    disabled: true
+    fieldName: revision_created
+    publicName: revision_created
+    enhancer:
+      id: ''
+  revision_user:
+    disabled: true
+    fieldName: revision_user
+    publicName: revision_user
+    enhancer:
+      id: ''
+  revision_log_message:
+    disabled: true
+    fieldName: revision_log_message
+    publicName: revision_log_message
     enhancer:
       id: ''
   status:
@@ -52,34 +68,34 @@ resourceFields:
     publicName: status
     enhancer:
       id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  name:
+    disabled: false
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+  thumbnail:
+    disabled: false
+    fieldName: thumbnail
+    publicName: thumbnail
+    enhancer:
+      id: ''
   created:
     disabled: true
     fieldName: created
     publicName: created
     enhancer:
       id: ''
-  parent_id:
+  changed:
     disabled: true
-    fieldName: parent_id
-    publicName: parent_id
-    enhancer:
-      id: ''
-  parent_type:
-    disabled: true
-    fieldName: parent_type
-    publicName: parent_type
-    enhancer:
-      id: ''
-  parent_field_name:
-    disabled: true
-    fieldName: parent_field_name
-    publicName: parent_field_name
-    enhancer:
-      id: ''
-  behavior_settings:
-    disabled: false
-    fieldName: behavior_settings
-    publicName: behavior_settings
+    fieldName: changed
+    publicName: changed
     enhancer:
       id: ''
   default_langcode:
@@ -106,35 +122,33 @@ resourceFields:
     publicName: metatag
     enhancer:
       id: ''
-  su_banner_body:
-    disabled: false
-    fieldName: su_banner_body
-    publicName: su_banner_body
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
     enhancer:
       id: ''
-  su_banner_button:
-    disabled: false
-    fieldName: su_banner_button
-    publicName: su_banner_button
-    enhancer:
-      id: url_link
-      settings:
-        absolute_url: 0
-  su_banner_header:
-    disabled: false
-    fieldName: su_banner_header
-    publicName: su_banner_header
+  publish_on:
+    disabled: true
+    fieldName: publish_on
+    publicName: publish_on
     enhancer:
       id: ''
-  su_banner_image:
-    disabled: false
-    fieldName: su_banner_image
-    publicName: su_banner_image
+  unpublish_on:
+    disabled: true
+    fieldName: unpublish_on
+    publicName: unpublish_on
     enhancer:
       id: ''
-  su_banner_sup_header:
+  field_media_oembed_video:
     disabled: false
-    fieldName: su_banner_sup_header
-    publicName: su_banner_sup_header
+    fieldName: field_media_oembed_video
+    publicName: field_media_oembed_video
+    enhancer:
+      id: ''
+  su_media_category:
+    disabled: false
+    fieldName: su_media_category
+    publicName: su_media_category
     enhancer:
       id: ''

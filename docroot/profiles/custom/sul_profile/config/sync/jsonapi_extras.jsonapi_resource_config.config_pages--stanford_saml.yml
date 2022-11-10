@@ -1,0 +1,88 @@
+uuid: 254efa2a-c27b-43fc-98ad-18ba5fe9ba8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_saml
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: config_pages--stanford_saml
+disabled: true
+path: config_pages/stanford_saml
+resourceType: config_pages--stanford_saml
+resourceFields:
+  id:
+    disabled: true
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  label:
+    disabled: true
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  context:
+    disabled: true
+    fieldName: context
+    publicName: context
+    enhancer:
+      id: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  encrypted_field_storage:
+    disabled: true
+    fieldName: encrypted_field_storage
+    publicName: encrypted_field_storage
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  su_simplesaml_affil:
+    disabled: false
+    fieldName: su_simplesaml_affil
+    publicName: su_simplesaml_affil
+    enhancer:
+      id: ''
+  su_simplesaml_allowed:
+    disabled: false
+    fieldName: su_simplesaml_allowed
+    publicName: su_simplesaml_allowed
+    enhancer:
+      id: ''
+  su_simplesaml_roles:
+    disabled: false
+    fieldName: su_simplesaml_roles
+    publicName: su_simplesaml_roles
+    enhancer:
+      id: ''
+  su_simplesaml_users:
+    disabled: false
+    fieldName: su_simplesaml_users
+    publicName: su_simplesaml_users
+    enhancer:
+      id: ''

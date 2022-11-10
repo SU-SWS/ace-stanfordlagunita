@@ -1,0 +1,88 @@
+uuid: 044fafc4-8db0-4e81-b3dc-29b9c4ea8432
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_events_importer
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: config_pages--stanford_events_importer
+disabled: true
+path: config_pages/stanford_events_importer
+resourceType: config_pages--stanford_events_importer
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  label:
+    disabled: false
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  context:
+    disabled: false
+    fieldName: context
+    publicName: context
+    enhancer:
+      id: ''
+  changed:
+    disabled: false
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  encrypted_field_storage:
+    disabled: false
+    fieldName: encrypted_field_storage
+    publicName: encrypted_field_storage
+    enhancer:
+      id: ''
+  metatag:
+    disabled: false
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  su_event_empty:
+    disabled: false
+    fieldName: su_event_empty
+    publicName: su_event_empty
+    enhancer:
+      id: ''
+  su_event_xml_url:
+    disabled: false
+    fieldName: su_event_xml_url
+    publicName: su_event_xml_url
+    enhancer:
+      id: ''
+  su_localist_bookmark:
+    disabled: false
+    fieldName: su_localist_bookmark
+    publicName: su_localist_bookmark
+    enhancer:
+      id: ''
+  su_localist_url:
+    disabled: false
+    fieldName: su_localist_url
+    publicName: su_localist_url
+    enhancer:
+      id: ''

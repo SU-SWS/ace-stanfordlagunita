@@ -1,0 +1,70 @@
+uuid: 29caea12-73bc-4f15-92ed-d9e0a59fb423
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_courses_importer
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: config_pages--stanford_courses_importer
+disabled: true
+path: config_pages/stanford_courses_importer
+resourceType: config_pages--stanford_courses_importer
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  label:
+    disabled: false
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  context:
+    disabled: false
+    fieldName: context
+    publicName: context
+    enhancer:
+      id: ''
+  changed:
+    disabled: false
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  encrypted_field_storage:
+    disabled: false
+    fieldName: encrypted_field_storage
+    publicName: encrypted_field_storage
+    enhancer:
+      id: ''
+  metatag:
+    disabled: false
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  su_explore_course_url:
+    disabled: false
+    fieldName: su_explore_course_url
+    publicName: su_explore_course_url
+    enhancer:
+      id: ''
