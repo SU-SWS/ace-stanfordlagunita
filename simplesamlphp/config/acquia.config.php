@@ -101,6 +101,7 @@ if (isset($creds['db_cluster_id'])) {
   require_once "/usr/share/php/Net/DNS2_wrapper.php";
   try {
     $resolver = new Net_DNS2_Resolver([
+      'local_host' => '127.0.0.1',
       'nameservers' => [
         '127.0.0.1',
         'dns-master',

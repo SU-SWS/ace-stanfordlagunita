@@ -25,6 +25,13 @@ class SulHelperSubscriber implements EventSubscriberInterface {
   protected $logger;
 
   /**
+   * Array of next site ids and paths that have already been called.
+   *
+   * @var array
+   */
+  protected $alreadyCalled = [];
+
+  /**
    * {@inheritdoc}
    */
   public static function getSubscribedEvents(): array {
@@ -80,7 +87,8 @@ class SulHelperSubscriber implements EventSubscriberInterface {
     if ($entity instanceof NodeInterface && AcquiaDrupalEnvironmentDetector::isAhProdEnv()) {
       try {
         $this->triggerRevalidation($entity->toUrl()->toString());
-      } catch (\Exception $e) {
+      }
+      catch (\Exception $e) {
         // When the node is new, the pre-save hook will fail because the node
         // doesn't have a path at this time. But we want to keep the pre-save
         // hook because it allows us to revalidate paths if they change when
@@ -101,8 +109,13 @@ class SulHelperSubscriber implements EventSubscriberInterface {
    */
   public function triggerRevalidation(string $path): void {
     /** @var \Drupal\next\Entity\NextSiteInterface[] $next_sites */
-    $next_sites = $this->entityTypeManager->getStorage('next_site')->loadMultiple();
+    $next_sites = $this->entityTypeManager->getStorage('next_site')
+      ->loadMultiple();
     foreach ($next_sites as $next_site) {
+      if (!empty($this->alreadyCalled[$next_site->id()][$path])) {
+        continue;
+      }
+
       $request_options = [
         'query' => [
           'token' => $next_site->getPreviewSecret(),
@@ -112,13 +125,14 @@ class SulHelperSubscriber implements EventSubscriberInterface {
           'Accept' => '*/*',
           'User-Agent' => $_SERVER['HTTP_USER_AGENT'] ?? '',
         ],
-        'timeout' => 3,
+        'timeout' => .5,
         'base_uri' => $next_site->getBaseUrl(),
       ];
-
+      $this->alreadyCalled[$next_site->id()][$path] = TRUE;
       try {
         $this->guzzle->request('GET', '/api/revalidate', $request_options);
-      } catch (\Throwable $e) {
+      }
+      catch (\Throwable $e) {
         $this->logger->error($e->getMessage());
       }
     }
