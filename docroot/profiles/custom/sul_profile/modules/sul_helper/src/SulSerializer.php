@@ -87,7 +87,7 @@ class SulSerializer {
       try {
         $new_build[$site->id()] = $this->getIframeForSite($site, $cloned_entity);
       }
-      catch (\Exception $e) {
+      catch (\Throwable $e) {
         $this->logger->error('Unable to generate entity preview. %e', ['%e' => $e->getMessage()]);
       }
     }
