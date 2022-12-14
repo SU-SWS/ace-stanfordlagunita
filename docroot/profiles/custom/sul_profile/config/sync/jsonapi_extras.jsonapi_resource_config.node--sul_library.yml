@@ -8,9 +8,6 @@ dependencies:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
-    default_include:
-      - su_library__equipment
-      - su_library__type
     page_limit: 50
 id: node--sul_library
 disabled: false
@@ -179,22 +176,28 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  body:
+  su_library__hours:
     disabled: false
-    fieldName: body
-    publicName: body
+    fieldName: su_library__hours
+    publicName: su_library__hours
     enhancer:
       id: ''
-  su_library__access:
+  su_library__address:
     disabled: false
-    fieldName: su_library__access
-    publicName: su_library__access
+    fieldName: su_library__address
+    publicName: su_library__address
     enhancer:
       id: ''
-  su_library__accessibility:
+  su_library__banner:
     disabled: false
-    fieldName: su_library__accessibility
-    publicName: su_library__accessibility
+    fieldName: su_library__banner
+    publicName: su_library__banner
+    enhancer:
+      id: ''
+  su_library__contact_img:
+    disabled: false
+    fieldName: su_library__contact_img
+    publicName: su_library__contact_img
     enhancer:
       id: ''
   su_library__email:
@@ -203,45 +206,21 @@ resourceFields:
     publicName: su_library__email
     enhancer:
       id: ''
-  su_library__equipment:
+  su_library__map_link:
     disabled: false
-    fieldName: su_library__equipment
-    publicName: su_library__equipment
+    fieldName: su_library__map_link
+    publicName: su_library__map_link
     enhancer:
       id: ''
-  su_library__location:
+  su_library__paragraphs:
     disabled: false
-    fieldName: su_library__location
-    publicName: su_library__location
-    enhancer:
-      id: ''
-  su_library__parking:
-    disabled: false
-    fieldName: su_library__parking
-    publicName: su_library__parking
+    fieldName: su_library__paragraphs
+    publicName: su_library__paragraphs
     enhancer:
       id: ''
   su_library__phone:
     disabled: false
     fieldName: su_library__phone
     publicName: su_library__phone
-    enhancer:
-      id: ''
-  su_library__short_name:
-    disabled: false
-    fieldName: su_library__short_name
-    publicName: su_library__short_name
-    enhancer:
-      id: ''
-  su_library__type:
-    disabled: false
-    fieldName: su_library__type
-    publicName: su_library__type
-    enhancer:
-      id: ''
-  su_library__url_name:
-    disabled: false
-    fieldName: su_library__url_name
-    publicName: su_library__url_name
     enhancer:
       id: ''
