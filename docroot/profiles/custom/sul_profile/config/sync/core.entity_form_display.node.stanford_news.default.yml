@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
+    - field.field.node.stanford_news.su_news_hide_social
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics
@@ -23,6 +24,7 @@ dependencies:
     - media_library
     - metatag
     - paragraphs
+    - path
     - scheduler
     - shs
     - stanford_intranet
@@ -35,7 +37,7 @@ third_party_settings:
       label: Media
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: fieldset
       format_settings:
         classes: ''
@@ -51,7 +53,7 @@ third_party_settings:
       label: 'Editorial Content'
       region: content
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: fieldset
       format_settings:
         classes: ''
@@ -77,6 +79,12 @@ targetEntityType: node
 bundle: stanford_news
 mode: default
 content:
+  path:
+    type: path
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
     weight: 52
@@ -90,20 +98,20 @@ content:
     third_party_settings: {  }
   stanford_intranet__access:
     type: entity_access
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 32
+    weight: 10
     region: content
     settings:
       sidebar: true
@@ -134,7 +142,7 @@ content:
     third_party_settings: {  }
   su_news_components:
     type: entity_reference_paragraphs
-    weight: 5
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -159,6 +167,13 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  su_news_hide_social:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   su_news_publishing_date:
     type: datetime_default
     weight: 3
@@ -175,7 +190,7 @@ content:
     third_party_settings: {  }
   su_news_topics:
     type: options_shs
-    weight: 4
+    weight: 3
     region: content
     settings:
       display_node_count: false
@@ -185,7 +200,7 @@ content:
     third_party_settings: {  }
   su_shared_tags:
     type: options_shs
-    weight: 31
+    weight: 9
     region: content
     settings:
       display_node_count: false
@@ -204,7 +219,6 @@ content:
 hidden:
   created: true
   layout_selection: true
-  path: true
   promote: true
   sticky: true
   uid: true

@@ -1,9 +1,9 @@
 name: 'SUL Profile'
 description: 'Libraries Drupal Profile'
-version: 9.x-1.4-dev
+version: 1.0.0
 type: profile
 project: Jumpstart
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 install:
   - 'address:address'
   - 'admin_toolbar:admin_toolbar'
