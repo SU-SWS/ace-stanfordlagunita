@@ -1,16 +1,16 @@
-uuid: 674ff879-08ca-4fef-9378-f9f250fcea5e
+uuid: e9799c98-2f99-4ece-bcfb-d69fc49f6e36
 langcode: en
 status: true
 dependencies:
   module:
+    - address
     - node
-id: node.su_library__access
-field_name: su_library__access
+id: node.su_library__address
+field_name: su_library__address
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: address
+settings: {  }
+module: address
 locked: false
 cardinality: 1
 translatable: true

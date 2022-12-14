@@ -9,7 +9,7 @@ id: node.sul_library.su_library__email
 field_name: su_library__email
 entity_type: node
 bundle: sul_library
-label: Email
+label: 'Contact Email'
 description: ''
 required: false
 translatable: false

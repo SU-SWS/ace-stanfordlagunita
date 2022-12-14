@@ -1,15 +1,17 @@
-uuid: bf6e185d-43b9-4ca3-80d8-f59364de46fa
+uuid: 42350095-5a6c-4c39-aae4-a9fd6c09819d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.su_library__location
-field_name: su_library__location
+id: node.su_library__hours
+field_name: su_library__hours
 entity_type: node
-type: string_long
+type: string
 settings:
+  max_length: 255
   case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1

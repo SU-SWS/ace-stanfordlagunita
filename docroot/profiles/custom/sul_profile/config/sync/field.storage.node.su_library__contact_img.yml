@@ -1,17 +1,16 @@
-uuid: 80b5aa17-388b-495c-95ef-78de0fdfb11e
+uuid: 79b2e3b3-20f2-46bb-8a2b-155724acf1ed
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-id: node.su_library__url_name
-field_name: su_library__url_name
+id: node.su_library__contact_img
+field_name: su_library__contact_img
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: media
 module: core
 locked: false
 cardinality: 1
