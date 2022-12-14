@@ -98,6 +98,7 @@
     "require": {
         "ext-imagick": "*",
         "acquia/drupal-environment-detector": "^1.0",
+        "acquia/memcache-settings": "^1.2",
         "citation-style-language/locales": "1.0.0",
         "citation-style-language/styles-distribution": "1.0.0",
         "ckeditor-plugin/a11ychecker": "^1.1.1",
@@ -107,7 +108,7 @@
         "composer/installers": ">=1.2",
         "drupal/address": "^1.2",
         "drupal/admin_toolbar": "^3.1",
-        "drupal/allowed_formats": "^1.1",
+        "drupal/allowed_formats": "^2.0",
         "drupal/anchor_link": "^2.5",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_content_permissions": "^1.8",
@@ -136,7 +137,7 @@
         "drupal/domain_301_redirect": "^2.0",
         "drupal/ds": "^3.3",
         "drupal/eck": "^1.0@beta",
-        "drupal/editoria11y": "^1.0",
+        "drupal/editoria11y": "^2.0",
         "drupal/element_class_formatter": "^1.1",
         "drupal/encrypt": "^3.0",
         "drupal/environment_indicator": "^4.0",
@@ -158,6 +159,7 @@
         "drupal/image_effects": "^3.2",
         "drupal/imagemagick": "^3.1",
         "drupal/jsonapi_extras": "^3.20",
+        "drupal/jsonapi_hypermedia": "^1.9",
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_views": "^1.0",
@@ -170,6 +172,7 @@
         "drupal/linkit": "^6.0",
         "drupal/markup": "^1.0",
         "drupal/mathjax": "^3.0",
+        "drupal/memcache": "^2.5",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "dev-1.x#567becffbb0589e824fb053f15fb38a5846e7276",
         "drupal/menu_link_weight": "^1.0-beta3",
@@ -197,7 +200,7 @@
         "drupal/seckit": "^2.0",
         "drupal/shs": "^2.0@RC",
         "drupal/smart_date": "^3.5",
-        "drupal/smart_trim": "^1.3",
+        "drupal/smart_trim": "^2.0",
         "drupal/taxonomy_entity_index": "^1.8",
         "drupal/taxonomy_menu": "^3.5",
         "drupal/token_or": "^2.0",
@@ -245,26 +248,6 @@
                 "drush.services.yml": "^9"
             }
         },
-        "patches": {
-            "drupal/auto_entitylabel": {
-                "https://www.drupal.org/project/auto_entitylabel/issues/3076302": "https://www.drupal.org/files/issues/2021-01-09/3076302-19.patch",
-                "https://www.drupal.org/project/auto_entitylabel/issues/3239799": "https://www.drupal.org/files/issues/2021-09-29/issue-3239799.patch"
-            },
-            "drupal/ckeditor_blockimagepaste": {
-                "https://www.drupal.org/project/ckeditor_blockimagepaste/issues/3272772": "https://www.drupal.org/files/issues/2022-04-14/prevent_js_alert_and_block_ms_word_paste-v2.patch"
-            },
-            "drupal/decoupled_router": {
-                "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2021-05-05/3111456-34.patch"
-            },
-            "drupal/default_content":{
-                "https://www.drupal.org/project/default_content/issues/3160146": "https://git.drupalcode.org/project/default_content/-/merge_requests/15.patch"
-            },
-            "drupal/jsonapi_extras": {
-                "https://www.drupal.org/project/jsonapi_extras/issues/3232279": "https://www.drupal.org/files/issues/2021-09-10/fix-output-schema-3232279-3.patch"
-            },
-            "drupal/subrequests": {
-                "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
-            }
-        }
+        "patches": {}
     }
 }
