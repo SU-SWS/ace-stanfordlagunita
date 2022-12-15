@@ -1,0 +1,29 @@
+uuid: 888b465d-1996-407b-8bd4-f454da6309c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_library__banner
+    - media.type.image
+    - node.type.sul_library
+id: node.sul_library.su_library__banner
+field_name: su_library__banner
+entity_type: node
+bundle: sul_library
+label: 'Banner Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

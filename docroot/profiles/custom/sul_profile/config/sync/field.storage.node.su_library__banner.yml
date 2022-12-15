@@ -1,19 +1,19 @@
-uuid: b89a1938-6045-4de7-81bd-79edbd0a8089
+uuid: 8e6307ba-f4d4-496a-8b82-348cae639f42
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - taxonomy
-id: node.su_library__equipment
-field_name: su_library__equipment
+id: node.su_library__banner
+field_name: su_library__banner
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

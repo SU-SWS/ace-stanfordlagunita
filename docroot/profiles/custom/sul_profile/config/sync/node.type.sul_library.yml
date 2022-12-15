@@ -28,7 +28,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: Library
+name: 'Branch Location'
 type: sul_library
 description: ''
 help: ''

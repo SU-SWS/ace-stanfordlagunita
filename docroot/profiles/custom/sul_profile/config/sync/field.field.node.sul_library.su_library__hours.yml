@@ -1,15 +1,15 @@
-uuid: 536e7e4f-5817-41af-ad7a-2827149a6c1d
+uuid: 62b979a8-de99-4069-b359-7c8bff05f874
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.su_library__url_name
+    - field.storage.node.su_library__hours
     - node.type.sul_library
-id: node.sul_library.su_library__url_name
-field_name: su_library__url_name
+id: node.sul_library.su_library__hours
+field_name: su_library__hours
 entity_type: node
 bundle: sul_library
-label: 'URL name'
+label: 'Branch Hours'
 description: ''
 required: true
 translatable: false

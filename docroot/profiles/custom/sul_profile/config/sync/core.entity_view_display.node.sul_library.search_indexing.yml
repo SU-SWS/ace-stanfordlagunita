@@ -1,8 +1,9 @@
-uuid: fefe0ef3-3d2a-48d5-9860-174a3485fef1
+uuid: 395d26ca-b8bd-4850-b45f-1ccc43d8e2f9
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_indexing
     - field.field.node.sul_library.su_library__address
     - field.field.node.sul_library.su_library__banner
     - field.field.node.sul_library.su_library__contact_img
@@ -85,54 +86,28 @@ third_party_settings:
         - 'Stanford SimpleSAML PHP'
         - 'Taxonomy Terms (Views)'
         - Views
-id: node.sul_library.default
+id: node.sul_library.search_indexing
 targetEntityType: node
 bundle: sul_library
-mode: default
+mode: search_indexing
 content:
   su_library__address:
     type: address_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
-    region: content
-  su_library__banner:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  su_library__contact_img:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   su_library__email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
-    region: content
-  su_library__hours:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
+    weight: 1
     region: content
   su_library__map_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -140,7 +115,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   su_library__paragraphs:
     type: layout_paragraphs
@@ -149,17 +124,20 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 4
     region: content
   su_library__phone:
     type: telephone_link_class
-    label: above
+    label: hidden
     settings:
       title: ''
       class: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
 hidden:
   links: true
   search_api_excerpt: true
+  su_library__banner: true
+  su_library__contact_img: true
+  su_library__hours: true

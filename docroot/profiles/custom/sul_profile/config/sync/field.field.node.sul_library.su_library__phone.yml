@@ -11,7 +11,7 @@ id: node.sul_library.su_library__phone
 field_name: su_library__phone
 entity_type: node
 bundle: sul_library
-label: 'Phone Number'
+label: 'Contact Phone Number'
 description: ''
 required: false
 translatable: false
