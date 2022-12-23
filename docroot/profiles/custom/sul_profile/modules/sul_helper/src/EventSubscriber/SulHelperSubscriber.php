@@ -18,39 +18,12 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class SulHelperSubscriber implements EventSubscriberInterface {
 
   /**
-   * Logger service.
-   *
-   * @var \Drupal\Core\Logger\LoggerChannelInterface
-   */
-  protected $logger;
-
-  /**
-   * Array of next site ids and paths that have already been called.
-   *
-   * @var array
-   */
-  protected $alreadyCalled = [];
-
-  /**
    * {@inheritdoc}
    */
   public static function getSubscribedEvents(): array {
     return [
       LayoutParagraphsAllowedTypesEvent::EVENT_NAME => 'layoutParagraphsAllowedTypes',
-      EntityHookEvents::ENTITY_PRE_SAVE => 'onEntityCrud',
-      EntityHookEvents::ENTITY_INSERT => 'onEntityCrud',
-      EntityHookEvents::ENTITY_UPDATE => 'onEntityCrud',
-      EntityHookEvents::ENTITY_PRE_DELETE => 'onEntityCrud',
     ];
-  }
-
-  /**
-   * @param \GuzzleHttp\ClientInterface $guzzle
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
-   */
-  public function __construct(protected ClientInterface $guzzle, protected EntityTypeManagerInterface $entityTypeManager, LoggerChannelFactoryInterface $loggerFactory) {
-    $this->logger = $loggerFactory->get('sul_helper');
   }
 
   /**
@@ -71,69 +44,6 @@ class SulHelperSubscriber implements EventSubscriberInterface {
         $types = $event->getTypes();
         unset($types['stanford_banner']);
         $event->setTypes($types);
-      }
-    }
-  }
-
-  /**
-   * Act on entities to revalidate the Next site.
-   *
-   * @param \Drupal\core_event_dispatcher\Event\Entity\AbstractEntityEvent $event
-   *   Hook Event Dispatcher Event.
-   */
-  public function onEntityCrud(AbstractEntityEvent $event): void {
-    $entity = $event->getEntity();
-
-    if ($entity instanceof NodeInterface && AcquiaDrupalEnvironmentDetector::isAhProdEnv()) {
-      try {
-        $this->triggerRevalidation($entity->toUrl()->toString());
-      }
-      catch (\Exception $e) {
-        // When the node is new, the pre-save hook will fail because the node
-        // doesn't have a path at this time. But we want to keep the pre-save
-        // hook because it allows us to revalidate paths if they change when
-        // saving a node.
-      }
-    }
-
-    if ($entity->getEntityTypeId() == 'redirect') {
-      $this->triggerRevalidation($entity->getSourceUrl());
-    }
-  }
-
-  /**
-   * @params tring $path
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   */
-  public function triggerRevalidation(string $path): void {
-    /** @var \Drupal\next\Entity\NextSiteInterface[] $next_sites */
-    $next_sites = $this->entityTypeManager->getStorage('next_site')
-      ->loadMultiple();
-    foreach ($next_sites as $next_site) {
-      if (!empty($this->alreadyCalled[$next_site->id()][$path])) {
-        continue;
-      }
-
-      $request_options = [
-        'query' => [
-          'token' => $next_site->getPreviewSecret(),
-          'path' => $path,
-        ],
-        'headers' => [
-          'Accept' => '*/*',
-          'User-Agent' => $_SERVER['HTTP_USER_AGENT'] ?? '',
-        ],
-        'timeout' => .5,
-        'base_uri' => $next_site->getBaseUrl(),
-      ];
-      $this->alreadyCalled[$next_site->id()][$path] = TRUE;
-      try {
-        $this->guzzle->request('GET', '/api/revalidate', $request_options);
-      }
-      catch (\Throwable $e) {
-        $this->logger->error($e->getMessage());
       }
     }
   }

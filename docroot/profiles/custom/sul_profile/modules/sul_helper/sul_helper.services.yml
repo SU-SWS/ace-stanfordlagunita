@@ -4,6 +4,6 @@ services:
     arguments: ['@entity_type.manager', '@next.entity_type.manager', '@jsonapi.resource_type.repository', '@jsonapi.include_resolver', '@jsonapi.serializer', '@next.settings.manager', '@logger.factory']
   sul_helper.event_subscriber:
     class: Drupal\sul_helper\EventSubscriber\SulHelperSubscriber
-    arguments: ['@http_client', '@entity_type.manager', '@logger.factory']
+    arguments: []
     tags:
       - { name: event_subscriber }

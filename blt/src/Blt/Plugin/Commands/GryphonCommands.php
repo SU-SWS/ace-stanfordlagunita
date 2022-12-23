@@ -53,6 +53,7 @@ class GryphonCommands extends BltTasks {
       ->set('DRUPAL_PREVIEW_SECRET', $this->nextjsConfig['preview_secret'])
       ->set('DRUPAL_CLIENT_ID', 'dc98f394-68ef-4e11-bab2-fd0e2931bca1')
       ->set('DRUPAL_CLIENT_SECRET', $this->nextjsConfig['client_secret'])
+      ->set('DRUPAL_REVALIDATE_SECRET', $this->nextjsConfig['preview_secret'])
       ->expandFileProperties("$front_dir/.env.local");
 
     $this->taskDrush()
@@ -70,20 +71,22 @@ class GryphonCommands extends BltTasks {
       ->run();
 
     $repo_root = $this->getConfigValue('repo.root');
-    $this->taskDrush()
-      ->drush('simple-oauth:generate-keys')
-      ->arg("$repo_root/keys")
-      ->run();
-    $copy_files = $this->taskFilesystemStack()
-      ->rename("$repo_root/keys/private.key", "$repo_root/keys/oauth_private.key")
-      ->rename("$repo_root/keys/public.key", "$repo_root/keys/oauth_public.key")
-      ->run();
-
-    if (!$copy_files->wasSuccessful()) {
-      $this->taskFilesystemStack()
-        ->remove("$repo_root/keys/private.key")
-        ->remove("$repo_root/keys/public.key")
+    if (!file_exists("$repo_root/keys/oauth_private.key") && !file_exists("$repo_root/keys/oauth_public.key")) {
+      $this->taskDrush()
+        ->drush('simple-oauth:generate-keys')
+        ->arg("$repo_root/keys")
         ->run();
+      $copy_files = $this->taskFilesystemStack()
+        ->rename("$repo_root/keys/private.key", "$repo_root/keys/oauth_private.key")
+        ->rename("$repo_root/keys/public.key", "$repo_root/keys/oauth_public.key")
+        ->run();
+
+      if (!$copy_files->wasSuccessful()) {
+        $this->taskFilesystemStack()
+          ->remove("$repo_root/keys/private.key")
+          ->remove("$repo_root/keys/public.key")
+          ->run();
+      }
     }
   }
 
@@ -98,14 +101,16 @@ class GryphonCommands extends BltTasks {
     $lines = explode("\n", $file);
     $env_data = [];
     foreach (array_filter($lines) as $line) {
-      [$key, $value] = explode('=', $line);
-      $env_data[$key] = $value;
+      if (preg_match('/^[A-Z]/', $line) && str_contains($line, '=')) {
+        [$key, $value] = explode('=', $line);
+        $env_data[$key] = $value;
+      }
     }
     $this->nextjsConfig = [
-      'drupal_base_domain' => $env_data['NEXT_PUBLIC_DRUPAL_BASE_URL'],
-      'image_domain' => $env_data['NEXT_IMAGE_DOMAIN'],
-      'preview_secret' => $env_data['DRUPAL_PREVIEW_SECRET'],
-      'client_secret' => $env_data['DRUPAL_CLIENT_SECRET'],
+      'drupal_base_domain' => $env_data['NEXT_PUBLIC_DRUPAL_BASE_URL'] ?? '',
+      'image_domain' => $env_data['NEXT_IMAGE_DOMAIN'] ?? '',
+      'preview_secret' => $env_data['DRUPAL_PREVIEW_SECRET'] ?? '',
+      'client_secret' => $env_data['DRUPAL_CLIENT_SECRET'] ?? '',
     ];
   }
 

@@ -76,9 +76,11 @@ class SulCommands extends DrushCommands {
       ]);
     }
 
-    $entity->set('base_url', $base_url);
-    $entity->set('preview_url', $preview_url);
-    $entity->set('preview_secret', $preview_secret);
+    $entity->setBaseUrl($base_url);
+    $entity->setPreviewUrl($preview_url);
+    $entity->setPreviewSecret($preview_secret);
+    $entity->setRevalidateUrl("$base_url/api/revalidate");
+    $entity->setRevalidateSecret($preview_secret);
     $entity->save();
     $this->connectEntityTypes($next_site_id);
   }
@@ -109,6 +111,11 @@ class SulCommands extends DrushCommands {
         }
         $entity->setSiteResolver('site_selector')
           ->setConfiguration(['sites' => [$next_site_id => $next_site_id]]);
+        $entity->setRevalidator('path');
+        $entity->setRevalidatorConfiguration('path', [
+          'revalidate_page' => TRUE,
+          'additional_paths' => '',
+        ]);
 
         /** @var \Drupal\next\Plugin\ConfigurableSiteResolverInterface $site_resolver */
         $site_resolver = $entity->getSiteResolver();

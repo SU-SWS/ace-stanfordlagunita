@@ -16,7 +16,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p id class> <div id class> <em> <strong> <cite> <blockquote cite> <code> <dd> <a href aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class>'
+      allowed_html: '<br> <p id class> <a class aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id href> <cite> <dd> <div id class> <blockquote cite> <strong> <em> <code>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
