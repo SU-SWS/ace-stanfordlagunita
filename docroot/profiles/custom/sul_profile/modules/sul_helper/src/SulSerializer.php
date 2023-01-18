@@ -89,6 +89,7 @@ class SulSerializer {
       }
       catch (\Throwable $e) {
         $this->logger->error('Unable to generate entity preview. %e', ['%e' => $e->getMessage()]);
+        return;
       }
     }
     // If something went wrong building the iframes, don't modify the build or
