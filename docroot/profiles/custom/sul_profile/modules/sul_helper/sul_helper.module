@@ -147,10 +147,3 @@ function _sul_helper_is_editing_layout_paragraphs() {
   $route_name = \Drupal::routeMatch()->getRouteName();
   return in_array($route_name, $layout_paragraphs_routes) || strpos($route_name, 'layout_paragraphs.') === 0;
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function sul_helper_preprocess_layout_paragraphs_builder_component_menu(&$variables) {
-
-}

@@ -206,6 +206,9 @@
             "drupal/core": {
                 "https://www.drupal.org/project/ckeditor/issues/3065095": "https://www.drupal.org/files/issues/2022-08-23/3065095-64-9.5.x.patch"
             },
+            "drupal/layout_paragraphs": {
+                "https://www.drupal.org/project/layout_paragraphs/issues/3334527": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/117.patch"
+            },
             "drupal/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             },
