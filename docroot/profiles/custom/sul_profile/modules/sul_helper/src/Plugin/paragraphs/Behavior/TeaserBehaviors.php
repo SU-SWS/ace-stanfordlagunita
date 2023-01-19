@@ -59,8 +59,8 @@ class TeaserBehaviors extends ParagraphsBehaviorBase {
       '#empty_option' => $this->t('- Change the position -'),
       '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background_sprinkles'),
       '#options' => [
-        'top_left' => $this->t('Top Right'),
-        'top_right' => $this->t('Top Left'),
+        'top_left' => $this->t('Top Left'),
+        'top_right' => $this->t('Top Right'),
         'bottom_left' => $this->t('Bottom Left'),
         'bottom_right' => $this->t('Bottom Right'),
       ],
