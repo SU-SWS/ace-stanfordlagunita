@@ -206,6 +206,9 @@
             "drupal/core": {
                 "https://www.drupal.org/project/ckeditor/issues/3065095": "https://www.drupal.org/files/issues/2022-08-23/3065095-64-9.5.x.patch"
             },
+            "drupal/focal_point": {
+                "https://www.drupal.org/project/focal_point/issues/3328807": "https://www.drupal.org/files/issues/2023-01-06/3328807-focal_point-image_width_when_no_image_to_crop.patch"
+            },
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3334527": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/117.patch"
             },

@@ -78,6 +78,9 @@ class TeaserBehaviors extends ParagraphsBehaviorBase {
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // Simple changes for the edit form.
+    $build['#attributes']['class'][] = 'sul-orientation-' . $paragraph->getBehaviorSetting('sul_teaser_styles', 'orientation', 'vertical');
+    $build['#attributes']['class'][] = 'sul-background-' . $paragraph->getBehaviorSetting('sul_teaser_styles', 'background', 'none');
+    $build['#attributes']['class'][] = 'sul-sprinkles-' . $paragraph->getBehaviorSetting('sul_teaser_styles', 'background_sprinkles', 'top_left');
   }
 
 }

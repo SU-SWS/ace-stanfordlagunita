@@ -50,6 +50,7 @@ class CardBehaviors extends ParagraphsBehaviorBase {
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // Simple changes for the edit form.
+    $build['#attributes']['class'][] = 'sul-orientation-' . $paragraph->getBehaviorSetting('sul_card_styles', 'orientation', 'vertical');
   }
 
 }
