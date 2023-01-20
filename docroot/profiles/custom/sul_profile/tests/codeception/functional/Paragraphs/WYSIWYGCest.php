@@ -92,37 +92,29 @@ class WYSIWYGCest {
   public function testWysiwygButtons(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('contributor');
+    $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
 
-    $table_caption = $this->faker->words(4, TRUE);
-    $I->click('.cke_button__table');
-    $I->waitForText('Table Properties');
-    $I->fillField('Rows', 5);
-    $I->fillField('Columns', 3);
-    $I->fillField('Caption', $table_caption);
-    $I->click('OK');
-    $I->waitForElementNotVisible('.cke_dialog_container');
+    $I->click('[data-cke-tooltip-text="Insert table"]');
+    $I->click('[data-row="5"][data-column="3"]');
 
-    $I->click('.cke_button__drupallink');
-    $I->waitForText('Add Link');
+    $I->click('[data-cke-tooltip-text="Link (Ctrl+K)"]');
     $url = $this->faker->url;
-    $I->fillField('[name="attributes[href]"]', $url);
-
-    $I->click('Save', '.editor-link-dialog .ui-dialog-buttonpane');
-    $I->waitForElementNotVisible('.editor-link-dialog');
+    $I->fillField('Link URL', $url);
+    $I->click('[data-cke-tooltip-text="Save"]');
+    $I->clickWithLeftButton('.ui-dialog-title');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
     $I->canSeeLink($url);
 
-    $I->canSee($table_caption, 'table caption');
     $I->canSeeNumberOfElements('.su-wysiwyg-text td', 15);
     $I->canSeeNumberOfElements('.su-wysiwyg-text tr', 5);
   }
@@ -133,16 +125,17 @@ class WYSIWYGCest {
   public function testEmbeddedImage(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
+    $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-wysiwyg-text img');
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
-    $I->click('Insert from Media Library');
+    $I->click('[data-cke-tooltip-text="Insert Media"]');
     $I->waitForElementVisible('.dropzone');
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->click('Upload and Continue');
@@ -155,7 +148,7 @@ class WYSIWYGCest {
     $I->waitForAjaxToFinish();
     $I->click('Save');
     $I->canSee($node->label(), 'h1');
-    $I->canSeeElement('.su-wysiwyg-text img');
+    $I->canSeeElement('.su-wysiwyg-text img[src*="logo"]');
   }
 
   /**
@@ -192,15 +185,16 @@ class WYSIWYGCest {
     ], 'media');
 
     $I->logInWithRole('site_manager');
+    $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl('edit-form')->toString());
 
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
-    $I->click('Insert from Media Library');
+    $I->click('[data-cke-tooltip-text="Insert Media"]');
     $I->waitForElementVisible('.dropzone');
 
     $I->selectOption('Category', $unrelated_term->label());
@@ -230,32 +224,23 @@ class WYSIWYGCest {
   public function testEmbeddedVideo(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
+    $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('iframe');
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
-    $I->click('Insert from Media Library');
+    $I->click('[data-cke-tooltip-text="Insert Media"]');
     $I->waitForElementVisible('.dropzone');
     $I->click('Video', '.media-library-menu-video');
     $I->waitForElementVisible('.media-library-add-form-oembed-url');
     $I->clickWithLeftButton('input.media-library-add-form-oembed-url[name="url"]');
     $I->fillField('Add Video via URL', 'https://www.youtube.com/watch?v=ktCgVopf7D0');
-
-    // If the youtube api fails, lets try again after a few seconds.
-    $bail = 0;
-    while (!empty($I->grabMultiple('input.media-library-add-form-oembed-submit[value="Add"]'))) {
-      $I->click('Add');
-      $I->wait(5);
-      $bail++;
-      if ($bail >= 10) {
-        break;
-      }
-    }
+    $I->click('Add');
 
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->fillField('Name', 'Test Youtube Video');
@@ -275,16 +260,17 @@ class WYSIWYGCest {
   public function testEmbeddedDocument(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
+    $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-wysiwyg-text a');
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForElementVisible('.cke_inner');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
-    $I->click('Insert from Media Library');
+    $I->click('[data-cke-tooltip-text="Insert Media"]');
     $I->waitForElementVisible('.dropzone');
     $I->click('File', '.media-library-menu-file');
     $I->waitForText('txt, rtf, doc, docx');
@@ -294,13 +280,14 @@ class WYSIWYGCest {
     $I->dropFileInDropzone(__DIR__ . '/test.txt');
     $I->click('Upload and Continue');
     $I->waitForText('The media item has been created but has not yet been saved');
+    $I->wait(1);
     $I->click('Save and insert', '.media-library-widget-modal .ui-dialog-buttonset');
     $I->waitForElementNotVisible('.media-library-widget-modal');
     $I->wait(1);
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
-    $I->canSeeElement('.su-wysiwyg-text a');
+    $I->canSeeElement('.su-wysiwyg-text a[href*="test"]');
   }
 
   /**
