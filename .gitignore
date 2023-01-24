@@ -162,3 +162,4 @@ drush/sites/.checksums
 
 # Deprecation detector rules
 .rules
+sulgryphon-nextjs

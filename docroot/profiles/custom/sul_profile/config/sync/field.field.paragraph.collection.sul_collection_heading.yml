@@ -1,0 +1,19 @@
+uuid: 5f7fece3-a64c-4052-b8ef-b0fb380a0f1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_collection_heading
+    - paragraphs.paragraphs_type.collection
+id: paragraph.collection.sul_collection_heading
+field_name: sul_collection_heading
+entity_type: paragraph
+bundle: collection
+label: Heading
+description: 'The main headline. This shows up large.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
