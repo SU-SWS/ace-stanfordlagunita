@@ -1,0 +1,14 @@
+uuid: fda89dcc-adf3-4672-a4b6-86570dd2622d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sul_study_place
+id: node_type_sul_study_place
+entity_type_id: node_type
+entity_id: sul_study_place
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -1,0 +1,14 @@
+uuid: 92be007e-399b-4e5d-96a4-f6c88abbb6a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sul_study_place_features
+id: taxonomy_vocabulary_sul_study_place_features
+entity_type_id: taxonomy_vocabulary
+entity_id: sul_study_place_features
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

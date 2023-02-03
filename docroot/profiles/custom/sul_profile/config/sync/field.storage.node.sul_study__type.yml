@@ -1,0 +1,20 @@
+uuid: 10d2bae7-3c0f-47a2-aad8-6ad466395649
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.sul_study__type
+field_name: sul_study__type
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

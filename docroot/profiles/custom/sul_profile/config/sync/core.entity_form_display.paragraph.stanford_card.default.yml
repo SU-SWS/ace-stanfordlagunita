@@ -19,6 +19,13 @@ targetEntityType: paragraph
 bundle: stanford_card
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   su_card_body:
     type: text_textarea
     weight: 3
@@ -37,17 +44,11 @@ content:
     third_party_settings: {  }
   su_card_link:
     type: link_default
-    weight: 6
+    weight: 4
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
-  su_card_link_display:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
     third_party_settings: {  }
   su_card_media:
     type: media_library_widget
@@ -67,5 +68,5 @@ content:
 hidden:
   created: true
   publish_on: true
-  status: true
+  su_card_link_display: true
   unpublish_on: true

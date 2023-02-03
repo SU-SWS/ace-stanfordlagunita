@@ -1,0 +1,22 @@
+uuid: d8752657-acac-4343-800a-4046d9133d7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sul_study_places
+label: 'Study Places'
+type: 'canonical_entities:node'
+pattern: '[node:sul_study__branch:entity:url:relative]/[node:title]'
+selection_criteria:
+  47929553-1dff-49b9-88ad-c02695b0c61f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 47929553-1dff-49b9-88ad-c02695b0c61f
+    context_mapping:
+      node: node
+    bundles:
+      sul_study_place: sul_study_place
+selection_logic: and
+weight: -5
+relationships: {  }

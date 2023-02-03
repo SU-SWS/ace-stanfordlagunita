@@ -1,0 +1,70 @@
+uuid: 0c1e9f03-d586-49be-b9dd-be889acc853b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sul_study_place.sul_study__a11y
+    - field.field.node.sul_study_place.sul_study__branch
+    - field.field.node.sul_study_place.sul_study__features
+    - field.field.node.sul_study_place.sul_study__map
+    - field.field.node.sul_study_place.sul_study__type
+    - node.type.sul_study_place
+  module:
+    - link
+    - user
+id: node.sul_study_place.default
+targetEntityType: node
+bundle: sul_study_place
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sul_study__a11y:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  sul_study__branch:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  sul_study__features:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  sul_study__map:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  sul_study__type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+hidden:
+  search_api_excerpt: true

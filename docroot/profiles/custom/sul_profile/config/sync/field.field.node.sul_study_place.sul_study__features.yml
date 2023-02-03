@@ -1,0 +1,29 @@
+uuid: e29abd84-6d55-44c8-8aaf-da7c01976a6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_study__features
+    - node.type.sul_study_place
+    - taxonomy.vocabulary.sul_study_place_features
+id: node.sul_study_place.sul_study__features
+field_name: sul_study__features
+entity_type: node
+bundle: sul_study_place
+label: 'Study Features'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sul_study_place_features: sul_study_place_features
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,4 +1,4 @@
-uuid: 2dbb1adb-6e9c-4d10-9b7f-33724a54a63d
+uuid: 77dd99b1-1967-4841-8236-2ab79d7525ab
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Library Type'
-vid: library_type
+name: 'Study Place Type'
+vid: sul_study_place_type
 description: ''
 weight: 0

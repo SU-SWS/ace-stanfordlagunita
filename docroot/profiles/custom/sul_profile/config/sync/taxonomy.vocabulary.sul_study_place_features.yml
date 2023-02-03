@@ -1,4 +1,4 @@
-uuid: b99b7296-2b60-41d7-985c-9a4f2cbfdc7f
+uuid: 15c6d882-e820-4110-b305-9411684efb4f
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Library Equipment'
-vid: library_equipment
+name: 'Study Place Features'
+vid: sul_study_place_features
 description: ''
 weight: 0
