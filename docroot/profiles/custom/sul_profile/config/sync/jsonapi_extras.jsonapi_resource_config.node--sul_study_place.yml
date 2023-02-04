@@ -1,0 +1,215 @@
+uuid: 4e63088b-7423-4306-8f6a-d0251d616d72
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sul_study_place
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - sul_study__a11y
+      - sul_study__branch
+      - sul_study__features
+      - sul_study__type
+    default_filter:
+      'filter:status': '1'
+    page_limit: 50
+id: node--sul_study_place
+disabled: false
+path: node/sul_study_place
+resourceType: node--sul_study_place
+resourceFields:
+  nid:
+    disabled: true
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  revision_timestamp:
+    disabled: true
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  title:
+    disabled: false
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+  created:
+    disabled: true
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  promote:
+    disabled: true
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+  sticky:
+    disabled: true
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+  path:
+    disabled: false
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+  rh_action:
+    disabled: true
+    fieldName: rh_action
+    publicName: rh_action
+    enhancer:
+      id: ''
+  rh_redirect:
+    disabled: true
+    fieldName: rh_redirect
+    publicName: rh_redirect
+    enhancer:
+      id: ''
+  rh_redirect_response:
+    disabled: true
+    fieldName: rh_redirect_response
+    publicName: rh_redirect_response
+    enhancer:
+      id: ''
+  rh_redirect_fallback_action:
+    disabled: true
+    fieldName: rh_redirect_fallback_action
+    publicName: rh_redirect_fallback_action
+    enhancer:
+      id: ''
+  publish_on:
+    disabled: true
+    fieldName: publish_on
+    publicName: publish_on
+    enhancer:
+      id: ''
+  unpublish_on:
+    disabled: true
+    fieldName: unpublish_on
+    publicName: unpublish_on
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: true
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+  sul_study__a11y:
+    disabled: false
+    fieldName: sul_study__a11y
+    publicName: sul_study__a11y
+    enhancer:
+      id: ''
+  sul_study__branch:
+    disabled: false
+    fieldName: sul_study__branch
+    publicName: sul_study__branch
+    enhancer:
+      id: ''
+  sul_study__features:
+    disabled: false
+    fieldName: sul_study__features
+    publicName: sul_study__features
+    enhancer:
+      id: ''
+  sul_study__map:
+    disabled: false
+    fieldName: sul_study__map
+    publicName: sul_study__map
+    enhancer:
+      id: ''
+  sul_study__type:
+    disabled: false
+    fieldName: sul_study__type
+    publicName: sul_study__type
+    enhancer:
+      id: ''

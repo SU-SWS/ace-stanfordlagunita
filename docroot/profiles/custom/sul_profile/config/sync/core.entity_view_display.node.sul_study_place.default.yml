@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
+    - empty_fields
+    - field_formatter_class
     - link
     - user
 id: node.sul_study_place.default
@@ -26,24 +28,40 @@ content:
     type: entity_reference_label
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
     weight: 103
     region: content
   sul_study__branch:
     type: entity_reference_label
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
     weight: 101
     region: content
   sul_study__features:
     type: entity_reference_label
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
     weight: 104
     region: content
   sul_study__map:
@@ -62,8 +80,12 @@ content:
     type: entity_reference_label
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
     weight: 105
     region: content
 hidden:
