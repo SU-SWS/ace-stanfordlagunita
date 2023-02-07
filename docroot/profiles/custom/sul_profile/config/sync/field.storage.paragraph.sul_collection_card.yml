@@ -1,19 +1,19 @@
-uuid: e31a2e41-00e4-432f-93ef-2f2aa4ec7171
+uuid: ff1a2605-83e6-4be2-bbdb-abc42c7b74f6
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-id: paragraph.sul_collection_list
-field_name: sul_collection_list
+id: paragraph.sul_collection_card
+field_name: sul_collection_card
 entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: 5
+cardinality: 6
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

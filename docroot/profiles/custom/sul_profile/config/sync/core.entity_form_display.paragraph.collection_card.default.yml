@@ -1,19 +1,19 @@
-uuid: 1784cda6-98c4-42fe-a24a-a16a47df75e1
+uuid: 4fed29c4-cfb0-4d92-9127-15cba85c8287
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.collection.sul_collection_card
-    - field.field.paragraph.collection.sul_collection_heading
-    - paragraphs.paragraphs_type.collection
+    - field.field.paragraph.collection_card.sul_card
+    - field.field.paragraph.collection_card.sul_card_info
+    - paragraphs.paragraphs_type.collection_card
   module:
     - paragraphs
-id: paragraph.collection.default
+id: paragraph.collection_card.default
 targetEntityType: paragraph
-bundle: collection
+bundle: collection_card
 mode: default
 content:
-  sul_collection_card:
+  sul_card:
     type: paragraphs
     weight: 1
     region: content
@@ -31,7 +31,7 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  sul_collection_heading:
+  sul_card_info:
     type: string_textfield
     weight: 0
     region: content

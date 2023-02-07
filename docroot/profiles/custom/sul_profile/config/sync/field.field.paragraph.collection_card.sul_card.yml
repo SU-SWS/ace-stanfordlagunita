@@ -1,0 +1,70 @@
+uuid: 56583389-21cf-410f-9e0a-90be20e61d38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_card
+    - paragraphs.paragraphs_type.collection_card
+    - paragraphs.paragraphs_type.stanford_card
+  module:
+    - entity_reference_revisions
+id: paragraph.collection_card.sul_card
+field_name: sul_card
+entity_type: paragraph
+bundle: collection_card
+label: Card
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_card: stanford_card
+    negate: 0
+    target_bundles_drag_drop:
+      collection:
+        weight: 15
+        enabled: false
+      collection_card:
+        weight: 16
+        enabled: false
+      layout:
+        weight: 17
+        enabled: false
+      stanford_accordion:
+        weight: 18
+        enabled: false
+      stanford_banner:
+        weight: 19
+        enabled: false
+      stanford_card:
+        weight: 20
+        enabled: true
+      stanford_entity:
+        weight: 21
+        enabled: false
+      stanford_gallery:
+        weight: 22
+        enabled: false
+      stanford_lists:
+        weight: 23
+        enabled: false
+      stanford_media_caption:
+        weight: 24
+        enabled: false
+      stanford_person_cta:
+        weight: 25
+        enabled: false
+      stanford_schedule:
+        weight: 26
+        enabled: false
+      stanford_spacer:
+        weight: 27
+        enabled: false
+      stanford_wysiwyg:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

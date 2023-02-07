@@ -1,0 +1,10 @@
+uuid: 662878d1-2cb7-4fc9-9020-92149e0317db
+langcode: en
+status: true
+dependencies: {  }
+id: collection_card
+label: 'Collection Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

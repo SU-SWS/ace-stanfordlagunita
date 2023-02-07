@@ -1,19 +1,19 @@
-uuid: 4cddcd86-480e-4e54-8769-a743b3b095ec
+uuid: 8c7083c1-1713-431f-b25c-4fb545f4b218
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.collection.sul_collection_card
-    - field.field.paragraph.collection.sul_collection_heading
-    - paragraphs.paragraphs_type.collection
+    - field.field.paragraph.collection_card.sul_card
+    - field.field.paragraph.collection_card.sul_card_info
+    - paragraphs.paragraphs_type.collection_card
   module:
     - entity_reference_revisions
-id: paragraph.collection.default
+id: paragraph.collection_card.default
 targetEntityType: paragraph
-bundle: collection
+bundle: collection_card
 mode: default
 content:
-  sul_collection_card:
+  sul_card:
     type: entity_reference_revisions_entity_view
     label: above
     settings:
@@ -22,13 +22,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  sul_collection_heading:
+  sul_card_info:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true
