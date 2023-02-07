@@ -18,6 +18,15 @@ function sul_helper_entity_type_alter(array &$entity_types) {
 }
 
 /**
+ * Implements hook_entity_field_access_alter().
+ */
+function sul_helper_entity_field_access_alter(array &$grants, array $context) {
+  $field_definition = $context['field_definition'];
+  if ($field_definition->getName() == 'layout_selection' && $context['operation'] == 'view'){
+    unset($grants['stanford_profile_helper']);
+  }
+}
+/**
  * Implements hook_entity_display_build_alter().
  */
 function sul_helper_entity_display_build_alter(&$build, $context) {
