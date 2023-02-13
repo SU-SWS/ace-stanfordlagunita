@@ -1,0 +1,19 @@
+uuid: b877df8c-e210-4cf4-872c-06913588033d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - telephone
+id: paragraph.sul_contact__phone
+field_name: sul_contact__phone
+entity_type: paragraph
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

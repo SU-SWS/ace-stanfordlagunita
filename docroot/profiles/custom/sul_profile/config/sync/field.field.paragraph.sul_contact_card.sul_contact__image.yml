@@ -1,0 +1,29 @@
+uuid: 439dc7a4-f7f9-4d27-b077-159e24b575cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__image
+    - media.type.image
+    - paragraphs.paragraphs_type.sul_contact_card
+id: paragraph.sul_contact_card.sul_contact__image
+field_name: sul_contact__image
+entity_type: paragraph
+bundle: sul_contact_card
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 27fca671-da9a-4da8-a565-b9b010e7a3b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__phone
+    - paragraphs.paragraphs_type.sul_contact_card
+  module:
+    - telephone
+id: paragraph.sul_contact_card.sul_contact__phone
+field_name: sul_contact__phone
+entity_type: paragraph
+bundle: sul_contact_card
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

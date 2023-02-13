@@ -1,0 +1,118 @@
+uuid: fe289c15-95a2-41d6-9096-f505986e8d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_contact_card.sul_contact__branch
+    - field.field.paragraph.sul_contact_card.sul_contact__email
+    - field.field.paragraph.sul_contact_card.sul_contact__hours
+    - field.field.paragraph.sul_contact_card.sul_contact__image
+    - field.field.paragraph.sul_contact_card.sul_contact__link
+    - field.field.paragraph.sul_contact_card.sul_contact__phone
+    - field.field.paragraph.sul_contact_card.sul_contact__title
+    - paragraphs.paragraphs_type.sul_contact_card
+  module:
+    - conditional_fields
+    - field_group
+    - link
+    - media_library
+    - telephone
+third_party_settings:
+  field_group:
+    group_manual_container:
+      children:
+        - sul_contact__title
+        - sul_contact__image
+        - sul_contact__hours
+        - sul_contact__link
+        - sul_contact__email
+        - sul_contact__phone
+      label: 'Manual Container'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: manual-contact-data
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: false
+id: paragraph.sul_contact_card.default
+targetEntityType: paragraph
+bundle: sul_contact_card
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sul_contact__branch:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sul_contact__email:
+    type: email_default
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings:
+      conditional_fields: {  }
+  sul_contact__hours:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields: {  }
+  sul_contact__image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      conditional_fields: {  }
+  sul_contact__link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      conditional_fields: {  }
+  sul_contact__phone:
+    type: telephone_default
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields: {  }
+  sul_contact__title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields: {  }
+hidden:
+  created: true
