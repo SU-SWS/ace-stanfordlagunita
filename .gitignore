@@ -1,6 +1,7 @@
 # https://blog.martinhujer.cz/17-tips-for-using-composer-efficiently/#tip-%239%3A-do-not-attempt-to-merge-%60composer.lock%60-when-rebasing-or-merging
 /composer.lock -merge
 frontend
+sulgryphon-nextjs
 
 # Ignore configuration files that may contain sensitive information.
 local.settings.php
@@ -162,3 +163,4 @@ drush/sites/.checksums
 
 # Deprecation detector rules
 .rules
+

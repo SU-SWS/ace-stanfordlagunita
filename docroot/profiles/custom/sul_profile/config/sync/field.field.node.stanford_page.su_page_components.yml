@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.su_page_components
     - node.type.stanford_page
+    - paragraphs.paragraphs_type.collection
     - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.stanford_banner
     - paragraphs.paragraphs_type.stanford_card
@@ -32,6 +33,7 @@ settings:
     target_bundles:
       layout: layout
       stanford_banner: stanford_banner
+      collection: collection
       stanford_card: stanford_card
       stanford_entity: stanford_entity
       stanford_gallery: stanford_gallery
@@ -41,6 +43,9 @@ settings:
       stanford_wysiwyg: stanford_wysiwyg
     negate: 0
     target_bundles_drag_drop:
+      collection:
+        weight: 14
+        enabled: true
       layout:
         weight: 13
         enabled: true

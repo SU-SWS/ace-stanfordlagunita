@@ -1,0 +1,44 @@
+uuid: 1784cda6-98c4-42fe-a24a-a16a47df75e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.collection.sul_collection_card
+    - field.field.paragraph.collection.sul_collection_heading
+    - paragraphs.paragraphs_type.collection
+  module:
+    - paragraphs
+id: paragraph.collection.default
+targetEntityType: paragraph
+bundle: collection
+mode: default
+content:
+  sul_collection_card:
+    type: paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  sul_collection_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

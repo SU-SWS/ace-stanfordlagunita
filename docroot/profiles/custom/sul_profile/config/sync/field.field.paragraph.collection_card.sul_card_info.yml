@@ -1,0 +1,19 @@
+uuid: 0bb51d92-d639-4812-b616-a5e67ec6c91e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_card_info
+    - paragraphs.paragraphs_type.collection_card
+id: paragraph.collection_card.sul_card_info
+field_name: sul_card_info
+entity_type: paragraph
+bundle: collection_card
+label: 'Card Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 6ac7768c-deb2-45fc-a34d-c3a05db13c2d
+langcode: en
+status: true
+dependencies: {  }
+id: collection
+label: Collection
+icon_uuid: null
+icon_default: null
+description: 'A collection is a series of cards with tabs to trigger each card for display. '
+behavior_plugins: {  }
