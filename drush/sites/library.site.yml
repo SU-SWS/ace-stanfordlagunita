@@ -40,8 +40,8 @@ prod:
   test.livedev:
     parent: '@stanfordlagunita.prod'
     root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
-  host: stanfordlagunitastg.ssh.prod.acquia-sites.com
-  user: stanfordlagunita.test
+  host: stanfordlagunita.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.prod
   paths:
     drush-script: drush9
   ssh:
