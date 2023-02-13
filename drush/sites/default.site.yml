@@ -31,3 +31,18 @@ test:
     drush-script: drush9
   ssh:
     tty: 0
+prod:
+  root: /var/www/html/stanfordlagunita.prod/docroot
+  ac-site: stanfordlagunita
+  ac-env: test
+  ac-realm: prod
+  uri: stanfordlagunita.prod.acquia-sites.com
+  prod.livedev:
+    parent: '@stanfordlagunita.prod'
+    root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
+  host: stanfordlagunitastg.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.test
+  paths:
+    drush-script: drush9
+  ssh:
+    tty: 0

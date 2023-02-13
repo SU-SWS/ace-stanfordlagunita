@@ -7,8 +7,7 @@ project:
 git:
   default_branch: main
   remotes:
-    # This is temporary until an appropriate application is available.
-    - stanfordgryphon@svn-23450.prod.hosting.acquia.com:stanfordgryphon.git
+    - 'stanfordlagunita@svn-45197.prod.hosting.acquia.com:stanfordlagunita.git'
 deploy:
   tag_source: false
   exclude_file: '${repo.root}/blt/deploy/rsync-exclude.txt'
@@ -24,6 +23,7 @@ cm:
   allow-overrides: true
 multisites:
   - default
+  - library
 tests:
   reports:
     localDir: '${repo.root}/artifacts'
@@ -52,7 +52,7 @@ validate:
 cloud:
   appId: null
 keys_rsync:
-  ssh: null
-  files: {  }
-#    - /mnt/gfs/sulgryphon.prod/nobackup/simplesamlphp/
-#    - /mnt/gfs/sulgryphon.prod/secrets.settings.php
+  ssh: stanfordlagunita.prod@stanfordlagunita.ssh.prod.acquia-sites.com
+  files:
+    - /mnt/gfs/stanfordlagunita.prod/nobackup/simplesamlphp/
+    - /mnt/gfs/stanfordlagunita.prod/secrets.settings.php
