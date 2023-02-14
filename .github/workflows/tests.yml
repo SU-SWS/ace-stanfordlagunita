@@ -1,175 +1,175 @@
 name: PHPUnit and Acceptance Tests
 on: [push]
 jobs:
-#  phpunit:
-#    name: PHPUnit Coverage Tests
-#    runs-on: ubuntu-latest
-#    env:
-#      DRUPAL_DATABASE_NAME: drupal
-#      DRUPAL_DATABASE_USERNAME: drupal
-#      DRUPAL_DATABASE_PASSWORD: drupal
-#      DRUPAL_DATABASE_HOST: mysql
-#    container:
-#      image: pookmish/drupal8ci:latest
-#    services:
-#      mysql:
-#        image: mysql:5.7
-#        env:
-#          MYSQL_DATABASE: drupal
-#          MYSQL_USER: drupal
-#          MYSQL_PASSWORD: drupal
-#          MYSQL_ROOT_PASSWORD: drupal
-#        ports:
-#          - 33306:3306
-#        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-#    steps:
-#      - uses: actions/checkout@v3
-#      - name: Restore Cache
-#        uses: actions/cache@v3
-#        with:
-#          path: |
-#            vendor
-#            docroot/core
-#            docroot/libraries
-#            docroot/modules/contrib
-#          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#          restore-keys: |
-#            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#            1.x-${{ hashFiles('composer.json') }}-
-#            1.x-
-#      - name: Run Unit Tests
-#        env:
-#          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-#        run: |
-#          composer install -n
-#          blt blt:telemetry:disable --no-interaction
-#          blt tests:phpunit:coverage --no-interaction
-#      - name: Save Test Results
-#        uses: actions/upload-artifact@v3
-#        if: failure()
-#        with:
-#          name: unit-tests-results
-#          path: $GITHUB_WORKSPACE/artifacts
-#  acceptance:
-#    name: Codeception Acceptance Tests
-#    runs-on: ubuntu-latest
-#    env:
-#      DRUPAL_DATABASE_NAME: drupal
-#      DRUPAL_DATABASE_USERNAME: drupal
-#      DRUPAL_DATABASE_PASSWORD: drupal
-#      DRUPAL_DATABASE_HOST: mysql
-#    container:
-#      image: pookmish/drupal8ci:latest
-#    services:
-#      mysql:
-#        image: mysql:5.7
-#        env:
-#          MYSQL_DATABASE: drupal
-#          MYSQL_USER: drupal
-#          MYSQL_PASSWORD: drupal
-#          MYSQL_ROOT_PASSWORD: drupal
-#        ports:
-#          - 33306:3306
-#        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-#    steps:
-#      - uses: actions/checkout@v3
-#      - name: Restore Cache
-#        uses: actions/cache@v3
-#        with:
-#          path: |
-#            vendor
-#            docroot/core
-#            docroot/libraries
-#            docroot/modules/contrib
-#          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#          restore-keys: |
-#            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#            1.x-${{ hashFiles('composer.json') }}-
-#            1.x-
-#      - name: Run tests
-#        run: |
-#          rm -rf /var/www/html
-#          ln -snf $GITHUB_WORKSPACE /var/www/html
-#          apachectl stop
-#          apachectl start
-#          composer install -n
-#          blt blt:telemetry:disable --no-interaction
-#          blt drupal:install -n
-#          drush pm:uninstall simplesamlphp_auth -y
-#          drush role:perm:add anonymous 'access content'
-#          drush xmlsitemap:rebuild
-#          blt codeception --suite=acceptance
-#      - name: Save Test Results
-#        uses: actions/upload-artifact@v3
-#        if: always()
-#        with:
-#          name: acceptance-tests-results
-#          path: artifacts
-#  functional:
-#    name: Codeception Functional Tests
-#    runs-on: ubuntu-latest
-#    env:
-#      DRUPAL_DATABASE_NAME: drupal
-#      DRUPAL_DATABASE_USERNAME: drupal
-#      DRUPAL_DATABASE_PASSWORD: drupal
-#      DRUPAL_DATABASE_HOST: mysql
-#    container:
-#      image: pookmish/drupal8ci:latest
-#      options: '--network-alias drupal8ci'
-#    services:
-#      selenium:
-#        image: selenium/standalone-chrome
-#        options: '--shm-size="2g"'
-#      mysql:
-#        image: mysql:5.7
-#        env:
-#          MYSQL_DATABASE: drupal
-#          MYSQL_USER: drupal
-#          MYSQL_PASSWORD: drupal
-#          MYSQL_ROOT_PASSWORD: drupal
-#        ports:
-#          - 33306:3306
-#        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-#    steps:
-#      - uses: actions/checkout@v3
-#      - name: Restore Cache
-#        uses: actions/cache@v3
-#        with:
-#          path: |
-#            vendor
-#            docroot/core
-#            docroot/libraries
-#            docroot/modules/contrib
-#            docroot/modules/custom
-#          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#          restore-keys: |
-#            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-#            1.x-${{ hashFiles('composer.json') }}-
-#            1.x-
-#      - name: Install Site
-#        run: |
-#          rm -rf /var/www/html
-#          ln -snf $GITHUB_WORKSPACE /var/www/html
-#          apachectl stop
-#          apachectl start
-#          composer install -n
-#          blt blt:telemetry:disable --no-interaction
-#          blt drupal:install -n
-#          drush pm:uninstall simplesamlphp_auth -y
-#          drush role:perm:add anonymous 'access content'
-#          drush xmlsitemap:rebuild
-#          mkdir -p artifacts/_data/
-#      - name: Run tests
-#        run: blt codeception --suite=functional
-#      - name: Save Test Results
-#        uses: actions/upload-artifact@v3
-#        if: always()
-#        with:
-#          name: functional-tests-results
-#          path: artifacts
+  phpunit:
+    name: PHPUnit Coverage Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
+      - name: Run Unit Tests
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        run: |
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          blt tests:phpunit:coverage --no-interaction
+      - name: Save Test Results
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: unit-tests-results
+          path: $GITHUB_WORKSPACE/artifacts
+  acceptance:
+    name: Codeception Acceptance Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
+      - name: Run tests
+        run: |
+          rm -rf /var/www/html
+          ln -snf $GITHUB_WORKSPACE /var/www/html
+          apachectl stop
+          apachectl start
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          blt drupal:install -n
+          drush pm:uninstall simplesamlphp_auth -y
+          drush role:perm:add anonymous 'access content'
+          drush xmlsitemap:rebuild
+          blt codeception --suite=acceptance
+      - name: Save Test Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: acceptance-tests-results
+          path: artifacts
+  functional:
+    name: Codeception Functional Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+      options: '--network-alias drupal8ci'
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: '--shm-size="2g"'
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+            docroot/modules/custom
+          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            1.x-${{ hashFiles('composer.json') }}-
+            1.x-
+      - name: Install Site
+        run: |
+          rm -rf /var/www/html
+          ln -snf $GITHUB_WORKSPACE /var/www/html
+          apachectl stop
+          apachectl start
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          blt drupal:install -n
+          drush pm:uninstall simplesamlphp_auth -y
+          drush role:perm:add anonymous 'access content'
+          drush xmlsitemap:rebuild
+          mkdir -p artifacts/_data/
+      - name: Run tests
+        run: blt codeception --suite=functional
+      - name: Save Test Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: functional-tests-results
+          path: artifacts
   deploy:
     name: Deploy Artifact
-#    needs: [phpunit, acceptance, functional]
+    needs: [phpunit, acceptance, functional]
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
