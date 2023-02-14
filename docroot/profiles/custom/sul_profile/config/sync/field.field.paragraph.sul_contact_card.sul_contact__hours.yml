@@ -1,0 +1,19 @@
+uuid: 1977aa98-f0a1-442a-a52e-4acb3d5e2a43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__hours
+    - paragraphs.paragraphs_type.sul_contact_card
+id: paragraph.sul_contact_card.sul_contact__hours
+field_name: sul_contact__hours
+entity_type: paragraph
+bundle: sul_contact_card
+label: Hours
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

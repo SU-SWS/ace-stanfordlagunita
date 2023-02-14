@@ -1,0 +1,23 @@
+uuid: 55970bd3-d363-4ac1-9c8e-da350c20b0a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__link
+    - paragraphs.paragraphs_type.sul_contact_card
+  module:
+    - link
+id: paragraph.sul_contact_card.sul_contact__link
+field_name: sul_contact__link
+entity_type: paragraph
+bundle: sul_contact_card
+label: 'Contact Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

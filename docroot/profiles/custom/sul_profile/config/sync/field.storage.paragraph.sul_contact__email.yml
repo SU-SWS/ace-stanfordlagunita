@@ -1,0 +1,18 @@
+uuid: ed9a76a8-bb6e-4eae-8b04-5d2fa8f73bd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sul_contact__email
+field_name: sul_contact__email
+entity_type: paragraph
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

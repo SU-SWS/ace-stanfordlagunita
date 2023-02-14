@@ -1,0 +1,29 @@
+uuid: b6a7cc71-11cf-465b-a15a-601630021fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__branch
+    - node.type.sul_library
+    - paragraphs.paragraphs_type.sul_contact_card
+id: paragraph.sul_contact_card.sul_contact__branch
+field_name: sul_contact__branch
+entity_type: paragraph
+bundle: sul_contact_card
+label: Branch
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sul_library: sul_library
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

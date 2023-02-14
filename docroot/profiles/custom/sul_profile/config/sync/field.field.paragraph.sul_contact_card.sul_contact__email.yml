@@ -1,0 +1,19 @@
+uuid: 8641554d-2c33-41c8-bc25-41273e72a99a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__email
+    - paragraphs.paragraphs_type.sul_contact_card
+id: paragraph.sul_contact_card.sul_contact__email
+field_name: sul_contact__email
+entity_type: paragraph
+bundle: sul_contact_card
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -7,3 +7,7 @@ services:
     arguments: []
     tags:
       - { name: event_subscriber }
+  sul_helper.form_subscriber:
+    class: Drupal\sul_helper\EventSubscriber\SulFormSubscriber
+    tags:
+      - { name: event_subscriber }

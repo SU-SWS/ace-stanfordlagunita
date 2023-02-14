@@ -1,0 +1,20 @@
+uuid: 9a170bad-92d0-4651-9c39-a5809e0ae318
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sul_contact__image
+field_name: sul_contact__image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

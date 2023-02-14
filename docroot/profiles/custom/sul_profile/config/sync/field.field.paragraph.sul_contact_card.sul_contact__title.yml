@@ -1,0 +1,19 @@
+uuid: 8807ca58-a008-4bdd-9322-286e3d9fa650
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__title
+    - paragraphs.paragraphs_type.sul_contact_card
+id: paragraph.sul_contact_card.sul_contact__title
+field_name: sul_contact__title
+entity_type: paragraph
+bundle: sul_contact_card
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

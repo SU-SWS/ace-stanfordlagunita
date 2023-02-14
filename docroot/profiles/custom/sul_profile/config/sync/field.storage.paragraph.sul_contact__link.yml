@@ -1,0 +1,19 @@
+uuid: ebd0a150-4ba5-4a0f-b283-0b2b4aff1c31
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.sul_contact__link
+field_name: sul_contact__link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
