@@ -1,14 +1,13 @@
 project:
-  prefix: sulgryphon
-  human_name: 'Stanford HR D9 Projects'
+  prefix: stanfordlagunita
+  human_name: 'Stanford D9 Projects'
   profile:
     name: sul_profile
   local: {  }
 git:
   default_branch: main
   remotes:
-    # This is temporary until an appropriate application is available.
-    - stanfordgryphon@svn-23450.prod.hosting.acquia.com:stanfordgryphon.git
+    - 'stanfordlagunita@svn-45197.prod.hosting.acquia.com:stanfordlagunita.git'
 deploy:
   tag_source: false
   exclude_file: '${repo.root}/blt/deploy/rsync-exclude.txt'
@@ -24,6 +23,7 @@ cm:
   allow-overrides: true
 multisites:
   - default
+  - library
 tests:
   reports:
     localDir: '${repo.root}/artifacts'
@@ -50,9 +50,9 @@ validate:
     filters:
       - render_clean
 cloud:
-  appId: null
+  appId: 12c62419-8d5c-40e1-b7ab-f7999e0cc3e9
 keys_rsync:
-  ssh: null
-  files: {  }
-#    - /mnt/gfs/sulgryphon.prod/nobackup/simplesamlphp/
-#    - /mnt/gfs/sulgryphon.prod/secrets.settings.php
+  ssh: stanfordlagunita.prod@stanfordlagunita.ssh.prod.acquia-sites.com
+  files:
+    - /mnt/gfs/stanfordlagunita.prod/nobackup/simplesamlphp/
+    - /mnt/gfs/stanfordlagunita.prod/secrets.settings.php

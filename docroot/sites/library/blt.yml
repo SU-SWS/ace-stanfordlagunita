@@ -1,0 +1,12 @@
+project:
+  machine_name: library
+  human_name: library
+  local:
+    protocol: http
+    hostname: library.loc
+drush:
+  aliases:
+    local: library.local
+    remote: library.prod
+drupal:
+  db: {  }
