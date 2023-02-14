@@ -1,48 +1,42 @@
 local:
-  uri: library.sites-pro.stanford.edu
+  uri: library
   root: '${env.cwd}/docroot'
 dev:
   root: /var/www/html/stanfordlagunita.dev/docroot
   ac-site: stanfordlagunita
   ac-env: dev
   ac-realm: prod
-  uri: library.sites-pro.stanford.edu
+  uri: library-dev.sites-pro.stanford.edu
   dev.livedev:
-    parent: '@stanfordlagunita.dev'
+    parent: '@library.dev'
     root: /mnt/gfs/stanfordlagunita.dev/livedev/docroot
   host: stanfordlagunitadev.ssh.prod.acquia-sites.com
   user: stanfordlagunita.dev
   paths:
     drush-script: drush9
-  ssh:
-    tty: 0
 test:
   root: /var/www/html/stanfordlagunita.test/docroot
   ac-site: stanfordlagunita
   ac-env: test
   ac-realm: prod
-  uri: library.sites-pro.stanford.edu
+  uri: library-test.sites-pro.stanford.edu
   test.livedev:
-    parent: '@stanfordlagunita.test'
+    parent: '@library.test'
     root: /mnt/gfs/stanfordlagunita.test/livedev/docroot
   host: stanfordlagunitastg.ssh.prod.acquia-sites.com
   user: stanfordlagunita.test
   paths:
     drush-script: drush9
-  ssh:
-    tty: 0
 prod:
   root: /var/www/html/stanfordlagunita.prod/docroot
   ac-site: stanfordlagunita
-  ac-env: test
+  ac-env: prod
   ac-realm: prod
   uri: library.sites-pro.stanford.edu
-  test.livedev:
-    parent: '@stanfordlagunita.prod'
+  prod.livedev:
+    parent: '@library.prod'
     root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
   host: stanfordlagunita.ssh.prod.acquia-sites.com
   user: stanfordlagunita.prod
   paths:
     drush-script: drush9
-  ssh:
-    tty: 0

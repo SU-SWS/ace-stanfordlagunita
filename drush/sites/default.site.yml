@@ -2,47 +2,41 @@ local:
   uri: default
   root: '${env.cwd}/docroot'
 dev:
-  root: /var/www/html/stanfordgryphon.dev/docroot
-  ac-site: stanfordgryphon
+  root: /var/www/html/stanfordlagunita.dev/docroot
+  ac-site: stanfordlagunita
   ac-env: dev
   ac-realm: prod
-  uri: stanfordgryphondev.prod.acquia-sites.com
+  uri: stanfordlagunitadev.prod.acquia-sites.com
   dev.livedev:
-    parent: '@stanfordgryphon.dev'
-    root: /mnt/gfs/stanfordgryphon.dev/livedev/docroot
-  host: stanfordgryphondev.ssh.prod.acquia-sites.com
-  user: stanfordgryphon.dev
+    parent: '@stanfordlagunita.dev'
+    root: /mnt/gfs/stanfordlagunita.dev/livedev/docroot
+  host: stanfordlagunitadev.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.dev
   paths:
     drush-script: drush9
-  ssh:
-    tty: 0
 test:
-  root: /var/www/html/stanfordgryphon.test/docroot
-  ac-site: stanfordgryphon
+  root: /var/www/html/stanfordlagunita.test/docroot
+  ac-site: stanfordlagunita
   ac-env: test
   ac-realm: prod
-  uri: stanfordgryphonstg.prod.acquia-sites.com
+  uri: stanfordlagunitastg.prod.acquia-sites.com
   test.livedev:
-    parent: '@stanfordgryphon.test'
-    root: /mnt/gfs/stanfordgryphon.test/livedev/docroot
-  host: stanfordgryphonstg.ssh.prod.acquia-sites.com
-  user: stanfordgryphon.test
+    parent: '@stanfordlagunita.test'
+    root: /mnt/gfs/stanfordlagunita.test/livedev/docroot
+  host: stanfordlagunitastg.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.test
   paths:
     drush-script: drush9
-  ssh:
-    tty: 0
 prod:
   root: /var/www/html/stanfordlagunita.prod/docroot
   ac-site: stanfordlagunita
-  ac-env: test
+  ac-env: prod
   ac-realm: prod
   uri: stanfordlagunita.prod.acquia-sites.com
   prod.livedev:
     parent: '@stanfordlagunita.prod'
     root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
-  host: stanfordlagunitastg.ssh.prod.acquia-sites.com
-  user: stanfordlagunita.test
+  host: stanfordlagunita.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.prod
   paths:
     drush-script: drush9
-  ssh:
-    tty: 0
