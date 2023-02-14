@@ -204,6 +204,7 @@ jobs:
         run: |
           git config --global user.email "sws-developers@lists.stanford.edu"
           git config --global user.name "Github Actions"
+          mkdir -p ~/.ssh/
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> ~/.ssh/known_hosts
           composer install -n
           blt blt:telemetry:disable --no-interaction
