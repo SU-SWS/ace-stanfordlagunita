@@ -1,6 +1,6 @@
 project:
-  prefix: sulgryphon
-  human_name: 'Stanford HR D9 Projects'
+  prefix: stanfordlagunita
+  human_name: 'Stanford D9 Projects'
   profile:
     name: sul_profile
   local: {  }
@@ -50,7 +50,7 @@ validate:
     filters:
       - render_clean
 cloud:
-  appId: null
+  appId: 12c62419-8d5c-40e1-b7ab-f7999e0cc3e9
 keys_rsync:
   ssh: stanfordlagunita.prod@stanfordlagunita.ssh.prod.acquia-sites.com
   files:
