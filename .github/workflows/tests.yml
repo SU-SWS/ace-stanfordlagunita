@@ -197,13 +197,14 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
-          name: id_rsa # optional
+          name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
+          if_key_exists: fail
       - name: Deploy Artifact
-        env:
-          SSH_KEY: ${{secrets.SSH_KEY}}
         run: |
+          git config --global user.email "sws-developers@lists.stanford.edu"
+          git config --global user.name "Github Actions"
+          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> ~/.ssh/known_hosts
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt deploy -v -n
