@@ -212,6 +212,9 @@
             "drupal/layout_paragraphs": {
                 "https://www.drupal.org/project/layout_paragraphs/issues/3334527": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/117.patch"
             },
+            "drupal/page_cache_query_ignore": {
+                "https://www.drupal.org/project/page_cache_query_ignore/issues/3336993": "https://www.drupal.org/files/issues/2023-01-27/3336993-get_config.patch"
+            },
             "drupal/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             },
