@@ -1,0 +1,19 @@
+uuid: 3f9add59-485f-405c-ac80-7bb0d4bfc164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_collection__headline
+    - paragraphs.paragraphs_type.sul_feat_collection
+id: paragraph.sul_feat_collection.sul_collection__headline
+field_name: sul_collection__headline
+entity_type: paragraph
+bundle: sul_feat_collection
+label: Headline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

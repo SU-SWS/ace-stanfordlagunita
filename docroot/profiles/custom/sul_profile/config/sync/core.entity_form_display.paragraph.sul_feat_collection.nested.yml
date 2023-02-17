@@ -1,0 +1,49 @@
+uuid: 101583b0-b38c-4575-ba3c-dd7a6f326398
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.nested
+    - field.field.paragraph.sul_feat_collection.sul_collection__cards
+    - field.field.paragraph.sul_feat_collection.sul_collection__headline
+    - field.field.paragraph.sul_feat_collection.sul_collection__link
+    - paragraphs.paragraphs_type.sul_feat_collection
+  module:
+    - link
+    - paragraphs
+id: paragraph.sul_feat_collection.nested
+targetEntityType: paragraph
+bundle: sul_feat_collection
+mode: nested
+content:
+  sul_collection__cards:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  sul_collection__headline:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sul_collection__link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

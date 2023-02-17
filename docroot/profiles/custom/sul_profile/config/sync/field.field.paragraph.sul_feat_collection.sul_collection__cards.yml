@@ -1,0 +1,76 @@
+uuid: 306f72bd-2e5b-4a25-a478-448c3e63cadc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_collection__cards
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.sul_feat_collection
+  module:
+    - entity_reference_revisions
+id: paragraph.sul_feat_collection.sul_collection__cards
+field_name: sul_collection__cards
+entity_type: paragraph
+bundle: sul_feat_collection
+label: Cards
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_card: stanford_card
+    negate: 0
+    target_bundles_drag_drop:
+      collection:
+        weight: 17
+        enabled: false
+      collection_card:
+        weight: 18
+        enabled: false
+      layout:
+        weight: 19
+        enabled: false
+      stanford_accordion:
+        weight: 20
+        enabled: false
+      stanford_banner:
+        weight: 21
+        enabled: false
+      stanford_card:
+        weight: 22
+        enabled: true
+      stanford_entity:
+        weight: 23
+        enabled: false
+      stanford_gallery:
+        weight: 24
+        enabled: false
+      stanford_lists:
+        weight: 25
+        enabled: false
+      stanford_media_caption:
+        weight: 26
+        enabled: false
+      stanford_person_cta:
+        weight: 27
+        enabled: false
+      stanford_schedule:
+        weight: 28
+        enabled: false
+      stanford_spacer:
+        weight: 29
+        enabled: false
+      stanford_wysiwyg:
+        weight: 30
+        enabled: false
+      sul_contact_card:
+        weight: 31
+        enabled: false
+      sul_feat_collection:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

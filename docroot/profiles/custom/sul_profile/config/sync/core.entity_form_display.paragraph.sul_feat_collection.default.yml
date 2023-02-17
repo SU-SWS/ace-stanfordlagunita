@@ -1,0 +1,51 @@
+uuid: 39320663-b5fd-4f1a-b0e5-03de2ed35d14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_feat_collection.sul_collection__cards
+    - field.field.paragraph.sul_feat_collection.sul_collection__headline
+    - field.field.paragraph.sul_feat_collection.sul_collection__link
+    - paragraphs.paragraphs_type.sul_feat_collection
+  module:
+    - change_labels
+    - link
+    - paragraphs
+id: paragraph.sul_feat_collection.default
+targetEntityType: paragraph
+bundle: sul_feat_collection
+mode: default
+content:
+  sul_collection__cards:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: nested
+      default_paragraph_type: stanford_card
+    third_party_settings:
+      change_labels:
+        add_another: ''
+  sul_collection__headline:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sul_collection__link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

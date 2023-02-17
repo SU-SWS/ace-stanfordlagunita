@@ -15,7 +15,7 @@ mode: default
 content:
   sul_collection_card:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -24,7 +24,7 @@ content:
     region: content
   sul_collection_heading:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

@@ -1,0 +1,48 @@
+uuid: cf601f5d-4436-4cc8-8135-998c96c70454
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_feat_collection.sul_collection__cards
+    - field.field.paragraph.sul_feat_collection.sul_collection__headline
+    - field.field.paragraph.sul_feat_collection.sul_collection__link
+    - paragraphs.paragraphs_type.sul_feat_collection
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.sul_feat_collection.default
+targetEntityType: paragraph
+bundle: sul_feat_collection
+mode: default
+content:
+  sul_collection__cards:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sul_collection__headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sul_collection__link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

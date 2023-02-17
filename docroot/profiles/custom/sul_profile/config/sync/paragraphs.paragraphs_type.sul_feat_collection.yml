@@ -1,0 +1,10 @@
+uuid: c7f81ced-229b-4883-8895-560161f06b79
+langcode: en
+status: true
+dependencies: {  }
+id: sul_feat_collection
+label: 'Featured Collection'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
