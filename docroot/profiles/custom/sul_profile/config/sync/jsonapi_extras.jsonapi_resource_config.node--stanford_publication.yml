@@ -13,6 +13,7 @@ third_party_settings:
       - su_publication_image.field_media_image
       - su_publication_author_ref
       - su_publication_citation
+      - su_publication_citation.citation_type
       - su_publication_image
       - su_publication_topics
       - su_shared_tags
