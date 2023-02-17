@@ -136,7 +136,9 @@ resourceFields:
     fieldName: sul_contact__link
     publicName: sul_contact__link
     enhancer:
-      id: ''
+      id: url_link
+      settings:
+        absolute_url: 0
   sul_contact__phone:
     disabled: false
     fieldName: sul_contact__phone

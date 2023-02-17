@@ -124,4 +124,6 @@ resourceFields:
     fieldName: sul_collection__link
     publicName: sul_collection__link
     enhancer:
-      id: ''
+      id: url_link
+      settings:
+        absolute_url: 0
