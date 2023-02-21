@@ -4,7 +4,6 @@ namespace Drupal\sul_helper\Plugin\migrate\process;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Site\Settings;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -35,16 +34,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 abstract class LibLookupProcessBase extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var \GuzzleHttp\ClientInterface
-   *
    * Guzzle Client Service.
+   *
+   * @var \GuzzleHttp\ClientInterface
    */
   protected $client;
 
   /**
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   *
    * Cache Service.
+   *
+   * @var \Drupal\Core\Cache\CacheBackendInterface
    */
   protected $cache;
 
@@ -57,6 +56,10 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
    *   The plugin ID.
    * @param mixed $plugin_definition
    *   The plugin definition.
+   * @param \GuzzleHttp\ClientInterface $client
+   *   Guzzle client service.
+   * @param \Drupal\Core\Cache\CacheBackendInterface $cache
+   *   Cache backend service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client, CacheBackendInterface $cache) {
     $this->configuration['api'] = [];
@@ -142,7 +145,7 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
    * @return string
    *   OAuth Bearer token.
    */
-  protected function getAccessToken(string | int $client_id, string $client_secret, string $oauth_url): string {
+  protected function getAccessToken(string|int $client_id, string $client_secret, string $oauth_url): string {
     $cache_key = 'lib:' . substr(md5($oauth_url), 0, 10);
     if ($cache = $this->cache->get($cache_key)) {
       return $cache->data;
