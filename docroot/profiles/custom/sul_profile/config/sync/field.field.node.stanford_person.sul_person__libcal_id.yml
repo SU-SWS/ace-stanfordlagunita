@@ -1,0 +1,23 @@
+uuid: 047272c9-7073-4adb-ad99-0dca76ff25a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_person__libcal_id
+    - node.type.stanford_person
+id: node.stanford_person.sul_person__libcal_id
+field_name: sul_person__libcal_id
+entity_type: node
+bundle: stanford_person
+label: 'LibCal Id Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

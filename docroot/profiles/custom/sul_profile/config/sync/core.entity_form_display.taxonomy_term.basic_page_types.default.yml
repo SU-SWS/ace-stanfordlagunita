@@ -4,11 +4,21 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.basic_page_types
+  module:
+    - text
 id: taxonomy_term.basic_page_types.default
 targetEntityType: taxonomy_term
 bundle: basic_page_types
 mode: default
 content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -18,7 +28,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  description: true
   path: true
   publish_on: true
   status: true

@@ -1,0 +1,23 @@
+uuid: e1ef1657-a298-4bd9-8841-f85b72c74446
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_person__libguide_id
+    - node.type.stanford_person
+id: node.stanford_person.sul_person__libguide_id
+field_name: sul_person__libguide_id
+entity_type: node
+bundle: stanford_person
+label: 'LibGuide ID Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

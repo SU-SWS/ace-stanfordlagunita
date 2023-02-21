@@ -1,0 +1,23 @@
+uuid: 14e87975-629e-4345-af76-c694956e357f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_study__libcal_id
+    - node.type.sul_study_place
+id: node.sul_study_place.sul_study__libcal_id
+field_name: sul_study__libcal_id
+entity_type: node
+bundle: sul_study_place
+label: 'LibCal Id Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,20 @@
+uuid: 9591c026-4724-4d2f-8bf7-2d80effd932d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sul_person__libguide_id
+field_name: sul_person__libguide_id
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
