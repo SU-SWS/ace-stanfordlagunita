@@ -36,11 +36,15 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
 
   /**
    * @var \GuzzleHttp\ClientInterface
+   *
+   * Guzzle Client Service.
    */
   protected $client;
 
   /**
    * @var \Drupal\Core\Cache\CacheBackendInterface
+   *
+   * Cache Service.
    */
   protected $cache;
 
@@ -55,9 +59,8 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
    *   The plugin definition.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client, CacheBackendInterface $cache) {
-    $this->configuration['api'] = [
+    $this->configuration['api'] = [];
 
-    ];
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->client = $client;
     $this->cache = $cache;
@@ -88,7 +91,6 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
     }
     return NULL;
   }
-
 
   /**
    * Call the API and return the data.
@@ -122,6 +124,7 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
       return $data;
     }
     catch (\Exception $e) {
+      // Something went wrong.
     }
     return [];
   }
@@ -139,7 +142,7 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
    * @return string
    *   OAuth Bearer token.
    */
-  protected function getAccessToken(string|int $client_id, string $client_secret, string $oauth_url): string {
+  protected function getAccessToken(string | int $client_id, string $client_secret, string $oauth_url): string {
     $cache_key = 'lib:' . substr(md5($oauth_url), 0, 10);
     if ($cache = $this->cache->get($cache_key)) {
       return $cache->data;

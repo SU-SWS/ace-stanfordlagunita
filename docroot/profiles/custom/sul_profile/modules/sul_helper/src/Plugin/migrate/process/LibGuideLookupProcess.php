@@ -4,8 +4,6 @@ namespace Drupal\sul_helper\Plugin\migrate\process;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Site\Settings;
-use Drupal\migrate\MigrateExecutableInterface;
-use Drupal\migrate\Row;
 use GuzzleHttp\ClientInterface;
 
 /**
@@ -36,7 +34,9 @@ class LibGuideLookupProcess extends LibLookupProcessBase {
    */
   const USERS_URL = 'https://lgapi-us.libapps.com/1.2/accounts';
 
-
+  /**
+   * {@inheritDoc}
+   */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client, CacheBackendInterface $cache) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $client, $cache);
     $this->configuration['api'] = [
