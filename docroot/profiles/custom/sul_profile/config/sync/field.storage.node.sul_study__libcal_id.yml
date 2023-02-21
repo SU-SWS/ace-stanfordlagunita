@@ -1,0 +1,20 @@
+uuid: d1a49080-d0ba-496b-be0e-28dae22e4758
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sul_study__libcal_id
+field_name: sul_study__libcal_id
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

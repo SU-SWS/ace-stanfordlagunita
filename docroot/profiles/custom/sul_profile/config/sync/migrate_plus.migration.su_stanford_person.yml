@@ -292,6 +292,20 @@ process:
       source:
         - scholarly_interests_fulltext
         - scholarly_interests_tersetext
+  sul_person__libcal_id:
+    -
+      plugin: skip_on_empty
+      source: email
+      method: process
+    -
+      plugin: libcal_lookup
+  sul_person__libguide_id:
+    -
+      plugin: skip_on_empty
+      source: email
+      method: process
+    -
+      plugin: libguide_lookup
 destination:
   plugin: 'entity:node'
   overwrite_properties:
@@ -322,6 +336,8 @@ destination:
     - su_person_scholarly_interests/format
     - su_person_scholarly_interests/value
     - su_person_short_title
+    - sul_person__libcal_id
+    - sul_person__libguide_id
     - title
     - type
 migration_dependencies:

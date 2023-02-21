@@ -267,3 +267,5 @@ hidden:
   su_metatags: true
   su_person_pronouns: true
   su_shared_tags: true
+  sul_person__libcal_id: true
+  sul_person__libguide_id: true
