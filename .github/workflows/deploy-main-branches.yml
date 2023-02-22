@@ -1,8 +1,7 @@
-name: Deploy Main Artifact
+name: Deploy Main Branch Artifact
 on:
   push:
     branches:
-      - 'test-auto-deploy'
       - '1.x'
       - 'main'
 concurrency:
