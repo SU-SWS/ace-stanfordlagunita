@@ -18171,20 +18171,20 @@
         },
         {
             "name": "su-sws/react_paragraphs",
-            "version": "8.2.14",
+            "version": "8.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/react_paragraphs.git",
-                "reference": "bc0cefbc6cf35802449bbacf69fb17dea07753ae"
+                "reference": "8715b1ea7744f6301d5e01e176f78764cf377c09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/react_paragraphs/zipball/bc0cefbc6cf35802449bbacf69fb17dea07753ae",
-                "reference": "bc0cefbc6cf35802449bbacf69fb17dea07753ae",
+                "url": "https://api.github.com/repos/SU-SWS/react_paragraphs/zipball/8715b1ea7744f6301d5e01e176f78764cf377c09",
+                "reference": "8715b1ea7744f6301d5e01e176f78764cf377c09",
                 "shasum": ""
             },
             "require": {
-                "drupal/core": "^9.4 || ^10",
+                "drupal/core": "^9.0 || ^10.0",
                 "drupal/paragraphs": "^1.1"
             },
             "type": "drupal-custom-module",
@@ -18200,9 +18200,9 @@
             ],
             "description": "An advanced UI for editing paragraphs in Drupal.",
             "support": {
-                "source": "https://github.com/SU-SWS/react_paragraphs/tree/8.2.14"
+                "source": "https://github.com/SU-SWS/react_paragraphs/tree/8.2.15"
             },
-            "time": "2022-08-02T21:09:20+00:00"
+            "time": "2023-02-21T15:55:30+00:00"
         },
         {
             "name": "su-sws/stanford_actions",
@@ -18271,16 +18271,16 @@
         },
         {
             "name": "su-sws/stanford_media",
-            "version": "dev-drupal-10",
+            "version": "9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_media.git",
-                "reference": "8e74e7b9fc9a796f402e62d7c40f632420b86c05"
+                "reference": "c2f4f44594b4f3f8abc226993c603ab6f9b5b7de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_media/zipball/8e74e7b9fc9a796f402e62d7c40f632420b86c05",
-                "reference": "8e74e7b9fc9a796f402e62d7c40f632420b86c05",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_media/zipball/c2f4f44594b4f3f8abc226993c603ab6f9b5b7de",
+                "reference": "c2f4f44594b4f3f8abc226993c603ab6f9b5b7de",
                 "shasum": ""
             },
             "require": {
@@ -18329,9 +18329,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_media",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_media/issues",
-                "source": "https://github.com/SU-SWS/stanford_media/tree/drupal-10"
+                "source": "https://github.com/SU-SWS/stanford_media/tree/9.0.0"
             },
-            "time": "2022-12-23T08:12:02+00:00"
+            "time": "2023-02-21T15:54:00+00:00"
         },
         {
             "name": "su-sws/stanford_migrate",
@@ -18391,16 +18391,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.0.8",
+            "version": "9.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "998cd7aed1f7bd0e3ff96ca63ee12bd2b44faf74"
+                "reference": "490d06cc685c40ca2e8480170984bdbfb4c40c5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/998cd7aed1f7bd0e3ff96ca63ee12bd2b44faf74",
-                "reference": "998cd7aed1f7bd0e3ff96ca63ee12bd2b44faf74",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/490d06cc685c40ca2e8480170984bdbfb4c40c5a",
+                "reference": "490d06cc685c40ca2e8480170984bdbfb4c40c5a",
                 "shasum": ""
             },
             "require-dev": {
@@ -18451,6 +18451,7 @@
                 "su-sws/stanford_media": "^8.3",
                 "su-sws/stanford_migrate": "^8.3"
             },
+            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18482,9 +18483,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.0.8"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2023-01-17T21:51:55+00:00"
+            "time": "2023-02-22T18:10:12+00:00"
         },
         {
             "name": "su-sws/stanford_ssp",
@@ -28713,7 +28714,7 @@
         "drupal/views_block_filter_block": 10,
         "drupal/webp": 10,
         "onlyextart/colorbox": 20,
-        "su-sws/stanford_media": 20
+        "su-sws/stanford_profile_helper": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
