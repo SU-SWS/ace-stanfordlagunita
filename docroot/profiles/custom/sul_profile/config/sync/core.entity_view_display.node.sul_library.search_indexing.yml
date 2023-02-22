@@ -141,3 +141,4 @@ hidden:
   su_library__banner: true
   su_library__contact_img: true
   su_library__hours: true
+  sul_library__type: true

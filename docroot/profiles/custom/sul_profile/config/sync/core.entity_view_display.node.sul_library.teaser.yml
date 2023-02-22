@@ -35,3 +35,4 @@ hidden:
   su_library__map_link: true
   su_library__paragraphs: true
   su_library__phone: true
+  sul_library__type: true

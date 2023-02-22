@@ -1,0 +1,23 @@
+uuid: 2d7e05ba-8d8c-414a-a37c-04ae3a1308af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_library__type
+    - node.type.sul_library
+  module:
+    - options
+id: node.sul_library.sul_library__type
+field_name: sul_library__type
+entity_type: node
+bundle: sul_library
+label: 'Type of Location'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: branch
+default_value_callback: ''
+settings: {  }
+field_type: list_string

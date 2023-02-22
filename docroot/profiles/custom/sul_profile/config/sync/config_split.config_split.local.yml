@@ -13,6 +13,8 @@ module:
   dblog: 0
   devel: 0
   devel_php: 0
+  upgrade_status: 0
+  update: 0
 theme: {  }
 complete_list: {  }
 partial_list: {  }

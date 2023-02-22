@@ -11,10 +11,12 @@ dependencies:
     - field.field.node.sul_library.su_library__map_link
     - field.field.node.sul_library.su_library__paragraphs
     - field.field.node.sul_library.su_library__phone
+    - field.field.node.sul_library.sul_library__type
     - node.type.sul_library
   module:
     - address
     - change_labels
+    - conditional_fields
     - field_group
     - layout_paragraphs
     - link
@@ -35,7 +37,7 @@ third_party_settings:
       label: 'Contact Details'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -51,19 +53,19 @@ mode: default
 content:
   path:
     type: path
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -76,11 +78,29 @@ content:
     third_party_settings: {  }
   su_library__banner:
     type: media_library_widget
-    weight: 2
+    weight: 3
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        203b0762-ed2f-4801-af24-8116c818ef6a:
+          entity_type: node
+          bundle: sul_library
+          dependee: sul_library__type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: branch
+            effect: show
+            effect_options: {  }
+            selector: ''
   su_library__contact_img:
     type: media_library_widget
     weight: 8
@@ -98,12 +118,47 @@ content:
     third_party_settings: {  }
   su_library__hours:
     type: sul_branch_selector
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        7e60278c-65d4-452c-b3b7-8e5a0c3060d9:
+          entity_type: node
+          bundle: sul_library
+          dependee: sul_library__type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: branch
+            effect: show
+            effect_options: {  }
+            selector: ''
+        009bce2c-834c-44b0-ad0c-c727aebee3af:
+          entity_type: node
+          bundle: sul_library
+          dependee: sul_library__type
+          settings:
+            state: required
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: branch
+            effect: show
+            effect_options: {  }
+            selector: ''
   su_library__map_link:
     type: link_default
     weight: 12
@@ -114,7 +169,7 @@ content:
     third_party_settings: {  }
   su_library__paragraphs:
     type: layout_paragraphs
-    weight: 4
+    weight: 5
     region: content
     settings:
       preview_view_mode: default
@@ -131,6 +186,12 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  sul_library__type:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -140,7 +201,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

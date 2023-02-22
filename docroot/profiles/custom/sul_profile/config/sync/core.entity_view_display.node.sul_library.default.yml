@@ -163,3 +163,4 @@ content:
 hidden:
   links: true
   search_api_excerpt: true
+  sul_library__type: true
