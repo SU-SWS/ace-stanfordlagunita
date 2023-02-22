@@ -43,15 +43,15 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       ],
     ];
 
-    $element['card_link_display_style'] = [
+    $element['link_display_style'] = [
       '#type' => 'select',
-      '#title' => $this->t('Card link display options'),
+      '#title' => $this->t('Card Link Style'),
       '#description' => $this->t('Change the appearance of the link on a card.'),
       '#empty_option' => $this->t('Primary Button'),
-      '#default_value' => $paragraph->getBehaviorSetting('sul_card_link_display_styles', 'primary_button'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'link_display_style'),
       '#options' => [
-        'secondary_button' => t('Secondary Button'),
-        'cta_button' => t('CTA'),
+        'secondary_button' => $this->t('Secondary Button'),
+        'cta_button' => $this->t('CTA'),
       ],
     ];
 
