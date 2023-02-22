@@ -1,4 +1,4 @@
-name: PHPUnit and Acceptance Tests
+name: Deploy Main Artifact
 on:
   workflow_run:
     workflows: ["Deploy Artifact"]
@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    name: Deploy Artifact
+    name: Deploy Main Artifact
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
