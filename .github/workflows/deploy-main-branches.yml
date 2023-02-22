@@ -1,8 +1,6 @@
 name: Deploy Main Artifact
 on:
-  workflow_run:
-    workflows: ["Deploy Artifact"]
-    types: [push]
+  push:
     branches:
       - 'test-auto-deploy'
       - '1.x'
@@ -14,11 +12,6 @@ jobs:
   deploy:
     name: Deploy Main Artifact
     runs-on: ubuntu-latest
-    env:
-      DRUPAL_DATABASE_NAME: drupal
-      DRUPAL_DATABASE_USERNAME: drupal
-      DRUPAL_DATABASE_PASSWORD: drupal
-      DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
     steps:
