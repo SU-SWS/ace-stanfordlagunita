@@ -42,6 +42,19 @@ class CardBehaviors extends ParagraphsBehaviorBase {
         'horizontal' => $this->t('Horizontal'),
       ],
     ];
+
+    $element['link_display_style'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Card Link Style'),
+      '#description' => $this->t('Change the appearance of the link on a card.'),
+      '#empty_option' => $this->t('Primary Button'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'link_display_style'),
+      '#options' => [
+        'secondary_button' => $this->t('Secondary Button'),
+        'cta_button' => $this->t('CTA'),
+      ],
+    ];
+
     return $element;
   }
 
@@ -52,5 +65,4 @@ class CardBehaviors extends ParagraphsBehaviorBase {
     // Simple changes for the edit form.
     $build['#attributes']['class'][] = 'sul-orientation-' . $paragraph->getBehaviorSetting('sul_card_styles', 'orientation', 'vertical');
   }
-
 }
