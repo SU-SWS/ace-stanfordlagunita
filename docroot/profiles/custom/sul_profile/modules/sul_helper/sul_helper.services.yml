@@ -11,3 +11,8 @@ services:
     class: Drupal\sul_helper\EventSubscriber\SulFormSubscriber
     tags:
       - { name: event_subscriber }
+  sul_helper.config_overrider:
+    class: Drupal\sul_helper\Config\ConfigOverrides
+    arguments: []
+    tags:
+      - {name: config.factory.override, priority: -5}
