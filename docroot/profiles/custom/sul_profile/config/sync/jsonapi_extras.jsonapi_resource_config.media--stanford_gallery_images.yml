@@ -8,6 +8,9 @@ dependencies:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
+    default_include:
+      - su_gallery_image
+      - su_media_category
     page_limit: 50
 id: media--stanford_gallery_images
 disabled: false
