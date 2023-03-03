@@ -3,15 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sul_contact_card.sul_contact__address
     - field.field.paragraph.sul_contact_card.sul_contact__branch
     - field.field.paragraph.sul_contact_card.sul_contact__email
     - field.field.paragraph.sul_contact_card.sul_contact__hours
     - field.field.paragraph.sul_contact_card.sul_contact__image
     - field.field.paragraph.sul_contact_card.sul_contact__link
+    - field.field.paragraph.sul_contact_card.sul_contact__map_link
     - field.field.paragraph.sul_contact_card.sul_contact__phone
     - field.field.paragraph.sul_contact_card.sul_contact__title
     - paragraphs.paragraphs_type.sul_contact_card
   module:
+    - address
     - conditional_fields
     - field_group
     - link
@@ -27,6 +30,8 @@ third_party_settings:
         - sul_contact__link
         - sul_contact__email
         - sul_contact__phone
+        - sul_contact__address
+        - sul_contact__map_link
       label: 'Manual Container'
       region: content
       parent_name: ''
@@ -55,6 +60,12 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  su_contact__address:
+    type: address_default
+    weight: 11
+    region: content
+    settings: {  }
     third_party_settings: {  }
   sul_contact__branch:
     type: options_select
@@ -97,6 +108,14 @@ content:
       placeholder_title: ''
     third_party_settings:
       conditional_fields: {  }
+  su_contact__map_link:
+    type: link_default
+    weight: 12
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   sul_contact__phone:
     type: telephone_default
     weight: 7
