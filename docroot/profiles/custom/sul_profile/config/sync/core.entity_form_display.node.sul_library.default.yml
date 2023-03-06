@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.sul_library.su_library__map_link
     - field.field.node.sul_library.su_library__paragraphs
     - field.field.node.sul_library.su_library__phone
+    - field.field.node.sul_library.sul_library__center_hours
     - field.field.node.sul_library.sul_library__type
     - node.type.sul_library
   module:
@@ -186,6 +187,32 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  sul_library__center_hours:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        203b0762-ed2f-4801-af24-8116c818ef6a:
+          entity_type: node
+          bundle: sul_library
+          dependee: sul_library__type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: center
+            effect: show
+            effect_options: {  }
+            selector: ''
   sul_library__type:
     type: options_select
     weight: 1
