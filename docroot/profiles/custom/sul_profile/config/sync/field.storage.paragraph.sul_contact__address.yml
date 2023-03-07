@@ -1,14 +1,14 @@
-uuid: 
+uuid: 098a5460-0e0e-4d96-b6d1-e43a5df7fe97
 langcode: en
 status: true
 dependencies:
   module:
     - address
-    - node
+    - paragraphs
 id: paragraph.sul_contact__address
 field_name: sul_contact__address
 entity_type: paragraph
-type: adress
+type: address
 settings: {  }
 module: address
 locked: false

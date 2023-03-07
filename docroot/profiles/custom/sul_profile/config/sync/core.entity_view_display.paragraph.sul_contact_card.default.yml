@@ -3,15 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sul_contact_card.sul_contact__address
     - field.field.paragraph.sul_contact_card.sul_contact__branch
     - field.field.paragraph.sul_contact_card.sul_contact__email
     - field.field.paragraph.sul_contact_card.sul_contact__hours
     - field.field.paragraph.sul_contact_card.sul_contact__image
     - field.field.paragraph.sul_contact_card.sul_contact__link
+    - field.field.paragraph.sul_contact_card.sul_contact__map_link
     - field.field.paragraph.sul_contact_card.sul_contact__phone
     - field.field.paragraph.sul_contact_card.sul_contact__title
     - paragraphs.paragraphs_type.sul_contact_card
   module:
+    - address
     - element_class_formatter
     - link
 id: paragraph.sul_contact_card.default
@@ -19,6 +22,13 @@ targetEntityType: paragraph
 bundle: sul_contact_card
 mode: default
 content:
+  sul_contact__address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
   sul_contact__branch:
     type: entity_reference_label
     label: hidden
@@ -62,6 +72,18 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 4
+    region: content
+  sul_contact__map_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   sul_contact__phone:
     type: telephone_link_class

@@ -30,8 +30,6 @@ third_party_settings:
         - sul_contact__link
         - sul_contact__email
         - sul_contact__phone
-        - sul_contact__address
-        - sul_contact__map_link
       label: 'Manual Container'
       region: content
       parent_name: ''
@@ -61,9 +59,9 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  su_contact__address:
+  sul_contact__address:
     type: address_default
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -108,9 +106,9 @@ content:
       placeholder_title: ''
     third_party_settings:
       conditional_fields: {  }
-  su_contact__map_link:
+  sul_contact__map_link:
     type: link_default
-    weight: 12
+    weight: 10
     region: content
     settings:
       placeholder_url: ''
