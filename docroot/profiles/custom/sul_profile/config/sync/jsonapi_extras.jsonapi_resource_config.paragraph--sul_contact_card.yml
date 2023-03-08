@@ -10,6 +10,7 @@ third_party_settings:
   jsonapi_defaults:
     default_include:
       - sul_contact__branch
+      - sul_contact__branch.su_library__contact_img.field_media_image
       - sul_contact__image.field_media_image
     page_limit: 50
 id: paragraph--sul_contact_card
