@@ -1,0 +1,23 @@
+uuid: 7fa84e67-03ff-4ead-a625-16c82e4dee41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_contact__map_link
+    - paragraphs.paragraphs_type.sul_contact_card
+  module:
+    - link
+id: paragraph.sul_contact_card.sul_contact__map_link
+field_name: sul_contact__map_link
+entity_type: paragraph
+bundle: sul_contact_card
+label: 'Map Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link
