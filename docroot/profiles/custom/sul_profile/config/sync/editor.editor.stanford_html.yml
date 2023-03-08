@@ -64,20 +64,11 @@ settings:
           label: 'Intro Text'
           element: '<p class="su-intro-text">'
         -
-          label: 'Splash Font'
-          element: '<p class="su-font-splash">'
-        -
           label: 'Quote Text'
           element: '<p class="su-quote-text">'
         -
-          label: 'Drop Cap First Letter'
-          element: '<p class="su-drop-cap">'
-        -
           label: 'Card Text'
           element: '<p class="su-related-text">'
-        -
-          label: 'Callout Text'
-          element: '<p class="su-callout-text">'
         -
           label: 'Sub Title'
           element: '<p class="su-subheading">'
@@ -123,6 +114,8 @@ settings:
         - justify
     media_media:
       allow_view_mode_override: true
+    linkit_extension:
+      linkit_enabled: false
 image_upload:
   status: false
   scheme: public
