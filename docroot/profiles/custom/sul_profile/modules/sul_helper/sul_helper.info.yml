@@ -6,5 +6,6 @@ core_version_requirement: ^9 || ^10
 dependencies:
   - layout_paragraphs:layout_paragraphs
   - hook_event_dispatcher:core_event_dispatcher
+  - hook_event_dispatcher:field_event_dispatcher
   - drupal:jsonapi
   - next:next
