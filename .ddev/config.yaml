@@ -13,15 +13,14 @@ database:
   version: "10.4"
 nfs_mount_enabled: false
 mutagen_enabled: false
+hooks:
+  post-start:
+  - exec: echo 'works'
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "16"
-hooks:
-  post-start:
-    - exec: "echo 'works'"
-      #additional_hostnames:
-      #- localhost:3000
+disable_settings_management: true
 
 # Key features of ddev's config.yaml:
 
@@ -88,8 +87,8 @@ hooks:
 # Note that you can use 'ddev nvm' or nvm inside the web container to provide nearly any
 # Node.js version, including v6, etc.
 
-  # additional_hostnames:
-  # - localhost:3000
+# additional_hostnames:
+#  - somename
 #  - someothername
 # would provide http and https URLs for "somename.ddev.site"
 # and "someothername.ddev.site".
