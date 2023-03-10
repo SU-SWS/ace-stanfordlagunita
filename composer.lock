@@ -2495,125 +2495,6 @@
             }
         },
         {
-            "name": "drupal/autoservices",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/autoservices.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/autoservices-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "1fa4a269dbd939286807aeafb6c59d775f0f7e93"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10"
-            },
-            "require-dev": {
-                "composer/installers": "^1",
-                "cweagans/composer-patches": "~1.0",
-                "drupal/core-composer-scaffold": "^9.0",
-                "drupal/core-dev": "^9.0",
-                "drupal/core-recommended": "^9.0",
-                "drush/drush": "^10",
-                "mglaman/phpstan-drupal": "^0.12",
-                "php-parallel-lint/php-parallel-lint": "^1.2",
-                "phpstan/phpstan-deprecation-rules": "^0.12",
-                "zaporylie/composer-drupal-optimizations": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1662481011",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "installer-paths": {
-                    "web/core": [
-                        "type:drupal-core"
-                    ],
-                    "web/libraries/{$name}": [
-                        "type:drupal-library"
-                    ],
-                    "web/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "web/profiles/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "web/themes/{$name}": [
-                        "type:drupal-theme"
-                    ],
-                    "drush/{$name}": [
-                        "type:drupal-drush"
-                    ]
-                },
-                "drupal-scaffold": {
-                    "locations": {
-                        "web-root": "web/"
-                    }
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    ".spoons/ScriptHandler.php"
-                ]
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "scripts": {
-                "si": [
-                    "drush si -v --db-url=${SIMPLETEST_DB:-mysql://root:password@mariadb/db}"
-                ],
-                "phpcs": [
-                    "phpcs --runtime-set ignore_warnings_on_exit 1 --runtime-set ignore_errors_on_exit 1 web/modules/custom"
-                ],
-                "lint": [
-                    "parallel-lint --exclude web --exclude vendor ."
-                ],
-                "webserver": [
-                    "cd web && php -S 0.0.0.0:8888 .ht.router.php"
-                ],
-                "chromedriver": [
-                    "chromedriver --port=9515 --verbose --whitelisted-ips --log-path=/tmp/chromedriver.log --no-sandbox"
-                ],
-                "unit": [
-                    "phpunit --verbose web/modules/custom"
-                ],
-                "phpstan": [
-                    "phpstan analyse web/modules/custom"
-                ],
-                "stylelint": [
-                    "yarn --silent --cwd web/core stylelint --formatter verbose --config ./.stylelintrc.json ../modules/custom/**/*.css"
-                ],
-                "eslint": [
-                    "yarn --silent --cwd web/core eslint -c ./.eslintrc.json ../modules/custom"
-                ],
-                "post-update-cmd": [
-                    "Spoons\\ScriptHandler::createSymlinks"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "rodrigoaguilera",
-                    "homepage": "https://www.drupal.org/user/408170"
-                }
-            ],
-            "description": "Register services into the container without configuration",
-            "homepage": "https://gitlab.com/upstreamable/drupal-autoservices",
-            "support": {
-                "source": "https://gitlab.com/upstreamable/drupal-autoservices",
-                "issues": "https://gitlab.com/upstreamable/drupal-autoservices/issues"
-            }
-        },
-        {
             "name": "drupal/block_content_permissions",
             "version": "1.11.0",
             "source": {
@@ -2664,20 +2545,19 @@
         },
         {
             "name": "drupal/change_labels",
-            "version": "1.0.4",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/change_labels.git",
-                "reference": "1.0.4"
+                "reference": "1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/change_labels-1.0.4.zip",
-                "reference": "1.0.4",
-                "shasum": "5ec3690881db56cabc487679380456193f047976"
+                "url": "https://ftp.drupal.org/files/projects/change_labels-1.2.0.zip",
+                "reference": "1.2.0",
+                "shasum": "07002fc76775f6a09ad859d93cde4d6d502d55b0"
             },
             "require": {
-                "drupal/autoservices": "^1",
                 "drupal/core": "^9.2 || ^10",
                 "drupal/core_event_dispatcher": "^3 || ^4",
                 "drupal/field_event_dispatcher": "^3 || ^4",
@@ -2686,8 +2566,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.4",
-                    "datestamp": "1664659793",
+                    "version": "1.2.0",
+                    "datestamp": "1678391011",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8024,26 +7904,26 @@
         },
         {
             "name": "drupal/markup",
-            "version": "1.0.0-beta5",
+            "version": "2.0.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/markup.git",
-                "reference": "8.x-1.0-beta5"
+                "reference": "2.0.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/markup-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "dcd4dc20d8ff45830dad9d4df9f75c7421df4d9e"
+                "url": "https://ftp.drupal.org/files/projects/markup-2.0.0-beta6.zip",
+                "reference": "2.0.0-beta6",
+                "shasum": "8f3b8e21814ee51776e757bc4d279483ee393b66"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.9 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1645738831",
+                    "version": "2.0.0-beta6",
+                    "datestamp": "1675927815",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -9612,8 +9492,12 @@
             "authors": [
                 {
                     "name": "Nigel Cunningham",
-                    "homepage": "https://www.drupal.org/user/250105",
+                    "homepage": "https://www.drupal.org/user/346106",
                     "email": "nigel@nigelcunningham.com.au"
+                },
+                {
+                    "name": "Nigel Cunningham",
+                    "homepage": "https://www.drupal.org/user/250105"
                 }
             ],
             "description": "Generates printer friendly version of nodes",
@@ -11307,27 +11191,27 @@
         },
         {
             "name": "drupal/views_block_filter_block",
-            "version": "1.2.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_block_filter_block.git",
-                "reference": "8.x-1.2"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_block_filter_block-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "cfe8ddbd9399de963c75d8540f69c9b04f68fe32"
+                "url": "https://ftp.drupal.org/files/projects/views_block_filter_block-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "5246c919b7c419e4224c20bdf13d5c7a30f1cfb9"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9 || ^10",
                 "drupal/ctools_views": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1647969039",
+                    "version": "2.0.1",
+                    "datestamp": "1677750379",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -26505,16 +26389,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.5",
+            "version": "1.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "1fb6f494d82455151ecf15c5c191923f5d84324e"
+                "reference": "50d089a3e0904b0fe7e2cf2d4fd37d427d64235a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1fb6f494d82455151ecf15c5c191923f5d84324e",
-                "reference": "1fb6f494d82455151ecf15c5c191923f5d84324e",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/50d089a3e0904b0fe7e2cf2d4fd37d427d64235a",
+                "reference": "50d089a3e0904b0fe7e2cf2d4fd37d427d64235a",
                 "shasum": ""
             },
             "require": {
@@ -26544,7 +26428,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.10.5"
+                "source": "https://github.com/phpstan/phpstan/tree/1.10.6"
             },
             "funding": [
                 {
@@ -26560,7 +26444,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-07T16:48:45+00:00"
+            "time": "2023-03-09T16:55:12+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -26930,16 +26814,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.4",
+            "version": "9.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9125ee085b6d95e78277dc07aa1f46f9e0607b8d"
+                "reference": "86e761949019ae83f49240b2f2123fb5ab3b2fc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9125ee085b6d95e78277dc07aa1f46f9e0607b8d",
-                "reference": "9125ee085b6d95e78277dc07aa1f46f9e0607b8d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/86e761949019ae83f49240b2f2123fb5ab3b2fc5",
+                "reference": "86e761949019ae83f49240b2f2123fb5ab3b2fc5",
                 "shasum": ""
             },
             "require": {
@@ -26972,8 +26856,8 @@
                 "sebastian/version": "^3.0.2"
             },
             "suggest": {
-                "ext-soap": "*",
-                "ext-xdebug": "*"
+                "ext-soap": "To be able to generate mocks based on WSDL files",
+                "ext-xdebug": "PHP extension that provides line coverage as well as branch and path coverage"
             },
             "bin": [
                 "phpunit"
@@ -27012,7 +26896,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.4"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.5"
             },
             "funding": [
                 {
@@ -27028,7 +26912,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-27T13:06:37+00:00"
+            "time": "2023-03-09T06:34:10+00:00"
         },
         {
             "name": "react/promise",
@@ -28801,7 +28685,6 @@
         "drupal/role_delegation": 10,
         "drupal/shs": 5,
         "drupal/viewfield": 10,
-        "drupal/views_block_filter_block": 10,
         "drupal/webp": 10,
         "onlyextart/colorbox": 20,
         "su-sws/stanford_profile_helper": 20

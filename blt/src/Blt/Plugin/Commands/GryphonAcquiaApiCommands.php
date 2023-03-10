@@ -36,7 +36,8 @@ class GryphonAcquiaApiCommands extends GryphonCommands {
       throw new \Exception(sprintf('%s is not one of the multisites.', $site));
     }
     $this->connectAcquiaApi();
-    $command = sprintf('/usr/local/bin/drush9 --uri=%s --root=/var/www/html/${AH_SITE_NAME}/docroot -dv cron &>> /var/log/sites/${AH_SITE_NAME}/logs/$(hostname -s)/drush-cron-%s.log', $site, $site);
+    $site = str_replace('_', '-', str_replace('__', '.', $site));
+    $command = sprintf('/usr/local/bin/cron-wrapper.sh $AH_SITE_GROUP.$AH_SITE_ENVIRONMENT https://%s.stanford.edu', $site);
     $cron_job_api = new Crons($this->acquiaApi);
     $this->say($cron_job_api->create($this->getEnvironmentUuid($environment), $command, "0 */6 * * *", "Drush Cron $site")->message);
   }
