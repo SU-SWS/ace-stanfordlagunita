@@ -17,6 +17,8 @@ dependencies:
     - node.type.stanford_person
     - node.type.stanford_policy
     - node.type.stanford_publication
+    - node.type.sul_library
+    - node.type.sul_study_place
     - taxonomy.vocabulary.basic_page_types
     - taxonomy.vocabulary.event_audience
     - taxonomy.vocabulary.stanford_event_types
@@ -98,14 +100,11 @@ permissions:
   38: 'create log entities'
   39: 'create media'
   40: 'create new books'
-  41: 'create stanford_course content'
   42: 'create stanford_event content'
   44: 'create stanford_gallery_images media'
   45: 'create stanford_news content'
   46: 'create stanford_page content'
   47: 'create stanford_person content'
-  48: 'create stanford_policy content'
-  49: 'create stanford_publication content'
   50: 'create terms in basic_page_types'
   51: 'create terms in event_audience'
   52: 'create terms in stanford_event_types'
@@ -258,3 +257,19 @@ permissions:
   199: 'view stanford_publication revisions'
   200: 'view the administration theme'
   201: 'view unpublished paragraphs'
+  202: 'create sul_library content'
+  203: 'create sul_study_place content'
+  204: 'delete any sul_library content'
+  205: 'delete any sul_study_place content'
+  206: 'delete own sul_library content'
+  207: 'delete own sul_study_place content'
+  208: 'delete sul_library revisions'
+  209: 'delete sul_study_place revisions'
+  210: 'edit any sul_library content'
+  211: 'edit any sul_study_place content'
+  212: 'edit own sul_library content'
+  213: 'edit own sul_study_place content'
+  214: 'revert sul_library revisions'
+  215: 'revert sul_study_place revisions'
+  216: 'view sul_library revisions'
+  217: 'view sul_study_place revisions'

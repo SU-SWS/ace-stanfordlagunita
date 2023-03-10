@@ -16,6 +16,8 @@ dependencies:
     - node.type.stanford_person
     - node.type.stanford_policy
     - node.type.stanford_publication
+    - node.type.sul_library
+    - node.type.sul_study_place
   module:
     - book
     - content_lock
@@ -52,14 +54,11 @@ permissions:
   12: 'create image media'
   13: 'create log entities'
   14: 'create media'
-  15: 'create stanford_course content'
   16: 'create stanford_event content'
   18: 'create stanford_gallery_images media'
   19: 'create stanford_news content'
   20: 'create stanford_page content'
   21: 'create stanford_person content'
-  22: 'create stanford_policy content'
-  23: 'create stanford_publication content'
   24: 'create video media'
   25: 'delete citation entities'
   26: 'delete media'
@@ -130,3 +129,13 @@ permissions:
   91: 'view stanford_policy revisions'
   92: 'view stanford_publication revisions'
   93: 'view the administration theme'
+  94: 'create sul_library content'
+  95: 'create sul_study_place content'
+  96: 'delete own sul_library content'
+  97: 'delete own sul_study_place content'
+  98: 'edit any sul_library content'
+  99: 'edit any sul_study_place content'
+  100: 'edit own sul_library content'
+  101: 'edit own sul_study_place content'
+  102: 'view sul_library revisions'
+  103: 'view sul_study_place revisions'
