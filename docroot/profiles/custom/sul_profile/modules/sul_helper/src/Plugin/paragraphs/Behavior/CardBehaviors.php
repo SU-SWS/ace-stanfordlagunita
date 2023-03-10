@@ -10,7 +10,7 @@ use Drupal\paragraphs\ParagraphInterface;
 use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
- * Teaser paragraph behaviors.
+ * Card paragraph behaviors.
  *
  * @ParagraphsBehavior(
  *   id = "sul_card_styles",
@@ -54,22 +54,24 @@ class CardBehaviors extends ParagraphsBehaviorBase {
         'cta_button' => $this->t('CTA'),
       ],
     ];
+
     $element['background'] = [
       '#type' => 'select',
       '#title' => $this->t('Background Color'),
       '#description' => $this->t('Choose a background for the component.'),
       '#empty_option' => $this->t('- Change the background -'),
-      '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'background'),
       '#options' => [
         'black' => $this->t('Black'),
       ],
     ];
+
     $element['background_sprinkles'] = [
       '#type' => 'select',
       '#title' => $this->t('Background Sprinkles'),
       '#description' => $this->t('Choose the position of the "sprinkles".'),
       '#empty_option' => $this->t('- Change the position -'),
-      '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background_sprinkles'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'background_sprinkles'),
       '#options' => [
         'top_left' => $this->t('Top Left'),
         'top_right' => $this->t('Top Right'),
@@ -78,7 +80,7 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       ],
       '#states' => [
         'invisible' => [
-          'select[name="behavior_plugins[sul_teaser_styles][background]"]' => ['value' => ''],
+          'select[name="behavior_plugins[sul_card_styles][background]"]' => ['value' => ''],
         ],
       ],
     ];
