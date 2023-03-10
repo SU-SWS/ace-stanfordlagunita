@@ -14,8 +14,9 @@ database:
 nfs_mount_enabled: false
 mutagen_enabled: false
 hooks:
-  post-start:
-  - exec: echo 'works'
+  post-import-db:
+  - exec: drush cim -y
+  - exec: drush cr
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
