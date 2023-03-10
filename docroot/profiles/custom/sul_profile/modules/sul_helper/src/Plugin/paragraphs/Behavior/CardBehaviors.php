@@ -54,6 +54,34 @@ class CardBehaviors extends ParagraphsBehaviorBase {
         'cta_button' => $this->t('CTA'),
       ],
     ];
+    $element['background'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Background Color'),
+      '#description' => $this->t('Choose a background for the component.'),
+      '#empty_option' => $this->t('- Change the background -'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background'),
+      '#options' => [
+        'black' => $this->t('Black'),
+      ],
+    ];
+    $element['background_sprinkles'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Background Sprinkles'),
+      '#description' => $this->t('Choose the position of the "sprinkles".'),
+      '#empty_option' => $this->t('- Change the position -'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background_sprinkles'),
+      '#options' => [
+        'top_left' => $this->t('Top Left'),
+        'top_right' => $this->t('Top Right'),
+        'bottom_left' => $this->t('Bottom Left'),
+        'bottom_right' => $this->t('Bottom Right'),
+      ],
+      '#states' => [
+        'invisible' => [
+          'select[name="behavior_plugins[sul_teaser_styles][background]"]' => ['value' => ''],
+        ],
+      ],
+    ];
 
     return $element;
   }
