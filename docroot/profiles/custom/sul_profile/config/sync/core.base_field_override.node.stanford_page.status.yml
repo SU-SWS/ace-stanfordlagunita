@@ -1,0 +1,22 @@
+uuid: 1e0fa569-6605-4f21-be1d-5d69ae16172d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stanford_page
+id: node.stanford_page.status
+field_name: status
+entity_type: node
+bundle: stanford_page
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

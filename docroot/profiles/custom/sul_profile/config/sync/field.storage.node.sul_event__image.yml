@@ -1,0 +1,20 @@
+uuid: cd08cd1f-b369-4ac3-9d62-6657564f1bf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.sul_event__image
+field_name: sul_event__image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

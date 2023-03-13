@@ -26,11 +26,13 @@ dependencies:
     - field.field.node.stanford_event.su_event_type
     - field.field.node.stanford_event.su_metatags
     - field.field.node.stanford_event.su_shared_tags
+    - field.field.node.stanford_event.sul_event__image
     - node.type.stanford_event
   module:
     - address
     - field_group
     - link
+    - media_library
     - metatag
     - paragraphs
     - readonly_field_widget
@@ -50,7 +52,7 @@ third_party_settings:
       label: 'Editorial Content'
       region: content
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -64,7 +66,7 @@ third_party_settings:
       label: 'Body Content'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         classes: ''
@@ -86,7 +88,7 @@ third_party_settings:
       label: 'Event Details'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -99,7 +101,7 @@ third_party_settings:
       label: 'Schedule Details'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: fieldset
       format_settings:
         classes: ''
@@ -116,7 +118,7 @@ third_party_settings:
       label: Taxonomy
       region: content
       parent_name: ''
-      weight: 11
+      weight: 9
       format_type: details
       format_settings:
         classes: ''
@@ -142,12 +144,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 52
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -159,7 +161,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -231,6 +233,7 @@ content:
         custom
       show_extra: false
       hide_date: true
+      separator: to
       add_abbreviations: ''
     third_party_settings: {  }
   su_event_dek:
@@ -257,6 +260,7 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
+      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_keywords:
@@ -267,6 +271,7 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
+      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_location:
@@ -329,6 +334,7 @@ content:
       label: above
       formatter_type: null
       formatter_settings: null
+      formatter_third_party_settings: {  }
       show_description: false
     third_party_settings: {  }
   su_event_telephone:
@@ -350,7 +356,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 12
+    weight: 10
     region: content
     settings:
       sidebar: true
@@ -365,6 +371,13 @@ content:
       create_new_items: false
       create_new_levels: false
       force_deepest: false
+    third_party_settings: {  }
+  sul_event__image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   title:
     type: string_textfield

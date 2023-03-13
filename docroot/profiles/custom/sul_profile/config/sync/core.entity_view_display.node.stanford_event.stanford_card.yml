@@ -187,3 +187,4 @@ hidden:
   su_event_telephone: true
   su_metatags: true
   su_shared_tags: true
+  sul_event__image: true

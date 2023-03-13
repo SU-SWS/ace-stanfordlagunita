@@ -1,0 +1,14 @@
+uuid: e527329d-7582-4eb2-be94-2322de899031
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stanford_event_series
+id: node_type_stanford_event_series
+entity_type_id: node_type
+entity_id: stanford_event_series
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

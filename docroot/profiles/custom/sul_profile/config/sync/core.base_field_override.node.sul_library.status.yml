@@ -1,0 +1,22 @@
+uuid: 42879e68-cd6f-44f4-a4b0-4b1f6f67914d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sul_library
+id: node.sul_library.status
+field_name: status
+entity_type: node
+bundle: sul_library
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: 04f76fa2-1d07-4dc0-a996-6a58c8ade9ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stanford_course
+id: node.stanford_course.status
+field_name: status
+entity_type: node
+bundle: stanford_course
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

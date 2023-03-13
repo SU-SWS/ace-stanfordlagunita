@@ -1,0 +1,22 @@
+uuid: fa652310-e436-4ff9-be4a-22b42154e2f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sul_study_place
+id: node.sul_study_place.status
+field_name: status
+entity_type: node
+bundle: sul_study_place
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

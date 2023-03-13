@@ -1,0 +1,22 @@
+uuid: c6550a15-ca17-41cf-a6d1-5549a3ee4ea9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stanford_event_series
+id: node.stanford_event_series.status
+field_name: status
+entity_type: node
+bundle: stanford_event_series
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

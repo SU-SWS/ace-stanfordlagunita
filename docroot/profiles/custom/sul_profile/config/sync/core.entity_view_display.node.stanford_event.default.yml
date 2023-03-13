@@ -820,3 +820,4 @@ hidden:
   su_event_subject: true
   su_metatags: true
   su_shared_tags: true
+  sul_event__image: true
