@@ -53,3 +53,17 @@ iframe.next-site-preview {
   clear: both;
   content: "";
 }
+
+.paragraph--unpublished {
+  border: 5px solid #fff4f4;
+}
+.paragraph--unpublished:before {
+  content: "Unpublished";
+  position: absolute;
+  background: #fff4f4;
+  top: -20px;
+  left: -5px;
+  width: 100%;
+  text-align: center;
+  border: 5px solid #fff4f4;
+}
