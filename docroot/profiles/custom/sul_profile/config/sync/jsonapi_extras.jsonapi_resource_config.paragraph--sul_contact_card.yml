@@ -49,7 +49,7 @@ resourceFields:
     enhancer:
       id: ''
   status:
-    disabled: true
+    disabled: false
     fieldName: status
     publicName: status
     enhancer:
