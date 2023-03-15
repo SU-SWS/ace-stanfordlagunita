@@ -42,6 +42,8 @@ class SulFormSubscriber implements EventSubscriberInterface {
       $form['sul_contact__link']['#states'] = $state;
       $form['sul_contact__phone']['#states'] = $state;
       $form['sul_contact__title']['#states'] = $state;
+      $form['sul_contact__address']['#states'] = $state;
+      $form['sul_contact__map_link']['#states'] = $state;
 
     }
   }
