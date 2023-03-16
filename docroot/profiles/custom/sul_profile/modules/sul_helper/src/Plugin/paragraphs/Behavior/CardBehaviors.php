@@ -58,7 +58,7 @@ class CardBehaviors extends ParagraphsBehaviorBase {
     $element['background_sprinkles'] = [
       '#type' => 'select',
       '#title' => $this->t('Background Sprinkles'),
-      '#description' => $this->t('Choose the position of the "sprinkles".'),
+      '#description' => $this->t('Choose the position of the "sprinkles". Used in conjunction with "Horizontal" orientation.'),
       '#empty_option' => $this->t('- Change the position -'),
       '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'background_sprinkles'),
       '#options' => [
