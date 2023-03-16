@@ -55,17 +55,6 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       ],
     ];
 
-    $element['background'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Background Color'),
-      '#description' => $this->t('Choose a background for the component.'),
-      '#empty_option' => $this->t('- Change the background -'),
-      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'background'),
-      '#options' => [
-        'black' => $this->t('Black'),
-      ],
-    ];
-
     $element['background_sprinkles'] = [
       '#type' => 'select',
       '#title' => $this->t('Background Sprinkles'),
