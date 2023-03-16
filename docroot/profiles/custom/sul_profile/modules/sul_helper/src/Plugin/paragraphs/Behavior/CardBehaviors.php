@@ -10,7 +10,7 @@ use Drupal\paragraphs\ParagraphInterface;
 use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
- * Teaser paragraph behaviors.
+ * Card paragraph behaviors.
  *
  * @ParagraphsBehavior(
  *   id = "sul_card_styles",
@@ -52,6 +52,25 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       '#options' => [
         'secondary_button' => $this->t('Secondary Button'),
         'cta_button' => $this->t('CTA'),
+      ],
+    ];
+
+    $element['background_sprinkles'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Background Sprinkles'),
+      '#description' => $this->t('Choose the position of the "sprinkles". Used in conjunction with "Horizontal" orientation.'),
+      '#empty_option' => $this->t('- Change the position -'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'background_sprinkles'),
+      '#options' => [
+        'top_left' => $this->t('Top Left'),
+        'top_right' => $this->t('Top Right'),
+        'bottom_left' => $this->t('Bottom Left'),
+        'bottom_right' => $this->t('Bottom Right'),
+      ],
+      '#states' => [
+        'invisible' => [
+          'select[name="behavior_plugins[sul_card_styles][background]"]' => ['value' => ''],
+        ],
       ],
     ];
 
