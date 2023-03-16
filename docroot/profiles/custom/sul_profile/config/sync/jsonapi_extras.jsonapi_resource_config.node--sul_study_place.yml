@@ -11,6 +11,7 @@ third_party_settings:
     default_include:
       - sul_study__a11y
       - sul_study__branch
+      - sul_study__branch.su_library__contact_img.field_media_image
       - sul_study__features
       - sul_study__type
     default_filter:
