@@ -1,10 +1,14 @@
 uuid: c7f81ced-229b-4883-8895-560161f06b79
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - sul_helper
 id: sul_feat_collection
 label: 'Featured Collection'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  sul_feat_collections_styles:
+    enabled: true

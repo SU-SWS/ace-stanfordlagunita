@@ -24,7 +24,7 @@ mode: default
 content:
   sul_contact__address:
     type: address_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 7
@@ -75,7 +75,7 @@ content:
     region: content
   sul_contact__map_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
