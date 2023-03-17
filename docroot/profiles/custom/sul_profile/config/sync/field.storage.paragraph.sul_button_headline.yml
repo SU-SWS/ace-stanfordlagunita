@@ -1,0 +1,21 @@
+uuid: 0aa7aa92-f3b1-4b73-87ff-041d032ef1f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sul_button_headline
+field_name: sul_button_headline
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

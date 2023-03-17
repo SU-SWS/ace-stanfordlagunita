@@ -1,0 +1,14 @@
+uuid: ad3d8548-da50-4589-966e-bc512dab47b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - sul_helper
+id: sul_button
+label: 'Simple Button'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  sul_button_styles:
+    enabled: true

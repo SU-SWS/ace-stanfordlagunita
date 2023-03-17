@@ -297,7 +297,7 @@ source:
     plus: +
     timezone: America/Los_Angeles
     alt: ''
-    image_tag: 'Localist'
+    image_tag: Localist
 process:
   status: constants/one
   type: constants/type
