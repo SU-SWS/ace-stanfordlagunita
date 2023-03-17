@@ -1,0 +1,37 @@
+uuid: e5ff573f-8823-4db4-925a-a3c4e0ac7c18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_button.sul_button_headline
+    - field.field.paragraph.sul_button.sul_button_link
+    - paragraphs.paragraphs_type.sul_button
+  module:
+    - link
+id: paragraph.sul_button.default
+targetEntityType: paragraph
+bundle: sul_button
+mode: default
+content:
+  sul_button_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sul_button_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -5,8 +5,8 @@ dependencies:
   module:
     - field_permissions
     - media
-    - subrequests
     - stanford_policy
+    - subrequests
     - system
     - ui_patterns_library
 _core:

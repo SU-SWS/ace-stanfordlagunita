@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.stanford_media_caption
     - paragraphs.paragraphs_type.stanford_spacer
     - paragraphs.paragraphs_type.stanford_wysiwyg
+    - paragraphs.paragraphs_type.sul_button
     - paragraphs.paragraphs_type.sul_contact_card
     - paragraphs.paragraphs_type.sul_feat_collection
   module:
@@ -44,6 +45,7 @@ settings:
       stanford_entity: stanford_entity
       stanford_lists: stanford_lists
       stanford_spacer: stanford_spacer
+      sul_button: sul_button
       sul_feat_collection: sul_feat_collection
     negate: 0
     target_bundles_drag_drop:
@@ -88,6 +90,9 @@ settings:
         enabled: true
       stanford_wysiwyg:
         weight: -30
+        enabled: true
+      sul_button:
+        weight: 32
         enabled: true
       sul_contact_card:
         weight: -22
