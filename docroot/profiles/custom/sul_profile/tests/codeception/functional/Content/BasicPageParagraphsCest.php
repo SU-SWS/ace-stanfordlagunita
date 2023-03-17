@@ -54,7 +54,7 @@ class BasicPageParagraphsCest {
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    //    $I->waitForText('Superhead');
+    $I->waitForText('Headline');
     //    $I->fillField('Superhead', $card_values['superhead']);
     $I->fillField('Headline', $card_values['headline']);
     $I->fillField('URL', $card_values['uri']);
@@ -107,7 +107,7 @@ class BasicPageParagraphsCest {
     $I->amOnPage("/node/{$node->id()}/edit");
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    //    $I->waitForText('Superhead');
+    $I->waitForText('Headline');
     //    $I->fillField('Superhead', $this->faker->text(10));
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');

@@ -28246,12 +28246,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford-caravan.git",
-                "reference": "2caeee5df5381b3a03be9a5580d40715113747e8"
+                "reference": "f7cd6bb0ff4e4bc0c599161910a368a6802282e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/2caeee5df5381b3a03be9a5580d40715113747e8",
-                "reference": "2caeee5df5381b3a03be9a5580d40715113747e8",
+                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/f7cd6bb0ff4e4bc0c599161910a368a6802282e1",
+                "reference": "f7cd6bb0ff4e4bc0c599161910a368a6802282e1",
                 "shasum": ""
             },
             "require": {
@@ -28280,7 +28280,7 @@
                 "issues": "https://github.com/SU-SWS/stanford-caravan/issues",
                 "source": "https://github.com/SU-SWS/stanford-caravan/tree/8.x-3.x"
             },
-            "time": "2023-01-27T20:39:32+00:00"
+            "time": "2023-03-17T02:42:15+00:00"
         },
         {
             "name": "symfony/browser-kit",
