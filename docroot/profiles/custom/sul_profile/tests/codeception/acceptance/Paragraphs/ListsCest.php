@@ -117,11 +117,13 @@ class ListsCest {
    * News items should display in the list paragraph.
    */
   public function testListParagraphNews(AcceptanceTester $I) {
-    $I->logInWithRole('contributor');
+    $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_news');
     $title = $this->faker->words(3, TRUE);
     $I->fillField('Headline', $title);
+    $I->checkOption('[name="status[value]"]');
     $I->click('Save');
+    $I->canSee($title, 'h1');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_news',
@@ -623,11 +625,12 @@ class ListsCest {
    * People items should display in the list paragraph.
    */
   public function testListParagraphPeople(AcceptanceTester $I) {
-    $I->logInWithRole('contributor');
+    $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_person');
     $I->fillField('First Name', 'Foo');
     $I->fillField('Last Name', 'Bar Person');
     $I->fillField('Short Title', 'Short title field');
+    $I->checkOption('[name="status[value]"]');
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
