@@ -17,6 +17,7 @@ third_party_settings:
       - su_event_schedule
       - su_shared_tags
       - su_event_subject
+      - sul_event__image.field_media_image
     default_filter:
       'filter:status': '1'
     page_limit: 50
@@ -197,6 +198,12 @@ resourceFields:
     disabled: true
     fieldName: stanford_intranet__access
     publicName: stanford_intranet__access
+    enhancer:
+      id: ''
+  sul_event__image:
+    disabled: false
+    fieldName: sul_event__image
+    publicName: sul_event__image
     enhancer:
       id: ''
   su_event_alt_loc:
