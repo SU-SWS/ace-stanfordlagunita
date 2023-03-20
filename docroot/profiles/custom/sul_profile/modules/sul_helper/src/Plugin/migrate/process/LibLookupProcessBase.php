@@ -11,25 +11,7 @@ use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a libcal_lookup plugin.
- *
- * Usage:
- *
- * @code
- * process:
- *   bar:
- *     plugin: libcal_lookup
- *     source: foo
- * @endcode
- *
- * @MigrateProcessPlugin(
- *   id = "libcal_lookup"
- * )
- *
- * @DCG
- * ContainerFactoryPluginInterface is optional here. If you have no need for
- * external services just remove it and all other stuff except transform()
- * method.
+ * Provides an abstract lib plugin base.
  */
 abstract class LibLookupProcessBase extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
@@ -86,7 +68,12 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $users = $this->getApiData(...$this->configuration['api']);
+    try {
+      $users = $this->getApiData(...$this->configuration['api']);
+    }
+    catch (\Exception $e) {
+      return NULL;
+    }
     foreach ($users as $user) {
       if ($value == $user['email']) {
         return $user['id'];
