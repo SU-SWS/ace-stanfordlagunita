@@ -9,6 +9,7 @@ services:
       - { name: event_subscriber }
   sul_helper.form_subscriber:
     class: Drupal\sul_helper\EventSubscriber\SulFormSubscriber
+    arguments: ['@current_user']
     tags:
       - { name: event_subscriber }
   sul_helper.config_overrider:
