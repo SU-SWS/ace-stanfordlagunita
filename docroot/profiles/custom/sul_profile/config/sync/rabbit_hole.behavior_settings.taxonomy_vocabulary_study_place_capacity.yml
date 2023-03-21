@@ -1,12 +1,12 @@
-uuid: 680e997b-ce56-494a-9160-b443d3e5c439
+uuid: ffca31c5-a397-480b-8f0e-eaa41c0037b0
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.sul_study_place_a11y
-id: taxonomy_vocabulary_sul_study_place_a11y
+    - taxonomy.vocabulary.study_place_capacity
+id: taxonomy_vocabulary_study_place_capacity
 entity_type_id: taxonomy_vocabulary
-entity_id: sul_study_place_a11y
+entity_id: study_place_capacity
 action: display_page
 allow_override: 0
 redirect: ''

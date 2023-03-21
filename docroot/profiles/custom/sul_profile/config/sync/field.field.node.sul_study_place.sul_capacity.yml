@@ -1,18 +1,18 @@
-uuid: 65ad9bc6-cf97-4e08-b613-3e62fccf8eb0
+uuid: 2fbb74b5-124f-481f-a664-09305d4ca824
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sul_study__a11y
+    - field.storage.node.sul_capacity
     - node.type.sul_study_place
-    - taxonomy.vocabulary.sul_study_place_a11y
-id: node.sul_study_place.sul_study__a11y
-field_name: sul_study__a11y
+    - taxonomy.vocabulary.study_place_capacity
+id: node.sul_study_place.sul_capacity
+field_name: sul_capacity
 entity_type: node
 bundle: sul_study_place
-label: 'Accessibility Features'
+label: Capacity
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      sul_study_place_a11y: sul_study_place_a11y
+      study_place_capacity: study_place_capacity
     sort:
       field: name
       direction: asc

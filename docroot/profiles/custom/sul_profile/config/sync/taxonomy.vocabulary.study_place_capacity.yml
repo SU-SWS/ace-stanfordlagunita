@@ -1,4 +1,4 @@
-uuid: 40a82411-323a-4c29-b4b3-2c7137ea15d1
+uuid: 44b0b68e-796a-4047-af8f-3eb3e9314335
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Study Place Accessibility'
-vid: sul_study_place_a11y
+name: 'Study Place Capacity'
+vid: study_place_capacity
 description: ''
 weight: 0

@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.sul_study_place.sul_study__a11y
+    - field.field.node.sul_study_place.sul_capacity
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__features
-    - field.field.node.sul_study_place.sul_study__map
+    - field.field.node.sul_study_place.sul_study__libcal_id
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
@@ -24,9 +24,8 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
-  sul_study__a11y: true
+  sul_capacity: true
   sul_study__branch: true
   sul_study__features: true
   sul_study__libcal_id: true
-  sul_study__map: true
   sul_study__type: true

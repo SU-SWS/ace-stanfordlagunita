@@ -3,16 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sul_study_place.sul_study__a11y
+    - field.field.node.sul_study_place.sul_capacity
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__features
-    - field.field.node.sul_study_place.sul_study__map
+    - field.field.node.sul_study_place.sul_study__libcal_id
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
     - empty_fields
     - field_formatter_class
-    - link
     - user
 id: node.sul_study_place.default
 targetEntityType: node
@@ -24,19 +23,13 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-  sul_study__a11y:
+  sul_capacity:
     type: entity_reference_label
     label: above
     settings:
-      link: false
-    third_party_settings:
-      empty_fields:
-        handler: ''
-      field_formatter_class:
-        class: ''
-      ds:
-        ds_limit: ''
-    weight: 103
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   sul_study__branch:
     type: entity_reference_label
@@ -63,18 +56,6 @@ content:
       ds:
         ds_limit: ''
     weight: 104
-    region: content
-  sul_study__map:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 102
     region: content
   sul_study__type:
     type: entity_reference_label
