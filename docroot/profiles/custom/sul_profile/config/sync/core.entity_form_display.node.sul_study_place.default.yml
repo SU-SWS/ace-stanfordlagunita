@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sul_study_place.sul_capacity
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__features
     - field.field.node.sul_study_place.sul_study__libcal_id
@@ -17,16 +18,22 @@ mode: default
 content:
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 7
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  sul_capacity:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
   sul_study__branch:
     type: options_select
@@ -36,13 +43,13 @@ content:
     third_party_settings: {  }
   sul_study__features:
     type: options_select
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   sul_study__libcal_id:
     type: number
-    weight: 6
+    weight: 5
     region: content
     settings:
       placeholder: ''

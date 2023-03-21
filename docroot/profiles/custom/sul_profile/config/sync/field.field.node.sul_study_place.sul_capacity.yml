@@ -1,0 +1,29 @@
+uuid: 2fbb74b5-124f-481f-a664-09305d4ca824
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_capacity
+    - node.type.sul_study_place
+    - taxonomy.vocabulary.study_place_capacity
+id: node.sul_study_place.sul_capacity
+field_name: sul_capacity
+entity_type: node
+bundle: sul_study_place
+label: Capacity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      study_place_capacity: study_place_capacity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

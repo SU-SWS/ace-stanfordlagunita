@@ -1,0 +1,14 @@
+uuid: ffca31c5-a397-480b-8f0e-eaa41c0037b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.study_place_capacity
+id: taxonomy_vocabulary_study_place_capacity
+entity_type_id: taxonomy_vocabulary
+entity_id: study_place_capacity
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

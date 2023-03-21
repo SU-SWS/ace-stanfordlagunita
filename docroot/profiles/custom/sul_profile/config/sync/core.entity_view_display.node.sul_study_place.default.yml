@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sul_study_place.sul_capacity
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__features
     - field.field.node.sul_study_place.sul_study__libcal_id
@@ -21,6 +22,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 100
+    region: content
+  sul_capacity:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   sul_study__branch:
     type: entity_reference_label
