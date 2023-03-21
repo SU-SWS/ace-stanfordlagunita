@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.sul_library.su_library__map_link
     - field.field.node.sul_library.su_library__paragraphs
     - field.field.node.sul_library.su_library__phone
+    - field.field.node.sul_library.sul_library__a11y
+    - field.field.node.sul_library.sul_library__type
     - node.type.sul_library
   module:
     - address
@@ -141,4 +143,5 @@ hidden:
   su_library__banner: true
   su_library__contact_img: true
   su_library__hours: true
+  sul_library__a11y: true
   sul_library__type: true

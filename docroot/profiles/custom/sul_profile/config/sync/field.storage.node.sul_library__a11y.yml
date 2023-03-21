@@ -1,0 +1,19 @@
+uuid: 6ee626b0-4704-4b13-bb73-900cbaa238cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.sul_library__a11y
+field_name: sul_library__a11y
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

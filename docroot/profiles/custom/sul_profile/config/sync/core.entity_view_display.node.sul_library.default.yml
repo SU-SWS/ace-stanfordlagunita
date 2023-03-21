@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.sul_library.su_library__map_link
     - field.field.node.sul_library.su_library__paragraphs
     - field.field.node.sul_library.su_library__phone
+    - field.field.node.sul_library.sul_library__a11y
+    - field.field.node.sul_library.sul_library__type
     - node.type.sul_library
   module:
     - address
@@ -20,6 +22,7 @@ dependencies:
     - layout_library
     - layout_paragraphs
     - link
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -159,6 +162,13 @@ content:
       class: ''
     third_party_settings: {  }
     weight: 2
+    region: content
+  sul_library__a11y:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
     region: content
 hidden:
   links: true
