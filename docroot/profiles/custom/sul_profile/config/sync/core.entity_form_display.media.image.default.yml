@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_media_image
     - field.field.media.image.su_media_category
+    - field.field.media.image.sul_image_credit
     - image.style.thumbnail
     - media.type.image
   module:
@@ -19,7 +20,7 @@ mode: default
 content:
   field_media_image:
     type: image_focal_point
-    weight: 26
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
@@ -29,7 +30,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -37,13 +38,21 @@ content:
     third_party_settings: {  }
   su_media_category:
     type: options_shs
-    weight: 27
+    weight: 3
     region: content
     settings:
       display_node_count: false
       create_new_items: false
       create_new_levels: false
       force_deepest: false
+    third_party_settings: {  }
+  sul_image_credit:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

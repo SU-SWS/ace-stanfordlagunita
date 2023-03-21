@@ -9,7 +9,7 @@ dependencies:
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - sul_study__a11y
+      - sul_capacity
       - sul_study__branch
       - sul_study__branch.su_library__contact_img.field_media_image
       - sul_study__features
@@ -184,12 +184,6 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
-  sul_study__a11y:
-    disabled: false
-    fieldName: sul_study__a11y
-    publicName: sul_study__a11y
-    enhancer:
-      id: ''
   sul_study__branch:
     disabled: false
     fieldName: sul_study__branch
@@ -202,15 +196,21 @@ resourceFields:
     publicName: sul_study__features
     enhancer:
       id: ''
-  sul_study__map:
+  sul_study__libcal_id:
     disabled: false
-    fieldName: sul_study__map
-    publicName: sul_study__map
+    fieldName: sul_study__libcal_id
+    publicName: sul_study__libcal_id
     enhancer:
       id: ''
   sul_study__type:
     disabled: false
     fieldName: sul_study__type
     publicName: sul_study__type
+    enhancer:
+      id: ''
+  sul_capacity:
+    disabled: false
+    fieldName: sul_capacity
+    publicName: sul_capacity
     enhancer:
       id: ''

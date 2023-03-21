@@ -1,0 +1,19 @@
+uuid: 59cb317f-0c88-436b-992a-879763a5d69d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.sul_image_credit
+    - media.type.image
+id: media.image.sul_image_credit
+field_name: sul_image_credit
+entity_type: media
+bundle: image
+label: 'Image Credit'
+description: 'Provide credit to the owner/photographer.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
