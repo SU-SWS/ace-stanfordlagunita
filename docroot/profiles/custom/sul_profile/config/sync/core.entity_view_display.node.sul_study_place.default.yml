@@ -39,8 +39,12 @@ content:
     type: entity_reference_label
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
     weight: 107
     region: content
   sul_study__features:
