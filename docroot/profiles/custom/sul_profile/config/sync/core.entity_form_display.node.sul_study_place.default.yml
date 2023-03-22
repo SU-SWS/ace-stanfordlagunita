@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sul_study_place.sul_capacity
     - field.field.node.sul_study_place.sul_study__branch
+    - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
     - field.field.node.sul_study_place.sul_study__libcal_id
     - field.field.node.sul_study_place.sul_study__type
@@ -29,17 +29,21 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  sul_capacity:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   sul_study__branch:
     type: options_select
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  sul_study__capacity:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   sul_study__features:
     type: options_select

@@ -1,12 +1,12 @@
-uuid: 17fc9a4c-bae0-4ae1-9c03-36e57716f969
+uuid: ad797ce7-fca1-413e-ac9d-eb1d8ad5cc87
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.sul_capacity
-field_name: sul_capacity
+id: node.sul_study__capacity
+field_name: sul_study__capacity
 entity_type: node
 type: entity_reference
 settings:
