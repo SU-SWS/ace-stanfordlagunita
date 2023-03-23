@@ -175,7 +175,7 @@ class EventsCest {
 
     // Can't adjust menu items.
     $I->amOnPage('/admin/structure/menu/manage/stanford-event-types');
-    $I->dontSeeResponseCodeIs(200);
+    $I->dontSeeResponseCodeIs(403);
 
     // Can't adjust the importer form.
     $I->amOnPage('/admin/config/importers/events-importer');
@@ -220,7 +220,7 @@ class EventsCest {
 
     // Can't adjust menu items.
     $I->amOnPage('/admin/structure/menu/manage/stanford-event-types');
-    $I->seeResponseCodeIs(200);
+    $I->seeResponseCodeIs(403);
 
     // Can't adjust the importer form.
     $I->amOnPage('/admin/config/importers/events-importer');
@@ -264,7 +264,7 @@ class EventsCest {
 
     // Can adjust menu items.
     $I->amOnPage('/admin/structure/menu/manage/stanford-event-types');
-    $I->seeResponseCodeIs(200);
+    $I->seeResponseCodeIs(403);
 
     // Can adjust the importer form.
     $I->amOnPage('/admin/config/importers/events-importer');
