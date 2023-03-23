@@ -9,9 +9,9 @@ id: paragraph.collection_card.sul_card_info
 field_name: sul_card_info
 entity_type: paragraph
 bundle: collection_card
-label: 'Card Info'
-description: ''
-required: false
+label: 'Card Summary Info'
+description: 'Text used as the clickable button.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
