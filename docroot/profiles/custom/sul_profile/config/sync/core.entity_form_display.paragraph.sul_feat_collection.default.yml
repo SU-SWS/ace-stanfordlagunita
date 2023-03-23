@@ -16,6 +16,13 @@ targetEntityType: paragraph
 bundle: sul_feat_collection
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sul_collection__cards:
     type: entity_reference_paragraphs
     weight: 2
@@ -48,4 +55,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

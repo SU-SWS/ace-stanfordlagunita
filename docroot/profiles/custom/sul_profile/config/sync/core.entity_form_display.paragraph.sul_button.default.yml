@@ -13,6 +13,13 @@ targetEntityType: paragraph
 bundle: sul_button
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sul_button_headline:
     type: string_textfield
     weight: 0
@@ -31,4 +38,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true
