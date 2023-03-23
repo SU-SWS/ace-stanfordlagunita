@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sul_study_place.sul_capacity
     - field.field.node.sul_study_place.sul_study__branch
+    - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
     - field.field.node.sul_study_place.sul_study__libcal_id
     - field.field.node.sul_study_place.sul_study__type
@@ -23,14 +23,6 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-  sul_capacity:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 106
-    region: content
   sul_study__branch:
     type: entity_reference_label
     label: above
@@ -42,6 +34,18 @@ content:
       field_formatter_class:
         class: ''
     weight: 101
+    region: content
+  sul_study__capacity:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+    weight: 107
     region: content
   sul_study__features:
     type: entity_reference_label
