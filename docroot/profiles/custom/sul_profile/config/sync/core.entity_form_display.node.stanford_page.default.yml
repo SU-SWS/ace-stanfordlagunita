@@ -119,7 +119,8 @@ content:
       empty_message: Empty
     third_party_settings:
       change_labels:
-        add_another: ''
+        add_another: 'Add another item'
+        field_label_overwrite: ''
   su_page_description:
     type: string_textfield
     weight: 1

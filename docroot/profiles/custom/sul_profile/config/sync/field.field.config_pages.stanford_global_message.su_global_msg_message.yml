@@ -10,9 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    stanford_minimal_html: stanford_minimal_html
-    plain_text: plain_text
-    stanford_html: '0'
+    allowed_formats:
+      - stanford_minimal_html
 id: config_pages.stanford_global_message.su_global_msg_message
 field_name: su_global_msg_message
 entity_type: config_pages
