@@ -30,13 +30,14 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: nested
       default_paragraph_type: stanford_card
     third_party_settings:
       change_labels:
         add_another: ''
+        field_label_overwrite: ''
   sul_collection__headline:
     type: string_textfield
     weight: 0

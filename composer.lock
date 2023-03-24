@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc9c999d823945d2309d9e2d76d85ab1",
+    "content-hash": "cce5e369b880b46fade0d1b5d904a27c",
     "packages": [
         {
             "name": "acquia/blt",
@@ -18009,16 +18009,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "8.2.4",
+            "version": "8.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "2c7715a36f3ff13d2242123a7e424ccb498203e0"
+                "reference": "49c031a3c4571a937138aadc3eca7e1a79ce410c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/2c7715a36f3ff13d2242123a7e424ccb498203e0",
-                "reference": "2c7715a36f3ff13d2242123a7e424ccb498203e0",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/49c031a3c4571a937138aadc3eca7e1a79ce410c",
+                "reference": "49c031a3c4571a937138aadc3eca7e1a79ce410c",
                 "shasum": ""
             },
             "require": {
@@ -18064,8 +18064,7 @@
                         "https://www.drupal.org/project/drupal/issues/2577923": "https://www.drupal.org/files/issues/2020-06-11/2577923-128.patch",
                         "https://www.drupal.org/project/drupal/issues/2353611": "https://www.drupal.org/files/issues/2019-10-15/drupal-link_uuid-2353611-262.patch",
                         "https://www.drupal.org/project/drupal/issues/3195543": "https://git.drupalcode.org/project/drupal/-/merge_requests/278.patch",
-                        "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch",
-                        "https://www.drupal.org/project/drupal/issues/3266341": "https://www.drupal.org/files/issues/2022-09-23/3266341-26.patch"
+                        "https://www.drupal.org/project/drupal/issues/3143617": "https://www.drupal.org/files/issues/2020-07-07/3143617-28_0.patch"
                     },
                     "drupal/decoupled_router": {
                         "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2022-11-30/decouple_router-3111456-resolve-language-issue-58.patch"
@@ -18096,6 +18095,7 @@
                         "https://www.drupal.org/project/jsonapi_views/issues/3213575": "https://www.drupal.org/files/issues/2022-05-30/pagination_number_offset_limit_support.patch"
                     },
                     "drupal/layout_paragraphs": {
+                        "https://www.drupal.org/project/layout_paragraphs/issues/3350293": "https://www.drupal.org/files/issues/2023-03-24/3350293-multi-field-buttons.patch",
                         "https://www.drupal.org/project/layout_paragraphs/issues/3334527": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/117.patch"
                     },
                     "drupal/menu_link_weight": {
@@ -18138,9 +18138,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/8.2.4"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/8.2.5"
             },
-            "time": "2023-02-27T17:36:59+00:00"
+            "time": "2023-03-24T21:32:16+00:00"
         },
         {
             "name": "su-sws/nobots",

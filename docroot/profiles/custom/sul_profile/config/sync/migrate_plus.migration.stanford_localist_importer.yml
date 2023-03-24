@@ -23,7 +23,7 @@ source:
   orphan_action: forget
   fields:
     -
-      name: id
+      name: event_id
       label: ID
       selector: event/id
     -
@@ -31,53 +31,17 @@ source:
       label: Title
       selector: event/title
     -
-      name: url
-      label: url
-      selector: event/url
-    -
-      name: updated_at
-      label: 'Updated At'
-      selector: event/updated_at
-    -
-      name: created_at
-      label: 'Created At'
-      selector: event/created_at
-    -
-      name: facebook_id
-      label: 'Facebook ID'
-      selector: event/facebook_id
-    -
       name: first_date
-      label: 'First Date'
+      label: first_date
       selector: event/first_date
     -
       name: last_date
-      label: 'Last Date'
+      label: last_date
       selector: event/last_date
     -
-      name: hashtag
-      label: Hashtag
-      selector: event/hashtag
-    -
-      name: urlname
-      label: 'URL Name'
-      selector: event/urlname
-    -
-      name: user_id
-      label: 'User ID'
-      selector: event/user_id
-    -
-      name: directions
-      label: Directions
-      selector: event/directions
-    -
-      name: location
-      label: Location
-      selector: event/location
-    -
-      name: room_number
-      label: 'Room Number'
-      selector: event/room_number
+      name: url
+      label: url
+      selector: event/urls
     -
       name: location_name
       label: 'Location Name'
@@ -87,82 +51,6 @@ source:
       label: Status
       selector: event/status
     -
-      name: experience
-      label: Experience
-      selector: event/experience
-    -
-      name: stream_url
-      label: 'Stream URL'
-      selector: event/stream_url
-    -
-      name: stream_info
-      label: 'Stream Info'
-      selector: event/stream_info
-    -
-      name: stream_embed_code
-      label: 'Stream Embed Code'
-      selector: event/stream_embed_code
-    -
-      name: created_by
-      label: 'Created By'
-      selector: event/created_by
-    -
-      name: updated_by
-      label: 'Updated By'
-      selector: event/updated_by
-    -
-      name: city_id
-      label: 'City ID'
-      selector: event/city_id
-    -
-      name: neighborhood_id
-      label: 'Neighborhood ID'
-      selector: event/neighborhood_id
-    -
-      name: school_id
-      label: 'School ID'
-      selector: event/school_id
-    -
-      name: campus_id
-      label: 'Campus ID'
-      selector: event/campus_id
-    -
-      name: recurring
-      label: Recurring
-      selector: event/recurring
-    -
-      name: free
-      label: Free
-      selector: event/free
-    -
-      name: private
-      label: Private
-      selector: event/private
-    -
-      name: verified
-      label: Verified
-      selector: event/verified
-    -
-      name: rejected
-      label: Rejected
-      selector: event/rejected
-    -
-      name: sponsored
-      label: Sponsored
-      selector: event/sponsored
-    -
-      name: venue_id
-      label: 'Venue ID'
-      selector: event/venue_id
-    -
-      name: ticket_url
-      label: 'Ticket URL'
-      selector: event/ticket_url
-    -
-      name: ticket_cost
-      label: 'Ticket Cost'
-      selector: event/ticket_cost
-    -
       name: keywords
       label: 'Keywords Array'
       selector: event/keywords
@@ -171,61 +59,9 @@ source:
       label: 'Tags Array'
       selector: event/tags
     -
-      name: description_text
-      label: 'Description Plaintext'
-      selector: event/description_text
-    -
-      name: photo_id
-      label: 'Photo ID'
-      selector: event/photo_id
-    -
-      name: detail_view
-      label: 'Detail View'
-      selector: event/detail_view
-    -
-      name: address
-      label: Address
-      selector: event/address
-    -
       name: description
       label: Description
       selector: event/description
-    -
-      name: featured
-      label: Featured
-      selector: event/featured
-    -
-      name: geo_latitude
-      label: 'Geo Latitutde'
-      selector: event/geo/latitude
-    -
-      name: geo_longitude
-      label: 'Geo Longitude'
-      selector: event/geo/longitude
-    -
-      name: geo_street
-      label: 'Geo Street'
-      selector: event/geo/street
-    -
-      name: geo_city
-      label: 'Geo City'
-      selector: event/geo/city
-    -
-      name: geo_state
-      label: 'Geo State'
-      selector: event/geo/state
-    -
-      name: geo_country
-      label: 'Geo Country'
-      selector: event/geo/country
-    -
-      name: geo_zip
-      label: 'Geo Zip'
-      selector: event/geo/zip
-    -
-      name: filters
-      label: Filters
-      selector: event/filters
     -
       name: event_audience
       label: 'Event Audience'
@@ -239,33 +75,13 @@ source:
       label: 'Event Types'
       selector: event/filters/event_types
     -
-      name: custom_fields
-      label: 'Custom Fields'
-      selector: event/custom_fields
-    -
       name: localist_url
       label: 'Localist URL'
       selector: event/localist_url
     -
-      name: localist_ics_url
-      label: 'Localist ICS URL'
-      selector: event/localist_ics_url
-    -
       name: photo_url
       label: 'Photo URL'
       selector: event/photo_url
-    -
-      name: venue_url
-      label: 'Venue URL'
-      selector: event/venue_url
-    -
-      name: event_instances
-      label: 'Event Instances'
-      selector: event/event_instances
-    -
-      name: event_instance_id
-      label: 'Event Instance ID'
-      selector: event/event_instances/0/event_instance/id
     -
       name: event_instance_start
       label: 'Event Instance Start'
@@ -283,7 +99,7 @@ source:
       label: Departments
       selector: event/departments
   ids:
-    event_instance_id:
+    event_id:
       type: string
   constants:
     one: 1
@@ -352,30 +168,49 @@ process:
   su_event_cta/title: constants/cta_text
   su_event_source/uri: localist_url
   su_event_source/title: constants/cta_text
-  su_event_date_time/value:
-    -
-      plugin: callback
-      callable: strtotime
-      source: event_instance_start
-  su_event_date_time/end_value:
+  start_time:
+    plugin: str_replace
+    regex: true
+    source: event_instance_start
+    search: /.*(T.*)-.*$/
+    replace: $1
+  end_time:
     -
       plugin: null_coalesce
       source:
         - event_instance_end
         - event_instance_start
     -
-      plugin: callback
-      callable: strtotime
+      plugin: str_replace
+      regex: true
+      search: /.*(T.*)-.*$/
+      replace: $1
     -
-      plugin: smartdate_adjust
-      start_time: '@su_event_date_time/value'
-  su_event_date_time/duration:
+      plugin: str_replace
+      search: '00:00:00'
+      replace: '23:59:00'
+  su_event_date_time/value:
     -
-      plugin: stanford_events_datemath
-      operation: subtraction
-      source: event_instance_end
-      values:
-        - event_instance_start
+      plugin: concat
+      source:
+        - first_date
+        - '@start_time'
+    -
+      plugin: format_date
+      from_format: 'Y-m-d\TH:i:s'
+      to_format: 'U'
+      from_timezone: 'America/Los_Angeles'
+  su_event_date_time/end_value:
+    -
+      plugin: concat
+      source:
+        - last_date
+        - '@end_time'
+    -
+      plugin: format_date
+      from_format: 'Y-m-d\TH:i:s'
+      to_format: 'U'
+      from_timezone: 'America/Los_Angeles'
   su_event_date_time/timezone: constants/timezone
   su_event_audience:
     -
