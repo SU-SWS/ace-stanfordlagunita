@@ -172,7 +172,7 @@ process:
     plugin: str_replace
     regex: true
     source: event_instance_start
-    search: /.*(T.*)-.*$/
+    search: '/.*(T.*)-.*$/'
     replace: $1
   end_time:
     -
@@ -183,7 +183,7 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: /.*(T.*)-.*$/
+      search: '/.*(T.*)-.*$/'
       replace: $1
     -
       plugin: str_replace
@@ -198,8 +198,8 @@ process:
     -
       plugin: format_date
       from_format: 'Y-m-d\TH:i:s'
-      to_format: 'U'
-      from_timezone: 'America/Los_Angeles'
+      to_format: U
+      from_timezone: America/Los_Angeles
   su_event_date_time/end_value:
     -
       plugin: concat
@@ -209,8 +209,8 @@ process:
     -
       plugin: format_date
       from_format: 'Y-m-d\TH:i:s'
-      to_format: 'U'
-      from_timezone: 'America/Los_Angeles'
+      to_format: U
+      from_timezone: America/Los_Angeles
   su_event_date_time/timezone: constants/timezone
   su_event_audience:
     -
