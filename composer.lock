@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e81f13c0112ee4d3c318401cb8419d60",
+    "content-hash": "265be172e4e74ed831e024094a4e600f",
     "packages": [
         {
             "name": "acquia/blt",
@@ -18128,16 +18128,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "8.2.5",
+            "version": "8.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "49c031a3c4571a937138aadc3eca7e1a79ce410c"
+                "reference": "12dd4b5714b540f489094adf3b7bc377557a6d85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/49c031a3c4571a937138aadc3eca7e1a79ce410c",
-                "reference": "49c031a3c4571a937138aadc3eca7e1a79ce410c",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/12dd4b5714b540f489094adf3b7bc377557a6d85",
+                "reference": "12dd4b5714b540f489094adf3b7bc377557a6d85",
                 "shasum": ""
             },
             "require": {
@@ -18214,7 +18214,6 @@
                         "https://www.drupal.org/project/jsonapi_views/issues/3213575": "https://www.drupal.org/files/issues/2022-05-30/pagination_number_offset_limit_support.patch"
                     },
                     "drupal/layout_paragraphs": {
-                        "https://www.drupal.org/project/layout_paragraphs/issues/3350293": "https://www.drupal.org/files/issues/2023-03-24/3350293-multi-field-buttons.patch",
                         "https://www.drupal.org/project/layout_paragraphs/issues/3334527": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/117.patch"
                     },
                     "drupal/menu_link_weight": {
@@ -18257,9 +18256,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/8.2.5"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/8.2.6"
             },
-            "time": "2023-03-24T21:32:16+00:00"
+            "time": "2023-03-27T18:14:32+00:00"
         },
         {
             "name": "su-sws/nobots",
