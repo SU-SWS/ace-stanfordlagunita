@@ -46,7 +46,6 @@ dependencies:
     - node
     - paragraphs
     - path
-    - pathauto
     - rabbit_hole
     - redirect
     - role_delegation

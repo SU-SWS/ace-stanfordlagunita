@@ -43,7 +43,6 @@ dependencies:
     - node
     - paragraphs
     - path
-    - pathauto
     - scheduler
     - stanford_policy
     - stanford_publication

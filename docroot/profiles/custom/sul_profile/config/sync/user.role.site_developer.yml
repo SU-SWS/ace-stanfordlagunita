@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.stanford_html
+    - filter.format.stanford_minimal_html
     - media.type.embeddable
     - media.type.file
     - media.type.google_form
