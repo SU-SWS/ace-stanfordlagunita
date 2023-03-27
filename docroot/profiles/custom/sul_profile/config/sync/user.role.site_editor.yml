@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.stanford_html
+    - filter.format.stanford_minimal_html
     - media.type.embeddable
     - media.type.file
     - media.type.google_form
@@ -35,11 +37,13 @@ dependencies:
     - content_lock
     - dropzonejs
     - field_permissions
+    - filter
     - media
     - menu_admin_per_menu
     - node
     - paragraphs
     - path
+    - pathauto
     - scheduler
     - stanford_policy
     - stanford_publication
@@ -204,6 +208,8 @@ permissions:
   - 'revert sul_study_place revisions'
   - 'schedule publishing of nodes'
   - 'update media'
+  - 'use text format stanford_html'
+  - 'use text format stanford_minimal_html'
   - 'use views bulk edit'
   - 'view all media revisions'
   - 'view all revisions'

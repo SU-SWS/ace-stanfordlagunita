@@ -45,6 +45,7 @@ dependencies:
     - field_permissions
     - field_ui
     - file
+    - filter
     - image
     - layout_builder
     - media
@@ -54,6 +55,7 @@ dependencies:
     - page_manager
     - paragraphs
     - path
+    - pathauto
     - rabbit_hole
     - redirect
     - responsive_image
@@ -156,6 +158,7 @@ permissions:
   - 'configure editable stanford_news node layout overrides'
   - 'configure editable stanford_page node layout overrides'
   - 'configure editable stanford_person node layout overrides'
+  - 'configure editable stanford_policy node layout overrides'
   - 'configure editable stanford_publication node layout overrides'
   - 'create and edit custom blocks'
   - 'create embeddable media'
@@ -323,6 +326,8 @@ permissions:
   - 'update any media'
   - 'update any stanford_component_block block content'
   - 'update media'
+  - 'use text format stanford_html'
+  - 'use text format stanford_minimal_html'
   - 'use views bulk edit'
   - 'view all media revisions'
   - 'view all revisions'

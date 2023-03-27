@@ -6,6 +6,7 @@ dependencies:
     - config_pages
     - field_permissions
     - media
+    - printable
     - stanford_policy
     - subrequests
     - system
@@ -38,6 +39,7 @@ permissions:
   - 'view stanford_global_message config page entity'
   - 'view stanford_local_footer config page entity'
   - 'view stanford_super_footer config page entity'
+  - 'view printer friendly versions'
   - 'view su_metatags'
   - 'view su_policy_auto_prefix'
   - 'view su_policy_chapter'
