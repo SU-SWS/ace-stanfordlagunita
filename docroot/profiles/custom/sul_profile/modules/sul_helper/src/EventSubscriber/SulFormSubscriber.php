@@ -99,6 +99,15 @@ class SulFormSubscriber implements EventSubscriberInterface {
         'validateBranchField',
       ];
     }
+
+    // Hide token help in the viewfield widget.
+    if ($context['widget']->getPluginId() == 'viewfield_select') {
+      $widget_form = &$event->getWidgetCompleteForm();
+      $widget_form['widget'][0]['view_options']['arguments']['#description'] = '';
+      foreach (Element::children($widget_form['widget']) as $delta) {
+        unset($widget_form['widget'][$delta]['view_options']['token_help']);
+      }
+    }
   }
 
   /**
