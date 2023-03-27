@@ -81,13 +81,13 @@ mode: default
 content:
   path:
     type: path
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 52
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -111,7 +111,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 10
+    weight: 8
     region: content
     settings:
       sidebar: true
@@ -169,7 +169,7 @@ content:
     third_party_settings: {  }
   su_news_hide_social:
     type: boolean_checkbox
-    weight: 11
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -200,7 +200,7 @@ content:
     third_party_settings: {  }
   su_shared_tags:
     type: options_shs
-    weight: 9
+    weight: 7
     region: content
     settings:
       display_node_count: false
@@ -216,11 +216,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 54
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   layout_selection: true
   promote: true
   sticky: true
   uid: true
-  unpublish_on: true
   url_redirects: true

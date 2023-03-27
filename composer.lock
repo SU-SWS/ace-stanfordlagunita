@@ -18508,16 +18508,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.1.0",
+            "version": "9.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "cb312783b841eefc12ff59b8559565707bb44d04"
+                "reference": "60b08368ca01cf657e17b2fb87afe24982fe2750"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/cb312783b841eefc12ff59b8559565707bb44d04",
-                "reference": "cb312783b841eefc12ff59b8559565707bb44d04",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/60b08368ca01cf657e17b2fb87afe24982fe2750",
+                "reference": "60b08368ca01cf657e17b2fb87afe24982fe2750",
                 "shasum": ""
             },
             "require-dev": {
@@ -18568,6 +18568,7 @@
                 "su-sws/stanford_media": "^8.3",
                 "su-sws/stanford_migrate": "^8.3"
             },
+            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18599,9 +18600,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.1.0"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2023-03-16T17:15:53+00:00"
+            "time": "2023-03-27T20:53:34+00:00"
         },
         {
             "name": "su-sws/stanford_ssp",
@@ -28884,7 +28885,8 @@
         "drupal/viewfield": 10,
         "drupal/views_block_filter_block": 10,
         "drupal/webp": 10,
-        "onlyextart/colorbox": 20
+        "onlyextart/colorbox": 20,
+        "su-sws/stanford_profile_helper": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -152,7 +152,7 @@ content:
         hide_guidelines: '0'
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 52
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -176,7 +176,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 32
+    weight: 9
     region: content
     settings:
       sidebar: true
@@ -357,7 +357,7 @@ content:
     third_party_settings: {  }
   su_shared_tags:
     type: options_shs
-    weight: 31
+    weight: 8
     region: content
     settings:
       display_node_count: false
@@ -387,6 +387,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 54
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   path: true
@@ -397,5 +403,4 @@ hidden:
   su_person_research_interests: true
   su_person_scholarly_interests: true
   uid: true
-  unpublish_on: true
   url_redirects: true

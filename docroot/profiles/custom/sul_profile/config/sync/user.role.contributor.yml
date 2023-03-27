@@ -29,7 +29,6 @@ dependencies:
     - menu_admin_per_menu
     - node
     - paragraphs
-    - scheduler
     - stanford_policy
     - stanford_publication
     - system
@@ -113,7 +112,6 @@ permissions:
   - 'edit own sul_study_place content'
   - 'edit own video media'
   - 'edit policy log'
-  - 'schedule publishing of nodes'
   - 'update media'
   - 'use text format stanford_html'
   - 'use text format stanford_minimal_html'
@@ -131,7 +129,6 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view policy log'
-  - 'view scheduled content'
   - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
