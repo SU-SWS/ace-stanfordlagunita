@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sul_library.layout_selection
     - field.field.node.sul_library.su_library__address
     - field.field.node.sul_library.su_library__banner
     - field.field.node.sul_library.su_library__contact_img
@@ -19,6 +20,7 @@ dependencies:
     - element_class_formatter
     - layout_builder
     - layout_builder_restrictions
+    - layout_discovery
     - layout_library
     - layout_paragraphs
     - link
@@ -26,10 +28,41 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          b2c79937-838b-4aa2-a882-8bd84fee5f9d:
+            uuid: b2c79937-838b-4aa2-a882-8bd84fee5f9d
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: above
+                settings:
+                  tag: h1
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
   layout_library:
-    enable: false
+    enable: true
   layout_builder_restrictions:
     allowed_block_categories:
       - 'Basic Page Type Lists (Views)'
@@ -171,6 +204,7 @@ content:
     weight: 9
     region: content
 hidden:
+  layout_selection: true
   links: true
   search_api_excerpt: true
   sul_library__type: true

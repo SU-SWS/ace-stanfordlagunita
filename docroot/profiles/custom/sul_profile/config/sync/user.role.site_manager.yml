@@ -94,6 +94,7 @@ permissions:
   - 'break content lock'
   - 'cancel account'
   - 'choose layout for node stanford_page'
+  - 'choose layout for node sul_library'
   - 'create embeddable media'
   - 'create field_media_embeddable_code'
   - 'create file media'

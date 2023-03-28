@@ -1,0 +1,9 @@
+uuid: ba86d900-460d-402f-9db0-282a9f555e14
+langcode: en
+status: true
+dependencies: {  }
+id: sul_library_full_width
+label: 'Full Width'
+targetEntityType: node
+targetBundle: sul_library
+layout: {  }

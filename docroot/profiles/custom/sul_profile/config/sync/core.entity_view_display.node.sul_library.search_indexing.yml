@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
+    - field.field.node.sul_library.layout_selection
     - field.field.node.sul_library.su_library__address
     - field.field.node.sul_library.su_library__banner
     - field.field.node.sul_library.su_library__contact_img
@@ -138,6 +139,7 @@ content:
     weight: 0
     region: content
 hidden:
+  layout_selection: true
   links: true
   search_api_excerpt: true
   su_library__banner: true

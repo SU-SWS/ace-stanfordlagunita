@@ -187,6 +187,7 @@ permissions:
   - 'bypass node access'
   - 'cancel account'
   - 'choose layout for node stanford_page'
+  - 'choose layout for node sul_library'
   - 'configure all stanford_page node layout overrides'
   - 'configure any layout'
   - 'configure editable stanford_event node layout overrides'

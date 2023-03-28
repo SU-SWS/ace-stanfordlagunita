@@ -1,0 +1,21 @@
+uuid: 39d4f500-c9d2-4bbf-bb9a-e4861e73b57e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_selection
+    - node.type.sul_library
+id: node.sul_library.layout_selection
+field_name: layout_selection
+entity_type: node
+bundle: sul_library
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: layout_library
+  handler_settings: {  }
+field_type: entity_reference
