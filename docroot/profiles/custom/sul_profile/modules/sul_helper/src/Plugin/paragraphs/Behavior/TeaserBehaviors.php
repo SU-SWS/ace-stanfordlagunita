@@ -35,27 +35,18 @@ class TeaserBehaviors extends ParagraphsBehaviorBase {
     $element['orientation'] = [
       '#type' => 'select',
       '#title' => $this->t('Orientation'),
-      '#description' => $this->t('Change the way the teaser looks. This will apply only when the area is large enough.'),
+      '#description' => $this->t('Change the way the card looks. This will apply only when the area is large enough.'),
       '#empty_option' => $this->t('Normal'),
       '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'orientation'),
       '#options' => [
         'horizontal' => $this->t('Horizontal'),
       ],
     ];
-    $element['background'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Background Color'),
-      '#description' => $this->t('Choose a background for the component.'),
-      '#empty_option' => $this->t('- Change the background -'),
-      '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background'),
-      '#options' => [
-        'black' => $this->t('Black'),
-      ],
-    ];
+
     $element['background_sprinkles'] = [
       '#type' => 'select',
       '#title' => $this->t('Background Sprinkles'),
-      '#description' => $this->t('Choose the position of the "sprinkles".'),
+      '#description' => $this->t('Choose the position of the "sprinkles". Used in conjunction with "Horizontal" orientation.'),
       '#empty_option' => $this->t('- Change the position -'),
       '#default_value' => $paragraph->getBehaviorSetting('sul_teaser_styles', 'background_sprinkles'),
       '#options' => [
@@ -66,7 +57,7 @@ class TeaserBehaviors extends ParagraphsBehaviorBase {
       ],
       '#states' => [
         'invisible' => [
-          'select[name="behavior_plugins[sul_teaser_styles][background]"]' => ['value' => ''],
+          'select[name="behavior_plugins[sul_teaser_styles][orientation]"]' => ['value' => ''],
         ],
       ],
     ];

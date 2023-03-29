@@ -32,16 +32,6 @@ class CardBehaviors extends ParagraphsBehaviorBase {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state) {
     $element = [];
-    $element['orientation'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Orientation'),
-      '#description' => $this->t('Change the way the card looks. This will apply only when the area is large enough.'),
-      '#empty_option' => $this->t('Normal'),
-      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'orientation'),
-      '#options' => [
-        'horizontal' => $this->t('Horizontal'),
-      ],
-    ];
 
     $element['link_display_style'] = [
       '#type' => 'select',
@@ -52,6 +42,17 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       '#options' => [
         'secondary_button' => $this->t('Secondary Button'),
         'cta_button' => $this->t('CTA'),
+      ],
+    ];
+
+    $element['orientation'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Orientation'),
+      '#description' => $this->t('Change the way the card looks. This will apply only when the area is large enough.'),
+      '#empty_option' => $this->t('Normal'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'orientation'),
+      '#options' => [
+        'horizontal' => $this->t('Horizontal'),
       ],
     ];
 
@@ -69,7 +70,7 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       ],
       '#states' => [
         'invisible' => [
-          'select[name="behavior_plugins[sul_card_styles][background]"]' => ['value' => ''],
+          'select[name="behavior_plugins[sul_card_styles][orientation]"]' => ['value' => ''],
         ],
       ],
     ];
