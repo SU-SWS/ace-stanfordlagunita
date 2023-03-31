@@ -60,6 +60,146 @@ third_party_settings:
                     class: ''
             weight: 0
             additional: {  }
+          6caa851f-b796-4d89-bee6-6d1a2b28e4ae:
+            uuid: 6caa851f-b796-4d89-bee6-6d1a2b28e4ae
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:sul_library__a11y'
+              label: 'Accessibility Statement'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 1
+            additional: {  }
+          6419a903-f837-4028-a5f8-ba6ab261857d:
+            uuid: 6419a903-f837-4028-a5f8-ba6ab261857d
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:su_library__address'
+              label: Address
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: address_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 2
+            additional: {  }
+          1803df69-1c67-443b-9ed1-5843473a321d:
+            uuid: 1803df69-1c67-443b-9ed1-5843473a321d
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:su_library__email'
+              label: 'Contact Email'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 3
+            additional: {  }
+          aacae3ce-8bf3-4d56-86a6-61b54e86919f:
+            uuid: aacae3ce-8bf3-4d56-86a6-61b54e86919f
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:su_library__phone'
+              label: 'Contact Phone Number'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: telephone_link_class
+                label: hidden
+                settings:
+                  title: ''
+                  class: ''
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 4
+            additional: {  }
+          899d2509-39cd-4ddb-9495-ab42469304bb:
+            uuid: 899d2509-39cd-4ddb-9495-ab42469304bb
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:su_library__map_link'
+              label: 'Map Link'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 6
+            additional: {  }
+          99f84778-dd06-4471-9f5f-09280a4debdc:
+            uuid: 99f84778-dd06-4471-9f5f-09280a4debdc
+            region: content
+            configuration:
+              id: 'field_block:node:sul_library:su_library__paragraphs'
+              label: Paragraphs
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: layout_paragraphs
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true
