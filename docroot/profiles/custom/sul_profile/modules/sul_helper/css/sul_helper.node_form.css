@@ -79,3 +79,8 @@ iframe.next-site-preview {
   text-align: center;
   border: 5px solid #fff4f4;
 }
+
+/* Remove after https://www.drupal.org/project/drupal/issues/3351603 is resolved. */
+.ck.ck-balloon-panel {
+  z-index: 1300 !important;
+}
