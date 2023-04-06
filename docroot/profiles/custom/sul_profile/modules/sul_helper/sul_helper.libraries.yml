@@ -1,4 +1,10 @@
 # Custom module library for general purposes.
+plain_paste:
+  js:
+    js/build/plainPaste.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+
 
 node_form:
   css:
@@ -25,3 +31,4 @@ three_column:
   css:
     component:
       layouts/three_column/three-column.css: {}
+
