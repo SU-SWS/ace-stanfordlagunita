@@ -1,11 +1,4 @@
 # Custom module library for general purposes.
-plain_paste:
-  js:
-    js/build/plainPaste.js: { preprocess: false, minified: true }
-  dependencies:
-    - core/ckeditor5
-
-
 node_form:
   css:
     component:

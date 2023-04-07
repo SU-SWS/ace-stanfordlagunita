@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "265be172e4e74ed831e024094a4e600f",
+    "content-hash": "8e43d2f25339ff084a8774d06aa71d7c",
     "packages": [
         {
             "name": "acquia/blt",
@@ -18125,6 +18125,35 @@
                 "source": "https://github.com/steverhoades/oauth2-openid-connect-server/tree/v2.5.0"
             },
             "time": "2023-01-19T16:49:09+00:00"
+        },
+        {
+            "name": "su-sws/ckeditor5_plugins",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SU-SWS/ckeditor5_plugins.git",
+                "reference": "44ee2bed3f4eae749cb271fe85637bcd9d087437"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SU-SWS/ckeditor5_plugins/zipball/44ee2bed3f4eae749cb271fe85637bcd9d087437",
+                "reference": "44ee2bed3f4eae749cb271fe85637bcd9d087437",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10.0"
+            },
+            "type": "drupal-custom-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Drupal CKEditor5 Plugin extensions",
+            "support": {
+                "issues": "https://github.com/SU-SWS/ckeditor5_plugins/issues",
+                "source": "https://github.com/SU-SWS/ckeditor5_plugins/tree/1.0.0"
+            },
+            "time": "2023-04-06T17:10:14+00:00"
         },
         {
             "name": "su-sws/drupal-patches",

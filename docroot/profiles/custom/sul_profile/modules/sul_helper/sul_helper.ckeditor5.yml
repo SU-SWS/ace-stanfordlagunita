@@ -1,8 +1,0 @@
-sul_helper_plain_paste:
-  ckeditor5:
-    plugins:
-      - plainPaste.PlainPaste
-  drupal:
-    label: Plain Paste
-    library: sul_helper/plain_paste
-    elements: false
