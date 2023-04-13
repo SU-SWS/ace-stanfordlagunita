@@ -84,7 +84,7 @@ resourceFields:
     enhancer:
       id: ''
   thumbnail:
-    disabled: false
+    disabled: true
     fieldName: thumbnail
     publicName: thumbnail
     enhancer:

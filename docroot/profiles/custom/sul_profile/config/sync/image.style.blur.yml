@@ -1,0 +1,19 @@
+uuid: bf3eb8f7-904b-446a-8817-40fcd5ae33bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: blur
+label: Blur
+effects:
+  55bb09c7-7be7-40a0-bd21-f8b02d26f4aa:
+    uuid: 55bb09c7-7be7-40a0-bd21-f8b02d26f4aa
+    id: image_effects_scale_and_smart_crop
+    weight: 1
+    data:
+      width: '10'
+      height: '10'
+      upscale: false
+      simulate: false
+      algorithm: entropy_slice

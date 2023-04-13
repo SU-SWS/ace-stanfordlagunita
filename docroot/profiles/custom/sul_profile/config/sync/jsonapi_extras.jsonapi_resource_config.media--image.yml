@@ -84,7 +84,7 @@ resourceFields:
     enhancer:
       id: ''
   thumbnail:
-    disabled: false
+    disabled: true
     fieldName: thumbnail
     publicName: thumbnail
     enhancer:
@@ -147,6 +147,12 @@ resourceFields:
     disabled: false
     fieldName: field_media_image
     publicName: field_media_image
+    enhancer:
+      id: ''
+  sul_image_credit:
+    disabled: false
+    fieldName: sul_image_credit
+    publicName: sul_image_credit
     enhancer:
       id: ''
   su_media_category:
