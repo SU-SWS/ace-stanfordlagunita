@@ -1,0 +1,10 @@
+uuid: 8810ef5c-1be7-4302-b524-1d3ca61f2ea6
+langcode: en
+status: true
+dependencies: {  }
+id: sul_libguide
+label: LibGuide
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

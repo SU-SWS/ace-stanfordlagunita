@@ -1,0 +1,44 @@
+uuid: e5e5f9b6-b24f-4f35-ace6-728d177a3ad4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_libguide.sul_libguide__desc
+    - field.field.paragraph.sul_libguide.sul_libguide__headline
+    - field.field.paragraph.sul_libguide.sul_libguide_id
+    - paragraphs.paragraphs_type.sul_libguide
+  module:
+    - stanford_fields
+    - text
+id: paragraph.sul_libguide.default
+targetEntityType: paragraph
+bundle: sul_libguide
+mode: default
+content:
+  sul_libguide__desc:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sul_libguide__headline:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sul_libguide_id:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true
