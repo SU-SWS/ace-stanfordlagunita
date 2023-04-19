@@ -14,5 +14,6 @@ function sul_helper_update_8001() {
     \Drupal::service('theme_installer')->uninstall(['stable']);
   }
   catch (\Exception $e) {
+    // Theme was already uninstalled.
   }
 }

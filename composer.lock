@@ -18582,16 +18582,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.x-dev",
+            "version": "dev-core-9.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "27612d715508ac88bce0bb727001e7398bf9de4c"
+                "reference": "5960ca034e8acf6ef922cabd933a2655f79244b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/27612d715508ac88bce0bb727001e7398bf9de4c",
-                "reference": "27612d715508ac88bce0bb727001e7398bf9de4c",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/5960ca034e8acf6ef922cabd933a2655f79244b6",
+                "reference": "5960ca034e8acf6ef922cabd933a2655f79244b6",
                 "shasum": ""
             },
             "require-dev": {
@@ -18604,7 +18604,7 @@
                 "drupal/admin_toolbar": "^3.2",
                 "drupal/allowed_formats": "^1.5",
                 "drupal/auto_entitylabel": "^3.0@beta",
-                "drupal/components": "^2.4",
+                "drupal/components": "^3.0",
                 "drupal/config_pages": "^2.10",
                 "drupal/config_pages_overrides": "^2.0",
                 "drupal/default_content": "^2.0@alpha",
@@ -18642,7 +18642,6 @@
                 "su-sws/stanford_media": "^8.3",
                 "su-sws/stanford_migrate": "^8.3"
             },
-            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18674,9 +18673,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/core-9.5.0"
             },
-            "time": "2023-03-27T22:28:47+00:00"
+            "time": "2023-04-18T18:14:10+00:00"
         },
         {
             "name": "su-sws/stanford_ssp",
