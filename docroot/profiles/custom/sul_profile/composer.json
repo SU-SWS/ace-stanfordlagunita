@@ -154,7 +154,7 @@
         "drupal/flat_taxonomy": "^1.2",
         "drupal/fontawesome": "^2.19",
         "drupal/google_analytics": "^4.0",
-        "drupal/google_tag": "^1.4",
+        "drupal/google_tag": "^2.0",
         "drupal/hook_event_dispatcher": "^4.0@beta",
         "drupal/image_effects": "^3.2",
         "drupal/imagemagick": "^3.1",
