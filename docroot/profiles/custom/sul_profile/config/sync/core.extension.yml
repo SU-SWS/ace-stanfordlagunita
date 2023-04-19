@@ -246,6 +246,5 @@ module:
   sul_profile: 1000
 theme:
   claro: 0
-  stable: 0
   stable9: 0
 profile: sul_profile

@@ -3198,29 +3198,29 @@
         },
         {
             "name": "drupal/components",
-            "version": "2.4.0",
+            "version": "3.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/components.git",
-                "reference": "8.x-2.4"
+                "reference": "3.0.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/components-8.x-2.4.zip",
-                "reference": "8.x-2.4",
-                "shasum": "9b083c2f845ff2e1a1632efcf24f88cecd7479cc"
+                "url": "https://ftp.drupal.org/files/projects/components-3.0.0-beta3.zip",
+                "reference": "3.0.0-beta3",
+                "shasum": "47ced4332f0a655ca38ae1b54e97a8e78d59f0bc"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.4",
-                    "datestamp": "1618861606",
+                    "version": "3.0.0-beta3",
+                    "datestamp": "1651759488",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3780,29 +3780,29 @@
         },
         {
             "name": "drupal/config_update",
-            "version": "1.7.0",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_update.git",
-                "reference": "8.x-1.7"
+                "reference": "2.0.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_update-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "8f079abf7c2ea826a27fa5224b0770a26404c968"
+                "url": "https://ftp.drupal.org/files/projects/config_update-2.0.0-alpha2.zip",
+                "reference": "2.0.0-alpha2",
+                "shasum": "e6406bbde77234689f93e1ce589c5b2384949ce9"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.4 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1586355587",
+                    "version": "2.0.0-alpha2",
+                    "datestamp": "1677596924",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3820,7 +3820,7 @@
                     "homepage": "https://www.drupal.org/user/80733"
                 }
             ],
-            "description": "Provides basic revert and update functionality for other modules",
+            "description": "Provides basic revert and update functionality for other modules.",
             "homepage": "https://www.drupal.org/project/config_update",
             "support": {
                 "source": "https://git.drupalcode.org/project/config_update"
@@ -3994,16 +3994,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.5.7",
+            "version": "9.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "bf51aa8ed6ab733fcaf60d0860aefd3918140fe3"
+                "reference": "a9a1e4e1fe23fb8c83fd6aeafb740c1462a218fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/bf51aa8ed6ab733fcaf60d0860aefd3918140fe3",
-                "reference": "bf51aa8ed6ab733fcaf60d0860aefd3918140fe3",
+                "url": "https://api.github.com/repos/drupal/core/zipball/a9a1e4e1fe23fb8c83fd6aeafb740c1462a218fc",
+                "reference": "a9a1e4e1fe23fb8c83fd6aeafb740c1462a218fc",
                 "shasum": ""
             },
             "require": {
@@ -4155,13 +4155,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.5.7"
+                "source": "https://github.com/drupal/core/tree/9.5.8"
             },
-            "time": "2023-03-24T16:54:38+00:00"
+            "time": "2023-04-19T16:14:39+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.5.7",
+            "version": "9.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -4205,22 +4205,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.7"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.5.8"
             },
             "time": "2023-03-09T21:29:23+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.5.7",
+            "version": "9.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "4b63b8220b166ad9eca7b5ea05e485cbe1f2b4a7"
+                "reference": "74db3999d3432b7433b399fe76fa6ff6f126bed9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/4b63b8220b166ad9eca7b5ea05e485cbe1f2b4a7",
-                "reference": "4b63b8220b166ad9eca7b5ea05e485cbe1f2b4a7",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/74db3999d3432b7433b399fe76fa6ff6f126bed9",
+                "reference": "74db3999d3432b7433b399fe76fa6ff6f126bed9",
                 "shasum": ""
             },
             "require": {
@@ -4229,7 +4229,7 @@
                 "doctrine/annotations": "~1.13.3",
                 "doctrine/lexer": "~1.2.3",
                 "doctrine/reflection": "~1.2.3",
-                "drupal/core": "9.5.7",
+                "drupal/core": "9.5.8",
                 "egulias/email-validator": "~3.2.1",
                 "guzzlehttp/guzzle": "~6.5.8",
                 "guzzlehttp/promises": "~1.5.2",
@@ -4291,9 +4291,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.5.7"
+                "source": "https://github.com/drupal/core-recommended/tree/9.5.8"
             },
-            "time": "2023-03-24T16:54:38+00:00"
+            "time": "2023-04-19T16:14:39+00:00"
         },
         {
             "name": "drupal/core_event_dispatcher",
@@ -5193,29 +5193,29 @@
         },
         {
             "name": "drupal/element_class_formatter",
-            "version": "1.5.0",
+            "version": "2.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/element_class_formatter.git",
-                "reference": "8.x-1.5"
+                "reference": "2.0.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/element_class_formatter-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "c6af44b58538519c51c1efd4bb5079bec78a4c32"
+                "url": "https://ftp.drupal.org/files/projects/element_class_formatter-2.0.0-beta1.zip",
+                "reference": "2.0.0-beta1",
+                "shasum": "6942ded3c0deb599708150b9715a5f34792fc992"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1655857776",
+                    "version": "2.0.0-beta1",
+                    "datestamp": "1671663813",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -6659,29 +6659,29 @@
         },
         {
             "name": "drupal/hook_event_dispatcher",
-            "version": "3.2.0",
+            "version": "4.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/hook_event_dispatcher.git",
-                "reference": "3.2.0"
+                "reference": "4.0.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/hook_event_dispatcher-3.2.0.zip",
-                "reference": "3.2.0",
-                "shasum": "08e975804e8c11c33ec19cb619dee5cf4d14dc7c"
+                "url": "https://ftp.drupal.org/files/projects/hook_event_dispatcher-4.0.0-beta1.zip",
+                "reference": "4.0.0-beta1",
+                "shasum": "9cd6c456bf4f0d272e0353f1d1ec6de6575d041f"
             },
             "require": {
-                "drupal/core": "^9.3"
+                "drupal/core": "^9.3 || ^10",
+                "php": ">=8.1.0"
             },
             "require-dev": {
                 "drupal/core_event_dispatcher": "*",
-                "drupal/eck": "^1.0@alpha",
                 "drupal/paragraphs": "^1.10",
-                "drupal/webform": "^6.0",
+                "drupal/webform": "*",
                 "mglaman/phpstan-drupal": "^1.1",
                 "mockery/mockery": "^1.3",
-                "phpmd/phpmd": "^2.8",
+                "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0"
             },
             "suggest": {
@@ -6691,11 +6691,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.2.0",
-                    "datestamp": "1653279726",
+                    "version": "4.0.0-beta1",
+                    "datestamp": "1681223835",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -8931,6 +8931,62 @@
             }
         },
         {
+            "name": "drupal/nobots",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nobots.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nobots-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "252eafeaa21858973ed0e11637ed31879209c8bf"
+            },
+            "require": {
+                "drupal/core": "^9.4 | ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1659156991",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "boznik",
+                    "homepage": "https://www.drupal.org/user/503884"
+                },
+                {
+                    "name": "John Bickar",
+                    "homepage": "https://www.drupal.org/user/158583"
+                },
+                {
+                    "name": "pookmish",
+                    "homepage": "https://www.drupal.org/user/3059577"
+                },
+                {
+                    "name": "sherakama",
+                    "homepage": "https://www.drupal.org/user/478028"
+                }
+            ],
+            "description": "This module blocks (well-behaved) search engine robots from crawling, indexing, or archiving your site by setting a \"X-Robots-Tag: noindex,nofollow,noarchive\" HTTP header.",
+            "homepage": "https://www.drupal.org/project/nobots",
+            "support": {
+                "source": "https://git.drupalcode.org/project/nobots"
+            }
+        },
+        {
             "name": "drupal/node_revision_delete",
             "version": "1.0.0-rc6",
             "source": {
@@ -9360,30 +9416,36 @@
         },
         {
             "name": "drupal/path_redirect_import",
-            "version": "1.0.0-beta5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/path_redirect_import.git",
-                "reference": "8.x-1.0-beta5"
+                "reference": "2.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/path_redirect_import-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "84bf22f684e0d001a5038960589939434a93994a"
+                "url": "https://ftp.drupal.org/files/projects/path_redirect_import-2.0.6.zip",
+                "reference": "2.0.6",
+                "shasum": "5ae31f47afecd8ac422bac35cd025020e558e09c"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/redirect": "*"
+                "drupal/core": ">=9.1",
+                "drupal/migrate_source_csv": "^3.5",
+                "drupal/migrate_tools": "^5.0 || ^6.0",
+                "drupal/redirect": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "drupal/migrate_plus": ">=5.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1635359017",
+                    "version": "2.0.6",
+                    "datestamp": "1672133788",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -9393,8 +9455,9 @@
             ],
             "authors": [
                 {
-                    "name": "gabrielu",
-                    "homepage": "https://www.drupal.org/user/279352"
+                    "name": "Pablo López",
+                    "homepage": "https://www.drupal.org/u/plopesc",
+                    "role": "Maintainer"
                 },
                 {
                     "name": "paulocs",
@@ -9405,10 +9468,11 @@
                     "homepage": "https://www.drupal.org/user/282415"
                 }
             ],
-            "description": "Provides the ability to import redirects for the Redirect module",
+            "description": "Migrate Drupal redirects from CSV.",
             "homepage": "https://www.drupal.org/project/path_redirect_import",
             "support": {
-                "source": "https://git.drupalcode.org/project/path_redirect_import"
+                "source": "https://cgit.drupalcode.org/path_redirect_import",
+                "issues": "https://www.drupal.org/project/issues/path_redirect_import"
             }
         },
         {
@@ -9597,22 +9661,22 @@
         },
         {
             "name": "drupal/printable",
-            "version": "2.1.5",
+            "version": "3.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/printable.git",
-                "reference": "2.1.5"
+                "reference": "3.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/printable-2.1.5.zip",
-                "reference": "2.1.5",
-                "shasum": "3e04d488abf5fc0da2d936be04408cb10db4d330"
+                "url": "https://ftp.drupal.org/files/projects/printable-3.0.0-rc1.zip",
+                "reference": "3.0.0-rc1",
+                "shasum": "451fa2e29e5f56fb494e6e95e81ff7afcc059cbd"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/pdf_api": "^2.2.2",
-                "wa72/htmlpagedom": "^1.3"
+                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/pdf_api": "^2.3",
+                "wa72/htmlpagedom": "^1.3 || ^2.0 || 3.0"
             },
             "require-dev": {
                 "drupal/pdf_api": "*",
@@ -9621,11 +9685,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.5",
-                    "datestamp": "1669009597",
+                    "version": "3.0.0-rc1",
+                    "datestamp": "1678587848",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -18297,33 +18361,6 @@
             "time": "2023-04-12T17:15:50+00:00"
         },
         {
-            "name": "su-sws/nobots",
-            "version": "8.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SU-SWS/nobots.git",
-                "reference": "78db92375df1b7e89ef68e34fb6f338822c5b86e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/nobots/zipball/78db92375df1b7e89ef68e34fb6f338822c5b86e",
-                "reference": "78db92375df1b7e89ef68e34fb6f338822c5b86e",
-                "shasum": ""
-            },
-            "type": "drupal-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "This module blocks (well-behaved) search engine robots from crawling, indexing, or archiving your site by setting a \"X-Robots-Tag: noindex,nofollow,noarchive\" HTTP header.",
-            "support": {
-                "issues": "https://github.com/SU-SWS/nobots/issues",
-                "source": "https://github.com/SU-SWS/nobots/tree/8.2.2"
-            },
-            "abandoned": true,
-            "time": "2023-04-18T16:12:26+00:00"
-        },
-        {
             "name": "su-sws/react_paragraphs",
             "version": "8.2.15",
             "source": {
@@ -22498,31 +22535,37 @@
         },
         {
             "name": "wa72/htmlpagedom",
-            "version": "v1.3.1",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wasinger/htmlpagedom.git",
-                "reference": "509520415f7f0cb1d3a4a0d3fd1b8eb4bab527a1"
+                "reference": "34710d592b9865e798b5c35a78166ab1f18ecc8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wasinger/htmlpagedom/zipball/509520415f7f0cb1d3a4a0d3fd1b8eb4bab527a1",
-                "reference": "509520415f7f0cb1d3a4a0d3fd1b8eb4bab527a1",
+                "url": "https://api.github.com/repos/wasinger/htmlpagedom/zipball/34710d592b9865e798b5c35a78166ab1f18ecc8e",
+                "reference": "34710d592b9865e798b5c35a78166ab1f18ecc8e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
-                "symfony/css-selector": ">=2.3",
-                "symfony/dom-crawler": "^2.3 <2.8 | ^2.8.3 | ^3.0.1 | ^4"
+                "php": ">=7.1.0",
+                "symfony/css-selector": "^3.4|^4|^5",
+                "symfony/dom-crawler": "^3.4|^4|^5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4|^5|^6|^7",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^7",
                 "wa72/html-pretty-min": "~0.1"
             },
             "suggest": {
                 "wa72/html-pretty-min": "Minify or indent HTML documents"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Wa72\\HtmlPageDom\\": "src/"
@@ -22539,7 +22582,7 @@
                     "homepage": "http://www.webagentur72.de"
                 }
             ],
-            "description": "PHP implementation of the jQuery DOM manipulation API for HTML documents",
+            "description": "jQuery-inspired DOM manipulation extension for Symfony's Crawler",
             "homepage": "http://github.com/wasinger/htmlpagedom",
             "keywords": [
                 "crawler",
@@ -22550,7 +22593,7 @@
                 "issues": "https://github.com/wasinger/htmlpagedom/issues",
                 "source": "https://github.com/wasinger/htmlpagedom/tree/master"
             },
-            "time": "2018-03-08T21:15:06+00:00"
+            "time": "2019-11-22T09:50:29+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -24543,7 +24586,7 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "9.5.7",
+            "version": "9.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -24587,7 +24630,7 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/9.5.7"
+                "source": "https://github.com/drupal/core-dev/tree/9.5.8"
             },
             "time": "2022-07-27T00:23:55+00:00"
         },
@@ -28315,21 +28358,25 @@
         "drupal/jsonapi_search_api": 5,
         "su-sws/blt-sws": 20,
         "drupal/auto_entitylabel": 10,
+        "drupal/components": 10,
         "drupal/config_readonly": 10,
+        "drupal/config_update": 15,
         "drupal/confirm_leave": 10,
         "drupal/default_content": 15,
         "drupal/diff": 5,
         "drupal/eck": 10,
+        "drupal/element_class_formatter": 10,
         "drupal/field_group": 5,
         "drupal/field_permissions": 5,
+        "drupal/hook_event_dispatcher": 10,
         "drupal/menu_block": 20,
         "drupal/name": 5,
         "drupal/node_revision_delete": 5,
         "drupal/page_manager": 10,
         "drupal/paragraphs_edit": 15,
         "drupal/paranoia": 15,
-        "drupal/path_redirect_import": 10,
         "drupal/pdb": 15,
+        "drupal/printable": 5,
         "drupal/rabbit_hole": 10,
         "drupal/role_delegation": 10,
         "drupal/shs": 5,
