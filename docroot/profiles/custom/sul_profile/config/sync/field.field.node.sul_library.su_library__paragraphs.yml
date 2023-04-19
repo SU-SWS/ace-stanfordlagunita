@@ -5,9 +5,19 @@ dependencies:
   config:
     - field.storage.node.su_library__paragraphs
     - node.type.sul_library
-    - paragraphs.paragraphs_type.stanford_accordion
-    - paragraphs.paragraphs_type.stanford_person_cta
-    - paragraphs.paragraphs_type.stanford_schedule
+    - paragraphs.paragraphs_type.collection
+    - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.stanford_banner
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_entity
+    - paragraphs.paragraphs_type.stanford_lists
+    - paragraphs.paragraphs_type.stanford_media_caption
+    - paragraphs.paragraphs_type.stanford_spacer
+    - paragraphs.paragraphs_type.stanford_wysiwyg
+    - paragraphs.paragraphs_type.sul_button
+    - paragraphs.paragraphs_type.sul_contact_card
+    - paragraphs.paragraphs_type.sul_feat_collection
+    - paragraphs.paragraphs_type.sul_libguide
   module:
     - entity_reference_revisions
 id: node.sul_library.su_library__paragraphs
@@ -24,45 +34,73 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      stanford_accordion: stanford_accordion
-      stanford_person_cta: stanford_person_cta
-      stanford_schedule: stanford_schedule
-    negate: 1
+      layout: layout
+      stanford_wysiwyg: stanford_wysiwyg
+      stanford_banner: stanford_banner
+      stanford_card: stanford_card
+      stanford_entity: stanford_entity
+      stanford_lists: stanford_lists
+      stanford_media_caption: stanford_media_caption
+      stanford_spacer: stanford_spacer
+      collection: collection
+      sul_button: sul_button
+      sul_contact_card: sul_contact_card
+      sul_feat_collection: sul_feat_collection
+      sul_libguide: sul_libguide
+    negate: 0
     target_bundles_drag_drop:
+      collection:
+        weight: 19
+        enabled: true
+      collection_card:
+        weight: 20
+        enabled: false
       layout:
         weight: -25
-        enabled: false
+        enabled: true
       stanford_accordion:
         weight: -23
-        enabled: true
+        enabled: false
       stanford_banner:
         weight: -22
-        enabled: false
+        enabled: true
       stanford_card:
         weight: -21
-        enabled: false
+        enabled: true
       stanford_entity:
         weight: -20
-        enabled: false
+        enabled: true
       stanford_gallery:
         weight: -19
         enabled: false
       stanford_lists:
         weight: -18
-        enabled: false
+        enabled: true
       stanford_media_caption:
         weight: -17
-        enabled: false
+        enabled: true
       stanford_person_cta:
         weight: -16
-        enabled: true
+        enabled: false
       stanford_schedule:
         weight: -15
-        enabled: true
+        enabled: false
       stanford_spacer:
         weight: -14
-        enabled: false
+        enabled: true
       stanford_wysiwyg:
         weight: -24
-        enabled: false
+        enabled: true
+      sul_button:
+        weight: 33
+        enabled: true
+      sul_contact_card:
+        weight: 34
+        enabled: true
+      sul_feat_collection:
+        weight: 35
+        enabled: true
+      sul_libguide:
+        weight: 36
+        enabled: true
 field_type: entity_reference_revisions

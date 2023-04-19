@@ -1,0 +1,21 @@
+uuid: ab6c554b-8a0b-4cb8-b98b-4140a23d4a04
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sul_libguide__headline
+field_name: sul_libguide__headline
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

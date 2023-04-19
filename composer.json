@@ -120,7 +120,7 @@
     "require-dev": {
         "acquia/blt-drupal-test": "^1.0",
         "acquia/blt-multisite": "^1.0",
-        "drupal/upgrade_status": "^3.18",
+        "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/blt-sws": "dev-main",
         "su-sws/drupal-dev": "^8.2"

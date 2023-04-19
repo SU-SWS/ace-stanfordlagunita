@@ -21,3 +21,7 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 if (getenv('GITPOD_WORKSPACE_ID')) {
   $config['simplesamlphp_auth.settings']['activate'] = FALSE;
 }
+
+if (file_exists(DRUPAL_ROOT . '/../keys/secrets.settings.php')) {
+  include DRUPAL_ROOT . '/../keys/secrets.settings.php';
+}

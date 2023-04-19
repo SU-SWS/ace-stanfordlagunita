@@ -1,0 +1,23 @@
+uuid: ee6da402-1b73-4eb0-a77f-48c9cde63951
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_libguide_id
+    - paragraphs.paragraphs_type.sul_libguide
+id: paragraph.sul_libguide.sul_libguide_id
+field_name: sul_libguide_id
+entity_type: paragraph
+bundle: sul_libguide
+label: 'LibGuide Subject'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -43,10 +43,9 @@ class StudyPlaceCest {
     $I->amOnPage('/node/add/sul_study_place');
     $I->fillField('Title', $title);
 
-
-    $I->selectOption('Type of Place', $place_type->label());
-    $I->selectOption('Study Features', $feature->label());
-    $I->selectOption('Capacity', $capacity->label());
+    $I->fillField('Type of Place', $place_type->id());
+    $I->fillField('Study Features', $feature->id());
+    $I->fillField('Capacity', $capacity->id());
     $I->selectOption('Branch Location', $branch->label());
     $I->fillField('LibCal Id Number', $this->faker->numberBetween());
 

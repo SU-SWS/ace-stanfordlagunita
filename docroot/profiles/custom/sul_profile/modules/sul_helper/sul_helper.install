@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the sul_helper module.
+ */
+
+/**
+ * Uninstall stable theme.
+ */
+function sul_helper_update_8001() {
+  try {
+    // Uninstall stable theme.
+    \Drupal::service('theme_installer')->uninstall(['stable']);
+  }
+  catch (\Exception $e) {
+    // Theme was already uninstalled.
+  }
+}

@@ -1,0 +1,48 @@
+uuid: 11cdbfb5-c15b-4065-9f72-f351f2da96ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_libguide.sul_libguide__desc
+    - field.field.paragraph.sul_libguide.sul_libguide__headline
+    - field.field.paragraph.sul_libguide.sul_libguide_id
+    - paragraphs.paragraphs_type.sul_libguide
+  module:
+    - sul_helper
+    - text
+id: paragraph.sul_libguide.default
+targetEntityType: paragraph
+bundle: sul_libguide
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sul_libguide__desc:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sul_libguide__headline:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sul_libguide_id:
+    type: sul_libguide_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true

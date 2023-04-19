@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.sul_button
     - paragraphs.paragraphs_type.sul_contact_card
     - paragraphs.paragraphs_type.sul_feat_collection
+    - paragraphs.paragraphs_type.sul_libguide
   module:
     - entity_reference_revisions
 id: node.stanford_page.su_page_components
@@ -47,6 +48,7 @@ settings:
       stanford_spacer: stanford_spacer
       sul_button: sul_button
       sul_feat_collection: sul_feat_collection
+      sul_libguide: sul_libguide
     negate: 0
     target_bundles_drag_drop:
       collection:
@@ -99,5 +101,8 @@ settings:
         enabled: true
       sul_feat_collection:
         weight: 32
+        enabled: true
+      sul_libguide:
+        weight: 36
         enabled: true
 field_type: entity_reference_revisions

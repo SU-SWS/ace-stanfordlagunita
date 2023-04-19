@@ -1,0 +1,19 @@
+uuid: 7e4cedf8-49ea-454d-970b-310fe494dbe6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sul_libguide__desc
+field_name: sul_libguide__desc
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

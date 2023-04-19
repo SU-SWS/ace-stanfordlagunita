@@ -1,0 +1,26 @@
+uuid: b5731262-967f-491e-b18d-980244f8eb8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_libguide__desc
+    - paragraphs.paragraphs_type.sul_libguide
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - stanford_minimal_html
+id: paragraph.sul_libguide.sul_libguide__desc
+field_name: sul_libguide__desc
+entity_type: paragraph
+bundle: sul_libguide
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
