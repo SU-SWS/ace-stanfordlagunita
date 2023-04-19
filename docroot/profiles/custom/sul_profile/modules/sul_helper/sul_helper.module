@@ -5,8 +5,17 @@
  * Primary module hooks for SUL Helper module.
  */
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\paragraphs\ParagraphInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_create_access().
+ */
+function sul_helper_paragraph_create_access(AccountInterface $account, array $context, $entity_bundle) {
+  return AccessResult::forbiddenIf($entity_bundle == 'stanford_gallery');
+}
 
 /**
  * Implements hook_entity_type_alter().

@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.stanford_banner
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.stanford_entity
+    - paragraphs.paragraphs_type.stanford_gallery
     - paragraphs.paragraphs_type.stanford_lists
     - paragraphs.paragraphs_type.stanford_media_caption
     - paragraphs.paragraphs_type.stanford_spacer
@@ -39,6 +40,7 @@ settings:
       stanford_banner: stanford_banner
       stanford_card: stanford_card
       stanford_entity: stanford_entity
+      stanford_gallery: stanford_gallery
       stanford_lists: stanford_lists
       stanford_media_caption: stanford_media_caption
       stanford_spacer: stanford_spacer
@@ -72,7 +74,7 @@ settings:
         enabled: true
       stanford_gallery:
         weight: -19
-        enabled: false
+        enabled: true
       stanford_lists:
         weight: -18
         enabled: true
