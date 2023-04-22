@@ -188,7 +188,9 @@ resourceFields:
     fieldName: body
     publicName: body
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   stanford_intranet__access:
     disabled: true
     fieldName: stanford_intranet__access
@@ -276,7 +278,9 @@ resourceFields:
     fieldName: su_person_location_address
     publicName: su_person_location_address
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_person_location_name:
     disabled: false
     fieldName: su_person_location_name
@@ -328,7 +332,9 @@ resourceFields:
     fieldName: su_person_research
     publicName: su_person_research
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_person_research_interests:
     disabled: false
     fieldName: su_person_research_interests
@@ -340,7 +346,9 @@ resourceFields:
     fieldName: su_person_scholarly_interests
     publicName: su_person_scholarly_interests
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_person_short_title:
     disabled: false
     fieldName: su_person_short_title

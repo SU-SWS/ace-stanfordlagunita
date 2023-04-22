@@ -109,4 +109,6 @@ resourceFields:
     fieldName: su_wysiwyg_text
     publicName: su_wysiwyg_text
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed

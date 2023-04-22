@@ -111,7 +111,9 @@ resourceFields:
     fieldName: su_banner_body
     publicName: su_banner_body
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_banner_button:
     disabled: false
     fieldName: su_banner_button

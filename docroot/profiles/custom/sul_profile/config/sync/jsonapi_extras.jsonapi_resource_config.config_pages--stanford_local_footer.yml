@@ -91,7 +91,9 @@ resourceFields:
     fieldName: su_local_foot_f_intro
     publicName: su_local_foot_f_intro
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_local_foot_f_method:
     disabled: false
     fieldName: su_local_foot_f_method
@@ -175,7 +177,9 @@ resourceFields:
     fieldName: su_local_foot_pr_co
     publicName: su_local_foot_pr_co
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_local_foot_second:
     disabled: false
     fieldName: su_local_foot_second
@@ -193,7 +197,9 @@ resourceFields:
     fieldName: su_local_foot_se_co
     publicName: su_local_foot_se_co
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_local_foot_social:
     disabled: false
     fieldName: su_local_foot_social
@@ -211,13 +217,17 @@ resourceFields:
     fieldName: su_local_foot_tr2_co
     publicName: su_local_foot_tr2_co
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_local_foot_tr_co:
     disabled: false
     fieldName: su_local_foot_tr_co
     publicName: su_local_foot_tr_co
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_local_foot_use_loc:
     disabled: false
     fieldName: su_local_foot_use_loc

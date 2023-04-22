@@ -188,7 +188,9 @@ resourceFields:
     fieldName: body
     publicName: body
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_course_academic_year:
     disabled: false
     fieldName: su_course_academic_year

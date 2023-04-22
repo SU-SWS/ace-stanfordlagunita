@@ -193,7 +193,9 @@ resourceFields:
     fieldName: body
     publicName: body
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   stanford_intranet__access:
     disabled: true
     fieldName: stanford_intranet__access

@@ -119,7 +119,9 @@ resourceFields:
     fieldName: su_entity_description
     publicName: su_entity_description
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_entity_headline:
     disabled: false
     fieldName: su_entity_headline

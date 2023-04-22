@@ -115,7 +115,9 @@ resourceFields:
     fieldName: sul_libguide__desc
     publicName: sul_libguide__desc
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   sul_libguide__headline:
     disabled: false
     fieldName: sul_libguide__headline

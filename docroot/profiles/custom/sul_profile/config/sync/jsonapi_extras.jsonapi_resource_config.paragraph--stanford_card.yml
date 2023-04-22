@@ -111,7 +111,9 @@ resourceFields:
     fieldName: su_card_body
     publicName: su_card_body
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   su_card_header:
     disabled: false
     fieldName: su_card_header
