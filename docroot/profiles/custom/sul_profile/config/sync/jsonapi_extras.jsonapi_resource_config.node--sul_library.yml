@@ -180,6 +180,26 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
+  layout_selection:
+    disabled: false
+    fieldName: layout_selection
+    publicName: layout_selection
+    enhancer:
+      id: ''
+  sul_library__a11y:
+    disabled: false
+    fieldName: sul_library__a11y
+    publicName: sul_library__a11y
+    enhancer:
+      id: nested
+      settings:
+        path: processed
+  sul_library__type:
+    disabled: false
+    fieldName: sul_library__type
+    publicName: sul_library__type
+    enhancer:
+      id: ''
   su_library__address:
     disabled: false
     fieldName: su_library__address

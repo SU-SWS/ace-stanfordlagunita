@@ -31,10 +31,11 @@ function sul_helper_entity_type_alter(array &$entity_types) {
  */
 function sul_helper_entity_field_access_alter(array &$grants, array $context) {
   $field_definition = $context['field_definition'];
-  if ($field_definition->getName() == 'layout_selection' && $context['operation'] == 'view'){
+  if ($field_definition->getName() == 'layout_selection' && $context['operation'] == 'view') {
     unset($grants['stanford_profile_helper']);
   }
 }
+
 /**
  * Implements hook_entity_display_build_alter().
  */
@@ -42,7 +43,8 @@ function sul_helper_entity_display_build_alter(&$build, $context) {
   if (!($context['entity'] instanceof ParagraphInterface)) {
     return;
   }
-  \Drupal::service('sul_helper.jsonapi_serializer')->alterEntityBuild($build, $context['entity'], $context['display']);
+  \Drupal::service('sul_helper.jsonapi_serializer')
+    ->alterEntityBuild($build, $context['entity'], $context['display']);
 }
 
 /**
@@ -136,7 +138,6 @@ function sul_helper_preprocess(&$variables, $hook) {
   }
 
   if (strpos($hook, 'pattern_') === 0 && !empty($variables['context'])) {
-
     // Grab the layout paragraphs parts from the context that we saved above,
     // and put them into a variable for use in the patterns_use_wrapper_admin
     // template. Also remove the normal attributes to a wrapper so that they

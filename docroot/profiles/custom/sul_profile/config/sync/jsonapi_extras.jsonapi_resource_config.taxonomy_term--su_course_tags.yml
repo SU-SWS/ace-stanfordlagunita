@@ -74,7 +74,9 @@ resourceFields:
     fieldName: description
     publicName: description
     enhancer:
-      id: ''
+      id: nested
+      settings:
+        path: processed
   weight:
     disabled: false
     fieldName: weight
