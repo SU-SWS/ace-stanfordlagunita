@@ -40,7 +40,14 @@ function sul_helper_entity_field_access_alter(array &$grants, array $context) {
  * Implements hook_entity_display_build_alter().
  */
 function sul_helper_entity_display_build_alter(&$build, $context) {
-  if (!($context['entity'] instanceof ParagraphInterface)) {
+  $current_route = \Drupal::routeMatch()->getRouteName();
+  $allowed_routes = [
+    'layout_paragraphs.builder.insert',
+    'layout_paragraphs.builder.edit_item',
+    'entity.node.edit_form',
+  ];
+
+  if (!in_array($current_route, $allowed_routes) || !($context['entity'] instanceof ParagraphInterface)) {
     return;
   }
   \Drupal::service('sul_helper.jsonapi_serializer')
