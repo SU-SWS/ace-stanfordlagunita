@@ -13,7 +13,7 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\stanford_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
+use Drupal\sul_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
 
 /**
  * Class EventSubscriberTest.

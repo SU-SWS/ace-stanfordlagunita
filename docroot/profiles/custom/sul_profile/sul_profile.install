@@ -412,12 +412,12 @@ function _stanford_profile_update_fix_menu_item(MenuLinkContentInterface $menu_i
       ->getString());
 
     $menu_field_data = [
-      'menu_name' => $menu_item->get('menu_name')->getString(),
-      'title' => $menu_item->get('title')->getString(),
-      'description' => $menu_item->get('description')->getString(),
+      'menu_name' => $menu_item->getMenuName(),
+      'title' => $menu_item->getTitle(),
+      'description' => $menu_item->getDescription(),
       'parent' => $parent_id,
-      'weight' => $menu_item->get('weight')->getString(),
-      'expanded' => (bool) $menu_item->get('expaneded')->getString(),
+      'weight' => $menu_item->getweight(),
+      'expanded' => $menu_item->isExpanded(),
     ];
     $node->set('field_menulink', $menu_field_data)->save();
     return 'menu_link_field:node_field_menulink_' . $node->uuid() . '_und';

@@ -37,6 +37,7 @@ class SiteSettingsTest extends KernelTestBase {
     'user',
     'field',
     'node',
+    'path_alias',
   ];
 
   /**
