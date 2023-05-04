@@ -5,14 +5,13 @@ _meta:
   bundle: stanford_page
   default_langcode: en
   depends:
-    671d13ba-480e-4eee-bf14-b3e2ba68adb4: user
-    6fac3713-f499-4750-a7bc-32c16a59043a: media
+    c316e010-84a4-4752-a45b-642cc2e46359: user
     66286339-4f00-4994-8c0d-921b519ea4e4: media
     39cadd28-7a7e-4648-868d-d5e4f0a69bf7: media
 default:
   revision_uid:
     -
-      entity: 671d13ba-480e-4eee-bf14-b3e2ba68adb4
+      entity: c316e010-84a4-4752-a45b-642cc2e46359
   status:
     -
       value: true
@@ -48,6 +47,13 @@ default:
   rh_redirect_fallback_action:
     -
       value: bundle_default
+  field_menulink:
+    -
+      menu_name: main
+      title: Home
+      description: ''
+      parent: ''
+      weight: -50
   layout_selection:
     -
       target_id: stanford_basic_page_full
@@ -215,9 +221,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: 31746b70-ebf4-4cfa-a833-ac2435c5f0bd
                   region: main
-          revision_translation_affected:
-            -
-              value: true
           su_wysiwyg_text:
             -
               value: "<h2>Sample Content</h2>\r\n\r\n<p><strong>Academic Department</strong><br />\r\nBuilding 100<br />\r\nStanford University<br />\r\nStanford, CA 94305</p>\r\n\r\n<p>email: sunet@stanford.edu<br />\r\nphone: (650) 723-xxxx<br />\r\nfax: (650) 723-xxxx</p>\r\n\r\n<p><strong>Officer Name</strong><br />\r\nCampus address, office number<br />\r\nphone: (650) 123-4567<br />\r\nemail: sunet@stanford.edu</p>\r\n\r\n<p>Officer Name<br />\r\nCampus address, office number<br />\r\nphone: (650) 123-4567<br />\r\nemail: sunet@stanford.edu</p>\r\n\r\n<p><strong>The accessibility content below is required by University Communications for all large units at Stanford:</strong></p>\r\n\r\n<h2>Web Accessibility</h2>\r\n\r\n<p>Stanford University is committed to providing an online environment that is accessible to everyone, including individuals with disabilities.&nbsp;</p>\r\n\r\n<p>Having trouble accessing any of this content due to a disability?&nbsp;<a href=\"http://www.stanford.edu/site/accessibility\">Learn more about accessibility at Stanford and report accessibility issues&nbsp;</a></p>\r\n"

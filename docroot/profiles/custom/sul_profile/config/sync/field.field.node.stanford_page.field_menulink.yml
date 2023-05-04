@@ -1,0 +1,24 @@
+uuid: 4b42efbf-e5f6-4aad-9a42-79b69c5485ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menulink
+    - node.type.stanford_page
+  module:
+    - menu_link
+id: node.stanford_page.field_menulink
+field_name: field_menulink
+entity_type: node
+bundle: stanford_page
+label: 'Menu Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_menus:
+    - main
+  default_menu_parent: 'main:'
+field_type: menu_link

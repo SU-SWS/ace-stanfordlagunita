@@ -4,12 +4,10 @@ _meta:
   uuid: d21d84f0-22e7-4596-82cb-9209841a3276
   bundle: stanford_page
   default_langcode: en
-  depends:
-    671d13ba-480e-4eee-bf14-b3e2ba68adb4: user
 default:
   revision_uid:
     -
-      entity: 671d13ba-480e-4eee-bf14-b3e2ba68adb4
+      target_id: 1
   status:
     -
       value: true
@@ -45,6 +43,13 @@ default:
   rh_redirect_fallback_action:
     -
       value: bundle_default
+  field_menulink:
+    -
+      menu_name: main
+      title: About
+      description: ''
+      parent: ''
+      weight: -46
   su_page_components:
     -
       entity:

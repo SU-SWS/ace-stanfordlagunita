@@ -170,6 +170,7 @@ content:
     weight: 2
     region: content
 hidden:
+  field_menulink: true
   links: true
   search_api_excerpt: true
   su_policy_auto_prefix: true

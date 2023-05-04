@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.stanford_person.body
+    - field.field.node.stanford_person.field_menulink
     - field.field.node.stanford_person.stanford_intranet__access
     - field.field.node.stanford_person.su_metatags
     - field.field.node.stanford_person.su_person_academic_appt
@@ -40,6 +41,7 @@ dependencies:
     - field_group
     - link
     - media_library
+    - menu_link
     - metatag
     - paragraphs
     - scheduler
@@ -150,14 +152,20 @@ content:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
+  field_menulink:
+    type: menu_link_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -389,7 +397,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 54
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -42,7 +42,6 @@ class EntityReferenceCest {
     $node = $this->getNodeWithReferenceParagraph($I);
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    //$I->click('Edit', '.local-tasks-block');
 
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
@@ -124,13 +123,6 @@ class EntityReferenceCest {
         'options' => [],
       ],
     ], 'paragraph');
-//    $row = $I->createEntity([
-//      'type' => 'node_stanford_page_row',
-//      'su_page_components' => [
-//        'target_id' => $paragraph->id(),
-//        'entity' => $paragraph,
-//      ],
-//    ], 'paragraph_row');
 
     return $I->createEntity([
       'type' => 'stanford_page',

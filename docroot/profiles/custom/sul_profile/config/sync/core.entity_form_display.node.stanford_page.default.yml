@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.stanford_page.field_menulink
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
@@ -18,6 +19,7 @@ dependencies:
     - field_group
     - layout_paragraphs
     - media_library
+    - menu_link
     - metatag
     - path
     - scheduler
@@ -54,6 +56,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_menulink:
+    type: menu_link_default
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   layout_selection:
     type: options_select
     weight: 6
@@ -68,12 +76,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -166,7 +174,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 54
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

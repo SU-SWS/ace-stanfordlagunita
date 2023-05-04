@@ -62,6 +62,7 @@ class GalleryCest {
     // On the node page.
     $I->canSee($node->label(), 'h1');
     $I->canSeeNumberOfElements('.field img', 2);
+
     $I->canSeeNumberOfElements('.colorbox', 2);
     $I->click('a.colorbox');
     $I->waitForElementVisible('#cboxLoadedContent');
