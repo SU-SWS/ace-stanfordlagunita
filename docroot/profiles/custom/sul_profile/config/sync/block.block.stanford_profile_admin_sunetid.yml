@@ -1,0 +1,21 @@
+uuid: 854809a7-6655-4242-a76e-e9d17c17bc6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - stanford_ssp
+  theme:
+    - stanford_profile_admin
+id: stanford_profile_admin_sunetid
+theme: stanford_profile_admin
+region: header
+weight: 0
+provider: null
+plugin: stanford_ssp_login_block
+settings:
+  id: stanford_ssp_login_block
+  label: 'SUNetID Block'
+  label_display: visible
+  provider: stanford_ssp
+  link_text: 'SUNetID Login'
+visibility: {  }

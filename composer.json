@@ -15,66 +15,6 @@
         {
             "type": "package",
             "package": {
-                "name": "ckeditor-plugin/a11ychecker",
-                "version": "1.1.1",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://download.ckeditor.com/a11ychecker/releases/a11ychecker_1.1.1.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ckeditor-plugin/balloonpanel",
-                "version": "4.14.0",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://download.ckeditor.com/balloonpanel/releases/balloonpanel_4.14.0.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ckeditor-plugin/link",
-                "version": "4.14.0",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://download.ckeditor.com/link/releases/link_4.14.0.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ckeditor-plugin/fakeobjects",
-                "version": "4.14.0",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.14.0.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "citation-style-language/locales",
                 "version": "1.0.0",
                 "source": {
@@ -105,12 +45,10 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
         "drupal/acquia_purge": "^1.1",
-        "drupal/autoservices": "^1.0",
         "drupal/core": "^9.4",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9.0",
         "drupal/jsonapi_search_api": "^1.0@RC",
-        "drupal/layout_paragraphs": "^2.0",
         "drupal/mysql56": "^1.1",
         "drush/drush": "^11.4",
         "simplesamlphp/simplesamlphp": "^1.19",
