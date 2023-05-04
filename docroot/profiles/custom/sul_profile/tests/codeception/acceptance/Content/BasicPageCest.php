@@ -28,6 +28,7 @@ class BasicPageCest {
    *
    * @group pathauto
    * @group menu_link_weight
+   * @group foobar
    */
   public function testCreatingPage(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
@@ -64,6 +65,7 @@ class BasicPageCest {
 
     $I->canSee($child_title, 'h1');
 //    $I->canSeeLink("$child_title Item");
+    echo $I->grabFromCurrentUrl() . PHP_EOL;
     $I->canSeeInCurrentUrl("/$alias");
   }
 
@@ -161,7 +163,6 @@ class BasicPageCest {
    * A site manager should be able to place a page under an unpublished page.
    *
    * @group menu_link_weight
-   * @group foobar
    */
   public function testUnpublishedMenuItems(AcceptanceTester $I) {
     $unpublished_title = $this->faker->words(5, TRUE);
