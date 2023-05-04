@@ -417,6 +417,7 @@ function _stanford_profile_update_fix_menu_item(MenuLinkContentInterface $menu_i
       'description' => $menu_item->get('description')->getString(),
       'parent' => $parent_id,
       'weight' => $menu_item->get('weight')->getString(),
+      'expanded' => (bool) $menu_item->get('expaneded')->getString(),
     ];
     $node->set('field_menulink', $menu_field_data)->save();
     return 'menu_link_field:node_field_menulink_' . $node->uuid() . '_und';

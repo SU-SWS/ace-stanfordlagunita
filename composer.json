@@ -225,6 +225,9 @@
             },
             "drupal/ui_patterns": {
                 "Ui Patterns Views Fixes": "patches/contrib/ui_patterns_views-preview.patch"
+            },
+            "drupal/menu_link": {
+                "https://www.drupal.org/project/menu_link/issues/3358081": "https://git.drupalcode.org/project/menu_link/-/merge_requests/9.patch"
             }
         }
     },
