@@ -1,0 +1,20 @@
+uuid: ce66f911-313f-45d3-8ae3-8f75cf3eefac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stanford_profile_admin
+_core:
+  default_config_hash: AgaHIDwEqPOCLqv98q-DvW9qGg9BZkYrxND6dMDMdkE
+id: stanford_profile_admin_local_actions
+theme: stanford_profile_admin
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
