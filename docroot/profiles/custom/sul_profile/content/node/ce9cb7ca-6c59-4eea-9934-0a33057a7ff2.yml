@@ -4,12 +4,10 @@ _meta:
   uuid: ce9cb7ca-6c59-4eea-9934-0a33057a7ff2
   bundle: stanford_page
   default_langcode: en
-  depends:
-    671d13ba-480e-4eee-bf14-b3e2ba68adb4: user
 default:
   revision_uid:
     -
-      entity: 671d13ba-480e-4eee-bf14-b3e2ba68adb4
+      target_id: 1
   status:
     -
       value: true

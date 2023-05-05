@@ -9,7 +9,7 @@ use Drupal\user\Entity\Role;
 class AuthenticatedPermissionsCest {
 
   /**
-   * Faker service.
+   * Faker generator.
    *
    * @var \Faker\Generator
    */

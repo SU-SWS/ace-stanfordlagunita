@@ -9,7 +9,7 @@ _meta:
 default:
   revision_uid:
     -
-      entity: 9999fd33-d293-45b4-85b1-c7bac0d69a51
+      target_id: 1
   status:
     -
       value: false

@@ -298,13 +298,6 @@ class ListsCest {
     ], 'paragraph');
     $paragraph->setBehaviorSettings('list_paragraph', ['empty_message' => $message]);
     $paragraph->save();
-    //    $row = $I->createEntity([
-    //      'type' => 'node_stanford_page_row',
-    //      'su_page_components' => [
-    //        'target_id' => $paragraph->id(),
-    //        'entity' => $paragraph,
-    //      ],
-    //    ], 'paragraph_row');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
@@ -340,13 +333,6 @@ class ListsCest {
       'hide_empty' => TRUE,
     ]);
     $paragraph->save();
-    //    $row = $I->createEntity([
-    //      'type' => 'node_stanford_page_row',
-    //      'su_page_components' => [
-    //        'target_id' => $paragraph->id(),
-    //        'entity' => $paragraph,
-    //      ],
-    //    ], 'paragraph_row');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
@@ -803,13 +789,6 @@ class ListsCest {
       ],
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
-    //    $row = $I->createEntity([
-    //      'type' => 'node_stanford_page_row',
-    //      'su_page_components' => [
-    //        'target_id' => $paragraph->id(),
-    //        'entity' => $paragraph,
-    //      ],
-    //    ], 'paragraph_row');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',

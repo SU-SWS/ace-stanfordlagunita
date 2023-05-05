@@ -230,6 +230,7 @@ class MediaCest {
 
   /**
    * Test media category taxonomy field.
+   * @group mikes
    */
   public function testCategoryField(AcceptanceTester $I) {
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */

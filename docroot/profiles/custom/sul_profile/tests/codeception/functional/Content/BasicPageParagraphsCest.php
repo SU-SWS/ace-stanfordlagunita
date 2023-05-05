@@ -34,14 +34,6 @@ class BasicPageParagraphsCest {
 
     $paragraph = $I->createEntity(['type' => 'stanford_card'], 'paragraph');
 
-    //    $row = $I->createEntity([
-    //      'type' => 'node_stanford_page_row',
-    //      'su_page_components' => [
-    //        'target_id' => $paragraph->id(),
-    //        'entity' => $paragraph,
-    //      ],
-    //    ], 'paragraph_row');
-
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
@@ -54,8 +46,10 @@ class BasicPageParagraphsCest {
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
+
     $I->waitForText('Headline');
     //    $I->fillField('Superhead', $card_values['superhead']);
+
     $I->fillField('Headline', $card_values['headline']);
     $I->fillField('URL', $card_values['uri']);
     $I->fillField('Link text', $card_values['title']);
@@ -76,14 +70,6 @@ class BasicPageParagraphsCest {
       'type' => 'stanford_card',
       'su_card_super_header' => 'Foo Bar',
     ], 'paragraph');
-
-    //    $row = $I->createEntity([
-    //      'type' => 'node_stanford_page_row',
-    //      'su_page_components' => [
-    //        'target_id' => $paragraph->id(),
-    //        'entity' => $paragraph,
-    //      ],
-    //    ], 'paragraph_row');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
@@ -107,8 +93,10 @@ class BasicPageParagraphsCest {
     $I->amOnPage("/node/{$node->id()}/edit");
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
+
     $I->waitForText('Headline');
     //    $I->fillField('Superhead', $this->faker->text(10));
+
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');

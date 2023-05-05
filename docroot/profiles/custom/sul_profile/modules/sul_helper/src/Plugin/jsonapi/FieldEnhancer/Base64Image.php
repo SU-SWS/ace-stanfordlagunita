@@ -77,7 +77,10 @@ class Base64Image extends ResourceFieldEnhancerBase implements ContainerFactoryP
 
       $destination = $image_style->buildUri($file->getFileUri());
       $image_style->createDerivative($file->getFileUri(), $destination);
-      $data['base64'] = 'data:image/jpeg;base64,' . base64_encode(file_get_contents($destination));
+
+      if (file_exists($destination)) {
+        $data['base64'] = 'data:image/jpeg;base64,' . base64_encode(file_get_contents($destination));
+      }
     }
     return $data;
   }

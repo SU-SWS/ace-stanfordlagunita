@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.stanford_event_series.field_menulink
     - field.field.node.stanford_event_series.stanford_intranet__access
     - field.field.node.stanford_event_series.su_event_series_components
     - field.field.node.stanford_event_series.su_event_series_dek
@@ -15,6 +16,7 @@ dependencies:
     - node.type.stanford_event_series
   module:
     - field_group
+    - menu_link
     - metatag
     - paragraphs
     - scheduler
@@ -81,14 +83,20 @@ targetEntityType: node
 bundle: stanford_event_series
 mode: default
 content:
+  field_menulink:
+    type: menu_link_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 52
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -162,7 +170,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 32
+    weight: 8
     region: content
     settings:
       sidebar: true
@@ -170,7 +178,7 @@ content:
     third_party_settings: {  }
   su_shared_tags:
     type: options_shs
-    weight: 31
+    weight: 7
     region: content
     settings:
       display_node_count: false
