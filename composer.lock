@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c507023059502ba6b52cb37c8ec0841a",
+    "content-hash": "fdb291affe70f584485a0aad01eddc86",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2311,61 +2311,6 @@
             }
         },
         {
-            "name": "drupal/anchor_link",
-            "version": "2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/anchor_link.git",
-                "reference": "8.x-2.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/anchor_link-8.x-2.6.zip",
-                "reference": "8.x-2.6",
-                "shasum": "deb452a7da610472a4ab3b5fbdf06904c041a225"
-            },
-            "require": {
-                "drupal/ckeditor": "*",
-                "drupal/core": "^8 || ^9 || ^10",
-                "drupal/fakeobjects": "~1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.6",
-                    "datestamp": "1674976179",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "branch-alias": {
-                    "dev-8.x-2.x": "8.2.x-dev"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Vardot",
-                    "homepage": "https://www.drupal.org/vardot",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Rajab Natshah",
-                    "homepage": "https://www.drupal.org/user/1414312"
-                }
-            ],
-            "description": "This plugin module adds the better link dialog and anchor related features to CKEditor in Drupal.",
-            "homepage": "https://www.drupal.org/project/anchor_link",
-            "support": {
-                "source": "http://cgit.drupalcode.org/anchor_link",
-                "issues": "https://www.drupal.org/project/issues/anchor_link"
-            }
-        },
-        {
             "name": "drupal/auto_entitylabel",
             "version": "3.0.0",
             "source": {
@@ -2439,125 +2384,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/auto_entitylabel",
                 "issues": "https://www.drupal.org/project/issues/auto_entitylabel"
-            }
-        },
-        {
-            "name": "drupal/autoservices",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/autoservices.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/autoservices-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "1fa4a269dbd939286807aeafb6c59d775f0f7e93"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10"
-            },
-            "require-dev": {
-                "composer/installers": "^1",
-                "cweagans/composer-patches": "~1.0",
-                "drupal/core-composer-scaffold": "^9.0",
-                "drupal/core-dev": "^9.0",
-                "drupal/core-recommended": "^9.0",
-                "drush/drush": "^10",
-                "mglaman/phpstan-drupal": "^0.12",
-                "php-parallel-lint/php-parallel-lint": "^1.2",
-                "phpstan/phpstan-deprecation-rules": "^0.12",
-                "zaporylie/composer-drupal-optimizations": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1662481011",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "installer-paths": {
-                    "web/core": [
-                        "type:drupal-core"
-                    ],
-                    "web/libraries/{$name}": [
-                        "type:drupal-library"
-                    ],
-                    "web/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "web/profiles/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "web/themes/{$name}": [
-                        "type:drupal-theme"
-                    ],
-                    "drush/{$name}": [
-                        "type:drupal-drush"
-                    ]
-                },
-                "drupal-scaffold": {
-                    "locations": {
-                        "web-root": "web/"
-                    }
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    ".spoons/ScriptHandler.php"
-                ]
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "scripts": {
-                "si": [
-                    "drush si -v --db-url=${SIMPLETEST_DB:-mysql://root:password@mariadb/db}"
-                ],
-                "phpcs": [
-                    "phpcs --runtime-set ignore_warnings_on_exit 1 --runtime-set ignore_errors_on_exit 1 web/modules/custom"
-                ],
-                "lint": [
-                    "parallel-lint --exclude web --exclude vendor ."
-                ],
-                "webserver": [
-                    "cd web && php -S 0.0.0.0:8888 .ht.router.php"
-                ],
-                "chromedriver": [
-                    "chromedriver --port=9515 --verbose --whitelisted-ips --log-path=/tmp/chromedriver.log --no-sandbox"
-                ],
-                "unit": [
-                    "phpunit --verbose web/modules/custom"
-                ],
-                "phpstan": [
-                    "phpstan analyse web/modules/custom"
-                ],
-                "stylelint": [
-                    "yarn --silent --cwd web/core stylelint --formatter verbose --config ./.stylelintrc.json ../modules/custom/**/*.css"
-                ],
-                "eslint": [
-                    "yarn --silent --cwd web/core eslint -c ./.eslintrc.json ../modules/custom"
-                ],
-                "post-update-cmd": [
-                    "Spoons\\ScriptHandler::createSymlinks"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "rodrigoaguilera",
-                    "homepage": "https://www.drupal.org/user/408170"
-                }
-            ],
-            "description": "Register services into the container without configuration",
-            "homepage": "https://gitlab.com/upstreamable/drupal-autoservices",
-            "support": {
-                "source": "https://gitlab.com/upstreamable/drupal-autoservices",
-                "issues": "https://gitlab.com/upstreamable/drupal-autoservices/issues"
             }
         },
         {
@@ -2805,98 +2631,6 @@
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
-            }
-        },
-        {
-            "name": "drupal/ckeditor",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor.git",
-                "reference": "1.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.1.zip",
-                "reference": "1.0.1",
-                "shasum": "d3dd8bfb2301b749599ba48cf76208becdf0eeb3"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.1",
-                    "datestamp": "1662977541",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "dczepierga",
-                    "homepage": "https://www.drupal.org/user/911466"
-                },
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                },
-                {
-                    "name": "jcisio",
-                    "homepage": "https://www.drupal.org/user/210762"
-                },
-                {
-                    "name": "Jorrit",
-                    "homepage": "https://www.drupal.org/user/161217"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "Magnus",
-                    "homepage": "https://www.drupal.org/user/73919"
-                },
-                {
-                    "name": "mkesicki",
-                    "homepage": "https://www.drupal.org/user/922884"
-                },
-                {
-                    "name": "nod_",
-                    "homepage": "https://www.drupal.org/user/598310"
-                },
-                {
-                    "name": "p.wiaderny",
-                    "homepage": "https://www.drupal.org/user/2956619"
-                },
-                {
-                    "name": "vokiel",
-                    "homepage": "https://www.drupal.org/user/2793801"
-                },
-                {
-                    "name": "Wim Leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
-                    "name": "wwalc",
-                    "homepage": "https://www.drupal.org/user/184556"
-                },
-                {
-                    "name": "xjm",
-                    "homepage": "https://www.drupal.org/user/65776"
-                }
-            ],
-            "description": "WYSIWYG editing for rich text fields using CKEditor.",
-            "homepage": "https://www.drupal.org/project/ckeditor",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor"
             }
         },
         {
@@ -5346,60 +5080,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/extlink",
                 "issues": "https://www.drupal.org/project/issues/extlink"
-            }
-        },
-        {
-            "name": "drupal/fakeobjects",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/fakeobjects.git",
-                "reference": "8.x-1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fakeobjects-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "a49094752f972e7db51ef5ec7abade1a4eba48f5"
-            },
-            "require": {
-                "drupal/ckeditor": "*",
-                "drupal/core": "^8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1674760765",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Kevin Quillen (kevinquillen)",
-                    "homepage": "https://www.drupal.org/u/kevinquillen",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "kevinquillen",
-                    "homepage": "https://www.drupal.org/user/317279"
-                }
-            ],
-            "description": "Adds the FakeObjects plugin to CKEditor. This plugin is a utility plugin that is required by certain user-facing CKEditor plugins.",
-            "homepage": "http://drupal.org/project/fakeobjects",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/fakeobjects",
-                "issues": "http://drupal.org/project/issues/fakeobjects"
             }
         },
         {
@@ -9375,30 +9055,30 @@
         },
         {
             "name": "drupal/pdf_api",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pdf_api.git",
-                "reference": "2.3.0"
+                "reference": "2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pdf_api-2.3.0.zip",
-                "reference": "2.3.0",
-                "shasum": "0c2072e194b4896f77c6f11338d9617c5f3f7275"
+                "url": "https://ftp.drupal.org/files/projects/pdf_api-2.3.1.zip",
+                "reference": "2.3.1",
+                "shasum": "50e67e680e2e0a9eaa1ce37c05ce78112d78d6e4"
             },
             "require": {
                 "dompdf/dompdf": "^2.0",
                 "drupal/core": "^8.8 || ^9 || ^10",
                 "mikehaertl/phpwkhtmltopdf": "^2.3",
-                "mpdf/mpdf": "^8.0.6",
+                "mpdf/mpdf": "^8.1.6",
                 "tecnickcom/tcpdf": "^6.2"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.3.0",
-                    "datestamp": "1678574175",
+                    "version": "2.3.1",
+                    "datestamp": "1683204846",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
