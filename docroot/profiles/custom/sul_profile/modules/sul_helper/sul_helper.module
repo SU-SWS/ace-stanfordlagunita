@@ -5,6 +5,7 @@
  * Primary module hooks for SUL Helper module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Template\Attribute;
@@ -172,4 +173,11 @@ function _sul_helper_is_editing_layout_paragraphs() {
   $layout_paragraphs_routes = ['entity.node.edit_form'];
   $route_name = \Drupal::routeMatch()->getRouteName();
   return in_array($route_name, $layout_paragraphs_routes) || strpos($route_name, 'layout_paragraphs.') === 0;
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function sul_helper_field_widget_viewfield_select_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $element['view_options']['arguments']['#title'] = t('Filtering Arguments (taxonomy terms)');
 }
