@@ -32,31 +32,7 @@ class SulFormSubscriber implements EventSubscriberInterface {
     return [
       FieldHookEvents::WIDGET_COMPLETE_FORM_ALTER => ['onWidgetFormAlter'],
       HookEventDispatcherInterface::PREFIX . 'form_layout_paragraphs_component_form.alter' => ['layoutParagraphComponentFormAlter'],
-      HookEventDispatcherInterface::PREFIX . 'form_taxonomy_overview_vocabularies.alter' => ['taxonomyOverviewFormAlter'],
     ];
-  }
-
-  /**
-   * Modify the taxonomy overview form to hide vocabs the user doesn't need.
-   *
-   * @param \Drupal\core_event_dispatcher\Event\Form\FormIdAlterEvent $event
-   *   Triggered event.
-   */
-  public function taxonomyOverviewFormAlter(FormIdAlterEvent $event):void {
-    $form = &$event->getForm();
-    foreach (Element::children($form['vocabularies']) as $vid) {
-      if (
-        !$this->currentUser->hasPermission("create terms in $vid") &&
-        !$this->currentUser->hasPermission("delete terms in $vid") &&
-        !$this->currentUser->hasPermission("edit terms in $vid")
-      ) {
-        unset($form['vocabularies'][$vid]);
-        continue;
-      }
-      unset($form['vocabularies'][$vid]['weight']);
-    }
-    unset($form['vocabularies']['#tabledrag']);
-    unset($form['vocabularies']['#header']['weight'], $form['actions']);
   }
 
   /**
