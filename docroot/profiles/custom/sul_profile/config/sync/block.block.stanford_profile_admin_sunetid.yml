@@ -15,7 +15,7 @@ plugin: stanford_ssp_login_block
 settings:
   id: stanford_ssp_login_block
   label: 'SUNetID Block'
-  label_display: visible
+  label_display: '0'
   provider: stanford_ssp
   link_text: 'SUNetID Login'
 visibility: {  }

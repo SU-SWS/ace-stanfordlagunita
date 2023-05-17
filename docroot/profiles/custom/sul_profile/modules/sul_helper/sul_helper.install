@@ -6,6 +6,13 @@
  */
 
 /**
+ * Set state at install.
+ */
+function sul_helper_install() {
+  \Drupal::state()->set('stanford_profile_helper.decoupled', TRUE);
+}
+
+/**
  * Uninstall stable theme.
  */
 function sul_helper_update_8001() {
@@ -16,4 +23,11 @@ function sul_helper_update_8001() {
   catch (\Exception $e) {
     // Theme was already uninstalled.
   }
+}
+
+/**
+ * Set decoupled flag.
+ */
+function sul_helper_update_8002() {
+  \Drupal::state()->set('stanford_profile_helper.decoupled', TRUE);
 }

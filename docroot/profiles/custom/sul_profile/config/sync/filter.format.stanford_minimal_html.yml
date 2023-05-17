@@ -40,9 +40,9 @@ filters:
     settings:
       tablesaw_type: stack
       tablesaw_persist: '1'
-  sul_clean_html:
-    id: sul_clean_html
-    provider: sul_helper
+  su_clean_html:
+    id: su_clean_html
+    provider: stanford_profile_helper
     status: true
     weight: 99
     settings: {  }

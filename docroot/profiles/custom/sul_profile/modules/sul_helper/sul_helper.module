@@ -27,15 +27,6 @@ function sul_helper_entity_type_alter(array &$entity_types) {
   $entity_types['paragraph']->setHandlerClass('route_provider', ['html' => '\Drupal\Core\Entity\Routing\AdminHtmlRouteProvider']);
 }
 
-/**
- * Implements hook_entity_field_access_alter().
- */
-function sul_helper_entity_field_access_alter(array &$grants, array $context) {
-  $field_definition = $context['field_definition'];
-  if ($field_definition->getName() == 'layout_selection' && $context['operation'] == 'view') {
-    unset($grants['stanford_profile_helper']);
-  }
-}
 
 /**
  * Implements hook_entity_display_build_alter().
@@ -76,13 +67,6 @@ function sul_helper_preprocess_image(&$variables) {
       $variables['attributes']['height'] = $size[1];
     }
   }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function sul_helper_preprocess_file_link(&$variables) {
-  $variables['link']['#url']->setAbsolute();
 }
 
 /**
@@ -154,13 +138,6 @@ function sul_helper_preprocess(&$variables, $hook) {
     $variables['wrapper_attributes'] = new Attribute($wrapper_attributes);
     $variables['attributes'] = new Attribute();
   }
-}
-
-/**
- * Implements hook_ckeditor_plugin_info_alter().
- */
-function sul_helper_ckeditor_plugin_info_alter(array &$plugins) {
-  unset($plugins['fixed_toolbar']);
 }
 
 /**
