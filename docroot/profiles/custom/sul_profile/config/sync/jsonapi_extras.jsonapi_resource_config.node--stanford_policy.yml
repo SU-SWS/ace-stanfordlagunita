@@ -81,13 +81,13 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
       id: ''
   changed:
-    disabled: true
+    disabled: false
     fieldName: changed
     publicName: changed
     enhancer:
@@ -184,6 +184,12 @@ resourceFields:
       id: nested
       settings:
         path: processed
+  field_menulink:
+    disabled: false
+    fieldName: field_menulink
+    publicName: field_menulink
+    enhancer:
+      id: ''
   su_policy_authority:
     disabled: false
     fieldName: su_policy_authority

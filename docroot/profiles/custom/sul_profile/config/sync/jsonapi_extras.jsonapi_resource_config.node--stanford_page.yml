@@ -87,13 +87,13 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
       id: ''
   changed:
-    disabled: true
+    disabled: false
     fieldName: changed
     publicName: changed
     enhancer:
@@ -180,6 +180,12 @@ resourceFields:
     disabled: true
     fieldName: menu_link
     publicName: menu_link
+    enhancer:
+      id: ''
+  field_menulink:
+    disabled: false
+    fieldName: field_menulink
+    publicName: field_menulink
     enhancer:
       id: ''
   layout_selection:

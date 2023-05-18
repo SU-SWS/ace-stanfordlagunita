@@ -89,13 +89,13 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
       id: ''
   changed:
-    disabled: true
+    disabled: false
     fieldName: changed
     publicName: changed
     enhancer:
@@ -230,6 +230,12 @@ resourceFields:
     disabled: false
     fieldName: su_news_featured_media
     publicName: su_news_featured_media
+    enhancer:
+      id: ''
+  su_news_hide_social:
+    disabled: false
+    fieldName: su_news_hide_social
+    publicName: su_news_hide_social
     enhancer:
       id: ''
   su_news_publishing_date:

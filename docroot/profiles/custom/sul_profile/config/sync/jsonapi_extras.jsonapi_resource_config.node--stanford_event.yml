@@ -93,13 +93,13 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
       id: ''
   changed:
-    disabled: true
+    disabled: false
     fieldName: changed
     publicName: changed
     enhancer:
@@ -200,12 +200,6 @@ resourceFields:
     disabled: true
     fieldName: stanford_intranet__access
     publicName: stanford_intranet__access
-    enhancer:
-      id: ''
-  sul_event__image:
-    disabled: false
-    fieldName: sul_event__image
-    publicName: sul_event__image
     enhancer:
       id: ''
   su_event_alt_loc:
@@ -338,5 +332,11 @@ resourceFields:
     disabled: false
     fieldName: su_shared_tags
     publicName: su_shared_tags
+    enhancer:
+      id: ''
+  sul_event__image:
+    disabled: false
+    fieldName: sul_event__image
+    publicName: sul_event__image
     enhancer:
       id: ''

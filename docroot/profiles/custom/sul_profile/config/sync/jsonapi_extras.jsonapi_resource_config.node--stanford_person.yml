@@ -88,13 +88,13 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
       id: ''
   changed:
-    disabled: true
+    disabled: false
     fieldName: changed
     publicName: changed
     enhancer:
@@ -191,6 +191,12 @@ resourceFields:
       id: nested
       settings:
         path: processed
+  field_menulink:
+    disabled: false
+    fieldName: field_menulink
+    publicName: field_menulink
+    enhancer:
+      id: ''
   stanford_intranet__access:
     disabled: true
     fieldName: stanford_intranet__access
@@ -371,5 +377,17 @@ resourceFields:
     disabled: false
     fieldName: su_shared_tags
     publicName: su_shared_tags
+    enhancer:
+      id: ''
+  sul_person__libcal_id:
+    disabled: false
+    fieldName: sul_person__libcal_id
+    publicName: sul_person__libcal_id
+    enhancer:
+      id: ''
+  sul_person__libguide_id:
+    disabled: false
+    fieldName: sul_person__libguide_id
+    publicName: sul_person__libguide_id
     enhancer:
       id: ''

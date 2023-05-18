@@ -85,13 +85,13 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
       id: ''
   changed:
-    disabled: true
+    disabled: false
     fieldName: changed
     publicName: changed
     enhancer:
@@ -180,24 +180,16 @@ resourceFields:
     publicName: menu_link
     enhancer:
       id: ''
+  field_menulink:
+    disabled: false
+    fieldName: field_menulink
+    publicName: field_menulink
+    enhancer:
+      id: ''
   layout_selection:
     disabled: false
     fieldName: layout_selection
     publicName: layout_selection
-    enhancer:
-      id: ''
-  sul_library__a11y:
-    disabled: false
-    fieldName: sul_library__a11y
-    publicName: sul_library__a11y
-    enhancer:
-      id: nested
-      settings:
-        path: processed
-  sul_library__type:
-    disabled: false
-    fieldName: sul_library__type
-    publicName: sul_library__type
     enhancer:
       id: ''
   su_library__address:
@@ -246,5 +238,19 @@ resourceFields:
     disabled: false
     fieldName: su_library__phone
     publicName: su_library__phone
+    enhancer:
+      id: ''
+  sul_library__a11y:
+    disabled: false
+    fieldName: sul_library__a11y
+    publicName: sul_library__a11y
+    enhancer:
+      id: nested
+      settings:
+        path: processed
+  sul_library__type:
+    disabled: false
+    fieldName: sul_library__type
+    publicName: sul_library__type
     enhancer:
       id: ''
