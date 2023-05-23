@@ -1,0 +1,16 @@
+parameters:
+  cors.config:
+    enabled: true
+    # Specify allowed headers, like 'x-allowed-header'.
+    allowedHeaders: ['*']
+    # Specify allowed request methods, specify ['*'] to allow all possible ones.
+    allowedMethods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT', 'PATCH']
+    # Configure requests allowed from specific origins. Do not include trailing
+    # slashes with URLs.
+    allowedOrigins: ['http://localhost:3000', 'https://library-prod.stanford.edu', 'https://library.stanford.edu']
+    # Sets the Access-Control-Expose-Headers header.
+    exposedHeaders: false
+    # Sets the Access-Control-Max-Age header.
+    maxAge: 1728000
+    # Sets the Access-Control-Allow-Credentials header.
+    supportsCredentials: false
