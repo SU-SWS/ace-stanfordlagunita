@@ -12,7 +12,8 @@ dependencies:
     - field.field.paragraph.stanford_card.su_card_super_header
     - paragraphs.paragraphs_type.stanford_card
   module:
-    - link
+    - change_labels
+    - link_attributes
     - media_library
     - text
 id: paragraph.stanford_card.nested
@@ -37,13 +38,24 @@ content:
       placeholder: ''
     third_party_settings: {  }
   su_card_link:
-    type: link_default
+    type: link_attributes
     weight: 3
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+      enabled_attributes:
+        aria-label: true
+        id: false
+        name: false
+        target: false
+        rel: false
+        class: false
+        accesskey: false
+        title: false
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
   su_card_media:
     type: media_library_widget
     weight: 0
