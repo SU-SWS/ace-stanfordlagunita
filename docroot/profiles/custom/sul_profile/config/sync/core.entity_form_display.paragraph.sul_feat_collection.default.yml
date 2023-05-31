@@ -9,7 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.sul_feat_collection
   module:
     - change_labels
-    - link
+    - link_attributes
     - paragraphs
 id: paragraph.sul_feat_collection.default
 targetEntityType: paragraph
@@ -47,12 +47,23 @@ content:
       placeholder: ''
     third_party_settings: {  }
   sul_collection__link:
-    type: link_default
+    type: link_attributes
     weight: 1
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+      enabled_attributes:
+        aria-label: true
+        id: false
+        name: false
+        target: false
+        rel: false
+        class: false
+        accesskey: false
+        title: false
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
 hidden:
   created: true

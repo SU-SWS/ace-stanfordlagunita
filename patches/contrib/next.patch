@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/Next/PreviewUrlGenerator/SimpleOauth.php b/src/Plugin/Next/PreviewUrlGenerator/SimpleOauth.php
+index e92266d..de0fb8c 100644
+--- a/src/Plugin/Next/PreviewUrlGenerator/SimpleOauth.php
++++ b/src/Plugin/Next/PreviewUrlGenerator/SimpleOauth.php
+@@ -132,7 +132,7 @@ class SimpleOauth extends ConfigurablePreviewUrlGeneratorBase {
+     // Create a secret based on the timestamp, slug, scope and resource version.
+     $query['timestamp'] = $timestamp = $this->time->getRequestTime();
+     $query['secret'] = $this->previewSecretGenerator->generate($timestamp . $slug . $scope . $resource_version);
+-
++    $query['resourceVersion'] = $resource_version;
+     return Url::fromUri($next_site->getPreviewUrl(), [
+       'query' => $query,
+     ]);

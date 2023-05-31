@@ -102,6 +102,7 @@ module:
   layout_library: 0
   layout_paragraphs: 0
   link: 0
+  link_attributes: 0
   link_title_formatter: 0
   linkit: 0
   markup: 0

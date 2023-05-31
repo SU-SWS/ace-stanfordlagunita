@@ -49,6 +49,7 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9.0",
         "drupal/jsonapi_search_api": "^1.0@RC",
+        "drupal/link_attributes": "^1.13",
         "drupal/mysql56": "^1.1",
         "drush/drush": "^11.4",
         "simplesamlphp/simplesamlphp": "^1.19",
@@ -166,6 +167,9 @@
             },
             "drupal/menu_link_weight": {
                 "https://www.drupal.org/project/menu_link_weight/issues/2875984": "https://git.drupalcode.org/project/menu_link_weight/-/merge_requests/2.diff"
+            },
+            "drupal/next": {
+                "Prevent unnecessary logs": "patches/contrib/next.patch"
             }
         }
     },
