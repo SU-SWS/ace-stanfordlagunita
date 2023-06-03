@@ -13,7 +13,6 @@ settings:
     items:
       - bold
       - italic
-      - strikethrough
       - alignment
       - horizontalLine
       - style

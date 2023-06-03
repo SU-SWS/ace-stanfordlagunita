@@ -75,7 +75,12 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
       return NULL;
     }
     foreach ($users as $user) {
-      if ($value == $user['email']) {
+      if (is_array($value)) {
+        if (in_array($user['email'], $value)) {
+          return $user['id'];
+        }
+      }
+      elseif ($value == $user['email']) {
         return $user['id'];
       }
     }

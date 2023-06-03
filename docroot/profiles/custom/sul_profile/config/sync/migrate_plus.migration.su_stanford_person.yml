@@ -22,6 +22,7 @@ source:
     file_destination: 'public://media/person/'
     file_extension: .jpg
     photo_params: '?placeHolderImage=false&access_token='
+    email_domain: '@stanford.edu'
   urls: {  }
   item_selector: values
   fields:
@@ -292,17 +293,43 @@ process:
       source:
         - scholarly_interests_fulltext
         - scholarly_interests_tersetext
+  nosave_email:
+    -
+      plugin: skip_on_empty
+      source: sunetid
+      method: process
+    -
+      plugin: concat
+      source:
+        - sunetid
+        - constants/email_domain
+  alias_email:
+    -
+      plugin: skip_on_empty
+      source: alias
+      method: process
+    -
+      plugin: concat
+      source:
+        - alias
+        - constants/email_domain
   sul_person__libcal_id:
     -
       plugin: skip_on_empty
-      source: email
+      source:
+        - email
+        - '@nosave_email'
+        - '@alias_email'
       method: process
     -
       plugin: libcal_lookup
   sul_person__libguide_id:
     -
       plugin: skip_on_empty
-      source: email
+      source:
+        - email
+        - '@nosave_email'
+        - '@alias_email'
       method: process
     -
       plugin: libguide_lookup
