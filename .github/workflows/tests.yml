@@ -40,6 +40,10 @@ jobs:
             1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             1.x-${{ hashFiles('composer.json') }}-
             1.x-
+      - name: debug
+        run: |
+          echo `pwd`
+          ls ./
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
