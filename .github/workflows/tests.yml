@@ -40,6 +40,7 @@ jobs:
             1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             1.x-${{ hashFiles('composer.json') }}-
             1.x-
+      - run: git config --system --add safe.directory '*'
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -89,6 +90,7 @@ jobs:
             1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             1.x-${{ hashFiles('composer.json') }}-
             1.x-
+      - run: git config --system --add safe.directory '*'
       - name: Run tests
         run: |
           rm -rf /var/www/html
@@ -149,6 +151,7 @@ jobs:
             1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             1.x-${{ hashFiles('composer.json') }}-
             1.x-
+      - run: git config --system --add safe.directory '*'
       - name: Install Site
         run: |
           rm -rf /var/www/html
@@ -203,6 +206,7 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
+      - run: git config --system --add safe.directory '*'
       - name: Deploy Artifact
         run: |
           git config --global user.email "sws-developers@lists.stanford.edu"

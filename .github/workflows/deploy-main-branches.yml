@@ -35,6 +35,7 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
+      - run: git config --system --add safe.directory '*'
       - name: Deploy Artifact
         run: |
           git config --global user.email "sws-developers@lists.stanford.edu"
