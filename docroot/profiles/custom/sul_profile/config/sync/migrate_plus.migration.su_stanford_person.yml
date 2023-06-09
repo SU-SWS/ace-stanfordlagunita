@@ -23,6 +23,7 @@ source:
     file_extension: .jpg
     photo_params: '?placeHolderImage=false&access_token='
     email_domain: '@stanford.edu'
+    law_email_domain: '@law.stanford.edu'
   urls: {  }
   item_selector: values
   fields:
@@ -130,6 +131,10 @@ source:
       name: community
       label: community
       selector: community
+    -
+      name: searchTokens
+      label: searchTokens
+      selector: searchTokens
   ids:
     sunetid:
       type: string
@@ -313,26 +318,62 @@ process:
       source:
         - alias
         - constants/email_domain
-  sul_person__libcal_id:
+  law_email:
+    -
+      plugin: skip_on_empty
+      source: alias
+      method: process
+    -
+      plugin: concat
+      source:
+        - alias
+        - constants/law_email_domain
+  libcal_email:
     -
       plugin: skip_on_empty
       source:
         - email
         - '@nosave_email'
         - '@alias_email'
+        - '@law_email'
       method: process
     -
       plugin: libcal_lookup
-  sul_person__libguide_id:
+  libcal_search:
     -
       plugin: skip_on_empty
+      source: searchTokens
+      method: process
+    -
+      plugin: libcal_lookup
+  sul_person__libcal_id:
+    plugin: null_coalesce
+    source:
+      - '@libcal_email'
+      - '@libcal_search'
+  libguide_email:
+    -
+      plugin: skip_on_empty
+      method: process
       source:
         - email
         - '@nosave_email'
         - '@alias_email'
+        - '@law_email'
+    -
+      plugin: libguide_lookup
+  libguide_search:
+    -
+      plugin: skip_on_empty
+      source: searchTokens
       method: process
     -
       plugin: libguide_lookup
+  sul_person__libguide_id:
+    plugin: null_coalesce
+    source:
+      - '@libguide_email'
+      - '@libguide_search'
 destination:
   plugin: 'entity:node'
   overwrite_properties:
