@@ -3,7 +3,6 @@
 namespace Drupal\sul_helper\EventSubscriber;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\core_event_dispatcher\Event\Form\FormIdAlterEvent;
 use Drupal\field_event_dispatcher\Event\Field\WidgetCompleteFormAlterEvent;
@@ -74,15 +73,6 @@ class SulFormSubscriber implements EventSubscriberInterface {
         self::class,
         'validateBranchField',
       ];
-    }
-
-    // Hide token help in the viewfield widget.
-    if ($context['widget']->getPluginId() == 'viewfield_select') {
-      $widget_form = &$event->getWidgetCompleteForm();
-      $widget_form['widget'][0]['view_options']['arguments']['#description'] = '';
-      foreach (Element::children($widget_form['widget']) as $delta) {
-        unset($widget_form['widget'][$delta]['view_options']['token_help']);
-      }
     }
   }
 

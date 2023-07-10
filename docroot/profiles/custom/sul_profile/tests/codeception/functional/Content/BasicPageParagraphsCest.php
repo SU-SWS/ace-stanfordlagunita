@@ -23,6 +23,8 @@ class BasicPageParagraphsCest {
 
   /**
    * Test the card component data is displayed correctly.
+   *
+   * @group foobar
    */
   public function testCardParagraph(FunctionalTester $I) {
     $card_values = [

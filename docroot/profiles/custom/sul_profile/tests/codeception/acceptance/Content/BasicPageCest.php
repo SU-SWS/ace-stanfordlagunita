@@ -28,7 +28,6 @@ class BasicPageCest {
    *
    * @group pathauto
    * @group menu_link_weight
-   * @group foobar
    */
   public function testCreatingPage(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
