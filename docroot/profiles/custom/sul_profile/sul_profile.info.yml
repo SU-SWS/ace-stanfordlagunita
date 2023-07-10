@@ -28,7 +28,6 @@ install:
   - 'drupal:block'
   - 'drupal:block_content'
   - 'drupal:breakpoint'
-  - 'drupal:ckeditor'
   - 'drupal:color'
   - 'drupal:config'
   - 'drupal:contextual'

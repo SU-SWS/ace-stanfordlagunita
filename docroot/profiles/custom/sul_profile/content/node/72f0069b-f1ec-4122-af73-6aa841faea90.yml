@@ -140,9 +140,6 @@ default:
               uri: 'internal:/'
               title: Button
               options: {  }
-          su_card_link_display:
-            -
-              value: button
           su_card_media:
             -
               entity: 66286339-4f00-4994-8c0d-921b519ea4e4

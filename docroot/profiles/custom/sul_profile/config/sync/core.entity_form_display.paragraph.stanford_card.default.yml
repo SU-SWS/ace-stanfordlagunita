@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.stanford_card.su_card_body
     - field.field.paragraph.stanford_card.su_card_header
     - field.field.paragraph.stanford_card.su_card_link
-    - field.field.paragraph.stanford_card.su_card_link_display
     - field.field.paragraph.stanford_card.su_card_media
     - field.field.paragraph.stanford_card.su_card_super_header
     - paragraphs.paragraphs_type.stanford_card
@@ -72,6 +71,5 @@ content:
 hidden:
   created: true
   publish_on: true
-  su_card_link_display: true
   su_card_super_header: true
   unpublish_on: true

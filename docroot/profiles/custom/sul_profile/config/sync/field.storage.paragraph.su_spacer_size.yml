@@ -1,22 +1,22 @@
-uuid: 3d7e3a0b-83b0-437d-8e83-8418d31f4f76
+uuid: 97dd4d2d-9b81-4285-a846-fe1c5fb44d54
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.su_card_link_display
-field_name: su_card_link_display
+id: paragraph.su_spacer_size
+field_name: su_spacer_size
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: button
-      label: Button
+      value: su-spacer-reduced
+      label: Reduced
     -
-      value: action
-      label: 'Action Link'
+      value: su-spacer-minimal
+      label: Minimal
   allowed_values_function: ''
 module: options
 locked: false

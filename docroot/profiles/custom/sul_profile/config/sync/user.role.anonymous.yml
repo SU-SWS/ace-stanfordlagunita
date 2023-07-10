@@ -35,6 +35,7 @@ permissions:
   - 'view own su_site_home'
   - 'view own su_site_url'
   - 'view policy log'
+  - 'view policy_settings config page entity'
   - 'view printer friendly versions'
   - 'view stanford_basic_site_settings config page entity'
   - 'view stanford_global_message config page entity'

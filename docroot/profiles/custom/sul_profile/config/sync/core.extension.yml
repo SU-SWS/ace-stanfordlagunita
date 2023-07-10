@@ -171,13 +171,13 @@ module:
   stanford_basic_page_types: 0
   stanford_courses: 0
   stanford_courses_importer: 0
-  stanford_date_formats: 0
   stanford_events: 0
   stanford_events_importer: 0
   stanford_events_series: 0
   stanford_fields: 0
   stanford_image_styles: 0
   stanford_intranet: 0
+  stanford_layout_paragraphs: 0
   stanford_media: 0
   stanford_migrate: 0
   stanford_news: 0
@@ -191,7 +191,6 @@ module:
   stanford_profile_styles: 0
   stanford_publication: 0
   stanford_ssp: 0
-  stanford_text_editor: 0
   subrequests: 0
   sul_helper: 0
   syslog: 0

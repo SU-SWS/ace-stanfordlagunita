@@ -128,12 +128,6 @@ resourceFields:
       id: url_link
       settings:
         absolute_url: 0
-  su_card_link_display:
-    disabled: false
-    fieldName: su_card_link_display
-    publicName: su_card_link_display
-    enhancer:
-      id: ''
   su_card_media:
     disabled: false
     fieldName: su_card_media

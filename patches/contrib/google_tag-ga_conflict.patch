@@ -1,0 +1,13 @@
+diff --git a/google_tag.module b/google_tag.module
+index ced7d8d..96d3acc 100644
+--- a/google_tag.module
++++ b/google_tag.module
+@@ -48,7 +48,7 @@ function google_tag_module_implements_alter(&$implementations, $hook) {
+     $implementations['google_tag'] = $group;
+     // Unset google_analytics' hook implementation for page_attachments, if available.
+     if (isset($implementations['google_analytics'])) {
+-      unset($implementations['google_analytics']);
++      // unset($implementations['google_analytics']);
+     }
+   }
+ }

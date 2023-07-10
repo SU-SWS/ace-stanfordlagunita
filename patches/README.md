@@ -42,19 +42,25 @@ Examples:
 
 ## Gotchas
 
-Note that Composer can only patch files that are distributed with Composer packages. This means that certain files (such as the Drupal core `.htaccess` and `robots.txt`) cannot be easily patched via Composer. These files are not included in the Drupal core Composer package (in fact Drupal Scaffold individually creates these files on updates).
+To update the `.htaccess` (or `robots.txt`) patch follow these steps
+```
+[make changes to htaccess file]
+[copy the entire file contents]
+rm patches/htaccess.patch
+cd /tmp
+composer create-project drupal/recommended-project drupal
+cd drupal
+mv web docroot
+git init
+git add docroot/.htaccess
+git commit docroot/.htaccess -m 'Initial commit'
+[paste modified .htaccess contents from working repo into core Drupal .htaccess file]
+git diff docroot/.htaccess > patches/htaccess.patch
+git add docroot/.htaccess patches/htaccess.patch
+```
 
-In order to modify `.htaccess` and other unpatchable root files, simply modify the file in place, commit it to Git, and make the following change in `composer.json`:
+(Similar steps for the file at `patches/robotstxt.patch`.)
 
-    "extra": {
-      "drupal-scaffold": {
-        "excludes": [
-          ".htaccess"
-        ]
-      }
-    },
-
-The downside here is that you will need to apply drupal core udpates to these excluded files on your own.
 
 Alternatively, you could leverage the `post-drupal-scaffold-cmd` script hook to apply patches after Drupal Scaffold is finished. See [this cweagens/composer-patches issue](https://github.com/acquia/blt/issues/1135#issuecomment-285404408) for more details.
 
