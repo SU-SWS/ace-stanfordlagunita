@@ -56,7 +56,7 @@ class BranchPageCest {
     $I->click('Save', '.ui-dialog-buttonset');
     $I->waitForElement('.lpb-btn--add');
     $I->click('Choose component');
-    $I->waitForText('Choose a component');;
+    $I->waitForText('Choose a paragraph');;
     $I->click('Text Area', '.lpb-component-list');
     $I->waitForText('Create new Text Area');
 

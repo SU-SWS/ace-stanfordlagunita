@@ -42,7 +42,7 @@ class SulHelperSubscriber implements EventSubscriberInterface {
       $layout_settings = $parent_component->getSettings();
       if ($layout_settings['layout'] != 'sul_helper_1_column') {
         $types = $event->getTypes();
-        unset($types['stanford_banner']);
+        unset($types['stanford_banner'], $types['stanford_gallery']);
         $event->setTypes($types);
       }
     }
