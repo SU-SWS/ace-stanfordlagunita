@@ -22,8 +22,6 @@ class BranchPageCest {
 
   /**
    * Test creating a branch page.
-   *
-   * @group foobar
    */
   public function testBranchPageCreate(FunctionalTester $I) {
     $title = $this->faker->words(3, TRUE);
