@@ -30,7 +30,7 @@ third_party_settings:
     when_to_delete: 0
 name: Policy
 type: stanford_policy
-description: ''
+description: 'BETA: Provide a administrative policy structure with breadcrumbs.'
 help: ''
 new_revision: true
 preview_mode: 0
