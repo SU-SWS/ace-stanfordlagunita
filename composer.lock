@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74f009f0b653c4b430ec62a494b61314",
+    "content-hash": "ad4e2003a8a2f486c85b55fbf4c95455",
     "packages": [
         {
             "name": "acquia/blt",
@@ -8990,17 +8990,17 @@
         },
         {
             "name": "drupal/pdb",
-            "version": "2.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pdb.git",
-                "reference": "2.0.1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pdb-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "63912b479df39adbc2a208f7d903fe296f468c41"
+                "url": "https://ftp.drupal.org/files/projects/pdb-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "5cbf30ee585feed7002c40ab02a96c293a96b218"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -9008,8 +9008,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1690835527",
+                    "version": "2.0.0",
+                    "datestamp": "1690813153",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9043,56 +9043,6 @@
                 }
             ],
             "description": "Progressively Decoupled Blocks (PDB). Build stuff with javascript frameworks as blocks.",
-            "homepage": "https://www.drupal.org/project/pdb",
-            "support": {
-                "source": "https://git.drupalcode.org/project/pdb"
-            }
-        },
-        {
-            "name": "drupal/pdb_react",
-            "version": "2.0.0",
-            "require": {
-                "drupal/core": "^9 || ^10",
-                "drupal/pdb": "*"
-            },
-            "type": "metapackage",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1690813153",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "codekarate",
-                    "homepage": "https://www.drupal.org/user/506260"
-                },
-                {
-                    "name": "emacoti",
-                    "homepage": "https://www.drupal.org/user/2930721"
-                },
-                {
-                    "name": "mrjmd",
-                    "homepage": "https://www.drupal.org/user/1800446"
-                },
-                {
-                    "name": "sdleslie",
-                    "homepage": "https://www.drupal.org/user/3608649"
-                },
-                {
-                    "name": "segovia94",
-                    "homepage": "https://www.drupal.org/user/780142"
-                }
-            ],
-            "description": "Turns on react framework for use by PDB",
             "homepage": "https://www.drupal.org/project/pdb",
             "support": {
                 "source": "https://git.drupalcode.org/project/pdb"

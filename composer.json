@@ -49,7 +49,7 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9.0",
         "drupal/mysql56": "^1.1",
-        "drupal/pdb_react": "^2.0",
+        "drupal/pdb": "2.0.0",
         "drush/drush": "^11.4",
         "simplesamlphp/simplesamlphp": "^1.19",
         "wikimedia/composer-merge-plugin": "^2.0"
