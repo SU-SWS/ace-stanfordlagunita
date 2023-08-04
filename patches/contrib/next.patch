@@ -11,3 +11,21 @@ index e92266d..de0fb8c 100644
      return Url::fromUri($next_site->getPreviewUrl(), [
        'query' => $query,
      ]);
+diff --git a/src/Render/MainContent/HtmlRenderer.php b/src/Render/MainContent/HtmlRenderer.php
+index 1909062..99d1642 100644
+--- a/src/Render/MainContent/HtmlRenderer.php
++++ b/src/Render/MainContent/HtmlRenderer.php
+@@ -108,11 +108,11 @@ class HtmlRenderer extends CoreHtmlRenderer {
+     }
+ 
+     $next_entity_type_config = $this->nextEntityTypeManager->getConfigForEntityType($entity->getEntityTypeId(), $entity->bundle());
+-    if (!$next_entity_type_config) {
++    if (!$next_entity_type_config || !$next_entity_type_config->getSiteResolver()) {
+       return $build;
+     }
+ 
+-    $sites = $next_entity_type_config->getSiteResolver()->getSitesForEntity($entity);
++    $sites = $next_entity_type_config->getSiteResolver()->getSitesForEntity($entity) ?? [];
+     if (!count($sites)) {
+       return $build;
+     }

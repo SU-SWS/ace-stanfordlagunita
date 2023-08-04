@@ -26,6 +26,15 @@ function sul_helper_entity_type_alter(array &$entity_types) {
   $entity_types['paragraph']->setHandlerClass('route_provider', ['html' => '\Drupal\Core\Entity\Routing\AdminHtmlRouteProvider']);
 }
 
+/**
+ * Implements hook_next_site_preview_alter().
+ */
+function sul_helper_next_site_preview_alter(array &$preview, array $context) {
+  $accepted_previews = ['node', 'paragraph'];
+  if (!in_array($context['entity']->getEntityTypeid(), $accepted_previews)) {
+    $preview = $context['original_build'][0]['content'];
+  }
+}
 
 /**
  * Implements hook_entity_display_build_alter().
