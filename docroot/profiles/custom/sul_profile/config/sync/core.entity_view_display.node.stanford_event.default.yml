@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.stanford_event.su_event_type
     - field.field.node.stanford_event.su_metatags
     - field.field.node.stanford_event.su_shared_tags
+    - field.field.node.stanford_event.sul_event__image
     - node.type.stanford_event
     - views.view.stanford_events
   module:
@@ -173,6 +174,32 @@ third_party_settings:
                   field_formatter_class:
                     class: su-event-type
             weight: -9
+            additional: {  }
+          65f01185-f0e1-499c-af0b-8fa3354478b6:
+            uuid: 65f01185-f0e1-499c-af0b-8fa3354478b6
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_event:sul_event__image'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_image_formatter
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                  image_style: card_1x_478x318
+                  remove_alt: false
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: -4
             additional: {  }
         third_party_settings: {  }
       -
