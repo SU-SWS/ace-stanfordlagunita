@@ -52,7 +52,7 @@ validate:
 cloud:
   appId: 12c62419-8d5c-40e1-b7ab-f7999e0cc3e9
 keys_rsync:
-  ssh: stanfordlagunita.prod@stanfordlagunita.ssh.prod.acquia-sites.com
+  ssh: stanfordlagunita.test@stanfordlagunitastg.ssh.prod.acquia-sites.com
   files:
-    - /mnt/gfs/stanfordlagunita.prod/nobackup/simplesamlphp/
-    - /mnt/gfs/stanfordlagunita.prod/secrets.settings.php
+    - /mnt/gfs/stanfordlagunita.test/nobackup/simplesamlphp/
+    - /mnt/gfs/stanfordlagunita.test/secrets.settings.php

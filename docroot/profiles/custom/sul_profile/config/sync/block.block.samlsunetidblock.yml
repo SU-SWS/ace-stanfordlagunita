@@ -1,21 +1,21 @@
-uuid: 854809a7-6655-4242-a76e-e9d17c17bc6d
+uuid: 44cf4508-912f-409d-aa9b-112131147079
 langcode: en
 status: true
 dependencies:
   module:
-    - stanford_ssp
+    - stanford_samlauth
   theme:
     - stanford_profile_admin
-id: stanford_profile_admin_sunetid
+id: samlsunetidblock
 theme: stanford_profile_admin
 region: header
 weight: 0
 provider: null
-plugin: stanford_ssp_login_block
+plugin: stanford_samlauth_login_block
 settings:
-  id: stanford_ssp_login_block
-  label: 'SUNetID Block'
+  id: stanford_samlauth_login_block
+  label: 'SAML SUNetID Block'
   label_display: '0'
-  provider: stanford_ssp
+  provider: stanford_samlauth
   link_text: 'SUNetID Login'
 visibility: {  }

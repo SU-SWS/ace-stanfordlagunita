@@ -56,7 +56,7 @@ $additionalSettingsFiles = [
   __DIR__ . '/config.settings.php',
   __DIR__ . '/environment_indicator.settings.php',
   __DIR__ . '/google_analytics.settings.php',
-  __DIR__ . '/simplesamlphp.settings.php',
+  __DIR__ . '/saml.settings.php',
   __DIR__ . '/xmlsitemap.settings.php',
 ];
 

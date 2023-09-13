@@ -52,6 +52,7 @@
         "drupal/pdb": "2.0.0",
         "drush/drush": "^11.4",
         "simplesamlphp/simplesamlphp": "^1.19",
+        "su-sws/stanford_ssp": "^8.3",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
