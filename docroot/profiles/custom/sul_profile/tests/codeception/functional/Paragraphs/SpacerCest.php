@@ -26,8 +26,6 @@ class SpacerCest {
 
   /**
    * The spacer paragraph has one custom field, to set the size of the bottom margin.
-   *
-   * @group foobar
    */
   public function testSpacerParagraph(FunctionalTester $I) {
 
