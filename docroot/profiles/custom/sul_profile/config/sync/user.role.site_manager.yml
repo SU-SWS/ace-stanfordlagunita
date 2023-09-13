@@ -78,7 +78,6 @@ permissions:
   - 'add content to books'
   - 'administer book outlines'
   - 'administer citation entities'
-  - 'administer course importer settings'
   - 'administer main menu items'
   - 'administer nodes'
   - 'administer redirects'
