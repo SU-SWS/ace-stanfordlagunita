@@ -44,7 +44,7 @@ if (EnvironmentDetector::isAhEnv()) {
  * `docroot/sites/{site-name}/settings/includes.settings.php` for the respective
  * site. See related information below.
  */
-$settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/custom/sul_profile/config/sync';
+$settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/custom/stanford_profile/config/sync';
 
 /**
  * Include settings files in docroot/sites/settings.

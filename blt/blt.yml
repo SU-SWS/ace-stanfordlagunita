@@ -2,7 +2,7 @@ project:
   prefix: stanfordlagunita
   human_name: 'Stanford D9 Projects'
   profile:
-    name: sul_profile
+    name: stanford_profile
   local: {  }
 git:
   default_branch: main
