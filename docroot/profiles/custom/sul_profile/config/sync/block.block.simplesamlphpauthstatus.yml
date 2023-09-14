@@ -1,0 +1,28 @@
+uuid: 8c4898f4-aa73-492f-9b73-99530930fde0
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplesamlphp_auth
+    - user
+  theme:
+    - stanford_profile_admin
+id: simplesamlphpauthstatus
+theme: stanford_profile_admin
+region: header
+weight: 0
+provider: null
+plugin: simplesamlphp_auth_block
+settings:
+  id: simplesamlphp_auth_block
+  label: 'SimpleSAMLphp Auth Status'
+  label_display: '0'
+  provider: simplesamlphp_auth
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
