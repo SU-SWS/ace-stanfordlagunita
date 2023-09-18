@@ -1,23 +1,24 @@
-uuid: 8c4898f4-aa73-492f-9b73-99530930fde0
+uuid: a2d311a5-01a7-4934-a0da-f2368d2c7ca9
 langcode: en
 status: true
 dependencies:
   module:
-    - simplesamlphp_auth
+    - stanford_samlauth
     - user
   theme:
     - stanford_profile_admin
-id: simplesamlphpauthstatus
+id: stanford_profile_admin_login
 theme: stanford_profile_admin
 region: header
 weight: 0
 provider: null
-plugin: simplesamlphp_auth_block
+plugin: stanford_samlauth_login_block
 settings:
-  id: simplesamlphp_auth_block
-  label: 'SimpleSAMLphp Auth Status'
+  id: stanford_samlauth_login_block
+  label: 'SAML SUNetID Block'
   label_display: '0'
-  provider: simplesamlphp_auth
+  provider: stanford_samlauth
+  link_text: 'SUNetID Login'
 visibility:
   user_role:
     id: user_role

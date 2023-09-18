@@ -4,6 +4,8 @@ project:
   local:
     protocol: http
     hostname: library.loc
+  profile:
+    name: sul_profile
 drush:
   aliases:
     local: library.local

@@ -7,7 +7,7 @@ parameters:
     allowedMethods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT', 'PATCH']
     # Configure requests allowed from specific origins. Do not include trailing
     # slashes with URLs.
-    allowedOrigins: ['http://localhost:3000', 'https://library-prod.stanford.edu', 'https://library.stanford.edu']
+    allowedOrigins: ['http://localhost:3000', 'https://library-prod.stanford.edu', 'https://library.stanford.edu', 'https://login-uat.stanford.edu', 'https://login.stanford.edu']
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: false
     # Sets the Access-Control-Max-Age header.
