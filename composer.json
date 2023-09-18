@@ -40,7 +40,6 @@
     "require": {
         "php": ">=8.0",
         "acquia/blt": "^13.5",
-        "acquia/blt-simplesamlphp": "^1.0",
         "composer/installers": "^1.9 || ^2.0",
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
@@ -51,9 +50,7 @@
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
         "drush/drush": "^11.4",
-        "simplesamlphp/simplesamlphp": "^1.19",
         "su-sws/stanford_profile": "10.x-dev",
-        "su-sws/stanford_ssp": "^8.3",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
@@ -182,8 +179,7 @@
             "cp lando/example.lando.yml .lando.yml",
             "cp lando/example.local.blt.yml blt/local.blt.yml",
             "cp lando/example.php.ini lando/php.ini",
-            "blt blt:init:settings",
-            "blt source:build:simplesamlphp-config"
+            "blt blt:init:settings"
         ],
         "pull-profile": [
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/custom/sul_profile --squash stanford_profile 10.x; composer update n"

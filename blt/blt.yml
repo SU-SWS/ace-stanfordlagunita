@@ -17,7 +17,6 @@ drush:
   aliases:
     ci: self
   default_alias: '${drush.aliases.local}'
-simplesamlphp: true
 cm:
   strategy: config-split
   allow-overrides: true

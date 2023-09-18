@@ -55,21 +55,6 @@ class GryphonHooksCommands extends BltTasks {
   }
 
   /**
-   * Deletes any local related file from artifact after BLT copies them over.
-   *
-   * @hook post-command artifact:build:simplesamlphp-config
-   */
-  public function postArtifactSamlConfigCopy() {
-    $deploy_dir = $this->getConfigValue('deploy.dir');
-    $files = glob("$deploy_dir/vendor/simplesamlphp/simplesamlphp/config/*local.*");
-    $task = $this->taskFileSystemStack();
-    foreach ($files as $file) {
-      $task->remove($file);
-    }
-    $task->run();
-  }
-
-  /**
    * Copy the default global settings for local settings.
    *
    * @hook post-command blt:init:settings
