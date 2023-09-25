@@ -35,11 +35,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - run: git config --system --add safe.directory '*'
       - name: Run Unit Tests
         env:
@@ -85,11 +85,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - run: git config --system --add safe.directory '*'
       - name: Run tests
         run: |
@@ -145,11 +145,11 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
             docroot/modules/custom
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - run: git config --system --add safe.directory '*'
       - name: Install Site
         run: |
@@ -192,11 +192,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
