@@ -160,16 +160,17 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt config:dump
           blt drupal:install --site=library -n
           drush role:perm:add anonymous 'access content'
           drush xmlsitemap:rebuild
           mkdir -p artifacts/_data/
-          mkdir -p docroot/sites/default/files
-          rm -rf docroot/sites/library/files
-          ln -sL ../default/files docroot/sites/library/files
       - name: Run tests
         run: blt codeception --suite=functional
+      - name: debug
+        if: always()
+        run: |
+          echo 'wordmark'
+          find . -name 'wordmark*'
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
