@@ -36,41 +36,65 @@ settings:
       - codeBlock
       - code
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: 'Plain text'
+          language: plaintext
+        -
+          label: C
+          language: c
+        -
+          label: 'C#'
+          language: cs
+        -
+          label: C++
+          language: cpp
+        -
+          label: CSS
+          language: css
+        -
+          label: Diff
+          language: diff
+        -
+          label: HTML
+          language: html
+        -
+          label: Java
+          language: java
+        -
+          label: JavaScript
+          language: javascript
+        -
+          label: PHP
+          language: php
+        -
+          label: Python
+          language: python
+        -
+          label: Ruby
+          language: ruby
+        -
+          label: TypeScript
+          language: typescript
+        -
+          label: XML
+          language: xml
     ckeditor5_heading:
       enabled_headings:
         - heading2
         - heading3
         - heading4
         - heading5
-    ckeditor5_style:
-      styles:
-        -
-          label: Button
-          element: '<a class="su-button">'
-        -
-          label: 'Big Button'
-          element: '<a class="su-button--big">'
-        -
-          label: 'Secondary Button'
-          element: '<a class="su-button--secondary">'
-        -
-          label: 'Action Link'
-          element: '<a class="su-link--action">'
-        -
-          label: Normal
-          element: '<p class="plain-text">'
-        -
-          label: 'Intro Text'
-          element: '<p class="su-intro-text">'
-        -
-          label: 'Quote Text'
-          element: '<p class="su-quote-text">'
-        -
-          label: 'Card Text'
-          element: '<p class="su-related-text">'
-        -
-          label: 'Sub Title'
-          element: '<p class="su-subheading">'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<b>'
@@ -102,20 +126,40 @@ settings:
         - '<drupal-media data-* title>'
         - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name class>'
         - '<p id class>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
-    ckeditor5_alignment:
-      enabled_alignments:
-        - left
-        - center
-        - right
-        - justify
-    media_media:
-      allow_view_mode_override: true
+    ckeditor5_style:
+      styles:
+        -
+          label: Button
+          element: '<a class="su-button">'
+        -
+          label: 'Big Button'
+          element: '<a class="su-button--big">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="su-button--secondary">'
+        -
+          label: 'Action Link'
+          element: '<a class="su-link--action">'
+        -
+          label: Normal
+          element: '<p class="plain-text">'
+        -
+          label: 'Intro Text'
+          element: '<p class="su-intro-text">'
+        -
+          label: 'Quote Text'
+          element: '<p class="su-quote-text">'
+        -
+          label: 'Card Text'
+          element: '<p class="su-related-text">'
+        -
+          label: 'Sub Title'
+          element: '<p class="su-subheading">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default
+    media_media:
+      allow_view_mode_override: true
 image_upload:
   status: false
   scheme: public

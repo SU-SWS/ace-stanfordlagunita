@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.stanford_event.su_event_type
     - field.field.node.stanford_event.su_metatags
     - field.field.node.stanford_event.su_shared_tags
+    - field.field.node.stanford_event.sul_event__image
     - node.type.stanford_event
   module:
     - address

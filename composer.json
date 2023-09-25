@@ -10,7 +10,8 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": ["drupal/display_field_copy"]
         },
         {
             "type": "package",
@@ -35,6 +36,10 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/display_field_copy-3287010.git"
         }
     ],
     "require": {
@@ -44,9 +49,9 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
         "drupal/acquia_purge": "^1.1",
-        "drupal/core": "^9.4",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "^9.0",
+        "drupal/core": "^10.0",
+        "drupal/core-composer-scaffold": "^10.0",
+        "drupal/core-recommended": "^10.0",
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
         "drush/drush": "^11.4",
@@ -60,7 +65,7 @@
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/drupal-dev": "^8.2"
+        "su-sws/drupal-dev": "^10"
     },
     "replace": {
         "drupal/coder": "*"

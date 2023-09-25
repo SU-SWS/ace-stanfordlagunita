@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.sul_libguide__desc
+    - filter.format.stanford_minimal_html
     - paragraphs.paragraphs_type.sul_libguide
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - stanford_minimal_html
 id: paragraph.sul_libguide.sul_libguide__desc
 field_name: sul_libguide__desc
 entity_type: paragraph
@@ -22,5 +18,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - stanford_minimal_html
 field_type: text_long

@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.sul_library__a11y
+    - filter.format.stanford_minimal_html
     - node.type.sul_library
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - stanford_minimal_html
 id: node.sul_library.sul_library__a11y
 field_name: sul_library__a11y
 entity_type: node
@@ -22,5 +18,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - stanford_minimal_html
 field_type: text_long

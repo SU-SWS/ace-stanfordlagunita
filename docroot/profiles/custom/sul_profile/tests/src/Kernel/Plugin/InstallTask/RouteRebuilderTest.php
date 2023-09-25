@@ -25,7 +25,7 @@ class RouteRebuilderTest extends KernelTestBase {
   /**
    * {@inheritDoc}
    */
-  protected function setUp(): void {
+  public function setup(): void {
     parent::setUp();
     $this->setInstallProfile('sul_profile');
     $this->installEntitySchema('user');

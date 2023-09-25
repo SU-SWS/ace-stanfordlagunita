@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
     - field.field.node.stanford_person.body
+    - field.field.node.stanford_person.field_menulink
     - field.field.node.stanford_person.stanford_intranet__access
     - field.field.node.stanford_person.su_metatags
     - field.field.node.stanford_person.su_person_academic_appt
@@ -33,6 +34,8 @@ dependencies:
     - field.field.node.stanford_person.su_person_telephone
     - field.field.node.stanford_person.su_person_type_group
     - field.field.node.stanford_person.su_shared_tags
+    - field.field.node.stanford_person.sul_person__libcal_id
+    - field.field.node.stanford_person.sul_person__libguide_id
     - node.type.stanford_person
   module:
     - entity_reference_revisions

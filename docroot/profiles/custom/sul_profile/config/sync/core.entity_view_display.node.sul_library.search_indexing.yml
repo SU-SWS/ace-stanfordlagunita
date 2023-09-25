@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
+    - field.field.node.sul_library.field_menulink
     - field.field.node.sul_library.layout_selection
     - field.field.node.sul_library.su_library__address
     - field.field.node.sul_library.su_library__banner

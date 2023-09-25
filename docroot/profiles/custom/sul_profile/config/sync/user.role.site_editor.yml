@@ -37,6 +37,7 @@ dependencies:
     - content_lock
     - dropzonejs
     - field_permissions
+    - file
     - filter
     - media
     - menu_admin_per_menu
@@ -113,6 +114,7 @@ permissions:
   - 'delete media'
   - 'delete own embeddable media'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
   - 'delete own stanford_course content'

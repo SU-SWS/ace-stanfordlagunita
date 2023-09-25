@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.stanford_page.field_menulink
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
@@ -30,10 +31,10 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
-          context_mapping: {  }
           extra_classes: ''
           centered: null
           columns: default
+          context_mapping: {  }
         components:
           da20ed40-0f0f-4103-bda1-29d84c24975f:
             uuid: da20ed40-0f0f-4103-bda1-29d84c24975f
@@ -58,10 +59,10 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
-          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: default
+          context_mapping: {  }
         components:
           af0809fe-fe61-4e78-be4e-4837cd773c26:
             uuid: af0809fe-fe61-4e78-be4e-4837cd773c26
@@ -86,10 +87,10 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_two_column
         layout_settings:
-          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           orientation: right
+          context_mapping: {  }
         components:
           582a6898-7096-40c2-bb65-99a556ada919:
             uuid: 582a6898-7096-40c2-bb65-99a556ada919

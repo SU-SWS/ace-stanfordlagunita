@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
+    - field.field.node.stanford_news.su_news_hide_social
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics

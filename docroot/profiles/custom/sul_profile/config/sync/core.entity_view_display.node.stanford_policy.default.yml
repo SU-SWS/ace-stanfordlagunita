@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.stanford_policy.body
+    - field.field.node.stanford_policy.field_menulink
     - field.field.node.stanford_policy.su_policy_authority
     - field.field.node.stanford_policy.su_policy_auto_prefix
     - field.field.node.stanford_policy.su_policy_changelog
@@ -36,11 +37,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
-          label: ''
-          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: default
+          label: ''
+          context_mapping: {  }
         components:
           350c64f9-fcab-4cf1-b5a0-999ed83696ed:
             uuid: 350c64f9-fcab-4cf1-b5a0-999ed83696ed
@@ -57,11 +58,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_two_column
         layout_settings:
-          label: ''
-          context_mapping: {  }
           extra_classes: su-policy--top
           centered: centered-container
           orientation: left
+          label: ''
+          context_mapping: {  }
         components:
           e088bc90-d693-4c57-8c0a-0f2645df81c1:
             uuid: e088bc90-d693-4c57-8c0a-0f2645df81c1
@@ -122,11 +123,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_two_column
         layout_settings:
-          label: ''
-          context_mapping: {  }
           extra_classes: main-policy--content
           centered: centered-container
           orientation: right
+          label: ''
+          context_mapping: {  }
         components:
           e41989aa-33de-4c81-877f-4839205895a2:
             uuid: e41989aa-33de-4c81-877f-4839205895a2
@@ -245,11 +246,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
-          label: ''
-          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: default
+          label: ''
+          context_mapping: {  }
         components:
           4678072f-26f1-4620-ad43-13ef301bd28f:
             uuid: 4678072f-26f1-4620-ad43-13ef301bd28f

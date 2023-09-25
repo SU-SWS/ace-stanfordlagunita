@@ -1,14 +1,11 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\EventSubscriber;
+namespace Drupal\Tests\sul_profile\Kernel\EventSubscriber;
 
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\core_event_dispatcher\Event\Entity\EntityPresaveEvent;
 use Drupal\default_content\Event\ImportEvent;
-use Drupal\field\Entity\FieldConfig;
-use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
@@ -18,8 +15,8 @@ use Drupal\sul_profile\EventSubscriber\EventSubscriber as StanfordEventSubscribe
 /**
  * Class EventSubscriberTest.
  *
- * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+ * @group sul_profile
+ * @coversDefaultClass \Drupal\sul_profile\EventSubscriber\EventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
 
@@ -43,14 +40,14 @@ class EventSubscriberTest extends KernelTestBase {
   /**
    * Event subscriber object.
    *
-   * @var \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+   * @var \Drupal\sul_profile\EventSubscriber\EventSubscriber
    */
   protected $eventSubscriber;
 
   /**
    * {@inheritDoc}
    */
-  protected function setUp(): void {
+  public function setup(): void {
     parent::setUp();
     $this->installEntitySchema('file');
 
@@ -87,11 +84,7 @@ class EventSubscriberTest extends KernelTestBase {
    * Test the consumer secret is randomized.
    */
   public function testConsumerSecretRandomized() {
-    $expected = [
-      'default_content.import' => 'onContentImport',
-      'hook_event_dispatcher.entity.presave' => 'preSaveEntity',
-    ];
-    $this->assertEquals($expected, StanfordEventSubscriber::getSubscribedEvents());
+    $this->assertContains('onContentImport', StanfordEventSubscriber::getSubscribedEvents());
     $consumer = Consumer::create([
       'client_id' => 'foobar',
       'label' => 'foobar',
@@ -105,10 +98,7 @@ class EventSubscriberTest extends KernelTestBase {
     $this->assertNotEquals($secret, $consumer->get('secret')->getString());
   }
 
-  public function testPresaveEntity() {
-    global $install_state;
-    $install_state['installation_finished'] = [];
-
+  public function testContentImportEntity() {
     $file = File::create(['uri' => 'public://foobar.jpg']);
     $file->save();
 
@@ -119,8 +109,8 @@ class EventSubscriberTest extends KernelTestBase {
       'bundle' => 'image',
       'field_media_image' => ['target_id' => $file->id()],
     ]);
-    $event = new EntityPresaveEvent($media);
-    $this->eventSubscriber->preSaveEntity($event);
+    $event = new ImportEvent([$media], 'foobar');
+    $this->eventSubscriber->onContentImport($event);
 
     $this->assertFileExists('public://foobar.jpg');
   }

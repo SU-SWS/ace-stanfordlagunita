@@ -51,11 +51,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: 'Editorial Content'
-          context_mapping: {  }
           extra_classes: section-editorial-content
           centered: centered-container
           columns: default
+          label: 'Editorial Content'
+          context_mapping: {  }
         components:
           cee36061-b3bc-4171-92d5-299e62b7d0f2:
             uuid: cee36061-b3bc-4171-92d5-299e62b7d0f2
@@ -233,6 +233,16 @@ third_party_settings:
                   allday_label: ''
                   date_first: '1'
                   ampm_reduce: 0
+                  site_time_toggle: '1'
+                  tooltip:
+                    date_format: ''
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
                 third_party_settings:
                   field_formatter_class:
                     class: su-event-date
@@ -263,6 +273,16 @@ third_party_settings:
                   allday_label: ''
                   date_first: '0'
                   ampm_reduce: 0
+                  site_time_toggle: '1'
+                  tooltip:
+                    date_format: ''
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
                 third_party_settings:
                   field_formatter_class:
                     class: su-event-time
@@ -461,11 +481,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: 'Body Content'
-          context_mapping: {  }
           extra_classes: su-events-body
           centered: centered-container
           columns: flex-8-of-12
+          label: 'Body Content'
+          context_mapping: {  }
         components:
           11df73c4-8beb-43be-b1d2-4ddc537f90b1:
             uuid: 11df73c4-8beb-43be-b1d2-4ddc537f90b1
@@ -514,11 +534,11 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          label: 'Event type and Schedule'
-          context_mapping: {  }
           extra_classes: su-events-type-schedule
           centered: centered-container
           columns: flex-10-of-12
+          label: 'Event type and Schedule'
+          context_mapping: {  }
         components:
           d64439dc-f59e-4822-aba0-cdca5a9dc331:
             uuid: d64439dc-f59e-4822-aba0-cdca5a9dc331
@@ -558,11 +578,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
-          label: 'More Events'
-          context_mapping: {  }
           extra_classes: section-event-more-block
           centered: centered-container
           columns: default
+          label: 'More Events'
+          context_mapping: {  }
         components:
           8e277083-0c99-44f4-ad5f-9f800d0b602e:
             uuid: 8e277083-0c99-44f4-ad5f-9f800d0b602e
