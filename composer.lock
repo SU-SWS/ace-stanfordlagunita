@@ -15856,16 +15856,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "10.0.5",
+            "version": "10.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "24991a0bd59e6fad15d6c51db4afdcbe2905ca46"
+                "reference": "c3d31d22214147f7d994558eaa141af5f2cdbb28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/24991a0bd59e6fad15d6c51db4afdcbe2905ca46",
-                "reference": "24991a0bd59e6fad15d6c51db4afdcbe2905ca46",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/c3d31d22214147f7d994558eaa141af5f2cdbb28",
+                "reference": "c3d31d22214147f7d994558eaa141af5f2cdbb28",
                 "shasum": ""
             },
             "require": {
@@ -15932,6 +15932,9 @@
                     "drupal/focal_point": {
                         "https://www.drupal.org/project/focal_point/issues/3328807": "https://www.drupal.org/files/issues/2023-01-06/3328807-focal_point-image_width_when_no_image_to_crop.patch"
                     },
+                    "drupal/google_analytics": {
+                        "https://www.drupal.org/project/google_analytics/issues/3373921": "https://www.drupal.org/files/issues/2023-08-07/google-analytics-issues-3373921-cannot-install-from-existing-config-11.patch"
+                    },
                     "drupal/menu_link": {
                         "https://www.drupal.org/project/menu_link/issues/3145735": "https://www.drupal.org/files/issues/2022-03-22/menu_link-empty-entity-error-3145735-7.patch",
                         "https://www.drupal.org/project/menu_link/issues/3092282": "https://git.drupalcode.org/project/menu_link/-/merge_requests/8.patch"
@@ -15980,9 +15983,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.0.5"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.0.6"
             },
-            "time": "2023-09-20T15:41:16+00:00"
+            "time": "2023-09-25T18:03:05+00:00"
         },
         {
             "name": "su-sws/react_paragraphs",
@@ -16386,16 +16389,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.3.3",
+            "version": "9.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "380832b270fa0f3d9c3958b384ca2bc908ad4f7d"
+                "reference": "47c11ea06b3a76099610277fabbc9f064350dcef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/380832b270fa0f3d9c3958b384ca2bc908ad4f7d",
-                "reference": "380832b270fa0f3d9c3958b384ca2bc908ad4f7d",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/47c11ea06b3a76099610277fabbc9f064350dcef",
+                "reference": "47c11ea06b3a76099610277fabbc9f064350dcef",
                 "shasum": ""
             },
             "require": {
@@ -16477,9 +16480,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.3.3"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.3.4"
             },
-            "time": "2023-09-20T16:21:56+00:00"
+            "time": "2023-09-25T20:58:59+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",

@@ -43,3 +43,4 @@ if (!EnvironmentDetector::isCiEnv()) {
     ],
   ];
 }
+$config['stanford_samlauth.settings']['allowed']['groups'][99] = 'uit:sws';
