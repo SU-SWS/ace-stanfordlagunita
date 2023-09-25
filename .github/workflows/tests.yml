@@ -166,11 +166,6 @@ jobs:
           mkdir -p artifacts/_data/
       - name: Run tests
         run: blt codeception --suite=functional
-      - name: debug
-        if: always()
-        run: |
-          echo 'wordmark'
-          find . -name 'wordmark*'
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()

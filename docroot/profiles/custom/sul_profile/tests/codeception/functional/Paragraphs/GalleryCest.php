@@ -25,6 +25,7 @@ class GalleryCest {
 
   /**
    * Create a basic page with a gallery and check the colorbox actions.
+   * @group foobar
    */
   public function testGallery(FunctionalTester $I) {
 
@@ -64,6 +65,8 @@ class GalleryCest {
     $I->canSee($node->label(), 'h1');
     $I->canSeeNumberOfElements('.field img', 2);
 
+    var_dump($this::rglob(DRUPAL_ROOT . '/**/wordmark*'));
+
     $I->canSeeNumberOfElements('.colorbox', 2);
     $I->click('a.colorbox');
     $I->waitForElementVisible('#cboxLoadedContent');
@@ -75,6 +78,18 @@ class GalleryCest {
     $I->waitForText('Image 2');
     $second_image_src = $I->grabAttributeFrom('#cboxContent img', 'src');
     $I->assertNotEquals($first_image_src, $second_image_src);
+  }
+
+  // Does not support flag GLOB_BRACE
+  protected static function rglob($pattern, $flags = 0) {
+    $files = glob($pattern, $flags);
+    foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir) {
+      $files = array_merge(
+        [],
+        ...[$files, self::rglob($dir . "/" . basename($pattern), $flags)]
+      );
+    }
+    return $files;
   }
 
   protected function getNode(FunctionalTester $I){
