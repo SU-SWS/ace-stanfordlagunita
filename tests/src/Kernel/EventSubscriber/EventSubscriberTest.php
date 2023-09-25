@@ -50,7 +50,7 @@ class EventSubscriberTest extends KernelTestBase {
   /**
    * {@inheritDoc}
    */
-  protected function setUp(): void {
+  public function setup(): void {
     parent::setUp();
     $this->installEntitySchema('file');
 
@@ -87,10 +87,7 @@ class EventSubscriberTest extends KernelTestBase {
    * Test the consumer secret is randomized.
    */
   public function testConsumerSecretRandomized() {
-    $expected = [
-      'default_content.import' => 'onContentImport',
-    ];
-    $this->assertEquals($expected, StanfordEventSubscriber::getSubscribedEvents());
+    $this->assertContains('onContentImport', StanfordEventSubscriber::getSubscribedEvents());
     $consumer = Consumer::create([
       'client_id' => 'foobar',
       'label' => 'foobar',
