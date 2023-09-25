@@ -32,7 +32,7 @@ class EventSubscriberTest extends UnitTestCase {
   /**
    * {@inheritDoc}
    */
-  protected function setUp(): void {
+  public function setUp(): void {
     parent::setUp();
     $file_system = $this->createMock(FileSystemInterface::class);
     $logger_factory = $this->createMock(LoggerChannelFactoryInterface::class);
