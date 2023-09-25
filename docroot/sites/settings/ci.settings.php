@@ -5,8 +5,6 @@
  * Local development override configuration feature.
  */
 
-use Drupal\Component\Assertion\Handle;
-
 $db_name = 'drupal';
 
 /**
@@ -48,7 +46,7 @@ $dir = dirname(DRUPAL_ROOT);
  * @see https://wiki.php.net/rfc/expectations
  */
 assert_options(ASSERT_ACTIVE, TRUE);
-Handle::register();
+assert_options(ASSERT_EXCEPTION, TRUE);
 
 /**
  * Show all error messages, with backtrace information.
