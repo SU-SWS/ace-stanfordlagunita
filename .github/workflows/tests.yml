@@ -54,8 +54,8 @@ jobs:
         with:
           name: unit-tests-results
           path: $GITHUB_WORKSPACE/artifacts
-  acceptance:
-    name: Codeception Acceptance Tests
+  library_acceptance:
+    name: Library Codeception Acceptance Tests
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -99,7 +99,7 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt drupal:install -n
+          blt drupal:install --site=library -n
           drush role:perm:add anonymous 'access content'
           drush xmlsitemap:rebuild
           blt codeception --suite=acceptance
@@ -109,8 +109,8 @@ jobs:
         with:
           name: acceptance-tests-results
           path: artifacts
-  functional:
-    name: Codeception Functional Tests
+  library_functional:
+    name: Library Codeception Functional Tests
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -159,7 +159,7 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt drupal:install -n
+          blt drupal:install --site=library -n
           drush role:perm:add anonymous 'access content'
           drush xmlsitemap:rebuild
           mkdir -p artifacts/_data/
@@ -173,7 +173,7 @@ jobs:
           path: artifacts
   deploy:
     name: Deploy Artifact
-    needs: [phpunit, acceptance, functional]
+    needs: [phpunit, library_acceptance, library_functional]
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
