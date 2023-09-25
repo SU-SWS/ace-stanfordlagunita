@@ -160,14 +160,13 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
+          drush @default.local sql-connect
+          drush @library.local sql-connect
+          exit 0
           blt drupal:install --site=library -n
           drush role:perm:add anonymous 'access content'
           drush xmlsitemap:rebuild
           mkdir -p artifacts/_data/
-          mkdir -p docroot/sites/default/files
-          rm -rf docroot/sites/library/files
-          ln -sL ../default/files docroot/sites/library/files
-          chmod -R 777 docroot/sites/default/files
       - name: Run tests
         run: blt codeception --suite=functional
       - name: Save Test Results
