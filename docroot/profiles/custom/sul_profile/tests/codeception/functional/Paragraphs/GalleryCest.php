@@ -25,8 +25,6 @@ class GalleryCest {
 
   /**
    * Create a basic page with a gallery and check the colorbox actions.
-   *
-   * @group foobar
    */
   public function testGallery(FunctionalTester $I) {
 
@@ -91,8 +89,6 @@ class GalleryCest {
         'entity' => $paragraph,
       ],
     ]);
-
-
   }
 
 }

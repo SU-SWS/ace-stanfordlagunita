@@ -93,7 +93,6 @@ jobs:
       - run: git config --system --add safe.directory '*'
       - name: Run tests
         run: |
-          exit 0
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
           apachectl stop
@@ -160,9 +159,11 @@ jobs:
           composer install -n
           blt blt:telemetry:disable --no-interaction
           mkdir -p docroot/sites/default/files
+          chmod -R 777 docroot/sites/default/files/
           rm -rf docroot/sites/library/files
           ln -sL ../default/files/ docroot/sites/library/files
           blt drupal:install --site=library -n
+          drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
           drush xmlsitemap:rebuild
           drush cr
       - name: Run tests
