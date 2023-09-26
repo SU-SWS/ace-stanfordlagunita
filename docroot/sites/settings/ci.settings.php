@@ -5,8 +5,6 @@
  * Local development override configuration feature.
  */
 
-use Drupal\Component\Assertion\Handle;
-
 $db_name = 'drupal';
 
 /**
@@ -48,7 +46,7 @@ $dir = dirname(DRUPAL_ROOT);
  * @see https://wiki.php.net/rfc/expectations
  */
 assert_options(ASSERT_ACTIVE, TRUE);
-Handle::register();
+assert_options(ASSERT_EXCEPTION, TRUE);
 
 /**
  * Show all error messages, with backtrace information.
@@ -61,8 +59,8 @@ $config['system.logging']['error_level'] = 'verbose';
 /**
  * Disable CSS and JS aggregation.
  */
-$config['system.performance']['css']['preprocess'] = TRUE;
-$config['system.performance']['js']['preprocess'] = TRUE;
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
 
 /**
  * Disable the render cache (this includes the page cache).
@@ -164,5 +162,3 @@ $settings['trusted_host_patterns'] = array(
 );
 
 error_reporting(E_ALL & ~E_DEPRECATED);
-
-$config['simplesamlphp_auth.settings']['activate'] = FALSE;

@@ -35,11 +35,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - run: git config --system --add safe.directory '*'
       - name: Run Unit Tests
         env:
@@ -54,8 +54,8 @@ jobs:
         with:
           name: unit-tests-results
           path: $GITHUB_WORKSPACE/artifacts
-  acceptance:
-    name: Codeception Acceptance Tests
+  library_acceptance:
+    name: Library Codeception Acceptance Tests
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -85,11 +85,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - run: git config --system --add safe.directory '*'
       - name: Run tests
         run: |
@@ -99,8 +99,7 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt drupal:install -n
-          drush role:perm:add anonymous 'access content'
+          blt drupal:install --site=library -n
           drush xmlsitemap:rebuild
           blt codeception --suite=acceptance
       - name: Save Test Results
@@ -109,8 +108,8 @@ jobs:
         with:
           name: acceptance-tests-results
           path: artifacts
-  functional:
-    name: Codeception Functional Tests
+  library_functional:
+    name: Library Codeception Functional Tests
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -145,11 +144,11 @@ jobs:
             docroot/libraries
             docroot/modules/contrib
             docroot/modules/custom
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - run: git config --system --add safe.directory '*'
       - name: Install Site
         run: |
@@ -159,12 +158,18 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          blt drupal:install -n
-          drush role:perm:add anonymous 'access content'
+          mkdir -p docroot/sites/default/files
+          chmod -R 777 docroot/sites/default/files/
+          rm -rf docroot/sites/library/files
+          ln -sL ../default/files/ docroot/sites/library/files
+          blt drupal:install --site=library -n
+          drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
           drush xmlsitemap:rebuild
-          mkdir -p artifacts/_data/
+          drush cr
       - name: Run tests
-        run: blt codeception --suite=functional
+        run: |
+          mkdir -p artifacts/_data/
+          blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
@@ -173,7 +178,7 @@ jobs:
           path: artifacts
   deploy:
     name: Deploy Artifact
-    needs: [phpunit, acceptance, functional]
+    needs: [phpunit, library_acceptance, library_functional]
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -192,11 +197,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:

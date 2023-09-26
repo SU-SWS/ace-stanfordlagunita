@@ -29,6 +29,47 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Access Denied | University'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://library/access-denied'
+    -
+      tag: meta
+      attributes:
+        property: 'og:site_name'
+        content: University
+    -
+      tag: meta
+      attributes:
+        property: 'og:type'
+        content: website
+    -
+      tag: meta
+      attributes:
+        property: 'og:url'
+        content: 'http://library/home'
+    -
+      tag: meta
+      attributes:
+        property: 'og:title'
+        content: 'Access Denied'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:title'
+        content: 'Access Denied'
   path:
     -
       alias: /access-denied
@@ -71,6 +112,32 @@ default:
           revision_translation_affected:
             -
               value: true
+          metatag:
+            -
+              tag: meta
+              attributes:
+                name: title
+                content: '| University'
+            -
+              tag: link
+              attributes:
+                rel: canonical
+                href: 'http://library/home'
+            -
+              tag: meta
+              attributes:
+                property: 'og:site_name'
+                content: University
+            -
+              tag: meta
+              attributes:
+                property: 'og:type'
+                content: website
+            -
+              tag: meta
+              attributes:
+                property: 'og:url'
+                content: 'http://library/home'
     -
       entity:
         _meta:
@@ -95,6 +162,32 @@ default:
           revision_translation_affected:
             -
               value: true
+          metatag:
+            -
+              tag: meta
+              attributes:
+                name: title
+                content: '| University'
+            -
+              tag: link
+              attributes:
+                rel: canonical
+                href: 'http://library/home'
+            -
+              tag: meta
+              attributes:
+                property: 'og:site_name'
+                content: University
+            -
+              tag: meta
+              attributes:
+                property: 'og:type'
+                content: website
+            -
+              tag: meta
+              attributes:
+                property: 'og:url'
+                content: 'http://library/home'
           su_wysiwyg_text:
             -
               value: "<p>The page you have requested is restricted. If you believe you have encountered this by error, please contact someone.</p>\r\n"

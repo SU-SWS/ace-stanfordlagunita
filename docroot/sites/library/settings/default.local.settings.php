@@ -5,8 +5,6 @@
  * Local development override configuration feature.
  */
 
-use Drupal\Component\Assertion\Handle;
-
 global $_acsf_site_name;
 $db_name = '${drupal.db.database}';
 if (isset($_acsf_site_name)) {
@@ -59,7 +57,7 @@ $settings['update_free_access'] = TRUE;
  * @see https://wiki.php.net/rfc/expectations
  */
 assert_options(ASSERT_ACTIVE, TRUE);
-Handle::register();
+assert_options(ASSERT_EXCEPTION, TRUE);
 
 /**
  * Show all error messages, with backtrace information.

@@ -32,6 +32,92 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Sample: Smith Conference | University'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://library/news/sample-smith-conference'
+    -
+      tag: link
+      attributes:
+        rel: image_src
+        href: 'http://library/sites/library/files/styles/large/public/media/image/banner-151017-3191.jpg?itok=1N9qRWwi'
+    -
+      tag: meta
+      attributes:
+        property: 'og:site_name'
+        content: University
+    -
+      tag: meta
+      attributes:
+        property: 'og:type'
+        content: article
+    -
+      tag: meta
+      attributes:
+        property: 'og:url'
+        content: 'http://library/home'
+    -
+      tag: meta
+      attributes:
+        property: 'og:title'
+        content: 'Sample: Smith Conference'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'http://library/sites/library/files/styles/large/public/media/image/banner-151017-3191.jpg?itok=1N9qRWwi'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:url'
+        content: 'http://library/sites/library/files/styles/large/public/media/image/banner-151017-3191.jpg?itok=1N9qRWwi'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Brain research visualization'
+    -
+      tag: meta
+      attributes:
+        property: 'article:tag'
+        content: Blog
+    -
+      tag: meta
+      attributes:
+        property: 'article:published_time'
+        content: 'Tue, 09/30/2025 - 12:00'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:title'
+        content: 'Sample: Smith Conference'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'This is a news item. Here you can post an excerpt from the Stanford Report and link to the original article or add a story of your own.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Brain research visualization'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'http://library/sites/library/files/styles/large/public/media/image/banner-151017-3191.jpg?itok=1N9qRWwi'
   path:
     -
       alias: /news/sample-smith-conference

@@ -13,7 +13,7 @@ class SystemCest {
   public function testSiteStatus(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/reports/status');
-    $I->canSee('9.5', '.system-status-general-info');
+    $I->canSee('10.1', '.system-status-general-info');
 
     if (\Drupal::moduleHandler()->moduleExists('chosen')) {
       $I->canSee('Chosen Javascript file');
