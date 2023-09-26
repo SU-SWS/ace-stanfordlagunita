@@ -101,7 +101,6 @@ jobs:
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt drupal:install --site=library -n
-          drush role:perm:add anonymous 'access content'
           drush xmlsitemap:rebuild
           blt codeception --suite=acceptance
       - name: Save Test Results
@@ -160,15 +159,16 @@ jobs:
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          drush @default.local sql-connect
-          drush @library.local sql-connect
-          exit 0
+          mkdir -p docroot/sites/default/files
+          rm -rf docroot/sites/library/files
+          ln -sL ../default/files/ docroot/sites/library/files
           blt drupal:install --site=library -n
-          drush role:perm:add anonymous 'access content'
           drush xmlsitemap:rebuild
-          mkdir -p artifacts/_data/
+          drush cr
       - name: Run tests
-        run: blt codeception --suite=functional
+        run: |
+          mkdir -p artifacts/_data/
+          blt codeception --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
