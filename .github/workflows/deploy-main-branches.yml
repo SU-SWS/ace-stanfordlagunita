@@ -2,8 +2,7 @@ name: Deploy Main Branch Artifact
 on:
   push:
     branches:
-      - '1.x'
-      - 'main'
+      - '2.x'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -23,11 +22,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            1.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            1.x-${{ hashFiles('composer.json') }}-
-            1.x-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
