@@ -106,8 +106,6 @@ class EventsCest {
 
   /**
    * Test Page Title Conditions.
-   *
-   * @group foobar
    */
   protected function testPageTitleIgnoreCondition(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
