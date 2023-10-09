@@ -38,6 +38,7 @@ dependencies:
     - node.type.stanford_person
   module:
     - allowed_formats
+    - cshs
     - field_group
     - link
     - media_library
@@ -45,7 +46,6 @@ dependencies:
     - metatag
     - paragraphs
     - scheduler
-    - shs
     - stanford_intranet
     - text
 third_party_settings:
@@ -354,24 +354,30 @@ content:
       placeholder: ''
     third_party_settings: {  }
   su_person_type_group:
-    type: options_shs
+    type: cshs
     weight: 17
     region: content
     settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
+      save_lineage: false
       force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
     third_party_settings: {  }
   su_shared_tags:
-    type: options_shs
+    type: cshs
     weight: 8
     region: content
     settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
+      save_lineage: false
       force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
     third_party_settings: {  }
   sul_person__libcal_id:
     type: number
