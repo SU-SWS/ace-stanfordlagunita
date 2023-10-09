@@ -44,9 +44,8 @@ class BasicPageCest {
     $alias = preg_replace('/[^a-z0-9]/', '-', strtolower($this->faker->words(3, TRUE)));
     $I->fillField('URL alias', "/$alias");
     $I->click('Save');
-
     $I->canSee($node_title, 'h1');
-//    $I->canSeeLink("$node_title Item");
+    // $I->canSeeLink("$node_title Item");
 
     $I->canSeeInCurrentUrl("/$alias");
     $I->assertStringContainsString("/$alias", $I->grabFromCurrentUrl());
@@ -63,8 +62,7 @@ class BasicPageCest {
     $I->click('Save');
 
     $I->canSee($child_title, 'h1');
-//    $I->canSeeLink("$child_title Item");
-    echo $I->grabFromCurrentUrl() . PHP_EOL;
+    // $I->canSeeLink("$child_title Item");
     $I->canSeeInCurrentUrl("/$alias");
   }
 
@@ -86,7 +84,8 @@ class BasicPageCest {
     $I->canSee($node_title, 'h1');
     $I->canSeeLink($node_title, $node->toUrl()->toString());
 
-    $node->delete();
+    $I->amOnPage($node->toUrl('delete-form')->toString());
+    $I->click('Delete');
 
     $I->amOnPage('/');
     $I->cantSeeLink($node_title);
@@ -103,6 +102,7 @@ class BasicPageCest {
     $I->amOnPage('/search?keys=stuff&search=');
     $I->canSeeResponseCodeIs(200);
     $I->canSeeNumberOfElements('h1', 1);
+    $I->canSeeNumberOfElements('#main-content', 1);
   }
 
   /**
@@ -136,12 +136,7 @@ class BasicPageCest {
     $I->see('Basic Page Type');
     $I->fillField('Title', $title);
     $I->fillField('Page Description', $description);
-<<<<<<< HEAD
-    $I->fillField('Basic Page Type', $type_term->id());
-
-=======
     $I->selectOption('Basic Page Type (value 1)', $type_term->id());
->>>>>>> 126cef54d79354e52c0e4eacd42949c04118b2d5
     $I->click('Save');
     $I->canSee($title, 'h1');
     $I->seeInSource('<meta name="description" content="' . $description . '" />');

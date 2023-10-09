@@ -10,9 +10,9 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
+    - cshs
     - path
     - scheduler
-    - shs
 id: node.sul_study_place.default
 targetEntityType: node
 bundle: sul_study_place
@@ -49,24 +49,30 @@ content:
     settings: {  }
     third_party_settings: {  }
   sul_study__capacity:
-    type: options_shs
+    type: cshs
     weight: 4
     region: content
     settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
+      save_lineage: false
       force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
     third_party_settings: {  }
   sul_study__features:
-    type: options_shs
+    type: cshs
     weight: 3
     region: content
     settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
+      save_lineage: false
       force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
     third_party_settings: {  }
   sul_study__libcal_id:
     type: number
@@ -76,14 +82,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
   sul_study__type:
-    type: options_shs
+    type: cshs
     weight: 1
     region: content
     settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
+      save_lineage: false
       force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
     third_party_settings: {  }
   title:
     type: string_textfield

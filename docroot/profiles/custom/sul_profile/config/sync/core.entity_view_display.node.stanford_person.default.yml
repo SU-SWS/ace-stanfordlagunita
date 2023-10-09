@@ -600,11 +600,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: ''
+          context_mapping: {  }
           extra_classes: ''
           centered: centered-container
           columns: default
-          label: ''
-          context_mapping: {  }
         components:
           500a8acd-f0fc-4021-81f8-61e665df0d70:
             uuid: 500a8acd-f0fc-4021-81f8-61e665df0d70

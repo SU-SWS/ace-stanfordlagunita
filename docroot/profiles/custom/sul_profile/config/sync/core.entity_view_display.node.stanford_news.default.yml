@@ -38,11 +38,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: Header
+          context_mapping: {  }
           extra_classes: section-header
           centered: centered-container
           columns: flex-10-of-12
-          label: Header
-          context_mapping: {  }
         components:
           bc326bbf-ff93-4c18-ab2c-ee15c6427f3c:
             uuid: bc326bbf-ff93-4c18-ab2c-ee15c6427f3c
@@ -164,11 +164,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: 'Banner Media'
+          context_mapping: {  }
           extra_classes: section-banner-media
           centered: centered-container
           columns: default
-          label: 'Banner Media'
-          context_mapping: {  }
         components:
           05c3062a-6e09-4b3b-b8f9-fa797362fb67:
             uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
@@ -227,11 +227,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: Components
+          context_mapping: {  }
           extra_classes: section-components
           centered: centered-container
           columns: flex-8-of-12
-          label: Components
-          context_mapping: {  }
         components:
           4f1a1e3a-caf2-4368-8271-35321c76d216:
             uuid: 4f1a1e3a-caf2-4368-8271-35321c76d216
@@ -260,11 +260,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: 'Subscribe Form'
+          context_mapping: {  }
           extra_classes: section-subscribe-form
           centered: centered-container
           columns: default
-          label: 'Subscribe Form'
-          context_mapping: {  }
         components:
           e3fd25d5-2528-419b-b34e-a4d0f0b46566:
             uuid: e3fd25d5-2528-419b-b34e-a4d0f0b46566
@@ -282,11 +282,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: 'More Topics'
+          context_mapping: {  }
           extra_classes: section-more-topics
           centered: centered-container
           columns: flex-10-of-12
-          label: 'More Topics'
-          context_mapping: {  }
         components:
           32d871db-85f0-4445-afb8-4d19c97ac98f:
             uuid: 32d871db-85f0-4445-afb8-4d19c97ac98f
@@ -315,11 +315,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: 'Extra Views'
+          context_mapping: {  }
           extra_classes: section-supporting-content
           centered: centered-container
           columns: default
-          label: 'Extra Views'
-          context_mapping: {  }
         components:
           d43e60bd-c832-439e-8151-1b2fd851b98e:
             uuid: d43e60bd-c832-439e-8151-1b2fd851b98e

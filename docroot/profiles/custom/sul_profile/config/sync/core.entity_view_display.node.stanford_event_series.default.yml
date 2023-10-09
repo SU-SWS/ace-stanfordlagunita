@@ -29,11 +29,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: Header
+          context_mapping: {  }
           extra_classes: section-event-series--header
           centered: centered-container
           columns: flex-10-of-12
-          label: Header
-          context_mapping: {  }
         components:
           88ffc4d3-879c-40a2-ae71-c51f2782a54e:
             uuid: 88ffc4d3-879c-40a2-ae71-c51f2782a54e
@@ -113,11 +113,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: Components
+          context_mapping: {  }
           extra_classes: section-event-series--components
           centered: centered-container
           columns: flex-10-of-12
-          label: Components
-          context_mapping: {  }
         components:
           678616f1-e2ff-41c7-8725-c5a446077121:
             uuid: 678616f1-e2ff-41c7-8725-c5a446077121
@@ -146,11 +146,11 @@ third_party_settings:
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
+          label: 'Event Items'
+          context_mapping: {  }
           extra_classes: section-event-series--items
           centered: centered-container
           columns: flex-8-of-12
-          label: 'Event Items'
-          context_mapping: {  }
         components:
           69413f91-a5e0-4afd-805e-bd7b048d576c:
             uuid: 69413f91-a5e0-4afd-805e-bd7b048d576c
