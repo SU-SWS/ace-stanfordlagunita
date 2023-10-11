@@ -4,7 +4,7 @@ services:
     parent: default_plugin_manager
   sul_profile.event_subscriber:
     class: '\Drupal\sul_profile\EventSubscriber\EventSubscriber'
-    arguments: ['@file_system', '@logger.factory']
+    arguments: ['@file_system', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }
   sul_profile.config_overrider:
