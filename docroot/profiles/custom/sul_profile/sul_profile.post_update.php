@@ -88,7 +88,7 @@ function sul_profile_post_update_update_field_defs() {
 /**
  * Enable samlauth.
  */
-function stanford_profile_post_update_samlauth() {
+function sul_profile_post_update_samlauth() {
   if (\Drupal::moduleHandler()->moduleExists('stanford_samlauth')) {
     return;
   }
@@ -103,7 +103,7 @@ function stanford_profile_post_update_samlauth() {
 /**
  * Create site org vocab and terms.
  */
-function stanford_profile_post_update_site_orgs() {
+function sul_profile_post_update_site_orgs() {
   $vocab_storage = \Drupal::entityTypeManager()
     ->getStorage('taxonomy_vocabulary');
   if (!$vocab_storage->load('site_owner_orgs')) {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8f3232f0ee4807f1f95ac101e31b37f",
+    "content-hash": "1f6cc202da5cf63d0f4ab4ee084358b2",
     "packages": [
         {
             "name": "acquia/blt",
@@ -4198,21 +4198,52 @@
         },
         {
             "name": "drupal/display_field_copy",
-            "version": "dev-3287010-automated-drupal-10",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/issue/display_field_copy-3287010.git",
-                "reference": "41821951d0145e37c5f5833b508b139c6c442dcb"
+                "url": "https://git.drupalcode.org/project/display_field_copy.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/display_field_copy-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "b85dd5168ac40a7080dbabe0f1cb2dc00b387ff2"
             },
             "require": {
-                "drupal/core": "^9.0 || ^10.0"
+                "drupal/core": "^9.0 || ^10.0",
+                "drupal/ds": "*"
             },
             "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1696995693",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0-or-later"
             ],
+            "authors": [
+                {
+                    "name": "davidwbarratt",
+                    "homepage": "https://www.drupal.org/user/411675"
+                },
+                {
+                    "name": "elfakhar",
+                    "homepage": "https://www.drupal.org/user/3246612"
+                }
+            ],
             "description": "A Drupal module for copying display field configurations.",
-            "time": "2023-06-09T20:06:28+00:00"
+            "homepage": "https://www.drupal.org/project/display_field_copy",
+            "support": {
+                "source": "https://git.drupalcode.org/project/display_field_copy"
+            }
         },
         {
             "name": "drupal/domain_301_redirect",
@@ -8445,17 +8476,17 @@
         },
         {
             "name": "drupal/oembed_lazyload",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/oembed_lazyload.git",
-                "reference": "2.0.3"
+                "reference": "2.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/oembed_lazyload-2.0.3.zip",
-                "reference": "2.0.3",
-                "shasum": "5f410eaeee9a2e08813dbf1983415ba5d1d7d326"
+                "url": "https://ftp.drupal.org/files/projects/oembed_lazyload-2.0.4.zip",
+                "reference": "2.0.4",
+                "shasum": "fafb999ebda912570242b74916dbbf94ac42fcc4"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -8463,8 +8494,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.3",
-                    "datestamp": "1678145250",
+                    "version": "2.0.4",
+                    "datestamp": "1696865649",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -16238,12 +16269,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "7fdcdb25658abd981e5fbce3c9cb405f206a1dea"
+                "reference": "b4bcbbd8874de36fe1f8a8e0b391696bab20fdd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/7fdcdb25658abd981e5fbce3c9cb405f206a1dea",
-                "reference": "7fdcdb25658abd981e5fbce3c9cb405f206a1dea",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/b4bcbbd8874de36fe1f8a8e0b391696bab20fdd6",
+                "reference": "b4bcbbd8874de36fe1f8a8e0b391696bab20fdd6",
                 "shasum": ""
             },
             "require": {
@@ -16274,7 +16305,7 @@
                 "drupal/cshs": "^4.0",
                 "drupal/default_content": "^2.0@alpha",
                 "drupal/diff": "^1.0@RC",
-                "drupal/display_field_copy": "dev-3287010-automated-drupal-10 as 2.0.0",
+                "drupal/display_field_copy": "^2.0.",
                 "drupal/domain_301_redirect": "^2.0",
                 "drupal/ds": "^3.3",
                 "drupal/editoria11y": "^2.0",
@@ -16414,7 +16445,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
             },
-            "time": "2023-10-06T23:00:47+00:00"
+            "time": "2023-10-11T15:36:15+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -21083,16 +21114,16 @@
         },
         {
             "name": "composer/pcre",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
-                "reference": "4bff79ddd77851fe3cdd11616ed3f92841ba5bd2"
+                "reference": "00104306927c7a0919b4ced2aaa6782c1e61a3c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/4bff79ddd77851fe3cdd11616ed3f92841ba5bd2",
-                "reference": "4bff79ddd77851fe3cdd11616ed3f92841ba5bd2",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/00104306927c7a0919b4ced2aaa6782c1e61a3c9",
+                "reference": "00104306927c7a0919b4ced2aaa6782c1e61a3c9",
                 "shasum": ""
             },
             "require": {
@@ -21134,7 +21165,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/pcre/issues",
-                "source": "https://github.com/composer/pcre/tree/3.1.0"
+                "source": "https://github.com/composer/pcre/tree/3.1.1"
             },
             "funding": [
                 {
@@ -21150,7 +21181,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-17T09:50:14+00:00"
+            "time": "2023-10-11T07:11:09+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -23498,16 +23529,16 @@
         },
         {
             "name": "phpstan/phpstan-phpunit",
-            "version": "1.3.14",
+            "version": "1.3.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-phpunit.git",
-                "reference": "614acc10c522e319639bf38b0698a4a566665f04"
+                "reference": "70ecacc64fe8090d8d2a33db5a51fe8e88acd93a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/614acc10c522e319639bf38b0698a4a566665f04",
-                "reference": "614acc10c522e319639bf38b0698a4a566665f04",
+                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/70ecacc64fe8090d8d2a33db5a51fe8e88acd93a",
+                "reference": "70ecacc64fe8090d8d2a33db5a51fe8e88acd93a",
                 "shasum": ""
             },
             "require": {
@@ -23544,9 +23575,9 @@
             "description": "PHPUnit extensions and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-phpunit/issues",
-                "source": "https://github.com/phpstan/phpstan-phpunit/tree/1.3.14"
+                "source": "https://github.com/phpstan/phpstan-phpunit/tree/1.3.15"
             },
-            "time": "2023-08-25T09:46:39+00:00"
+            "time": "2023-10-09T18:58:39+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -25217,12 +25248,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford-caravan.git",
-                "reference": "a65040497fe31b03ff8e194dcdd67917f816b4bb"
+                "reference": "2c634a3be6ba240e8d08a67e69925d69610ffa11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/a65040497fe31b03ff8e194dcdd67917f816b4bb",
-                "reference": "a65040497fe31b03ff8e194dcdd67917f816b4bb",
+                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/2c634a3be6ba240e8d08a67e69925d69610ffa11",
+                "reference": "2c634a3be6ba240e8d08a67e69925d69610ffa11",
                 "shasum": ""
             },
             "require": {
@@ -25252,7 +25283,7 @@
                 "issues": "https://github.com/SU-SWS/stanford-caravan/issues",
                 "source": "https://github.com/SU-SWS/stanford-caravan/tree/10.x"
             },
-            "time": "2023-09-09T00:34:28+00:00"
+            "time": "2023-10-11T15:30:44+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -25849,14 +25880,7 @@
             "time": "2023-08-28T21:15:44+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "drupal/display_field_copy",
-            "version": "dev-3287010-automated-drupal-10",
-            "alias": "2.0.0",
-            "alias_normalized": "2.0.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "su-sws/stanford_profile": 20,
@@ -25866,7 +25890,6 @@
         "drupal/confirm_leave": 10,
         "drupal/default_content": 15,
         "drupal/diff": 5,
-        "drupal/display_field_copy": 20,
         "drupal/element_class_formatter": 10,
         "drupal/field_group": 5,
         "drupal/field_permissions": 5,

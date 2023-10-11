@@ -10,8 +10,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8",
-            "exclude": ["drupal/display_field_copy"]
+            "url": "https://packages.drupal.org/8"
         },
         {
             "type": "package",
@@ -36,10 +35,6 @@
                     "reference": "master"
                 }
             }
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/display_field_copy-3287010.git"
         }
     ],
     "require": {
