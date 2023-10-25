@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f6cc202da5cf63d0f4ab4ee084358b2",
+    "content-hash": "f0d379f290b7fb6e5d9b65092e3224a1",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2802,17 +2802,17 @@
         },
         {
             "name": "drupal/config_filter",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_filter.git",
-                "reference": "8.x-2.4"
+                "reference": "8.x-2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_filter-8.x-2.4.zip",
-                "reference": "8.x-2.4",
-                "shasum": "dcf442f228dafd6bbac8948db1d51e3f1ca1d0c7"
+                "url": "https://ftp.drupal.org/files/projects/config_filter-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "a509ec432b0560fbba853b52e74d71cede5f6bdf"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9 || ^10"
@@ -2826,8 +2826,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.4",
-                    "datestamp": "1656936801",
+                    "version": "8.x-2.5",
+                    "datestamp": "1698096457",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15918,16 +15918,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "10.1.0",
+            "version": "10.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "b6966f0ef4540a09bacdba51237ba8441f1da280"
+                "reference": "715c88297cac7fd5d2345b3738e97650925be579"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/b6966f0ef4540a09bacdba51237ba8441f1da280",
-                "reference": "b6966f0ef4540a09bacdba51237ba8441f1da280",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/715c88297cac7fd5d2345b3738e97650925be579",
+                "reference": "715c88297cac7fd5d2345b3738e97650925be579",
                 "shasum": ""
             },
             "require": {
@@ -15970,6 +15970,7 @@
                     },
                     "drupal/core": {
                         "https://www.drupal.org/project/drupal/issues/2577923": "https://www.drupal.org/files/issues/2022-12-02/2577923-154.patch",
+                        "Fix page parameter for JSON Api": "https://sws-devguide.stanford.edu/sites/g/files/sbiybj17516/files/core-pager-parameters.patch",
                         "https://www.drupal.org/project/drupal/issues/2353611": "https://www.drupal.org/files/issues/2019-10-15/drupal-link_uuid-2353611-262.patch"
                     },
                     "drupal/cshs": {
@@ -16048,9 +16049,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.0"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.1"
             },
-            "time": "2023-10-19T21:40:56+00:00"
+            "time": "2023-10-23T16:40:59+00:00"
         },
         {
             "name": "su-sws/react_paragraphs",
@@ -16271,16 +16272,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "11.x-dev",
+            "version": "11.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "6be3b1db5568bd6eeaa76c4cf16d923cd610d850"
+                "reference": "b52526325e1cf71ab63859c9d8e3d5a9d8c4bf01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/6be3b1db5568bd6eeaa76c4cf16d923cd610d850",
-                "reference": "6be3b1db5568bd6eeaa76c4cf16d923cd610d850",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/b52526325e1cf71ab63859c9d8e3d5a9d8c4bf01",
+                "reference": "b52526325e1cf71ab63859c9d8e3d5a9d8c4bf01",
                 "shasum": ""
             },
             "require": {
@@ -16411,7 +16412,6 @@
                 "su-sws/stanford_profile_helper": "^9.3",
                 "su-sws/stanford_samlauth": "^1.0"
             },
-            "default-branch": true,
             "type": "drupal-custom-profile",
             "extra": {
                 "drush": {
@@ -16449,22 +16449,22 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.0.2"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.0.6"
             },
-            "time": "2023-10-20T21:35:07+00:00"
+            "time": "2023-10-25T02:18:24+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.3.5",
+            "version": "9.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "d55a52faed46bec612955d0245f1d1b6d1e7a3df"
+                "reference": "ca3c9fdbcc6adea6f2c5e0e1ecb90a4c45827477"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/d55a52faed46bec612955d0245f1d1b6d1e7a3df",
-                "reference": "d55a52faed46bec612955d0245f1d1b6d1e7a3df",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/ca3c9fdbcc6adea6f2c5e0e1ecb90a4c45827477",
+                "reference": "ca3c9fdbcc6adea6f2c5e0e1ecb90a4c45827477",
                 "shasum": ""
             },
             "require": {
@@ -16494,6 +16494,7 @@
                 "drupal/mathjax": "^4.0",
                 "drupal/menu_block": "^1.10",
                 "drupal/name": "^1.0@RC",
+                "drupal/next": ">=1.6",
                 "drupal/paragraphs": "^1.15",
                 "drupal/pathauto": "^1.11",
                 "drupal/pdb": "^1.0",
@@ -16546,9 +16547,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.3.5"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.4.0"
             },
-            "time": "2023-10-20T16:38:12+00:00"
+            "time": "2023-10-23T14:36:52+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -21727,17 +21728,17 @@
         },
         {
             "name": "drupal/config_inspector",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_inspector.git",
-                "reference": "2.1.5"
+                "reference": "2.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_inspector-2.1.5.zip",
-                "reference": "2.1.5",
-                "shasum": "f9709d6495e1ca76c2d553ad6d0e77e9315e109a"
+                "url": "https://ftp.drupal.org/files/projects/config_inspector-2.1.6.zip",
+                "reference": "2.1.6",
+                "shasum": "a9f7b81fc5e3ea10acc5e861f9b6aeaad59d669e"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10 || ^11"
@@ -21745,8 +21746,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.5",
-                    "datestamp": "1697797258",
+                    "version": "2.1.6",
+                    "datestamp": "1698150898",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -25822,16 +25823,16 @@
         },
         {
             "name": "typhonius/acquia-php-sdk-v2",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/typhonius/acquia-php-sdk-v2.git",
-                "reference": "9f0bcb91ac2942af97a512b8b579f0fb895f1d80"
+                "reference": "552a644020695bf1826c66da15c233849495a4fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/typhonius/acquia-php-sdk-v2/zipball/9f0bcb91ac2942af97a512b8b579f0fb895f1d80",
-                "reference": "9f0bcb91ac2942af97a512b8b579f0fb895f1d80",
+                "url": "https://api.github.com/repos/typhonius/acquia-php-sdk-v2/zipball/552a644020695bf1826c66da15c233849495a4fa",
+                "reference": "552a644020695bf1826c66da15c233849495a4fa",
                 "shasum": ""
             },
             "require": {
@@ -25875,7 +25876,7 @@
             "description": "A PHP SDK for Acquia CloudAPI v2",
             "support": {
                 "issues": "https://github.com/typhonius/acquia-php-sdk-v2/issues",
-                "source": "https://github.com/typhonius/acquia-php-sdk-v2/tree/3.1.0"
+                "source": "https://github.com/typhonius/acquia-php-sdk-v2/tree/3.1.1"
             },
             "funding": [
                 {
@@ -25883,13 +25884,12 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-28T21:15:44+00:00"
+            "time": "2023-10-23T20:28:39+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "su-sws/stanford_profile": 20,
         "su-sws/blt-sws": 20,
         "drupal/auto_entitylabel": 10,
         "drupal/config_readonly": 10,

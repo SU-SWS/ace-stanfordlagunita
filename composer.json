@@ -50,7 +50,7 @@
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
         "drush/drush": "^11.6",
-        "su-sws/stanford_profile": "11.x-dev",
+        "su-sws/stanford_profile": "^11.0",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
