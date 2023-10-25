@@ -63,6 +63,34 @@ source:
       label: Description
       selector: event/description
     -
+      name: geo_latitude
+      label: 'Geo Latitutde'
+      selector: event/geo/latitude
+    -
+      name: geo_longitude
+      label: 'Geo Longitude'
+      selector: event/geo/longitude
+    -
+      name: geo_street
+      label: 'Geo Street'
+      selector: event/geo/street
+    -
+      name: geo_city
+      label: 'Geo City'
+      selector: event/geo/city
+    -
+      name: geo_state
+      label: 'Geo State'
+      selector: event/geo/state
+    -
+      name: geo_country
+      label: 'Geo Country'
+      selector: event/geo/country
+    -
+      name: geo_zip
+      label: 'Geo Zip'
+      selector: event/geo/zip
+    -
       name: event_audience
       label: 'Event Audience'
       selector: event/filters/event_audience
@@ -152,6 +180,10 @@ process:
   body/format: constants/stanford_html
   su_event_alt_loc: location_name
   su_event_map_link/uri:
+    -
+      plugin: skip_on_empty
+      source: geo_zip
+      method: process
     -
       plugin: concat
       source:
