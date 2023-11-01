@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     if: github.event.pull_request.merged
+    container:
+      image: pookmish/drupal8ci:latest
     steps:
       - name: Get Next Release
         id: tag
