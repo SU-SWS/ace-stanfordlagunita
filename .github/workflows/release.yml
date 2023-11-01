@@ -32,4 +32,10 @@ jobs:
           commit: ${{ github.sha }}
           generateReleaseNotes: true
           makeLatest: true
-
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.sha }}
+      - run: |
+          composer install -n
+          DATE=`date +%Y-%m-%d`
+          vendor/bin/blt deploy --tag=$(echo ${{ DATE }}_${{ steps.tag.outputs.tag }}) --commit-msg=${{ steps.tag.outputs.tag }} --no-interaction
