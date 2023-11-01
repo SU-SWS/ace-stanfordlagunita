@@ -172,7 +172,8 @@
     },
     "scripts": {
         "post-drupal-scaffold-cmd": [
-            "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/htaccess.patch"
+            "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/htaccess.patch",
+            "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/robotstxt.patch"
         ],
         "init-lando": [
             "cp lando/example.env .env",
