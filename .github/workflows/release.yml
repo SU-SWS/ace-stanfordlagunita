@@ -32,4 +32,36 @@ jobs:
           commit: ${{ github.sha }}
           generateReleaseNotes: true
           makeLatest: true
-
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.sha }}
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
+      - name: Deploy Tag
+        env:
+          DATE: ${{ date +%Y-%m-%d }}
+        run: |
+          git config --global user.email "sws-developers@lists.stanford.edu"
+          git config --global user.name "Github Actions"
+          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          vendor/bin/blt deploy --tag=$(echo ${{ env.DATE }}_${{ steps.tag.outputs.tag }}) --commit-msg=${{ steps.tag.outputs.tag }} --no-interaction
