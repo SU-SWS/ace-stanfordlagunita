@@ -59,7 +59,8 @@ jobs:
             2.x-
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      - run: git config --system --add safe.directory '*'
       - name: Deploy Tag
         run: |
           git config --global user.email "sws-developers@lists.stanford.edu"
