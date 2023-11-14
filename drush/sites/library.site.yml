@@ -12,8 +12,6 @@ dev:
     root: /mnt/gfs/stanfordlagunita.dev/livedev/docroot
   host: stanfordlagunitadev.ssh.prod.acquia-sites.com
   user: stanfordlagunita.dev
-  paths:
-    drush-script: drush9
 test:
   root: /var/www/html/stanfordlagunita.test/docroot
   ac-site: stanfordlagunita
@@ -25,8 +23,6 @@ test:
     root: /mnt/gfs/stanfordlagunita.test/livedev/docroot
   host: stanfordlagunitastg.ssh.prod.acquia-sites.com
   user: stanfordlagunita.test
-  paths:
-    drush-script: drush9
 prod:
   root: /var/www/html/stanfordlagunita.prod/docroot
   ac-site: stanfordlagunita
@@ -38,5 +34,3 @@ prod:
     root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
   host: stanfordlagunita.ssh.prod.acquia-sites.com
   user: stanfordlagunita.prod
-  paths:
-    drush-script: drush9
