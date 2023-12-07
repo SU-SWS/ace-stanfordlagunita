@@ -1,0 +1,17 @@
+uuid: 1daa9413-a413-4e26-9457-529cfab2b498
+langcode: en
+status: true
+dependencies:
+  module:
+    - build_hooks
+title: 'Default cron handler'
+id: build_hooks_cron
+weight: 0
+module: build_hooks
+callback: build_hooks_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
