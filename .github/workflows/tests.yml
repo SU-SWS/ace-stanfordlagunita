@@ -93,6 +93,7 @@ jobs:
       - run: git config --system --add safe.directory '*'
       - name: Run tests
         run: |
+          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
           apachectl stop
@@ -152,6 +153,7 @@ jobs:
       - run: git config --system --add safe.directory '*'
       - name: Install Site
         run: |
+          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
           apachectl stop
