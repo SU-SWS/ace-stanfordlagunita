@@ -34,10 +34,10 @@ settings:
       allowed_tags:
         - '<cite>'
         - '<dd>'
-        - '<div id class>'
+        - '<div id class lang>'
         - '<blockquote cite>'
-        - '<p id class>'
-        - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class>'
+        - '<p id class lang>'
+        - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class lang>'
     ckeditor5_style:
       styles:
         -
