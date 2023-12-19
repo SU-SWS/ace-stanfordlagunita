@@ -55,3 +55,4 @@ keys_rsync:
   files:
     - /mnt/gfs/stanfordlagunita.test/nobackup/simplesamlphp/
     - /mnt/gfs/stanfordlagunita.test/secrets.settings.php
+    - /mnt/gfs/stanfordlagunita.test/nobackup/oauth/

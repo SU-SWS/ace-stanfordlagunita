@@ -12,6 +12,6 @@ if (!EnvironmentDetector::isProdEnv()) {
 }
 
 if (EnvironmentDetector::isAhEnv()) {
-  $config['simple_oauth.settings']['public_key'] = EnvironmentDetector::getAhFilesRoot() . '/nobackup/oauth/oauth.pub';
-  $config['simple_oauth.settings']['private_key'] = EnvironmentDetector::getAhFilesRoot() . '/nobackup/oauth/oauth.key';
+  $config['simple_oauth.settings']['public_key'] = EnvironmentDetector::getAhFilesRoot() . '/nobackup/oauth/oauth_public.key';
+  $config['simple_oauth.settings']['private_key'] = EnvironmentDetector::getAhFilesRoot() . '/nobackup/oauth/oauth_private.key';
 }

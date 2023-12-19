@@ -1,6 +1,6 @@
 name: 'SUL Profile'
 description: 'Libraries Drupal Profile'
-version: 2.0.4
+version: 2.1.0
 type: profile
 project: Stanford
 core_version_requirement: ^9 || ^10

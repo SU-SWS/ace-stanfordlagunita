@@ -13,6 +13,7 @@ module:
   block_content_permissions: 0
   book: 0
   breakpoint: 0
+  build_hooks: 0
   change_labels: 0
   chosen: 0
   chosen_lib: 0
@@ -46,6 +47,7 @@ module:
   domain_301_redirect: 0
   dropzonejs: 0
   ds_extras: 0
+  dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
   editoria11y: 0
@@ -163,6 +165,7 @@ module:
   samlauth_user_fields: 0
   scheduler: 0
   search_api: 0
+  search_api_algolia: 0
   search_api_db: 0
   seckit: 0
   serialization: 0

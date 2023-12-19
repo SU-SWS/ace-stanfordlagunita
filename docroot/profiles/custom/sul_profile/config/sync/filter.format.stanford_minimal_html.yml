@@ -5,7 +5,7 @@ dependencies:
   module:
     - linkit
     - responsive_tables_filter
-    - sul_helper
+    - stanford_profile_helper
 name: 'Minimal HTML'
 format: stanford_minimal_html
 weight: 0
