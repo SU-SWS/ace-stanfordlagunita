@@ -6,6 +6,7 @@ dependencies:
     - config_pages
     - field_permissions
     - file
+    - graphql
     - media
     - printable
     - shortcut
@@ -24,6 +25,8 @@ permissions:
   - 'access patterns page'
   - 'access shortcuts'
   - 'delete own files'
+  - 'execute graphql_compose_server arbitrary graphql requests'
+  - 'execute graphql_compose_server persisted graphql requests'
   - 'issue subrequests'
   - 'view field_media_embeddable_code'
   - 'view lockup_settings config page entity'

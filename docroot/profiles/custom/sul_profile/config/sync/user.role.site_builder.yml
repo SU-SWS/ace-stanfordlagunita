@@ -48,6 +48,7 @@ dependencies:
     - field_ui
     - file
     - filter
+    - help
     - image
     - layout_builder
     - media
@@ -85,6 +86,7 @@ permissions:
   - 'access content overview'
   - 'access entity usage statistics'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access patterns page'
   - 'access site reports'

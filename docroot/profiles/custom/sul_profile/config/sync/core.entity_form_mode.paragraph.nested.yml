@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.nested
 label: Nested
+description: ''
 targetEntityType: paragraph
 cache: true

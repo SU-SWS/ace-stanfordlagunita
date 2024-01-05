@@ -38,19 +38,19 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.2",
         "acquia/blt": "^13.5",
         "composer/installers": "^1.9 || ^2.0",
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
         "drupal/acquia_purge": "^1.1",
-        "drupal/core": "^10.0",
-        "drupal/core-composer-scaffold": "^10.0",
+        "drupal/core": "^10.2",
+        "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.0",
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
-        "drush/drush": "^11.6",
-        "su-sws/stanford_profile": "^11.0",
+        "drush/drush": "^12",
+        "su-sws/stanford_profile": "11.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
