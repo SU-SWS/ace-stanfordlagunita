@@ -1,0 +1,42 @@
+uuid: 5f3f7680-fc8b-4fc3-92f4-933de5b67c45
+langcode: en
+status: true
+dependencies:
+  config:
+    - build_hooks.frontend_environment.sul_public
+  module:
+    - dynamic_entity_reference
+id: build_hooks_deployment.sul_public.default
+targetEntityType: build_hooks_deployment
+bundle: sul_public
+mode: default
+content:
+  contents:
+    type: dynamic_entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  deleted:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  deployed: true
+  search_api_excerpt: true

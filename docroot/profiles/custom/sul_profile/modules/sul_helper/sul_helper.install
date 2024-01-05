@@ -31,3 +31,37 @@ function sul_helper_update_8001() {
 function sul_helper_update_8002() {
   \Drupal::state()->set('stanford_profile_helper.decoupled', TRUE);
 }
+
+/**
+ * Update configs 'stanford_profile_admin' with 'stanford_profile_admin_theme'.
+ */
+function sul_helper_update_8003() {
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll() as $config_name) {
+    $config = $config_factory->getEditable($config_name);
+    // Delete the admin theme blocks first.
+    if (str_starts_with($config_name, 'block.block.stanford_profile_admin_')) {
+      $config->delete();
+      continue;
+    }
+
+    // Change the dependencies to the new theme name.
+    if ($theme_dependencies = $config->get('dependencies.theme')) {
+      $position = array_search('stanford_profile_admin', $theme_dependencies);
+      if ($position !== FALSE) {
+        $config->set("dependencies.theme.$position", 'stanford_profile_admin_theme')
+          ->save(TRUE);
+      }
+    }
+  }
+
+  $core_extension = $config_factory->getEditable('core.extension');
+  $core_extension->clear('theme.stanford_profile_admin')
+    ->set('theme.stanford_profile_admin_theme', 0)
+    ->save();
+
+  $system_theme = $config_factory->getEditable('system.theme');
+  $system_theme->set('admin', 'stanford_profile_admin_theme')
+    ->set('default', 'stanford_profile_admin_theme')
+    ->save();
+}
