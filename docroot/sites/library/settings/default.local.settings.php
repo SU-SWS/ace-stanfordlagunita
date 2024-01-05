@@ -6,7 +6,7 @@
  */
 
 global $_acsf_site_name;
-$db_name = '${drupal.db.database}';
+$db_name = '${drupal.db.database}_' . basename(dirname(__DIR__));
 if (isset($_acsf_site_name)) {
   $db_name .= '_' . $_acsf_site_name;
 }
