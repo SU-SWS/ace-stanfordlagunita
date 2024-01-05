@@ -8,4 +8,5 @@ ignored_config_entities:
   - 'system.action.user_add_role_action.custm_*'
   - 'system.action.user_remove_role_action.custm_*'
   - 'user.role.custm_*'
+  - 'build_hooks.frontend_environment.*'
 enable_export_filtering: false
