@@ -1,12 +1,13 @@
 name: sul
-type: drupal9
+type: drupal10
 docroot: docroot
-php_version: "8.1"
+php_version: "8.2"
 webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
-additional_hostnames: []
+additional_hostnames:
+  - library
 additional_fqdns: []
 database:
   type: mariadb
