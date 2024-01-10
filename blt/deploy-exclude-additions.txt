@@ -3,3 +3,4 @@ simplesamlphp/config/local.authsources.php
 lando
 vendor/simplesamlphp/simplesamlphp/config/local.config.php
 vendor/simplesamlphp/simplesamlphp/config/local.authsources.php
+.ddev

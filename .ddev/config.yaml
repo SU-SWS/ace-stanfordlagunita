@@ -1,12 +1,13 @@
 name: sul
-type: drupal9
+type: drupal10
 docroot: docroot
-php_version: "8.1"
+php_version: "8.2"
 webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
-additional_hostnames: []
+additional_hostnames:
+  - library
 additional_fqdns: []
 database:
   type: mariadb
@@ -15,8 +16,10 @@ nfs_mount_enabled: false
 mutagen_enabled: false
 hooks:
   post-import-db:
-  - exec: drush cim -y
-  - exec: drush cr
+  - exec: drush --uri=https://library.ddev.site cim -y
+  - exec: drush --uri=https://library.ddev.site cr
+  - exec: drush --uri=https://library.ddev.site uli
+
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
