@@ -159,12 +159,12 @@ $settings['trusted_host_patterns'] = [
   '^.+$',
 ];
 
-// Automatically generated include for settings managed by ddev.
-$additionalSettingsFiles = [dirname(__FILE__) . '/settings.ddev.php'];
+// Include additional settings files for local development
+$additionalSettingsFiles = [__DIR__ . '/settings.ddev.php'];
 
-foreach(){
-  if (file_exists($additionalSettingsFiles)) {
-    require $ddev_settings;
+foreach($additionalSettingsFiles as $additionalSettingsFile) {
+  if(file_exists($additionalSettingsFile)){
+    require $additionalSettingsFile;
   }
 }
 
