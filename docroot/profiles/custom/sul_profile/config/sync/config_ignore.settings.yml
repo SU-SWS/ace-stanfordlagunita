@@ -2,11 +2,11 @@ _core:
   default_config_hash: v7E8C8wJWeAW2BGohMNY1tZSBc4bexM6O62tGxecTfE
 mode: simple
 ignored_config_entities:
+  - 'build_hooks.frontend_environment.*'
   - 'google_tag.container.*'
   - 'next.next_entity_type_config.*'
   - 'next.next_site.*'
   - 'system.action.user_add_role_action.custm_*'
   - 'system.action.user_remove_role_action.custm_*'
   - 'user.role.custm_*'
-  - 'build_hooks.frontend_environment.*'
 enable_export_filtering: false
