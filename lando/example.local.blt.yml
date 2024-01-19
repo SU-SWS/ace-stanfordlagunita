@@ -2,16 +2,16 @@
 project:
   local:
     protocol: https
-    hostname: cardinalservice.lndo.site
-    uri: https://cardinalservice.lndo.site
+    hostname: lagunita.lndo.site
+    uri: https://lagunita.lndo.site
   profile:
     name: sul_profile
 drupal:
   db:
     username: drupal
     password: drupal
-    host: cardinalservice
-    database: cardinalservice
+    host: database
+    database: drupal
     port: 3306
 tests:
   selenium:

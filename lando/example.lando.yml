@@ -1,64 +1,63 @@
-name: gryphon
-recipe: drupal8
+name: lagunita
+recipe: drupal9
 config:
   webroot: docroot
-  php: '7.3'
+  php: '8.2'
   xdebug: false
 proxy:
   appserver:
-    - gryphon.lndo.site
-    - cardinalservice.lndo.site
+    - lagunita.lndo.site
+  adminer:
+    - adminer.lagunita.lndo.site
 services:
   appserver:
     build_as_root:
       - pecl install pcov
       - docker-php-ext-enable pcov
+    build:
+      - composer install
+    volumes:
+      - ~/.acquia:/var/www/.acquia
     ssl: true
     config:
       php: lando/php.ini
-    # Uncomment the below for behat testing
-    # overrides:
-    #   environment:
-    #       BEHAT_PARAMS: >-
-    #         {
-    #           "extensions" : {
-    #             "Behat\\MinkExtension" : {
-    #               "base_url" : "https://appserver/"
-    #             }
-    #           }
-    #         }
+      # Uncomment the below for behat testing
+      overrides:
+        environment:
+          MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chromedriver:4444"]'
+          BEHAT_PARAMS: >-
+            {
+              "extensions" : {
+                "Behat\\MinkExtension" : {
+                  "base_url" : "http://lagunita.lndo.site/"
+                }
+              }
+            }
   database:
     creds:
       user: drupal
       password: drupal
       database: drupal
-  cardinalservice:
-    type: mysql:5.7
-    creds:
-      user: drupal
-      password: drupal
-      database: cardinalservice
-  #  gryphon:
-  #    creds:
-  #      user: drupal
-  #      password: drupal
-  #      database: gryphon
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    portforward: true
   # Uncomment the below for behat testing.
-  # chromedriver:
-  #   type: compose
-  #   services:
-  #     image: robcherry/docker-chromedriver:latest
-  #     expose:
-  #       - "4444"
-  #     environment:
-  #       CHROMEDRIVER_WHITELISTED_IPS: ""
-  #       CHROMEDRIVER_URL_BASE: "/wd/hub"
-  #     security_opt:
-  #       - seccomp:unconfined
-  #     command: ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
-  # testresults:
-  #   type: nginx
-  #   webroot: artifacts
+  chromedriver:
+    type: lando
+    api: 3
+    ssl: false
+    sslExpose: false
+    services:
+      user: root
+      image: selenium/standalone-chrome:115.0
+      command: /opt/bin/entry_point.sh
+      volumes:
+        - /dev/shm:/dev/shm
+      ports:
+        - 4444
 tooling:
   blt:
     service: appserver
@@ -74,3 +73,6 @@ tooling:
     service: appserver
     cmd: "/app/vendor/bin/phpunit -c /app/docroot/core"
     description: Run phpunit tests
+  codeception:
+    service: appserver
+    cmd: "/app/vendor/bin/blt tests:codeception:run"
