@@ -2,16 +2,16 @@
 project:
   local:
     protocol: https
-    hostname: cardinalservice.lndo.site
-    uri: https://cardinalservice.lndo.site
+    hostname: sulgryphon.lndo.site
+    uri: https://sulgryphon.lndo.site
   profile:
     name: sul_profile
 drupal:
   db:
     username: drupal
     password: drupal
-    host: cardinalservice
-    database: cardinalservice
+    host: sulgryphon
+    database: drupal
     port: 3306
 tests:
   selenium:
