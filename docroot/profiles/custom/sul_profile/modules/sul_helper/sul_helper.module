@@ -91,3 +91,17 @@ function sul_helper_preprocess_paragraph__stanford_spacer(&$variables) {
     $variables['attributes']['class'][] = $paragraph->get('su_spacer_size')->getString();
   }
 }
+
+/**
+ * Implements hook_graphql_compose_field_type_alter().
+ */
+function sul_helper_graphql_compose_field_type_alter(array &$field_types) {
+  $field_types['link']['class'] = 'Drupal\sul_helper\Plugin\GraphQLCompose\FieldType\SulLinkItem';
+}
+
+/**
+ * Implements hook_graphql_compose_graphql_type_alter().
+ */
+function sul_helper_graphql_compose_graphql_type_alter(array &$entity_types) {
+  $entity_types['Link']['class'] = 'Drupal\sul_helper\Plugin\GraphQLCompose\SchemaType\SulLinkType';
+}
