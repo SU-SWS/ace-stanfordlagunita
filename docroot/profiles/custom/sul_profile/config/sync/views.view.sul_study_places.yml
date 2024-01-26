@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.sul_study_place
   module:
+    - graphql_compose_views
     - node
     - stanford_fields
     - user
@@ -169,6 +170,27 @@ display:
       display_extenders: {  }
       block_category: 'Places to Study (Views)'
       display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  study_spaces_graphql:
+    id: study_spaces_graphql
+    display_title: 'GraphQL: Places to Study'
+    display_plugin: graphql
+    position: 1
+    display_options:
+      pager:
+        type: none
+        options:
+          offset: 0
+      display_description: ''
+      display_extenders: {  }
+      graphql_query_name: sulStudyPlaces
     cache_metadata:
       max-age: -1
       contexts:
