@@ -1,4 +1,4 @@
-<?php
+<?
 
-$sites['cardinalservice.lndo.site'] = 'cardinalservice';
+$sites["langunita.lndo.site"] = 'default';
 
