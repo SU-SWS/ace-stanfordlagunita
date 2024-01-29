@@ -6,7 +6,6 @@ dependencies:
     - core.base_field_override.node.stanford_person.title
     - field.field.node.stanford_person.body
     - field.field.node.stanford_person.field_menulink
-    - field.field.node.stanford_person.layout_builder__layout
     - field.field.node.stanford_person.stanford_intranet__access
     - field.field.node.stanford_person.su_metatags
     - field.field.node.stanford_person.su_person_academic_appt
@@ -35,6 +34,8 @@ dependencies:
     - field.field.node.stanford_person.su_person_telephone
     - field.field.node.stanford_person.su_person_type_group
     - field.field.node.stanford_person.su_shared_tags
+    - field.field.node.stanford_person.sul_person__libcal_id
+    - field.field.node.stanford_person.sul_person__libguide_id
     - node.type.stanford_person
     - views.view.stanford_publications
   module:
@@ -51,7 +52,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: true
+    allow_custom: false
     sections:
       -
         layout_id: stanford_person_header
@@ -558,13 +559,15 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: layout_paragraphs
+                type: entity_reference_revisions_entity_view
                 label: hidden
                 settings:
                   view_mode: default
                 third_party_settings:
                   field_formatter_class:
                     class: su-person-components
+                  ds:
+                    ds_limit: ''
             weight: 1
             additional: {  }
           091088b1-a703-4427-bc0e-9b627205b671:
@@ -625,6 +628,8 @@ third_party_settings:
       - 'Content fields'
       - 'Custom block types'
       - 'Custom blocks'
+      - Devel
+      - 'Devel PHP'
       - 'Events Lists (Views)'
       - Forms
       - Help
@@ -642,6 +647,7 @@ third_party_settings:
       - 'Stanford Profile Helper'
       - 'Stanford SimpleSAML PHP'
       - System
+      - 'Taxonomy Terms (Views)'
       - Views
       - core
     entity_view_mode_restriction:
@@ -689,24 +695,24 @@ third_party_settings:
           - 'field_block:user:user:name'
           - 'field_block:user:user:preferred_admin_langcode'
           - 'field_block:user:user:preferred_langcode'
-          - 'field_block:user:user:role_change'
           - 'field_block:user:user:roles'
+          - 'field_block:user:user:role_change'
           - 'extra_field_block:user:user:search_api_excerpt'
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
       allowlisted_blocks:
         Menus:
-          - 'system_menu_block:stanford-event-types'
           - 'menu_block:stanford-event-types'
-          - 'system_menu_block:main'
+          - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
+          - 'system_menu_block:main'
           - 'menu_block:stanford-person-type'
           - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-publication-topics'
           - 'system_menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
           - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
         System:
           - system_breadcrumb_block
         core:
@@ -721,6 +727,7 @@ third_party_settings:
         - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
         - 'Stanford SimpleSAML PHP'
+        - 'Taxonomy Terms (Views)'
         - Views
   layout_library:
     enable: false
@@ -927,3 +934,5 @@ hidden:
   su_person_research_interests: true
   su_person_scholarly_interests: true
   su_shared_tags: true
+  sul_person__libcal_id: true
+  sul_person__libguide_id: true

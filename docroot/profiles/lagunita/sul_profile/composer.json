@@ -47,6 +47,7 @@
         "drupal/allowed_formats": "^3.0",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/block_content_permissions": "^1.8",
+        "drupal/build_hooks": "^3.3",
         "drupal/change_labels": "^1.0",
         "drupal/chosen": "^4.0",
         "drupal/colorbox": "^2.0",
@@ -169,12 +170,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\stanford_profile\\": "src/"
+            "Drupal\\sul_profile\\": "src/",
+            "Drupal\\sul_helper\\": "modules/sul_helper/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\stanford_profile\\": "tests/src"
+            "Drupal\\Tests\\sul_profile\\": "tests/src",
+            "Drupal\\Tests\\sul_helper\\": "modules/sul_helper/tests/src/"
         }
     },
     "extra": {

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_media_image
     - field.field.media.image.su_media_category
+    - field.field.media.image.sul_image_credit
     - media.type.image
     - responsive_image.styles.full_responsive
   module:
@@ -26,6 +27,14 @@ content:
         attribute: eager
     third_party_settings: {  }
     weight: 0
+    region: content
+  sul_image_credit:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   created: true

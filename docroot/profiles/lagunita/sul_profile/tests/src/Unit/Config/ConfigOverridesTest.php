@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Unit\Config;
+namespace Drupal\Tests\sul_profile\Unit\Config;
 
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Cache\CacheableMetadata;
@@ -8,19 +8,19 @@ use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\State\StateInterface;
-use Drupal\stanford_profile\Config\ConfigOverrides;
+use Drupal\sul_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ConfigOverridesTest
  *
  * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\Config\ConfigOverrides
+ * @coversDefaultClass \Drupal\sul_profile\Config\ConfigOverrides
  */
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
-   * @var \Drupal\stanford_profile\Config\ConfigOverrides
+   * @var \Drupal\sul_profile\Config\ConfigOverrides
    */
   protected $overrideService;
 

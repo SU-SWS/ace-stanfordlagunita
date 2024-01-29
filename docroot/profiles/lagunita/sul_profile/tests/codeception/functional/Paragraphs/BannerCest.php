@@ -73,7 +73,16 @@ class BannerCest {
     $I->click('Edit', '.lpb-controls');
     $I->waitForText('Behaviors');
     $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+
+    $I->selectOption('Text Overlay Position', 'Right');
+//    $I->waitForText('Text Overlay Position');
+//
+//    $I->clickWithLeftButton('#overlay_position');
+//    $I->wait(1);
+//    $I->clickWithLeftButton('li[data-value="right"]');
+
     $I->selectOption('Text Overlay Position', 'Right');;
+
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');

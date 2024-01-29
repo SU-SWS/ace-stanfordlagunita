@@ -5,22 +5,26 @@ dependencies:
   config:
     - field.storage.node.su_news_components
     - node.type.stanford_news
+    - paragraphs.paragraphs_type.collection
+    - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.stanford_banner
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.stanford_entity
     - paragraphs.paragraphs_type.stanford_gallery
-    - paragraphs.paragraphs_type.stanford_layout
     - paragraphs.paragraphs_type.stanford_lists
     - paragraphs.paragraphs_type.stanford_media_caption
-    - paragraphs.paragraphs_type.stanford_spacer
     - paragraphs.paragraphs_type.stanford_wysiwyg
+    - paragraphs.paragraphs_type.sul_button
+    - paragraphs.paragraphs_type.sul_contact_card
+    - paragraphs.paragraphs_type.sul_feat_collection
+    - paragraphs.paragraphs_type.sul_libguide
   module:
     - entity_reference_revisions
 id: node.stanford_news.su_news_components
 field_name: su_news_components
 entity_type: node
 bundle: stanford_news
-label: Paragraphs
+label: Components
 description: ''
 required: false
 translatable: false
@@ -35,12 +39,25 @@ settings:
       stanford_card: stanford_card
       stanford_media_caption: stanford_media_caption
       stanford_entity: stanford_entity
-      stanford_spacer: stanford_spacer
       stanford_gallery: stanford_gallery
       stanford_lists: stanford_lists
-      stanford_layout: stanford_layout
+      collection: collection
+      layout: layout
+      sul_button: sul_button
+      sul_contact_card: sul_contact_card
+      sul_feat_collection: sul_feat_collection
+      sul_libguide: sul_libguide
     negate: 0
     target_bundles_drag_drop:
+      collection:
+        weight: 19
+        enabled: true
+      collection_card:
+        weight: 20
+        enabled: false
+      layout:
+        weight: 21
+        enabled: true
       stanford_accordion:
         weight: 12
         enabled: false
@@ -56,9 +73,6 @@ settings:
       stanford_gallery:
         weight: 14
         enabled: true
-      stanford_layout:
-        weight: 18
-        enabled: true
       stanford_lists:
         weight: 15
         enabled: true
@@ -73,8 +87,20 @@ settings:
         enabled: false
       stanford_spacer:
         weight: 13
-        enabled: true
+        enabled: false
       stanford_wysiwyg:
         weight: -7
+        enabled: true
+      sul_button:
+        weight: 33
+        enabled: true
+      sul_contact_card:
+        weight: 34
+        enabled: true
+      sul_feat_collection:
+        weight: 35
+        enabled: true
+      sul_libguide:
+        weight: 36
         enabled: true
 field_type: entity_reference_revisions

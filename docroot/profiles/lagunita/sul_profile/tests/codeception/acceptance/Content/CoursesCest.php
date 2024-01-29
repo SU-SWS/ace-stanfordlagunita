@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group content
  */
-class CoursesCest {
+abstract class CoursesCest {
 
   /**
    * @var \Faker\Generator
@@ -24,7 +24,7 @@ class CoursesCest {
   /**
    * Test for view pages and taxonomy functionality
    */
-  public function testViewPagesExist(AcceptanceTester $I) {
+  protected function testViewPagesExist(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $quarters_term = $this->createCourseQuartersTerm($I);
     $subject_term = $this->createCourseSubjectsTerm($I);

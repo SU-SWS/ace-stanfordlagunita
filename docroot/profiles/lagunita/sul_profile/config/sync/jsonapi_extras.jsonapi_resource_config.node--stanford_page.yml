@@ -12,7 +12,6 @@ third_party_settings:
       - su_page_components
       - su_page_banner.su_banner_image.field_media_image
       - su_page_image.field_media_image
-      - layout_selection
     default_filter:
       'filter:status': '1'
     page_limit: 500
@@ -130,7 +129,7 @@ resourceFields:
     enhancer:
       id: ''
   metatag:
-    disabled: true
+    disabled: false
     fieldName: metatag
     publicName: metatag
     enhancer:
@@ -184,15 +183,9 @@ resourceFields:
     enhancer:
       id: ''
   field_menulink:
-    disabled: true
+    disabled: false
     fieldName: field_menulink
     publicName: field_menulink
-    enhancer:
-      id: ''
-  layout_builder__layout:
-    disabled: true
-    fieldName: layout_builder__layout
-    publicName: layout_builder__layout
     enhancer:
       id: ''
   layout_selection:
@@ -214,7 +207,7 @@ resourceFields:
     enhancer:
       id: ''
   su_metatags:
-    disabled: true
+    disabled: false
     fieldName: su_metatags
     publicName: su_metatags
     enhancer:

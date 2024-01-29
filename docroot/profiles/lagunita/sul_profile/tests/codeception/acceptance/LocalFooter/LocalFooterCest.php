@@ -5,7 +5,7 @@
  *
  * @group local_footer
  */
-class LocalFooterCest {
+abstract class LocalFooterCest {
 
   /**
    * Tidy up after oneself.

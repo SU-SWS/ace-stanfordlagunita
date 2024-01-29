@@ -77,7 +77,7 @@ class SubThemeCest {
    *
    * @group subtheme
    */
-  public function testSubTheme(AcceptanceTester $I) {
+  protected function testSubTheme(AcceptanceTester $I) {
     $paragraph_text = $this->faker->paragraph;
     $paragraph = $I->createEntity([
       'type' => 'stanford_wysiwyg',
@@ -134,7 +134,7 @@ class SubThemeCest {
    *
    * @group minimal-theme
    */
-  public function testMinimalSubtheme(AcceptanceTester $I) {
+  protected function testMinimalSubtheme(AcceptanceTester $I) {
     $I->amOnPage('/');
     $I->seeElement('.su-brand-bar__logo');
     $I->seeElement('.su-global-footer__container');

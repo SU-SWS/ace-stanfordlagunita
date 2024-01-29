@@ -9,7 +9,8 @@ dependencies:
     - field.field.paragraph.stanford_entity.su_entity_item
     - paragraphs.paragraphs_type.stanford_entity
   module:
-    - link
+    - change_labels
+    - link_attributes
     - text
 id: paragraph.stanford_entity.default
 targetEntityType: paragraph
@@ -24,13 +25,24 @@ content:
       display_label: true
     third_party_settings: {  }
   su_entity_button:
-    type: link_default
+    type: link_attributes
     weight: 3
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+      enabled_attributes:
+        aria-label: true
+        id: false
+        name: false
+        target: false
+        rel: false
+        class: false
+        accesskey: false
+        title: false
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
   su_entity_description:
     type: text_textarea
     weight: 2

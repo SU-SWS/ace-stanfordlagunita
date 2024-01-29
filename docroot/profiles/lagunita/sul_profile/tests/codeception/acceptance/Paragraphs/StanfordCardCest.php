@@ -50,7 +50,6 @@ class StanfordCardCest {
         'uri' => 'http://google.com',
         'title' => 'It\'s a "test" link & title',
       ],
-      'su_card_link_display' => $link_type,
     ], 'paragraph');
 
     $node = $I->createEntity([

@@ -36,7 +36,7 @@ class EventsCest {
    *
    * @group D8CORE-4858
    */
-  public function testListIntro(AcceptanceTester $I) {
+  protected function testListIntro(AcceptanceTester $I) {
     // Start with no events.
     $nodes = \Drupal::entityTypeManager()
       ->getStorage('node')
@@ -107,7 +107,7 @@ class EventsCest {
   /**
    * Test Page Title Conditions.
    */
-  public function testPageTitleIgnoreCondition(AcceptanceTester $I) {
+  protected function testPageTitleIgnoreCondition(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     // Todo: make theme name dynamic.
     $I->amOnPage('/admin/structure/block/manage/stanford_basic_pagetitle');
@@ -223,7 +223,7 @@ class EventsCest {
 
     // Can't adjust menu items.
     $I->amOnPage('/admin/structure/menu/manage/stanford-event-types');
-    $I->seeResponseCodeIs(200);
+    $I->seeResponseCodeIs(403);
 
     // Can't adjust the importer form.
     $I->amOnPage('/admin/config/importers/events-importer');
@@ -267,7 +267,7 @@ class EventsCest {
 
     // Can adjust menu items.
     $I->amOnPage('/admin/structure/menu/manage/stanford-event-types');
-    $I->seeResponseCodeIs(200);
+    $I->seeResponseCodeIs(403);
 
     // Can adjust the importer form.
     $I->amOnPage('/admin/config/importers/events-importer');

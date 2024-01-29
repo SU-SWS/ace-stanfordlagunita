@@ -10,8 +10,8 @@ allowed:
   groups: {  }
 role_mapping:
   workgroup_api:
-    cert: ''
-    key: ''
+    cert: /var/www/sulback/docroot/../keys/workgroup_api.cert
+    key: /var/www/sulback/docroot/../keys/workgroup_api.key
   reevaluate: new
   mapping:
     -

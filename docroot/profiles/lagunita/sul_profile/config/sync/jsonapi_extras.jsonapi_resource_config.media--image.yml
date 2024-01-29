@@ -1,4 +1,4 @@
-uuid: a8d0f3a3-7684-4b25-a0c9-f08fa5446a01
+uuid: 9ceb02fa-f83f-4d67-ad94-8874150e0131
 langcode: en
 status: true
 dependencies:
@@ -147,6 +147,12 @@ resourceFields:
     disabled: false
     fieldName: field_media_image
     publicName: field_media_image
+    enhancer:
+      id: ''
+  sul_image_credit:
+    disabled: false
+    fieldName: sul_image_credit
+    publicName: sul_image_credit
     enhancer:
       id: ''
   su_media_category:

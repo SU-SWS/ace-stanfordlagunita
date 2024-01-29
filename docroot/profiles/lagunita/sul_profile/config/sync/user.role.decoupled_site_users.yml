@@ -5,6 +5,7 @@ dependencies:
   module:
     - file
     - node
+    - paragraphs
     - subrequests
     - view_unpublished
 id: decoupled_site_users
@@ -17,3 +18,4 @@ permissions:
   - 'delete own files'
   - 'issue subrequests'
   - 'view any unpublished content'
+  - 'view unpublished paragraphs'

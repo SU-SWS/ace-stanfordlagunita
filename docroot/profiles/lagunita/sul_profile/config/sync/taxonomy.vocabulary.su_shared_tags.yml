@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - flat_taxonomy
     - scheduler
 third_party_settings:
   scheduler:
@@ -19,8 +18,6 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-  flat_taxonomy:
-    flat: 1
 name: 'Shared Tags'
 vid: su_shared_tags
 description: 'Terms that can be used to describe all content types (i.e. Featured)'

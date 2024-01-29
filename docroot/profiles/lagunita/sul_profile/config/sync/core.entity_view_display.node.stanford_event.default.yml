@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.base_field_override.node.stanford_event.title
     - field.field.node.stanford_event.body
-    - field.field.node.stanford_event.layout_builder__layout
     - field.field.node.stanford_event.stanford_intranet__access
     - field.field.node.stanford_event.su_event_alt_loc
     - field.field.node.stanford_event.su_event_audience
@@ -28,6 +27,7 @@ dependencies:
     - field.field.node.stanford_event.su_event_type
     - field.field.node.stanford_event.su_metatags
     - field.field.node.stanford_event.su_shared_tags
+    - field.field.node.stanford_event.sul_event__image
     - node.type.stanford_event
     - views.view.stanford_events
   module:
@@ -46,7 +46,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: true
+    allow_custom: false
     sections:
       -
         layout_id: defaults
@@ -174,6 +174,32 @@ third_party_settings:
                   field_formatter_class:
                     class: su-event-type
             weight: -9
+            additional: {  }
+          65f01185-f0e1-499c-af0b-8fa3354478b6:
+            uuid: 65f01185-f0e1-499c-af0b-8fa3354478b6
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_event:sul_event__image'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_image_formatter
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                  image_style: card_1x_478x318
+                  remove_alt: false
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: -4
             additional: {  }
         third_party_settings: {  }
       -
@@ -473,13 +499,15 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: layout_paragraphs
+                type: entity_reference_revisions_entity_view
                 label: hidden
                 settings:
                   view_mode: default
                 third_party_settings:
                   field_formatter_class:
                     class: su-event-components
+                  ds:
+                    ds_limit: ''
             weight: 1
             additional: {  }
           7a80c779-6c87-49fd-94e0-68ae37fa1cd4:
@@ -580,6 +608,8 @@ third_party_settings:
       - 'Content fields'
       - 'Custom block types'
       - 'Custom blocks'
+      - Devel
+      - 'Devel PHP'
       - 'Events Lists (Views)'
       - Forms
       - Help
@@ -597,6 +627,7 @@ third_party_settings:
       - 'Stanford Profile Helper'
       - 'Stanford SimpleSAML PHP'
       - System
+      - 'Taxonomy Terms (Views)'
       - Views
       - core
     entity_view_mode_restriction:
@@ -642,8 +673,8 @@ third_party_settings:
           - 'field_block:user:user:name'
           - 'field_block:user:user:preferred_admin_langcode'
           - 'field_block:user:user:preferred_langcode'
-          - 'field_block:user:user:role_change'
           - 'field_block:user:user:roles'
+          - 'field_block:user:user:role_change'
           - 'extra_field_block:user:user:search_api_excerpt'
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
@@ -654,12 +685,12 @@ third_party_settings:
           - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
           - 'system_menu_block:main'
-          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
+          - 'system_menu_block:stanford-publication-topics'
           - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
         System:
           - system_breadcrumb_block
         core:
@@ -674,6 +705,7 @@ third_party_settings:
         - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
         - 'Stanford SimpleSAML PHP'
+        - 'Taxonomy Terms (Views)'
         - Views
 id: node.stanford_event.default
 targetEntityType: node
@@ -835,3 +867,4 @@ hidden:
   su_event_subject: true
   su_metatags: true
   su_shared_tags: true
+  sul_event__image: true

@@ -1254,6 +1254,11 @@ display:
           text: 'edit this item'
           output_url_as_text: false
           absolute: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 0
       arguments:
         term_node_taxonomy_name_depth:
           id: term_node_taxonomy_name_depth

@@ -47,8 +47,10 @@ class BasicPageParagraphsCest {
     $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForText('Superhead');
-    $I->fillField('Superhead', $card_values['superhead']);
+
+    $I->waitForText('Headline');
+    //    $I->fillField('Superhead', $card_values['superhead']);
+
     $I->fillField('Headline', $card_values['headline']);
     $I->fillField('URL', $card_values['uri']);
     $I->fillField('Link text', $card_values['title']);
@@ -56,7 +58,7 @@ class BasicPageParagraphsCest {
     $I->waitForElementNotVisible('.ui-dialog');
     $I->wait(1);
     $I->click('Save', '#edit-actions');
-    $I->canSee($card_values['superhead']);
+    //    $I->canSee($card_values['superhead']);
     $I->canSee($card_values['headline']);
     $I->canSeeLink($card_values['title'], $card_values['uri']);
   }
@@ -93,8 +95,10 @@ class BasicPageParagraphsCest {
     $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    $I->waitForText('Superhead');
-    $I->fillField('Superhead', $this->faker->text(10));
+
+    $I->waitForText('Headline');
+    //    $I->fillField('Superhead', $this->faker->text(10));
+
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');

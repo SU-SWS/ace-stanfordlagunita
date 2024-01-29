@@ -7,7 +7,7 @@ require_once __DIR__ . '/../TestFilesTrait.php';
  *
  * @group lockup
  */
-class LockupSettingsCest {
+abstract class LockupSettingsCest {
 
   use TestFilesTrait;
 

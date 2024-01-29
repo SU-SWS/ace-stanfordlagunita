@@ -683,7 +683,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 3
+          items_per_page: 21
       style:
         type: graphql
         options:

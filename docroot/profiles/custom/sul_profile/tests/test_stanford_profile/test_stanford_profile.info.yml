@@ -1,6 +1,0 @@
-name: 'Test Stanford Profile'
-type: module
-description: 'Stanford Profile Module.'
-core_version_requirement: ^9 || ^10
-package: Testing
-hidden: true

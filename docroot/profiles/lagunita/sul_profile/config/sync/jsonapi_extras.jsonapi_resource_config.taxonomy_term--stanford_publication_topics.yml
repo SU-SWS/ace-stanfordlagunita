@@ -1,23 +1,16 @@
-uuid: 46ca3da4-8223-4917-8885-94958418c1df
+uuid: 96fa3f55-dab5-49ff-bdfb-efbf856a03c3
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.stanford_publication_topics
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - parent
-    page_limit: 50
 id: taxonomy_term--stanford_publication_topics
 disabled: false
 path: taxonomy_term/stanford_publication_topics
 resourceType: taxonomy_term--stanford_publication_topics
 resourceFields:
   tid:
-    disabled: true
+    disabled: false
     fieldName: tid
     publicName: tid
     enhancer:
@@ -41,7 +34,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: false
+    disabled: true
     fieldName: vid
     publicName: vid
     enhancer:
@@ -166,11 +159,5 @@ resourceFields:
     disabled: true
     fieldName: unpublish_on
     publicName: unpublish_on
-    enhancer:
-      id: ''
-  layout_builder__layout:
-    disabled: true
-    fieldName: layout_builder__layout
-    publicName: layout_builder__layout
     enhancer:
       id: ''

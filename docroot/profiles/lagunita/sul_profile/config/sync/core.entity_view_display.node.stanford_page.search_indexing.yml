@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
     - field.field.node.stanford_page.field_menulink
-    - field.field.node.stanford_page.layout_builder__layout
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
@@ -18,7 +17,6 @@ dependencies:
     - node.type.stanford_page
   module:
     - entity_reference_revisions
-    - layout_paragraphs
     - user
 id: node.stanford_page.search_indexing
 targetEntityType: node
@@ -35,7 +33,7 @@ content:
     weight: 1
     region: content
   su_page_components:
-    type: layout_paragraphs
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
@@ -53,7 +51,6 @@ content:
     region: content
 hidden:
   field_menulink: true
-  layout_builder__layout: true
   layout_selection: true
   links: true
   search_api_excerpt: true

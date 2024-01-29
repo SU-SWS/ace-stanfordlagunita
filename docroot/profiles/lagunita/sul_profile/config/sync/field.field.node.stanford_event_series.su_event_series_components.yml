@@ -5,22 +5,17 @@ dependencies:
   config:
     - field.storage.node.su_event_series_components
     - node.type.stanford_event_series
-    - paragraphs.paragraphs_type.stanford_banner
-    - paragraphs.paragraphs_type.stanford_card
-    - paragraphs.paragraphs_type.stanford_entity
-    - paragraphs.paragraphs_type.stanford_gallery
-    - paragraphs.paragraphs_type.stanford_layout
-    - paragraphs.paragraphs_type.stanford_lists
-    - paragraphs.paragraphs_type.stanford_media_caption
+    - paragraphs.paragraphs_type.stanford_accordion
+    - paragraphs.paragraphs_type.stanford_person_cta
+    - paragraphs.paragraphs_type.stanford_schedule
     - paragraphs.paragraphs_type.stanford_spacer
-    - paragraphs.paragraphs_type.stanford_wysiwyg
   module:
     - entity_reference_revisions
 id: node.stanford_event_series.su_event_series_components
 field_name: su_event_series_components
 entity_type: node
 bundle: stanford_event_series
-label: Paragraphs
+label: Components
 description: 'Add additional content that displays under the body text on the series node page. '
 required: false
 translatable: false
@@ -30,51 +25,43 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      stanford_banner: stanford_banner
-      stanford_card: stanford_card
-      stanford_media_caption: stanford_media_caption
       stanford_spacer: stanford_spacer
-      stanford_wysiwyg: stanford_wysiwyg
-      stanford_entity: stanford_entity
-      stanford_gallery: stanford_gallery
-      stanford_lists: stanford_lists
-      stanford_layout: stanford_layout
-    negate: 0
+      stanford_person_cta: stanford_person_cta
+      stanford_accordion: stanford_accordion
+      stanford_schedule: stanford_schedule
+    negate: 1
     target_bundles_drag_drop:
       stanford_accordion:
         weight: 12
-        enabled: false
+        enabled: true
       stanford_banner:
         weight: 6
-        enabled: true
+        enabled: false
       stanford_card:
         weight: 7
-        enabled: true
+        enabled: false
       stanford_entity:
         weight: 13
-        enabled: true
+        enabled: false
       stanford_gallery:
         weight: 14
-        enabled: true
-      stanford_layout:
-        weight: 18
-        enabled: true
+        enabled: false
       stanford_lists:
         weight: 15
-        enabled: true
+        enabled: false
       stanford_media_caption:
         weight: 8
-        enabled: true
+        enabled: false
       stanford_person_cta:
         weight: 11
-        enabled: false
+        enabled: true
       stanford_schedule:
         weight: 12
-        enabled: false
+        enabled: true
       stanford_spacer:
         weight: 9
         enabled: true
       stanford_wysiwyg:
         weight: 10
-        enabled: true
+        enabled: false
 field_type: entity_reference_revisions

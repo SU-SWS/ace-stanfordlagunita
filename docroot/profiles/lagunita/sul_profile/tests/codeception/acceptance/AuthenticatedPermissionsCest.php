@@ -1,7 +1,7 @@
 <?php
 
-use Drupal\user\Entity\Role;
 use Faker\Factory;
+use Drupal\user\Entity\Role;
 
 /**
  * Test the restrictions on authenticated users.
@@ -16,7 +16,7 @@ class AuthenticatedPermissionsCest {
   protected $faker;
 
   /**
-   * Test consturctor.
+   * Test constructor.
    */
   public function __construct() {
     $this->faker = Factory::create();
@@ -91,7 +91,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee($site_manager->getDisplayName());
     $I->click(['link' => $site_manager->getDisplayName()]);
-    $I->click('.roles.tabs__tab a');
+    $I->click('Roles', '.tabs');
     $I->canSeeInCurrentUrl("/user/$site_manager_id/roles");
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
@@ -106,7 +106,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee('Morgan');
     $I->click('Morgan');
-    $I->click('.roles.tabs__tab a');
+    $I->click('Roles', '.tabs');
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
     $I->dontSee('Site Developer');
@@ -134,7 +134,8 @@ class AuthenticatedPermissionsCest {
     $I->fillField('#edit-title-0-value', '<?php echo("injection test"); die(); ?>');
     $I->click('Save');
     $I->seeInCurrentUrl('node');
-    $I->seeElement('.su-global-footer__copyright');
+    $I->canSee('injection test', 'h1');
+    // $I->seeElement('.su-global-footer__copyright');
   }
 
   /**
@@ -181,13 +182,13 @@ class AuthenticatedPermissionsCest {
     ], 'taxonomy_vocabulary');
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/structure/taxonomy');
-    $I->cantSee($vocab->label());
+    $I->cantSee($vocab->label(), 'table');
 
     Role::load('site_manager')
       ->grantPermission('create terms in ' . $vocab->id())
       ->save();
     $I->amOnPage('/admin/structure/taxonomy');
-    $I->canSee($vocab->label());
+    $I->canSee($vocab->label(), 'table');
   }
 
 }

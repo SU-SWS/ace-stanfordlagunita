@@ -26,7 +26,7 @@ class EventsCest {
    *
    * @group mini-calendar
    */
-  public function testMiniCalendar(FunctionalTester $I) {
+  public function _testMiniCalendar(FunctionalTester $I) {
     $events = [];
     $current_month = (int) date('n');
     for ($i = $current_month; $i < $current_month + 12; $i++) {

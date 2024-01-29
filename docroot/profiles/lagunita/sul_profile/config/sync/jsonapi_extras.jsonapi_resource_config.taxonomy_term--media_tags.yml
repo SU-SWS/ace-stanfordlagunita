@@ -1,23 +1,16 @@
-uuid: bb25eb6e-f11d-496e-a670-782a65d38721
+uuid: 6264f343-c9fc-420c-ba1b-55bd9b8bf301
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.media_tags
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - parent
-    page_limit: 50
 id: taxonomy_term--media_tags
 disabled: false
 path: taxonomy_term/media_tags
 resourceType: taxonomy_term--media_tags
 resourceFields:
   tid:
-    disabled: true
+    disabled: false
     fieldName: tid
     publicName: tid
     enhancer:
@@ -41,7 +34,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: false
+    disabled: true
     fieldName: vid
     publicName: vid
     enhancer:

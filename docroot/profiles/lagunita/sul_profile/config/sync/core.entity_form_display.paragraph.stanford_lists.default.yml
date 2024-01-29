@@ -9,7 +9,8 @@ dependencies:
     - field.field.paragraph.stanford_lists.su_list_view
     - paragraphs.paragraphs_type.stanford_lists
   module:
-    - link
+    - change_labels
+    - link_attributes
     - text
     - viewfield
 id: paragraph.stanford_lists.default
@@ -25,13 +26,24 @@ content:
       display_label: true
     third_party_settings: {  }
   su_list_button:
-    type: link_default
+    type: link_attributes
     weight: 3
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+      enabled_attributes:
+        id: false
+        name: false
+        target: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
   su_list_description:
     type: text_textarea
     weight: 2

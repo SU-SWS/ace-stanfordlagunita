@@ -8,6 +8,8 @@ dependencies:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
+    default_include:
+      - su_list_view
     page_limit: 50
 id: paragraph--stanford_lists
 disabled: false
@@ -96,6 +98,12 @@ resourceFields:
     disabled: true
     fieldName: revision_translation_affected
     publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  metatag:
+    disabled: true
+    fieldName: metatag
+    publicName: metatag
     enhancer:
       id: ''
   su_list_button:

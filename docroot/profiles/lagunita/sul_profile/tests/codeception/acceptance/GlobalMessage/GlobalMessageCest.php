@@ -20,7 +20,7 @@ class GlobalMessageCest {
   /**
    * Test the block exists.
    */
-  public function testBlockExists(AcceptanceTester $I) {
+  protected function testBlockExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/structure/block');
     $I->canSee('Global Messages');
@@ -38,7 +38,7 @@ class GlobalMessageCest {
   /**
    * Test the Form Settings.
    */
-  public function testFormSettings(AcceptanceTester $I) {
+  protected function testFormSettings(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/global-message');
     $I->checkOption('#edit-su-global-msg-enabled-value');

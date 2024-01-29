@@ -303,7 +303,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 3
+          items_per_page: 21
       display_description: ''
       display_extenders: {  }
       graphql_query_name: stanfordSharedTags

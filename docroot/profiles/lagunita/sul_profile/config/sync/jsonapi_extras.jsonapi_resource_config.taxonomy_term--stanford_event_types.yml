@@ -1,23 +1,16 @@
-uuid: c547d2dc-bd35-4fdb-919f-57f596e56a7d
+uuid: 7610ce68-d2fe-4546-ad86-ff11a3056b5a
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.stanford_event_types
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - parent
-    page_limit: 50
 id: taxonomy_term--stanford_event_types
 disabled: false
 path: taxonomy_term/stanford_event_types
 resourceType: taxonomy_term--stanford_event_types
 resourceFields:
   tid:
-    disabled: true
+    disabled: false
     fieldName: tid
     publicName: tid
     enhancer:
@@ -41,7 +34,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: false
+    disabled: true
     fieldName: vid
     publicName: vid
     enhancer:
@@ -166,11 +159,5 @@ resourceFields:
     disabled: true
     fieldName: unpublish_on
     publicName: unpublish_on
-    enhancer:
-      id: ''
-  layout_builder__layout:
-    disabled: true
-    fieldName: layout_builder__layout
-    publicName: layout_builder__layout
     enhancer:
       id: ''

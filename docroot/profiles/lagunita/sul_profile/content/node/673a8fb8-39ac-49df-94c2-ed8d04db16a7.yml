@@ -7,7 +7,7 @@ _meta:
 default:
   revision_uid:
     -
-      entity: d0e13834-0146-4391-a465-51c822000aa7
+      target_id: 1
   status:
     -
       value: true
@@ -29,6 +29,47 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'People | University'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://library/people'
+    -
+      tag: meta
+      attributes:
+        property: 'og:site_name'
+        content: University
+    -
+      tag: meta
+      attributes:
+        property: 'og:type'
+        content: website
+    -
+      tag: meta
+      attributes:
+        property: 'og:url'
+        content: 'http://library/home'
+    -
+      tag: meta
+      attributes:
+        property: 'og:title'
+        content: People
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:title'
+        content: People
   path:
     -
       alias: /people
@@ -51,131 +92,14 @@ default:
       parent: ''
       weight: -45
       expanded: 0
-  layout_builder__layout:
-    -
-      section:
-        layout_id: jumpstart_ui_one_column
-        layout_settings:
-          extra_classes: ''
-          centered: null
-          columns: default
-          context_mapping: {  }
-        components:
-          da20ed40-0f0f-4103-bda1-29d84c24975f:
-            uuid: da20ed40-0f0f-4103-bda1-29d84c24975f
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_page:su_page_banner'
-              label: Banner
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_revisions_entity_view
-                label: hidden
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
-    -
-      section:
-        layout_id: jumpstart_ui_one_column
-        layout_settings:
-          extra_classes: ''
-          centered: centered-container
-          columns: default
-          context_mapping: {  }
-        components:
-          af0809fe-fe61-4e78-be4e-4837cd773c26:
-            uuid: af0809fe-fe61-4e78-be4e-4837cd773c26
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_page:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_title_heading
-                label: hidden
-                settings:
-                  tag: h1
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
-    -
-      section:
-        layout_id: jumpstart_ui_two_column
-        layout_settings:
-          extra_classes: ''
-          centered: centered-container
-          orientation: right
-          context_mapping: {  }
-        components:
-          9ec5b37b-33a4-4aca-b787-7f0584234d1a:
-            uuid: 9ec5b37b-33a4-4aca-b787-7f0584234d1a
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_page:su_page_components'
-              label: Paragraphs
-              label_display: 0
-              provider: layout_builder
-              formatter:
-                label: hidden
-                type: layout_paragraphs
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  empty_fields:
-                    handler: ''
-                  field_formatter_class:
-                    class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            weight: -9
-            additional: {  }
-          c40ac234-fff7-4c9d-8a34-03fb9d335617:
-            uuid: c40ac234-fff7-4c9d-8a34-03fb9d335617
-            region: main
-            configuration:
-              id: jumpstart_ui_skipnav_main_anchor
-              label: 'Main content anchor target'
-              label_display: '0'
-              provider: jumpstart_ui
-              context_mapping: {  }
-            weight: -10
-            additional: {  }
-          69ac2b3d-4ce0-400d-83e4-09a200b89a82:
-            uuid: 69ac2b3d-4ce0-400d-83e4-09a200b89a82
-            region: left
-            configuration:
-              id: 'system_menu_block:stanford-person-type'
-              label: 'Person Types'
-              label_display: visible
-              provider: system
-              level: '1'
-              depth: '0'
-              expand_all_items: 0
-              context_mapping: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
   su_page_components:
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 901576db-04e5-46c2-ab4c-ac64980a578e
-          bundle: stanford_layout
+          uuid: 30160e5e-0aee-432a-8b73-693de0a73f99
+          bundle: layout
           default_langcode: en
         default:
           status:
@@ -183,22 +107,51 @@ default:
               value: true
           created:
             -
-              value: 1694548795
+              value: 1695669243
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: sul_helper_1_column
                   config:
                     label: ''
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
+          metatag:
+            -
+              tag: meta
+              attributes:
+                name: title
+                content: '| University'
+            -
+              tag: link
+              attributes:
+                rel: canonical
+                href: 'http://library/home'
+            -
+              tag: meta
+              attributes:
+                property: 'og:site_name'
+                content: University
+            -
+              tag: meta
+              attributes:
+                property: 'og:type'
+                content: website
+            -
+              tag: meta
+              attributes:
+                property: 'og:url'
+                content: 'http://library/home'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 463b0956-f7e4-47da-83f6-fb9fab53c14f
+          uuid: ac4e8d50-0814-4a8f-9cf6-c23a6141e35a
           bundle: stanford_lists
           default_langcode: en
         default:
@@ -207,14 +160,44 @@ default:
               value: true
           created:
             -
-              value: 1694548801
+              value: 1695669268
           behavior_settings:
             -
               value:
                 list_paragraph: {  }
+                sul_list_styles: {  }
                 layout_paragraphs:
-                  parent_uuid: 901576db-04e5-46c2-ab4c-ac64980a578e
+                  parent_uuid: 30160e5e-0aee-432a-8b73-693de0a73f99
                   region: main
+          revision_translation_affected:
+            -
+              value: true
+          metatag:
+            -
+              tag: meta
+              attributes:
+                name: title
+                content: '| University'
+            -
+              tag: link
+              attributes:
+                rel: canonical
+                href: 'http://library/home'
+            -
+              tag: meta
+              attributes:
+                property: 'og:site_name'
+                content: University
+            -
+              tag: meta
+              attributes:
+                property: 'og:type'
+                content: website
+            -
+              tag: meta
+              attributes:
+                property: 'og:url'
+                content: 'http://library/home'
           su_list_view:
             -
               target_id: stanford_person

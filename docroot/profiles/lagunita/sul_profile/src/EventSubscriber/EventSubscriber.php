@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile\EventSubscriber;
+namespace Drupal\sul_profile\EventSubscriber;
 
 use Acquia\DrupalEnvironmentDetector\AcquiaDrupalEnvironmentDetector;
 use Drupal\Core\Cache\Cache;
@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 /**
  * Class EventSubscriber.
  *
- * @package Drupal\stanford_profile\EventSubscriber
+ * @package Drupal\sul_profile\EventSubscriber
  */
 class EventSubscriber implements EventSubscriberInterface {
 

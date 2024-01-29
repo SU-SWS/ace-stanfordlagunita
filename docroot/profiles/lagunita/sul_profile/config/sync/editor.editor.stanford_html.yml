@@ -13,7 +13,6 @@ settings:
     items:
       - bold
       - italic
-      - strikethrough
       - alignment
       - horizontalLine
       - style
@@ -33,12 +32,9 @@ settings:
       - superscript
       - subscript
       - sourceEditing
-      - removeFormat
       - '|'
       - codeBlock
       - code
-      - undo
-      - redo
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
@@ -104,34 +100,34 @@ settings:
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<b>'
-        - '<cite>'
+        - '<cite lang>'
         - '<dt>'
         - '<pre class>'
         - '<code data-* class>'
         - '<dl class>'
         - '<dd class>'
-        - '<div id class>'
+        - '<div id class lang>'
         - '<i class>'
         - '<aside class>'
         - '<img src alt title class>'
         - '<abbr id title>'
-        - '<span id class>'
+        - '<span id class lang>'
         - '<blockquote cite>'
         - '<ul id type class>'
         - '<ol id type class>'
-        - '<li id class>'
-        - '<h2 id class>'
-        - '<h3 id class>'
-        - '<h4 id class>'
-        - '<h5 id class>'
+        - '<li id class lang>'
+        - '<h2 id class lang>'
+        - '<h3 id class lang>'
+        - '<h4 id class lang>'
+        - '<h5 id class lang>'
         - '<table id class>'
         - '<tbody class>'
         - '<th scope id class>'
         - '<td id class>'
         - '<tr id>'
         - '<drupal-media data-* title>'
-        - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name class>'
-        - '<p id class>'
+        - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name class lang>'
+        - '<p id class lang>'
     ckeditor5_style:
       styles:
         -
@@ -153,20 +149,11 @@ settings:
           label: 'Intro Text'
           element: '<p class="su-intro-text">'
         -
-          label: 'Splash Font'
-          element: '<p class="su-font-splash">'
-        -
           label: 'Quote Text'
           element: '<p class="su-quote-text">'
         -
-          label: 'Drop Cap First Letter'
-          element: '<p class="su-drop-cap">'
-        -
           label: 'Card Text'
           element: '<p class="su-related-text">'
-        -
-          label: 'Callout Text'
-          element: '<p class="su-callout-text">'
         -
           label: 'Sub Title'
           element: '<p class="su-subheading">'

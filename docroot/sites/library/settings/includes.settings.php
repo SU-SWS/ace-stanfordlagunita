@@ -2,7 +2,7 @@
 
 use Acquia\Blt\Robo\Common\EnvironmentDetector;
 
-$settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/custom/sul_profile/config/sync';
+$settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/sul_profile/config/sync';
 
 $next_domain = FALSE;
 if (EnvironmentDetector::isAhDevEnv()) {

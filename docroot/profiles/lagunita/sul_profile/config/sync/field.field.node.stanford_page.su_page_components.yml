@@ -5,15 +5,20 @@ dependencies:
   config:
     - field.storage.node.su_page_components
     - node.type.stanford_page
+    - paragraphs.paragraphs_type.collection
+    - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.stanford_banner
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.stanford_entity
     - paragraphs.paragraphs_type.stanford_gallery
-    - paragraphs.paragraphs_type.stanford_layout
     - paragraphs.paragraphs_type.stanford_lists
     - paragraphs.paragraphs_type.stanford_media_caption
     - paragraphs.paragraphs_type.stanford_spacer
     - paragraphs.paragraphs_type.stanford_wysiwyg
+    - paragraphs.paragraphs_type.sul_button
+    - paragraphs.paragraphs_type.sul_contact_card
+    - paragraphs.paragraphs_type.sul_feat_collection
+    - paragraphs.paragraphs_type.sul_libguide
   module:
     - entity_reference_revisions
 id: node.stanford_page.su_page_components
@@ -23,7 +28,7 @@ bundle: stanford_page
 label: Paragraphs
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -31,50 +36,73 @@ settings:
   handler_settings:
     target_bundles:
       stanford_wysiwyg: stanford_wysiwyg
-      stanford_card: stanford_card
+      layout: layout
       stanford_banner: stanford_banner
+      stanford_card: stanford_card
       stanford_media_caption: stanford_media_caption
-      stanford_entity: stanford_entity
+      sul_contact_card: sul_contact_card
       stanford_gallery: stanford_gallery
-      stanford_layout: stanford_layout
+      collection: collection
+      stanford_entity: stanford_entity
       stanford_lists: stanford_lists
       stanford_spacer: stanford_spacer
+      sul_button: sul_button
+      sul_feat_collection: sul_feat_collection
+      sul_libguide: sul_libguide
     negate: 0
     target_bundles_drag_drop:
-      stanford_accordion:
-        weight: -25
-        enabled: false
-      stanford_banner:
-        weight: -22
-        enabled: true
-      stanford_card:
-        weight: -23
-        enabled: true
-      stanford_entity:
+      collection:
         weight: -20
         enabled: true
-      stanford_gallery:
+      collection_card:
+        weight: -26
+        enabled: false
+      layout:
+        weight: -29
+        enabled: true
+      stanford_accordion:
+        weight: -31
+        enabled: false
+      stanford_banner:
+        weight: -28
+        enabled: true
+      stanford_card:
+        weight: -27
+        enabled: true
+      stanford_entity:
         weight: -19
         enabled: true
-      stanford_layout:
-        weight: -18
-        enabled: true
-      stanford_lists:
-        weight: -17
-        enabled: true
-      stanford_media_caption:
+      stanford_gallery:
         weight: -21
         enabled: true
+      stanford_lists:
+        weight: -18
+        enabled: true
+      stanford_media_caption:
+        weight: -25
+        enabled: true
       stanford_person_cta:
-        weight: -16
+        weight: -24
         enabled: false
       stanford_schedule:
-        weight: -15
+        weight: -23
         enabled: false
       stanford_spacer:
-        weight: -14
+        weight: -17
         enabled: true
       stanford_wysiwyg:
-        weight: -24
+        weight: -30
+        enabled: true
+      sul_button:
+        weight: 32
+        enabled: true
+      sul_contact_card:
+        weight: -22
+        enabled: true
+      sul_feat_collection:
+        weight: 32
+        enabled: true
+      sul_libguide:
+        weight: 36
         enabled: true
 field_type: entity_reference_revisions

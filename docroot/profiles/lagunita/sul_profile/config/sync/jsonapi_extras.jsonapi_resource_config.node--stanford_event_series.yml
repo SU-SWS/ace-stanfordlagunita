@@ -130,7 +130,7 @@ resourceFields:
     enhancer:
       id: ''
   metatag:
-    disabled: true
+    disabled: false
     fieldName: metatag
     publicName: metatag
     enhancer:
@@ -184,15 +184,9 @@ resourceFields:
     enhancer:
       id: ''
   field_menulink:
-    disabled: true
+    disabled: false
     fieldName: field_menulink
     publicName: field_menulink
-    enhancer:
-      id: ''
-  layout_builder__layout:
-    disabled: true
-    fieldName: layout_builder__layout
-    publicName: layout_builder__layout
     enhancer:
       id: ''
   stanford_intranet__access:
@@ -238,7 +232,7 @@ resourceFields:
     enhancer:
       id: ''
   su_metatags:
-    disabled: true
+    disabled: false
     fieldName: su_metatags
     publicName: su_metatags
     enhancer:

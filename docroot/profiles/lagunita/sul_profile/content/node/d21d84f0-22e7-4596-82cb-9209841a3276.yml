@@ -29,11 +29,61 @@ default:
   revision_translation_affected:
     -
       value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'About | University'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://library/about'
+    -
+      tag: meta
+      attributes:
+        property: 'og:site_name'
+        content: University
+    -
+      tag: meta
+      attributes:
+        property: 'og:type'
+        content: website
+    -
+      tag: meta
+      attributes:
+        property: 'og:url'
+        content: 'http://library/home'
+    -
+      tag: meta
+      attributes:
+        property: 'og:title'
+        content: About
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:title'
+        content: About
   path:
     -
       alias: /about
       langcode: en
       pathauto: 1
+  rh_action:
+    -
+      value: bundle_default
+  rh_redirect_response:
+    -
+      value: 301
+  rh_redirect_fallback_action:
+    -
+      value: bundle_default
   field_menulink:
     -
       menu_name: main
@@ -48,8 +98,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: fac2bd00-6cb7-4814-b8cd-ad1fb233f7b4
-          bundle: stanford_layout
+          uuid: 2df546ed-975a-4b33-9344-049a4e21b11a
+          bundle: layout
           default_langcode: en
         default:
           status:
@@ -57,12 +107,12 @@ default:
               value: true
           created:
             -
-              value: 1671144889
+              value: 1664053137
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_paragraphs_1_column
+                  layout: sul_helper_1_column
                   config:
                     label: ''
                   parent_uuid: null
@@ -70,12 +120,38 @@ default:
           revision_translation_affected:
             -
               value: true
+          metatag:
+            -
+              tag: meta
+              attributes:
+                name: title
+                content: '| University'
+            -
+              tag: link
+              attributes:
+                rel: canonical
+                href: 'http://library/home'
+            -
+              tag: meta
+              attributes:
+                property: 'og:site_name'
+                content: University
+            -
+              tag: meta
+              attributes:
+                property: 'og:type'
+                content: website
+            -
+              tag: meta
+              attributes:
+                property: 'og:url'
+                content: 'http://library/home'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: d800e9c3-5a54-4241-983e-87c42f31b557
+          uuid: a4c16be6-de0d-4691-a2b6-baed21beaa06
           bundle: stanford_wysiwyg
           default_langcode: en
         default:
@@ -84,16 +160,42 @@ default:
               value: true
           created:
             -
-              value: 1566947653
+              value: 1664053143
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: fac2bd00-6cb7-4814-b8cd-ad1fb233f7b4
+                  parent_uuid: 2df546ed-975a-4b33-9344-049a4e21b11a
                   region: main
           revision_translation_affected:
             -
               value: true
+          metatag:
+            -
+              tag: meta
+              attributes:
+                name: title
+                content: '| University'
+            -
+              tag: link
+              attributes:
+                rel: canonical
+                href: 'http://library/home'
+            -
+              tag: meta
+              attributes:
+                property: 'og:site_name'
+                content: University
+            -
+              tag: meta
+              attributes:
+                property: 'og:type'
+                content: website
+            -
+              tag: meta
+              attributes:
+                property: 'og:url'
+                content: 'http://library/home'
           su_wysiwyg_text:
             -
               value: "<p>This is your About page. Here you can include your overview, description, history, related partners center or labs, etc.</p>\r\n\r\n<p>Each of those topics can also be on their own pages, but an About page provides an opportunity to describe the essence of a department, and its particular academic profile.</p>\r\n\r\n<p>To edit the page and remove this placeholder content, click on the \"Edit\" tab near the top of the page. When finished, be sure to scroll down to the bottom of the page and click \"Save.\"</p>\r\n\r\n<h2>Sample Content</h2>\r\n\r\n<p>Praesent tincidunt, justo in suscipit semper, quam nunc porttitor lorem, eget hendrerit dolor ligula eu nunc. Fusce id urna ut sapien malesuada aliquam. Quisque dictum enim ac leo ornare a molestie leo sodales. In aliquet dui eget dolor volutpat quis tempor arcu rhoncus. Nulla velit velit, ultricies ut euismod quis, lacinia vel erat. Maecenas sit amet metus ante, tempus pellentesque tellus. Sed molestie facilisis erat, eu sodales sapien placerat ut. Vestibulum a lacus sed massa laoreet tempus eget nec tortor. Vestibulum enim dui, rhoncus eu porta sit amet, molestie vitae turpis. Donec scelerisque risus non urna vulputate semper. Integer massa justo, pellentesque eget ornare id, interdum adipiscing lacus. Sed pretium convallis quam, ut viverra nisl accumsan eu. Duis at elit arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu nisi eget ipsum pulvinar porta sit amet convallis nisi.</p>\r\n\r\n<p>Proin scelerisque varius justo, quis pharetra nulla pellentesque at. Ut pulvinar sollicitudin erat vel gravida. Nam volutpat facilisis augue, id feugiat sapien fringilla a. Nam mollis pretium augue sit amet pharetra. Nam pulvinar porttitor elementum. Nulla pretium felis non erat venenatis commodo in id ligula. Integer ornare, odio sed porta bibendum, sem tortor congue metus, auctor tincidunt sem eros vel augue. Donec ullamcorper, diam nec mollis faucibus, mi metus posuere sem, nec commodo eros dolor sed urna. Etiam nibh massa, sagittis eget tristique at, lobortis lacinia lorem.</p>\r\n\r\n<ul>\r\n\t<li>Duis a tortor non mi tempus commodo sit amet nec sapien.</li>\r\n\t<li>Proin ante odio, tempus id faucibus eget, pharetra mattis mi.</li>\r\n\t<li>Sed et pretium erat.</li>\r\n\t<li>Nam eu arcu adipiscing sapien dapibus faucibus sit amet eu turpis.</li>\r\n\t<li>Suspendisse mollis ullamcorper pulvinar.</li>\r\n\t<li>Vivamus convallis diam urna.</li>\r\n</ul>\r\n"

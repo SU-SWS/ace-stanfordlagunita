@@ -6,6 +6,7 @@ dependencies:
     - core.entity_form_mode.media.media_library
     - field.field.media.image.field_media_image
     - field.field.media.image.su_media_category
+    - field.field.media.image.sul_image_credit
     - image.style.thumbnail
     - media.type.image
   module:
@@ -38,7 +39,7 @@ content:
     third_party_settings: {  }
   su_media_category:
     type: cshs
-    weight: 2
+    weight: 3
     region: content
     settings:
       save_lineage: false
@@ -48,6 +49,14 @@ content:
       hierarchy_depth: 0
       required_depth: 0
       none_label: '- Please select -'
+    third_party_settings: {  }
+  sul_image_credit:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\EventSubscriber;
+namespace Drupal\Tests\sul_profile\Kernel\EventSubscriber;
 
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\consumers\Entity\Consumer;
@@ -12,7 +12,7 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\stanford_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
+use Drupal\sul_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
 use Drupal\user\Entity\Role;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,8 +22,8 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * Class EventSubscriberTest.
  *
- * @group stanford_profile
- * @coversDefaultClass \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+ * @group sul_profile
+ * @coversDefaultClass \Drupal\sul_profile\EventSubscriber\EventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
 
@@ -48,7 +48,7 @@ class EventSubscriberTest extends KernelTestBase {
   /**
    * Event subscriber object.
    *
-   * @var \Drupal\stanford_profile\EventSubscriber\EventSubscriber
+   * @var \Drupal\sul_profile\EventSubscriber\EventSubscriber
    */
   protected $eventSubscriber;
 

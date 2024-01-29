@@ -50,7 +50,7 @@ class ExtLinkCest {
   /**
    * Test external links get the added class and svg.
    */
-  public function testExtLink(FunctionalTester $I) {
+  protected function testExtLink(FunctionalTester $I) {
     $org_term = $I->createEntity([
       'vid' => 'site_owner_orgs',
       'name' => $this->faker->words(2, TRUE),

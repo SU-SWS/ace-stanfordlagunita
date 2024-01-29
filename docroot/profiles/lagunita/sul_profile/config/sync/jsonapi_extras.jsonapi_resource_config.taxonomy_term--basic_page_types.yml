@@ -1,4 +1,4 @@
-uuid: 668c288e-9118-4f49-a6f0-9d56d2de34ee
+uuid: c6a7079b-7c3a-4337-b448-2d1b3ef8cd96
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,6 @@ dependencies:
     - jsonapi_defaults
 third_party_settings:
   jsonapi_defaults:
-    default_include:
-      - parent
     page_limit: 50
 id: taxonomy_term--basic_page_types
 disabled: false
@@ -17,7 +15,7 @@ path: taxonomy_term/basic_page_types
 resourceType: taxonomy_term--basic_page_types
 resourceFields:
   tid:
-    disabled: true
+    disabled: false
     fieldName: tid
     publicName: tid
     enhancer:
@@ -41,7 +39,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: false
+    disabled: true
     fieldName: vid
     publicName: vid
     enhancer:

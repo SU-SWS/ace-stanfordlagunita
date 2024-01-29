@@ -1,23 +1,16 @@
-uuid: acaf1e13-377c-48f5-8519-db2a8216a2ab
+uuid: fd1fd8b1-6972-4f67-9b40-3275da0a2e88
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.event_audience
-  module:
-    - jsonapi_defaults
-third_party_settings:
-  jsonapi_defaults:
-    default_include:
-      - parent
-    page_limit: 50
 id: taxonomy_term--event_audience
 disabled: false
 path: taxonomy_term/event_audience
 resourceType: taxonomy_term--event_audience
 resourceFields:
   tid:
-    disabled: true
+    disabled: false
     fieldName: tid
     publicName: tid
     enhancer:
@@ -41,7 +34,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: false
+    disabled: true
     fieldName: vid
     publicName: vid
     enhancer:
