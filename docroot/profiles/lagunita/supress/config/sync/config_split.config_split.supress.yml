@@ -1,0 +1,44 @@
+uuid: 952d88f5-b71c-4f9d-9596-45d15f6da742
+langcode: en
+status: true
+dependencies: {  }
+id: supress
+label: Press
+description: 'Configuration specific for Press website that overrides stanford_profile'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: profiles/lagunita/supress/config/supress
+module: {  }
+theme: {  }
+complete_list:
+  - 'config_pages.type.sup_*'
+  - 'node.type.sup_*'
+  - 'paragraphs.paragraphs_type.sup_*'
+  - 'taxonomy.vocabulary.sup_*'
+  - 'user.role.sup_*'
+  - 'core.base_field_override.node.sup_*'
+  - 'core.entity_form_display.config_pages.sup_*'
+  - 'core.entity_view_display.config_pages.sup_*'
+  - 'core.entity_form_display.paragraph.sup_*'
+  - 'core.entity_view_display.paragraph.sup_*'
+  - 'core.entity_form_display.node.sup_*'
+  - 'core.entity_view_display.node.sup_*'
+  - 'core.entity_form_display.taxonomy_term.sup_*'
+  - 'core.entity_view_display.taxonomy_term.sup_*'
+  - 'field.field.config_pages.sup_*'
+  - 'field.field.node.sup_*'
+  - 'field.field.paragraph.sup_*'
+  - 'field.field.taxonomy_term.sup_*'
+  - 'field.storage.config_pages.sup_*'
+  - 'field.storage.node.sup_*'
+  - 'field.storage.paragraph.sup_*'
+  - 'field.storage.taxonomy_term.sup_*'
+  - 'views.view.sup_*'
+  - 'migrate_plus.migration_group.sup_*'
+  - 'migrate_plus.migration.sup_*'
+  - 'pathauto.pattern.sup_*'
+partial_list:
+  - '*su_*'
+  - '*stanford_*'
