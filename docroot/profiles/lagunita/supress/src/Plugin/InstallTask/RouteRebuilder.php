@@ -1,17 +1,17 @@
 <?php
 
-namespace Drupal\stanford_profile\Plugin\InstallTask;
+namespace Drupal\supress\Plugin\InstallTask;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
-use Drupal\stanford_profile\InstallTaskBase;
+use Drupal\supress\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Rebuilds the routes.
  *
  * @InstallTask(
- *   id="stanford_profile_route_rebuilder"
+ *   id="supress_route_rebuilder"
  * )
  */
 class RouteRebuilder extends InstallTaskBase implements ContainerFactoryPluginInterface {

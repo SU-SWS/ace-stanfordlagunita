@@ -1,16 +1,16 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\supress\Kernel\Plugin\InstallTask;
 
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\stanford_profile\Plugin\InstallTask\Users;
+use Drupal\supress\Plugin\InstallTask\Users;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 
 /**
  * Class UsersTest.
  *
- * @coversDefaultClass \Drupal\stanford_profile\Plugin\InstallTask\Users
+ * @coversDefaultClass \Drupal\supress\Plugin\InstallTask\Users
  */
 class UsersTest extends KernelTestBase {
 

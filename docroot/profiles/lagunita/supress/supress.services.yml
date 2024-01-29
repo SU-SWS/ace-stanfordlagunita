@@ -1,0 +1,14 @@
+services:
+  plugin.manager.install_tasks:
+    class: Drupal\supress\InstallTaskManager
+    parent: default_plugin_manager
+  supress.event_subscriber:
+    class: '\Drupal\supress\EventSubscriber\EventSubscriber'
+    arguments: ['@file_system', '@logger.factory', '@messenger']
+    tags:
+      - { name: 'event_subscriber' }
+  supress.config_overrider:
+    class: Drupal\supress\Config\ConfigOverrides
+    arguments: ['@state', '@config.factory']
+    tags:
+      - {name: config.factory.override, priority: -5}

@@ -91,7 +91,7 @@ jobs:
             2.x-${{ hashFiles('composer.json') }}-
             2.x-
       - run: git config --system --add safe.directory '*'
-      - name: Run tests
+      - name: Install Site
         run: |
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
@@ -102,7 +102,8 @@ jobs:
           blt blt:telemetry:disable --no-interaction
           blt drupal:install --site=library -n
           drush xmlsitemap:rebuild
-          blt codeception --suite=acceptance
+      - name: Run tests
+        run: blt codeception --test=sul_profile --suite=acceptance
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
@@ -168,10 +169,133 @@ jobs:
           drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
           drush xmlsitemap:rebuild
           drush cr
-      - name: Run tests
-        run: |
           mkdir -p artifacts/_data/
-          blt codeception --suite=functional
+      - name: Run tests
+        run: blt codeception --test=sul_profile --suite=functional
+      - name: Save Test Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: functional-tests-results
+          path: artifacts
+  supress_acceptance:
+    name: Press Codeception Acceptance Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
+      - run: git config --system --add safe.directory '*'
+      - name: Install Site
+        run: |
+          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
+          rm -rf /var/www/html
+          ln -snf $GITHUB_WORKSPACE /var/www/html
+          apachectl stop
+          apachectl start
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          blt drupal:install --site=supress -n
+          drush xmlsitemap:rebuild
+      - name: Run tests
+        run: blt codeception --test=supress --suite=acceptance
+      - name: Save Test Results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: acceptance-tests-results
+          path: artifacts
+  supress_functional:
+    name: Press Codeception Functional Tests
+    runs-on: ubuntu-latest
+    env:
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USERNAME: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+      DRUPAL_DATABASE_HOST: mysql
+    container:
+      image: pookmish/drupal8ci:latest
+      options: '--network-alias drupal8ci'
+    services:
+      selenium:
+        image: selenium/standalone-chrome:115.0
+        options: '--shm-size="2g"'
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+            docroot/modules/custom
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
+      - run: git config --system --add safe.directory '*'
+      - name: Install Site
+        run: |
+          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
+          rm -rf /var/www/html
+          ln -snf $GITHUB_WORKSPACE /var/www/html
+          apachectl stop
+          apachectl start
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
+          mkdir -p docroot/sites/default/files
+          chmod -R 777 docroot/sites/default/files/
+          rm -rf docroot/sites/library/files
+          ln -sL ../default/files/ docroot/sites/supress/files
+          blt drupal:install --site=supress -n
+          drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
+          drush xmlsitemap:rebuild
+          drush cr
+          mkdir -p artifacts/_data/
+      - name: Run tests
+        run: blt codeception --test=supress --suite=functional
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: always()
