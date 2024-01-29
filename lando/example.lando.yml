@@ -7,6 +7,7 @@ config:
 proxy:
   appserver:
     - lagunita.lndo.site
+    - supress.lndo.site
   adminer:
     - adminer.lagunita.lndo.site
 services:
