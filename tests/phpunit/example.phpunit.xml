@@ -8,11 +8,11 @@
   <coverage includeUncoveredFiles="true">
     <include>
       <directory>../modules/custom</directory>
-      <directory>../profiles/custom</directory>
+      <directory>../profiles/lagunita</directory>
     </include>
     <exclude>
       <directory suffix=".post_update.php">../modules/custom/*</directory>
-      <directory suffix=".post_update.php">../profiles/lagunita/*</directory>
+      <directory suffix=".post_update.php">../profiles/*</directory>
       <directory>../modules/custom/*/tests</directory>
       <directory>../modules/custom/*/modules/*/tests</directory>
       <directory>../profiles/lagunita/*/tests</directory>
