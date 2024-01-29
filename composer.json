@@ -182,8 +182,11 @@
             "cp lando/example.php.ini lando/php.ini",
             "blt blt:init:settings"
         ],
-        "pull-profile": [
+        "pull-sul": [
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x"
+        ],
+        "pull-press": [
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x"
         ]
     },
     "autoload": {
