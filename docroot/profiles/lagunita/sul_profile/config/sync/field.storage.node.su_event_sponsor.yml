@@ -1,0 +1,21 @@
+uuid: 7d798179-21d0-414e-ad8e-a1581cc3ffa8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.su_event_sponsor
+field_name: su_event_sponsor
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
