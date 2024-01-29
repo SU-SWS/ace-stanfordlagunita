@@ -40,12 +40,12 @@ tests:
       suites:
         - acceptance
         - functional
-      directory: '${docroot}/profiles/custom/sul_profile/tests/codeception'
+      directory: '${docroot}/profiles/lagunita/sul_profile/tests/codeception'
     supress:
       suites:
         - acceptance
         - functional
-      directory: '${docroot}/profiles/custom/supress/tests/codeception'
+      directory: '${docroot}/profiles/lagunita/supress/tests/codeception'
 validate:
   twig:
     functions:
