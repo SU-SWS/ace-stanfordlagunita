@@ -3,7 +3,9 @@ project:
   human_name: supress
   local:
     protocol: http
-    hostname: local.supress.com
+    hostname: supress.loc
+  profile:
+    name: supress
 drush:
   aliases:
     local: supress.local

@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\stanford_profile;
+namespace Drupal\supress;
 
 /**
  * Install task plugin interface.
  *
- * @package Drupal\stanford_profile
+ * @package Drupal\supress
  */
 interface InstallTaskInterface {
 

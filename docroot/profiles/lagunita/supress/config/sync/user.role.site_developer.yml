@@ -79,7 +79,7 @@ dependencies:
     - shortcut
     - stanford_media
     - stanford_policy
-    - stanford_profile
+    - supress
     - stanford_publication
     - system
     - taxonomy

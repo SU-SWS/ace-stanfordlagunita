@@ -1,14 +1,14 @@
 services:
   plugin.manager.install_tasks:
-    class: Drupal\stanford_profile\InstallTaskManager
+    class: Drupal\supress\InstallTaskManager
     parent: default_plugin_manager
-  stanford_profile.event_subscriber:
-    class: '\Drupal\stanford_profile\EventSubscriber\EventSubscriber'
+  supress.event_subscriber:
+    class: '\Drupal\supress\EventSubscriber\EventSubscriber'
     arguments: ['@file_system', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }
-  stanford_profile.config_overrider:
-    class: Drupal\stanford_profile\Config\ConfigOverrides
+  supress.config_overrider:
+    class: Drupal\supress\Config\ConfigOverrides
     arguments: ['@state', '@config.factory']
     tags:
       - {name: config.factory.override, priority: -5}

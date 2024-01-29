@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile;
+namespace Drupal\supress;
 
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -8,7 +8,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 /**
  * Base class for install task plugins.
  *
- * @package Drupal\stanford_profile
+ * @package Drupal\supress
  */
 abstract class InstallTaskBase extends PluginBase implements InstallTaskInterface {
 

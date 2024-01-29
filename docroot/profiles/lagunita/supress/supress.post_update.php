@@ -2,7 +2,7 @@
 
 /**
  * @file
- * stanford_profile.install
+ * supress.install
  */
 
 use Drupal\block_content\Entity\BlockContent;
@@ -12,27 +12,27 @@ use Drupal\Core\Serialization\Yaml;
 /**
  * Implements hook_removed_post_updates().
  */
-function stanford_profile_removed_post_updates() {
+function supress_removed_post_updates() {
   return [
-    'stanford_profile_post_update_8001' => '8.x-1.13',
-    'stanford_profile_post_update_8003' => '8.x-1.13',
-    'stanford_profile_post_update_8013' => '8.x-1.13',
-    'stanford_profile_post_update_8014' => '8.x-2.9',
-    'stanford_profile_post_update_8015' => '8.x-2.9',
+    'supress_post_update_8001' => '8.x-1.13',
+    'supress_post_update_8003' => '8.x-1.13',
+    'supress_post_update_8013' => '8.x-1.13',
+    'supress_post_update_8014' => '8.x-2.9',
+    'supress_post_update_8015' => '8.x-2.9',
   ];
 }
 
 /**
  * Disable the core search module.
  */
-function stanford_profile_post_update_8200() {
+function supress_post_update_8200() {
   \Drupal::service('module_installer')->uninstall(['search']);
 }
 
 /**
  * Create the courses intro block content.
  */
-function stanford_profile_post_update_8201() {
+function supress_post_update_8201() {
   BlockContent::create([
     'uuid' => '2f343c04-f892-49bb-8d28-2c3f4653b02a',
     'type' => 'stanford_component_block',
@@ -43,7 +43,7 @@ function stanford_profile_post_update_8201() {
 /**
  * Add the main anchor block to the search page.
  */
-function stanford_profile_post_update_8202() {
+function supress_post_update_8202() {
   $theme_name = \Drupal::config('system.theme')->get('default');
   if (!in_array($theme_name, [
     'stanford_basic',
@@ -74,7 +74,7 @@ function stanford_profile_post_update_8202() {
 /**
  * Update field storage definitions.
  */
-function stanford_profile_post_update_update_field_defs() {
+function supress_post_update_update_field_defs() {
   $um = \Drupal::entityDefinitionUpdateManager();
   foreach ($um->getChangeList() as $entity_type => $changes) {
     if (isset($changes['field_storage_definitions'])) {
@@ -88,7 +88,7 @@ function stanford_profile_post_update_update_field_defs() {
 /**
  * Enable samlauth.
  */
-function stanford_profile_post_update_samlauth() {
+function supress_post_update_samlauth() {
   if (\Drupal::moduleHandler()->moduleExists('stanford_samlauth')) {
     return;
   }
@@ -103,7 +103,7 @@ function stanford_profile_post_update_samlauth() {
 /**
  * Create site org vocab and terms.
  */
-function stanford_profile_post_update_site_orgs() {
+function supress_post_update_site_orgs() {
   $vocab_storage = \Drupal::entityTypeManager()
     ->getStorage('taxonomy_vocabulary');
   if (!$vocab_storage->load('site_owner_orgs')) {

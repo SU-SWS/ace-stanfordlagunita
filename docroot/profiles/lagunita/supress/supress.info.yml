@@ -1,9 +1,9 @@
-name: 'Stanford Profile'
-description: 'Jumpstart Website Profile'
-version: 11.1.0
+name: 'Press Profile'
+description: 'Stanford Press Website Profile'
+version: 1.0.0
 type: profile
 project: Stanford
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10
 install:
   - 'address:address'
   - 'admin_toolbar:admin_toolbar'

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile;
+namespace Drupal\supress;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -10,7 +10,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 /**
  * Install task plugin manager.
  *
- * @package Drupal\stanford_profile
+ * @package Drupal\supress
  * @codeCoverageIgnore
  *   We can't test a service in profile due to some limitations of the Kernel.
  */
@@ -41,8 +41,8 @@ class InstallTaskManager extends DefaultPluginManager {
       'Plugin/InstallTask',
       $namespaces,
       $module_handler,
-      'Drupal\stanford_profile\InstallTaskInterface',
-      'Drupal\stanford_profile\Annotation\InstallTask'
+      'Drupal\supress\InstallTaskInterface',
+      'Drupal\supress\Annotation\InstallTask'
     );
     $this->alterInfo('install_task_plugins');
     $this->setCacheBackend($cache_backend, 'install_task_plugins');
@@ -91,7 +91,7 @@ class InstallTaskManager extends DefaultPluginManager {
     }
 
     if (!in_array($task_definition['id'], $this->completedTasks)) {
-      /** @var \Drupal\stanford_profile\InstallTaskInterface $plugin */
+      /** @var \Drupal\supress\InstallTaskInterface $plugin */
       $plugin = $this->createInstance($task_definition['id']);
       $plugin->runTask($install_state);
       $this->completedTasks[] = $task_definition['id'];
