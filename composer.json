@@ -78,7 +78,8 @@
     "extra": {
         "merge-plugin": {
             "require": [
-                "docroot/profiles/lagunita/sul_profile/composer.json"
+                "docroot/profiles/lagunita/sul_profile/composer.json",
+                "docroot/profiles/lagunita/supress/composer.json"
             ],
             "merge-extra": true
         },
