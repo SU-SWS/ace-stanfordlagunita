@@ -1,0 +1,49 @@
+uuid: e7a5cb3e-4450-4b05-be72-5f30e318bc17
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_saml
+    - field.field.config_pages.stanford_saml.su_simplesaml_affil
+    - field.field.config_pages.stanford_saml.su_simplesaml_allowed
+    - field.field.config_pages.stanford_saml.su_simplesaml_roles
+    - field.field.config_pages.stanford_saml.su_simplesaml_users
+  module:
+    - options
+id: config_pages.stanford_saml.default
+targetEntityType: config_pages
+bundle: stanford_saml
+mode: default
+content:
+  su_simplesaml_affil:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  su_simplesaml_allowed:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  su_simplesaml_roles:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  su_simplesaml_users:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

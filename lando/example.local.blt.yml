@@ -2,15 +2,15 @@
 project:
   local:
     protocol: https
-    hostname: lagunita.lndo.site
-    uri: https://lagunita.lndo.site
+    hostname: sulgryphon.lndo.site
+    uri: https://sulgryphon.lndo.site
   profile:
     name: sul_profile
 drupal:
   db:
     username: drupal
     password: drupal
-    host: database
+    host: sulgryphon
     database: drupal
     port: 3306
 tests:

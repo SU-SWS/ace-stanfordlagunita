@@ -1,0 +1,20 @@
+uuid: be5008e3-27bc-4fb9-9e78-2ab7c6d229cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sup_book
+  module:
+    - user
+id: node.sup_book.default
+targetEntityType: node
+bundle: sup_book
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

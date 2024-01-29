@@ -1,0 +1,14 @@
+uuid: 1a74520a-6a07-477d-b5b4-6aedef552eb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sup_book
+id: node_type_sup_book
+entity_type_id: node_type
+entity_id: sup_book
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

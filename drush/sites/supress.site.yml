@@ -1,0 +1,36 @@
+local:
+  uri: supress.sites-pro.stanford.edu
+  root: '${env.cwd}/docroot'
+dev:
+  root: /var/www/html/stanfordlagunita.dev/docroot
+  ac-site: stanfordlagunita
+  ac-env: dev
+  ac-realm: prod
+  uri: supress.sites-pro.stanford.edu
+  dev.livedev:
+    parent: '@stanfordlagunita.dev'
+    root: /mnt/gfs/stanfordlagunita.dev/livedev/docroot
+  host: stanfordlagunitadev.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.dev
+test:
+  root: /var/www/html/stanfordlagunita.test/docroot
+  ac-site: stanfordlagunita
+  ac-env: test
+  ac-realm: prod
+  uri: supress.sites-pro.stanford.edu
+  test.livedev:
+    parent: '@stanfordlagunita.test'
+    root: /mnt/gfs/stanfordlagunita.test/livedev/docroot
+  host: stanfordlagunitastg.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.test
+prod:
+  root: /var/www/html/stanfordlagunita.prod/docroot
+  ac-site: stanfordlagunita
+  ac-env: prod
+  ac-realm: prod
+  uri: supress.sites-pro.stanford.edu
+  prod.livedev:
+    parent: '@stanfordlagunita.prod'
+    root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
+  host: stanfordlagunita.ssh.prod.acquia-sites.com
+  user: stanfordlagunita.prod

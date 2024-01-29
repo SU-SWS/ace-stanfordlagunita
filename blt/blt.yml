@@ -23,6 +23,7 @@ cm:
 multisites:
   - default
   - library
+  - supress
 tests:
   reports:
     localDir: '${repo.root}/artifacts'
@@ -39,7 +40,12 @@ tests:
       suites:
         - acceptance
         - functional
-      directory: '${docroot}/profiles/custom/sul_profile/tests/codeception'
+      directory: '${docroot}/profiles/lagunita/sul_profile/tests/codeception'
+    supress:
+      suites:
+        - acceptance
+        - functional
+      directory: '${docroot}/profiles/lagunita/supress/tests/codeception'
 validate:
   twig:
     functions:

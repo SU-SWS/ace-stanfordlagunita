@@ -1,5 +1,5 @@
-name: lagunita
-recipe: drupal9
+name: sulgryphon
+recipe: drupal10
 config:
   webroot: docroot
   php: '8.2'
@@ -44,6 +44,17 @@ services:
       image: dehy/adminer
       command: /bin/s6-svscan /etc/services.d
     portforward: true
+  cardinalservice:
+    type: mysql:5.7
+    creds:
+      user: drupal
+      password: drupal
+      database: sulgryphon
+  #  gryphon:
+  #    creds:
+  #      user: drupal
+  #      password: drupal
+  #      database: gryphon
   # Uncomment the below for behat testing.
   chromedriver:
     type: lando

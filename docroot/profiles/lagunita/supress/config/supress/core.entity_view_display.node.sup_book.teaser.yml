@@ -1,0 +1,21 @@
+uuid: d8f57468-6fff-4460-bdbd-b1268a9a35a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.sup_book
+  module:
+    - user
+id: node.sup_book.teaser
+targetEntityType: node
+bundle: sup_book
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

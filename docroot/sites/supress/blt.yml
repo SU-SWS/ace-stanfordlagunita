@@ -1,0 +1,14 @@
+project:
+  machine_name: supress
+  human_name: supress
+  local:
+    protocol: http
+    hostname: supress.loc
+  profile:
+    name: supress
+drush:
+  aliases:
+    local: supress.local
+    remote: supress.prod
+drupal:
+  db: {  }
