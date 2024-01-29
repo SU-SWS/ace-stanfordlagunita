@@ -1,0 +1,143 @@
+uuid: 390ac3f2-8544-44f4-98cc-147a1f7318ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.citation.su_book.su_author
+    - field.field.citation.su_book.su_doi
+    - field.field.citation.su_book.su_edition
+    - field.field.citation.su_book.su_page
+    - field.field.citation.su_book.su_publisher
+    - field.field.citation.su_book.su_publisher_place
+    - field.field.citation.su_book.su_subtitle
+    - field.field.citation.su_book.su_url
+    - field.field.citation.su_book.su_year
+    - stanford_publication.citation_type.su_book
+  module:
+    - field_group
+    - link
+    - name
+third_party_settings:
+  field_group:
+    group_external_link:
+      children:
+        - su_url
+      label: 'External Link'
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: ''
+        required_fields: false
+id: citation.su_book.default
+targetEntityType: citation
+bundle: su_book
+mode: default
+content:
+  su_author:
+    type: name_default
+    weight: 0
+    region: content
+    settings:
+      override_field_settings: false
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+    third_party_settings: {  }
+  su_doi:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_edition:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  su_page:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_publisher:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_publisher_place:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_subtitle:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_url:
+    type: link_default
+    weight: 10
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  su_year:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Leave this field empty to use the same title as the page title.'
+    third_party_settings: {  }
+hidden:
+  name: true

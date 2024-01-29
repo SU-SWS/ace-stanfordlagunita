@@ -1,0 +1,107 @@
+uuid: b574051a-b0cc-4c7e-9add-0e05ae3f1900
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.citation.su_thesis.su_author
+    - field.field.citation.su_thesis.su_day
+    - field.field.citation.su_thesis.su_doi
+    - field.field.citation.su_thesis.su_genre
+    - field.field.citation.su_thesis.su_month
+    - field.field.citation.su_thesis.su_publisher
+    - field.field.citation.su_thesis.su_url
+    - field.field.citation.su_thesis.su_year
+    - stanford_publication.citation_type.su_thesis
+  module:
+    - ds
+    - field_formatter_class
+    - name
+id: citation.su_thesis.default
+targetEntityType: citation
+bundle: su_thesis
+mode: default
+content:
+  su_author:
+    type: name_default
+    label: above
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings:
+      field_formatter_class:
+        class: su-margin-bottom-2
+      ds:
+        ds_limit: ''
+    weight: 0
+    region: content
+  su_day:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings:
+      field_formatter_class:
+        class: su-margin-bottom-2
+    weight: 3
+    region: content
+  su_doi:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: su-margin-bottom-2
+    weight: 6
+    region: content
+  su_genre:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  su_month:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings:
+      field_formatter_class:
+        class: su-margin-bottom-2
+    weight: 1
+    region: content
+  su_publisher:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: su-margin-bottom-2
+    weight: 2
+    region: content
+  su_year:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings:
+      field_formatter_class:
+        class: su-margin-bottom-2
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true
+  su_url: true
+  title: true
