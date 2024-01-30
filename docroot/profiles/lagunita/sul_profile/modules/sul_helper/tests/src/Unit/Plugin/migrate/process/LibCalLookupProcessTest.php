@@ -11,6 +11,7 @@ use Drupal\sul_helper\Plugin\migrate\process\LibCalLookupProcess;
 use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Stream;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -56,7 +57,7 @@ class LibCalLookupProcessTest extends UnitTestCase {
    */
   public function guzzleRequest($method, $url, $options) {
     if ($this->throwGuzzleError) {
-      throw new ClientException('test', $this->createMock(RequestInterface::class));
+      throw new ClientException('test', $this->createMock(RequestInterface::class), $this->createMock(ResponseInterface::class));
     }
 
     $body = [
@@ -69,8 +70,13 @@ class LibCalLookupProcessTest extends UnitTestCase {
       $body['access_token'] = 'foobar';
     }
 
+    $resource = fopen('php://memory','r+');
+    fwrite($resource, json_encode($body));
+    rewind($resource);
+    $body = new Stream($resource);
+
     $response = $this->createMock(ResponseInterface::class);
-    $response->method('getBody')->willReturn(json_encode($body));
+    $response->method('getBody')->willReturn($body);
 
     return $response;
   }
