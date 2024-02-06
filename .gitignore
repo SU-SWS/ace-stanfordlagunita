@@ -166,3 +166,6 @@ drush/sites/.checksums
 
 #ignore ddev settings
 docroot/sites/**/settings/settings.ddev.php
+
+# ignore any notes txt documents
+notes.txt
