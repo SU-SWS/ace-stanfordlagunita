@@ -96,6 +96,10 @@ jobs:
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
+          mkdir -p docroot/sites/default/files
+          chmod -R 777 docroot/sites/default/files/
+          rm -rf docroot/sites/library/files
+          ln -sL ../default/files/ docroot/sites/library/files
           apachectl stop
           apachectl start
           composer install -n
@@ -157,14 +161,14 @@ jobs:
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
-          apachectl stop
-          apachectl start
-          composer install -n
-          blt blt:telemetry:disable --no-interaction
           mkdir -p docroot/sites/default/files
           chmod -R 777 docroot/sites/default/files/
           rm -rf docroot/sites/library/files
           ln -sL ../default/files/ docroot/sites/library/files
+          apachectl stop
+          apachectl start
+          composer install -n
+          blt blt:telemetry:disable --no-interaction
           blt drupal:install --site=library -n
           drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
           drush xmlsitemap:rebuild
@@ -220,6 +224,10 @@ jobs:
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
+          mkdir -p docroot/sites/default/files
+          chmod -R 777 docroot/sites/default/files/
+          rm -rf docroot/sites/supress/files
+          ln -sL ../default/files/ docroot/sites/supress/files
           apachectl stop
           apachectl start
           composer install -n
@@ -281,14 +289,14 @@ jobs:
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
           rm -rf /var/www/html
           ln -snf $GITHUB_WORKSPACE /var/www/html
+          mkdir -p docroot/sites/default/files
+          chmod -R 777 docroot/sites/default/files/
+          rm -rf docroot/sites/supress/files
+          ln -sL ../default/files/ docroot/sites/supress/files
           apachectl stop
           apachectl start
           composer install -n
           blt blt:telemetry:disable --no-interaction
-          mkdir -p docroot/sites/default/files
-          chmod -R 777 docroot/sites/default/files/
-          rm -rf docroot/sites/library/files
-          ln -sL ../default/files/ docroot/sites/supress/files
           blt drupal:install --site=supress -n
           drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
           drush xmlsitemap:rebuild
