@@ -405,5 +405,6 @@ hidden:
   path: true
   promote: true
   sticky: true
+  su_event_ext_image: true
   uid: true
   url_redirects: true

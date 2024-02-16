@@ -64,6 +64,7 @@ module:
   field_event_dispatcher: 0
   field_formatter_class: 0
   field_group: 0
+  field_label: 0
   field_permissions: 0
   field_ui: 0
   field_validation: 0
@@ -90,6 +91,7 @@ module:
   hook_event_dispatcher: 0
   image: 0
   image_effects: 0
+  imagecache_external: 0
   imagemagick: 0
   inline_entity_form: 0
   inline_form_errors: 0
