@@ -17119,16 +17119,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.x-dev",
+            "version": "9.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "8fb5788ee9166ce80a8c429232f1d80a639a669d"
+                "reference": "f2d957a45fb234f64b695343a294dab91b9a165c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/8fb5788ee9166ce80a8c429232f1d80a639a669d",
-                "reference": "8fb5788ee9166ce80a8c429232f1d80a639a669d",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/f2d957a45fb234f64b695343a294dab91b9a165c",
+                "reference": "f2d957a45fb234f64b695343a294dab91b9a165c",
                 "shasum": ""
             },
             "require": {
@@ -17185,7 +17185,6 @@
                 "su-sws/stanford_media": ">=9.0 || >=10.0",
                 "su-sws/stanford_migrate": ">=8.4"
             },
-            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -17215,9 +17214,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.5.1"
             },
-            "time": "2024-02-16T15:49:47+00:00"
+            "time": "2024-02-15T20:52:50+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -27556,8 +27555,7 @@
         "drupal/viewfield": 10,
         "drupal/views_block_filter_block": 10,
         "drupal/webp": 10,
-        "onlyextart/colorbox": 20,
-        "su-sws/stanford_profile_helper": 20
+        "onlyextart/colorbox": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
