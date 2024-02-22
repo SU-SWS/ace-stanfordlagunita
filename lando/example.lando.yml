@@ -1,4 +1,4 @@
-name: sulgryphon
+name: lagunita
 recipe: drupal10
 config:
   webroot: docroot
