@@ -6,8 +6,8 @@ config:
   xdebug: false
 proxy:
   appserver:
-    - lagunita.lndo.site
     - supress.lndo.site
+    - library.lndo.site
   adminer:
     - adminer.lagunita.lndo.site
 services:
@@ -30,33 +30,28 @@ services:
             {
               "extensions" : {
                 "Behat\\MinkExtension" : {
-                  "base_url" : "http://lagunita.lndo.site/"
+                  "base_url" : "http://supress.lndo.site/"
                 }
               }
             }
-  database:
+  database_press:
+    type: mysql:5.7
     creds:
       user: drupal
       password: drupal
-      database: drupal
+      database: supress
+  database_library:
+    type: mysql:5.7
+    creds:
+      user: drupal
+      password: drupal
+      database: sulgryphon
   adminer:
     type: compose
     services:
       image: dehy/adminer
       command: /bin/s6-svscan /etc/services.d
     portforward: true
-  cardinalservice:
-    type: mysql:5.7
-    creds:
-      user: drupal
-      password: drupal
-      database: sulgryphon
-  #  gryphon:
-  #    creds:
-  #      user: drupal
-  #      password: drupal
-  #      database: gryphon
-  # Uncomment the below for behat testing.
   chromedriver:
     type: lando
     api: 3
