@@ -179,9 +179,7 @@
         "init-stack": [
             "vendor/bin/blt blt:telemetry:disable --no-interaction",
             "vendor/bin/blt blt:init:settings",
-            "vendor/bin/blt sws:keys",
-            "vendor/bin/blt drupal:install -n --site=library",
-            "vendor/bin/blt drupal:install -n --site=supress"
+            "vendor/bin/blt sws:keys"
         ],
         "pull-sul": [
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x"
