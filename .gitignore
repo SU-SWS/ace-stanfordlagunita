@@ -164,8 +164,11 @@ drush/sites/.checksums
 # Deprecation detector rules
 .rules
 
-#ignore ddev settings
+# ignore ddev settings
 docroot/sites/**/settings/settings.ddev.php
 
 # ignore any notes txt documents
 notes.txt
+
+# ignore the NextJS frontend directories
+frontend-*
