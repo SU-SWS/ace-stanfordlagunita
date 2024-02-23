@@ -59,6 +59,7 @@ index 0000000..7f1e292
 +{%- endif %}
 diff --git a/modules/ui_patterns_views/ui_patterns_views.module b/modules/ui_patterns_views/ui_patterns_views.module
 index 5b54c2b..00b8871 100644
+index 5b54c2b..00b8871 100644
 --- a/modules/ui_patterns_views/ui_patterns_views.module
 +++ b/modules/ui_patterns_views/ui_patterns_views.module
 @@ -6,6 +6,9 @@
