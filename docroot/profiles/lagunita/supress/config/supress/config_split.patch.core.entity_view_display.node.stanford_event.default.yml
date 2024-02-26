@@ -9,6 +9,4 @@ adding:
             - 'menu_block:stanford-person-type'
             - 'menu_block:stanford-publication-topics'
             - 'menu_block:news-topics'
-removing:
-  hidden:
-    su_event_ext_image: true
+removing: {  }
