@@ -102,10 +102,12 @@ entity_config:
     sul_library:
       enabled: true
       query_load_enabled: true
+      edges_enabled: true
       routes_enabled: true
     sul_study_place:
       enabled: true
       query_load_enabled: true
+      edges_enabled: true
   paragraph:
     collection:
       enabled: true
