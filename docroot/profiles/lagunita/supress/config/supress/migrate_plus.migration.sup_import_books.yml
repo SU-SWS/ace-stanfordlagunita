@@ -14,7 +14,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: json
   urls: 'https://supress-test.sites-pro.stanford.edu/sites/supress/files/filemaker.json'
-  item_selector: /data/fieldData
+  item_selector: response/data
   fields:
     -
       name: abstract
@@ -468,6 +468,7 @@ source:
     work_id_number:
       type: integer
 process:
+  title: title
   sup_author_1_first_name: author_1_first_name
   sup_author_1_following: author_1_following
   sup_author_1_last_name: author_1_last_name
@@ -503,7 +504,22 @@ process:
   sup_copublisher_name: copublisher_name
   sup_copublisher_yn: copublisher_yn
   sup_copyright: copyright
-  sup_description: description
+  sup_description/value:
+    -
+      plugin: str_replace
+      source: description
+      search:
+        - '<I>'
+        - '</I>'
+        - '\r'
+      replace:
+        - '<em>'
+        - '</em>'
+        - '<br />'
+  sup_description/format:
+    -
+      plugin: default_value
+      default_value: stanford_html
   sup_digital_comp_link: digital_comp_link
   sup_html_page_title: html_page_title
   sup_illustrations: illustrations
@@ -529,7 +545,22 @@ process:
   sup_pub_date_first: pub_date_first
   sup_pub_date_paper: pub_date_paper
   sup_pub_year_first: pub_year_first
-  sup_reviews: reviews
+  sup_reviews/value:
+    -
+      plugin: str_replace
+      source: reviews
+      search:
+        - '<I>'
+        - '</I>'
+        - '\r'
+      replace:
+        - '<em>'
+        - '</em>'
+        - '<br />'
+  sup_reviews/format:
+    -
+      plugin: default_value
+      default_value: stanford_html
   sup_rights_description: rights_description
   sup_sales_rank: sales_rank
   sup_series: series
