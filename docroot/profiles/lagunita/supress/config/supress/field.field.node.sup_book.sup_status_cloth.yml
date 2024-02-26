@@ -1,0 +1,21 @@
+uuid: a004ef22-1333-4a94-90b9-8888676172a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_status_cloth
+    - node.type.sup_book
+  module:
+    - options
+id: node.sup_book.sup_status_cloth
+field_name: sup_status_cloth
+entity_type: node
+bundle: sup_book
+label: 'Status Cloth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

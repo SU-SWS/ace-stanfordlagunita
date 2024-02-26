@@ -1,0 +1,8 @@
+adding:
+  tags:
+    article_published_time: '[node:su_news_publishing_date]'
+removing:
+  tags:
+    article_published_time: '[node:su_news_publishing_date:date:custom:c]'
+    canonical_url: '[node:su_news_source:uri]'
+    description: '[node:su_news_dek|node:su_news_byline]'

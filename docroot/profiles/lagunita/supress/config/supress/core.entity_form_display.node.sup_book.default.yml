@@ -3,50 +3,907 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sup_book.sup_author_1_first_name
+    - field.field.node.sup_book.sup_author_1_following
+    - field.field.node.sup_book.sup_author_1_last_name
+    - field.field.node.sup_book.sup_author_1_middle
+    - field.field.node.sup_book.sup_author_1_preceding
+    - field.field.node.sup_book.sup_author_1_role
+    - field.field.node.sup_book.sup_author_2_first_name
+    - field.field.node.sup_book.sup_author_2_following
+    - field.field.node.sup_book.sup_author_2_last_name
+    - field.field.node.sup_book.sup_author_2_middle
+    - field.field.node.sup_book.sup_author_2_preceding
+    - field.field.node.sup_book.sup_author_2_role
+    - field.field.node.sup_book.sup_author_3_first_name
+    - field.field.node.sup_book.sup_author_3_following
+    - field.field.node.sup_book.sup_author_3_last_name
+    - field.field.node.sup_book.sup_author_3_middle
+    - field.field.node.sup_book.sup_author_3_preceding
+    - field.field.node.sup_book.sup_author_3_role
+    - field.field.node.sup_book.sup_author_4_first_name
+    - field.field.node.sup_book.sup_author_4_following
+    - field.field.node.sup_book.sup_author_4_last_name
+    - field.field.node.sup_book.sup_author_4_middle
+    - field.field.node.sup_book.sup_author_4_preceding
+    - field.field.node.sup_book.sup_author_4_role
+    - field.field.node.sup_book.sup_author_info
+    - field.field.node.sup_book.sup_authors_full
+    - field.field.node.sup_book.sup_availability_description
+    - field.field.node.sup_book.sup_catalog_month
+    - field.field.node.sup_book.sup_catalog_page
+    - field.field.node.sup_book.sup_catalog_season_yyyy
+    - field.field.node.sup_book.sup_cloth_sale_percent
+    - field.field.node.sup_book.sup_cloth_sale_price
+    - field.field.node.sup_book.sup_copublisher_name
+    - field.field.node.sup_book.sup_copublisher_yn
+    - field.field.node.sup_book.sup_copyright
+    - field.field.node.sup_book.sup_description
+    - field.field.node.sup_book.sup_digital_comp_link
+    - field.field.node.sup_book.sup_html_page_title
+    - field.field.node.sup_book.sup_illustrations
+    - field.field.node.sup_book.sup_imprint
+    - field.field.node.sup_book.sup_in_print_status
+    - field.field.node.sup_book.sup_instructor_recommeded
+    - field.field.node.sup_book.sup_isbn_13_alt
+    - field.field.node.sup_book.sup_isbn_13_cloth
+    - field.field.node.sup_book.sup_isbn_13_digital
+    - field.field.node.sup_book.sup_isbn_13_isw
+    - field.field.node.sup_book.sup_isbn_13_paper
+    - field.field.node.sup_book.sup_local_web_blurb
+    - field.field.node.sup_book.sup_new_paperback_yn
+    - field.field.node.sup_book.sup_pages
+    - field.field.node.sup_book.sup_paper_sale_percent
+    - field.field.node.sup_book.sup_paper_sale_price
+    - field.field.node.sup_book.sup_price_cloth
+    - field.field.node.sup_book.sup_price_digital
+    - field.field.node.sup_book.sup_price_paper
+    - field.field.node.sup_book.sup_print_desk_copies
+    - field.field.node.sup_book.sup_pub_date_cloth
+    - field.field.node.sup_book.sup_pub_date_digital
+    - field.field.node.sup_book.sup_pub_date_first
+    - field.field.node.sup_book.sup_pub_date_paper
+    - field.field.node.sup_book.sup_pub_year_first
+    - field.field.node.sup_book.sup_reviews
+    - field.field.node.sup_book.sup_rights_description
+    - field.field.node.sup_book.sup_sales_rank
+    - field.field.node.sup_book.sup_series
+    - field.field.node.sup_book.sup_status_cloth
+    - field.field.node.sup_book.sup_status_digital
+    - field.field.node.sup_book.sup_status_paper
+    - field.field.node.sup_book.sup_subtitle
+    - field.field.node.sup_book.sup_table_of_contents
+    - field.field.node.sup_book.sup_url_isw
+    - field.field.node.sup_book.sup_web_code_cloth
+    - field.field.node.sup_book.sup_web_code_paper
+    - field.field.node.sup_book.sup_work_id_number
     - node.type.sup_book
   module:
+    - datetime
+    - field_group
     - path
+    - text
+third_party_settings:
+  field_group:
+    group_author_information:
+      children:
+        - sup_authors_full
+        - sup_author_info
+      label: 'Author Information'
+      region: content
+      parent_name: group_author_info_tabs
+      weight: 17
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+        direction: vertical
+        width_breakpoint: 640
+    group_catalog_information:
+      children:
+        - sup_catalog_month
+        - sup_catalog_page
+        - sup_catalog_season_yyyy
+      label: 'Catalog Information'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_web_coupon_codes:
+      children:
+        - sup_web_code_cloth
+        - sup_web_code_paper
+      label: 'Web Coupon Codes'
+      region: content
+      parent_name: group_prices
+      weight: 43
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_publication_status:
+      children:
+        - sup_status_cloth
+        - sup_status_paper
+        - sup_status_digital
+      label: 'Publication Status'
+      region: content
+      parent_name: ''
+      weight: 28
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_publication_dates:
+      children:
+        - sup_pub_date_cloth
+        - sup_pub_date_paper
+        - sup_pub_date_digital
+        - sup_pub_date_first
+        - sup_pub_year_first
+      label: 'Publication Dates'
+      region: content
+      parent_name: ''
+      weight: 29
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_prices:
+      children:
+        - sup_price_cloth
+        - sup_price_paper
+        - sup_price_digital
+        - sup_cloth_sale_percent
+        - sup_cloth_sale_price
+        - sup_paper_sale_percent
+        - sup_paper_sale_price
+        - group_web_coupon_codes
+      label: Prices
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_isbn_information:
+      children:
+        - sup_isbn_13_cloth
+        - sup_isbn_13_paper
+        - sup_isbn_13_digital
+        - sup_isbn_13_alt
+        - sup_isbn_13_isw
+      label: 'ISBN Information'
+      region: content
+      parent_name: ''
+      weight: 23
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_author_1:
+      children:
+        - sup_author_1_preceding
+        - sup_author_1_first_name
+        - sup_author_1_middle
+        - sup_author_1_last_name
+        - sup_author_1_following
+        - sup_author_1_role
+      label: 'Author 1'
+      region: content
+      parent_name: group_author_info_tabs
+      weight: 18
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_author_2:
+      children:
+        - sup_author_2_preceding
+        - sup_author_2_first_name
+        - sup_author_2_middle
+        - sup_author_2_last_name
+        - sup_author_2_following
+        - sup_author_2_role
+      label: 'Author 2'
+      region: content
+      parent_name: group_author_info_tabs
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_author_3:
+      children:
+        - sup_author_3_preceding
+        - sup_author_3_first_name
+        - sup_author_3_middle
+        - sup_author_3_last_name
+        - sup_author_3_following
+        - sup_author_3_role
+      label: 'Author 3'
+      region: content
+      parent_name: group_author_info_tabs
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_author_4:
+      children:
+        - sup_author_4_preceding
+        - sup_author_4_first_name
+        - sup_author_4_middle
+        - sup_author_4_last_name
+        - sup_author_4_following
+        - sup_author_4_role
+      label: 'Author 4'
+      region: content
+      parent_name: group_author_info_tabs
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_author_info_tabs:
+      children:
+        - group_author_information
+        - group_author_1
+        - group_author_2
+        - group_author_3
+        - group_author_4
+      label: 'Author Info Tabs'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
 id: node.sup_book.default
 targetEntityType: node
 bundle: sup_book
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  sup_author_1_first_name:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_1_following:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_1_last_name:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_1_middle:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_1_preceding:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_1_role:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_2_first_name:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_2_following:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_2_last_name:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_2_middle:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_2_preceding:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_2_role:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_3_first_name:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_3_following:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_3_last_name:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_3_middle:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_3_preceding:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_3_role:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_4_first_name:
+    type: string_textfield
+    weight: 33
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_4_following:
+    type: string_textfield
+    weight: 37
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_4_last_name:
+    type: string_textfield
+    weight: 36
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_4_middle:
+    type: string_textfield
+    weight: 34
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_4_preceding:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_4_role:
+    type: string_textfield
+    weight: 38
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_author_info:
+    type: text_textarea
+    weight: 42
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sup_authors_full:
+    type: string_textfield
+    weight: 40
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_availability_description:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_catalog_month:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_catalog_page:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_catalog_season_yyyy:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_cloth_sale_percent:
+    type: number
+    weight: 39
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_cloth_sale_price:
+    type: number
+    weight: 40
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_copublisher_name:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_copublisher_yn:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sup_copyright:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_description:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sup_digital_comp_link:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sup_html_page_title:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_illustrations:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_imprint:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_in_print_status:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_instructor_recommeded:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_isbn_13_alt:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_isbn_13_cloth:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_isbn_13_digital:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_isbn_13_isw:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_isbn_13_paper:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_local_web_blurb:
+    type: text_textarea
+    weight: 24
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sup_new_paperback_yn:
+    type: boolean_checkbox
+    weight: 25
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sup_pages:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_paper_sale_percent:
+    type: number
+    weight: 41
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_paper_sale_price:
+    type: number
+    weight: 42
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_price_cloth:
+    type: number
+    weight: 35
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_price_digital:
+    type: number
+    weight: 38
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_price_paper:
+    type: number
+    weight: 36
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_print_desk_copies:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_pub_date_cloth:
+    type: datetime_default
+    weight: 39
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_pub_date_digital:
+    type: datetime_default
+    weight: 41
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_pub_date_first:
+    type: datetime_default
+    weight: 42
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_pub_date_paper:
+    type: datetime_default
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_pub_year_first:
+    type: string_textfield
+    weight: 43
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_reviews:
+    type: text_textarea
+    weight: 30
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sup_rights_description:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_sales_rank:
+    type: number
+    weight: 32
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sup_series:
+    type: string_textfield
+    weight: 33
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_status_cloth:
+    type: options_select
+    weight: 48
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_status_digital:
+    type: options_select
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_status_paper:
+    type: options_select
+    weight: 49
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_table_of_contents:
+    type: text_textarea
+    weight: 34
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sup_url_isw:
+    type: string_textfield
+    weight: 35
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_web_code_cloth:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_web_code_paper:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_work_id_number:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -54,7 +911,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -63,10 +920,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  created: true
   publish_on: true
   unpublish_on: true

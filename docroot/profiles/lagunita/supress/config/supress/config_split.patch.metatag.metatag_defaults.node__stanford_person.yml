@@ -1,0 +1,11 @@
+adding:
+  tags:
+    description: '[node:summary]'
+    og_image_alt: '[node:su_person_photo:entity:field_media_image:alt]'
+    twitter_cards_description: '[node:summary]'
+removing:
+  tags:
+    description: '[node:su_person_full_title|node:su_person_short_title|node:summary]'
+    og_description: '[node:su_person_full_title|node:su_person_short_title]'
+    og_image_alt: '[node:su_person_photo:entity:field_media_image:alt|node:title]'
+    twitter_cards_description: '[node:su_person_full_title|node:su_person_short_title|node:summary]'

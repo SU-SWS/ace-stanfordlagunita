@@ -1,0 +1,23 @@
+uuid: a5f38e49-8e82-470e-9bec-87adafaa0153
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_sales_rank
+    - node.type.sup_book
+id: node.sup_book.sup_sales_rank
+field_name: sup_sales_rank
+entity_type: node
+bundle: sup_book
+label: 'Sales Rank'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

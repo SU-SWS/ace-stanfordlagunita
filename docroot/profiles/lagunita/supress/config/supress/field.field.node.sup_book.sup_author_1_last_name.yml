@@ -1,0 +1,19 @@
+uuid: ccc21367-4b09-4053-bd35-c2180447ed8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_author_1_last_name
+    - node.type.sup_book
+id: node.sup_book.sup_author_1_last_name
+field_name: sup_author_1_last_name
+entity_type: node
+bundle: sup_book
+label: 'Author 1 Last Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

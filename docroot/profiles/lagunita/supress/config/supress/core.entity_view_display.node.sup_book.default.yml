@@ -3,8 +3,85 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sup_book.sup_author_1_first_name
+    - field.field.node.sup_book.sup_author_1_following
+    - field.field.node.sup_book.sup_author_1_last_name
+    - field.field.node.sup_book.sup_author_1_middle
+    - field.field.node.sup_book.sup_author_1_preceding
+    - field.field.node.sup_book.sup_author_1_role
+    - field.field.node.sup_book.sup_author_2_first_name
+    - field.field.node.sup_book.sup_author_2_following
+    - field.field.node.sup_book.sup_author_2_last_name
+    - field.field.node.sup_book.sup_author_2_middle
+    - field.field.node.sup_book.sup_author_2_preceding
+    - field.field.node.sup_book.sup_author_2_role
+    - field.field.node.sup_book.sup_author_3_first_name
+    - field.field.node.sup_book.sup_author_3_following
+    - field.field.node.sup_book.sup_author_3_last_name
+    - field.field.node.sup_book.sup_author_3_middle
+    - field.field.node.sup_book.sup_author_3_preceding
+    - field.field.node.sup_book.sup_author_3_role
+    - field.field.node.sup_book.sup_author_4_first_name
+    - field.field.node.sup_book.sup_author_4_following
+    - field.field.node.sup_book.sup_author_4_last_name
+    - field.field.node.sup_book.sup_author_4_middle
+    - field.field.node.sup_book.sup_author_4_preceding
+    - field.field.node.sup_book.sup_author_4_role
+    - field.field.node.sup_book.sup_author_info
+    - field.field.node.sup_book.sup_authors_full
+    - field.field.node.sup_book.sup_availability_description
+    - field.field.node.sup_book.sup_catalog_month
+    - field.field.node.sup_book.sup_catalog_page
+    - field.field.node.sup_book.sup_catalog_season_yyyy
+    - field.field.node.sup_book.sup_cloth_sale_percent
+    - field.field.node.sup_book.sup_cloth_sale_price
+    - field.field.node.sup_book.sup_copublisher_name
+    - field.field.node.sup_book.sup_copublisher_yn
+    - field.field.node.sup_book.sup_copyright
+    - field.field.node.sup_book.sup_description
+    - field.field.node.sup_book.sup_digital_comp_link
+    - field.field.node.sup_book.sup_html_page_title
+    - field.field.node.sup_book.sup_illustrations
+    - field.field.node.sup_book.sup_imprint
+    - field.field.node.sup_book.sup_in_print_status
+    - field.field.node.sup_book.sup_instructor_recommeded
+    - field.field.node.sup_book.sup_isbn_13_alt
+    - field.field.node.sup_book.sup_isbn_13_cloth
+    - field.field.node.sup_book.sup_isbn_13_digital
+    - field.field.node.sup_book.sup_isbn_13_isw
+    - field.field.node.sup_book.sup_isbn_13_paper
+    - field.field.node.sup_book.sup_local_web_blurb
+    - field.field.node.sup_book.sup_new_paperback_yn
+    - field.field.node.sup_book.sup_pages
+    - field.field.node.sup_book.sup_paper_sale_percent
+    - field.field.node.sup_book.sup_paper_sale_price
+    - field.field.node.sup_book.sup_price_cloth
+    - field.field.node.sup_book.sup_price_digital
+    - field.field.node.sup_book.sup_price_paper
+    - field.field.node.sup_book.sup_print_desk_copies
+    - field.field.node.sup_book.sup_pub_date_cloth
+    - field.field.node.sup_book.sup_pub_date_digital
+    - field.field.node.sup_book.sup_pub_date_first
+    - field.field.node.sup_book.sup_pub_date_paper
+    - field.field.node.sup_book.sup_pub_year_first
+    - field.field.node.sup_book.sup_reviews
+    - field.field.node.sup_book.sup_rights_description
+    - field.field.node.sup_book.sup_sales_rank
+    - field.field.node.sup_book.sup_series
+    - field.field.node.sup_book.sup_status_cloth
+    - field.field.node.sup_book.sup_status_digital
+    - field.field.node.sup_book.sup_status_paper
+    - field.field.node.sup_book.sup_subtitle
+    - field.field.node.sup_book.sup_table_of_contents
+    - field.field.node.sup_book.sup_url_isw
+    - field.field.node.sup_book.sup_web_code_cloth
+    - field.field.node.sup_book.sup_web_code_paper
+    - field.field.node.sup_book.sup_work_id_number
     - node.type.sup_book
   module:
+    - datetime
+    - options
+    - text
     - user
 id: node.sup_book.default
 targetEntityType: node
@@ -15,6 +92,623 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 100
+    region: content
+  sup_author_1_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  sup_author_1_following:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  sup_author_1_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  sup_author_1_middle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  sup_author_1_preceding:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  sup_author_1_role:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  sup_author_2_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  sup_author_2_following:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  sup_author_2_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  sup_author_2_middle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  sup_author_2_preceding:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  sup_author_2_role:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  sup_author_3_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  sup_author_3_following:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  sup_author_3_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  sup_author_3_middle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  sup_author_3_preceding:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  sup_author_3_role:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  sup_author_4_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  sup_author_4_following:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  sup_author_4_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  sup_author_4_middle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  sup_author_4_preceding:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  sup_author_4_role:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  sup_author_info:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  sup_authors_full:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  sup_availability_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 127
+    region: content
+  sup_catalog_month:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 128
+    region: content
+  sup_catalog_page:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 129
+    region: content
+  sup_catalog_season_yyyy:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 130
+    region: content
+  sup_cloth_sale_percent:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 131
+    region: content
+  sup_cloth_sale_price:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 132
+    region: content
+  sup_copublisher_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 133
+    region: content
+  sup_copublisher_yn:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 134
+    region: content
+  sup_copyright:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 135
+    region: content
+  sup_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 136
+    region: content
+  sup_digital_comp_link:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 137
+    region: content
+  sup_html_page_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 138
+    region: content
+  sup_illustrations:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 139
+    region: content
+  sup_imprint:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 140
+    region: content
+  sup_in_print_status:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 141
+    region: content
+  sup_instructor_recommeded:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 142
+    region: content
+  sup_isbn_13_alt:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 143
+    region: content
+  sup_isbn_13_cloth:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 144
+    region: content
+  sup_isbn_13_digital:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 145
+    region: content
+  sup_isbn_13_isw:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 146
+    region: content
+  sup_isbn_13_paper:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 147
+    region: content
+  sup_local_web_blurb:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 148
+    region: content
+  sup_new_paperback_yn:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 149
+    region: content
+  sup_pages:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 150
+    region: content
+  sup_paper_sale_percent:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 151
+    region: content
+  sup_paper_sale_price:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 152
+    region: content
+  sup_price_cloth:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 153
+    region: content
+  sup_price_digital:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 154
+    region: content
+  sup_price_paper:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 155
+    region: content
+  sup_print_desk_copies:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 156
+    region: content
+  sup_pub_date_cloth:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 157
+    region: content
+  sup_pub_date_digital:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 158
+    region: content
+  sup_pub_date_first:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 159
+    region: content
+  sup_pub_date_paper:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 160
+    region: content
+  sup_pub_year_first:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 161
+    region: content
+  sup_reviews:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 162
+    region: content
+  sup_rights_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 163
+    region: content
+  sup_sales_rank:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 164
+    region: content
+  sup_series:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 165
+    region: content
+  sup_status_cloth:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 166
+    region: content
+  sup_status_digital:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 167
+    region: content
+  sup_status_paper:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 168
+    region: content
+  sup_subtitle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 169
+    region: content
+  sup_table_of_contents:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 170
+    region: content
+  sup_url_isw:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 172
+    region: content
+  sup_web_code_cloth:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 173
+    region: content
+  sup_web_code_paper:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 174
+    region: content
+  sup_work_id_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 175
     region: content
 hidden:
   search_api_excerpt: true
