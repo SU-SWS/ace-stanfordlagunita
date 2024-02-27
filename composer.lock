@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4801ce4f7d280501b14bcdc107a26d28",
+    "content-hash": "cfd41cb2e6bb429ed05e7132db0c31e9",
     "packages": [
         {
             "name": "acquia/blt",
@@ -464,16 +464,16 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v2.1.1",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "d7faef18fc7110b233b81c8d18006e74c6c49a52"
+                "reference": "a5af40bd4b6edee5101e182085e67b7ff5d4a89b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/d7faef18fc7110b233b81c8d18006e74c6c49a52",
-                "reference": "d7faef18fc7110b233b81c8d18006e74c6c49a52",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/a5af40bd4b6edee5101e182085e67b7ff5d4a89b",
+                "reference": "a5af40bd4b6edee5101e182085e67b7ff5d4a89b",
                 "shasum": ""
             },
             "require": {
@@ -522,9 +522,9 @@
             ],
             "support": {
                 "issues": "https://github.com/commerceguys/addressing/issues",
-                "source": "https://github.com/commerceguys/addressing/tree/v2.1.1"
+                "source": "https://github.com/commerceguys/addressing/tree/v2.2.0"
             },
-            "time": "2023-11-28T18:04:35+00:00"
+            "time": "2024-02-25T11:22:16+00:00"
         },
         {
             "name": "composer/installers",
@@ -1631,16 +1631,16 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "2.1.4",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "72328a11443a0de79967104ad36ba7b30bded134"
+                "reference": "07e16cd7b80a2cffed99e36b541876af172f0257"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/72328a11443a0de79967104ad36ba7b30bded134",
-                "reference": "72328a11443a0de79967104ad36ba7b30bded134",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/07e16cd7b80a2cffed99e36b541876af172f0257",
+                "reference": "07e16cd7b80a2cffed99e36b541876af172f0257",
                 "shasum": ""
             },
             "require": {
@@ -1652,7 +1652,7 @@
                 "ext-json": "*",
                 "phpstan/phpstan": "^1.8",
                 "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^9.5",
+                "phpunit/phpunit": "^10.5",
                 "vimeo/psalm": "^5.11"
             },
             "type": "library",
@@ -1697,7 +1697,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/collections/issues",
-                "source": "https://github.com/doctrine/collections/tree/2.1.4"
+                "source": "https://github.com/doctrine/collections/tree/2.2.0"
             },
             "funding": [
                 {
@@ -1713,7 +1713,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-03T09:22:33+00:00"
+            "time": "2024-02-25T22:55:36+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -6237,17 +6237,17 @@
         },
         {
             "name": "drupal/google_tag",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/google_tag.git",
-                "reference": "2.0.2"
+                "reference": "2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "8e5decb11784549842438bca9c47f0263f0484f7"
+                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "c68d86cd7146f4b40e05ac5d737e4a9a59d19933"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10",
@@ -6265,8 +6265,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1684879598",
+                    "version": "2.0.3",
+                    "datestamp": "1708921893",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10854,20 +10854,20 @@
         },
         {
             "name": "drupal/smart_trim",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smart_trim.git",
-                "reference": "2.1.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smart_trim-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "874b4cbddc4833f1b9adc76a8398377903fd73ee"
+                "url": "https://ftp.drupal.org/files/projects/smart_trim-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "5d1ca3c0a9990d6344249f3224353372c0b760c5"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^8 || ^9 || ^10 || ^11",
                 "drupal/token": "^1.0",
                 "php": ">=7.4.0"
             },
@@ -10877,8 +10877,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1686152417",
+                    "version": "2.1.1",
+                    "datestamp": "1708875348",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -26410,12 +26410,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/blt-sws.git",
-                "reference": "eca1759976528b3f3c21e9c02de04ecdcdae3844"
+                "reference": "8a3bd5b61d28f96d6216b3c660d8385b8ec45785"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/eca1759976528b3f3c21e9c02de04ecdcdae3844",
-                "reference": "eca1759976528b3f3c21e9c02de04ecdcdae3844",
+                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/8a3bd5b61d28f96d6216b3c660d8385b8ec45785",
+                "reference": "8a3bd5b61d28f96d6216b3c660d8385b8ec45785",
                 "shasum": ""
             },
             "require": {
@@ -26446,7 +26446,7 @@
                 "issues": "https://github.com/SU-SWS/blt-sws/issues",
                 "source": "https://github.com/SU-SWS/blt-sws/tree/main"
             },
-            "time": "2023-12-11T19:48:42+00:00"
+            "time": "2024-02-26T16:57:56+00:00"
         },
         {
             "name": "su-sws/drupal-dev",
