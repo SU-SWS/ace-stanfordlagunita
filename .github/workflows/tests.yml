@@ -26,9 +26,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             vendor
@@ -49,7 +49,7 @@ jobs:
           blt blt:telemetry:disable --no-interaction
           blt tests:phpunit:coverage --no-interaction
       - name: Save Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: unit-tests-results
@@ -76,9 +76,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             vendor
@@ -109,10 +109,10 @@ jobs:
       - name: Run tests
         run: blt codeception --test=sul_profile --suite=acceptance
       - name: Save Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: acceptance-tests-results
+          name: sul-acceptance-tests-results
           path: artifacts
   library_functional:
     name: Library Codeception Functional Tests
@@ -140,9 +140,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             vendor
@@ -177,10 +177,10 @@ jobs:
       - name: Run tests
         run: blt codeception --test=sul_profile --suite=functional
       - name: Save Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: functional-tests-results
+          name: sul-functional-tests-results
           path: artifacts
   supress_acceptance:
     name: Press Codeception Acceptance Tests
@@ -204,9 +204,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             vendor
@@ -237,10 +237,10 @@ jobs:
       - name: Run tests
         run: blt codeception --test=supress --suite=acceptance
       - name: Save Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: acceptance-tests-results
+          name: supresss-acceptance-tests-results
           path: artifacts
   supress_functional:
     name: Press Codeception Functional Tests
@@ -268,9 +268,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             vendor
@@ -305,10 +305,10 @@ jobs:
       - name: Run tests
         run: blt codeception --test=supress --suite=functional
       - name: Save Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: functional-tests-results
+          name: supress-functional-tests-results
           path: artifacts
   deploy:
     name: Deploy Artifact
@@ -322,9 +322,9 @@ jobs:
     container:
       image: pookmish/drupal8ci:latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             vendor
