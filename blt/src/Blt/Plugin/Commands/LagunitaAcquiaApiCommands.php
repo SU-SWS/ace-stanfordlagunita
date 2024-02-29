@@ -15,7 +15,7 @@ if (!trait_exists('Sws\BltSws\Blt\Plugin\Commands\SwsCommandTrait')) {
  *
  * @package Gryphon\Blt\Plugin\Commands
  */
-class GryphonAcquiaApiCommands extends GryphonCommands {
+class LagunitaAcquiaApiCommands extends LagunitaCommands {
 
   use SwsCommandTrait;
 

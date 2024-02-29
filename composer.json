@@ -50,6 +50,7 @@
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
         "drush/drush": "^12",
+        "su-sws/blt-sws": "dev-main",
         "su-sws/stanford_profile": "^11.2",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
@@ -59,7 +60,6 @@
         "drupal/restui": "^1.21",
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
-        "su-sws/blt-sws": "dev-main",
         "su-sws/drupal-dev": "^10"
     },
     "replace": {
