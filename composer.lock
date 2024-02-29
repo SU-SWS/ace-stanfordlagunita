@@ -16683,12 +16683,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/blt-sws.git",
-                "reference": "f11d04f32ac0691f79892c38f826f3050d6b26d3"
+                "reference": "a2a3e7b2f0998256f9f8d2b74738375a08a964bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/f11d04f32ac0691f79892c38f826f3050d6b26d3",
-                "reference": "f11d04f32ac0691f79892c38f826f3050d6b26d3",
+                "url": "https://api.github.com/repos/SU-SWS/blt-sws/zipball/a2a3e7b2f0998256f9f8d2b74738375a08a964bf",
+                "reference": "a2a3e7b2f0998256f9f8d2b74738375a08a964bf",
                 "shasum": ""
             },
             "require": {
@@ -16719,7 +16719,7 @@
                 "issues": "https://github.com/SU-SWS/blt-sws/issues",
                 "source": "https://github.com/SU-SWS/blt-sws/tree/main"
             },
-            "time": "2024-02-29T18:51:17+00:00"
+            "time": "2024-02-29T21:05:26+00:00"
         },
         {
             "name": "su-sws/ckeditor5_plugins",
