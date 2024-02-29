@@ -36,7 +36,7 @@ tests:
       bootstrap: '${docroot}/core/tests/bootstrap.php'
       filter: /(Unit|Kernel)/
   codeception:
-    sul_profile:
+    library:
       suites:
         - acceptance
         - functional
