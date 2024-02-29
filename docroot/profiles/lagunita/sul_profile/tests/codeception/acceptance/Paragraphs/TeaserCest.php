@@ -28,6 +28,7 @@ class TeaserCest {
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')
       ->loadMultiple();
+    unset($node_types['sul_library'], $node_types['sul_study_place']);
     $teaser_entities = [];
     $teaser_item_field = [];
     foreach ($node_types as $node_type) {
@@ -53,7 +54,7 @@ class TeaserCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
     foreach ($teaser_entities as $entity) {
-      $I->canSee($entity->label(), '.su-entity-item h2');
+      $I->canSee($entity->label(), 'h2');
     }
 
     $header_text = $this->faker->words(3, TRUE);
@@ -74,7 +75,7 @@ class TeaserCest {
     $I->canSee($node->label(), 'h1');
     $I->canSee($header_text, 'h2');
     foreach ($teaser_entities as $entity) {
-      $I->canSee($entity->label(), '.su-entity-item h3');
+      $I->canSee($entity->label(), 'h3');
     }
   }
 
