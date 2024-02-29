@@ -27,6 +27,8 @@ function sul_profile_update_9105() {
     'paragraph_rows_revision',
   ];
   foreach ($tables as $table) {
-    \Drupal::database()->truncate($table)->execute();
+    if (\Drupal::database()->schema()->tableExists($table)) {
+      \Drupal::database()->truncate($table)->execute();
+    }
   }
 }
