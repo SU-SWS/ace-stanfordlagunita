@@ -1,0 +1,48 @@
+uuid: 68a100d2-1853-436f-8f48-664a530d8931
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stanford_card
+    - node.type.sup_book
+  module:
+    - ds
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+          variant: default
+    regions:
+      card_headline:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          'link class': ''
+          link_target: ''
+          wrapper: ''
+          class: ''
+id: node.sup_book.stanford_card
+targetEntityType: node
+bundle: sup_book
+mode: stanford_card
+content: {  }
+hidden:
+  links: true
+  search_api_excerpt: true

@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group page-title-banner
  */
-class PageTitleBannerCest {
+abstract class PageTitleBannerCest {
 
   use TestFilesTrait;
 

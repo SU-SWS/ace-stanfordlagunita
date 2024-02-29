@@ -11,6 +11,13 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\paragraphs\ParagraphInterface;
 
 /**
+ * Implements hook_paragraphs_behavior_info_alter().
+ */
+function sul_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
+  $paragraphs_behavior['su_card_styles']['class'] = '\Drupal\sul_helper\Plugin\paragraphs\Behavior\SuCardStylesBehaviors';
+}
+
+/**
  * Implements hook_ENTITY_TYPE_create_access().
  */
 function sul_helper_paragraph_create_access(AccountInterface $account, array $context, $entity_bundle) {
