@@ -11,3 +11,22 @@
 function sul_profile_update_last_removed() {
   return 9104;
 }
+
+/**
+ * Remove data for paragraph rows.
+ */
+function sul_profile_update_9105() {
+  $tables = [
+    'paragraph_row__su_page_components',
+    'paragraph_row__su_pubs_components',
+    'paragraph_row_revision__su_page_components',
+    'paragraph_row_revision__su_pubs_components',
+    'paragraph_rows_field_revision',
+    'paragraph_rows_item',
+    'paragraph_rows_item_field_data',
+    'paragraph_rows_revision',
+  ];
+  foreach ($tables as $table) {
+    \Drupal::database()->truncate($table)->execute();
+  }
+}

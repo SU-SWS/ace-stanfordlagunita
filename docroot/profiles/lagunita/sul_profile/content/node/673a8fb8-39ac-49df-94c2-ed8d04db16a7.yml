@@ -164,8 +164,8 @@ default:
           behavior_settings:
             -
               value:
-                list_paragraph: {  }
-                sul_list_styles: {  }
+                list_paragraph:
+                  hide_heading: true
                 layout_paragraphs:
                   parent_uuid: 30160e5e-0aee-432a-8b73-693de0a73f99
                   region: main
@@ -198,6 +198,9 @@ default:
               attributes:
                 property: 'og:url'
                 content: 'http://library/home'
+          su_list_headline:
+            -
+              value: "People"
           su_list_view:
             -
               target_id: stanford_person

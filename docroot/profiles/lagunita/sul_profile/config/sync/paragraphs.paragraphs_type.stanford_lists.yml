@@ -15,5 +15,8 @@ description: 'Choose a list to display various items dynamically.'
 behavior_plugins:
   list_paragraph:
     enabled: true
+    hide_empty: false
+    empty_message: ''
+    hide_heading: false
   sul_list_styles:
     enabled: true

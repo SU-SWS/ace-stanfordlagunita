@@ -119,6 +119,28 @@ content:
       sidebar: true
       use_details: true
     third_party_settings: {  }
+  su_page_banner:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        convert: '0'
+        duplicate: '0'
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
   su_page_components:
     type: layout_paragraphs
     weight: 7

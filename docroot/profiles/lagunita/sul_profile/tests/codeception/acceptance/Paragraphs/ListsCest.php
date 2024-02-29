@@ -69,11 +69,11 @@ class ListsCest {
       'arguments' => $shared_tag->label(),
     ]);
     $I->amOnPage($node_list->toUrl()->toString());
-    $I->canSee($basic_page->label());
-    $I->canSee($news->label());
-    $I->canSee($event->label());
-    $I->canSee($person->label());
-    $I->canSee($publication->label());
+    $I->canSee($basic_page->label(), 'h3');
+    $I->canSee($news->label(), 'h3');
+    $I->canSee($event->label(), 'h3');
+    $I->canSee($person->label(), 'h3');
+    $I->canSee($publication->label(), 'h3');
 
     // List with only events and news.
     $node_list = $this->getNodeWithList($I, [
@@ -84,8 +84,8 @@ class ListsCest {
     ]);
     $I->amOnPage($node_list->toUrl()->toString());
     $I->cantSee($basic_page->label());
-    $I->canSee($news->label());
-    $I->canSee($event->label());
+    $I->canSee($news->label(), 'h3');
+    $I->canSee($event->label(), 'h3');
     $I->cantSee($person->label());
     $I->cantSee($publication->label());
 
@@ -100,7 +100,7 @@ class ListsCest {
     $I->cantSee($basic_page->label());
     $I->cantSee($news->label());
     $I->cantSee($event->label());
-    $I->canSee($person->label());
+    $I->canSee($person->label(), 'h3');
     $I->cantSee($publication->label());
 
     $I->logInWithRole('contributor');
@@ -151,10 +151,10 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee('Headliner');
+    $I->canSee('Headliner', 'h2');
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
-    $I->canSee($title);
+    $I->canSee($title, 'h3');
 
     $I->amOnPage('/jsonapi/views/stanford_news/block_1?page[limit]=99');
     $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);
@@ -194,7 +194,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($news->label());
+    $I->canSee($news->label(), 'h3');
   }
 
   /**
@@ -256,7 +256,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($news->label());
+    $I->canSee($news->label(), 'h3');
   }
 
   /**
@@ -301,7 +301,7 @@ class ListsCest {
 
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
-    $I->canSee($headline_text);
+    $I->canSee($headline_text, 'h2');
     $I->cantSee($message);
 
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
@@ -333,7 +333,7 @@ class ListsCest {
 
     $I->amOnPage('/');
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($headline_text);
+    $I->canSee($headline_text, 'h2');
     $I->canSee($message);
 
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
@@ -404,8 +404,8 @@ class ListsCest {
       'type' => 'stanford_event',
       'title' => $this->faker->words(3, TRUE),
       'su_event_date_time' => [
-        'value' => time(),
-        'end_value' => time() + 60,
+        'value' => time() + 120,
+        'end_value' => time() + 240,
       ],
       'su_event_type' => $type->id(),
       'su_event_audience' => $audience->id(),
@@ -423,10 +423,10 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee('Headliner');
+    $I->canSee('Headliner', 'h2');
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_events',
@@ -435,7 +435,7 @@ class ListsCest {
       'arguments' => str_replace(' ', '-', $audience->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_events',
@@ -444,7 +444,7 @@ class ListsCest {
       'arguments' => $type->label(),
     ]);
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_events',
@@ -453,7 +453,7 @@ class ListsCest {
       'arguments' => "''/" . str_replace(' ', '-', $group->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_events',
@@ -462,7 +462,7 @@ class ListsCest {
       'arguments' => "''/''/" . str_replace(' ', '-', $subject->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_events',
@@ -471,7 +471,7 @@ class ListsCest {
       'arguments' => "''/''/''/" . str_replace(' ', '-', $keyword->label()),
     ]);
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
 
     $type = $I->createEntity([
       'name' => $this->faker->words(3, TRUE),
@@ -512,8 +512,8 @@ class ListsCest {
       'su_event_audience' => $event_audience->id(),
       'su_event_type' => $event_type->id(),
       'su_event_date_time' => [
-        'value' => time(),
-        'end_value' => time() + 60,
+        'value' => time() + 120,
+        'end_value' => time() + 240,
       ],
     ]);
     $I->amOnPage("/node/{$event->id()}/edit");
@@ -527,7 +527,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
   }
 
   /**
@@ -599,7 +599,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
   }
 
   /**
@@ -636,7 +636,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($event->label());
+    $I->canSee($event->label(), 'h3');
   }
 
   /**
@@ -658,10 +658,10 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee('Headliner');
+    $I->canSee('Headliner', 'h2');
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
-    $I->canSee('Foo Bar Person');
+    $I->canSee('Foo Bar Person', 'h3');
   }
 
   /**
@@ -689,7 +689,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($news->label());
+    $I->canSee($news->label(), 'h3');
   }
 
   /**
@@ -751,7 +751,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($news->label());
+    $I->canSee($news->label(), 'h3');
   }
 
   /**
@@ -779,7 +779,7 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($basic_page_entity->label());
+    $I->canSee($basic_page_entity->label(), 'h3');
     $I->cantSee($type_term->label());
 
     $layout_changed_page = $I->createEntity([
@@ -792,7 +792,7 @@ class ListsCest {
     $I->amOnPage($layout_changed_page->toUrl('edit-form')->toString());
     $I->click('Save');
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($layout_changed_page->label());
+    $I->canSee($layout_changed_page->label(), 'h3');
     $I->canSee($layout_changed_page->get('su_page_description')->getString());
   }
 
