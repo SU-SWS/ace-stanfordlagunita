@@ -1,5 +1,5 @@
 {
-    "name": "su-sws/stanford_profile",
+    "name": "su-sws/supress",
     "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
     "type": "drupal-custom-profile",
     "license": "GPL-2.0-or-later",
@@ -171,12 +171,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\stanford_profile\\": "src/"
+            "Drupal\\supress\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Drupal\\Tests\\stanford_profile\\": "tests/src"
+            "Drupal\\Tests\\supress\\": "tests/src"
         }
     },
     "extra": {

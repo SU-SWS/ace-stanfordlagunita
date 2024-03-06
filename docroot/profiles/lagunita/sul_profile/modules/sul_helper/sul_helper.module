@@ -5,9 +5,12 @@
  * Primary module hooks for SUL Helper module.
  */
 
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Row;
 use Drupal\paragraphs\ParagraphInterface;
 
 /**
@@ -111,4 +114,32 @@ function sul_helper_graphql_compose_field_type_alter(array &$field_types) {
  */
 function sul_helper_graphql_compose_graphql_type_alter(array &$entity_types) {
   $entity_types['Link']['class'] = 'Drupal\sul_helper\Plugin\GraphQLCompose\SchemaType\SulLinkType';
+}
+
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function sul_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  if ($migration->id() == 'su_stanford_person') {
+    /** @var \Drupal\sul_helper\SulServiceInterface $sul_service */
+    $sul_service = \Drupal::service('sul_helper.sul_service');
+    $guides = $sul_service->getLibGuides();
+    $source_data = $row->getSource();
+    $emails = [
+      $source_data['sunetid'] . '@stanford.edu',
+      $source_data['alias'] . '@stanford.edu',
+      $source_data['sunetid'] . '@law.stanford.edu',
+      $source_data['alias'] . '@law.stanford.edu',
+    ];
+    $guides = array_filter($guides, function($guide) use ($emails) {
+      return in_array($guide['owner']['email'], $emails);
+    });
+    $row->setSourceProperty('libguides', $guides);
+
+    $calendars = $sul_service->getLibCalUsers();
+    $calendars = array_filter($calendars, function($cal_user) use ($emails) {
+      return in_array($cal_user['email'], $emails);
+    });
+    $row->setSourceProperty('libcal', $calendars);
+  }
 }
