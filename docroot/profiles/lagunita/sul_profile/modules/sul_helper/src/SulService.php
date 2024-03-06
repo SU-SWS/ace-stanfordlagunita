@@ -34,7 +34,7 @@ class SulService implements SulServiceInterface {
       $token = $this->getAccessToken(Settings::get('library_libguide_client_id'), Settings::get('library_libguide_client_secret'), 'https://lgapi-us.libapps.com/1.2/oauth/token');
 
       $options = ['headers' => ['Authorization' => "Bearer $token"]];
-      $response = $this->client->request('GET', 'https://lgapi-us.libapps.com/1.2/guides?expand=owner', $options);
+      $response = $this->client->request('GET', 'https://lgapi-us.libapps.com/1.2/guides?expand=owner&status=1', $options);
       $data = json_decode((string) $response->getBody(), TRUE);
 
       $this->cache->set($cache_key, $data, time() + 60 * 60 * 24);
