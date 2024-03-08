@@ -1,0 +1,29 @@
+uuid: d40c0b40-7e7a-4abb-8f91-b54dc885651d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_study__image
+    - media.type.image
+    - node.type.sul_study_place
+id: node.sul_study_place.sul_study__image
+field_name: sul_study__image
+entity_type: node
+bundle: sul_study_place
+label: 'Study Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

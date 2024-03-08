@@ -1,0 +1,19 @@
+uuid: 2e2dd787-0ee0-4d2a-9a52-39d1309ecd89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_study__room_donor_name
+    - node.type.sul_study_place
+id: node.sul_study_place.sul_study__room_donor_name
+field_name: sul_study__room_donor_name
+entity_type: node
+bundle: sul_study_place
+label: 'Room Donor Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

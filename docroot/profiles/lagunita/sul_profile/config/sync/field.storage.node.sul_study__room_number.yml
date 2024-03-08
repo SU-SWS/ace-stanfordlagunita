@@ -1,0 +1,20 @@
+uuid: 3d31ce7f-d9fb-419a-b066-9fc4f38a37e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sul_study__room_number
+field_name: sul_study__room_number
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

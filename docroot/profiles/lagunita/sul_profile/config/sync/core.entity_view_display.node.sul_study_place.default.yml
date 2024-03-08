@@ -6,7 +6,10 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
+    - field.field.node.sul_study_place.sul_study__image
     - field.field.node.sul_study_place.sul_study__libcal_id
+    - field.field.node.sul_study_place.sul_study__room_donor_name
+    - field.field.node.sul_study_place.sul_study__room_number
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
@@ -60,6 +63,32 @@ content:
       ds:
         ds_limit: ''
     weight: 104
+    region: content
+  sul_study__image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  sul_study__room_donor_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  sul_study__room_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   sul_study__type:
     type: entity_reference_label
