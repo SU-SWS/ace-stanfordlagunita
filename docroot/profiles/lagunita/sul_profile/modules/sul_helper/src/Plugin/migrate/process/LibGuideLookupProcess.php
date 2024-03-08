@@ -33,7 +33,7 @@ class LibGuideLookupProcess extends LibLookupProcessBase {
     foreach ($this->sulService->getLibGuides() as $guide) {
       if (is_array($value)) {
         if (in_array(strtolower($guide['owner']['email']), $value)) {
-          return $guide['id'];
+          return $guide['owner']['id'];
         }
       }
       elseif ($value == strtolower($guide['owner']['email'])) {
