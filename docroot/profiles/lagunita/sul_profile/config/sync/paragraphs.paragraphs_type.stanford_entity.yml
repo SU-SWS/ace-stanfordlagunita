@@ -15,6 +15,6 @@ description: 'Pick a specific piece of content to display.'
 behavior_plugins:
   stanford_teaser:
     enabled: true
-    hide_heading: false
+    heading_behavior: show
   sul_teaser_styles:
     enabled: true
