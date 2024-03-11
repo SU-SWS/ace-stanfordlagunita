@@ -188,8 +188,7 @@
             "blt drupal:sync --site=library --sync-public-files"
         ],
         "sync-supress": [
-            "drush -y sql:sync @supress.dev @supress.local",
-            "drush -y rsync @supress.dev:%files @supress.local:%files"
+            "blt drupal:sync --site=supress --sync-public-files"
         ]
     },
     "autoload": {
