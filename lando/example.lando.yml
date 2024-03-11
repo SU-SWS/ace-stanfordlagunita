@@ -1,4 +1,4 @@
-name: lagunita
+name: lagunita_temp
 recipe: drupal10
 config:
   webroot: docroot
@@ -19,7 +19,8 @@ services:
       - composer install
     volumes:
       - ~/.acquia:/var/www/.acquia
-    ssl: true
+    ssl: false
+    scanner: false
     config:
       php: lando/php.ini
       # Uncomment the below for behat testing
@@ -34,18 +35,15 @@ services:
                 }
               }
             }
-  database_press:
+  database:
+    run_as_root:
+      - mysql -uroot -e "CREATE DATABASE IF NOT EXISTS database_supress; GRANT ALL PRIVILEGES ON database_supress.* TO 'drupal'@'%' IDENTIFIED by 'drupal';"
+      - mysql -uroot -e "CREATE DATABASE IF NOT EXISTS database_library; GRANT ALL PRIVILEGES ON database_library.* TO 'drupal'@'%' IDENTIFIED by 'drupal';"
     type: mysql:5.7
     creds:
       user: drupal
       password: drupal
-      database: supress
-  database_library:
-    type: mysql:5.7
-    creds:
-      user: drupal
-      password: drupal
-      database: sulgryphon
+      database: database_library
   adminer:
     type: compose
     services:

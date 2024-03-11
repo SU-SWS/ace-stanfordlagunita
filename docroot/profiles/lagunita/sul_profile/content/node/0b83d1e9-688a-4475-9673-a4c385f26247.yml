@@ -164,8 +164,8 @@ default:
           behavior_settings:
             -
               value:
-                list_paragraph: {  }
-                sul_list_styles: {  }
+                list_paragraph:
+                  hide_heading: true
                 layout_paragraphs:
                   parent_uuid: 5eda2fba-6209-49e8-9641-002e18a640ee
                   region: main
@@ -198,6 +198,9 @@ default:
               attributes:
                 property: 'og:url'
                 content: 'http://library/home'
+          su_list_headline:
+            -
+              value: "News"
           su_list_view:
             -
               target_id: stanford_news

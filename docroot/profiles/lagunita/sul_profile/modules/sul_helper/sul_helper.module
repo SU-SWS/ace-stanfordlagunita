@@ -5,10 +5,20 @@
  * Primary module hooks for SUL Helper module.
  */
 
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Row;
 use Drupal\paragraphs\ParagraphInterface;
+
+/**
+ * Implements hook_paragraphs_behavior_info_alter().
+ */
+function sul_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
+  $paragraphs_behavior['su_card_styles']['class'] = '\Drupal\sul_helper\Plugin\paragraphs\Behavior\SuCardStylesBehaviors';
+}
 
 /**
  * Implements hook_ENTITY_TYPE_create_access().
@@ -104,4 +114,51 @@ function sul_helper_graphql_compose_field_type_alter(array &$field_types) {
  */
 function sul_helper_graphql_compose_graphql_type_alter(array &$entity_types) {
   $entity_types['Link']['class'] = 'Drupal\sul_helper\Plugin\GraphQLCompose\SchemaType\SulLinkType';
+}
+
+/**
+ * Implements hook_migrate_prepare_row().
+ *
+ * On the person importer, we have a process plugin that sets the libcal and
+ * libguide id numbers for each piece of content. Since that data comes from a
+ * source other than the migration itself, we have to add some cache
+ * invalidation mechanism so that the content will be updated on the next
+ * migration run. This could be a new calendar or guide. By setting the source
+ * data with the value, the migration module will use that to generate the
+ * hash of the source data. If the guides or the calendar change, a new hash
+ * will be created, and in turn will update the piece of content.
+ */
+function sul_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  if ($migration->id() == 'su_stanford_person') {
+    /** @var \Drupal\sul_helper\SulServiceInterface $sul_service */
+    $sul_service = \Drupal::service('sul_helper.sul_service');
+    $guides = $sul_service->getLibGuides();
+    $source_data = $row->getSource();
+    $emails = [
+      $source_data['sunetid'] . '@stanford.edu',
+      $source_data['alias'] . '@stanford.edu',
+      $source_data['sunetid'] . '@law.stanford.edu',
+      $source_data['alias'] . '@law.stanford.edu',
+    ];
+    $guides = array_filter($guides, function($guide) use ($emails) {
+      return in_array($guide['owner']['email'], $emails);
+    });
+    // Use only the following properties to determine if the cache is different.
+    $guides = array_map(fn($guide) => [
+      'id' => $guide['id'],
+      'name' => $guide['name'],
+      'friendly_url' => $guide['friendly_url'],
+    ], $guides);
+    uasort($guides, fn($a, $b) => $a['id'] < $b['id'] ? -1 : 1);
+    $row->setSourceProperty('libguides', array_values($guides));
+
+    $calendars = $sul_service->getLibCalUsers();
+    $calendars = array_filter($calendars, function($cal_user) use ($emails) {
+      return in_array($cal_user['email'], $emails);
+    });
+    // Calendars don't have any data that could update, so only need the ID.
+    $calendars = array_map(fn($cal) => $cal['id'], $calendars);
+    asort($calendars);
+    $row->setSourceProperty('libcal', array_values($calendars));
+  }
 }

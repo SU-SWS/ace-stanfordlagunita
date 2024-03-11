@@ -7,6 +7,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
+use Drupal\sul_helper\SulServiceInterface;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -14,20 +15,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides an abstract lib plugin base.
  */
 abstract class LibLookupProcessBase extends ProcessPluginBase implements ContainerFactoryPluginInterface {
-
-  /**
-   * Guzzle Client Service.
-   *
-   * @var \GuzzleHttp\ClientInterface
-   */
-  protected $client;
-
-  /**
-   * Cache Service.
-   *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   */
-  protected $cache;
 
   /**
    * Constructs a LibCalLookupProcess plugin.
@@ -42,13 +29,13 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
    *   Guzzle client service.
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache
    *   Cache backend service.
+   * @param \Drupal\sul_helper\SulServiceInterface $sulService
+   *   Sul service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client, CacheBackendInterface $cache) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition,protected ClientInterface $client,protected CacheBackendInterface $cache,protected SulServiceInterface $sulService) {
     $this->configuration['api'] = [];
 
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->client = $client;
-    $this->cache = $cache;
   }
 
   /**
@@ -60,7 +47,8 @@ abstract class LibLookupProcessBase extends ProcessPluginBase implements Contain
       $plugin_id,
       $plugin_definition,
       $container->get('http_client'),
-      $container->get('cache.default')
+      $container->get('cache.default'),
+      $container->get('sul_helper.sul_service')
     );
   }
 

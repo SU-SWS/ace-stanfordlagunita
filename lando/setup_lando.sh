@@ -13,23 +13,17 @@ try cp lando/example.local.blt.yml blt/local.blt.yml
 try cp lando/example.php.ini lando/php.ini
 try cp lando/example.local.blt.yml blt/local.blt.yml
 try cp lando/example.local.sites.php docroot/sites/local.sites.php
-try cp lando/example.local.settings.php docroot/sites/default/settings/local.settings.php
-try cp lando/sul.local.settings.php docroot/sites/library/settings/local.settings.php
-try cp lando/supress.local.settings.php docroot/sites/supress/settings/local.settings.php
-try cp docroot/sites/default/settings/default.local.settings.php docroot/sites/default/settings/local.settings.php
 try cp lando/codeception.yml tests/codeception.yml
 
 try lando start
 try lando composer init-stack
 try lando composer sync-sul
 try lando composer sync-supress
-try lando blt drupal:update --site=library
-try lando blt drupal:update --site=supress
 
 echo "Do you wish to install the Library front-end?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) try mkdir ./frontend-library; try git clone git@github.com:SU-SWS/sulgryphon-nextjs.git ./frontend-library; lando blt gryphon:connect-nextjs ./frontend-library http://library.lndo.site --site=library; break;;
+        Yes ) try mkdir ./frontend-library; try git clone git@github.com:SU-SWS/sulgryphon-nextjs.git ./frontend-library; break;;
         No ) break;;
     esac
 done

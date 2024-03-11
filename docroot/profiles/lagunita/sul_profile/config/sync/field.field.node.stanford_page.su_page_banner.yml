@@ -13,7 +13,7 @@ field_name: su_page_banner
 entity_type: node
 bundle: stanford_page
 label: 'Top Banner'
-description: 'The top banner displays directly below the navigation and on interior pages, above the page title.'
+description: 'The top banner displays directly below the navigation and on interior pages, above the page title. The page title banner replaces the default page title with a page title within the banner image.'
 required: false
 translatable: false
 default_value: {  }
@@ -25,13 +25,61 @@ settings:
       stanford_banner: stanford_banner
     negate: 0
     target_bundles_drag_drop:
+      collection:
+        weight: 20
+        enabled: false
+      collection_card:
+        weight: 21
+        enabled: false
+      layout:
+        weight: 22
+        enabled: false
+      stanford_accordion:
+        weight: 14
+        enabled: false
       stanford_banner:
         weight: 4
         enabled: true
       stanford_card:
         weight: 5
         enabled: false
+      stanford_entity:
+        weight: 17
+        enabled: false
+      stanford_gallery:
+        weight: 18
+        enabled: false
+      stanford_lists:
+        weight: 20
+        enabled: false
+      stanford_media_caption:
+        weight: 21
+        enabled: false
+      stanford_page_title_banner:
+        weight: 22
+        enabled: false
+      stanford_person_cta:
+        weight: 23
+        enabled: false
+      stanford_schedule:
+        weight: 24
+        enabled: false
+      stanford_spacer:
+        weight: 25
+        enabled: false
       stanford_wysiwyg:
         weight: 6
+        enabled: false
+      sul_button:
+        weight: 35
+        enabled: false
+      sul_contact_card:
+        weight: 36
+        enabled: false
+      sul_feat_collection:
+        weight: 37
+        enabled: false
+      sul_libguide:
+        weight: 38
         enabled: false
 field_type: entity_reference_revisions
