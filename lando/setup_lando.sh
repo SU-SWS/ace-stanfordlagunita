@@ -13,10 +13,6 @@ try cp lando/example.local.blt.yml blt/local.blt.yml
 try cp lando/example.php.ini lando/php.ini
 try cp lando/example.local.blt.yml blt/local.blt.yml
 try cp lando/example.local.sites.php docroot/sites/local.sites.php
-try cp lando/example.local.settings.php docroot/sites/default/settings/local.settings.php
-try cp lando/sul.local.settings.php docroot/sites/library/settings/local.settings.php
-try cp lando/supress.local.settings.php docroot/sites/supress/settings/local.settings.php
-try cp docroot/sites/default/settings/default.local.settings.php docroot/sites/default/settings/local.settings.php
 try cp lando/codeception.yml tests/codeception.yml
 
 try lando start
