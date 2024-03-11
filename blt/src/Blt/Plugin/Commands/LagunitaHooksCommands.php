@@ -11,7 +11,7 @@ use Robo\Contract\VerbosityThresholdInterface;
 /**
  * Class GryphonHooksCommands for any pre or post command hooks.
  */
-class GryphonHooksCommands extends BltTasks {
+class LagunitaHooksCommands extends BltTasks {
 
   /**
    * After a multisite is created, modify the drush alias with default values.
@@ -71,7 +71,8 @@ class GryphonHooksCommands extends BltTasks {
       $this->getConfig()
         ->expandFileProperties("$docroot/sites/settings/local.settings.php");
     }
-    if (EnvironmentDetector::isLocalEnv()) {
+    $keys_dir = $this->getConfigValue('repo.root') . '/keys';
+    if (EnvironmentDetector::isLocalEnv() && !file_exists($keys_dir)) {
       $this->invokeCommand('sws:keys');
     }
   }
@@ -88,25 +89,6 @@ class GryphonHooksCommands extends BltTasks {
     // drush command to operate on the correct database.
     $site = $args_options['db_name'] == 'sulgryphon' ? 'default' : $args_options['db_name'];
     $this->switchSiteContext($site);
-  }
-
-  /**
-   * Set nobots to emit headers for non-production sites.
-   *
-   * @hook post-command artifact:ac-hooks:post-db-copy
-   */
-  public function postDbCopy($result, CommandData $comand_data) {
-    if (!EnvironmentDetector::isProdEnv()) {
-      // Disable alias since we are targeting specific uri.
-      $this->config->set('drush.alias', '');
-
-      foreach ($this->getConfigValue('multisites') as $multisite) {
-        $this->switchSiteContext($multisite);
-        $this->taskDrush()
-          ->drush('state:set nobots 1')
-          ->run();
-      }
-    }
   }
 
 }

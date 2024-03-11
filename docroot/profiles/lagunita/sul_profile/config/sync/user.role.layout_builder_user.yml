@@ -13,15 +13,12 @@ dependencies:
     - file
     - filter
     - layout_builder
+    - ui_patterns_library
 id: layout_builder_user
 label: 'Layout Builder User'
 weight: 1
 is_admin: null
 permissions:
-  - 'configure editable stanford_event_types taxonomy_term layout overrides'
-  - 'configure editable stanford_news_topics taxonomy_term layout overrides'
-  - 'configure editable stanford_person_types taxonomy_term layout overrides'
-  - 'configure editable stanford_publication_topics taxonomy_term layout overrides'
   - 'create and edit custom blocks'
   - 'delete own files'
   - 'use text format stanford_html'

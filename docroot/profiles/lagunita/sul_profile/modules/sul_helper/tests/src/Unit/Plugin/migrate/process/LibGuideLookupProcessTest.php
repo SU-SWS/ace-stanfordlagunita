@@ -8,6 +8,7 @@ use Drupal\Core\Site\Settings;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use Drupal\sul_helper\Plugin\migrate\process\LibGuideLookupProcess;
+use Drupal\sul_helper\SulServiceInterface;
 use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
@@ -35,10 +36,23 @@ class LibGuideLookupProcessTest extends UnitTestCase {
     $guzzle->method('request')
       ->will($this->returnCallback([$this, 'guzzleRequest']));
     $cache = $this->createMock(CacheBackendInterface::class);
+    $sul_service = $this->createMock(SulServiceInterface::class);
+
+    $sul_service->method('getLibGuides')->willReturn([
+      [
+        'id' => 12345,
+        'owner' => ['email' => 'foobar@foobar.com'],
+      ],
+      [
+        'id' => 54321,
+        'owner' => ['email' => 'barfoo@foobar.com'],
+      ],
+    ]);
 
     $container = new ContainerBuilder();
     $container->set('http_client', $guzzle);
     $container->set('cache.default', $cache);
+    $container->set('sul_helper.sul_service', $sul_service);
 
     $plugin = LibGuideLookupProcess::create($container, [], '', []);
 

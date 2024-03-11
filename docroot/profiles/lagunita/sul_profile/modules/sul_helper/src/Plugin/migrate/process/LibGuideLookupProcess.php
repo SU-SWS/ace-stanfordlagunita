@@ -4,6 +4,8 @@ namespace Drupal\sul_helper\Plugin\migrate\process;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\migrate\MigrateExecutableInterface;
+use Drupal\migrate\Row;
 use GuzzleHttp\ClientInterface;
 
 /**
@@ -25,26 +27,20 @@ use GuzzleHttp\ClientInterface;
 class LibGuideLookupProcess extends LibLookupProcessBase {
 
   /**
-   * OAuth API Url.
-   */
-  const OAUTH_URL = 'https://lgapi-us.libapps.com/1.2/oauth/token';
-
-  /**
-   * User API Url.
-   */
-  const USERS_URL = 'https://lgapi-us.libapps.com/1.2/accounts';
-
-  /**
    * {@inheritDoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $client, CacheBackendInterface $cache) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $client, $cache);
-    $this->configuration['api'] = [
-      'client_id' => Settings::get('library_libguide_client_id'),
-      'client_secret' => Settings::get('library_libguide_client_secret'),
-      'oauth_url' => Settings::get('library_libguide_oauth_url', self::OAUTH_URL),
-      'api_endpoint' => Settings::get('library_libguide_users_url', self::USERS_URL),
-    ];
+  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    foreach ($this->sulService->getLibGuides() as $guide) {
+      if (is_array($value)) {
+        if (in_array(strtolower($guide['owner']['email']), $value)) {
+          return $guide['owner']['id'];
+        }
+      }
+      elseif ($value == strtolower($guide['owner']['email'])) {
+        return $guide['id'];
+      }
+    }
+    return NULL;
   }
 
 }

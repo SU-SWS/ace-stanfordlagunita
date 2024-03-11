@@ -50,6 +50,7 @@
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
         "drush/drush": "^12",
+        "su-sws/blt-sws": "dev-main",
         "su-sws/stanford_profile": "^11.2",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
@@ -59,7 +60,6 @@
         "drupal/restui": "^1.21",
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
-        "su-sws/blt-sws": "dev-main",
         "su-sws/drupal-dev": "^10"
     },
     "replace": {
@@ -145,14 +145,11 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/focal_point": {
-                "https://www.drupal.org/project/focal_point/issues/3328807": "https://www.drupal.org/files/issues/2023-01-06/3328807-focal_point-image_width_when_no_image_to_crop.patch"
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3413508": "patches/core-3413508.patch"
             },
             "drupal/hook_event_dispatcher": {
                 "https://www.drupal.org/project/hook_event_dispatcher/issues/3354751": "https://www.drupal.org/files/issues/2023-04-17/hook_event_dispatcher-4.x-3354751.patch"
-            },
-            "drupal/page_cache_query_ignore": {
-                "https://www.drupal.org/project/page_cache_query_ignore/issues/3336993": "https://www.drupal.org/files/issues/2023-01-27/3336993-get_config.patch"
             },
             "drupal/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
@@ -182,10 +179,10 @@
             "vendor/bin/blt sws:keys"
         ],
         "pull-sul": [
-            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x"
+            "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x"
         ],
         "pull-press": [
-            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x"
+            "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x"
         ],
         "sync-sul": [
             "blt drupal:sync --sitename=library --sync-public-files"
