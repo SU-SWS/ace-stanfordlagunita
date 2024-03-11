@@ -19,13 +19,11 @@ try lando start
 try lando composer init-stack
 try lando composer sync-sul
 try lando composer sync-supress
-try lando blt drupal:update --site=library
-try lando blt drupal:update --site=supress
 
 echo "Do you wish to install the Library front-end?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) try mkdir ./frontend-library; try git clone git@github.com:SU-SWS/sulgryphon-nextjs.git ./frontend-library; lando blt gryphon:connect-nextjs ./frontend-library http://library.lndo.site --site=library; break;;
+        Yes ) try mkdir ./frontend-library; try git clone git@github.com:SU-SWS/sulgryphon-nextjs.git ./frontend-library; break;;
         No ) break;;
     esac
 done
