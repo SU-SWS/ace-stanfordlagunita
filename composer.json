@@ -185,10 +185,10 @@
             "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x"
         ],
         "sync-sul": [
-            "blt drupal:sync --sitename=library --sync-public-files"
+            "blt drupal:sync --site=library --sync-public-files"
         ],
         "sync-supress": [
-            "blt drupal:sync --sitename=supress --sync-public-files"
+            "blt drupal:sync --site=supress --sync-public-files"
         ]
     },
     "autoload": {

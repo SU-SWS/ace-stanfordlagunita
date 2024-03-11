@@ -1,4 +1,4 @@
-name: lagunita
+name: lagunita_temp
 recipe: drupal10
 config:
   webroot: docroot

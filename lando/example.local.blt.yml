@@ -8,11 +8,14 @@ project:
     name: sul_profile
 drupal:
   db:
+    database: database
     username: drupal
     password: drupal
-    host: sulgryphon
-    database: drupal
+    host: database
     port: 3306
+multisites:
+  - library
+  - supress
 tests:
   selenium:
     url: http://chromedriver:4444/wd/hub
