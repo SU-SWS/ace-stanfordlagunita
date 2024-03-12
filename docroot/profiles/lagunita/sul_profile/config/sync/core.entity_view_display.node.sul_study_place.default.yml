@@ -82,13 +82,12 @@ content:
     weight: 109
     region: content
   sul_study__room_number:
-    type: number_integer
+    type: string
     label: above
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 108
+    weight: 111
     region: content
   sul_study__type:
     type: entity_reference_label

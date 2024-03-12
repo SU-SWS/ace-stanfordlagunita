@@ -94,17 +94,18 @@ content:
     third_party_settings: {  }
   sul_study__room_donor_name:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   sul_study__room_number:
-    type: number
-    weight: 3
+    type: string_textfield
+    weight: 4
     region: content
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   sul_study__type:
