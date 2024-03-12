@@ -1,0 +1,21 @@
+uuid: bbf772de-73cb-46fb-baf6-ceb50bdd6071
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_pub_date_paper
+    - node.type.sup_book
+  module:
+    - datetime
+id: node.sup_book.sup_pub_date_paper
+field_name: sup_pub_date_paper
+entity_type: node
+bundle: sup_book
+label: 'Publication Date Paper'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

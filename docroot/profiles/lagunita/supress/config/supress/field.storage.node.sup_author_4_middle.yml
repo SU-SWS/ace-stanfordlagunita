@@ -1,0 +1,21 @@
+uuid: 24d6c916-6885-40f8-9606-9658f3b724a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_author_4_middle
+field_name: sup_author_4_middle
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: b3581b88-d608-49d2-90d9-71eb0e274596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_paper_sale_percent
+    - node.type.sup_book
+id: node.sup_book.sup_paper_sale_percent
+field_name: sup_paper_sale_percent
+entity_type: node
+bundle: sup_book
+label: 'Paper Sale Percent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

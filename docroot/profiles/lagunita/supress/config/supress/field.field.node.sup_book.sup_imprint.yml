@@ -1,0 +1,19 @@
+uuid: 697d71bd-0473-480a-ac09-fffb8cf8bbbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_imprint
+    - node.type.sup_book
+id: node.sup_book.sup_imprint
+field_name: sup_imprint
+entity_type: node
+bundle: sup_book
+label: Imprint
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

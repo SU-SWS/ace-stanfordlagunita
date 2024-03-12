@@ -1,0 +1,19 @@
+uuid: 83492816-5fcb-43bd-b6a2-b286149b68eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_authors_full
+    - node.type.sup_book
+id: node.sup_book.sup_authors_full
+field_name: sup_authors_full
+entity_type: node
+bundle: sup_book
+label: 'Authors (full)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
