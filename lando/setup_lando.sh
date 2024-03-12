@@ -17,8 +17,8 @@ try cp lando/codeception.yml tests/codeception.yml
 
 try lando start
 try lando composer init-stack
-try lando composer sync-sul
-try lando composer sync-supress
+try lando blt drupal:sync --site=library --sync-public-files
+try lando blt drupal:sync --site=supress --sync-public-files
 
 echo "Do you wish to install the Library front-end?"
 select yn in "Yes" "No"; do

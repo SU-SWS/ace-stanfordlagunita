@@ -13,9 +13,6 @@ drupal:
     password: drupal
     host: database
     port: 3306
-multisites:
-  - library
-  - supress
 tests:
   selenium:
     url: http://chromedriver:4444/wd/hub
