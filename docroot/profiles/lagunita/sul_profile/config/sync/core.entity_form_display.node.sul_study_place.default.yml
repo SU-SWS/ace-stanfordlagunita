@@ -24,24 +24,24 @@ mode: default
 content:
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -54,7 +54,7 @@ content:
     third_party_settings: {  }
   sul_study__capacity:
     type: cshs
-    weight: 6
+    weight: 7
     region: content
     settings:
       save_lineage: false
@@ -67,7 +67,7 @@ content:
     third_party_settings: {  }
   sul_study__features:
     type: cshs
-    weight: 5
+    weight: 6
     region: content
     settings:
       save_lineage: false
@@ -80,14 +80,14 @@ content:
     third_party_settings: {  }
   sul_study__image:
     type: media_library_widget
-    weight: 26
+    weight: 5
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   sul_study__libcal_id:
     type: number
-    weight: 7
+    weight: 8
     region: content
     settings:
       placeholder: ''
@@ -130,7 +130,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
