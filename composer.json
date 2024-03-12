@@ -173,12 +173,10 @@
             "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/htaccess.patch",
             "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/robotstxt.patch"
         ],
-        "init-lando": [
-            "cp lando/example.env .env",
-            "cp lando/example.lando.yml .lando.yml",
-            "cp lando/example.local.blt.yml blt/local.blt.yml",
-            "cp lando/example.php.ini lando/php.ini",
-            "blt blt:init:settings"
+        "init-stack": [
+            "vendor/bin/blt blt:telemetry:disable --no-interaction",
+            "vendor/bin/blt blt:init:settings",
+            "vendor/bin/blt sws:keys"
         ],
         "pull-sul": [
             "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x"

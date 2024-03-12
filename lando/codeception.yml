@@ -1,0 +1,59 @@
+paths:
+  tests: codeception
+  output: ../artifacts
+  data: ../artifacts/_data
+  support: codeception/_support
+  envs: codeception/_envs
+actor_suffix: Tester
+extensions:
+  enabled:
+    - Codeception\Extension\RunFailed
+modules:
+  enabled:
+    - Codeception\Module\Asserts
+    - StanfordCaravan\Codeception\Drupal\DrupalBootstrap:
+        root: '/app/docroot'
+        server:
+          HTTP_HOST: 'localhost'
+    - StanfordCaravan\Codeception\Drupal\DrupalDrush:
+        drush: '/app/vendor/bin/drush'
+        options:
+          uri: 'localhost'
+    - PhpBrowser:
+        url: 'http://lagunita.lndo.site/'
+    - WebDriver:
+        browser: chrome
+        url: 'http://lagunita.lndo.site/'
+        host: chromedriver.lagunita.internal
+        capabilities:
+          chromeOptions:
+            args: ["--disable-gpu"]
+    - StanfordCaravan\Codeception\Drupal\DrupalEntity:
+        cleanup_test: true
+        cleanup_failed: false
+        cleanup_suite: true
+        route_entities:
+          - node
+          - taxonomy_term
+          - media
+    - StanfordCaravan\Codeception\Drupal\DrupalUser:
+        drush: '/app/vendor/bin/drush'
+        default_role: 'authenticated'
+        driver: 'WebDriver'
+        cleanup_entities:
+          - node
+          - media
+          - file
+        cleanup_test: true
+        cleanup_failed: false
+        cleanup_suite: true
+env:
+  ci:
+    modules:
+      config:
+        WebDriver:
+          url: 'http://drupal8ci/'
+          browser: chrome
+          host: selenium
+          port: 4444
+          restart: true
