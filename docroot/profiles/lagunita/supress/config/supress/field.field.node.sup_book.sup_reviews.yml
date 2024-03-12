@@ -1,0 +1,22 @@
+uuid: 8ab675e8-72f5-4818-b55b-c64f6cfdc6f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_reviews
+    - node.type.sup_book
+  module:
+    - text
+id: node.sup_book.sup_reviews
+field_name: sup_reviews
+entity_type: node
+bundle: sup_book
+label: Reviews
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

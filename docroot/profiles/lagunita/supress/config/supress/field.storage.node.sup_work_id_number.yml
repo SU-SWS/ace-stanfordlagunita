@@ -1,0 +1,20 @@
+uuid: 598f4575-52de-40b8-bc36-04e6cbaf7ce3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_work_id_number
+field_name: sup_work_id_number
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 21d25687-18ec-43e4-9a3d-ee640d49bd0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_author_3_following
+    - node.type.sup_book
+id: node.sup_book.sup_author_3_following
+field_name: sup_author_3_following
+entity_type: node
+bundle: sup_book
+label: 'Author 3 Following'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

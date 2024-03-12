@@ -1,0 +1,19 @@
+uuid: 12128f8f-5a52-4ecf-a42c-75336c80245c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.sup_description
+field_name: sup_description
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

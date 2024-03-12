@@ -1,0 +1,20 @@
+uuid: 918837e0-0f04-4eb6-9b57-debc7cfa73f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_price_paper
+field_name: sup_price_paper
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

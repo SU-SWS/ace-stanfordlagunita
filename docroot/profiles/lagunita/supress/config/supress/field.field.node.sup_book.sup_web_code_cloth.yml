@@ -1,0 +1,19 @@
+uuid: eda006c8-a33f-48dd-8b10-39ecedd168fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_web_code_cloth
+    - node.type.sup_book
+id: node.sup_book.sup_web_code_cloth
+field_name: sup_web_code_cloth
+entity_type: node
+bundle: sup_book
+label: 'Web Code Cloth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

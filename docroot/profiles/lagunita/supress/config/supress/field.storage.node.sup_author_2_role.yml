@@ -1,0 +1,21 @@
+uuid: 8418d180-9441-4dce-815d-fc96850c2f8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_author_2_role
+field_name: sup_author_2_role
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

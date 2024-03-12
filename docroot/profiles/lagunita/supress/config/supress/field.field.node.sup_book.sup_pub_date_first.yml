@@ -1,0 +1,21 @@
+uuid: 923cc8c3-9c4b-4071-af41-ba4d28e26a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_pub_date_first
+    - node.type.sup_book
+  module:
+    - datetime
+id: node.sup_book.sup_pub_date_first
+field_name: sup_pub_date_first
+entity_type: node
+bundle: sup_book
+label: 'Publication Date First'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

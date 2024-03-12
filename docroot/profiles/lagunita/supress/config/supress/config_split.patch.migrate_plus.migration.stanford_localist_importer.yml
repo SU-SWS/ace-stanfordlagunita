@@ -1,0 +1,7 @@
+adding: {  }
+removing:
+  process:
+    su_event_ext_image: photo_url
+  destination:
+    overwrite_properties:
+      - su_event_ext_image

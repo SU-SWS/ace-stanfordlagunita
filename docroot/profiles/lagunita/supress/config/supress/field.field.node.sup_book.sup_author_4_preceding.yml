@@ -1,0 +1,19 @@
+uuid: d9690a81-7e82-4edd-9660-1731497d105d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_author_4_preceding
+    - node.type.sup_book
+id: node.sup_book.sup_author_4_preceding
+field_name: sup_author_4_preceding
+entity_type: node
+bundle: sup_book
+label: 'Author 4 Preceding'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

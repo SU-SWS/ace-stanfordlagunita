@@ -1,0 +1,20 @@
+uuid: 76a9fd03-4e4f-4877-a56c-e4501a5af3cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.sup_pub_date_first
+field_name: sup_pub_date_first
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
