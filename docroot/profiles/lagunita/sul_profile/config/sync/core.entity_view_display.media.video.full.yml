@@ -7,6 +7,8 @@ dependencies:
     - field.field.media.video.field_media_oembed_video
     - field.field.media.video.su_media_category
     - media.type.video
+  module:
+    - media
 _core:
   default_config_hash: vqVUNXW5VQkzMmWbWehC_qWBkReYPc_i-In_6nmtn8o
 id: media.video.full
@@ -15,10 +17,13 @@ bundle: video
 mode: full
 content:
   field_media_oembed_video:
-    type: string
+    type: oembed
     label: hidden
     settings:
-      link_to_entity: false
+      max_width: 0
+      max_height: 0
+      loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
