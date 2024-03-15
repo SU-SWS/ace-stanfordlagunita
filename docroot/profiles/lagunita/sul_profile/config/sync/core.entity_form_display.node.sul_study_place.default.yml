@@ -6,11 +6,15 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
+    - field.field.node.sul_study_place.sul_study__image
     - field.field.node.sul_study_place.sul_study__libcal_id
+    - field.field.node.sul_study_place.sul_study__room_donor_name
+    - field.field.node.sul_study_place.sul_study__room_number
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
     - cshs
+    - media_library
     - path
     - scheduler
 id: node.sul_study_place.default
@@ -20,24 +24,24 @@ mode: default
 content:
   path:
     type: path
-    weight: 6
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 52
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -50,7 +54,7 @@ content:
     third_party_settings: {  }
   sul_study__capacity:
     type: cshs
-    weight: 4
+    weight: 7
     region: content
     settings:
       save_lineage: false
@@ -63,7 +67,7 @@ content:
     third_party_settings: {  }
   sul_study__features:
     type: cshs
-    weight: 3
+    weight: 6
     region: content
     settings:
       save_lineage: false
@@ -74,11 +78,34 @@ content:
       required_depth: 0
       none_label: '- Please select -'
     third_party_settings: {  }
-  sul_study__libcal_id:
-    type: number
+  sul_study__image:
+    type: media_library_widget
     weight: 5
     region: content
     settings:
+      media_types: {  }
+    third_party_settings: {  }
+  sul_study__libcal_id:
+    type: number
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sul_study__room_donor_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sul_study__room_number:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   sul_study__type:
@@ -104,7 +131,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 54
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

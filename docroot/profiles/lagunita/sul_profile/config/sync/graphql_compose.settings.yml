@@ -691,7 +691,13 @@ field_config:
         enabled: true
       sul_study__features:
         enabled: true
+      sul_study__image:
+        enabled: true
       sul_study__libcal_id:
+        enabled: true
+      sul_study__room_donor_name:
+        enabled: true
+      sul_study__room_number:
         enabled: true
       sul_study__type:
         enabled: true
