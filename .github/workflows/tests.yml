@@ -57,6 +57,7 @@ jobs:
   codeception:
     name: Codeception Test Suites
     strategy:
+      fail-fast: false
       matrix:
         suite: [acceptance, functional]
         site: [library, supress]

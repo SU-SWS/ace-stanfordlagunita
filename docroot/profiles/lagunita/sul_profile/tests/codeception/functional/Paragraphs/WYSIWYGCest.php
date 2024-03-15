@@ -255,7 +255,7 @@ class WYSIWYGCest {
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
-    $I->scrollTo('.field-media-oembed-video', 0, 100);
+    $I->scrollTo('.media--type-video', 0, 100);
     $I->waitForElementVisible('iframe');
     $I->canSeeNumberOfElements('iframe', 1);
     $I->canSeeNumberOfElements('iframe[loading="lazy"]', 1);
