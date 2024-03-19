@@ -1,0 +1,14 @@
+project:
+  machine_name: summer
+  human_name: summer
+  local:
+    protocol: http
+    hostname: summer.loc
+  profile:
+    name: summer_profile
+drush:
+  aliases:
+    local: summer.local
+    remote: summer.prod
+drupal:
+  db: {  }

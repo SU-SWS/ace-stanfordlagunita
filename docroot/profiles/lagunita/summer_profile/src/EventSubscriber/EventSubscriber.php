@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile\EventSubscriber;
+namespace Drupal\summer_profile\EventSubscriber;
 
 use Acquia\DrupalEnvironmentDetector\AcquiaDrupalEnvironmentDetector;
 use Drupal\Core\Cache\Cache;
@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 /**
  * Class EventSubscriber.
  *
- * @package Drupal\stanford_profile\EventSubscriber
+ * @package Drupal\summer_profile\EventSubscriber
  */
 class EventSubscriber implements EventSubscriberInterface {
 
@@ -77,7 +77,7 @@ class EventSubscriber implements EventSubscriberInterface {
    *   Messenger service.
    */
   public function __construct(protected FileSystemInterface $fileSystem, LoggerChannelFactoryInterface $logger_factory, protected MessengerInterface $messenger) {
-    $this->logger = $logger_factory->get('stanford_profile');
+    $this->logger = $logger_factory->get('summer_profile');
   }
 
   /**

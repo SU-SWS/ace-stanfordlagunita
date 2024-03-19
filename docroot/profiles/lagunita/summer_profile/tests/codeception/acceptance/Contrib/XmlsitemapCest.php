@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Test that stanford_profile_xmlsitemap_link_alter is working.
+ * Test that summer_profile_xmlsitemap_link_alter is working.
  */
 class XmlsitemapCest {
 

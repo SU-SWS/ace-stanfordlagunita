@@ -252,11 +252,11 @@ module:
   menu_link_weight: 10
   stanford_profile_helper: 10
   paragraphs: 11
-  stanford_profile: 1000
+  summer_profile: 1000
 theme:
   claro: 0
   minimally_branded_subtheme: 0
   stable9: 0
   stanford_basic: 0
   stanford_profile_admin_theme: 0
-profile: stanford_profile
+profile: summer_profile

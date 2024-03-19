@@ -70,7 +70,7 @@ dependencies:
     - shortcut
     - stanford_media
     - stanford_policy
-    - stanford_profile
+    - summer_profile
     - stanford_publication
     - system
     - taxonomy

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * stanford_profile.install
+ * summer_profile.install
  */
 
 use Drupal\Core\Menu\MenuTreeParameters;
@@ -12,7 +12,7 @@ use Drupal\field\Entity\FieldConfig;
 /**
  * Save the system pages from the original config values into state.
  */
-function stanford_profile_update_8002() {
+function summer_profile_update_8002() {
   $state = \Drupal::state();
   $state->set('stanford_profile.403_page', '/node/3');
   $state->set('stanford_profile.404_page', '/node/2');

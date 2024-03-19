@@ -60,7 +60,7 @@ jobs:
       fail-fast: false
       matrix:
         suite: [acceptance, functional]
-        site: [library, supress]
+        site: [library, supress, summer]
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
