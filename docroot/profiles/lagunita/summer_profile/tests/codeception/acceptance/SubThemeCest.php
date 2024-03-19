@@ -9,7 +9,7 @@ use Faker\Factory;
  * @group no-parallel
  * @group subthemes
  */
-class SubThemeCest {
+abstract class SubThemeCest {
 
   /**
    * Human readable name for the theme.
