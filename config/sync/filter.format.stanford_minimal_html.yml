@@ -1,0 +1,67 @@
+uuid: 20c3640d-aed6-4fb2-98d6-4e832856a787
+langcode: en
+status: true
+dependencies:
+  module:
+    - linkit
+    - mathjax
+    - responsive_tables_filter
+    - stanford_decoupled
+name: 'Minimal HTML'
+format: stanford_minimal_html
+weight: -9
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      allowed_html: '<br> <p id class> <a class aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id href> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <cite> <dd> <div id class> <blockquote cite> <strong> <em> <code> <ul> <ol reversed start> <li>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: 0
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: 50
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -10
+    settings: {  }
+  filter_mathjax:
+    id: filter_mathjax
+    provider: mathjax
+    status: false
+    weight: -50
+    settings: {  }
+  filter_responsive_tables_filter:
+    id: filter_responsive_tables_filter
+    provider: responsive_tables_filter
+    status: false
+    weight: 0
+    settings:
+      tablesaw_type: stack
+      tablesaw_persist: '1'
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 10
+    settings:
+      title: true
+  su_clean_html:
+    id: su_clean_html
+    provider: stanford_decoupled
+    status: true
+    weight: 99
+    settings: {  }
