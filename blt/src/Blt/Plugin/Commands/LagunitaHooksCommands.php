@@ -73,7 +73,13 @@ class LagunitaHooksCommands extends BltTasks {
     }
     $keys_dir = $this->getConfigValue('repo.root') . '/keys';
     if (EnvironmentDetector::isLocalEnv() && !file_exists($keys_dir)) {
-      $this->invokeCommand('sws:keys');
+      try {
+        $this->invokeCommand('sws:keys');
+      }
+      catch (\Exception $e) {
+        // The command invocation will print the error, but don't throw the
+        // error since some CI/CD tools might fail.
+      }
     }
   }
 
