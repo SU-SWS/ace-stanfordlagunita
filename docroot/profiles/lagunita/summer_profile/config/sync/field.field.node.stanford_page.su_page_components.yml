@@ -1,0 +1,80 @@
+uuid: fdbe5b0f-c6d6-4d9e-b2f5-5e55b661416b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_page_components
+    - node.type.stanford_page
+    - paragraphs.paragraphs_type.stanford_banner
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_entity
+    - paragraphs.paragraphs_type.stanford_gallery
+    - paragraphs.paragraphs_type.stanford_layout
+    - paragraphs.paragraphs_type.stanford_lists
+    - paragraphs.paragraphs_type.stanford_media_caption
+    - paragraphs.paragraphs_type.stanford_spacer
+    - paragraphs.paragraphs_type.stanford_wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.stanford_page.su_page_components
+field_name: su_page_components
+entity_type: node
+bundle: stanford_page
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_wysiwyg: stanford_wysiwyg
+      stanford_card: stanford_card
+      stanford_banner: stanford_banner
+      stanford_media_caption: stanford_media_caption
+      stanford_entity: stanford_entity
+      stanford_gallery: stanford_gallery
+      stanford_layout: stanford_layout
+      stanford_lists: stanford_lists
+      stanford_spacer: stanford_spacer
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: -25
+        enabled: false
+      stanford_banner:
+        weight: -22
+        enabled: true
+      stanford_card:
+        weight: -23
+        enabled: true
+      stanford_entity:
+        weight: -20
+        enabled: true
+      stanford_gallery:
+        weight: -19
+        enabled: true
+      stanford_layout:
+        weight: -18
+        enabled: true
+      stanford_lists:
+        weight: -17
+        enabled: true
+      stanford_media_caption:
+        weight: -21
+        enabled: true
+      stanford_person_cta:
+        weight: -16
+        enabled: false
+      stanford_schedule:
+        weight: -15
+        enabled: false
+      stanford_spacer:
+        weight: -14
+        enabled: true
+      stanford_wysiwyg:
+        weight: -24
+        enabled: true
+field_type: entity_reference_revisions

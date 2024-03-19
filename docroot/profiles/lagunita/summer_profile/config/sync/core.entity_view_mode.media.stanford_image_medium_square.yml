@@ -1,0 +1,11 @@
+uuid: 8fdf9d55-05a0-4568-a2e1-59b2e3ea51a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.stanford_image_medium_square
+label: 'Medium square (220px, cropped)'
+description: ''
+targetEntityType: media
+cache: true
