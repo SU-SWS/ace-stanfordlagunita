@@ -75,14 +75,15 @@ jobs:
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
             2.x-${{ hashFiles('blt/blt.yml') }}-
-      - id: set-matrix
+      - name:
+        id: set-matrix
         run: |
           composer install -n &&
-          vendor/bin/blt blt:telemetry:disable --no-interaction &&
-          SITES=$(echo -n "$(blt blt:config:get multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort')
+          SITES=$(echo -n "$(blt blt:config:get multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort') &&
           echo "matrix=$SITES" >> $GITHUB_OUTPUT
   codeception:
     name: Codeception Test Suites
+    needs: sites_to_test
     strategy:
       fail-fast: false
       matrix:
@@ -139,7 +140,6 @@ jobs:
           apachectl stop &&
           apachectl start &&
           composer install -n &&
-          blt blt:telemetry:disable --no-interaction &&
           blt drupal:install --site=${{ matrix.site }} -n &&
           drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1') &&
           drush xmlsitemap:rebuild &&
@@ -193,5 +193,4 @@ jobs:
           git config --global user.name "Github Actions" &&
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
-          blt blt:telemetry:disable --no-interaction &&
           blt deploy -v -n
