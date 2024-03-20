@@ -54,13 +54,40 @@ jobs:
         with:
           name: unit-tests-results
           path: $GITHUB_WORKSPACE/artifacts
+  sites_to_test:
+    runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.x-${{ hashFiles('blt/blt.yml') }}-
+      - id: set-matrix
+        run: |
+          composer install -n &&
+          vendor/bin/blt blt:telemetry:disable --no-interaction &&
+          SITES=$(echo -n "$(blt blt:config:get multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort')
+          echo "matrix=$SITES" >> $GITHUB_OUTPUT
   codeception:
     name: Codeception Test Suites
     strategy:
       fail-fast: false
       matrix:
         suite: [acceptance, functional]
-        site: [library, supress, summer]
+        site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
     env:
       DRUPAL_DATABASE_NAME: drupal
@@ -99,24 +126,24 @@ jobs:
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
             2.x-${{ hashFiles('blt/blt.yml') }}-
-      - run: git config --system --add safe.directory '*'
       - name: Install Site
         run: |
-          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
-          rm -rf /var/www/html
-          ln -snf $GITHUB_WORKSPACE /var/www/html
-          mkdir -p docroot/sites/default/files
-          chmod -R 777 docroot/sites/default/files/
-          rm -rf docroot/sites/${{ matrix.site }}/files
-          ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files
-          apachectl stop
-          apachectl start
-          composer install -n
-          blt blt:telemetry:disable --no-interaction
-          blt drupal:install --site=${{ matrix.site }} -n
-          drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')
-          drush xmlsitemap:rebuild
-          drush cr
+          git config --system --add safe.directory '*' &&
+          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
+          rm -rf /var/www/html &&
+          ln -snf $GITHUB_WORKSPACE /var/www/html &&
+          mkdir -p docroot/sites/default/files &&
+          chmod -R 777 docroot/sites/default/files/ &&
+          rm -rf docroot/sites/${{ matrix.site }}/files &&
+          ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files &&
+          apachectl stop &&
+          apachectl start &&
+          composer install -n &&
+          blt blt:telemetry:disable --no-interaction &&
+          blt drupal:install --site=${{ matrix.site }} -n &&
+          drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1') &&
+          drush xmlsitemap:rebuild &&
+          drush cr &&
           mkdir -p artifacts/_data/
       - name: Run tests
         run: blt codeception --test=${{ matrix.site }} --suite=${{ matrix.suite }}
