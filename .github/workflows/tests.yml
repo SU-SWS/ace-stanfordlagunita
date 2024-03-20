@@ -143,6 +143,65 @@ jobs:
         with:
           name: ${{ matrix.site }}-${{ matrix.suite }}-tests-results
           path: artifacts
+  db_updates:
+    name: Verify Database Updates & Config Imports
+    needs: sites_to_test
+    strategy:
+      fail-fast: false
+      matrix:
+        site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
+    runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:latest
+      options: '--network-alias drupal8ci'
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: drupal
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+          MYSQL_ROOT_PASSWORD: drupal
+        ports:
+          - 33306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+      - uses: actions/checkout@v4
+      - name: Restore Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.x-${{ hashFiles('blt/blt.yml') }}-
+      - name: Install Site
+        run: |
+          git config --system --add safe.directory '*' &&
+          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
+          rm -rf /var/www/html &&
+          ln -snf $GITHUB_WORKSPACE /var/www/html &&
+          mkdir -p docroot/sites/default/files &&
+          chmod -R 777 docroot/sites/default/files/ &&
+          rm -rf docroot/sites/${{ matrix.site }}/files &&
+          ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files &&
+          apachectl stop &&
+          apachectl start &&
+          composer install -n &&
+          blt drupal:sync --site=${{ matrix.site }} -n &&
+          curl -I http://localhost --fail
   deploy:
     name: Deploy Artifact
     needs: [phpunit, codeception]
