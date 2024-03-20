@@ -9,6 +9,6 @@ project:
 drush:
   aliases:
     local: summer.local
-    remote: summer.test
+    remote: summer.prod
 drupal:
   db: {  }
