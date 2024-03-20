@@ -1,5 +1,19 @@
 # Stanford Profile
 
+11.3.4
+-------------------------------------------------------------------------------
+- Index algolia items only during cron
+- Added event image to algolia index data
+- D8CORE-7295 D8CORE-7301 Enable rabbit hole for publications content type
+
+11.3.3
+-------------------------------------------------------------------------------
+- D8CORE-7341 Add h2 headings to courses quarter term pages
+
+11.3.2
+-------------------------------------------------------------------------------
+- D8CORE-7341 Add h2 headings to past events and courses term pages
+
 11.3.1
 -------------------------------------------------------------------------------
 - Fix images and oembed videos to be lazy loading

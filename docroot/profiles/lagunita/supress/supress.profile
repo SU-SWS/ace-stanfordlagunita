@@ -5,7 +5,7 @@
  * supress.profile
  */
 
-use Drupal\config_pages\Entity\ConfigPages;
+use Drupal\config_pages\ConfigPagesInterface;
 use Drupal\Core\Installer\InstallerKernel;
 
 /**
@@ -28,7 +28,7 @@ function supress_final_task(array &$install_state) {
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
-function supress_config_pages_presave(ConfigPages $config_page) {
+function supress_config_pages_presave(ConfigPagesInterface $config_page) {
   // During install, rebuild the router when saving a config page. This prevents
   // an error if the config page route doesn't exist for it yet. Event
   // subscriber doesn't work for this since it's during installation.
