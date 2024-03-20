@@ -12,8 +12,6 @@ jobs:
     if: github.event.pull_request.merged
     container:
       image: pookmish/drupal8ci:latest
-    env:
-      STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
     steps:
       - name: Get Next Release
         id: tag

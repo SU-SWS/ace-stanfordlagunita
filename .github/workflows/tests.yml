@@ -154,6 +154,8 @@ jobs:
     container:
       image: pookmish/drupal8ci:latest
       options: '--network-alias drupal8ci'
+    env:
+      STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
     services:
       mysql:
         image: mysql:5.7
@@ -187,7 +189,7 @@ jobs:
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
             2.x-${{ hashFiles('blt/blt.yml') }}-
-      - name: Install Site
+      - name: Sync and Update Site
         run: |
           git config --system --add safe.directory '*' &&
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
