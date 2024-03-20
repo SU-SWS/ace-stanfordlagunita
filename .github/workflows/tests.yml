@@ -7,11 +7,6 @@ jobs:
   phpunit:
     name: PHPUnit Coverage Tests
     runs-on: ubuntu-latest
-    env:
-      DRUPAL_DATABASE_NAME: drupal
-      DRUPAL_DATABASE_USERNAME: drupal
-      DRUPAL_DATABASE_PASSWORD: drupal
-      DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
     services:
@@ -90,11 +85,6 @@ jobs:
         suite: [acceptance, functional]
         site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
-    env:
-      DRUPAL_DATABASE_NAME: drupal
-      DRUPAL_DATABASE_USERNAME: drupal
-      DRUPAL_DATABASE_PASSWORD: drupal
-      DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
       options: '--network-alias drupal8ci'
@@ -157,11 +147,6 @@ jobs:
     name: Deploy Artifact
     needs: [phpunit, codeception]
     runs-on: ubuntu-latest
-    env:
-      DRUPAL_DATABASE_NAME: drupal
-      DRUPAL_DATABASE_USERNAME: drupal
-      DRUPAL_DATABASE_PASSWORD: drupal
-      DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
     steps:
