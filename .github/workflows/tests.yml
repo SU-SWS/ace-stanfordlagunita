@@ -204,7 +204,7 @@ jobs:
           curl -I http://localhost --fail
   deploy:
     name: Deploy Artifact
-    needs: [phpunit, codeception]
+    needs: [phpunit, codeception, db_updates]
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:latest
