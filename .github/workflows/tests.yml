@@ -70,7 +70,7 @@ jobs:
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
             2.x-${{ hashFiles('blt/blt.yml') }}-
-      - name:
+      - name: Get Sites
         id: set-matrix
         run: |
           composer install -n &&
