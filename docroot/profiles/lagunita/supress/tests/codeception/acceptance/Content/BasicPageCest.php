@@ -1,6 +1,5 @@
 <?php
 
-use Drupal\Component\Utility\Unicode;
 use Faker\Factory;
 
 /**

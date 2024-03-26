@@ -797,8 +797,6 @@ field_config:
         enabled: true
       sup_in_print_status:
         enabled: true
-      sup_instructor_recommeded:
-        enabled: true
       sup_isbn_13_alt:
         enabled: true
       sup_isbn_13_cloth:

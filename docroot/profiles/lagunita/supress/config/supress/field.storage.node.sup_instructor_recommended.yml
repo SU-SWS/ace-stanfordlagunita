@@ -1,11 +1,11 @@
-uuid: 81001e8f-f4d7-4212-b7a7-bb4c788a9366
+uuid: 56ed240f-af81-40f3-8355-ac0c32aa3d10
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.sup_instructor_recommeded
-field_name: sup_instructor_recommeded
+id: node.sup_instructor_recommended
+field_name: sup_instructor_recommended
 entity_type: node
 type: string
 settings:

@@ -1,15 +1,15 @@
-uuid: 7669ce80-69dd-4356-8e96-a9a6d0ff6ecb
+uuid: 19ab0fa7-c8f9-426e-a576-944810e5c2cf
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sup_instructor_recommeded
+    - field.storage.node.sup_instructor_recommended
     - node.type.sup_book
-id: node.sup_book.sup_instructor_recommeded
-field_name: sup_instructor_recommeded
+id: node.sup_book.sup_instructor_recommended
+field_name: sup_instructor_recommended
 entity_type: node
 bundle: sup_book
-label: 'Instructor Recommeded'
+label: 'Instructor Recommended'
 description: ''
 required: false
 translatable: false
