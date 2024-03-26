@@ -44,7 +44,7 @@ dependencies:
     - field.field.node.sup_book.sup_illustrations
     - field.field.node.sup_book.sup_imprint
     - field.field.node.sup_book.sup_in_print_status
-    - field.field.node.sup_book.sup_instructor_recommeded
+    - field.field.node.sup_book.sup_instructor_recommended
     - field.field.node.sup_book.sup_isbn_13_alt
     - field.field.node.sup_book.sup_isbn_13_cloth
     - field.field.node.sup_book.sup_isbn_13_digital
@@ -660,9 +660,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  sup_instructor_recommeded:
+  sup_instructor_recommended:
     type: string_textfield
-    weight: 22
+    weight: 51
     region: content
     settings:
       size: 60
