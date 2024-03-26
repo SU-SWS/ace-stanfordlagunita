@@ -579,11 +579,9 @@ process:
       source: 'subjects_press_all'
       delimiter: '\r'
     -
-      plugin: entity_generate
-      entity_type: taxonomy_term
-      bundle_key: vid
-      bundle: sup_book_subjects
-      value_key: name
+      plugin: nested_term_generate
+      vocabulary: sup_book_subjects
+      delimiter: " -- "
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book
