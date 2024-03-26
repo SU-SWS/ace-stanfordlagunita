@@ -3,17 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.taxonomy_term.stanford_event_types.default
-    - core.entity_view_display.taxonomy_term.stanford_news_topics.default
-    - core.entity_view_display.taxonomy_term.stanford_person_types.default
-    - core.entity_view_display.taxonomy_term.stanford_publication_topics.default
     - filter.format.stanford_html
     - filter.format.stanford_minimal_html
   module:
     - file
     - filter
     - layout_builder
-    - ui_patterns_library
 id: layout_builder_user
 label: 'Layout Builder User'
 weight: 1

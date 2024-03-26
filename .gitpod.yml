@@ -1,16 +1,3 @@
-
-additionalRepositories:
-  - url: https://github.com/SU-SWS/sulgryphon-nextjs.git
-    checkoutLocation: frontend
-github:
-  prebuilds:
-    master: true
-    branches: false
-    pullRequests: true
-    pullRequestsFromForks: false
-    addCheck: false
-    addComment: false
-    addBadge: true
 ports:
   - name: database
     description: Mysql database
@@ -43,11 +30,7 @@ tasks:
       composer install --no-interaction &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      blt source:build:simplesamlphp-config &&
-      blt drupal:install -n &&
-      rsync -r /workspace/frontend/ frontend &&
-      cd frontend &&
-      yarn
+      blt drupal:install -n
     command: |
       cd $GITPOD_REPO_ROOT &&
       echo 'Restarting Apache' &&
@@ -65,34 +48,19 @@ tasks:
       drush uli --uri=$PREVIEW_FULL_URL &&
       echo "drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external" &&
       drush uli --uri=$PREVIEW_FULL_URL | xargs gp preview --external &&
-      git config core.fileMode false &&
-      echo 'Connecting Drupal to Frontend' &&
-      blt gryphon:connect-nextjs frontend "$PREVIEW_URL" "`gp url 3000`" &&
-      cd frontend &&
-      echo 'Starting Frontend' &&
-      yarn dev &
-      gp ports await 3000 &&
-      gp url 3000 | xargs gp preview --external
+      git config core.fileMode false
   - name: SSH Keys
-    command: |
-      rm -rf ~/.ssh/id_rsa &&
-      rm -rf ~/.ssh/id_rsa.pub &&
-      eval $(command gp env -e) &&
-      mkdir -p ~/.ssh &&
-      [[ ! -z $SSH_PUBLIC_KEY  ]] &&
-      echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub &&
-      chmod 644 ~/.ssh/id_rsa.pub &&
-      [[ ! -z $SSH_PRIVATE_KEY  ]] &&
-      echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa &&
-      chmod 600 ~/.ssh/id_rsa &&
-      cd $GITPOD_REPO_ROOT &&
-      git remote set-url origin git@github.com:SU-SWS/ace-sulgryphon.git &&
-      cd frontend &&
-      git remote set-url origin git@github.com:SU-SWS/sulgryphon-nextjs.git &&
-      [[ ! -z $GITCONFIG  ]] &&
-      echo $GITCONFIG | base64 -d > ~/.gitconfig &&
-      chmod 644 ~/.gitconfig
-
+    before: |
+      mkdir -p ~/.ssh
+      if [[ ! -z $SSH_PUBLIC_KEY  ]]; then
+          echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub && chmod 644 ~/.ssh/id_rsa.pub
+      fi
+      if [[ ! -z $SSH_PRIVATE_KEY ]]; then
+          echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+      fi
+      if [[ ! -z $GITCONFIG ]]; then
+          echo $GITCONFIG | base64 -d > ~/.gitconfig && chmod 644 ~/.gitconfig
+      fi
 vscode:
   extensions:
     - bradlc.vscode-tailwindcss

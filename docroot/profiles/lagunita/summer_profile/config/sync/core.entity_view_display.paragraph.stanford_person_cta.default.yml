@@ -1,0 +1,81 @@
+uuid: 0154f147-3cb7-48d5-ba28-ffaa298f3029
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stanford_person_cta.su_person_cta_image
+    - field.field.paragraph.stanford_person_cta.su_person_cta_link
+    - field.field.paragraph.stanford_person_cta.su_person_cta_name
+    - field.field.paragraph.stanford_person_cta.su_person_cta_title
+    - paragraphs.paragraphs_type.stanford_person_cta
+  module:
+    - ds
+    - field_formatter_class
+    - link
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_events_person_cta
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      image:
+        - su_person_cta_image
+      name:
+        - su_person_cta_name
+      title:
+        - su_person_cta_title
+      link:
+        - su_person_cta_link
+id: paragraph.stanford_person_cta.default
+targetEntityType: paragraph
+bundle: stanford_person_cta
+mode: default
+content:
+  su_person_cta_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: stanford_image_stanford_circle
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: su-person-cta--image
+    weight: 0
+    region: image
+  su_person_cta_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: link
+  su_person_cta_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: name
+  su_person_cta_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: title
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: b119c3bc-87fc-4027-9910-755664737774
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sul_study__room_donor_name
+field_name: sul_study__room_donor_name
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

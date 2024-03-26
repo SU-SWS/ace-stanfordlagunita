@@ -1,0 +1,5 @@
+name: 'Summer Helper'
+type: module
+description: 'Helper module for Summer website'
+package: Stanford
+core_version_requirement: ^10 || ^11

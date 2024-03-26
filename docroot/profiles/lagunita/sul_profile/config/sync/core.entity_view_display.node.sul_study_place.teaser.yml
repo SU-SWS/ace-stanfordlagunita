@@ -7,7 +7,10 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
+    - field.field.node.sul_study_place.sul_study__image
     - field.field.node.sul_study_place.sul_study__libcal_id
+    - field.field.node.sul_study_place.sul_study__room_donor_name
+    - field.field.node.sul_study_place.sul_study__room_number
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
@@ -27,5 +30,8 @@ hidden:
   sul_study__branch: true
   sul_study__capacity: true
   sul_study__features: true
+  sul_study__image: true
   sul_study__libcal_id: true
+  sul_study__room_donor_name: true
+  sul_study__room_number: true
   sul_study__type: true

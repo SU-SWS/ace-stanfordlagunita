@@ -1,0 +1,36 @@
+{
+    "name": "su-sws/summer_profile",
+    "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
+    "type": "drupal-custom-profile",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {},
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\summer_profile\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\Tests\\summer_profile\\": "tests/src"
+        }
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        },
+        "patches": {}
+    }
+}

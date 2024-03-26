@@ -1,0 +1,400 @@
+uuid: 222702de-3137-4e01-856a-61b5283cd056
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.stanford_person.body
+    - field.field.node.stanford_person.field_menulink
+    - field.field.node.stanford_person.layout_builder__layout
+    - field.field.node.stanford_person.stanford_intranet__access
+    - field.field.node.stanford_person.su_metatags
+    - field.field.node.stanford_person.su_person_academic_appt
+    - field.field.node.stanford_person.su_person_admin_appts
+    - field.field.node.stanford_person.su_person_affiliations
+    - field.field.node.stanford_person.su_person_components
+    - field.field.node.stanford_person.su_person_education
+    - field.field.node.stanford_person.su_person_email
+    - field.field.node.stanford_person.su_person_fax
+    - field.field.node.stanford_person.su_person_first_name
+    - field.field.node.stanford_person.su_person_full_title
+    - field.field.node.stanford_person.su_person_last_name
+    - field.field.node.stanford_person.su_person_links
+    - field.field.node.stanford_person.su_person_location_address
+    - field.field.node.stanford_person.su_person_location_name
+    - field.field.node.stanford_person.su_person_mail_code
+    - field.field.node.stanford_person.su_person_map_url
+    - field.field.node.stanford_person.su_person_mobile_phone
+    - field.field.node.stanford_person.su_person_photo
+    - field.field.node.stanford_person.su_person_profile_link
+    - field.field.node.stanford_person.su_person_pronouns
+    - field.field.node.stanford_person.su_person_research
+    - field.field.node.stanford_person.su_person_research_interests
+    - field.field.node.stanford_person.su_person_scholarly_interests
+    - field.field.node.stanford_person.su_person_short_title
+    - field.field.node.stanford_person.su_person_telephone
+    - field.field.node.stanford_person.su_person_type_group
+    - field.field.node.stanford_person.su_shared_tags
+    - node.type.stanford_person
+  module:
+    - allowed_formats
+    - change_labels
+    - cshs
+    - field_group
+    - layout_paragraphs
+    - link
+    - media_library
+    - menu_link
+    - metatag
+    - scheduler
+    - stanford_intranet
+    - text
+third_party_settings:
+  field_group:
+    group_name_titles:
+      children:
+        - su_person_first_name
+        - su_person_last_name
+        - title
+        - su_person_pronouns
+        - su_person_short_title
+        - su_person_full_title
+      label: 'Name & Titles'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: true
+    group_bio_content:
+      children:
+        - su_person_photo
+        - body
+        - su_person_components
+      label: 'Bio & Content'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: false
+    group_contact_location_informati:
+      children:
+        - su_person_telephone
+        - su_person_mobile_phone
+        - su_person_fax
+        - su_person_email
+        - su_person_mail_code
+        - su_person_location_name
+        - su_person_location_address
+        - su_person_map_url
+      label: 'Contact & Location Information'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: true
+    group_interests_affiliations:
+      children:
+        - su_person_research
+        - su_person_education
+        - su_person_affiliations
+        - su_person_links
+      label: 'Interests & Affiliations'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: false
+    group_taxonomy:
+      children:
+        - su_person_type_group
+      label: Taxonomy
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: true
+id: node.stanford_person.default
+targetEntityType: node
+bundle: stanford_person
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 5
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+  field_menulink:
+    type: menu_link_default
+    weight: 53
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  stanford_intranet__access:
+    type: entity_access
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_metatags:
+    type: metatag_firehose
+    weight: 32
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
+  su_person_affiliations:
+    type: link_default
+    weight: 9
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  su_person_components:
+    type: layout_paragraphs
+    weight: 7
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings:
+      change_labels:
+        add_another: ''
+  su_person_education:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_email:
+    type: email_default
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  su_person_fax:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_first_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_full_title:
+    type: string_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_last_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_links:
+    type: link_default
+    weight: 10
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  su_person_location_address:
+    type: text_textarea
+    weight: 15
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_location_name:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_mail_code:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_map_url:
+    type: link_default
+    weight: 16
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  su_person_mobile_phone:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_photo:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  su_person_profile_link:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  su_person_pronouns:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_research:
+    type: text_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_short_title:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_telephone:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_person_type_group:
+    type: cshs
+    weight: 17
+    region: content
+    settings:
+      save_lineage: false
+      force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
+    third_party_settings: {  }
+  su_shared_tags:
+    type: cshs
+    weight: 31
+    region: content
+    settings:
+      save_lineage: false
+      force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  layout_builder__layout: true
+  path: true
+  promote: true
+  sticky: true
+  su_person_academic_appt: true
+  su_person_admin_appts: true
+  su_person_research_interests: true
+  su_person_scholarly_interests: true
+  uid: true
+  unpublish_on: true
+  url_redirects: true

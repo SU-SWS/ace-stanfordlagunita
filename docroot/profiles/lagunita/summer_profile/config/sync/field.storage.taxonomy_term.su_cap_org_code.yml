@@ -1,0 +1,21 @@
+uuid: 5bc95078-ad17-435d-bd74-2d8b4df7052d
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.su_cap_org_code
+field_name: su_cap_org_code
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 4
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

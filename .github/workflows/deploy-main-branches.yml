@@ -22,11 +22,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('composer.json') }}-
-            2.x-
+            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.x-${{ hashFiles('blt/blt.yml') }}-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -34,12 +34,12 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - run: git config --system --add safe.directory '*'
       - name: Deploy Artifact
         run: |
-          git config --global user.email "sws-developers@lists.stanford.edu"
-          git config --global user.name "Github Actions"
-          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts
-          composer install -n
-          blt blt:telemetry:disable --no-interaction
-          blt deploy -v -n
+          git config --system --add safe.directory '*' &&
+          git config --global user.email "sws-developers@lists.stanford.edu" &&
+          git config --global user.name "Github Actions" &&
+          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
+          composer install -n &&
+          blt blt:telemetry:disable --no-interaction &&
+          blt deploy -v -n &&

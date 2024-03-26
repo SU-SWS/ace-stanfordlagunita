@@ -23,6 +23,7 @@ cm:
 multisites:
   - default
   - library
+  - summer
   - supress
 tests:
   reports:
@@ -46,6 +47,11 @@ tests:
         - acceptance
         - functional
       directory: '${docroot}/profiles/lagunita/supress/tests/codeception'
+    summer:
+      suites:
+        - acceptance
+        - functional
+      directory: '${docroot}/profiles/lagunita/summer_profile/tests/codeception'
 validate:
   twig:
     functions:

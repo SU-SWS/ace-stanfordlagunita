@@ -1,0 +1,66 @@
+uuid: 0c9df089-a2a3-4702-ad9a-18b7cc16f6bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.stanford_gallery_images.su_gallery_caption
+    - field.field.media.stanford_gallery_images.su_gallery_image
+    - field.field.media.stanford_gallery_images.su_media_category
+    - image.style.thumbnail
+    - media.type.stanford_gallery_images
+  module:
+    - cshs
+    - focal_point
+id: media.stanford_gallery_images.media_library
+targetEntityType: media
+bundle: stanford_gallery_images
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_gallery_caption:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_gallery_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  su_media_category:
+    type: cshs
+    weight: 3
+    region: content
+    settings:
+      save_lineage: false
+      force_deepest: false
+      parent: ''
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  publish_on: true
+  scheduler_settings: true
+  status: true
+  uid: true
+  unpublish_on: true

@@ -1,0 +1,360 @@
+uuid: f709ac08-679e-4bd4-947f-e2bf337d5bd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_basic_site_settings
+    - field.field.config_pages.stanford_basic_site_settings.su_google_analytics
+    - field.field.config_pages.stanford_basic_site_settings.su_hide_ext_link_icons
+    - field.field.config_pages.stanford_basic_site_settings.su_hide_site_search
+    - field.field.config_pages.stanford_basic_site_settings.su_site_403
+    - field.field.config_pages.stanford_basic_site_settings.su_site_404
+    - field.field.config_pages.stanford_basic_site_settings.su_site_a11y_contact
+    - field.field.config_pages.stanford_basic_site_settings.su_site_admin_notes
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_file
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_id
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_index
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_key
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_search
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_ui
+    - field.field.config_pages.stanford_basic_site_settings.su_site_dropdowns
+    - field.field.config_pages.stanford_basic_site_settings.su_site_email
+    - field.field.config_pages.stanford_basic_site_settings.su_site_home
+    - field.field.config_pages.stanford_basic_site_settings.su_site_menu_levels
+    - field.field.config_pages.stanford_basic_site_settings.su_site_name
+    - field.field.config_pages.stanford_basic_site_settings.su_site_new_menu
+    - field.field.config_pages.stanford_basic_site_settings.su_site_nobots
+    - field.field.config_pages.stanford_basic_site_settings.su_site_org
+    - field.field.config_pages.stanford_basic_site_settings.su_site_owner_contact
+    - field.field.config_pages.stanford_basic_site_settings.su_site_renewal_due
+    - field.field.config_pages.stanford_basic_site_settings.su_site_tech_contact
+    - field.field.config_pages.stanford_basic_site_settings.su_site_url
+  module:
+    - change_labels
+    - conditional_fields
+    - cshs
+    - field_group
+    - file
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_experimental:
+      children:
+        - su_site_new_menu
+        - su_site_admin_notes
+      label: Experimental
+      region: content
+      parent_name: group_site_details
+      weight: 13
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_tabs:
+      children:
+        - group_site_details
+        - group_contact_details
+        - group_search
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_site_details:
+      children:
+        - su_site_name
+        - su_site_email
+        - su_site_url
+        - su_google_analytics
+        - su_site_dropdowns
+        - su_site_menu_levels
+        - su_hide_ext_link_icons
+        - su_site_home
+        - su_site_404
+        - su_site_403
+        - group_experimental
+      label: 'Site Settings/Features'
+      region: content
+      parent_name: group_tabs
+      weight: 19
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_contact_details:
+      children:
+        - su_site_owner_contact
+        - su_site_tech_contact
+        - su_site_a11y_contact
+        - su_site_org
+      label: 'Site Contacts'
+      region: content
+      parent_name: group_tabs
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: contact
+        formatter: closed
+        description: "<h2>Contact and Affiliation Information for this Site</h2>\r\n<p>Site owners are required to provide the email addresses for important site contacts on an annual basis in order to renew the site. Please provide an email address for the primary site owner(s), primary site manager(s), and a contact who will be responsible for ensuring the accessibility of content on the site. Also select the site’s closest organizational affiliation(s).</p>\r\n<p>If you have questions about this information or policies around site renewal, please visit our <a href=\"https://sitesuserguide.stanford.edu/get-started/enter-site-ownership-information\">User Guide page about site ownership</a>.</p>"
+        required_fields: true
+    group_search:
+      children:
+        - su_hide_site_search
+        - su_site_nobots
+        - su_site_algolia
+        - su_site_algolia_ui
+        - su_site_algolia_id
+        - su_site_algolia_key
+        - su_site_algolia_search
+        - su_site_algolia_index
+        - su_site_algolia_file
+      label: Search
+      region: content
+      parent_name: group_tabs
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: config_pages.stanford_basic_site_settings.default
+targetEntityType: config_pages
+bundle: stanford_basic_site_settings
+mode: default
+content:
+  su_google_analytics:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_hide_ext_link_icons:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_hide_site_search:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_site_403:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  su_site_404:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  su_site_a11y_contact:
+    type: email_default
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  su_site_admin_notes:
+    type: text_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  su_site_algolia:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_site_algolia_file:
+    type: file_generic
+    weight: 15
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  su_site_algolia_id:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_site_algolia_index:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_site_algolia_key:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_site_algolia_search:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_site_algolia_ui:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_site_dropdowns:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_site_email:
+    type: email_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  su_site_home:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  su_site_menu_levels:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        db3026f2-f6a1-483b-8d70-37940855f9a4:
+          entity_type: config_pages
+          bundle: stanford_basic_site_settings
+          dependee: su_site_dropdowns
+          settings:
+            state: visible
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: show
+            effect_options: {  }
+            selector: ''
+  su_site_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_site_new_menu:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_site_nobots:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_site_org:
+    type: cshs
+    weight: 7
+    region: content
+    settings:
+      save_lineage: false
+      force_deepest: false
+      parent: null
+      level_labels: ''
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  su_site_owner_contact:
+    type: email_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  su_site_tech_contact:
+    type: email_default
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  su_site_url:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  label: true
+  su_site_renewal_due: true
