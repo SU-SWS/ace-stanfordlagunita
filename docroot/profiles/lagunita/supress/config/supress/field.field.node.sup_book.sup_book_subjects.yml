@@ -1,0 +1,29 @@
+uuid: 3499099f-11c9-4cf7-be6e-8c420846f462
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_subjects
+    - node.type.sup_book
+    - taxonomy.vocabulary.sup_book_subjects
+id: node.sup_book.sup_book_subjects
+field_name: sup_book_subjects
+entity_type: node
+bundle: sup_book
+label: 'Book Subjects'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_book_subjects: sup_book_subjects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
