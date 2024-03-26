@@ -31,6 +31,7 @@ dependencies:
     - field.field.node.sup_book.sup_author_info
     - field.field.node.sup_book.sup_authors_full
     - field.field.node.sup_book.sup_availability_description
+    - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_catalog_month
     - field.field.node.sup_book.sup_catalog_page
     - field.field.node.sup_book.sup_catalog_season_yyyy
@@ -120,6 +121,7 @@ hidden:
   sup_author_info: true
   sup_authors_full: true
   sup_availability_description: true
+  sup_book_subjects: true
   sup_catalog_month: true
   sup_catalog_page: true
   sup_catalog_season_yyyy: true

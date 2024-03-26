@@ -30,6 +30,7 @@ dependencies:
     - field.field.node.sup_book.sup_author_info
     - field.field.node.sup_book.sup_authors_full
     - field.field.node.sup_book.sup_availability_description
+    - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_catalog_month
     - field.field.node.sup_book.sup_catalog_page
     - field.field.node.sup_book.sup_catalog_season_yyyy
@@ -307,6 +308,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 127
+    region: content
+  sup_book_subjects:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 177
     region: content
   sup_catalog_month:
     type: string

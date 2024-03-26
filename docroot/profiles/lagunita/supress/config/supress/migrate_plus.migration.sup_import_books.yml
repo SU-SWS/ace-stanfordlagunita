@@ -511,7 +511,7 @@ process:
       search:
         - '<I>'
         - '</I>'
-        - '\r'
+        - \r
       replace:
         - '<em>'
         - '</em>'
@@ -525,7 +525,7 @@ process:
   sup_illustrations: illustrations
   sup_imprint: imprint
   sup_in_print_status: in_print_status
-  sup_instructor_recommeded: instructor_recommeded
+  sup_instructor_recommended: instructor_recommended
   sup_isbn_13_alt: isbn_13_alt
   sup_isbn_13_cloth: isbn_13_cloth
   sup_isbn_13_digital: isbn_13_digital
@@ -552,7 +552,7 @@ process:
       search:
         - '<I>'
         - '</I>'
-        - '\r'
+        - \r
       replace:
         - '<em>'
         - '</em>'
@@ -573,6 +573,17 @@ process:
   sup_web_code_cloth: web_code_cloth
   sup_web_code_paper: web_code_paper
   sup_work_id_number: work_id_number
+  sup_book_subjects:
+    -
+      plugin: explode
+      source: 'subjects_press_all'
+      delimiter: '\r'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: sup_book_subjects
+      value_key: name
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

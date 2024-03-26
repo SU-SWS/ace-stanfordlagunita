@@ -30,6 +30,7 @@ dependencies:
     - field.field.node.sup_book.sup_author_info
     - field.field.node.sup_book.sup_authors_full
     - field.field.node.sup_book.sup_availability_description
+    - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_catalog_month
     - field.field.node.sup_book.sup_catalog_page
     - field.field.node.sup_book.sup_catalog_season_yyyy
@@ -550,6 +551,16 @@ content:
     weight: 13
     region: content
     settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_book_subjects:
+    type: entity_reference_autocomplete
+    weight: 52
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
