@@ -43,7 +43,7 @@ class FileMakerAuth extends AuthenticationPluginBase implements ContainerFactory
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
    * @param \GuzzleHttp\ClientInterface $client
-   *   Guzzle client servicde.
+   *   Guzzle client service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, protected ClientInterface $client) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -53,6 +53,14 @@ class FileMakerAuth extends AuthenticationPluginBase implements ContainerFactory
    * {@inheritdoc}
    */
   public function getAuthenticationOptions(): array {
+    if (
+      !isset($this->configuration['token_url']) ||
+      !isset($this->configuration['client_id']) ||
+      !isset($this->configuration['client_secret'])
+    ) {
+      throw new \Exception('Missing required configuration settings');
+    }
+
     $response = $this->client->request('POST', $this->configuration['token_url'], [
       'verify' => FALSE,
       'headers' => ['Content-Type' => 'application/json'],
