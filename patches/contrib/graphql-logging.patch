@@ -1,0 +1,27 @@
+diff --git a/src/Controller/RequestController.php b/src/Controller/RequestController.php
+index 60dcf9e..6972ac0 100644
+--- a/src/Controller/RequestController.php
++++ b/src/Controller/RequestController.php
+@@ -4,6 +4,7 @@ namespace Drupal\graphql\Controller;
+ 
+ use Drupal\Core\Cache\CacheableJsonResponse;
+ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
++use Drupal\Core\Site\Settings;
+ use Drupal\graphql\Entity\ServerInterface;
+ use GraphQL\Server\OperationParams;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+@@ -58,7 +59,13 @@ class RequestController implements ContainerInjectionInterface {
+     if (is_array($operations)) {
+       return $this->handleBatch($graphql_server, $operations);
+     }
+-
++    if (Settings::get('graphql_log')) {
++      \Drupal::logger('graphql_debug_query')->info($operations->query);
++      if ($operations->variables) {
++        \Drupal::logger('graphql_debug_variables')
++          ->info('%variables', ['%variables' => json_encode($operations->variables)]);
++      }
++    }
+     /** @var \GraphQL\Server\OperationParams $operations */
+     return $this->handleSingle($graphql_server, $operations);
+   }
