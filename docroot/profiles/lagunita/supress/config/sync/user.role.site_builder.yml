@@ -70,8 +70,8 @@ dependencies:
     - shortcut
     - stanford_media
     - stanford_policy
-    - supress
     - stanford_publication
+    - supress
     - system
     - taxonomy
     - toolbar

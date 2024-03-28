@@ -1,0 +1,23 @@
+uuid: defc6a85-e181-4da1-938b-a23ce693a891
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_cloth_sale_price
+    - node.type.sup_book
+id: node.sup_book.sup_cloth_sale_price
+field_name: sup_cloth_sale_price
+entity_type: node
+bundle: sup_book
+label: 'Cloth Sale Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

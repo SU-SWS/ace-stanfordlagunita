@@ -1,0 +1,19 @@
+uuid: b428b701-a6a0-46ab-85b2-1963c4b9e9a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_author_2_middle
+    - node.type.sup_book
+id: node.sup_book.sup_author_2_middle
+field_name: sup_author_2_middle
+entity_type: node
+bundle: sup_book
+label: 'Author 2 Middle Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

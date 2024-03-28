@@ -1,0 +1,19 @@
+uuid: 0bbef550-0339-41fc-8e8f-0b4a32071961
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_isbn_13_isw
+    - node.type.sup_book
+id: node.sup_book.sup_isbn_13_isw
+field_name: sup_isbn_13_isw
+entity_type: node
+bundle: sup_book
+label: 'ISBN 13 ISW'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

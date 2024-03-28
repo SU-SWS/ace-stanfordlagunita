@@ -1,0 +1,23 @@
+uuid: b9327723-dbf8-4d77-9ca2-1d5f723f795c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_copublisher_yn
+    - node.type.sup_book
+id: node.sup_book.sup_copublisher_yn
+field_name: sup_copublisher_yn
+entity_type: node
+bundle: sup_book
+label: 'Copublisher?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

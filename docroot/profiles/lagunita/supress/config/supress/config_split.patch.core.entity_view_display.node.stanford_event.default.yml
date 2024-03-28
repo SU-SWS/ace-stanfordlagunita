@@ -1,0 +1,12 @@
+adding:
+  third_party_settings:
+    layout_builder_restrictions:
+      entity_view_mode_restriction:
+        allowlisted_blocks:
+          Menus:
+            - 'menu_block:stanford-event-types'
+            - 'system_menu_block:main'
+            - 'menu_block:stanford-person-type'
+            - 'menu_block:stanford-publication-topics'
+            - 'menu_block:news-topics'
+removing: {  }

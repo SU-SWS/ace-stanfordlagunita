@@ -1,0 +1,22 @@
+uuid: c10ca802-daa5-44a9-9e96-4a8e404909fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_local_web_blurb
+    - node.type.sup_book
+  module:
+    - text
+id: node.sup_book.sup_local_web_blurb
+field_name: sup_local_web_blurb
+entity_type: node
+bundle: sup_book
+label: 'Local Web Blurb'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

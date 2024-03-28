@@ -1,0 +1,19 @@
+uuid: 3d8843a5-95ac-446c-b61e-3be49d72f8c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_author_1_first_name
+    - node.type.sup_book
+id: node.sup_book.sup_author_1_first_name
+field_name: sup_author_1_first_name
+entity_type: node
+bundle: sup_book
+label: 'Author 1 First Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

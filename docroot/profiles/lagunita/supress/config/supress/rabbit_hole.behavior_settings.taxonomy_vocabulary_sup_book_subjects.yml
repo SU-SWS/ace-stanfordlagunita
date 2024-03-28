@@ -1,0 +1,14 @@
+uuid: 4cbf97b7-d725-45d1-9324-617a1acb6906
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sup_book_subjects
+id: taxonomy_vocabulary_sup_book_subjects
+entity_type_id: taxonomy_vocabulary
+entity_id: sup_book_subjects
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

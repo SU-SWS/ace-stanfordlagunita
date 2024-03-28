@@ -1,0 +1,19 @@
+uuid: d8200c6a-d555-4993-9661-694b99ee7cb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_illustrations
+    - node.type.sup_book
+id: node.sup_book.sup_illustrations
+field_name: sup_illustrations
+entity_type: node
+bundle: sup_book
+label: Illustrations
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
