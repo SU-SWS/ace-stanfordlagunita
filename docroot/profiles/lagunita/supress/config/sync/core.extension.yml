@@ -208,6 +208,7 @@ module:
   stanford_publication: 0
   stanford_samlauth: 0
   subrequests: 0
+  supress_helper: 0
   syslog: 0
   system: 0
   taxonomy: 0
