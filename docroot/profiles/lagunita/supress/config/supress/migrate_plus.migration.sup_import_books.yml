@@ -575,6 +575,14 @@ process:
   sup_work_id_number: work_id_number
   sup_book_subjects:
     -
+      plugin: callback
+      callable: str_replace
+      source: 'subjects_press_all'
+      arguments:
+        - "\r"
+        - " \r "
+        - '@subjects_press_all'
+    -
       plugin: explode
       source: 'subjects_press_all'
       delimiter: '\r'
