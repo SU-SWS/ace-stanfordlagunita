@@ -1,0 +1,22 @@
+uuid: c332440e-9151-46a2-9332-9a47ef4e44af
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: book_subjects
+label: 'Book Subjects'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'subjects/[term:parents:join-path]/[term:name]'
+selection_criteria:
+  fb8bc429-317d-4786-95f3-6252b9ee0b8e:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: fb8bc429-317d-4786-95f3-6252b9ee0b8e
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      sup_book_subjects: sup_book_subjects
+selection_logic: and
+weight: -5
+relationships: {  }

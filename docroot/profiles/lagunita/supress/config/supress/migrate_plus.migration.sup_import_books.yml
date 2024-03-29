@@ -10,10 +10,15 @@ migration_tags: null
 migration_group: su_press
 label: 'Import Stanford University Press Books'
 source:
+  authentication:
+    plugin: press_filemaker
+    token_url: '[filemaker url]'
+    client_id: '[api user]'
+    client_secret: '[api password]'
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: json
-  urls: 'https://supress-test.sites-pro.stanford.edu/sites/supress/files/filemaker.json'
+  urls: 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records'
   item_selector: response/data
   fields:
     -
@@ -575,21 +580,19 @@ process:
   sup_work_id_number: work_id_number
   sup_book_subjects:
     -
-      plugin: callback
-      callable: str_replace
+      plugin: str_replace
       source: 'subjects_press_all'
-      arguments:
+      search:
         - "\r"
+      replace:
         - " \r "
-        - '@subjects_press_all'
     -
       plugin: explode
-      source: 'subjects_press_all'
-      delimiter: '\r'
+      delimiter: "\r"
     -
       plugin: nested_term_generate
       vocabulary: sup_book_subjects
-      delimiter: " -- "
+      delimiter: "--"
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book
