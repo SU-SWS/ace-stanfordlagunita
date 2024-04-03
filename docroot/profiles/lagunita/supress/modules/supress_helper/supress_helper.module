@@ -1,0 +1,53 @@
+<?php
+
+use Drupal\Core\Installer\InstallerKernel;
+use Drupal\Core\Site\Settings;
+
+/**
+ * Implements hook_cron().
+ */
+function supress_helper_cron() {
+  /** @var \Drupal\Core\Queue\QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  /** @var \Drupal\Core\Queue\QueueInterface $queue */
+  $queue = $queue_factory->get('press_cover_downloader');
+  if (
+    !Settings::get('press_filemaker_client_id') ||
+    $queue->numberOfItems() > 0 ||
+    InstallerKernel::installationAttempted()
+  ) {
+    return;
+  }
+
+  $client = \Drupal::httpClient();
+
+  // Grab the OAuth-like token from the api.
+  $token_response = $client->post('https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
+    'verify' => FALSE,
+    'headers' => ['Content-Type' => 'application/json'],
+    'auth' => [
+      Settings::get('press_filemaker_client_id'),
+      Settings::get('press_filemaker_client_secret'),
+    ],
+  ]);
+  $token = json_decode((string) $token_response->getBody(), TRUE);
+  $token = $token['response']['token'];
+
+  // Post a query to find the covers that are flagged to be updated. The API is
+  // slow to respond so limiting to only 10 items will make it more reliable.
+  $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=10', [
+    'verify' => FALSE,
+    'headers' => [
+      'Content-Type' => 'application/json',
+      'Authorization' => 'Bearer ' . $token,
+    ],
+    'body' => json_encode(['query' => [['flag' => '=x']]]),
+    'timeout' => 60,
+  ])->getBody();
+
+  // Create a cron queue task for each cover.
+  $covers = json_decode($covers_response, TRUE);
+  foreach ($covers['response']['data'] as $cover) {
+    $queue->createItem($cover['recordId']);
+  }
+}

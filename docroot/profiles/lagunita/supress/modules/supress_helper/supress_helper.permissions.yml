@@ -1,0 +1,3 @@
+administer sup_award:
+  title: 'Administer press awards'
+  restrict access: true

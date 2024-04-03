@@ -1,0 +1,20 @@
+uuid: 3f72046f-10a5-4351-b815-bcc3ec80d4dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: sup_award.sup_rank
+field_name: sup_rank
+entity_type: sup_award
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

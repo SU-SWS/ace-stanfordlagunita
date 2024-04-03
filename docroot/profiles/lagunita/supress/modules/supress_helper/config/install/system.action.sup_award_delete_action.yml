@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: sup_award_delete_action
+label: 'Delete press awards'
+type: sup_award
+plugin: entity:delete_action:sup_award
+configuration: {  }

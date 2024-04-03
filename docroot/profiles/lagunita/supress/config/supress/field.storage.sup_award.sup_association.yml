@@ -1,0 +1,21 @@
+uuid: e2a9d7b9-a85d-4c48-9d92-d8fb3a712a45
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: sup_award.sup_association
+field_name: sup_association
+entity_type: sup_award
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

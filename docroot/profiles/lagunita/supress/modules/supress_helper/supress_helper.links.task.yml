@@ -1,0 +1,9 @@
+entity.sup_award.settings:
+  title: 'Settings'
+  route_name: entity.sup_award.settings
+  base_route: entity.sup_award.settings
+entity.sup_award.collection:
+  title: 'Press Awards'
+  route_name: entity.sup_award.collection
+  base_route: system.admin_content
+  weight: 10

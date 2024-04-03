@@ -1,0 +1,11 @@
+entity.sup_award.settings:
+  title: 'Press Award'
+  description: 'Configure a Press Award entity type.'
+  route_name:  entity.sup_award.settings
+  parent: system.admin_structure
+
+entity.sup_award.collection:
+  title: 'Press Awards'
+  description: 'List of press awards.'
+  route_name: entity.sup_award.collection
+  parent: system.admin_content

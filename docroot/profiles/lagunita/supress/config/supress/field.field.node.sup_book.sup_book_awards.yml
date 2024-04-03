@@ -1,0 +1,26 @@
+uuid: 8c8d6233-c5c7-4b2b-b57e-69f55a63f05f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_awards
+    - node.type.sup_book
+id: node.sup_book.sup_book_awards
+field_name: sup_book_awards
+entity_type: node
+bundle: sup_book
+label: Awards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:sup_award'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

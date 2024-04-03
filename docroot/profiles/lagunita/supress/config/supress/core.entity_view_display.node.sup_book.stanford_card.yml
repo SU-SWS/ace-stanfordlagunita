@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
+    - field.field.node.sup_book.sup_book_awards
     - node.type.sup_book
   module:
     - ds
@@ -46,3 +47,4 @@ content: {  }
 hidden:
   links: true
   search_api_excerpt: true
+  sup_book_awards: true
