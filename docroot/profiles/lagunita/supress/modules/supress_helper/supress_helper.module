@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * supress_helper.module
+ */
+
 use Drupal\Core\Installer\InstallerKernel;
 
 /**
@@ -34,8 +39,9 @@ function supress_helper_cron() {
     $token = json_decode((string) $token_response->getBody(), TRUE, 512, JSON_THROW_ON_ERROR);
     $token = $token['response']['token'];
 
-    // Post a query to find the covers that are flagged to be updated. The API is
-    // slow to respond so limiting to only 10 items will make it more reliable.
+    // Post a query to find the covers that are flagged to be updated. The API
+    // is slow to respond so limiting to only 10 items will make it more
+    // reliable.
     $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=10', [
       'verify' => FALSE,
       'headers' => [

@@ -40,6 +40,8 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
   }
 
   /**
+   * Cron queue worker constructor.
+   *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
@@ -102,7 +104,8 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $public_path = self::FILE_DIRECTORY;
     $this->fileSystem->prepareDirectory($public_path, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
 
-    // Since we're only fetching 1 record, the response data will only contain 1 item.
+    // Since we're only fetching 1 record, the response data will only contain
+    // 1 item.
     $cover = reset($covers['response']['data']);
 
     $image_url = $cover['fieldData']['image'];

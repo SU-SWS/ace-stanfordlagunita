@@ -18,7 +18,7 @@ final class PressAwardListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader(): array {
-    $header['name'] = $this->t('Name');
+    $header = ['name' => $this->t('Name')];
     return $header + parent::buildHeader();
   }
 
@@ -26,7 +26,7 @@ final class PressAwardListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity): array {
-    $row['name'] = $entity->label();
+    $row = ['name' => $entity->label()];
     return $row + parent::buildRow($entity);
   }
 
