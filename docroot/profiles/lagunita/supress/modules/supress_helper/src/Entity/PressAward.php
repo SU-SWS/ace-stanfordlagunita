@@ -62,8 +62,6 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
 
   /**
    * {@inheritdoc}
-   *
-   * @codeCoverageIgnore
    */
   public function preSave(EntityStorageInterface $storage): void {
     parent::preSave($storage);
@@ -75,8 +73,6 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
 
   /**
    * {@inheritdoc}
-   *
-   * @codeCoverageIgnore
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
     $fields = parent::baseFieldDefinitions($entity_type);
