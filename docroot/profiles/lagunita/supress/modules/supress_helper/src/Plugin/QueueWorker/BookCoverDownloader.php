@@ -65,6 +65,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
   public function processItem($data) {
     $client_id = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
     $client_secret = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
+
     if (!$client_id || !$client_secret) {
       return;
     }
@@ -112,7 +113,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $extension = $extension_match[1] ?? '.jpg';
     $work_id = $cover['fieldData']['work_id_number'];
 
-    $this->downloadImage($image_url, "$public_path/$work_id$extension", $work_id);
+    $media_id = $this->downloadImage($image_url, "$public_path/$work_id$extension", $work_id);
 
     // Call the API to update the flag in the system.
     $this->client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/scripts/ClearFlags?script.param=$work_id", [
@@ -120,6 +121,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
       'headers' => ['Content-Type' => 'application/json'],
       'auth' => [$client_id, $client_secret],
     ]);
+    return $media_id;
   }
 
   /**
@@ -131,8 +133,11 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
    *   Public directory path, starts with public://.
    * @param int $work_id_number
    *   API Work ID Number that matches the book record.
+   *
+   * @return int
+   *   Media id.
    */
-  protected function downloadImage(string $image_url, string $destination, int $work_id_number) {
+  protected function downloadImage(string $image_url, string $destination, int $work_id_number): int {
     // Copy the file to a temporary location first. Then we'll move it to the
     // actual destination, while preserving any existing files.
     $temp_destination = $this->fileSystem->tempnam(self::FILE_DIRECTORY, basename($destination));
@@ -168,11 +173,10 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
         'alt' => '',
         'target_id' => $new_file->id(),
       ])->save();
-
-      return;
+      return $media->id();
     }
 
-    $media_storage->create([
+    $media = $media_storage->create([
       'bundle' => 'image',
       'label' => basename($destination),
       'sup_book_work_id' => $work_id_number,
@@ -180,7 +184,9 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
         'alt' => '',
         'target_id' => $new_file->id(),
       ],
-    ])->save();
+    ]);
+    $media->save();
+    return $media->id();
   }
 
 }

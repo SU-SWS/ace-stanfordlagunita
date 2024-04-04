@@ -42,7 +42,7 @@ use Drupal\user\EntityOwnerTrait;
  *   admin_permission = "administer sup_award",
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "label",
+ *     "label" = "name",
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
@@ -77,7 +77,6 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
-
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['name'] = BaseFieldDefinition::create('string')
@@ -102,9 +101,7 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
       ->setSetting('on_label', 'Enabled')
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
-        'settings' => [
-          'display_label' => FALSE,
-        ],
+        'settings' => ['display_label' => FALSE],
         'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
@@ -112,9 +109,7 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
         'type' => 'boolean',
         'label' => 'above',
         'weight' => 0,
-        'settings' => [
-          'format' => 'enabled-disabled',
-        ],
+        'settings' => ['format' => 'enabled-disabled'],
       ])
       ->setDisplayConfigurable('view', TRUE);
 

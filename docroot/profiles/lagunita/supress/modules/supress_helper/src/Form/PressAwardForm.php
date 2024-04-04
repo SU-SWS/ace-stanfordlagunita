@@ -26,12 +26,12 @@ final class PressAwardForm extends ContentEntityForm {
 
     switch ($result) {
       case SAVED_NEW:
-        $this->messenger()->addStatus($this->t('New press award %label has been created.', $message_args));
+        $this->messenger()->addStatus($this->t('New award %label has been created.', $message_args));
         $this->logger('supress_helper')->notice('New press award %label has been created.', $logger_args);
         break;
 
       case SAVED_UPDATED:
-        $this->messenger()->addStatus($this->t('The press award %label has been updated.', $message_args));
+        $this->messenger()->addStatus($this->t('The award %label has been updated.', $message_args));
         $this->logger('supress_helper')->notice('The press award %label has been updated.', $logger_args);
         break;
 
@@ -40,7 +40,6 @@ final class PressAwardForm extends ContentEntityForm {
     }
 
     $form_state->setRedirectUrl($this->entity->toUrl('collection'));
-
     return $result;
   }
 
