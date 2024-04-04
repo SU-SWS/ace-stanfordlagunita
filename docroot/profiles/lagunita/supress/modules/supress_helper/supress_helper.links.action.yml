@@ -1,5 +1,0 @@
-sup_award.add_form:
-  title: 'Add press award'
-  route_name: entity.sup_award.add_form
-  appears_on:
-    - entity.sup_award.collection

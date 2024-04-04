@@ -29,7 +29,6 @@ use Drupal\user\EntityOwnerTrait;
  *     "list_builder" = "Drupal\supress_helper\PressAwardListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
- *       "add" = "Drupal\supress_helper\Form\PressAwardForm",
  *       "edit" = "Drupal\supress_helper\Form\PressAwardForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
@@ -48,7 +47,6 @@ use Drupal\user\EntityOwnerTrait;
  *   },
  *   links = {
  *     "collection" = "/admin/content/sup-award",
- *     "add-form" = "/admin/content/award/add",
  *     "canonical" = "/admin/content/award/{sup_award}",
  *     "edit-form" = "/admin/content/award/{sup_award}",
  *     "delete-form" = "/admin/content/award/{sup_award}/delete",
@@ -64,6 +62,8 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
 
   /**
    * {@inheritdoc}
+   *
+   * @codeCoverageIgnore
    */
   public function preSave(EntityStorageInterface $storage): void {
     parent::preSave($storage);
@@ -75,6 +75,8 @@ final class PressAward extends ContentEntityBase implements PressAwardInterface 
 
   /**
    * {@inheritdoc}
+   *
+   * @codeCoverageIgnore
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
     $fields = parent::baseFieldDefinitions($entity_type);

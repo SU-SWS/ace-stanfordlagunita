@@ -9,6 +9,8 @@ use Drupal\Core\Entity\EntityListBuilder;
 
 /**
  * Provides a list controller for the press award entity type.
+ *
+ * @codeCoverageIgnore
  */
 final class PressAwardListBuilder extends EntityListBuilder {
 

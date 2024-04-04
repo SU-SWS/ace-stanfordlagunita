@@ -15,6 +15,8 @@ final class PressAwardHtmlRouteProvider extends AdminHtmlRouteProvider {
 
   /**
    * {@inheritdoc}
+   *
+   * @codeCoverageIgnore
    */
   protected function getCanonicalRoute(EntityTypeInterface $entity_type): ?Route {
     return $this->getEditFormRoute($entity_type);

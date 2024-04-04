@@ -14,6 +14,8 @@ final class PressAwardForm extends ContentEntityForm {
 
   /**
    * {@inheritdoc}
+   *
+   * @codeCoverageIgnore
    */
   public function save(array $form, FormStateInterface $form_state): int {
     $result = parent::save($form, $form_state);
@@ -25,18 +27,10 @@ final class PressAwardForm extends ContentEntityForm {
     ];
 
     switch ($result) {
-      case SAVED_NEW:
-        $this->messenger()->addStatus($this->t('New award %label has been created.', $message_args));
-        $this->logger('supress_helper')->notice('New press award %label has been created.', $logger_args);
-        break;
-
       case SAVED_UPDATED:
         $this->messenger()->addStatus($this->t('The award %label has been updated.', $message_args));
         $this->logger('supress_helper')->notice('The press award %label has been updated.', $logger_args);
         break;
-
-      default:
-        throw new \LogicException('Could not save the entity.');
     }
 
     $form_state->setRedirectUrl($this->entity->toUrl('collection'));
