@@ -1,0 +1,23 @@
+adding:
+  dependencies:
+    config:
+      - field.field.config_pages.stanford_basic_site_settings.sup_filemaker_pass
+      - field.field.config_pages.stanford_basic_site_settings.sup_filemaker_user
+  content:
+    sup_filemaker_pass:
+      type: string_textfield
+      weight: 23
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sup_filemaker_user:
+      type: string_textfield
+      weight: 22
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+removing: {  }

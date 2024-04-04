@@ -2,11 +2,11 @@
 
 namespace Drupal\supress_helper\Plugin\QueueWorker;
 
+use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
-use Drupal\Core\Site\Settings;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Cookie\CookieJar;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -34,7 +34,8 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
       $plugin_definition,
       $container->get('http_client'),
       $container->get('file_system'),
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('config_pages.loader')
     );
   }
 
@@ -51,8 +52,10 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
    *   Drupal file system service.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   Entity type manager service.
+   * @param \Drupal\config_pages\ConfigPagesLoaderServiceInterface $configPagesLoader
+   *   Config page service to load values.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected ClientInterface $client, protected FileSystemInterface $fileSystem, protected EntityTypeManagerInterface $entityTypeManager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected ClientInterface $client, protected FileSystemInterface $fileSystem, protected EntityTypeManagerInterface $entityTypeManager, protected ConfigPagesLoaderServiceInterface $configPagesLoader) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
@@ -60,14 +63,17 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
    * {@inheritDoc}
    */
   public function processItem($data) {
+    $client_id = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
+    $client_secret = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
+    if (!$client_id || !$client_secret) {
+      return;
+    }
+
     // Fetch the OAuth-like token form the API.
     $token_response = (string) $this->client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
       'verify' => FALSE,
       'headers' => ['Content-Type' => 'application/json'],
-      'auth' => [
-        Settings::get('press_filemaker_client_id'),
-        Settings::get('press_filemaker_client_secret'),
-      ],
+      'auth' => [$client_id, $client_secret],
     ])->getBody();
     $token = json_decode($token_response, TRUE);
 
@@ -106,21 +112,13 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $extension = $extension_match[1] ?? '.jpg';
     $work_id = $cover['fieldData']['work_id_number'];
 
-    $this->downloadImage($image_url, "$public_path/$work_id$extension");
-
-    // A flag to avoid unwanted updates to the file maker api.
-    if (!Settings::get('press_filemaker_update_covers')) {
-      return;
-    }
+    $this->downloadImage($image_url, "$public_path/$work_id$extension", $work_id);
 
     // Call the API to update the flag in the system.
     $this->client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/scripts/ClearFlags?script.param=$work_id", [
       'verify' => FALSE,
       'headers' => ['Content-Type' => 'application/json'],
-      'auth' => [
-        Settings::get('press_filemaker_client_id'),
-        Settings::get('press_filemaker_client_secret'),
-      ],
+      'auth' => [$client_id, $client_secret],
     ]);
   }
 

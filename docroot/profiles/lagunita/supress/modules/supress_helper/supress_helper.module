@@ -1,7 +1,6 @@
 <?php
 
 use Drupal\Core\Installer\InstallerKernel;
-use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_cron().
@@ -11,8 +10,14 @@ function supress_helper_cron() {
   $queue_factory = \Drupal::service('queue');
   /** @var \Drupal\Core\Queue\QueueInterface $queue */
   $queue = $queue_factory->get('press_cover_downloader');
+
+  $config_page_loader = \Drupal::service('config_pages.loader');
+  $client_id = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
+  $client_secret = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
+
   if (
-    !Settings::get('press_filemaker_client_id') ||
+    !$client_id ||
+    !$client_secret ||
     $queue->numberOfItems() > 0 ||
     InstallerKernel::installationAttempted()
   ) {
@@ -25,10 +30,7 @@ function supress_helper_cron() {
   $token_response = $client->post('https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
     'verify' => FALSE,
     'headers' => ['Content-Type' => 'application/json'],
-    'auth' => [
-      Settings::get('press_filemaker_client_id'),
-      Settings::get('press_filemaker_client_secret'),
-    ],
+    'auth' => [$client_id, $client_secret],
   ]);
   $token = json_decode((string) $token_response->getBody(), TRUE);
   $token = $token['response']['token'];
