@@ -34,7 +34,7 @@ class NestedTermGenerate extends ProcessPluginBase implements ContainerFactoryPl
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity_type.manager'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -78,12 +78,9 @@ class NestedTermGenerate extends ProcessPluginBase implements ContainerFactoryPl
         else {
           $term = reset($term);
         }
-
         $parent = $term->id();
       }
-
     }
-
     return $parent;
   }
 
