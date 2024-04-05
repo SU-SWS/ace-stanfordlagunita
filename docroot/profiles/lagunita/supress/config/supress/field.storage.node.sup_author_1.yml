@@ -1,0 +1,19 @@
+uuid: 43570795-48e4-489f-a42f-9f1f5e49d2b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - name
+    - node
+id: node.sup_author_1
+field_name: sup_author_1
+entity_type: node
+type: name
+settings: {  }
+module: name
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 94fc13ce-f116-42e1-9071-799212e55c88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_author_3_role
+    - node.type.sup_book
+id: node.sup_book.sup_author_3_role
+field_name: sup_author_3_role
+entity_type: node
+bundle: sup_book
+label: 'Author 3 Role'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -45,7 +45,5 @@ complete_list:
   - 'pathauto.pattern.sup_*'
 partial_list:
   - graphql_compose.settings
-  - '*su_*'
-  - '*stanford_*'
-  - 'core.entity_view_display.media.*'
-  - 'core.entity_form_display.media.*'
+  - migrate_plus.migration_group.su_press
+  - config_split.patch.config_pages.type.stanford_basic_site_settings

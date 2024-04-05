@@ -114,6 +114,30 @@ third_party_settings:
       config_item: options.algolia_index_name
       prefix: ''
       suffix: ''
+    c52e3fe3-c43f-4c55-99cd-0df3391958f7:
+      field: sup_filemaker_user
+      delta: 0
+      column: value
+      config_name: migrate_plus.migration.sup_awards
+      config_item: source.authentication.client_id
+      prefix: ''
+      suffix: ''
+    e85edf4a-3aa8-4cc8-8996-249320d14ef5:
+      field: sup_filemaker_pass
+      delta: 0
+      column: value
+      config_name: migrate_plus.migration.sup_awards
+      config_item: source.authentication.client_secret
+      prefix: ''
+      suffix: ''
+    26e33845-bc3d-468b-890c-538a323e2a26:
+      field: sup_filemaker_user
+      delta: 0
+      column: value
+      config_name: migrate_plus.migration.sup_awards
+      config_item: status
+      prefix: ''
+      suffix: ''
 id: stanford_basic_site_settings
 label: 'Site Settings'
 token: true

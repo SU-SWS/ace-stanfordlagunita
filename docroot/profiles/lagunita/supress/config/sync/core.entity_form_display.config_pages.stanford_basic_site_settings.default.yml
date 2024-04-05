@@ -355,6 +355,12 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  sup_filemaker_pass:
+    settings: {  }
+    third_party_settings: {  }
+  sup_filemaker_user:
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   label: true
   su_site_renewal_due: true
