@@ -40,12 +40,12 @@ settings:
     generational: 15
     credentials: 255
   labels:
-    title: Title
+    title: Preceding
     given: Given
     middle: 'Middle name(s)'
     family: Family
     generational: Generational
-    credentials: Credentials
+    credentials: Following
   allow_family_or_given: false
   autocomplete_source:
     title:
@@ -95,11 +95,11 @@ settings:
   credentials_inline: false
   override_format: default
   field_type:
-    title: select
+    title: text
     given: text
     middle: text
     family: text
-    generational: select
+    generational: text
     credentials: text
   size:
     title: 6
@@ -120,3 +120,4 @@ settings:
   alternative_field_reference: ''
   alternative_field_reference_separator: ', '
 field_type: name
+
