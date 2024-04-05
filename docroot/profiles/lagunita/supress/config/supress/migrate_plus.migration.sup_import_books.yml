@@ -12,13 +12,14 @@ label: 'Import Stanford University Press Books'
 source:
   authentication:
     plugin: press_filemaker
-    token_url: '[filemaker url]'
-    client_id: '[api user]'
-    client_secret: '[api password]'
+    token_url: https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions'
+    client_id: '[client_id]'
+    client_secret: '[client_secret]'
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: json
-  urls: 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records'
+  urls:
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
   item_selector: response/data
   fields:
     -
@@ -474,29 +475,29 @@ source:
       type: integer
 process:
   title: title
-  sup_author_1_first_name: author_1_first_name
-  sup_author_1_following: author_1_following
-  sup_author_1_last_name: author_1_last_name
-  sup_author_1_middle: author_1_middle
-  sup_author_1_preceding: author_1_preceding
+  sup_author_1/given: author_1_first_name
+  sup_author_1/credentials: author_1_following
+  sup_author_1/family: author_1_last_name
+  sup_author_1/middle: author_1_middle
+  sup_author_1/title: author_1_preceding
   sup_author_1_role: author_1_role
-  sup_author_2_first_name: author_2_first_name
-  sup_author_2_following: author_2_following
-  sup_author_2_last_name: author_2_last_name
-  sup_author_2_middle: author_2_middle
-  sup_author_2_preceding: author_2_preceding
+  sup_author_2/given: author_2_first_name
+  sup_author_2/credentials: author_2_following
+  sup_author_2/family: author_2_last_name
+  sup_author_2/middle: author_2_middle
+  sup_author_2/title: author_2_preceding
   sup_author_2_role: author_2_role
-  sup_author_3_first_name: author_3_first_name
-  sup_author_3_following: author_3_following
-  sup_author_3_last_name: author_3_last_name
-  sup_author_3_middle: author_3_middle
-  sup_author_3_preceding: author_3_preceding
+  sup_author_3/given: author_3_first_name
+  sup_author_3/credentials: author_3_following
+  sup_author_3/family: author_3_last_name
+  sup_author_3/middle: author_3_middle
+  sup_author_3/title: author_3_preceding
   sup_author_3_role: author_3_role
-  sup_author_4_first_name: author_4_first_name
-  sup_author_4_following: author_4_following
-  sup_author_4_last_name: author_4_last_name
-  sup_author_4_middle: author_4_middle
-  sup_author_4_preceding: author_4_preceding
+  sup_author_4/given: author_4_first_name
+  sup_author_4/credentials: author_4_following
+  sup_author_4/family: author_4_last_name
+  sup_author_4/middle: author_4_middle
+  sup_author_4/title: author_4_preceding
   sup_author_4_role: author_4_role
   sup_author_info: author_info
   sup_authors_full: authors_full
@@ -593,6 +594,17 @@ process:
       plugin: nested_term_generate
       vocabulary: sup_book_subjects
       delimiter: '--'
+  sup_book_awards:
+    -
+      plugin: explode
+      source: work_id_number
+      delimiter: /
+      strict: false
+    -
+      plugin: entity_lookup
+      value_key: sup_work_id
+      entity_type: sup_award
+      ignore_case: true
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book
