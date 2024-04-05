@@ -1,9 +1,0 @@
-adding: {  }
-removing:
-  dependencies:
-    config:
-      - node.type.stanford_policy
-  settings:
-    handler_settings:
-      target_bundles:
-        stanford_policy: stanford_policy

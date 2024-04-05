@@ -1,10 +1,5 @@
 adding:
   entity_config:
-    node:
-      sup_book:
-        enabled: true
-        query_load_enabled: true
-        routes_enabled: true
     sup_award:
       sup_award:
         enabled: true
@@ -27,4 +22,55 @@ adding:
           enabled: true
         sup_year:
           enabled: true
-removing: {  }
+removing:
+  field_config:
+    node:
+      sup_book:
+        sup_author_1_first_name:
+          enabled: true
+        sup_author_1_following:
+          enabled: true
+        sup_author_1_last_name:
+          enabled: true
+        sup_author_1_middle:
+          enabled: true
+        sup_author_1_preceding:
+          enabled: true
+        sup_author_1_role:
+          enabled: true
+        sup_author_2_first_name:
+          enabled: true
+        sup_author_2_following:
+          enabled: true
+        sup_author_2_last_name:
+          enabled: true
+        sup_author_2_middle:
+          enabled: true
+        sup_author_2_preceding:
+          enabled: true
+        sup_author_2_role:
+          enabled: true
+        sup_author_3_first_name:
+          enabled: true
+        sup_author_3_following:
+          enabled: true
+        sup_author_3_last_name:
+          enabled: true
+        sup_author_3_middle:
+          enabled: true
+        sup_author_3_preceding:
+          enabled: true
+        sup_author_3_role:
+          enabled: true
+        sup_author_4_first_name:
+          enabled: true
+        sup_author_4_following:
+          enabled: true
+        sup_author_4_last_name:
+          enabled: true
+        sup_author_4_middle:
+          enabled: true
+        sup_author_4_preceding:
+          enabled: true
+        sup_author_4_role:
+          enabled: true

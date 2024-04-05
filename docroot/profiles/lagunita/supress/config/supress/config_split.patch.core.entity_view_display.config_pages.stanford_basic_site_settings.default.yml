@@ -1,7 +1,6 @@
 adding:
   dependencies:
     config:
-      - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_ui
       - field.field.config_pages.stanford_basic_site_settings.sup_filemaker_pass
       - field.field.config_pages.stanford_basic_site_settings.sup_filemaker_user
   content:

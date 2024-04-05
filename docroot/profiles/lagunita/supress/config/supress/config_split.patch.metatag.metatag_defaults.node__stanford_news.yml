@@ -1,5 +1,0 @@
-adding: {  }
-removing:
-  tags:
-    canonical_url: '[node:su_news_source:uri]'
-    description: '[node:su_news_dek|node:su_news_byline]'

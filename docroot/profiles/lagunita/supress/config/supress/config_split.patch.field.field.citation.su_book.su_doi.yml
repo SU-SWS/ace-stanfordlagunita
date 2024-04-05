@@ -1,4 +1,0 @@
-adding:
-  description: 'DOI id to the journal web page without the “https:/doi.org/”. For example enter only for a link that is https:/doi.org/12.345/123123 enter only <strong>12.345/123123</strong>.'
-removing:
-  description: 'DOI id to the journal web page without the “https://doi.org/”. For example enter only for a link that is https://doi.org/12.345/123123 enter only <strong>12.345/123123</strong>.'

@@ -581,7 +581,7 @@ process:
   sup_book_subjects:
     -
       plugin: str_replace
-      source: 'subjects_press_all'
+      source: subjects_press_all
       search:
         - "\r"
       replace:
@@ -592,7 +592,7 @@ process:
     -
       plugin: nested_term_generate
       vocabulary: sup_book_subjects
-      delimiter: "--"
+      delimiter: '--'
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book
