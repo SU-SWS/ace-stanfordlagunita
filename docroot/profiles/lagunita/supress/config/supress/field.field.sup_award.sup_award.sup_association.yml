@@ -1,0 +1,20 @@
+uuid: 41cf2ad6-aded-4d2b-8b3c-2d987fbe62b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sup_award.sup_association
+  module:
+    - supress_helper
+id: sup_award.sup_award.sup_association
+field_name: sup_association
+entity_type: sup_award
+bundle: sup_award
+label: Association
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

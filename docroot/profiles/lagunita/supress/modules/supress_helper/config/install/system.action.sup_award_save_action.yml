@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: sup_award_save_action
+label: 'Save press awards'
+type: sup_award
+plugin: entity:save_action:sup_award
+configuration: {  }

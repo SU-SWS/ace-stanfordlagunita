@@ -1,0 +1,24 @@
+uuid: c860d07e-6a6c-4353-85c0-e156eb5d5c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sup_award.sup_work_id
+  module:
+    - supress_helper
+id: sup_award.sup_award.sup_work_id
+field_name: sup_work_id
+entity_type: sup_award
+bundle: sup_award
+label: 'Work Id'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

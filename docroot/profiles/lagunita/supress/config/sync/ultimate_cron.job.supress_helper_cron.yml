@@ -1,0 +1,17 @@
+uuid: dbbc23a1-7a3b-480e-ab3b-e1b7491c91a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+title: 'Queues cover image downloading'
+id: supress_helper_cron
+weight: 0
+module: supress_helper
+callback: supress_helper_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

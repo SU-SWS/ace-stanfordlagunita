@@ -1,0 +1,24 @@
+uuid: 16e85326-8ea4-4f79-b0d1-806142015351
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sup_award.sup_year
+  module:
+    - supress_helper
+id: sup_award.sup_award.sup_year
+field_name: sup_year
+entity_type: sup_award
+bundle: sup_award
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1800
+  max: 2100
+  prefix: ''
+  suffix: ''
+field_type: integer

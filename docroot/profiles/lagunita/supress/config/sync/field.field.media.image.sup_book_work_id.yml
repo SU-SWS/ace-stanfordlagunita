@@ -1,0 +1,23 @@
+uuid: 62a304e0-6b45-4648-9580-82232bb7cbdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.sup_book_work_id
+    - media.type.image
+id: media.image.sup_book_work_id
+field_name: sup_book_work_id
+entity_type: media
+bundle: image
+label: 'Book Work ID Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

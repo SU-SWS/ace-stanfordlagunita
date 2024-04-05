@@ -1,0 +1,24 @@
+uuid: e777f9d5-2afb-46a4-90a4-fe05450b99c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sup_award.sup_rank
+  module:
+    - supress_helper
+id: sup_award.sup_award.sup_rank
+field_name: sup_rank
+entity_type: sup_award
+bundle: sup_award
+label: Rank
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

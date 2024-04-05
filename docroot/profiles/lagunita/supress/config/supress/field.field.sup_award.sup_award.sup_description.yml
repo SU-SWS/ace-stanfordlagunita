@@ -1,0 +1,24 @@
+uuid: 3dcdda44-206d-4ebb-8967-8ec1a829ab98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sup_award.sup_description
+    - filter.format.stanford_minimal_html
+  module:
+    - supress_helper
+    - text
+id: sup_award.sup_award.sup_description
+field_name: sup_description
+entity_type: sup_award
+bundle: sup_award
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * supress_helper.install
+ */
+
+/**
+ * Install sup_award entity type.
+ */
+function supress_helper_update_9001() {
+  $update_manager = \Drupal::entityDefinitionUpdateManager();
+  $entity_type = \Drupal::entityTypeManager()->getDefinition('sup_award');
+  $update_manager->installEntityType($entity_type);
+}

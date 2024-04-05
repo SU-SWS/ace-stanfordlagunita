@@ -1,0 +1,20 @@
+uuid: 41e43c3e-9648-44c9-9ee1-dbc87568443a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sup_award.sup_place
+  module:
+    - supress_helper
+id: sup_award.sup_award.sup_place
+field_name: sup_place
+entity_type: sup_award
+bundle: sup_award
+label: Place
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,7 @@
+entity.sup_award.settings:
+  path: 'admin/structure/sup-award'
+  defaults:
+    _form: '\Drupal\supress_helper\Form\PressAwardSettingsForm'
+    _title: 'Press Award'
+  requirements:
+    _permission: 'administer sup_award'

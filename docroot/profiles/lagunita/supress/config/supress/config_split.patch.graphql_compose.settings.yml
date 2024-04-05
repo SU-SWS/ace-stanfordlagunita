@@ -1,0 +1,30 @@
+adding:
+  entity_config:
+    node:
+      sup_book:
+        enabled: true
+        query_load_enabled: true
+        routes_enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
+  field_config:
+    node:
+      sup_book:
+        sup_book_awards:
+          enabled: true
+    sup_award:
+      sup_award:
+        sup_association:
+          enabled: true
+        sup_description:
+          enabled: true
+        sup_place:
+          enabled: true
+        sup_rank:
+          enabled: true
+        sup_work_id:
+          enabled: true
+        sup_year:
+          enabled: true
+removing: {  }

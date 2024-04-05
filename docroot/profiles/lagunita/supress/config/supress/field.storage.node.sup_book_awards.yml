@@ -1,0 +1,20 @@
+uuid: 0ee8976a-6709-4ff8-8a58-4189b522e311
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - supress_helper
+id: node.sup_book_awards
+field_name: sup_book_awards
+entity_type: node
+type: entity_reference
+settings:
+  target_type: sup_award
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

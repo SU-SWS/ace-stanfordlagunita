@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * supress_helper.module
+ */
+
+use Drupal\Core\Installer\InstallerKernel;
+
+/**
+ * Implements hook_cron().
+ */
+function supress_helper_cron() {
+  /** @var \Drupal\Core\Queue\QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  $queue = $queue_factory->get('press_cover_downloader');
+
+  $config_page_loader = \Drupal::service('config_pages.loader');
+  $client_id = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
+  $client_secret = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
+
+  if (
+    !$client_id ||
+    !$client_secret ||
+    $queue->numberOfItems() > 0 ||
+    InstallerKernel::installationAttempted()
+  ) {
+    return;
+  }
+
+  $client = \Drupal::httpClient();
+  try {
+    // Grab the OAuth-like token from the api.
+    $token_response = $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
+      'verify' => FALSE,
+      'headers' => ['Content-Type' => 'application/json'],
+      'auth' => [$client_id, $client_secret],
+    ]);
+    $token = json_decode((string) $token_response->getBody(), TRUE, 512, JSON_THROW_ON_ERROR);
+    $token = $token['response']['token'];
+
+    // Post a query to find the covers that are flagged to be updated. The API
+    // is slow to respond so limiting to only 10 items will make it more
+    // reliable.
+    $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=10', [
+      'verify' => FALSE,
+      'headers' => [
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer ' . $token,
+      ],
+      'body' => json_encode(['query' => [['flag' => '=x']]]),
+      'timeout' => 60,
+    ])->getBody();
+
+    // Create a cron queue task for each cover.
+    $covers = json_decode($covers_response, TRUE, 512, JSON_THROW_ON_ERROR);
+    foreach ($covers['response']['data'] as $cover) {
+      $queue->createItem($cover['recordId']);
+    }
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('supress_helper')
+      ->error('Error in press cron job: ' . $e->getMessage());
+  }
+}

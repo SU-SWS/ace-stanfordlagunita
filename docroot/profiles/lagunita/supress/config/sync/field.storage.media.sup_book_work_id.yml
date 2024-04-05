@@ -1,0 +1,20 @@
+uuid: f35f16bb-a49d-4f3d-8e72-47bacb41d498
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.sup_book_work_id
+field_name: sup_book_work_id
+entity_type: media
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
