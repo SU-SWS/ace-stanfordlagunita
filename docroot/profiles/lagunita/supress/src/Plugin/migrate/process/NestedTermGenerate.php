@@ -58,24 +58,14 @@ class NestedTermGenerate extends ProcessPluginBase implements ContainerFactoryPl
     foreach ($terms as $term_name) {
       $term_name = trim($term_name);
       if ($term_name) {
-        // See if it already exists.
         $term = $this->entityTypeManager
           ->getStorage('taxonomy_term')
-          ->loadByProperties([
-            'name' => $term_name,
-            'vid' => $vid,
-          ]);
+          ->loadByProperties(compact('term_name', 'vid'));
 
-        // If it doesn't, create it.
         if (empty($term)) {
-          $term = Term::create([
-            'name' => $term_name,
-            'vid' => $vid,
-            'parent' => [$parent],
-          ]);
+          $term = Term::create(compact('term_name', 'vid', 'parent'));
           $term->save();
-        }
-        else {
+        } else {
           $term = reset($term);
         }
         $parent = $term->id();
