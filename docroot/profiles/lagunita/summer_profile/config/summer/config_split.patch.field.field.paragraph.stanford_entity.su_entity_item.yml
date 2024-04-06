@@ -1,0 +1,9 @@
+adding: {  }
+removing:
+  dependencies:
+    config:
+      - node.type.stanford_course
+  settings:
+    handler_settings:
+      target_bundles:
+        stanford_course: stanford_course

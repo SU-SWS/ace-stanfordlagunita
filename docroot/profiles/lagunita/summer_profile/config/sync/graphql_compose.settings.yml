@@ -421,27 +421,7 @@ field_config:
       field_media_oembed_video:
         enabled: true
   node:
-    stanford_course:
-      body:
-        enabled: true
-      su_course_academic_year:
-        enabled: true
-      su_course_code:
-        enabled: true
-      su_course_id:
-        enabled: true
-      su_course_instructors:
-        enabled: true
-      su_course_link:
-        enabled: true
-      su_course_quarters:
-        enabled: true
-      su_course_section_units:
-        enabled: true
-      su_course_subject:
-        enabled: true
-      su_course_tags:
-        enabled: true
+    stanford_course: {  }
     stanford_event:
       body:
         enabled: true

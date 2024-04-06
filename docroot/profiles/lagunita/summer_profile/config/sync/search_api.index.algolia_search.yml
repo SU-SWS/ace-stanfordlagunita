@@ -3,18 +3,17 @@ langcode: en
 status: false
 dependencies:
   config:
-    - field.storage.node.su_event_audience
     - field.storage.node.su_basic_page_type
-    - field.storage.node.su_course_subject
+    - field.storage.node.su_event_audience
     - field.storage.node.su_event_date_time
+    - field.storage.node.su_event_subject
     - field.storage.node.su_event_type
-    - field.storage.node.su_person_full_title
     - field.storage.node.su_news_topics
+    - field.storage.node.su_person_full_title
+    - field.storage.node.su_person_short_title
     - field.storage.node.su_person_type_group
     - field.storage.node.su_publication_topics
     - field.storage.node.su_shared_tags
-    - field.storage.node.su_person_short_title
-    - field.storage.node.su_event_subject
     - search_api.server.algolia_search
     - core.entity_view_mode.node.search_indexing
   module:
@@ -42,16 +41,6 @@ field_settings:
     type: string
     configuration:
       value: '[node:su_news_byline]'
-  course_subject:
-    label: 'Course Subject » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'su_course_subject:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.su_course_subject
-      module:
-        - taxonomy
   created:
     label: 'Authored on'
     datasource_id: 'entity:node'
@@ -273,7 +262,6 @@ processor_settings:
     fields:
       - basic_page_type
       - byline
-      - course_subject
       - dek
       - email
       - event_audience

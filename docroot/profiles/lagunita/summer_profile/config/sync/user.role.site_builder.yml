@@ -18,7 +18,6 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
-    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -70,8 +69,8 @@ dependencies:
     - shortcut
     - stanford_media
     - stanford_policy
-    - summer_profile
     - stanford_publication
+    - summer_profile
     - system
     - taxonomy
     - toolbar
@@ -180,7 +179,6 @@ permissions:
   - 'create media'
   - 'create new books'
   - 'create policy log'
-  - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
   - 'create stanford_gallery_images media'
@@ -205,7 +203,6 @@ permissions:
   - 'delete any google_form media'
   - 'delete any image media'
   - 'delete any media'
-  - 'delete any stanford_course content'
   - 'delete any stanford_event content'
   - 'delete any stanford_event_series content'
   - 'delete any stanford_gallery_images media'
@@ -223,7 +220,6 @@ permissions:
   - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
-  - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
   - 'delete own stanford_gallery_images media'
@@ -234,7 +230,6 @@ permissions:
   - 'delete own stanford_publication content'
   - 'delete own video media'
   - 'delete policy log'
-  - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'
   - 'delete stanford_event_series revisions'
   - 'delete stanford_news revisions'
@@ -255,7 +250,6 @@ permissions:
   - 'edit any file media'
   - 'edit any google_form media'
   - 'edit any image media'
-  - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
   - 'edit any stanford_gallery_images media'
@@ -275,7 +269,6 @@ permissions:
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
-  - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
   - 'edit own stanford_gallery_images media'
@@ -307,7 +300,6 @@ permissions:
   - 'rabbit hole administer taxonomy_term'
   - 'rabbit hole bypass node'
   - 'rabbit hole bypass taxonomy_term'
-  - 'revert stanford_course revisions'
   - 'revert stanford_event revisions'
   - 'revert stanford_event_series revisions'
   - 'revert stanford_news revisions'
@@ -327,7 +319,6 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
-  - 'view any unpublished stanford_course content'
   - 'view any unpublished stanford_event content'
   - 'view any unpublished stanford_event_series content'
   - 'view any unpublished stanford_news content'
@@ -343,7 +334,6 @@ permissions:
   - 'view own unpublished media'
   - 'view policy log'
   - 'view scheduled content'
-  - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'
