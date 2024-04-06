@@ -65,7 +65,8 @@ class NestedTermGenerate extends ProcessPluginBase implements ContainerFactoryPl
         if (empty($term)) {
           $term = Term::create(compact('term_name', 'vid', 'parent'));
           $term->save();
-        } else {
+        }
+        else {
           $term = reset($term);
         }
         $parent = $term->id();
