@@ -25,7 +25,7 @@ source:
     timeout: 60
   urls:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records?_limit=1000'
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records?_limit=1000&_offset=1000'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records?_limit=1000&_offset=1001'
   data_parser_plugin: json
   item_selector: response/data
   constants:
