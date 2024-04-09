@@ -279,10 +279,13 @@ third_party_settings:
                   rel: nofollow
                   target: '0'
                 third_party_settings:
+                  empty_fields:
+                    handler: ''
                   field_formatter_class:
                     class: su-person-links
-                  ds:
-                    ds_limit: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: h3
             weight: 10
             additional: {  }
           82a532c7-d73f-491e-8ce3-3fd27c29a815:
@@ -586,7 +589,7 @@ third_party_settings:
                 label: hidden
                 settings:
                   class: su-button
-                  trim_length: 80
+                  trim_length: null
                   url_only: false
                   url_plain: false
                   rel: '0'
@@ -752,7 +755,7 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
       rel: ''
@@ -819,7 +822,7 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
       rel: ''
@@ -854,7 +857,7 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
       rel: ''
@@ -883,7 +886,7 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
       rel: ''
