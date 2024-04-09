@@ -42,4 +42,4 @@ jobs:
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
           blt blt:telemetry:disable --no-interaction &&
-          blt deploy -v -n &&
+          blt deploy -v -n

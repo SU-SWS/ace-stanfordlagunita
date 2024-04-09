@@ -72,6 +72,8 @@ foreach ($sites_settings as $site_setting) {
   $sites[$site_name] = $site_name;
 }
 
+$sites['sup.org'] = 'supress';
+
 if (file_exists(__DIR__ . '/local.sites.php')) {
   require __DIR__ . '/local.sites.php';
 }

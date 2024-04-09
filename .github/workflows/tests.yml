@@ -35,11 +35,11 @@ jobs:
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
             2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
             2.x-${{ hashFiles('blt/blt.yml') }}-
-      - run: git config --system --add safe.directory '*'
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
+          git config --system --add safe.directory '*'
           composer install -n
           blt blt:telemetry:disable --no-interaction
           blt tests:phpunit:coverage --no-interaction
