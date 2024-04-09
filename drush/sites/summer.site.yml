@@ -2,35 +2,35 @@ local:
   uri: summer.sites-pro.stanford.edu
   root: '${env.cwd}/docroot'
 dev:
-  root: /var/www/html/stanfordlagunita.dev/docroot
-  ac-site: stanfordlagunita
+  root: /var/www/html/stanfordsummer.dev/docroot
+  ac-site: stanfordsummer
   ac-env: dev
   ac-realm: prod
   uri: summer.sites-pro.stanford.edu
   dev.livedev:
-    parent: '@stanfordlagunita.dev'
-    root: /mnt/gfs/stanfordlagunita.dev/livedev/docroot
-  host: stanfordlagunitadev.ssh.prod.acquia-sites.com
-  user: stanfordlagunita.dev
+    parent: '@stanfordsummer.dev'
+    root: /mnt/gfs/stanfordsummer.dev/livedev/docroot
+  host: stanfordsummerdev.ssh.prod.acquia-sites.com
+  user: stanfordsummer.dev
 test:
-  root: /var/www/html/stanfordlagunita.test/docroot
-  ac-site: stanfordlagunita
+  root: /var/www/html/stanfordsummer.stage/docroot
+  ac-site: stanfordsummer
   ac-env: test
   ac-realm: prod
   uri: summer.sites-pro.stanford.edu
   test.livedev:
-    parent: '@stanfordlagunita.test'
-    root: /mnt/gfs/stanfordlagunita.test/livedev/docroot
-  host: stanfordlagunitastg.ssh.prod.acquia-sites.com
-  user: stanfordlagunita.test
+    parent: '@stanfordsummer.stage'
+    root: /mnt/gfs/stanfordsummer.stage/livedev/docroot
+  host: stanfordsummerstage.ssh.prod.acquia-sites.com
+  user: stanfordsummer.stage
 prod:
-  root: /var/www/html/stanfordlagunita.prod/docroot
-  ac-site: stanfordlagunita
+  root: /var/www/html/stanfordsummer.prod/docroot
+  ac-site: stanfordsummer
   ac-env: prod
   ac-realm: prod
   uri: summer.sites-pro.stanford.edu
   prod.livedev:
-    parent: '@stanfordlagunita.prod'
-    root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot
-  host: stanfordlagunita.ssh.prod.acquia-sites.com
-  user: stanfordlagunita.prod
+    parent: '@stanfordsummer.prod'
+    root: /mnt/gfs/stanfordsummer.prod/livedev/docroot
+  host: stanfordsummerprod.ssh.prod.acquia-sites.com
+  user: stanfordsummer.prod
