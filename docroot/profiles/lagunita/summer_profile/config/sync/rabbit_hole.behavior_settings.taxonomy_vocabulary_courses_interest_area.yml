@@ -1,0 +1,14 @@
+uuid: 52e4f630-419f-45bd-b9a7-ae7ff213916f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.courses_interest_area
+id: taxonomy_vocabulary_courses_interest_area
+entity_type_id: taxonomy_vocabulary
+entity_id: courses_interest_area
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -1,0 +1,21 @@
+uuid: 701ca751-af2e-41f9-bfc6-cd8f59a60637
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sum_course_name
+field_name: sum_course_name
+entity_type: node
+type: string
+settings:
+  max_length: 350
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

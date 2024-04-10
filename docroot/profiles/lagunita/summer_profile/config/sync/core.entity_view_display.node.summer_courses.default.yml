@@ -1,0 +1,83 @@
+uuid: d98869d1-6632-42c6-bd76-add580340413
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summer_courses
+  module:
+    - user
+id: node.summer_courses.default
+targetEntityType: node
+bundle: summer_courses
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sum_course_availability:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_catalog_number:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_class_number:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_course_cost:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_cross_listing:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_description:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_end_date:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_format:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_instructors:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_interest_area:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_length:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_name:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_notes:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_population:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_prerequisites:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_schedule:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_start_date:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_syllabus_file:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_unique_import_id:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_units:
+    settings: {  }
+    third_party_settings: {  }
+  sum_students_also_studied:
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true
