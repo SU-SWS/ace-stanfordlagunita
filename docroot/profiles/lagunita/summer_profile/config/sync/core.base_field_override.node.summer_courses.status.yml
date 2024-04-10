@@ -1,0 +1,22 @@
+uuid: 268cdaf9-ed6d-420b-a7c6-513de13ee250
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summer_courses
+id: node.summer_courses.status
+field_name: status
+entity_type: node
+bundle: summer_courses
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

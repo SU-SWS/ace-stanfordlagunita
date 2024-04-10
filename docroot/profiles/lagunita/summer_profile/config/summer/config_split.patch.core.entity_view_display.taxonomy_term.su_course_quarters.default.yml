@@ -1,0 +1,5 @@
+adding: {  }
+removing:
+  dependencies:
+    config:
+      - views.view.stanford_courses

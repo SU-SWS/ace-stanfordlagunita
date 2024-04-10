@@ -1,0 +1,19 @@
+uuid: 31e43f43-132c-41d6-a61e-4772154cd2f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_schedule
+    - node.type.summer_courses
+id: node.summer_courses.sum_course_schedule
+field_name: sum_course_schedule
+entity_type: node
+bundle: summer_courses
+label: Schedule
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

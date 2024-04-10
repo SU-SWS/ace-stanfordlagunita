@@ -1,0 +1,20 @@
+uuid: 8a619510-5f86-446a-901c-d2e47c3995d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sum_course_unique_import_id
+field_name: sum_course_unique_import_id
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

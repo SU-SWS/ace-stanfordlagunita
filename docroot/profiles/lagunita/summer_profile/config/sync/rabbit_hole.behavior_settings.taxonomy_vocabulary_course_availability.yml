@@ -1,0 +1,14 @@
+uuid: 068b598e-2d36-449d-809a-05ececf22172
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_availability
+id: taxonomy_vocabulary_course_availability
+entity_type_id: taxonomy_vocabulary
+entity_id: course_availability
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

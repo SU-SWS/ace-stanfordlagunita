@@ -1,0 +1,23 @@
+uuid: 06809dd2-4af7-48f1-8a2c-183f531a3a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_class_number
+    - node.type.summer_courses
+id: node.summer_courses.sum_course_class_number
+field_name: sum_course_class_number
+entity_type: node
+bundle: summer_courses
+label: 'Class Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
