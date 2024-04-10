@@ -40,17 +40,24 @@ function supress_helper_cron() {
     $token = $token['response']['token'];
 
     // Post a query to find the covers that are flagged to be updated. The API
-    // is slow to respond so limiting to only 10 items will make it more
+    // is slow to respond so limiting to only 100 items will make it more
     // reliable.
-    $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=10', [
-      'verify' => FALSE,
-      'headers' => [
-        'Content-Type' => 'application/json',
-        'Authorization' => 'Bearer ' . $token,
-      ],
-      'body' => json_encode(['query' => [['flag' => '=x']]]),
-      'timeout' => 60,
-    ])->getBody();
+    try {
+      $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=100', [
+        'verify' => FALSE,
+        'headers' => [
+          'Content-Type' => 'application/json',
+          'Authorization' => 'Bearer ' . $token,
+        ],
+        'body' => json_encode(['query' => [['flag' => '=x']]]),
+        'timeout' => 60,
+      ])->getBody();
+    }
+    catch (\Exception $e) {
+      // When there are no covers that match, the response is a 500 "error" even
+      // though it should actually be a 204.
+      return;
+    }
 
     // Create a cron queue task for each cover.
     $covers = json_decode($covers_response, TRUE, 512, JSON_THROW_ON_ERROR);

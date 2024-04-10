@@ -108,6 +108,10 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     // 1 item.
     $cover = reset($covers['response']['data']);
 
+    if (empty($cover['fieldData']['work_id_number']) || empty($cover['fieldData']['image'])) {
+      return;
+    }
+
     $image_url = $cover['fieldData']['image'];
 
     // The extension is almost always a jpg, but let's grab the extension
@@ -119,11 +123,18 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $media_id = $this->downloadImage($image_url, "$public_path/$work_id$extension", $work_id);
 
     // Call the API to update the flag in the system.
-    $this->client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/scripts/ClearFlags?script.param=$work_id", [
-      'verify' => FALSE,
-      'headers' => ['Content-Type' => 'application/json'],
-      'auth' => [$client_id, $client_secret],
-    ]);
+    try {
+      $this->client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/script/ClearFlags?script.param=$work_id", [
+        'verify' => FALSE,
+        'headers' => [
+          'Content-Type' => 'application/json',
+          'Authorization' => 'Bearer ' . $token['response']['token'],
+        ],
+      ]);
+    }
+    catch (\Exception $e) {
+      // Ignore any errors since the response is often slow.
+    }
     return $media_id;
   }
 

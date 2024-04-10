@@ -2035,28 +2035,27 @@
         },
         {
             "name": "drupal/acquia_connector",
-            "version": "4.0.5",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/acquia_connector.git",
-                "reference": "4.0.5"
+                "reference": "4.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acquia_connector-4.0.5.zip",
-                "reference": "4.0.5",
-                "shasum": "047bb6a37c99089c17123507b294f42f9c459971"
+                "url": "https://ftp.drupal.org/files/projects/acquia_connector-4.0.6.zip",
+                "reference": "4.0.6",
+                "shasum": "68ecb1b51cf8be3d3a7b21c9ccc33c40431c376d"
             },
             "require": {
                 "drupal/core": ">=8.9 <11.0.0-stable",
-                "ext-json": "*",
-                "php": "^7.4 || ^8"
+                "ext-json": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.5",
-                    "datestamp": "1691430065",
+                    "version": "4.0.6",
+                    "datestamp": "1712677384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -16939,16 +16938,16 @@
         },
         {
             "name": "su-sws/stanford_media",
-            "version": "11.0.2",
+            "version": "11.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_media.git",
-                "reference": "751c7d6872e99bd4988c30200411009baf485270"
+                "reference": "251aaa88dbb6394ec482e27041902c68a9f98520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_media/zipball/751c7d6872e99bd4988c30200411009baf485270",
-                "reference": "751c7d6872e99bd4988c30200411009baf485270",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_media/zipball/251aaa88dbb6394ec482e27041902c68a9f98520",
+                "reference": "251aaa88dbb6394ec482e27041902c68a9f98520",
                 "shasum": ""
             },
             "require": {
@@ -16992,9 +16991,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_media",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_media/issues",
-                "source": "https://github.com/SU-SWS/stanford_media/tree/11.0.2"
+                "source": "https://github.com/SU-SWS/stanford_media/tree/11.0.3"
             },
-            "time": "2024-03-14T21:51:43+00:00"
+            "time": "2024-04-09T19:16:42+00:00"
         },
         {
             "name": "su-sws/stanford_migrate",
@@ -17240,16 +17239,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.6.6",
+            "version": "9.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "6924494bffa7dd65fbf561110ba1a9a277d18b5e"
+                "reference": "97eb9fbf929b9bbd503d55c3f1e4d65fedc59786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/6924494bffa7dd65fbf561110ba1a9a277d18b5e",
-                "reference": "6924494bffa7dd65fbf561110ba1a9a277d18b5e",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/97eb9fbf929b9bbd503d55c3f1e4d65fedc59786",
+                "reference": "97eb9fbf929b9bbd503d55c3f1e4d65fedc59786",
                 "shasum": ""
             },
             "require": {
@@ -17336,9 +17335,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.6.6"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.6.7"
             },
-            "time": "2024-03-28T21:49:27+00:00"
+            "time": "2024-04-10T17:29:22+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
