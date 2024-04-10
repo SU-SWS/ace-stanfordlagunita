@@ -1,0 +1,19 @@
+uuid: 4c43fd87-762e-418e-96be-3f4902415cd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.sum_description
+field_name: sum_description
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

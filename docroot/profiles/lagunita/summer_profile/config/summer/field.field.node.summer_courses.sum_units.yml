@@ -1,0 +1,23 @@
+uuid: 85d05a9e-6a34-4f89-b72a-551fa05a5436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_units
+    - node.type.summer_courses
+id: node.summer_courses.sum_units
+field_name: sum_units
+entity_type: node
+bundle: summer_courses
+label: Units
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

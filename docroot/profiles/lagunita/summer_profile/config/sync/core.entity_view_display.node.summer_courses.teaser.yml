@@ -1,0 +1,21 @@
+uuid: 8d5ce2be-666a-4955-b90c-db79bb100064
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.summer_courses
+  module:
+    - user
+id: node.summer_courses.teaser
+targetEntityType: node
+bundle: summer_courses
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

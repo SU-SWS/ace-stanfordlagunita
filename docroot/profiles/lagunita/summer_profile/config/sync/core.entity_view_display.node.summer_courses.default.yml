@@ -1,0 +1,41 @@
+uuid: d98869d1-6632-42c6-bd76-add580340413
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summer_courses
+  module:
+    - user
+id: node.summer_courses.default
+targetEntityType: node
+bundle: summer_courses
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sum_catalog_number:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_name:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_notes:
+    settings: {  }
+    third_party_settings: {  }
+  sum_description:
+    settings: {  }
+    third_party_settings: {  }
+  sum_instructors:
+    settings: {  }
+    third_party_settings: {  }
+  sum_unique_import_id:
+    settings: {  }
+    third_party_settings: {  }
+  sum_units:
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

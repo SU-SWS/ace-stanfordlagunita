@@ -1,0 +1,70 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.summer_courses.sum_catalog_number
+      - field.field.node.summer_courses.sum_course_name
+      - field.field.node.summer_courses.sum_course_notes
+      - field.field.node.summer_courses.sum_description
+      - field.field.node.summer_courses.sum_instructors
+      - field.field.node.summer_courses.sum_unique_import_id
+      - field.field.node.summer_courses.sum_units
+    module:
+      - text
+  content:
+    sum_catalog_number:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 104
+      region: content
+    sum_course_name:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 102
+      region: content
+    sum_course_notes:
+      type: text_default
+      label: above
+      settings: {  }
+      third_party_settings: {  }
+      weight: 106
+      region: content
+    sum_description:
+      type: text_default
+      label: above
+      settings: {  }
+      third_party_settings: {  }
+      weight: 105
+      region: content
+    sum_instructors:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 107
+      region: content
+    sum_unique_import_id:
+      type: number_integer
+      label: above
+      settings:
+        thousand_separator: ''
+        prefix_suffix: true
+      third_party_settings: {  }
+      weight: 103
+      region: content
+    sum_units:
+      type: number_integer
+      label: above
+      settings:
+        thousand_separator: ''
+        prefix_suffix: true
+      third_party_settings: {  }
+      weight: 108
+      region: content
+removing: {  }

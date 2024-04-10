@@ -1,0 +1,24 @@
+uuid: 698ecd90-e17e-4820-917f-965615174167
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_description
+    - filter.format.stanford_html
+    - node.type.summer_courses
+  module:
+    - text
+id: node.summer_courses.sum_description
+field_name: sum_description
+entity_type: node
+bundle: summer_courses
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_html
+field_type: text_long
