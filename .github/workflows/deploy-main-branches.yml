@@ -1,8 +1,6 @@
 name: Deploy Main Branch Artifact
 on:
-  push:
-    branches:
-      - '2.x'
+  - push
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -36,7 +34,6 @@ jobs:
           if_key_exists: fail
       - name: Deploy Artifact
         run: |
-          git config --system --add safe.directory '*' &&
           git config --global user.email "sws-developers@lists.stanford.edu" &&
           git config --global user.name "Github Actions" &&
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
