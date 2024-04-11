@@ -1,15 +1,15 @@
-uuid: 698ecd90-e17e-4820-917f-965615174167
+uuid: 1505991d-0673-4067-9292-b805ca60d8b1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sum_description
+    - field.storage.node.sum_course_description
     - filter.format.stanford_html
     - node.type.summer_courses
   module:
     - text
-id: node.summer_courses.sum_description
-field_name: sum_description
+id: node.summer_courses.sum_course_description
+field_name: sum_course_description
 entity_type: node
 bundle: summer_courses
 label: Description

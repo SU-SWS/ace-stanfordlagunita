@@ -2,12 +2,15 @@ adding:
   dependencies:
     config:
       - field.field.node.summer_courses.sum_catalog_number
+      - field.field.node.summer_courses.sum_course_catalog_number
+      - field.field.node.summer_courses.sum_course_cross_listing
+      - field.field.node.summer_courses.sum_course_description
+      - field.field.node.summer_courses.sum_course_instructors
+      - field.field.node.summer_courses.sum_course_interest_area
       - field.field.node.summer_courses.sum_course_name
       - field.field.node.summer_courses.sum_course_notes
-      - field.field.node.summer_courses.sum_description
-      - field.field.node.summer_courses.sum_instructors
-      - field.field.node.summer_courses.sum_unique_import_id
-      - field.field.node.summer_courses.sum_units
+      - field.field.node.summer_courses.sum_course_prerequisites
+      - field.field.node.summer_courses.sum_course_units
     module:
       - text
   content:
@@ -16,6 +19,48 @@ adding:
       weight: 124
       region: content
       settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_catalog_number:
+      type: string_textfield
+      weight: 128
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_cross_listing:
+      type: string_textfield
+      weight: 132
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_description:
+      type: text_textarea
+      weight: 127
+      region: content
+      settings:
+        rows: 5
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_instructors:
+      type: string_textfield
+      weight: 129
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_interest_area:
+      type: entity_reference_autocomplete
+      weight: 133
+      region: content
+      settings:
+        match_operator: CONTAINS
+        match_limit: 10
         size: 60
         placeholder: ''
       third_party_settings: {  }
@@ -35,32 +80,17 @@ adding:
         rows: 5
         placeholder: ''
       third_party_settings: {  }
-    sum_description:
+    sum_course_prerequisites:
       type: text_textarea
-      weight: 125
+      weight: 131
       region: content
       settings:
         rows: 5
         placeholder: ''
       third_party_settings: {  }
-    sum_instructors:
-      type: string_textfield
-      weight: 127
-      region: content
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings: {  }
-    sum_unique_import_id:
+    sum_course_units:
       type: number
-      weight: 123
-      region: content
-      settings:
-        placeholder: ''
-      third_party_settings: {  }
-    sum_units:
-      type: number
-      weight: 128
+      weight: 130
       region: content
       settings:
         placeholder: ''

@@ -1,17 +1,16 @@
-uuid: 9f56d81b-96fc-433b-9c30-f188509dde7a
+uuid: 800a1bd9-e9e7-4d2b-bc1b-4ac6a5df6086
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.sum_unique_import_id
-field_name: sum_unique_import_id
+    - text
+id: node.sum_course_description
+field_name: sum_course_description
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

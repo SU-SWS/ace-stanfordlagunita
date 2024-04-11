@@ -1,11 +1,11 @@
-uuid: f34defb7-2bea-488e-b6e3-8fd015a3d296
+uuid: 681f8eea-478a-45b4-8e79-46347761f33f
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.sum_units
-field_name: sum_units
+id: node.sum_course_units
+field_name: sum_course_units
 entity_type: node
 type: integer
 settings:

@@ -3,21 +3,3 @@ removing:
   dependencies:
     config:
       - views.view.stanford_courses
-  third_party_settings:
-    layout_builder:
-      sections:
-        -
-          components:
-            6a791e83-4a87-44b8-9ba9-6b492109b866:
-              uuid: 6a791e83-4a87-44b8-9ba9-6b492109b866
-              region: main
-              configuration:
-                id: 'views_block:stanford_courses-taxonomy_term_page_list'
-                label: ''
-                label_display: '0'
-                provider: views
-                context_mapping: {  }
-                views_label: ''
-                items_per_page: none
-              weight: 3
-              additional: {  }

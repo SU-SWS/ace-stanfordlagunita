@@ -2,12 +2,15 @@ adding:
   dependencies:
     config:
       - field.field.node.summer_courses.sum_catalog_number
+      - field.field.node.summer_courses.sum_course_catalog_number
+      - field.field.node.summer_courses.sum_course_cross_listing
+      - field.field.node.summer_courses.sum_course_description
+      - field.field.node.summer_courses.sum_course_instructors
+      - field.field.node.summer_courses.sum_course_interest_area
       - field.field.node.summer_courses.sum_course_name
       - field.field.node.summer_courses.sum_course_notes
-      - field.field.node.summer_courses.sum_description
-      - field.field.node.summer_courses.sum_instructors
-      - field.field.node.summer_courses.sum_unique_import_id
-      - field.field.node.summer_courses.sum_units
+      - field.field.node.summer_courses.sum_course_prerequisites
+      - field.field.node.summer_courses.sum_course_units
     module:
       - text
   content:
@@ -18,6 +21,45 @@ adding:
         link_to_entity: false
       third_party_settings: {  }
       weight: 104
+      region: content
+    sum_course_catalog_number:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 108
+      region: content
+    sum_course_cross_listing:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 112
+      region: content
+    sum_course_description:
+      type: text_default
+      label: above
+      settings: {  }
+      third_party_settings: {  }
+      weight: 107
+      region: content
+    sum_course_instructors:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 109
+      region: content
+    sum_course_interest_area:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      third_party_settings: {  }
+      weight: 113
       region: content
     sum_course_name:
       type: string
@@ -34,37 +76,20 @@ adding:
       third_party_settings: {  }
       weight: 106
       region: content
-    sum_description:
+    sum_course_prerequisites:
       type: text_default
       label: above
       settings: {  }
       third_party_settings: {  }
-      weight: 105
+      weight: 111
       region: content
-    sum_instructors:
-      type: string
-      label: above
-      settings:
-        link_to_entity: false
-      third_party_settings: {  }
-      weight: 107
-      region: content
-    sum_unique_import_id:
+    sum_course_units:
       type: number_integer
       label: above
       settings:
         thousand_separator: ''
         prefix_suffix: true
       third_party_settings: {  }
-      weight: 103
-      region: content
-    sum_units:
-      type: number_integer
-      label: above
-      settings:
-        thousand_separator: ''
-        prefix_suffix: true
-      third_party_settings: {  }
-      weight: 108
+      weight: 110
       region: content
 removing: {  }

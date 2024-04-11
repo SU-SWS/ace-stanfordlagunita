@@ -2,18 +2,24 @@ adding:
   dependencies:
     config:
       - field.field.node.summer_courses.sum_catalog_number
+      - field.field.node.summer_courses.sum_course_catalog_number
+      - field.field.node.summer_courses.sum_course_cross_listing
+      - field.field.node.summer_courses.sum_course_description
+      - field.field.node.summer_courses.sum_course_instructors
+      - field.field.node.summer_courses.sum_course_interest_area
       - field.field.node.summer_courses.sum_course_name
       - field.field.node.summer_courses.sum_course_notes
-      - field.field.node.summer_courses.sum_description
-      - field.field.node.summer_courses.sum_instructors
-      - field.field.node.summer_courses.sum_unique_import_id
-      - field.field.node.summer_courses.sum_units
+      - field.field.node.summer_courses.sum_course_prerequisites
+      - field.field.node.summer_courses.sum_course_units
   hidden:
     sum_catalog_number: true
+    sum_course_catalog_number: true
+    sum_course_cross_listing: true
+    sum_course_description: true
+    sum_course_instructors: true
+    sum_course_interest_area: true
     sum_course_name: true
     sum_course_notes: true
-    sum_description: true
-    sum_instructors: true
-    sum_unique_import_id: true
-    sum_units: true
+    sum_course_prerequisites: true
+    sum_course_units: true
 removing: {  }

@@ -1,12 +1,12 @@
-uuid: 85d05a9e-6a34-4f89-b72a-551fa05a5436
+uuid: e8a68491-1c52-499f-8dce-ce23bd26c449
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sum_units
+    - field.storage.node.sum_course_units
     - node.type.summer_courses
-id: node.summer_courses.sum_units
-field_name: sum_units
+id: node.summer_courses.sum_course_units
+field_name: sum_course_units
 entity_type: node
 bundle: summer_courses
 label: Units

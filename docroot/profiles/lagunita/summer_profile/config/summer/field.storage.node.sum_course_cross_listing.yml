@@ -1,11 +1,11 @@
-uuid: 4ccaca58-bc06-4791-9f35-34bf9bbdc9ad
+uuid: cb01d187-cc88-4eb0-b4ca-2dc03ba1f1a6
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.sum_instructors
-field_name: sum_instructors
+id: node.sum_course_cross_listing
+field_name: sum_course_cross_listing
 entity_type: node
 type: string
 settings:
@@ -14,7 +14,7 @@ settings:
   is_ascii: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

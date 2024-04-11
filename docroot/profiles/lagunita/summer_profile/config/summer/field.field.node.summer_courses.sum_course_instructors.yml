@@ -1,12 +1,12 @@
-uuid: 48451e77-9fb0-4611-897c-f8857f9a333b
+uuid: 59ccd8cb-4b5b-47cf-83a7-9a9d0653bf1f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sum_instructors
+    - field.storage.node.sum_course_instructors
     - node.type.summer_courses
-id: node.summer_courses.sum_instructors
-field_name: sum_instructors
+id: node.summer_courses.sum_course_instructors
+field_name: sum_course_instructors
 entity_type: node
 bundle: summer_courses
 label: Instructors
