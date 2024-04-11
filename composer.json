@@ -45,6 +45,7 @@
         "drupal/core-recommended": "^10.0",
         "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
+        "drupal/stage_file_proxy": "^2.1",
         "drush/drush": "^12",
         "su-sws/blt-sws": "dev-main",
         "su-sws/stanford_profile": "^11.2",

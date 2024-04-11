@@ -34,3 +34,10 @@ prod:
     root: /mnt/gfs/stanfordpress.prod/livedev/docroot
   host: stanfordpressprod.ssh.prod.acquia-sites.com
   user: stanfordpress.prod
+default:
+  root: /var/www/html/stanfordpress.prod/docroot
+  ac-site: stanfordpress
+  ac-env: prod
+  ac-realm: prod
+  host: stanfordpressprod.ssh.prod.acquia-sites.com
+  user: stanfordpress.prod

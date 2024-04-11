@@ -34,3 +34,10 @@ prod:
     root: /mnt/gfs/stanfordsummer.prod/livedev/docroot
   host: stanfordsummerprod.ssh.prod.acquia-sites.com
   user: stanfordsummer.prod
+default:
+  root: /var/www/html/stanfordsummer.prod/docroot
+  ac-site: stanfordsummer
+  ac-env: prod
+  ac-realm: prod
+  host: stanfordsummerprod.ssh.prod.acquia-sites.com
+  user: stanfordsummer.prod
