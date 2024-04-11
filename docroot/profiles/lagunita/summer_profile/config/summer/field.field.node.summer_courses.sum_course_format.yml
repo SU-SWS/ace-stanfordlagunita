@@ -1,0 +1,19 @@
+uuid: 44bcd11b-77b0-4417-ab5f-6583d4925c7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_format
+    - node.type.summer_courses
+id: node.summer_courses.sum_course_format
+field_name: sum_course_format
+entity_type: node
+bundle: summer_courses
+label: 'Course Format'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

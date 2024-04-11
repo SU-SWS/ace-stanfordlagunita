@@ -1,0 +1,20 @@
+uuid: 18a990da-eb22-4fdc-80c2-e215b5c70024
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.sum_course_availability
+field_name: sum_course_availability
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

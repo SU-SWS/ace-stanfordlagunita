@@ -2,16 +2,27 @@ adding:
   dependencies:
     config:
       - field.field.node.summer_courses.sum_catalog_number
+      - field.field.node.summer_courses.sum_course_availability
       - field.field.node.summer_courses.sum_course_catalog_number
+      - field.field.node.summer_courses.sum_course_class_number
+      - field.field.node.summer_courses.sum_course_course_cost
       - field.field.node.summer_courses.sum_course_cross_listing
       - field.field.node.summer_courses.sum_course_description
+      - field.field.node.summer_courses.sum_course_end_date
+      - field.field.node.summer_courses.sum_course_format
       - field.field.node.summer_courses.sum_course_instructors
       - field.field.node.summer_courses.sum_course_interest_area
+      - field.field.node.summer_courses.sum_course_length
       - field.field.node.summer_courses.sum_course_name
       - field.field.node.summer_courses.sum_course_notes
+      - field.field.node.summer_courses.sum_course_population
       - field.field.node.summer_courses.sum_course_prerequisites
+      - field.field.node.summer_courses.sum_course_schedule
+      - field.field.node.summer_courses.sum_course_start_date
       - field.field.node.summer_courses.sum_course_units
+      - field.field.node.summer_courses.sum_students_also_studied
     module:
+      - datetime
       - text
   content:
     sum_catalog_number:
@@ -22,12 +33,36 @@ adding:
         size: 60
         placeholder: ''
       third_party_settings: {  }
+    sum_course_availability:
+      type: entity_reference_autocomplete
+      weight: 144
+      region: content
+      settings:
+        match_operator: CONTAINS
+        match_limit: 10
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
     sum_course_catalog_number:
       type: string_textfield
       weight: 128
       region: content
       settings:
         size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_class_number:
+      type: number
+      weight: 136
+      region: content
+      settings:
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_course_cost:
+      type: number
+      weight: 137
+      region: content
+      settings:
         placeholder: ''
       third_party_settings: {  }
     sum_course_cross_listing:
@@ -44,6 +79,20 @@ adding:
       region: content
       settings:
         rows: 5
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_end_date:
+      type: datetime_default
+      weight: 143
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    sum_course_format:
+      type: string_textfield
+      weight: 139
+      region: content
+      settings:
+        size: 60
         placeholder: ''
       third_party_settings: {  }
     sum_course_instructors:
@@ -64,6 +113,14 @@ adding:
         size: 60
         placeholder: ''
       third_party_settings: {  }
+    sum_course_length:
+      type: string_textfield
+      weight: 140
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
     sum_course_name:
       type: string_textfield
       weight: 122
@@ -80,6 +137,16 @@ adding:
         rows: 5
         placeholder: ''
       third_party_settings: {  }
+    sum_course_population:
+      type: entity_reference_autocomplete
+      weight: 134
+      region: content
+      settings:
+        match_operator: CONTAINS
+        match_limit: 10
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
     sum_course_prerequisites:
       type: text_textarea
       weight: 131
@@ -88,9 +155,30 @@ adding:
         rows: 5
         placeholder: ''
       third_party_settings: {  }
+    sum_course_schedule:
+      type: string_textfield
+      weight: 141
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    sum_course_start_date:
+      type: datetime_default
+      weight: 142
+      region: content
+      settings: {  }
+      third_party_settings: {  }
     sum_course_units:
       type: number
       weight: 130
+      region: content
+      settings:
+        placeholder: ''
+      third_party_settings: {  }
+    sum_students_also_studied:
+      type: number
+      weight: 135
       region: content
       settings:
         placeholder: ''

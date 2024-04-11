@@ -19,7 +19,16 @@ content:
   sum_catalog_number:
     settings: {  }
     third_party_settings: {  }
+  sum_course_availability:
+    settings: {  }
+    third_party_settings: {  }
   sum_course_catalog_number:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_class_number:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_course_cost:
     settings: {  }
     third_party_settings: {  }
   sum_course_cross_listing:
@@ -28,10 +37,19 @@ content:
   sum_course_description:
     settings: {  }
     third_party_settings: {  }
+  sum_course_end_date:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_format:
+    settings: {  }
+    third_party_settings: {  }
   sum_course_instructors:
     settings: {  }
     third_party_settings: {  }
   sum_course_interest_area:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_length:
     settings: {  }
     third_party_settings: {  }
   sum_course_name:
@@ -40,10 +58,22 @@ content:
   sum_course_notes:
     settings: {  }
     third_party_settings: {  }
+  sum_course_population:
+    settings: {  }
+    third_party_settings: {  }
   sum_course_prerequisites:
     settings: {  }
     third_party_settings: {  }
+  sum_course_schedule:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_start_date:
+    settings: {  }
+    third_party_settings: {  }
   sum_course_units:
+    settings: {  }
+    third_party_settings: {  }
+  sum_students_also_studied:
     settings: {  }
     third_party_settings: {  }
 hidden:
