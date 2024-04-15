@@ -535,7 +535,8 @@ process:
       source: imprint
       method: process
     -
-      plugin: sentence_case
+      plugin: callback
+      callable: ucwords
     -
       plugin: entity_generate
       entity_type: taxonomy_term
