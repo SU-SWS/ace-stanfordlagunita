@@ -44,9 +44,6 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  sum_catalog_number:
-    settings: {  }
-    third_party_settings: {  }
   sum_course_availability:
     settings: {  }
     third_party_settings: {  }
@@ -96,6 +93,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   sum_course_start_date:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_syllabus_file:
+    settings: {  }
+    third_party_settings: {  }
+  sum_course_unique_import_id:
     settings: {  }
     third_party_settings: {  }
   sum_course_units:

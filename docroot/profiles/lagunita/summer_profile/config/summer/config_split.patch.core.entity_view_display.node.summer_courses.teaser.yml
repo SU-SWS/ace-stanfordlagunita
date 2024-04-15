@@ -1,7 +1,6 @@
 adding:
   dependencies:
     config:
-      - field.field.node.summer_courses.sum_catalog_number
       - field.field.node.summer_courses.sum_course_availability
       - field.field.node.summer_courses.sum_course_catalog_number
       - field.field.node.summer_courses.sum_course_class_number
@@ -19,10 +18,11 @@ adding:
       - field.field.node.summer_courses.sum_course_prerequisites
       - field.field.node.summer_courses.sum_course_schedule
       - field.field.node.summer_courses.sum_course_start_date
+      - field.field.node.summer_courses.sum_course_syllabus_file
+      - field.field.node.summer_courses.sum_course_unique_import_id
       - field.field.node.summer_courses.sum_course_units
       - field.field.node.summer_courses.sum_students_also_studied
   hidden:
-    sum_catalog_number: true
     sum_course_availability: true
     sum_course_catalog_number: true
     sum_course_class_number: true
@@ -40,6 +40,8 @@ adding:
     sum_course_prerequisites: true
     sum_course_schedule: true
     sum_course_start_date: true
+    sum_course_syllabus_file: true
+    sum_course_unique_import_id: true
     sum_course_units: true
     sum_students_also_studied: true
 removing: {  }

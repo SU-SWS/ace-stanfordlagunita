@@ -1,17 +1,16 @@
-uuid: ce53e420-9e94-465f-a357-340d3aedc274
+uuid: 8a619510-5f86-446a-901c-d2e47c3995d4
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.sum_catalog_number
-field_name: sum_catalog_number
+id: node.sum_course_unique_import_id
+field_name: sum_course_unique_import_id
 entity_type: node
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1
