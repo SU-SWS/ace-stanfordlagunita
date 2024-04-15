@@ -1,0 +1,22 @@
+uuid: bcb44a40-7edb-42d0-b9b8-68b417afc7ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: sup_imprint_taxonomy
+label: 'Imprint Taxonomy'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'imprint/[term:parents:join-path]/[term:name]'
+selection_criteria:
+  51765d5e-48c8-440e-9290-484d3b12b246:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 51765d5e-48c8-440e-9290-484d3b12b246
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      sup_imprints: sup_imprints
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -12,7 +12,7 @@ label: 'Import Stanford University Press Books'
 source:
   authentication:
     plugin: press_filemaker
-    token_url: https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions'
+    token_url: "https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions'"
     client_id: '[client_id]'
     client_secret: '[client_secret]'
   plugin: url
@@ -529,7 +529,19 @@ process:
   sup_digital_comp_link: digital_comp_link
   sup_html_page_title: html_page_title
   sup_illustrations: illustrations
-  sup_imprint: imprint
+  sup_imprint:
+    -
+      plugin: skip_on_empty
+      source: imprint
+      method: process
+    -
+      plugin: sentence_case
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: sup_imprints
   sup_in_print_status: in_print_status
   sup_instructor_recommended: instructor_recommended
   sup_isbn_13_alt: isbn_13_alt

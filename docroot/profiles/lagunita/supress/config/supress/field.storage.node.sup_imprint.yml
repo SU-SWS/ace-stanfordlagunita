@@ -1,17 +1,16 @@
-uuid: 56cb901d-729f-4f19-a46c-1754f79a4ff9
+uuid: 99b1a948-71a2-421f-9935-114e215374ec
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - taxonomy
 id: node.sup_imprint
 field_name: sup_imprint
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1
