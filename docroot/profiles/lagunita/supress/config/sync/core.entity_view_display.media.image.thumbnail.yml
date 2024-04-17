@@ -32,6 +32,5 @@ hidden:
   name: true
   search_api_excerpt: true
   su_media_category: true
-  sup_book_work_id: true
   thumbnail: true
   uid: true

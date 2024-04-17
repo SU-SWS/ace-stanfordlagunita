@@ -182,11 +182,6 @@ entity_config:
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
-    sup_book:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
   paragraph:
     stanford_accordion:
       enabled: true
@@ -212,6 +207,8 @@ entity_config:
     stanford_media_caption:
       enabled: true
       query_load_enabled: true
+    stanford_page_title_banner:
+      enabled: true
     stanford_person_cta:
       enabled: true
       query_load_enabled: true
@@ -714,153 +711,6 @@ field_config:
         enabled: true
       su_publication_topics:
         enabled: true
-    sup_book:
-      sup_author_1_first_name:
-        enabled: true
-      sup_author_1_following:
-        enabled: true
-      sup_author_1_last_name:
-        enabled: true
-      sup_author_1_middle:
-        enabled: true
-      sup_author_1_preceding:
-        enabled: true
-      sup_author_1_role:
-        enabled: true
-      sup_author_2_first_name:
-        enabled: true
-      sup_author_2_following:
-        enabled: true
-      sup_author_2_last_name:
-        enabled: true
-      sup_author_2_middle:
-        enabled: true
-      sup_author_2_preceding:
-        enabled: true
-      sup_author_2_role:
-        enabled: true
-      sup_author_3_first_name:
-        enabled: true
-      sup_author_3_following:
-        enabled: true
-      sup_author_3_last_name:
-        enabled: true
-      sup_author_3_middle:
-        enabled: true
-      sup_author_3_preceding:
-        enabled: true
-      sup_author_3_role:
-        enabled: true
-      sup_author_4_first_name:
-        enabled: true
-      sup_author_4_following:
-        enabled: true
-      sup_author_4_last_name:
-        enabled: true
-      sup_author_4_middle:
-        enabled: true
-      sup_author_4_preceding:
-        enabled: true
-      sup_author_4_role:
-        enabled: true
-      sup_author_info:
-        enabled: true
-      sup_authors_full:
-        enabled: true
-      sup_availability_description:
-        enabled: true
-      sup_catalog_month:
-        enabled: true
-      sup_catalog_page:
-        enabled: true
-      sup_catalog_season_yyyy:
-        enabled: true
-      sup_cloth_sale_percent:
-        enabled: true
-      sup_cloth_sale_price:
-        enabled: true
-      sup_copublisher_name:
-        enabled: true
-      sup_copublisher_yn:
-        enabled: true
-      sup_copyright:
-        enabled: true
-      sup_description:
-        enabled: true
-      sup_digital_comp_link:
-        enabled: true
-      sup_html_page_title:
-        enabled: true
-      sup_illustrations:
-        enabled: true
-      sup_imprint:
-        enabled: true
-      sup_in_print_status:
-        enabled: true
-      sup_isbn_13_alt:
-        enabled: true
-      sup_isbn_13_cloth:
-        enabled: true
-      sup_isbn_13_digital:
-        enabled: true
-      sup_isbn_13_isw:
-        enabled: true
-      sup_isbn_13_paper:
-        enabled: true
-      sup_local_web_blurb:
-        enabled: true
-      sup_new_paperback_yn:
-        enabled: true
-      sup_pages:
-        enabled: true
-      sup_paper_sale_percent:
-        enabled: true
-      sup_paper_sale_price:
-        enabled: true
-      sup_price_cloth:
-        enabled: true
-      sup_price_digital:
-        enabled: true
-      sup_price_paper:
-        enabled: true
-      sup_print_desk_copies:
-        enabled: true
-      sup_pub_date_cloth:
-        enabled: true
-      sup_pub_date_digital:
-        enabled: true
-      sup_pub_date_first:
-        enabled: true
-      sup_pub_date_paper:
-        enabled: true
-      sup_pub_year_first:
-        enabled: true
-      sup_reviews:
-        enabled: true
-      sup_rights_description:
-        enabled: true
-      sup_sales_rank:
-        enabled: true
-      sup_series:
-        enabled: true
-      sup_status_cloth:
-        enabled: true
-      sup_status_digital:
-        enabled: true
-      sup_status_paper:
-        enabled: true
-      sup_subtitle:
-        enabled: true
-      sup_table_of_contents:
-        enabled: true
-      sup_url_isw:
-        enabled: true
-      sup_web_code_cloth:
-        enabled: true
-      sup_web_code_paper:
-        enabled: true
-      sup_work_id_number:
-        enabled: true
   paragraph:
     stanford_accordion:
       su_accordion_body:
@@ -923,6 +773,9 @@ field_config:
         enabled: true
       su_media_caption_media:
         enabled: true
+    stanford_page_title_banner:
+      su_title_banner_image:
+        enabled: true
     stanford_person_cta:
       su_person_cta_image:
         enabled: true
@@ -976,4 +829,4 @@ settings:
   inflector_langcode: en
   inflector_singularize: true
   custom: {  }
-  edge_max_limit: 100
+  edge_max_limit: 1000

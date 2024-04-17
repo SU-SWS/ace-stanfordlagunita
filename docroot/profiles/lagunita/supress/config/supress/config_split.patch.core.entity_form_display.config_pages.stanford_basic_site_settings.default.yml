@@ -11,6 +11,7 @@ adding:
       settings:
         size: 60
         placeholder: ''
+      third_party_settings: {  }
     sup_filemaker_user:
       type: string_textfield
       weight: 22
@@ -18,4 +19,5 @@ adding:
       settings:
         size: 60
         placeholder: ''
+      third_party_settings: {  }
 removing: {  }

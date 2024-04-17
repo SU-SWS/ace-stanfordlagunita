@@ -17,7 +17,6 @@ dependencies:
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_index
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_key
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_search
-    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_ui
     - field.field.config_pages.stanford_basic_site_settings.su_site_dropdowns
     - field.field.config_pages.stanford_basic_site_settings.su_site_email
     - field.field.config_pages.stanford_basic_site_settings.su_site_home
@@ -253,12 +252,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  sup_filemaker_pass:
-    settings: {  }
-    third_party_settings: {  }
-  sup_filemaker_user:
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   search_api_excerpt: true
   su_site_algolia_ui: true

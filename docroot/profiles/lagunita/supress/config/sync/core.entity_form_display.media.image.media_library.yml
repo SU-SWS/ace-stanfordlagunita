@@ -55,6 +55,5 @@ hidden:
   publish_on: true
   scheduler_settings: true
   status: true
-  sup_book_work_id: true
   uid: true
   unpublish_on: true
