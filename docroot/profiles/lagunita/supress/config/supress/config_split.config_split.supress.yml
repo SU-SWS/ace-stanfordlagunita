@@ -46,10 +46,9 @@ complete_list:
   - 'migrate_plus.migration.sup_*'
   - 'pathauto.pattern.sup_*'
 partial_list:
-  - config_pages.type.stanford_basic_site_settings
-  - core.entity_form_display.config_pages.stanford_basic_site_settings.default
-  - core.entity_view_display.config_pages.stanford_basic_site_settings.default
   - core.extension
   - graphql_compose.settings
-  - 'core.entity_form_display.media.*'
+  - '*su_*'
+  - '*stanford_*'
   - 'core.entity_view_display.media.*'
+  - 'core.entity_form_display.media.*'
