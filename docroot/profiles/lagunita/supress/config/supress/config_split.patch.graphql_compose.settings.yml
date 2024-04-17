@@ -1,8 +1,25 @@
 adding:
   entity_config:
+    paragraph:
+      stanford_page_title_banner:
+        enabled: true
+        query_load_enabled: true
     sup_award:
       sup_award:
         enabled: true
+    taxonomy_term:
+      sup_book_subjects:
+        enabled: true
+        query_load_enabled: true
+        routes_enabled: true
+      sup_imprints:
+        enabled: true
+        query_load_enabled: true
+        routes_enabled: true
+      sup_series:
+        enabled: true
+        query_load_enabled: true
+        routes_enabled: true
   field_config:
     node:
       sup_book:
@@ -22,6 +39,8 @@ adding:
           enabled: true
         sup_year:
           enabled: true
+  settings:
+    edge_max_limit: 1000
 removing:
   field_config:
     node:
@@ -78,3 +97,5 @@ removing:
           enabled: true
         sup_series:
           enabled: true
+  settings:
+    edge_max_limit: 100

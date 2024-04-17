@@ -69,7 +69,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $client_secret = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
 
     if (!$client_id || !$client_secret) {
-      return 'No client id or secret found.';
+      return;
     }
 
     // Fetch the OAuth-like token form the API.
@@ -95,7 +95,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
       // If the record no longer exists in the API or there was some issue with
       // the request, just bail. The queue will recreate the item if it still
       // exists from the API.
-      return 'No cover record found.';
+      return;
     }
 
     $covers = json_decode($covers_response, TRUE);
@@ -109,7 +109,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $cover = reset($covers['response']['data']);
 
     if (empty($cover['fieldData']['work_id_number']) || empty($cover['fieldData']['image'])) {
-      return 'No work id or image found.';
+      return;
     }
 
     $image_url = $cover['fieldData']['image'];
@@ -134,7 +134,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     }
     catch (\Exception $e) {
       // Ignore any errors since the response is often slow.
-      return 'Error clearing flags.';
+      return;
     }
     return $media_id;
   }
