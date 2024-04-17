@@ -499,7 +499,16 @@ process:
   sup_author_4/middle: author_4_middle
   sup_author_4/title: author_4_preceding
   sup_author_4_role: author_4_role
-  sup_author_info: author_info
+  sup_author_info:
+    -
+      plugin: str_replace
+      source: author_info
+      search:
+        - '<I>'
+        - '</I>'
+      replace:
+        - '<em>'
+        - '</em>'
   sup_authors_full: authors_full
   sup_availability_description: availability_description
   sup_catalog_month: catalog_month
@@ -534,6 +543,9 @@ process:
       plugin: skip_on_empty
       source: imprint
       method: process
+    -
+      plugin: callback
+      callable: strtolower
     -
       plugin: callback
       callable: ucwords
@@ -582,7 +594,23 @@ process:
       default_value: stanford_html
   sup_rights_description: rights_description
   sup_sales_rank: sales_rank
-  sup_series: series
+  sup_series:
+    -
+      plugin: skip_on_empty
+      source: series
+      method: process
+    -
+      plugin: callback
+      callable: strtolower
+    -
+      plugin: callback
+      callable: ucwords
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: sup_series
   sup_status_cloth: status_cloth
   sup_status_digital: status_digital
   sup_status_paper: status_paper

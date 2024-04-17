@@ -1,10 +1,11 @@
-uuid: e4aaa04a-c8b2-463d-94d4-7b3c670364a4
+uuid: 408de740-a056-4910-a88c-83bcb2ca782b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.sup_series
     - node.type.sup_book
+    - taxonomy.vocabulary.sup_series
 id: node.sup_book.sup_series
 field_name: sup_series
 entity_type: node
@@ -15,5 +16,14 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_series: sup_series
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

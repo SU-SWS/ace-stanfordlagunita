@@ -1,0 +1,14 @@
+uuid: 09af2198-6e1c-401e-9242-7f78a015d979
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sup_series
+id: taxonomy_vocabulary_sup_series
+entity_type_id: taxonomy_vocabulary
+entity_id: sup_series
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

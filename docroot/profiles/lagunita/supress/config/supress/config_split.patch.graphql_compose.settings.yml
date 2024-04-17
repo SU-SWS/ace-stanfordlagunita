@@ -76,3 +76,5 @@ removing:
           enabled: true
         sup_imprint:
           enabled: true
+        sup_series:
+          enabled: true
