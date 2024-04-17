@@ -25,6 +25,10 @@ adding:
       sup_book:
         sup_book_awards:
           enabled: true
+    paragraph:
+      stanford_page_title_banner:
+        su_title_banner_image:
+          enabled: true
     sup_award:
       sup_award:
         sup_association:

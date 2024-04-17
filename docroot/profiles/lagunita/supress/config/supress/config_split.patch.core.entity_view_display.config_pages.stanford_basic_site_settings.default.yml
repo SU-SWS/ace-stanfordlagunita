@@ -9,7 +9,6 @@ adding:
       label: above
       settings:
         link_to_entity: false
-      third_party_settings: {  }
       weight: 26
       region: content
     sup_filemaker_user:
@@ -17,7 +16,6 @@ adding:
       label: above
       settings:
         link_to_entity: false
-      third_party_settings: {  }
       weight: 25
       region: content
 removing: {  }

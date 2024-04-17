@@ -42,8 +42,15 @@ complete_list:
   - 'views.view.sup_*'
   - 'migrate_plus.migration_group.sup_*'
   - 'migrate_plus.migration.sup_*'
+  - migrate_plus.migration_group.su_press
   - 'pathauto.pattern.sup_*'
+  - config_split.config_split.supress
 partial_list:
   - graphql_compose.settings
-  - migrate_plus.migration_group.su_press
-  - config_split.patch.config_pages.type.stanford_basic_site_settings
+  - config_pages.type.stanford_basic_site_settings
+  - core.entity_form_display.config_pages.stanford_basic_site_settings.default
+  - 'core.entity_form_display.media.image.*'
+  - core.entity_view_display.config_pages.stanford_basic_site_settings.default
+  - 'core.entity_view_display.media.image.*'
+  - core.extension
+  - graphql_compose.settings
