@@ -13,7 +13,6 @@ folder: profiles/lagunita/supress/config/supress
 module: {  }
 theme: {  }
 complete_list:
-  - config_split.config_split.supress
   - migrate_plus.migration_group.su_press
   - 'config_pages.type.sup_*'
   - 'node.type.sup_*'

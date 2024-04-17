@@ -134,7 +134,6 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     }
     catch (\Exception $e) {
       // Ignore any errors since the response is often slow.
-      return;
     }
     return $media_id;
   }

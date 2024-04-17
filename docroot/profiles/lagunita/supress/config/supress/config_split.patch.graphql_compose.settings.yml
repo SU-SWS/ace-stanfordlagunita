@@ -9,9 +9,6 @@ adding:
     paragraph:
       stanford_page_title_banner:
         query_load_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
     taxonomy_term:
       sup_book_subjects:
         enabled: true
@@ -25,6 +22,9 @@ adding:
         enabled: true
         query_load_enabled: true
         routes_enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
   field_config:
     node:
       sup_book:
