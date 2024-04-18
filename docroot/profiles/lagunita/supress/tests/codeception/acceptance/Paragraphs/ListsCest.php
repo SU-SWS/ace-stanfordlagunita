@@ -8,7 +8,7 @@ use Faker\Factory;
  * @group paragraphs
  * @group lists
  */
-class ListsCest {
+abstract class ListsCest {
 
   /**
    * Faker service.

@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group content
  */
-class NewsCest {
+abstract class NewsCest {
 
   /**
    * Faker.
