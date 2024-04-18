@@ -20,26 +20,6 @@ source:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=4001'
   fields:
     -
-      name: abstract
-      label: abstract
-      selector: fieldData/abstract
-    -
-      name: alt_format
-      label: alt_format
-      selector: fieldData/alt_format
-    -
-      name: alt_format_price
-      label: alt_format_price
-      selector: fieldData/alt_format_price
-    -
-      name: announcement
-      label: announcement
-      selector: fieldData/announcement
-    -
-      name: apparatus_description
-      label: apparatus_description
-      selector: fieldData/apparatus_description
-    -
       name: author_1_first_name
       label: author_1_first_name
       selector: fieldData/author_1_first_name
@@ -148,14 +128,6 @@ source:
       label: availability_description
       selector: fieldData/availability_description
     -
-      name: cart_status
-      label: cart_status
-      selector: fieldData/cart_status
-    -
-      name: 'catalog subjects'
-      label: 'catalog subjects'
-      selector: 'fieldData/catalog subjects'
-    -
       name: catalog_month
       label: catalog_month
       selector: fieldData/catalog_month
@@ -167,10 +139,6 @@ source:
       name: catalog_season_yyyy
       label: catalog_season_yyyy
       selector: fieldData/catalog_season_yyyy
-    -
-      name: cloth_discount
-      label: cloth_discount
-      selector: fieldData/cloth_discount
     -
       name: cloth_sale_percent
       label: cloth_sale_percent
@@ -192,53 +160,9 @@ source:
       label: copyright
       selector: fieldData/copyright
     -
-      name: cover
-      label: cover
-      selector: fieldData/cover
-    -
       name: description
       label: description
       selector: fieldData/description
-    -
-      name: digital_comp_link_yn
-      label: digital_comp_link_yn
-      selector: fieldData/digital_comp_link_yn
-    -
-      name: ebook_formats_available
-      label: ebook_formats_available
-      selector: fieldData/ebook_formats_available
-    -
-      name: excerpt_1
-      label: excerpt_1
-      selector: fieldData/excerpt_1
-    -
-      name: excerpt_1_title
-      label: excerpt_1_title
-      selector: fieldData/excerpt_1_title
-    -
-      name: excerpt_2
-      label: excerpt_2
-      selector: fieldData/excerpt_2
-    -
-      name: excerpt_2_title
-      label: excerpt_2_title
-      selector: fieldData/excerpt_2_title
-    -
-      name: excerpt_3
-      label: excerpt_3
-      selector: fieldData/excerpt_3
-    -
-      name: excerpt_3_title
-      label: excerpt_3_title
-      selector: fieldData/excerpt_3_title
-    -
-      name: flag_description
-      label: flag_description
-      selector: fieldData/flag_description
-    -
-      name: flag_reviews
-      label: flag_reviews
-      selector: fieldData/flag_reviews
     -
       name: html_page_title
       label: html_page_title
@@ -259,18 +183,6 @@ source:
       name: instructor_recommended
       label: instructor_recommended
       selector: fieldData/instructor_recommended
-    -
-      name: isbn_10_cloth
-      label: isbn_10_cloth
-      selector: fieldData/isbn_10_cloth
-    -
-      name: isbn_10_digital
-      label: isbn_10_digital
-      selector: fieldData/isbn_10_digital
-    -
-      name: isbn_10_paper
-      label: isbn_10_paper
-      selector: fieldData/isbn_10_paper
     -
       name: isbn_13_alt
       label: isbn_13_alt
@@ -303,10 +215,6 @@ source:
       name: pages
       label: pages
       selector: fieldData/pages
-    -
-      name: paper_discount
-      label: paper_discount
-      selector: fieldData/paper_discount
     -
       name: paper_sale_percent
       label: paper_sale_percent
@@ -356,42 +264,6 @@ source:
       label: publisher
       selector: fieldData/publisher
     -
-      name: quote_1
-      label: quote_1
-      selector: fieldData/quote_1
-    -
-      name: quote_1_author
-      label: quote_1_author
-      selector: fieldData/quote_1_author
-    -
-      name: quote_1_author_affiliation
-      label: quote_1_author_affiliation
-      selector: fieldData/quote_1_author_affiliation
-    -
-      name: quote_2
-      label: quote_2
-      selector: fieldData/quote_2
-    -
-      name: quote_2_author
-      label: quote_2_author
-      selector: fieldData/quote_2_author
-    -
-      name: quote_2_author_affiliation
-      label: quote_2_author_affiliation
-      selector: fieldData/quote_2_author_affiliation
-    -
-      name: quote_3
-      label: quote_3
-      selector: fieldData/quote_3
-    -
-      name: quote_3_author
-      label: quote_3_author
-      selector: fieldData/quote_3_author
-    -
-      name: quote_3_author_affiliation
-      label: quote_3_author_affiliation
-      selector: fieldData/quote_3_author_affiliation
-    -
       name: related_titles
       label: related_titles
       selector: fieldData/related_titles
@@ -412,10 +284,6 @@ source:
       label: series
       selector: fieldData/series
     -
-      name: short_blurb
-      label: short_blurb
-      selector: fieldData/short_blurb
-    -
       name: status_cloth
       label: status_cloth
       selector: fieldData/status_cloth
@@ -427,14 +295,6 @@ source:
       name: status_paper
       label: status_paper
       selector: fieldData/status_paper
-    -
-      name: subject_bisac_codes_all
-      label: subject_bisac_codes_all
-      selector: fieldData/subject_bisac_codes_all
-    -
-      name: subject_press_supplemental_all
-      label: subject_press_supplemental_all
-      selector: fieldData/subject_press_supplemental_all
     -
       name: subjects_press_all
       label: subjects_press_all
