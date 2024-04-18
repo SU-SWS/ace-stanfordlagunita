@@ -4,3 +4,11 @@
  * @file
  * Primary module hooks for Summer Helper module.
  */
+function summer_helper_migration_plugins_alter(array &$migrations) {
+  if ($csv_path_cache = \Drupal::cache()->get('migration:csv_path')) {
+    $migration = $csv_path_cache->data['migration'];
+    if (isset($migrations["migration_config_deriver:$migration"])) {
+      $migrations["migration_config_deriver:$migration"]['source']['path'] = $csv_path_cache->data['path'];
+    }
+  }
+}

@@ -1,0 +1,8 @@
+summer.csv_importer:
+  path: '/admin/content/import'
+  defaults:
+    _form: '\Drupal\summer_helper\Form\CsvImporterForm'
+    _title: 'CSV Importer'
+  requirements:
+    _permission: 'administer nodes'
+

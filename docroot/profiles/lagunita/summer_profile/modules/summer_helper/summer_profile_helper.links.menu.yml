@@ -1,0 +1,6 @@
+summer.csv_importer:
+  title: CSV Importer
+  route_name: summer.csv_importer
+  weight: 9
+  menu_name: admin
+  parent: system.admin_content
