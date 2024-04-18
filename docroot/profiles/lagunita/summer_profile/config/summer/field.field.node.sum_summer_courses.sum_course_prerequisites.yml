@@ -1,0 +1,24 @@
+uuid: 2d2ca373-cfc3-4929-8f01-ac26a8064943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_prerequisites
+    - filter.format.stanford_html
+    - node.type.sum_summer_courses
+  module:
+    - text
+id: node.sum_summer_courses.sum_course_prerequisites
+field_name: sum_course_prerequisites
+entity_type: node
+bundle: sum_summer_courses
+label: Prerequisites
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_html
+field_type: text_long

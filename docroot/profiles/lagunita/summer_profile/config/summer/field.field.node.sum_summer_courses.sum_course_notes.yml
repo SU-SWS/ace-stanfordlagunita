@@ -1,0 +1,24 @@
+uuid: b48ba269-ec69-4675-9638-c7b87b734454
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_notes
+    - filter.format.stanford_html
+    - node.type.sum_summer_courses
+  module:
+    - text
+id: node.sum_summer_courses.sum_course_notes
+field_name: sum_course_notes
+entity_type: node
+bundle: sum_summer_courses
+label: 'Course Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_html
+field_type: text_long

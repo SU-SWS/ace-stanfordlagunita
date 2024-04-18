@@ -1,0 +1,14 @@
+uuid: 7c07439c-b719-469a-9571-504b0bc2a640
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sum_course_interest_area
+id: taxonomy_vocabulary_sum_course_interest_area
+entity_type_id: taxonomy_vocabulary
+entity_id: sum_course_interest_area
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

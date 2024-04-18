@@ -1,0 +1,23 @@
+uuid: fefb72dd-0d52-4e87-884a-0868779383a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_students_also_studied
+    - node.type.sum_summer_courses
+id: node.sum_summer_courses.sum_students_also_studied
+field_name: sum_students_also_studied
+entity_type: node
+bundle: sum_summer_courses
+label: 'Students Also Studied'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

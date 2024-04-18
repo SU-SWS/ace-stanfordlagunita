@@ -1,0 +1,29 @@
+uuid: 253ac3b0-773c-4114-b74a-765c9c86a640
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_interest_area
+    - node.type.sum_summer_courses
+    - taxonomy.vocabulary.sum_course_interest_area
+id: node.sum_summer_courses.sum_course_interest_area
+field_name: sum_course_interest_area
+entity_type: node
+bundle: sum_summer_courses
+label: 'Interest Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sum_course_interest_area: sum_course_interest_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

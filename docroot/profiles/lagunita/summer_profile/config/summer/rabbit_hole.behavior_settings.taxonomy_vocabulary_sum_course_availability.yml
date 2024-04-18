@@ -1,0 +1,14 @@
+uuid: 69d2d8b9-c1ac-41bb-b3d5-55768e11785e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sum_course_availability
+id: taxonomy_vocabulary_sum_course_availability
+entity_type_id: taxonomy_vocabulary
+entity_id: sum_course_availability
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

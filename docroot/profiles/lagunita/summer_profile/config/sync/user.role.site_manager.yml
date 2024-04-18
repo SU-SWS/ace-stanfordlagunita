@@ -51,8 +51,8 @@ dependencies:
     - scheduler
     - stanford_migrate
     - stanford_policy
-    - summer_profile
     - stanford_publication
+    - summer_profile
     - system
     - taxonomy
     - toolbar

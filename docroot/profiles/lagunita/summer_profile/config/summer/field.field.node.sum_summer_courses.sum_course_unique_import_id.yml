@@ -1,0 +1,23 @@
+uuid: d5be4f54-9892-4330-82fa-fbe2be218334
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_unique_import_id
+    - node.type.sum_summer_courses
+id: node.sum_summer_courses.sum_course_unique_import_id
+field_name: sum_course_unique_import_id
+entity_type: node
+bundle: sum_summer_courses
+label: 'Unique Import ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

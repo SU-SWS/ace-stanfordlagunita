@@ -1,0 +1,14 @@
+uuid: 71136ee2-38c1-4117-9742-eaac55d26dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sum_summer_courses
+id: node_type_sum_summer_courses
+entity_type_id: node_type
+entity_id: sum_summer_courses
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

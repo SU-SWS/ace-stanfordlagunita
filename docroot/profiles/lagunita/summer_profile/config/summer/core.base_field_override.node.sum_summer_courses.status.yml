@@ -1,0 +1,22 @@
+uuid: 52035b32-0859-4eee-b0b1-d23a14ab4576
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sum_summer_courses
+id: node.sum_summer_courses.status
+field_name: status
+entity_type: node
+bundle: sum_summer_courses
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
