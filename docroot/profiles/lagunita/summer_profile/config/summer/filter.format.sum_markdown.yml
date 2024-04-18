@@ -1,0 +1,50 @@
+uuid: 4548798b-416b-4af8-8150-bd689f71b77d
+langcode: en
+status: true
+dependencies:
+  module:
+    - markdown
+    - responsive_tables_filter
+    - stanford_decoupled
+name: Markdown
+format: sum_markdown
+weight: -8
+filters:
+  filter_responsive_tables_filter:
+    id: filter_responsive_tables_filter
+    provider: responsive_tables_filter
+    status: false
+    weight: 0
+    settings:
+      tablesaw_type: stack
+      tablesaw_persist: '1'
+  markdown:
+    id: markdown
+    provider: markdown
+    status: true
+    weight: -15
+    settings:
+      id: commonmark
+      enabled: true
+      render_strategy:
+        type: filter_output
+        custom_allowed_html: ''
+        plugins:
+          commonmark: true
+          commonmark-external-links: false
+          commonmark-footnotes: false
+          commonmark-heading-permalink: false
+          commonmark-strikethrough: false
+          commonmark-table: false
+          commonmark-task-list: false
+          filter_align: false
+          filter_caption: false
+          media_embed: false
+      override: false
+    filterFormat: null
+  su_clean_html:
+    id: su_clean_html
+    provider: stanford_decoupled
+    status: true
+    weight: 99
+    settings: {  }

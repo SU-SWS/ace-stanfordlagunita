@@ -27,7 +27,7 @@ dependencies:
     - node.type.sum_summer_courses
   module:
     - datetime
-    - file
+    - media_library
     - path
     - text
 id: node.sum_summer_courses.default
@@ -205,11 +205,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   sum_course_syllabus_file:
-    type: file_generic
-    weight: 145
+    type: media_library_widget
+    weight: 147
     region: content
     settings:
-      progress_indicator: throbber
+      media_types: {  }
     third_party_settings: {  }
   sum_course_unique_import_id:
     type: number

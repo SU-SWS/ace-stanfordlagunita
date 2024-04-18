@@ -11,9 +11,11 @@ no_patching: false
 storage: folder
 folder: profiles/lagunita/summer_profile/config/summer
 module:
+  markdown: 0
   summer_helper: 0
 theme: {  }
 complete_list:
+  - filter.format.sum_markdown
   - 'config_pages.type.sum_*'
   - 'node.type.sum_*'
   - 'paragraphs.paragraphs_type.sum_*'
@@ -43,3 +45,5 @@ complete_list:
 partial_list:
   - '*su_*'
   - '*stanford_*'
+  - 'user.role.*'
+  - 'search_api.index.*'

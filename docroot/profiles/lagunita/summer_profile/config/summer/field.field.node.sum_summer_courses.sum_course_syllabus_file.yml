@@ -1,12 +1,11 @@
-uuid: 5411862a-cf92-4f0f-8270-31f5c6665b96
+uuid: 07e18882-b6c7-4135-bcb9-8fce3a99a65e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.sum_course_syllabus_file
+    - media.type.file
     - node.type.sum_summer_courses
-  module:
-    - file
 id: node.sum_summer_courses.sum_course_syllabus_file
 field_name: sum_course_syllabus_file
 entity_type: node
@@ -18,10 +17,13 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:file'
-  handler_settings: {  }
-  file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'txt docx pdf'
-  max_filesize: ''
-  description_field: false
-field_type: file
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

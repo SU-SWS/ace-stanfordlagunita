@@ -1,20 +1,17 @@
-uuid: 0ef4c736-3987-4ab4-8640-800538c0efdc
+uuid: d309d084-8c12-4544-8147-fcb09037e08e
 langcode: en
 status: true
 dependencies:
   module:
-    - file
+    - media
     - node
 id: node.sum_course_syllabus_file
 field_name: sum_course_syllabus_file
 entity_type: node
-type: file
+type: entity_reference
 settings:
-  target_type: file
-  display_field: false
-  display_default: false
-  uri_scheme: public
-module: file
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

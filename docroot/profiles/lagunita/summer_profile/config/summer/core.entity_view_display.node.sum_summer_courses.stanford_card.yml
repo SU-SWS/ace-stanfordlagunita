@@ -1,9 +1,9 @@
-uuid: 0e3ac43c-2793-416e-bf46-6ec5446a2be2
+uuid: 913680f3-54ad-4521-a8b5-f8d1f83aa367
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.stanford_card
     - field.field.node.sum_summer_courses.sum_course_availability
     - field.field.node.sum_summer_courses.sum_course_catalog_number
     - field.field.node.sum_summer_courses.sum_course_class_number
@@ -27,18 +27,43 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_students_also_studied
     - node.type.sum_summer_courses
   module:
+    - ds
+    - layout_builder
+    - stanford_fields
     - user
-id: node.sum_summer_courses.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+          variant: default
+    regions:
+      card_body:
+        - sum_course_name
+id: node.sum_summer_courses.stanford_card
 targetEntityType: node
 bundle: sum_summer_courses
-mode: teaser
+mode: stanford_card
 content:
-  links:
-    settings: {  }
+  sum_course_name:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
     third_party_settings: {  }
-    weight: 100
-    region: content
+    weight: 0
+    region: card_body
 hidden:
+  links: true
   search_api_excerpt: true
   sum_course_availability: true
   sum_course_catalog_number: true
@@ -51,7 +76,6 @@ hidden:
   sum_course_instructors: true
   sum_course_interest_area: true
   sum_course_length: true
-  sum_course_name: true
   sum_course_notes: true
   sum_course_population: true
   sum_course_prerequisites: true
