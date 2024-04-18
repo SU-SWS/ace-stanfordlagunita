@@ -5,7 +5,7 @@ use Faker\Factory;
 /**
  * Class EntityReferenceCest.
  */
-class EntityReferenceCest {
+abstract class EntityReferenceCest {
 
   /**
    * Faker service.
