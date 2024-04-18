@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_course_instructors
     - field.field.node.sum_summer_courses.sum_course_interest_area
     - field.field.node.sum_summer_courses.sum_course_length
-    - field.field.node.sum_summer_courses.sum_course_name
     - field.field.node.sum_summer_courses.sum_course_notes
     - field.field.node.sum_summer_courses.sum_course_population
     - field.field.node.sum_summer_courses.sum_course_prerequisites
@@ -29,7 +28,6 @@ dependencies:
   module:
     - ds
     - layout_builder
-    - stanford_fields
     - user
 third_party_settings:
   layout_builder:
@@ -47,21 +45,19 @@ third_party_settings:
           variant: default
     regions:
       card_body:
+        - node_title
         - sum_course_name
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: node.sum_summer_courses.stanford_card
 targetEntityType: node
 bundle: sum_summer_courses
 mode: stanford_card
-content:
-  sum_course_name:
-    type: entity_title_heading
-    label: hidden
-    settings:
-      tag: h2
-      linked: false
-    third_party_settings: {  }
-    weight: 0
-    region: card_body
+content: {  }
 hidden:
   links: true
   search_api_excerpt: true
