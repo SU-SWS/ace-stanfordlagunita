@@ -646,6 +646,16 @@ process:
       value_key: sup_work_id
       entity_type: sup_award
       ignore_case: true
+  sup_related_titles:
+    -
+      plugin: explode
+      source: related_titles
+      delimiter: ","
+    -
+      plugin: entity_lookup
+      value_key: sup_work_id_number
+      entity_type: node
+      bundle: sup_book
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

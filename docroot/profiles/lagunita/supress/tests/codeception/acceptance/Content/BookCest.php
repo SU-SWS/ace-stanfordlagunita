@@ -87,6 +87,28 @@ class BookCest {
     $I->see('Series');
     $I->see('Table of Contents');
     $I->see('URL ISW');
+    $I->see('Awards');
+    $I->see('Imprint');
+    $I->see('Series');
+    $I->see('Related Titles');
+    $I->see('Book Image');
+  }
+
+  /**
+   * Ensure the custom taxonomies exist.
+   */
+  public function testBookTaxonomiesExist(AcceptanceTester $I) {
+    $I->logInWithRole('administrator');
+    $I->amOnPage('/admin/structure/taxonomy');
+    $I->see('Book Subjects');
+    $I->see('Imprints');
+    $I->see('Series');
+    $I->amOnPage('/admin/structure/taxonomy/manage/sup_book_subjects/overview');
+    $I->see('Add Term');
+    $I->amOnPage('/admin/structure/taxonomy/manage/sup_imprints/overview');
+    $I->see('Add Term');
+    $I->amOnPage('/admin/structure/taxonomy/manage/sup_series/overview');
+    $I->see('Add Term');
   }
 
 }

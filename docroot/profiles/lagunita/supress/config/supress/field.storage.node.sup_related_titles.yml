@@ -1,0 +1,19 @@
+uuid: 10df3cdd-ef4e-4d82-8b1f-63314f43060d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_related_titles
+field_name: sup_related_titles
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
