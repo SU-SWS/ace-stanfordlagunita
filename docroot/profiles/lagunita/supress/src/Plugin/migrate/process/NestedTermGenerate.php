@@ -6,7 +6,6 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
-use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\core\Plugin\ContainerFactoryPluginInterface;
 
@@ -53,20 +52,19 @@ class NestedTermGenerate extends ProcessPluginBase implements ContainerFactoryPl
     $vid = $this->configuration['vocabulary'];
     $delimiter = $this->configuration['delimiter'];
     $parent = 0;
-
+    $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
     $terms = explode($delimiter, $value);
+
     foreach ($terms as $term_name) {
       $term_name = trim($term_name);
       if ($term_name) {
-        $term = $this->entityTypeManager
-          ->getStorage('taxonomy_term')
-          ->loadByProperties([
-            'name' => $term_name,
-            'vid' => $vid,
-          ]);
+        $term = $term_storage->loadByProperties([
+          'name' => $term_name,
+          'vid' => $vid,
+        ]);
 
         if (empty($term)) {
-          $term = Term::create([
+          $term = $term_storage->create([
             'name' => $term_name,
             'vid' => $vid,
             'parent' => [$parent],

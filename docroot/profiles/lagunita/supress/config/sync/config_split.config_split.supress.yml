@@ -13,7 +13,6 @@ folder: profiles/lagunita/supress/config/supress
 module: {  }
 theme: {  }
 complete_list:
-  - migrate_plus.migration_group.su_press
   - 'config_pages.type.sup_*'
   - 'node.type.sup_*'
   - 'paragraphs.paragraphs_type.sup_*'
@@ -45,9 +44,10 @@ complete_list:
   - 'migrate_plus.migration.sup_*'
   - 'pathauto.pattern.sup_*'
 partial_list:
-  - core.extension
   - graphql_compose.settings
   - '*su_*'
   - '*stanford_*'
   - 'core.entity_view_display.media.*'
   - 'core.entity_form_display.media.*'
+  - 'search_api.index.*'
+  - 'user.role.*'

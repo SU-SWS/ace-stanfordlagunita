@@ -1,0 +1,21 @@
+uuid: 83d4e1e6-28ab-4b54-82ee-e247b0e6154d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_digital_comp_link
+    - node.type.sup_book
+id: node.sup_book.sup_book_digital_comp_link
+field_name: sup_book_digital_comp_link
+entity_type: node
+bundle: sup_book
+label: 'Digital Comp Link?'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 49e453f7-ac4e-46ea-8e44-79bb573a8d38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_price_digital
+    - node.type.sup_book
+id: node.sup_book.sup_book_price_digital
+field_name: sup_book_price_digital
+entity_type: node
+bundle: sup_book
+label: 'Price Digital'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

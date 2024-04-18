@@ -1,0 +1,21 @@
+uuid: 3d9b386f-bacd-4eac-9e3c-64e16962fc71
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_isbn_13_paper
+field_name: sup_book_isbn_13_paper
+entity_type: node
+type: string
+settings:
+  max_length: 13
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

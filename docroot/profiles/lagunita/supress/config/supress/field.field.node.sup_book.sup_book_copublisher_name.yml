@@ -1,0 +1,19 @@
+uuid: 4b9f4dcf-2513-4f27-830a-3dba4817e01a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_copublisher_name
+    - node.type.sup_book
+id: node.sup_book.sup_book_copublisher_name
+field_name: sup_book_copublisher_name
+entity_type: node
+bundle: sup_book
+label: 'Copublisher Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: b2ec2a12-fb50-44c5-b2f2-82116b5f3102
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_isbn_13_cloth
+    - node.type.sup_book
+id: node.sup_book.sup_book_isbn_13_cloth
+field_name: sup_book_isbn_13_cloth
+entity_type: node
+bundle: sup_book
+label: 'ISBN 13 Cloth'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

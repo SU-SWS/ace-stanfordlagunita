@@ -1,26 +1,23 @@
 uuid: 753d8a1e-3278-41af-9fa9-75875c56019c
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: sup_import_books
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
-migration_group: su_press
+migration_group: sup_press
 label: 'Import Stanford University Press Books'
 source:
-  authentication:
-    plugin: press_filemaker
-    token_url: "https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions'"
-    client_id: '[client_id]'
-    client_secret: '[client_secret]'
+  orphan_action: unpublish
   plugin: url
-  data_fetcher_plugin: http
-  data_parser_plugin: json
   urls:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
-  item_selector: response/data
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=1001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=2001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=3001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=4001'
   fields:
     -
       name: abstract
@@ -475,31 +472,31 @@ source:
       type: integer
 process:
   title: title
-  sup_author_1/given: author_1_first_name
-  sup_author_1/credentials: author_1_following
-  sup_author_1/family: author_1_last_name
-  sup_author_1/middle: author_1_middle
-  sup_author_1/title: author_1_preceding
-  sup_author_1_role: author_1_role
-  sup_author_2/given: author_2_first_name
-  sup_author_2/credentials: author_2_following
-  sup_author_2/family: author_2_last_name
-  sup_author_2/middle: author_2_middle
-  sup_author_2/title: author_2_preceding
-  sup_author_2_role: author_2_role
-  sup_author_3/given: author_3_first_name
-  sup_author_3/credentials: author_3_following
-  sup_author_3/family: author_3_last_name
-  sup_author_3/middle: author_3_middle
-  sup_author_3/title: author_3_preceding
-  sup_author_3_role: author_3_role
-  sup_author_4/given: author_4_first_name
-  sup_author_4/credentials: author_4_following
-  sup_author_4/family: author_4_last_name
-  sup_author_4/middle: author_4_middle
-  sup_author_4/title: author_4_preceding
-  sup_author_4_role: author_4_role
-  sup_author_info:
+  sup_book_authors/0/given: author_0_first_name
+  sup_book_authors/0/following: author_0_following
+  sup_book_authors/0/family: author_0_last_name
+  sup_book_authors/0/middle: author_0_middle
+  sup_book_authors/0/title: author_0_preceding
+  sup_book_authors/0/credentials: author_0_role
+  sup_book_authors/1/given: author_1_first_name
+  sup_book_authors/1/following: author_1_following
+  sup_book_authors/1/family: author_1_last_name
+  sup_book_authors/1/middle: author_1_middle
+  sup_book_authors/1/title: author_1_preceding
+  sup_book_authors/1/credentials: author_1_role
+  sup_book_authors/2/given: author_2_first_name
+  sup_book_authors/2/following: author_2_following
+  sup_book_authors/2/family: author_2_last_name
+  sup_book_authors/2/middle: author_2_middle
+  sup_book_authors/2/title: author_2_preceding
+  sup_book_authors/2/credentials: author_2_role
+  sup_book_authors/3/given: author_3_first_name
+  sup_book_authors/3/following: author_3_following
+  sup_book_authors/3/family: author_3_last_name
+  sup_book_authors/3/middle: author_3_middle
+  sup_book_authors/3/title: author_3_preceding
+  sup_book_authors/3/credentials: author_3_role
+  sup_book_author_info:
     -
       plugin: str_replace
       source: author_info
@@ -509,17 +506,17 @@ process:
       replace:
         - '<em>'
         - '</em>'
-  sup_authors_full: authors_full
-  sup_availability_description: availability_description
-  sup_catalog_month: catalog_month
-  sup_catalog_page: catalog_page
-  sup_catalog_season_yyyy: catalog_season_yyyy
-  sup_cloth_sale_percent: cloth_sale_percent
-  sup_cloth_sale_price: cloth_sale_price
-  sup_copublisher_name: copublisher_name
-  sup_copublisher_yn: copublisher_yn
-  sup_copyright: copyright
-  sup_description/value:
+  sup_book_authors_full: authors_full
+  sup_book_avail_desc: availability_description
+  sup_book_catalog_month: catalog_month
+  sup_book_catalog_page: catalog_page
+  sup_book_catalog_season_yyyy: catalog_season_yyyy
+  sup_book_cloth_sale_percent: cloth_sale_percent
+  sup_book_cloth_sale_price: cloth_sale_price
+  sup_book_copublisher_name: copublisher_name
+  sup_book_copublisher_yn: copublisher_yn
+  sup_book_copyright: copyright
+  sup_book_description/value:
     -
       plugin: str_replace
       source: description
@@ -531,14 +528,14 @@ process:
         - '<em>'
         - '</em>'
         - '<br />'
-  sup_description/format:
+  sup_book_description/format:
     -
       plugin: default_value
       default_value: stanford_html
-  sup_digital_comp_link: digital_comp_link
-  sup_html_page_title: html_page_title
-  sup_illustrations: illustrations
-  sup_imprint:
+  sup_book_digital_comp_link: digital_comp_link
+  sup_book_html_page_title: html_page_title
+  sup_book_illustrations: illustrations
+  sup_book_imprint:
     -
       plugin: skip_on_empty
       source: imprint
@@ -555,28 +552,28 @@ process:
       value_key: name
       bundle_key: vid
       bundle: sup_imprints
-  sup_in_print_status: in_print_status
-  sup_instructor_recommended: instructor_recommended
-  sup_isbn_13_alt: isbn_13_alt
-  sup_isbn_13_cloth: isbn_13_cloth
-  sup_isbn_13_digital: isbn_13_digital
-  sup_isbn_13_isw: isbn_13_isw
-  sup_isbn_13_paper: isbn_13_paper
-  sup_local_web_blurb: local_web_blurb
-  sup_new_paperback_yn: new_paperback_yn
-  sup_pages: pages
-  sup_paper_sale_percent: paper_sale_percent
-  sup_paper_sale_price: paper_sale_price
-  sup_price_cloth: price_cloth
-  sup_price_digital: price_digital
-  sup_price_paper: price_paper
-  sup_print_desk_copies: print_desk_copies
-  sup_pub_date_cloth: pub_date_cloth
-  sup_pub_date_digital: pub_date_digital
-  sup_pub_date_first: pub_date_first
-  sup_pub_date_paper: pub_date_paper
-  sup_pub_year_first: pub_year_first
-  sup_reviews/value:
+  sup_book_in_print_status: in_print_status
+  sup_book_instructor_recommended: instructor_recommended
+  sup_book_isbn_13_alt: isbn_13_alt
+  sup_book_isbn_13_cloth: isbn_13_cloth
+  sup_book_isbn_13_digital: isbn_13_digital
+  sup_book_isbn_13_isw: isbn_13_isw
+  sup_book_isbn_13_paper: isbn_13_paper
+  sup_book_local_web_blurb: local_web_blurb
+  sup_book_new_paperback_yn: new_paperback_yn
+  sup_book_pages: pages
+  sup_book_paper_sale_percent: paper_sale_percent
+  sup_book_paper_sale_price: paper_sale_price
+  sup_book_price_cloth: price_cloth
+  sup_book_price_digital: price_digital
+  sup_book_price_paper: price_paper
+  sup_book_print_desk_copies: print_desk_copies
+  sup_book_pub_date_cloth: pub_date_cloth
+  sup_book_pub_date_digital: pub_date_digital
+  sup_book_pub_date_first: pub_date_first
+  sup_book_pub_date_paper: pub_date_paper
+  sup_book_pub_year_first: pub_year_first
+  sup_book_reviews/value:
     -
       plugin: str_replace
       source: reviews
@@ -588,13 +585,13 @@ process:
         - '<em>'
         - '</em>'
         - '<br />'
-  sup_reviews/format:
+  sup_book_reviews/format:
     -
       plugin: default_value
       default_value: stanford_html
-  sup_rights_description: rights_description
-  sup_sales_rank: sales_rank
-  sup_series:
+  sup_book_rights_description: rights_description
+  sup_book_sales_rank: sales_rank
+  sup_book_series:
     -
       plugin: skip_on_empty
       source: series
@@ -611,15 +608,15 @@ process:
       value_key: name
       bundle_key: vid
       bundle: sup_series
-  sup_status_cloth: status_cloth
-  sup_status_digital: status_digital
-  sup_status_paper: status_paper
-  sup_subtitle: subtitle
-  sup_table_of_contents: table_of_contents
-  sup_url_isw: url_isw
-  sup_web_code_cloth: web_code_cloth
-  sup_web_code_paper: web_code_paper
-  sup_work_id_number: work_id_number
+  sup_book_status_cloth: status_cloth
+  sup_book_status_digital: status_digital
+  sup_book_status_paper: status_paper
+  sup_book_subtitle: subtitle
+  sup_book_table_of_contents: table_of_contents
+  sup_book_url_isw: url_isw
+  sup_book_web_code_cloth: web_code_cloth
+  sup_book_web_code_paper: web_code_paper
+  sup_book_work_id_number: work_id_number
   sup_book_subjects:
     -
       plugin: str_replace
@@ -646,17 +643,41 @@ process:
       value_key: sup_work_id
       entity_type: sup_award
       ignore_case: true
-  sup_related_titles:
+    -
+      plugin: skip_on_empty
+      method: process
+  sup_book_related_titles:
+    -
+      plugin: skip_on_empty
+      source: related_titles
+      method: process
     -
       plugin: explode
-      source: related_titles
       delimiter: ","
     -
       plugin: entity_lookup
-      value_key: sup_work_id_number
+      value_key: sup_book_work_id_number
       entity_type: node
       bundle: sup_book
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
+  sup_book_image:
+    -
+      plugin: entity_lookup
+      source: work_id_number
+      value_key: sup_book_work_id
+      bundle_key: bundle
+      bundle: image
+      entity_type: media
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book
-migration_dependencies: null
+migration_dependencies:
+  optional:
+    - sup_awards

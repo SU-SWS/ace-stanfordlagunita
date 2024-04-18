@@ -1,0 +1,20 @@
+uuid: 00a3f403-5f20-4184-8722-dbeb3b922d81
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.sup_book_series
+field_name: sup_book_series
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

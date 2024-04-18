@@ -28,17 +28,13 @@ class BookCest {
    */
   public function testBookContentType(AcceptanceTester $I) {
     // content type exists
-    $I->logInWithRole('administrator');
+    $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/sup_book');
     $I->see('Create Book');
     // check the fields
     $I->see('Subtitle');
     $I->see('Work ID');
-    $I->see('Author Information');
-    $I->see('Author 1');
-    $I->see('Author 2');
-    $I->see('Author 3');
-    $I->see('Author 4');
+    $I->see('Book Authors');
     $I->see('Authors (full)');
     $I->see('Author Info');
     $I->see('Catalog Month');
@@ -98,7 +94,7 @@ class BookCest {
    * Ensure the custom taxonomies exist.
    */
   public function testBookTaxonomiesExist(AcceptanceTester $I) {
-    $I->logInWithRole('administrator');
+    $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/structure/taxonomy');
     $I->see('Book Subjects');
     $I->see('Imprints');

@@ -1,5 +1,5 @@
-name: 'supress_helper'
+name: 'SUPress Helper'
 type: module
-description: 'Helper module'
+description: 'Provides extensions and plugins to add to base installation.'
 package: Stanford
 core_version_requirement: ^10 || ^11

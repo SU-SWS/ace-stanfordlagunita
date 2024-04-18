@@ -1,0 +1,36 @@
+uuid: d623559c-01c0-48cb-986c-60597703968d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.sup_book_status_cloth
+field_name: sup_book_status_cloth
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ip
+      label: IP
+    -
+      value: op
+      label: OP
+    -
+      value: nyp
+      label: NYP
+    -
+      value: pc
+      label: PC
+    -
+      value: wi
+      label: WI
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

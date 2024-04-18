@@ -21,8 +21,6 @@ if (!getenv('STANFORD_ENCRYPT')) {
 
 $settings['file_temp_path'] = '/tmp';
 
-$settings['stanford_capture_ownership'] = EnvironmentDetector::isProdEnv();
-
 if (EnvironmentDetector::isAhEnv()) {
   // Set the temp directory as per https://docs.acquia.com/acquia-cloud/manage/files/broken/
   $settings['file_temp_path'] = '/mnt/gfs/' . EnvironmentDetector::getAhGroup() . '.' . EnvironmentDetector::getAhEnv() . '/tmp';

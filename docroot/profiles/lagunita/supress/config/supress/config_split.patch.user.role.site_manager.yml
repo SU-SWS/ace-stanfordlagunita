@@ -1,0 +1,29 @@
+adding:
+  dependencies:
+    config:
+      - node.type.sup_book
+      - taxonomy.vocabulary.sup_book_subjects
+      - taxonomy.vocabulary.sup_imprints
+      - taxonomy.vocabulary.sup_series
+    module:
+      - supress_helper
+  permissions:
+    - 'administer sup_award'
+    - 'create sup_book content'
+    - 'create terms in sup_book_subjects'
+    - 'create terms in sup_imprints'
+    - 'create terms in sup_series'
+    - 'delete any sup_book content'
+    - 'delete own sup_book content'
+    - 'delete sup_book revisions'
+    - 'delete terms in sup_book_subjects'
+    - 'delete terms in sup_imprints'
+    - 'delete terms in sup_series'
+    - 'edit any sup_book content'
+    - 'edit own sup_book content'
+    - 'edit terms in sup_imprints'
+    - 'edit terms in sup_series'
+    - 'import sup_awards migration'
+    - 'import sup_import_books migration'
+    - 'revert sup_book revisions'
+removing: {  }

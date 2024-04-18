@@ -1,0 +1,21 @@
+uuid: c8c8a12f-fb20-49d4-937d-d69983dfa239
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_html_page_title
+field_name: sup_book_html_page_title
+entity_type: node
+type: string
+settings:
+  max_length: 500
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

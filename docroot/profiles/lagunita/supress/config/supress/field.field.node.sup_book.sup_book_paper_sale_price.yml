@@ -1,0 +1,23 @@
+uuid: 8b45253a-53bd-458f-bce2-512f9c78220c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_paper_sale_price
+    - node.type.sup_book
+id: node.sup_book.sup_book_paper_sale_price
+field_name: sup_book_paper_sale_price
+entity_type: node
+bundle: sup_book
+label: 'Paper Sale Price'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -9,120 +9,131 @@ adding:
     paragraph:
       stanford_page_title_banner:
         query_load_enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
     taxonomy_term:
       sup_book_subjects:
         enabled: true
         query_load_enabled: true
-        routes_enabled: true
       sup_imprints:
         enabled: true
         query_load_enabled: true
-        routes_enabled: true
       sup_series:
         enabled: true
         query_load_enabled: true
-        routes_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
   field_config:
     node:
       sup_book:
-        sup_author_info:
+        sup_book_author_info:
           enabled: true
-        sup_authors_full:
+        sup_book_authors:
           enabled: true
-        sup_availability_description:
+        sup_book_authors_full:
+          enabled: true
+        sup_book_avail_desc:
           enabled: true
         sup_book_awards:
           enabled: true
-        sup_catalog_month:
+        sup_book_catalog_month:
           enabled: true
-        sup_catalog_page:
+        sup_book_catalog_page:
           enabled: true
-        sup_catalog_season_yyyy:
+        sup_book_catalog_season_yyyy:
           enabled: true
-        sup_cloth_sale_percent:
+        sup_book_cloth_sale_percent:
           enabled: true
-        sup_cloth_sale_price:
+        sup_book_cloth_sale_price:
           enabled: true
-        sup_copublisher_name:
+        sup_book_copublisher_name:
           enabled: true
-        sup_copublisher_yn:
+        sup_book_copublisher_yn:
           enabled: true
-        sup_copyright:
+        sup_book_copyright:
           enabled: true
-        sup_description:
+        sup_book_description:
           enabled: true
-        sup_digital_comp_link:
+        sup_book_digital_comp_link:
           enabled: true
-        sup_html_page_title:
+        sup_book_html_page_title:
           enabled: true
-        sup_illustrations:
+        sup_book_illustrations:
           enabled: true
-        sup_in_print_status:
+        sup_book_image:
           enabled: true
-        sup_isbn_13_alt:
+        sup_book_imprint:
           enabled: true
-        sup_isbn_13_cloth:
+        sup_book_in_print_status:
           enabled: true
-        sup_isbn_13_digital:
+        sup_book_instructor_recommended:
           enabled: true
-        sup_isbn_13_isw:
+        sup_book_isbn_13_alt:
           enabled: true
-        sup_isbn_13_paper:
+        sup_book_isbn_13_cloth:
           enabled: true
-        sup_local_web_blurb:
+        sup_book_isbn_13_digital:
           enabled: true
-        sup_new_paperback_yn:
+        sup_book_isbn_13_isw:
           enabled: true
-        sup_pages:
+        sup_book_isbn_13_paper:
           enabled: true
-        sup_paper_sale_percent:
+        sup_book_local_web_blurb:
           enabled: true
-        sup_paper_sale_price:
+        sup_book_new_paperback_yn:
           enabled: true
-        sup_price_cloth:
+        sup_book_pages:
           enabled: true
-        sup_price_digital:
+        sup_book_paper_sale_percent:
           enabled: true
-        sup_price_paper:
+        sup_book_paper_sale_price:
           enabled: true
-        sup_print_desk_copies:
+        sup_book_price_cloth:
           enabled: true
-        sup_pub_date_cloth:
+        sup_book_price_digital:
           enabled: true
-        sup_pub_date_digital:
+        sup_book_price_paper:
           enabled: true
-        sup_pub_date_first:
+        sup_book_print_desk_copies:
           enabled: true
-        sup_pub_date_paper:
+        sup_book_pub_date_cloth:
           enabled: true
-        sup_pub_year_first:
+        sup_book_pub_date_digital:
           enabled: true
-        sup_reviews:
+        sup_book_pub_date_first:
           enabled: true
-        sup_rights_description:
+        sup_book_pub_date_paper:
           enabled: true
-        sup_sales_rank:
+        sup_book_pub_year_first:
           enabled: true
-        sup_status_cloth:
+        sup_book_related_titles:
           enabled: true
-        sup_status_digital:
+        sup_book_reviews:
           enabled: true
-        sup_status_paper:
+        sup_book_rights_description:
           enabled: true
-        sup_subtitle:
+        sup_book_sales_rank:
           enabled: true
-        sup_table_of_contents:
+        sup_book_series:
           enabled: true
-        sup_url_isw:
+        sup_book_status_cloth:
           enabled: true
-        sup_web_code_cloth:
+        sup_book_status_digital:
           enabled: true
-        sup_web_code_paper:
+        sup_book_status_paper:
           enabled: true
-        sup_work_id_number:
+        sup_book_subjects:
+          enabled: true
+        sup_book_subtitle:
+          enabled: true
+        sup_book_table_of_contents:
+          enabled: true
+        sup_book_url_isw:
+          enabled: true
+        sup_book_web_code_cloth:
+          enabled: true
+        sup_book_web_code_paper:
+          enabled: true
+        sup_book_work_id_number:
           enabled: true
     sup_award:
       sup_award:

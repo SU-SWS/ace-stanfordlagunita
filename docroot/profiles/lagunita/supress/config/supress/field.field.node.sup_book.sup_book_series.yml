@@ -1,0 +1,29 @@
+uuid: 4968b4bc-acf5-4686-b9de-f8fb891abc7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_series
+    - node.type.sup_book
+    - taxonomy.vocabulary.sup_series
+id: node.sup_book.sup_book_series
+field_name: sup_book_series
+entity_type: node
+bundle: sup_book
+label: Series
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_series: sup_series
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

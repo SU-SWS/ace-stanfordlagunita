@@ -1,0 +1,19 @@
+uuid: 3116b58a-a7df-4312-b6c5-3916b26fa834
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_web_code_paper
+    - node.type.sup_book
+id: node.sup_book.sup_book_web_code_paper
+field_name: sup_book_web_code_paper
+entity_type: node
+bundle: sup_book
+label: 'Web Code Paper'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

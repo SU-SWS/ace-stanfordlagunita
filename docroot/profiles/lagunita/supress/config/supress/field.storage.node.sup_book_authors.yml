@@ -1,0 +1,19 @@
+uuid: ed582710-4645-4a8a-9540-fac05eec33f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - name
+    - node
+id: node.sup_book_authors
+field_name: sup_book_authors
+entity_type: node
+type: name
+settings: {  }
+module: name
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

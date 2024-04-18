@@ -1,0 +1,19 @@
+uuid: d174ecf8-d780-4a0b-9d77-af2993826987
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_catalog_season_yyyy
+    - node.type.sup_book
+id: node.sup_book.sup_book_catalog_season_yyyy
+field_name: sup_book_catalog_season_yyyy
+entity_type: node
+bundle: sup_book
+label: 'Catalog Season '
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

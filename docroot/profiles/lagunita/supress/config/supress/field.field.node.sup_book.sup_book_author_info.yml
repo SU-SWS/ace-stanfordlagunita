@@ -1,0 +1,22 @@
+uuid: 2e935d3e-9538-4427-8982-46caa3a8077a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_author_info
+    - node.type.sup_book
+  module:
+    - text
+id: node.sup_book.sup_book_author_info
+field_name: sup_book_author_info
+entity_type: node
+bundle: sup_book
+label: 'Author Info'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

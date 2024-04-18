@@ -1,0 +1,20 @@
+uuid: 9d9ab12b-0331-4a16-a665-fa4c0d1df09f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_price_cloth
+field_name: sup_book_price_cloth
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

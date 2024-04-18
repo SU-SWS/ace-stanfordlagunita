@@ -1,0 +1,20 @@
+uuid: db1ff89a-776b-4b99-80fa-77bdb2ed9eb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_copyright
+field_name: sup_book_copyright
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 10a652f3-196a-4b05-b90b-fa78450cbe54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_imprint
+    - node.type.sup_book
+    - taxonomy.vocabulary.sup_imprints
+id: node.sup_book.sup_book_imprint
+field_name: sup_book_imprint
+entity_type: node
+bundle: sup_book
+label: Imprint
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_imprints: sup_imprints
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
