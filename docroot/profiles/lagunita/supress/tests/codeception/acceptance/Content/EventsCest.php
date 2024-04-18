@@ -9,7 +9,7 @@ use Drupal\Core\Cache\Cache;
  *
  * @group content
  */
-class EventsCest {
+abstract class EventsCest {
 
   /**
    * Faker.

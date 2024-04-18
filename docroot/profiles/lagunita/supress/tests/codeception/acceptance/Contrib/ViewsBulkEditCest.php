@@ -8,7 +8,7 @@ use Faker\Factory;
  * @group contrib
  * @group bulk_edit
  */
-class ViewsBulkEditCest {
+abstract class ViewsBulkEditCest {
 
   /**
    * @var \Drupal\node\NodeInterface[]

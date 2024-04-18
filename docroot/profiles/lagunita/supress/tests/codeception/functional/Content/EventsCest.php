@@ -5,7 +5,7 @@ use Drupal\layout_builder\Section;
 use Drupal\layout_builder\SectionComponent;
 use Facebook\WebDriver\WebDriverElement;
 
-class EventsCest {
+abstract class EventsCest {
 
   /**
    * Faker generator.

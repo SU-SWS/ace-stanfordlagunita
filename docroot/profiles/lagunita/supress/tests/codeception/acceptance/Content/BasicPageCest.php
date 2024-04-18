@@ -149,7 +149,7 @@ class BasicPageCest {
   /**
    * Test that the vocabulary and default terms exist.
    */
-  public function testBasicPageVocabularyTermsExists(AcceptanceTester $I) {
+  protected function testBasicPageVocabularyTermsExists(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage("/admin/structure/taxonomy/manage/basic_page_types/overview");
     $I->canSeeResponseCodeIs(200);
