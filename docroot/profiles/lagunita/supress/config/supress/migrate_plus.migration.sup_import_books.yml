@@ -1,0 +1,543 @@
+uuid: 753d8a1e-3278-41af-9fa9-75875c56019c
+langcode: en
+status: false
+dependencies: {  }
+id: sup_import_books
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: sup_press
+label: 'Import Stanford University Press Books'
+source:
+  orphan_action: unpublish
+  plugin: url
+  urls:
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=1001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=2001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=3001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=4001'
+  fields:
+    -
+      name: author_1_first_name
+      label: author_1_first_name
+      selector: fieldData/author_1_first_name
+    -
+      name: author_1_following
+      label: author_1_following
+      selector: fieldData/author_1_following
+    -
+      name: author_1_last_name
+      label: author_1_last_name
+      selector: fieldData/author_1_last_name
+    -
+      name: author_1_middle
+      label: author_1_middle
+      selector: fieldData/author_1_middle
+    -
+      name: author_1_preceding
+      label: author_1_preceding
+      selector: fieldData/author_1_preceding
+    -
+      name: author_1_role
+      label: author_1_role
+      selector: fieldData/author_1_role
+    -
+      name: author_2_first_name
+      label: author_2_first_name
+      selector: fieldData/author_2_first_name
+    -
+      name: author_2_following
+      label: author_2_following
+      selector: fieldData/author_2_following
+    -
+      name: author_2_last_name
+      label: author_2_last_name
+      selector: fieldData/author_2_last_name
+    -
+      name: author_2_middle
+      label: author_2_middle
+      selector: fieldData/author_2_middle
+    -
+      name: author_2_preceding
+      label: author_2_preceding
+      selector: fieldData/author_2_preceding
+    -
+      name: author_2_role
+      label: author_2_role
+      selector: fieldData/author_2_role
+    -
+      name: author_3_first_name
+      label: author_3_first_name
+      selector: fieldData/author_3_first_name
+    -
+      name: author_3_following
+      label: author_3_following
+      selector: fieldData/author_3_following
+    -
+      name: author_3_last_name
+      label: author_3_last_name
+      selector: fieldData/author_3_last_name
+    -
+      name: author_3_middle
+      label: author_3_middle
+      selector: fieldData/author_3_middle
+    -
+      name: author_3_preceding
+      label: author_3_preceding
+      selector: fieldData/author_3_preceding
+    -
+      name: author_3_role
+      label: author_3_role
+      selector: fieldData/author_3_role
+    -
+      name: author_4_first_name
+      label: author_4_first_name
+      selector: fieldData/author_4_first_name
+    -
+      name: author_4_following
+      label: author_4_following
+      selector: fieldData/author_4_following
+    -
+      name: author_4_last_name
+      label: author_4_last_name
+      selector: fieldData/author_4_last_name
+    -
+      name: author_4_middle
+      label: author_4_middle
+      selector: fieldData/author_4_middle
+    -
+      name: author_4_preceding
+      label: author_4_preceding
+      selector: fieldData/author_4_preceding
+    -
+      name: author_4_role
+      label: author_4_role
+      selector: fieldData/author_4_role
+    -
+      name: author_info
+      label: author_info
+      selector: fieldData/author_info
+    -
+      name: authors_full
+      label: authors_full
+      selector: fieldData/authors_full
+    -
+      name: availability_description
+      label: availability_description
+      selector: fieldData/availability_description
+    -
+      name: catalog_month
+      label: catalog_month
+      selector: fieldData/catalog_month
+    -
+      name: catalog_page
+      label: catalog_page
+      selector: fieldData/catalog_page
+    -
+      name: catalog_season_yyyy
+      label: catalog_season_yyyy
+      selector: fieldData/catalog_season_yyyy
+    -
+      name: cloth_sale_percent
+      label: cloth_sale_percent
+      selector: fieldData/cloth_sale_percent
+    -
+      name: cloth_sale_price
+      label: cloth_sale_price
+      selector: fieldData/cloth_sale_price
+    -
+      name: copublisher_name
+      label: copublisher_name
+      selector: fieldData/copublisher_name
+    -
+      name: copublisher_yn
+      label: copublisher_yn
+      selector: fieldData/copublisher_yn
+    -
+      name: copyright
+      label: copyright
+      selector: fieldData/copyright
+    -
+      name: description
+      label: description
+      selector: fieldData/description
+    -
+      name: html_page_title
+      label: html_page_title
+      selector: fieldData/html_page_title
+    -
+      name: illustrations
+      label: illustrations
+      selector: fieldData/illustrations
+    -
+      name: imprint
+      label: imprint
+      selector: fieldData/imprint
+    -
+      name: in_print_status
+      label: in_print_status
+      selector: fieldData/in_print_status
+    -
+      name: instructor_recommended
+      label: instructor_recommended
+      selector: fieldData/instructor_recommended
+    -
+      name: isbn_13_alt
+      label: isbn_13_alt
+      selector: fieldData/isbn_13_alt
+    -
+      name: isbn_13_cloth
+      label: isbn_13_cloth
+      selector: fieldData/isbn_13_cloth
+    -
+      name: isbn_13_digital
+      label: isbn_13_digital
+      selector: fieldData/isbn_13_digital
+    -
+      name: isbn_13_isw
+      label: isbn_13_isw
+      selector: fieldData/isbn_13_isw
+    -
+      name: isbn_13_paper
+      label: isbn_13_paper
+      selector: fieldData/isbn_13_paper
+    -
+      name: local_web_blurb
+      label: local_web_blurb
+      selector: fieldData/local_web_blurb
+    -
+      name: new_paperback_yn
+      label: new_paperback_yn
+      selector: fieldData/new_paperback_yn
+    -
+      name: pages
+      label: pages
+      selector: fieldData/pages
+    -
+      name: paper_sale_percent
+      label: paper_sale_percent
+      selector: fieldData/paper_sale_percent
+    -
+      name: paper_sale_price
+      label: paper_sale_price
+      selector: fieldData/paper_sale_price
+    -
+      name: price_cloth
+      label: price_cloth
+      selector: fieldData/price_cloth
+    -
+      name: price_digital
+      label: price_digital
+      selector: fieldData/price_digital
+    -
+      name: price_paper
+      label: price_paper
+      selector: fieldData/price_paper
+    -
+      name: print_desk_copies
+      label: print_desk_copies
+      selector: fieldData/print_desk_copies
+    -
+      name: pub_date_cloth
+      label: pub_date_cloth
+      selector: fieldData/pub_date_cloth
+    -
+      name: pub_date_digital
+      label: pub_date_digital
+      selector: fieldData/pub_date_digital
+    -
+      name: pub_date_first
+      label: pub_date_first
+      selector: fieldData/pub_date_first
+    -
+      name: pub_date_paper
+      label: pub_date_paper
+      selector: fieldData/pub_date_paper
+    -
+      name: pub_year_first
+      label: pub_year_first
+      selector: fieldData/pub_year_first
+    -
+      name: publisher
+      label: publisher
+      selector: fieldData/publisher
+    -
+      name: related_titles
+      label: related_titles
+      selector: fieldData/related_titles
+    -
+      name: reviews
+      label: reviews
+      selector: fieldData/reviews
+    -
+      name: rights_description
+      label: rights_description
+      selector: fieldData/rights_description
+    -
+      name: sales_rank
+      label: sales_rank
+      selector: fieldData/sales_rank
+    -
+      name: series
+      label: series
+      selector: fieldData/series
+    -
+      name: status_cloth
+      label: status_cloth
+      selector: fieldData/status_cloth
+    -
+      name: status_digital
+      label: status_digital
+      selector: fieldData/status_digital
+    -
+      name: status_paper
+      label: status_paper
+      selector: fieldData/status_paper
+    -
+      name: subjects_press_all
+      label: subjects_press_all
+      selector: fieldData/subjects_press_all
+    -
+      name: subtitle
+      label: subtitle
+      selector: fieldData/subtitle
+    -
+      name: table_of_contents
+      label: table_of_contents
+      selector: fieldData/table_of_contents
+    -
+      name: title
+      label: title
+      selector: fieldData/title
+    -
+      name: url_isw
+      label: url_isw
+      selector: fieldData/url_isw
+    -
+      name: web_code_cloth
+      label: web_code_cloth
+      selector: fieldData/web_code_cloth
+    -
+      name: web_code_paper
+      label: web_code_paper
+      selector: fieldData/web_code_paper
+    -
+      name: work_id_number
+      label: work_id_number
+      selector: fieldData/work_id_number
+  ids:
+    work_id_number:
+      type: integer
+process:
+  title: title
+  sup_book_authors/0/given: author_0_first_name
+  sup_book_authors/0/following: author_0_following
+  sup_book_authors/0/family: author_0_last_name
+  sup_book_authors/0/middle: author_0_middle
+  sup_book_authors/0/title: author_0_preceding
+  sup_book_authors/0/credentials: author_0_role
+  sup_book_authors/1/given: author_1_first_name
+  sup_book_authors/1/following: author_1_following
+  sup_book_authors/1/family: author_1_last_name
+  sup_book_authors/1/middle: author_1_middle
+  sup_book_authors/1/title: author_1_preceding
+  sup_book_authors/1/credentials: author_1_role
+  sup_book_authors/2/given: author_2_first_name
+  sup_book_authors/2/following: author_2_following
+  sup_book_authors/2/family: author_2_last_name
+  sup_book_authors/2/middle: author_2_middle
+  sup_book_authors/2/title: author_2_preceding
+  sup_book_authors/2/credentials: author_2_role
+  sup_book_authors/3/given: author_3_first_name
+  sup_book_authors/3/following: author_3_following
+  sup_book_authors/3/family: author_3_last_name
+  sup_book_authors/3/middle: author_3_middle
+  sup_book_authors/3/title: author_3_preceding
+  sup_book_authors/3/credentials: author_3_role
+  sup_book_author_info:
+    -
+      plugin: str_replace
+      source: author_info
+      search:
+        - '<I>'
+        - '</I>'
+      replace:
+        - '<em>'
+        - '</em>'
+  sup_book_authors_full: authors_full
+  sup_book_avail_desc: availability_description
+  sup_book_catalog_month: catalog_month
+  sup_book_catalog_page: catalog_page
+  sup_book_catalog_season_yyyy: catalog_season_yyyy
+  sup_book_cloth_sale_percent: cloth_sale_percent
+  sup_book_cloth_sale_price: cloth_sale_price
+  sup_book_copublisher_name: copublisher_name
+  sup_book_copublisher_yn: copublisher_yn
+  sup_book_copyright: copyright
+  sup_book_description/value:
+    -
+      plugin: str_replace
+      source: description
+      search:
+        - '<I>'
+        - '</I>'
+        - \r
+      replace:
+        - '<em>'
+        - '</em>'
+        - '<br />'
+  sup_book_description/format:
+    -
+      plugin: default_value
+      default_value: stanford_html
+  sup_book_digital_comp_link: digital_comp_link
+  sup_book_html_page_title: html_page_title
+  sup_book_illustrations: illustrations
+  sup_book_imprint:
+    -
+      plugin: skip_on_empty
+      source: imprint
+      method: process
+    -
+      plugin: callback
+      callable: strtolower
+    -
+      plugin: callback
+      callable: ucwords
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: sup_imprints
+  sup_book_in_print_status: in_print_status
+  sup_book_instructor_recommended: instructor_recommended
+  sup_book_isbn_13_alt: isbn_13_alt
+  sup_book_isbn_13_cloth: isbn_13_cloth
+  sup_book_isbn_13_digital: isbn_13_digital
+  sup_book_isbn_13_isw: isbn_13_isw
+  sup_book_isbn_13_paper: isbn_13_paper
+  sup_book_local_web_blurb: local_web_blurb
+  sup_book_new_paperback_yn: new_paperback_yn
+  sup_book_pages: pages
+  sup_book_paper_sale_percent: paper_sale_percent
+  sup_book_paper_sale_price: paper_sale_price
+  sup_book_price_cloth: price_cloth
+  sup_book_price_digital: price_digital
+  sup_book_price_paper: price_paper
+  sup_book_print_desk_copies: print_desk_copies
+  sup_book_pub_date_cloth: pub_date_cloth
+  sup_book_pub_date_digital: pub_date_digital
+  sup_book_pub_date_first: pub_date_first
+  sup_book_pub_date_paper: pub_date_paper
+  sup_book_pub_year_first: pub_year_first
+  sup_book_reviews/value:
+    -
+      plugin: str_replace
+      source: reviews
+      search:
+        - '<I>'
+        - '</I>'
+        - \r
+      replace:
+        - '<em>'
+        - '</em>'
+        - '<br />'
+  sup_book_reviews/format:
+    -
+      plugin: default_value
+      default_value: stanford_html
+  sup_book_rights_description: rights_description
+  sup_book_sales_rank: sales_rank
+  sup_book_series:
+    -
+      plugin: skip_on_empty
+      source: series
+      method: process
+    -
+      plugin: callback
+      callable: strtolower
+    -
+      plugin: callback
+      callable: ucwords
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: sup_series
+  sup_book_status_cloth: status_cloth
+  sup_book_status_digital: status_digital
+  sup_book_status_paper: status_paper
+  sup_book_subtitle: subtitle
+  sup_book_table_of_contents: table_of_contents
+  sup_book_url_isw: url_isw
+  sup_book_web_code_cloth: web_code_cloth
+  sup_book_web_code_paper: web_code_paper
+  sup_book_work_id_number: work_id_number
+  sup_book_subjects:
+    -
+      plugin: str_replace
+      source: subjects_press_all
+      search:
+        - "\r"
+      replace:
+        - " \r "
+    -
+      plugin: explode
+      delimiter: "\r"
+    -
+      plugin: nested_term_generate
+      vocabulary: sup_book_subjects
+      delimiter: '--'
+  sup_book_awards:
+    -
+      plugin: explode
+      source: work_id_number
+      delimiter: /
+      strict: false
+    -
+      plugin: entity_lookup
+      value_key: sup_work_id
+      entity_type: sup_award
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
+  sup_book_related_titles:
+    -
+      plugin: skip_on_empty
+      source: related_titles
+      method: process
+    -
+      plugin: explode
+      delimiter: ","
+    -
+      plugin: entity_lookup
+      value_key: sup_book_work_id_number
+      entity_type: node
+      bundle: sup_book
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
+  sup_book_image:
+    -
+      plugin: entity_lookup
+      source: work_id_number
+      value_key: sup_book_work_id
+      bundle_key: bundle
+      bundle: image
+      entity_type: media
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
+destination:
+  plugin: 'entity:node'
+  default_bundle: sup_book
+migration_dependencies:
+  optional:
+    - sup_awards

@@ -1,0 +1,25 @@
+adding:
+  dependencies:
+    config:
+      - field.storage.node.sup_book_subjects
+  field_settings:
+    book_subject:
+      label: 'Book Subjects » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sup_book_subjects:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_subjects
+        module:
+          - taxonomy
+    html:
+      configuration:
+        view_mode:
+          'entity:node':
+            sup_book: search_indexing
+  processor_settings:
+    html_filter:
+      fields:
+        - book_subject
+removing: {  }

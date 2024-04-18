@@ -1,0 +1,23 @@
+uuid: a5a5cc0b-a97d-4c9c-b4e3-a754d50f9285
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_price_cloth
+    - node.type.sup_book
+id: node.sup_book.sup_book_price_cloth
+field_name: sup_book_price_cloth
+entity_type: node
+bundle: sup_book
+label: 'Price Cloth'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

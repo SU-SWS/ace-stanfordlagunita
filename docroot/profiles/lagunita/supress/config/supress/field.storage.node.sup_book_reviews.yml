@@ -1,0 +1,19 @@
+uuid: e6e80cfb-8f16-4998-8203-829e04611a42
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.sup_book_reviews
+field_name: sup_book_reviews
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

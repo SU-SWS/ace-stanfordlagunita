@@ -1,0 +1,22 @@
+uuid: 86a75210-158b-4271-928f-c41dd67a4605
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sup_books_nodes
+label: Books
+type: 'canonical_entities:node'
+pattern: 'book/[node:title]'
+selection_criteria:
+  ab1ae450-6331-439b-a0a0-c224803598b2:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ab1ae450-6331-439b-a0a0-c224803598b2
+    context_mapping:
+      node: node
+    bundles:
+      sup_book: sup_book
+selection_logic: and
+weight: -5
+relationships: {  }

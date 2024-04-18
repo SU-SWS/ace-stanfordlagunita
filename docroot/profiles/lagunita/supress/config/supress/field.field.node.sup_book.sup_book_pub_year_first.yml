@@ -1,0 +1,19 @@
+uuid: b95f34a9-8250-4bd7-9fda-fc842ca79c23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_pub_year_first
+    - node.type.sup_book
+id: node.sup_book.sup_book_pub_year_first
+field_name: sup_book_pub_year_first
+entity_type: node
+bundle: sup_book
+label: 'Publication Year First'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

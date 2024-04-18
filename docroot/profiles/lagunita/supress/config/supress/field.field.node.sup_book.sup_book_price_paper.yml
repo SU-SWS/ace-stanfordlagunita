@@ -1,0 +1,23 @@
+uuid: 0bef627e-1f1c-4757-ac94-e0912a8818ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_price_paper
+    - node.type.sup_book
+id: node.sup_book.sup_book_price_paper
+field_name: sup_book_price_paper
+entity_type: node
+bundle: sup_book
+label: 'Price Paper'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

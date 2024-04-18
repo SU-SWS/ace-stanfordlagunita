@@ -1,0 +1,11 @@
+adding:
+  dependencies:
+    config:
+      - node.type.sup_book
+  permissions:
+    - 'create sup_book content'
+    - 'delete own sup_book content'
+    - 'edit any sup_book content'
+    - 'edit own sup_book content'
+    - 'view sup_book revisions'
+removing: {  }

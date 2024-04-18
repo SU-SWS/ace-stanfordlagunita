@@ -1,0 +1,23 @@
+uuid: cb14fbd0-25c0-459e-8f19-c3657040bd82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_pages
+    - node.type.sup_book
+id: node.sup_book.sup_book_pages
+field_name: sup_book_pages
+entity_type: node
+bundle: sup_book
+label: Pages
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

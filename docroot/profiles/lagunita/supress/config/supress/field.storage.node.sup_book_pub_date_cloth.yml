@@ -1,0 +1,20 @@
+uuid: 372d29f9-fe0f-4c9b-adcc-ebfaa5d6b8a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.sup_book_pub_date_cloth
+field_name: sup_book_pub_date_cloth
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

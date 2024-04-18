@@ -1,0 +1,14 @@
+uuid: 4a5bdd32-0143-4fad-9f17-dbbaccde1748
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sup_imprints
+id: taxonomy_vocabulary_sup_imprints
+entity_type_id: taxonomy_vocabulary
+entity_id: sup_imprints
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

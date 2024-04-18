@@ -1,0 +1,23 @@
+uuid: 6bbb4f1a-d4d0-4072-9de6-a4cd4a730a51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_work_id_number
+    - node.type.sup_book
+id: node.sup_book.sup_book_work_id_number
+field_name: sup_book_work_id_number
+entity_type: node
+bundle: sup_book
+label: 'Work ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,21 @@
+uuid: 3170bb25-f26d-49c7-a25a-2339c3f7d5cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_avail_desc
+field_name: sup_book_avail_desc
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 35f10254-ddad-4bd8-aeeb-97de9a37fcb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_status_digital
+    - node.type.sup_book
+  module:
+    - options
+id: node.sup_book.sup_book_status_digital
+field_name: sup_book_status_digital
+entity_type: node
+bundle: sup_book
+label: 'Status Digital'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

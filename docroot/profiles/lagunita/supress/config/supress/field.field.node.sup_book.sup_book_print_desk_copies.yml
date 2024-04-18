@@ -1,0 +1,19 @@
+uuid: a961803f-f9e3-462e-b0fc-1427f6671636
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_print_desk_copies
+    - node.type.sup_book
+id: node.sup_book.sup_book_print_desk_copies
+field_name: sup_book_print_desk_copies
+entity_type: node
+bundle: sup_book
+label: 'Print Desk Copies'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

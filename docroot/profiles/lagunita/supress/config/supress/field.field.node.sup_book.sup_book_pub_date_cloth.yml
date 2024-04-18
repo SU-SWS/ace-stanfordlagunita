@@ -1,0 +1,21 @@
+uuid: dea468a6-55af-4dd3-b03e-54079f88e46b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_pub_date_cloth
+    - node.type.sup_book
+  module:
+    - datetime
+id: node.sup_book.sup_book_pub_date_cloth
+field_name: sup_book_pub_date_cloth
+entity_type: node
+bundle: sup_book
+label: 'Publication Date Cloth'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

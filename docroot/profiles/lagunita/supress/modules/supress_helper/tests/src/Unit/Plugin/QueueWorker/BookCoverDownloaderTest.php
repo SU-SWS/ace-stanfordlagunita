@@ -60,7 +60,7 @@ class BookCoverDownloaderTest extends UnitTestCase {
           'data' => [
             [
               'fieldData' => [
-                'image' => '',
+                'image' => 'simulated image data',
                 'work_id_number' => 321,
               ],
               'recordId' => 123,

@@ -1,0 +1,21 @@
+uuid: 7c912edc-0bb4-4a35-ad22-3cf25407ecdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_pub_date_digital
+    - node.type.sup_book
+  module:
+    - datetime
+id: node.sup_book.sup_book_pub_date_digital
+field_name: sup_book_pub_date_digital
+entity_type: node
+bundle: sup_book
+label: 'Publication Date Digital'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,25 @@
+uuid: 76aeefbd-cd70-42d1-84bc-2da017ec008e
+langcode: en
+status: true
+dependencies: {  }
+id: sup_press
+label: 'Stanford University Press'
+description: 'Migrations for Books content'
+source_type: null
+module: null
+shared_configuration:
+  source:
+    track_changes: true
+    authentication:
+      plugin: press_filemaker
+      token_url: "https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions"
+      client_id: '[client_id]'
+      client_secret: '[client_secret]'
+    plugin: url
+    data_fetcher_plugin: http
+    data_parser_plugin: json
+    item_selector: response/data
+    request_options:
+      timeout: 60
+    constants:
+      minimal_html: stanford_minimal_html

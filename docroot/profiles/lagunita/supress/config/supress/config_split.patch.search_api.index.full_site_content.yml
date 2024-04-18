@@ -1,0 +1,8 @@
+adding:
+  field_settings:
+    rendered_item:
+      configuration:
+        view_mode:
+          'entity:node':
+            sup_book: search_indexing
+removing: {  }

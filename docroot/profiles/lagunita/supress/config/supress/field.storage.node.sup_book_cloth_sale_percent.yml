@@ -1,0 +1,20 @@
+uuid: 02a0cddc-da1c-496a-957b-201af0f7a86b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_cloth_sale_percent
+field_name: sup_book_cloth_sale_percent
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
