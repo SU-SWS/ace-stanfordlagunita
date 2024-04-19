@@ -1,0 +1,24 @@
+uuid: ff915a3a-198f-4ffe-9505-53fc63763a5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_prebuilt_component
+field_name: sup_prebuilt_component
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: search_form
+      label: 'Search Form'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

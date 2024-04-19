@@ -1,0 +1,30 @@
+uuid: 4db7fbb2-5e3c-497d-bf9f-2aa7a15768e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_carousel.sup_carousel_slides
+    - paragraphs.paragraphs_type.sup_carousel
+  module:
+    - inline_entity_form
+id: paragraph.sup_carousel.default
+targetEntityType: paragraph
+bundle: sup_carousel
+mode: default
+content:
+  sup_carousel_slides:
+    type: inline_entity_form_simple
+    weight: 0
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

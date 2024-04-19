@@ -1,0 +1,29 @@
+uuid: ca77eb28-0b38-40c4-ba86-151d8d408ac3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_file_list_files
+    - media.type.file
+    - paragraphs.paragraphs_type.sup_file_list
+id: paragraph.sup_file_list.sup_file_list_files
+field_name: sup_file_list_files
+entity_type: paragraph
+bundle: sup_file_list
+label: Files
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

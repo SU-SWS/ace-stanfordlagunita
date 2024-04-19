@@ -1,0 +1,25 @@
+uuid: 76fc64f2-11b6-4765-a9bd-44a180815eb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_carousel.sup_carousel_slides
+    - paragraphs.paragraphs_type.sup_carousel
+  module:
+    - entity_reference_revisions
+id: paragraph.sup_carousel.default
+targetEntityType: paragraph
+bundle: sup_carousel
+mode: default
+content:
+  sup_carousel_slides:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

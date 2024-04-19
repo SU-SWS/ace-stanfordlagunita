@@ -1,0 +1,20 @@
+uuid: b6ce624d-706d-4005-bf45-502afb6bf1b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sup_file_list_files
+field_name: sup_file_list_files
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
