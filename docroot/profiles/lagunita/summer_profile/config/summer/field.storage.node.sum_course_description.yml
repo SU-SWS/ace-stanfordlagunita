@@ -1,0 +1,19 @@
+uuid: 800a1bd9-e9e7-4d2b-bc1b-4ac6a5df6086
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.sum_course_description
+field_name: sum_course_description
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

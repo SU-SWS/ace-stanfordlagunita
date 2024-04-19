@@ -11,7 +11,10 @@
             "url": "https://packages.drupal.org/8"
         }
     ],
-    "require": {},
+    "require": {
+        "drupal/markdown": "^3.0",
+        "league/commonmark": "^1.0"
+    },
     "config": {
         "sort-packages": true
     },
@@ -31,6 +34,10 @@
                 "drush.services.yml": "^9"
             }
         },
-        "patches": {}
+        "patches": {
+            "drupal/markdown": {
+                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.patch"
+            }
+        }
     }
 }

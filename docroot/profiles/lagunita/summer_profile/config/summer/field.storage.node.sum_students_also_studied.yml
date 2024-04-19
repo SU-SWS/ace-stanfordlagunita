@@ -1,0 +1,20 @@
+uuid: 0e8dd448-e77c-4b04-b737-b5889c464ac1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sum_students_also_studied
+field_name: sum_students_also_studied
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 64cf4141-17e2-42d6-a9ee-5a9bb854bb1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sum_course_course_cost
+field_name: sum_course_course_cost
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

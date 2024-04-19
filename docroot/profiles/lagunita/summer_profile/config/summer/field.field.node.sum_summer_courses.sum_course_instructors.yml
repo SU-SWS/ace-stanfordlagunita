@@ -1,0 +1,19 @@
+uuid: e361edb6-da02-4c84-accf-f3f9d4dcf02e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_instructors
+    - node.type.sum_summer_courses
+id: node.sum_summer_courses.sum_course_instructors
+field_name: sum_course_instructors
+entity_type: node
+bundle: sum_summer_courses
+label: Instructors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

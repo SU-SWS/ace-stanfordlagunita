@@ -1,0 +1,29 @@
+uuid: 07e18882-b6c7-4135-bcb9-8fce3a99a65e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_syllabus_file
+    - media.type.file
+    - node.type.sum_summer_courses
+id: node.sum_summer_courses.sum_course_syllabus_file
+field_name: sum_course_syllabus_file
+entity_type: node
+bundle: sum_summer_courses
+label: 'Course Syllabus File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

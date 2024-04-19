@@ -1,0 +1,89 @@
+uuid: c82d9e9c-9b2c-451e-a9be-f5b3403d3ec7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stanford_h3_card
+    - field.field.node.sum_summer_courses.sum_course_availability
+    - field.field.node.sum_summer_courses.sum_course_catalog_number
+    - field.field.node.sum_summer_courses.sum_course_class_number
+    - field.field.node.sum_summer_courses.sum_course_course_cost
+    - field.field.node.sum_summer_courses.sum_course_cross_listing
+    - field.field.node.sum_summer_courses.sum_course_description
+    - field.field.node.sum_summer_courses.sum_course_end_date
+    - field.field.node.sum_summer_courses.sum_course_format
+    - field.field.node.sum_summer_courses.sum_course_instructors
+    - field.field.node.sum_summer_courses.sum_course_interest_area
+    - field.field.node.sum_summer_courses.sum_course_length
+    - field.field.node.sum_summer_courses.sum_course_notes
+    - field.field.node.sum_summer_courses.sum_course_population
+    - field.field.node.sum_summer_courses.sum_course_prerequisites
+    - field.field.node.sum_summer_courses.sum_course_schedule
+    - field.field.node.sum_summer_courses.sum_course_start_date
+    - field.field.node.sum_summer_courses.sum_course_syllabus_file
+    - field.field.node.sum_summer_courses.sum_course_unique_import_id
+    - field.field.node.sum_summer_courses.sum_course_units
+    - field.field.node.sum_summer_courses.sum_students_also_studied
+    - node.type.sum_summer_courses
+  module:
+    - ds
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+          variant: default
+    regions:
+      card_body:
+        - node_title
+        - sum_course_name
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          link_target: ''
+          wrapper: h3
+          class: ''
+id: node.sum_summer_courses.stanford_h3_card
+targetEntityType: node
+bundle: sum_summer_courses
+mode: stanford_h3_card
+content: {  }
+hidden:
+  links: true
+  search_api_excerpt: true
+  sum_course_availability: true
+  sum_course_catalog_number: true
+  sum_course_class_number: true
+  sum_course_course_cost: true
+  sum_course_cross_listing: true
+  sum_course_description: true
+  sum_course_end_date: true
+  sum_course_format: true
+  sum_course_instructors: true
+  sum_course_interest_area: true
+  sum_course_length: true
+  sum_course_notes: true
+  sum_course_population: true
+  sum_course_prerequisites: true
+  sum_course_schedule: true
+  sum_course_start_date: true
+  sum_course_syllabus_file: true
+  sum_course_unique_import_id: true
+  sum_course_units: true
+  sum_students_also_studied: true

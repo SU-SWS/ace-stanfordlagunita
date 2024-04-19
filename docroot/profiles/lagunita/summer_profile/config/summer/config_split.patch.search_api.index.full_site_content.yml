@@ -1,0 +1,8 @@
+adding:
+  field_settings:
+    rendered_item:
+      configuration:
+        view_mode:
+          'entity:node':
+            sum_summer_courses: search_indexing
+removing: {  }

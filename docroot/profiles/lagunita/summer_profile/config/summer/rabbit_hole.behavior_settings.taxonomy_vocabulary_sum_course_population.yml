@@ -1,0 +1,14 @@
+uuid: 03efaae7-1c2f-4562-a7bf-f6f87bd55f04
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sum_course_population
+id: taxonomy_vocabulary_sum_course_population
+entity_type_id: taxonomy_vocabulary
+entity_id: sum_course_population
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

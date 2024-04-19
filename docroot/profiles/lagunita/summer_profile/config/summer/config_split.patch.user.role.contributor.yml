@@ -1,0 +1,7 @@
+adding:
+  dependencies:
+    config:
+      - filter.format.sum_markdown
+  permissions:
+    - 'use text format sum_markdown'
+removing: {  }
