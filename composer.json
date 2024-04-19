@@ -153,6 +153,9 @@
             "drupal/graphql": {
                 "Log graphql queries": "patches/contrib/graphql-logging.patch"
             },
+            "drupal/markdown": {
+                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.patch"
+            },
             "drupal/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             },
