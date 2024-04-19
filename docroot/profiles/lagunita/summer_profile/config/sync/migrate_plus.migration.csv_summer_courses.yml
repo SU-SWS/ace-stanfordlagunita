@@ -14,7 +14,7 @@ source:
   path: /tmp/summer_courses.csv
   constants:
     status: 1
-    type: sum_summer_courses
+    type: su_opportunity
     basic_html: stanford_html
     minimal_html: stanford_minimal_html
     image_destination: 'public://media/image/csv/'
