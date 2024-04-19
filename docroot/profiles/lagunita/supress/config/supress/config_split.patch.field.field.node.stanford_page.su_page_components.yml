@@ -1,0 +1,26 @@
+adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.sup_carousel
+      - paragraphs.paragraphs_type.sup_file_list
+      - paragraphs.paragraphs_type.sup_pre_built
+  settings:
+    handler_settings:
+      target_bundles:
+        sup_file_list: sup_file_list
+        sup_carousel: sup_carousel
+        sup_pre_built: sup_pre_built
+      target_bundles_drag_drop:
+        stanford_page_title_banner:
+          weight: 24
+          enabled: false
+        sup_carousel:
+          weight: 30
+          enabled: true
+        sup_file_list:
+          weight: 29
+          enabled: true
+        sup_pre_built:
+          weight: 30
+          enabled: true
+removing: {  }

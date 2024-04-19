@@ -1,0 +1,79 @@
+uuid: 967d2e01-fac2-4076-8678-87888e3b9b6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_carousel_slides
+    - paragraphs.paragraphs_type.sup_carousel
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - entity_reference_revisions
+id: paragraph.sup_carousel.sup_carousel_slides
+field_name: sup_carousel_slides
+entity_type: paragraph
+bundle: sup_carousel
+label: Slides
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sup_carousel_slide: sup_carousel_slide
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 18
+        enabled: false
+      stanford_banner:
+        weight: 19
+        enabled: false
+      stanford_card:
+        weight: 20
+        enabled: false
+      stanford_entity:
+        weight: 21
+        enabled: false
+      stanford_gallery:
+        weight: 22
+        enabled: false
+      stanford_layout:
+        weight: 23
+        enabled: false
+      stanford_lists:
+        weight: 24
+        enabled: false
+      stanford_media_caption:
+        weight: 25
+        enabled: false
+      stanford_page_title_banner:
+        weight: 26
+        enabled: false
+      stanford_person_cta:
+        weight: 27
+        enabled: false
+      stanford_schedule:
+        weight: 28
+        enabled: false
+      stanford_spacer:
+        weight: 29
+        enabled: false
+      stanford_wysiwyg:
+        weight: 30
+        enabled: false
+      sup_carousel:
+        weight: 31
+        enabled: false
+      sup_carousel_slide:
+        weight: 32
+        enabled: true
+      sup_file_list:
+        weight: 33
+        enabled: false
+      sup_pre_built:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

@@ -9,6 +9,17 @@ adding:
     paragraph:
       stanford_page_title_banner:
         query_load_enabled: true
+      sup_carousel:
+        enabled: true
+      sup_carousel_slide:
+        enabled: true
+      sup_file_list:
+        enabled: true
+      sup_pre_built:
+        enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
     taxonomy_term:
       sup_book_subjects:
         enabled: true
@@ -19,9 +30,6 @@ adding:
       sup_series:
         enabled: true
         query_load_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
   field_config:
     node:
       sup_book:
@@ -134,6 +142,16 @@ adding:
         sup_book_web_code_paper:
           enabled: true
         sup_book_work_id_number:
+          enabled: true
+    paragraph:
+      sup_carousel:
+        sup_carousel_slides:
+          enabled: true
+      sup_file_list:
+        sup_file_list_files:
+          enabled: true
+      sup_pre_built:
+        sup_prebuilt_component:
           enabled: true
     sup_award:
       sup_award:

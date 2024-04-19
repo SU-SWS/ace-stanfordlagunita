@@ -1,0 +1,23 @@
+uuid: d83a2616-b446-4d41-b827-2904af37b040
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_file_list.sup_file_list_files
+    - paragraphs.paragraphs_type.sup_file_list
+id: paragraph.sup_file_list.default
+targetEntityType: paragraph
+bundle: sup_file_list
+mode: default
+content:
+  sup_file_list_files:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

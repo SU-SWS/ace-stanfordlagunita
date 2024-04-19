@@ -1,0 +1,24 @@
+uuid: 31082282-23d3-4601-9e80-b2b1fa3ef839
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_file_list.sup_file_list_files
+    - paragraphs.paragraphs_type.sup_file_list
+  module:
+    - media_library
+id: paragraph.sup_file_list.default
+targetEntityType: paragraph
+bundle: sup_file_list
+mode: default
+content:
+  sup_file_list_files:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
