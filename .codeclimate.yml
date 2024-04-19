@@ -106,9 +106,8 @@ plugins:
 # exclude these files/paths
 exclude_patterns:
   - "docroot/"
-  - "!docroot/profiles/custom"
+  - "!docroot/profiles/lagunita"
   - "tests/"
   - "**/tests"
-  - "simplesamlphp"
   - "patches"
   - "hooks"

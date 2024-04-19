@@ -8,7 +8,7 @@ use Drupal\config_pages\Entity\ConfigPages;
  *
  * @group ext_links
  */
-class ExtLinkCest {
+abstract class ExtLinkCest {
 
   /**
    * @var Faker
