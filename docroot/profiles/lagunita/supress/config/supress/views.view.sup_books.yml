@@ -3,11 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sup_book_authors
     - node.type.sup_book
   module:
     - graphql_compose_views
-    - name
     - node
     - stanford_fields
     - user
@@ -260,95 +258,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  author_list:
-    id: author_list
-    display_title: 'Author List'
-    display_plugin: viewfield_block
-    position: 3
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      block_category: 'Press Books (Views)'
-      fields:
-        sup_book_authors:
-          id: sup_book_authors
-          table: node__sup_book_authors
-          field: sup_book_authors
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: 0
-          alter:
-            alter_text: 0
-            text: ''
-            make_link: 0
-            path: ''
-            absolute: 0
-            external: 0
-            replace_spaces: 0
-            path_case: none
-            trim_whitespace: 0
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: 0
-            max_length: '0'
-            word_boundary: 1
-            ellipsis: 1
-            more_link: 0
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: 0
-            trim: 0
-            preserve_tags: ''
-            html: 0
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: 1
-          empty: ''
-          hide_empty: 0
-          empty_zero: 0
-          hide_alter_empty: 1
-          click_sort_column: title
-          type: name_default
-          settings:
-            format: default
-            list_format: ''
-            markup: none
-          group_column: ''
-          group_columns: {  }
-          group_rows: 1
-          delta_limit: '0'
-          delta_offset: '0'
-          delta_reversed: 0
-          delta_first_last: 0
-          multi_type: separator
-          separator: ', '
-          field_api_classes: 0
-          plugin_id: field
-      defaults:
-        fields: false
-        arguments: false
-      arguments: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.sup_book_authors'
   book_list:
     id: book_list
     display_title: 'Book List'
@@ -404,7 +313,7 @@ display:
         options: null
       display_description: ''
       display_extenders: {  }
-      graphql_query_name: supBooksGraphql
+      graphql_query_name: supBooksView
     cache_metadata:
       max-age: -1
       contexts:

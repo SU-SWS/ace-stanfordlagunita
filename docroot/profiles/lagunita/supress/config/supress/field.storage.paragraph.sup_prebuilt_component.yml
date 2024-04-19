@@ -14,6 +14,9 @@ settings:
     -
       value: search_form
       label: 'Search Form'
+    -
+      value: book_author_list
+      label: 'Book Author List'
   allowed_values_function: ''
 module: options
 locked: false
