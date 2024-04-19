@@ -1,6 +1,7 @@
 adding:
   dependencies:
     config:
+      - core.entity_view_display.node.stanford_page.default
       - node.type.sup_book
       - taxonomy.vocabulary.sup_book_subjects
       - taxonomy.vocabulary.sup_imprints
@@ -9,6 +10,8 @@ adding:
       - supress_helper
   permissions:
     - 'administer sup_award'
+    - 'configure all stanford_page node layout overrides'
+    - 'configure editable stanford_page node layout overrides'
     - 'create sup_book content'
     - 'create terms in sup_book_subjects'
     - 'create terms in sup_imprints'

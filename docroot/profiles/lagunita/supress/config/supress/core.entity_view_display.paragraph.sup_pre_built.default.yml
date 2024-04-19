@@ -14,7 +14,7 @@ mode: default
 content:
   sup_prebuilt_component:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
