@@ -36,6 +36,10 @@ if (EnvironmentDetector::isAhEnv()) {
       'system.menu.*',
       'core.menu.static_menu_link_overrides',
     ];
+    $settings['config_readonly_content_link_providers'] = [
+      'menu_link_content',
+      'menu_link',
+    ];
   }
 }
 
@@ -55,7 +59,7 @@ $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/custom/stanford_pr
 $additionalSettingsFiles = [
   __DIR__ . '/config.settings.php',
   __DIR__ . '/environment_indicator.settings.php',
-  __DIR__ . '/google_analytics.settings.php',
+  __DIR__ . '/fast404.settings.php',
   __DIR__ . '/saml.settings.php',
   __DIR__ . '/xmlsitemap.settings.php',
 ];
