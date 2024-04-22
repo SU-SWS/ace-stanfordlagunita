@@ -331,7 +331,12 @@ source:
     work_id_number:
       type: integer
 process:
-  title: title
+  title:
+    plugin: str_replace
+    source: title
+    search: '/<.*?>/'
+    replace: ''
+    regex: true
   sup_book_authors/0/given: author_0_first_name
   sup_book_authors/0/following: author_0_following
   sup_book_authors/0/family: author_0_last_name

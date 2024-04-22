@@ -1,0 +1,6 @@
+services:
+  supress_helper.event_subscriber:
+    class: Drupal\supress_helper\EventSubscriber\SuPressEventSubscriber
+    arguments: ['@entity_type.manager', '@plugin.manager.migration']
+    tags:
+      - { name: event_subscriber }
