@@ -6,25 +6,38 @@ dependencies:
     - field.field.paragraph.sup_carousel.sup_carousel_slides
     - paragraphs.paragraphs_type.sup_carousel
   module:
-    - inline_entity_form
+    - change_labels
+    - paragraphs
 id: paragraph.sup_carousel.default
 targetEntityType: paragraph
 bundle: sup_carousel
 mode: default
 content:
   sup_carousel_slides:
-    type: inline_entity_form_simple
+    type: paragraphs
     weight: 0
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      revision: false
-    third_party_settings: {  }
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: sup_carousel_slide
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: '0'
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
 hidden:
   created: true
   status: true

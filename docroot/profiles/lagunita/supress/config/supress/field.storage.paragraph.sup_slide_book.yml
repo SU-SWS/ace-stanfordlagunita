@@ -1,0 +1,20 @@
+uuid: 1b74843b-4ed9-454a-a1a4-e703d665f8fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.sup_slide_book
+field_name: sup_slide_book
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

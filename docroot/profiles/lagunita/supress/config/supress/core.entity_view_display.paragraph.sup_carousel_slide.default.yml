@@ -1,0 +1,96 @@
+uuid: a5e4fa2e-940d-462d-8a1a-922922015510
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_carousel_slide.sup_slide_body
+    - field.field.paragraph.sup_carousel_slide.sup_slide_book
+    - field.field.paragraph.sup_carousel_slide.sup_slide_button
+    - field.field.paragraph.sup_carousel_slide.sup_slide_eyebrow
+    - field.field.paragraph.sup_carousel_slide.sup_slide_subtitle
+    - field.field.paragraph.sup_carousel_slide.sup_slide_title
+    - field.field.paragraph.sup_carousel_slide.sup_sup_image
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
+    - link
+    - stanford_media
+    - text
+id: paragraph.sup_carousel_slide.default
+targetEntityType: paragraph
+bundle: sup_carousel_slide
+mode: default
+content:
+  sup_slide_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sup_slide_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 5
+    region: content
+  sup_slide_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sup_slide_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sup_slide_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sup_sup_image:
+    type: media_responsive_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: responsive_1_1
+      remove_alt: 0
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
+  sup_slide_book: true

@@ -1,0 +1,24 @@
+uuid: 1ba4b9fd-66e3-4660-804b-a0afcbe7be1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_body
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - text
+id: paragraph.sup_carousel_slide.sup_slide_body
+field_name: sup_slide_body
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

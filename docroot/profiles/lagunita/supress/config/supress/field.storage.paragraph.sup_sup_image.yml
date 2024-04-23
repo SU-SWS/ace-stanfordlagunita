@@ -1,0 +1,20 @@
+uuid: 698aaecd-f206-445b-9620-104ad5f38ad4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sup_sup_image
+field_name: sup_sup_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

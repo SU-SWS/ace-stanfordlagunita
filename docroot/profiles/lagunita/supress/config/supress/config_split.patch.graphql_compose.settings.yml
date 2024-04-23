@@ -17,6 +17,9 @@ adding:
         enabled: true
       sup_pre_built:
         enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
     taxonomy_term:
       sup_book_subjects:
         enabled: true
@@ -27,9 +30,6 @@ adding:
       sup_series:
         enabled: true
         query_load_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
   field_config:
     node:
       sup_book:
@@ -146,6 +146,21 @@ adding:
     paragraph:
       sup_carousel:
         sup_carousel_slides:
+          enabled: true
+      sup_carousel_slide:
+        sup_slide_body:
+          enabled: true
+        sup_slide_book:
+          enabled: true
+        sup_slide_button:
+          enabled: true
+        sup_slide_eyebrow:
+          enabled: true
+        sup_slide_subtitle:
+          enabled: true
+        sup_slide_title:
+          enabled: true
+        sup_sup_image:
           enabled: true
       sup_file_list:
         sup_file_list_files:

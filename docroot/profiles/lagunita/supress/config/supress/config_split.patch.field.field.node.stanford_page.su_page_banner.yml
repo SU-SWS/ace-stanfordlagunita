@@ -1,0 +1,22 @@
+adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.sup_carousel
+  settings:
+    handler_settings:
+      target_bundles:
+        sup_carousel: sup_carousel
+      target_bundles_drag_drop:
+        sup_carousel:
+          weight: 31
+          enabled: true
+        sup_carousel_slide:
+          weight: 32
+          enabled: false
+        sup_file_list:
+          weight: 33
+          enabled: false
+        sup_pre_built:
+          weight: 34
+          enabled: false
+removing: {  }
