@@ -40,12 +40,16 @@ final class SuPressEventSubscriber implements EventSubscriberInterface {
 
     /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
     $migration = $this->migrationManager->createInstance('sup_import_books');
-    $id_map = $migration->getIdMap();
+    if (!$migration) {
+      return;
+    }
 
     // If an award is created (only from the importer), set the node that
     // relates to the award to be updated on the next import.
     if ($entity instanceof PressAwardInterface) {
-      $id_map->setUpdate(['work_id_number' => $entity->get('sup_work_id')->getString()]);
+      $migration->getIdMap()->setUpdate([
+        'work_id_number' => $entity->get('sup_work_id')->getString(),
+      ]);
     }
 
     // If an image is created , set the node that relates to the award to be
@@ -55,7 +59,9 @@ final class SuPressEventSubscriber implements EventSubscriberInterface {
       $entity->bundle() == 'image' &&
       $entity->get('sup_book_work_id')->count()
     ) {
-      $id_map->setUpdate(['work_id_number' => $entity->get('sup_book_work_id')->getString()]);
+      $migration->getIdMap()->setUpdate([
+        'work_id_number' => $entity->get('sup_book_work_id')->getString(),
+      ]);
     }
   }
 

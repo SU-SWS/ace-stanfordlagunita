@@ -3,3 +3,5 @@ type: module
 description: 'Provides extensions and plugins to add to base installation.'
 package: Stanford
 core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:migrate
