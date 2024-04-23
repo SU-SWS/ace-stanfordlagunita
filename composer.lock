@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8923bda5dfb6b58d8785c372d9010e7",
+    "content-hash": "1f853e3018bc617f09c120decf794436",
     "packages": [
         {
             "name": "acquia/blt",
@@ -4750,17 +4750,17 @@
         },
         {
             "name": "drupal/editoria11y",
-            "version": "2.1.11",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/editoria11y.git",
-                "reference": "2.1.11"
+                "reference": "2.1.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/editoria11y-2.1.11.zip",
-                "reference": "2.1.11",
-                "shasum": "23fd7f0e7ceb091162468eed290d083a2e3b62af"
+                "url": "https://ftp.drupal.org/files/projects/editoria11y-2.1.12.zip",
+                "reference": "2.1.12",
+                "shasum": "2a3e32c25eebdcdb3c64144b01d7dd4ce2945fec"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -4771,8 +4771,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.11",
-                    "datestamp": "1713470242",
+                    "version": "2.1.12",
+                    "datestamp": "1713880633",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10420,17 +10420,17 @@
         },
         {
             "name": "drupal/scheduler",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scheduler.git",
-                "reference": "2.0.1"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduler-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "d0666b4278b3e54f5c85c28298a35f492e0b715a"
+                "url": "https://ftp.drupal.org/files/projects/scheduler-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "1f02e0f198b85e5e5d5a39c148db4106ca1cee2d"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -10439,13 +10439,15 @@
                 "drupal/commerce": "^2.0",
                 "drupal/devel_generate": ">=4",
                 "drupal/rules": "^3",
+                "drupal/workbench_moderation": "*",
+                "drupal/workbench_moderation_actions": "*",
                 "drush/drush": ">=9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1689337325",
+                    "version": "2.0.2",
+                    "datestamp": "1713553950",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -16937,16 +16939,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "10.1.11",
+            "version": "10.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "2f9486264a0f621e3ca01277a92c21dfe0126fd4"
+                "reference": "915404fa53f285c59d2f4752d54790336d741cc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/2f9486264a0f621e3ca01277a92c21dfe0126fd4",
-                "reference": "2f9486264a0f621e3ca01277a92c21dfe0126fd4",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/915404fa53f285c59d2f4752d54790336d741cc9",
+                "reference": "915404fa53f285c59d2f4752d54790336d741cc9",
                 "shasum": ""
             },
             "require": {
@@ -17043,7 +17045,7 @@
                         "https://www.drupal.org/project/views_taxonomy_term_name_depth/issues/2877249": "https://git.drupalcode.org/project/views_taxonomy_term_name_depth/-/merge_requests/2.diff"
                     },
                     "drupal/webp": {
-                        "https://www.drupal.org/project/webp/issues/3281606": "https://www.drupal.org/files/issues/2024-02-13/3281606-webp-17.patch"
+                        "https://www.drupal.org/project/webp/issues/3281606": "https://git.drupalcode.org/project/webp/-/merge_requests/33.patch"
                     }
                 }
             },
@@ -17054,9 +17056,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.11"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.12"
             },
-            "time": "2024-04-08T20:54:47+00:00"
+            "time": "2024-04-23T19:55:37+00:00"
         },
         {
             "name": "su-sws/react_paragraphs",
@@ -17276,16 +17278,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "11.3.7",
+            "version": "11.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "008b20b7c5fa6b37895aeb5c83790f6cc4b3f9e3"
+                "reference": "e8f141000845dad6a1d3360d863c28f42492adbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/008b20b7c5fa6b37895aeb5c83790f6cc4b3f9e3",
-                "reference": "008b20b7c5fa6b37895aeb5c83790f6cc4b3f9e3",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/e8f141000845dad6a1d3360d863c28f42492adbc",
+                "reference": "e8f141000845dad6a1d3360d863c28f42492adbc",
                 "shasum": ""
             },
             "require": {
@@ -17455,9 +17457,9 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.3.7"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.3.8"
             },
-            "time": "2024-04-12T21:54:29+00:00"
+            "time": "2024-04-22T16:34:25+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -17563,16 +17565,16 @@
         },
         {
             "name": "su-sws/stanford_samlauth",
-            "version": "1.0.5",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_samlauth.git",
-                "reference": "2eaa5d0a366c694f5bd7e46376cc310961c2d45e"
+                "reference": "1e7a2120483ede7289df88d600ca09021416d19d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_samlauth/zipball/2eaa5d0a366c694f5bd7e46376cc310961c2d45e",
-                "reference": "2eaa5d0a366c694f5bd7e46376cc310961c2d45e",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_samlauth/zipball/1e7a2120483ede7289df88d600ca09021416d19d",
+                "reference": "1e7a2120483ede7289df88d600ca09021416d19d",
                 "shasum": ""
             },
             "require": {
@@ -17588,9 +17590,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_samlauth/issues",
-                "source": "https://github.com/SU-SWS/stanford_samlauth/tree/1.0.5"
+                "source": "https://github.com/SU-SWS/stanford_samlauth/tree/1.0.7"
             },
-            "time": "2024-04-01T17:32:10+00:00"
+            "time": "2024-04-23T16:37:04+00:00"
         },
         {
             "name": "symfony/cache",
@@ -20747,16 +20749,16 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.7.4",
+            "version": "6.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "d4adef47ca21c90e6483d59dcb9e5b1023696937"
+                "reference": "951eabf0338ec2522bd0d5d9c79b08a3a3d36b36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/d4adef47ca21c90e6483d59dcb9e5b1023696937",
-                "reference": "d4adef47ca21c90e6483d59dcb9e5b1023696937",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
+                "reference": "951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
                 "shasum": ""
             },
             "require": {
@@ -20807,7 +20809,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.7.4"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.7.5"
             },
             "funding": [
                 {
@@ -20815,7 +20817,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-03-25T23:56:24+00:00"
+            "time": "2024-04-20T17:25:10+00:00"
         },
         {
             "name": "twig/twig",
@@ -22232,16 +22234,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.7.2",
+            "version": "2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "b826edb791571ab1eaf281eb1bd6e181a1192adc"
+                "reference": "a625e50598e12171d3f60b1149eb530690c43474"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/b826edb791571ab1eaf281eb1bd6e181a1192adc",
-                "reference": "b826edb791571ab1eaf281eb1bd6e181a1192adc",
+                "url": "https://api.github.com/repos/composer/composer/zipball/a625e50598e12171d3f60b1149eb530690c43474",
+                "reference": "a625e50598e12171d3f60b1149eb530690c43474",
                 "shasum": ""
             },
             "require": {
@@ -22326,7 +22328,7 @@
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
                 "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.7.2"
+                "source": "https://github.com/composer/composer/tree/2.7.4"
             },
             "funding": [
                 {
@@ -22342,7 +22344,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-11T16:12:18+00:00"
+            "time": "2024-04-22T19:17:03+00:00"
         },
         {
             "name": "composer/metadata-minifier",
