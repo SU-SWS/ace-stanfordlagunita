@@ -1,0 +1,23 @@
+uuid: 5456b960-b734-49e2-9b6f-467ab30a0cbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_button
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - link
+id: paragraph.sup_carousel_slide.sup_slide_button
+field_name: sup_slide_button
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

@@ -1,0 +1,21 @@
+uuid: 09f73b37-c6e8-4188-a602-e20acdfff7ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_hide
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - options
+id: paragraph.sup_carousel_slide.sup_slide_hide
+field_name: sup_slide_hide
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: 'Hide Book Fields'
+description: 'Hide desired fields when a book is chosen.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

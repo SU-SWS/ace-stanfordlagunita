@@ -1,0 +1,33 @@
+uuid: faaf7cd5-1ccd-43e1-8cbe-d74cfd0e9e67
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_slide_color
+field_name: sup_slide_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: magenta
+      label: Magenta
+    -
+      value: grass
+      label: Grass
+    -
+      value: steel
+      label: Steel
+    -
+      value: indigo
+      label: Indigo
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

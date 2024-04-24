@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sup_carousel.sup_carousel_slides
+    - field.field.paragraph.sup_carousel.sup_carousel_top_hero
     - paragraphs.paragraphs_type.sup_carousel
   module:
     - entity_reference_revisions
@@ -23,3 +24,4 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  sup_carousel_top_hero: true

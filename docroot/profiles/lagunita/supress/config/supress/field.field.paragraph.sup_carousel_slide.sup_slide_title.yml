@@ -1,0 +1,19 @@
+uuid: 1178c896-baf7-40df-bd4c-93e283aa8a72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_title
+    - paragraphs.paragraphs_type.sup_carousel_slide
+id: paragraph.sup_carousel_slide.sup_slide_title
+field_name: sup_slide_title
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: 'Slide Title'
+description: 'Replace the title of the book (if one is selected).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

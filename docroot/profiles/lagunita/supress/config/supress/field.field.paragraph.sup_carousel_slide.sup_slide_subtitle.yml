@@ -1,0 +1,19 @@
+uuid: 782acd97-2fb7-4bc1-8204-33b77065c09d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_subtitle
+    - paragraphs.paragraphs_type.sup_carousel_slide
+id: paragraph.sup_carousel_slide.sup_slide_subtitle
+field_name: sup_slide_subtitle
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: Subtitle
+description: 'Text below the title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

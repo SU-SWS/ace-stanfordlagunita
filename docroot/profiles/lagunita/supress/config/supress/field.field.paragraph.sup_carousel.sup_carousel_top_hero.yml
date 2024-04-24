@@ -1,0 +1,21 @@
+uuid: 9db5d6ce-8076-4f56-ad13-1ddc3ff4028e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_carousel_top_hero
+    - paragraphs.paragraphs_type.sup_carousel
+id: paragraph.sup_carousel.sup_carousel_top_hero
+field_name: sup_carousel_top_hero
+entity_type: paragraph
+bundle: sup_carousel
+label: 'Page Top Hero'
+description: 'When used in the "Top Banner" of the page, choose this option to make the background appear under the top masthead area (logo, menu, etc).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

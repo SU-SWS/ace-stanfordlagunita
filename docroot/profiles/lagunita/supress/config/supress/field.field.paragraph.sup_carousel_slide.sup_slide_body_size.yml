@@ -1,0 +1,23 @@
+uuid: d657a47e-fef7-4b56-8d51-1020f4de5274
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_body_size
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - options
+id: paragraph.sup_carousel_slide.sup_slide_body_size
+field_name: sup_slide_body_size
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: 'Body Font Size'
+description: 'Choose a size of the body HTML on the slide.'
+required: true
+translatable: false
+default_value:
+  -
+    value: large
+default_value_callback: ''
+settings: {  }
+field_type: list_string

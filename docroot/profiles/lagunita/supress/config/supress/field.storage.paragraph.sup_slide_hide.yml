@@ -1,0 +1,24 @@
+uuid: 795c0a53-05d3-44e3-9a99-09085bfb383a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_slide_hide
+field_name: sup_slide_hide
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: author
+      label: Author
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
