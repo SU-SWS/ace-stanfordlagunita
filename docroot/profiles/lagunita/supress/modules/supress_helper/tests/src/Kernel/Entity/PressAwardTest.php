@@ -14,6 +14,7 @@ class PressAwardTest extends KernelTestBase {
     'system',
     'field',
     'user',
+    'migrate'
   ];
 
   protected function setUp(): void {
