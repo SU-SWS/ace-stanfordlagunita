@@ -9,7 +9,7 @@ id: paragraph.sup_carousel_slide.sup_slide_title
 field_name: sup_slide_title
 entity_type: paragraph
 bundle: sup_carousel_slide
-label: Title
+label: 'Slide Title'
 description: 'Replace the title of the book (if one is selected).'
 required: false
 translatable: false
