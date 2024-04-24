@@ -11,7 +11,7 @@ field_name: sup_slide_book
 entity_type: paragraph
 bundle: sup_carousel_slide
 label: Book
-description: ''
+description: 'Directly reference a book and pull the image, title, and author automatically. Begin typing the book title to see a list of choices.'
 required: false
 translatable: false
 default_value: {  }

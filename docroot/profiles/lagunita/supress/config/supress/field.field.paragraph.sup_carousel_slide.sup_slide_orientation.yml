@@ -1,0 +1,23 @@
+uuid: 15d91163-11bd-42b5-a134-c18c4c0edee4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_orientation
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - options
+id: paragraph.sup_carousel_slide.sup_slide_orientation
+field_name: sup_slide_orientation
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: Orientation
+description: 'Position of the contents in side the slide.'
+required: true
+translatable: false
+default_value:
+  -
+    value: left_image
+default_value_callback: ''
+settings: {  }
+field_type: list_string

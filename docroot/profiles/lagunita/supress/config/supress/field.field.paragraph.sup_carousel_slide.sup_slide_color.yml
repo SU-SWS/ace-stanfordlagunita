@@ -1,0 +1,23 @@
+uuid: 8fb94192-8e3c-4150-b807-ee509f700ee0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_color
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - options
+id: paragraph.sup_carousel_slide.sup_slide_color
+field_name: sup_slide_color
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: 'Background Color'
+description: 'Set the background for the slide.'
+required: false
+translatable: false
+default_value:
+  -
+    value: magenta
+default_value_callback: ''
+settings: {  }
+field_type: list_string

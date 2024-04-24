@@ -1,0 +1,27 @@
+uuid: d85eab95-6ad8-45fe-b2fe-95ea7e6e8d40
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_slide_orientation
+field_name: sup_slide_orientation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left_image
+      label: 'Left Image'
+    -
+      value: centered_image
+      label: 'Centered Image'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

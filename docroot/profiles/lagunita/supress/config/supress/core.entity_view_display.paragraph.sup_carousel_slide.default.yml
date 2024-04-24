@@ -4,11 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sup_carousel_slide.sup_slide_body
+    - field.field.paragraph.sup_carousel_slide.sup_slide_body_size
     - field.field.paragraph.sup_carousel_slide.sup_slide_book
     - field.field.paragraph.sup_carousel_slide.sup_slide_button
+    - field.field.paragraph.sup_carousel_slide.sup_slide_color
     - field.field.paragraph.sup_carousel_slide.sup_slide_eyebrow
+    - field.field.paragraph.sup_carousel_slide.sup_slide_hide
+    - field.field.paragraph.sup_carousel_slide.sup_slide_orientation
     - field.field.paragraph.sup_carousel_slide.sup_slide_subtitle
     - field.field.paragraph.sup_carousel_slide.sup_slide_title
+    - field.field.paragraph.sup_carousel_slide.sup_slide_title_size
+    - field.field.paragraph.sup_carousel_slide.sup_slide_top_hero
     - field.field.paragraph.sup_carousel_slide.sup_sup_image
     - paragraphs.paragraphs_type.sup_carousel_slide
   module:
@@ -16,7 +22,6 @@ dependencies:
     - field_formatter_class
     - field_label
     - link
-    - stanford_media
     - text
 id: paragraph.sup_carousel_slide.default
 targetEntityType: paragraph
@@ -28,7 +33,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   sup_slide_button:
     type: link
@@ -47,7 +52,7 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 5
+    weight: 4
     region: content
   sup_slide_eyebrow:
     type: string
@@ -55,7 +60,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   sup_slide_subtitle:
     type: string
@@ -63,7 +68,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   sup_slide_title:
     type: string
@@ -71,26 +76,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  sup_sup_image:
-    type: media_responsive_image_formatter
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-      image_style: responsive_1_1
-      remove_alt: 0
-    third_party_settings:
-      empty_fields:
-        handler: ''
-      field_formatter_class:
-        class: ''
-      field_label:
-        label_value: ''
-        label_tag: ''
-    weight: 0
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true
+  sup_slide_body_size: true
   sup_slide_book: true
+  sup_slide_color: true
+  sup_slide_hide: true
+  sup_slide_orientation: true
+  sup_slide_title_size: true
+  sup_slide_top_hero: true
+  sup_sup_image: true

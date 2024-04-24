@@ -11,7 +11,7 @@ field_name: sup_sup_image
 entity_type: paragraph
 bundle: sup_carousel_slide
 label: Image
-description: ''
+description: 'Provide a chosen image instead of the image from the book (if one is selected).'
 required: false
 translatable: false
 default_value: {  }

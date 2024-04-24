@@ -1,0 +1,23 @@
+uuid: 7e130671-c9cc-44ff-8795-5d56b857ce66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_slide_title_size
+    - paragraphs.paragraphs_type.sup_carousel_slide
+  module:
+    - options
+id: paragraph.sup_carousel_slide.sup_slide_title_size
+field_name: sup_slide_title_size
+entity_type: paragraph
+bundle: sup_carousel_slide
+label: 'Title Font Size'
+description: 'Choose the size of the title display.'
+required: true
+translatable: false
+default_value:
+  -
+    value: large
+default_value_callback: ''
+settings: {  }
+field_type: list_string

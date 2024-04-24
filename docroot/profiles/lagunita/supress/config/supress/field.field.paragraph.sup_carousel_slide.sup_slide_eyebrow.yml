@@ -10,7 +10,7 @@ field_name: sup_slide_eyebrow
 entity_type: paragraph
 bundle: sup_carousel_slide
 label: Eyebrow
-description: ''
+description: 'Text that displays above the title.'
 required: false
 translatable: false
 default_value: {  }

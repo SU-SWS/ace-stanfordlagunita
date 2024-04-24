@@ -10,7 +10,7 @@ field_name: sup_slide_subtitle
 entity_type: paragraph
 bundle: sup_carousel_slide
 label: Subtitle
-description: ''
+description: 'Text below the title.'
 required: false
 translatable: false
 default_value: {  }

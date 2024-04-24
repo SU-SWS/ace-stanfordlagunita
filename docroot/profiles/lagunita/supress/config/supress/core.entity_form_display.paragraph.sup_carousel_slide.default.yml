@@ -4,22 +4,59 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sup_carousel_slide.sup_slide_body
+    - field.field.paragraph.sup_carousel_slide.sup_slide_body_size
     - field.field.paragraph.sup_carousel_slide.sup_slide_book
     - field.field.paragraph.sup_carousel_slide.sup_slide_button
+    - field.field.paragraph.sup_carousel_slide.sup_slide_color
     - field.field.paragraph.sup_carousel_slide.sup_slide_eyebrow
+    - field.field.paragraph.sup_carousel_slide.sup_slide_hide
+    - field.field.paragraph.sup_carousel_slide.sup_slide_orientation
     - field.field.paragraph.sup_carousel_slide.sup_slide_subtitle
     - field.field.paragraph.sup_carousel_slide.sup_slide_title
+    - field.field.paragraph.sup_carousel_slide.sup_slide_title_size
+    - field.field.paragraph.sup_carousel_slide.sup_slide_top_hero
     - field.field.paragraph.sup_carousel_slide.sup_sup_image
     - paragraphs.paragraphs_type.sup_carousel_slide
   module:
+    - change_labels
+    - field_group
     - link
     - media_library
     - text
+third_party_settings:
+  field_group:
+    group_styles_behaviors:
+      children:
+        - sup_slide_color
+        - sup_slide_top_hero
+        - sup_slide_orientation
+        - sup_slide_title_size
+        - sup_slide_body_size
+        - sup_slide_hide
+      label: Styles/Behaviors
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
 id: paragraph.sup_carousel_slide.default
 targetEntityType: paragraph
 bundle: sup_carousel_slide
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sup_slide_body:
     type: text_textarea
     weight: 5
@@ -27,6 +64,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  sup_slide_body_size:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
     third_party_settings: {  }
   sup_slide_book:
     type: entity_reference_autocomplete
@@ -46,6 +89,12 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  sup_slide_color:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sup_slide_eyebrow:
     type: string_textfield
     weight: 2
@@ -53,6 +102,18 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  sup_slide_hide:
+    type: options_buttons
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_slide_orientation:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   sup_slide_subtitle:
     type: string_textfield
@@ -70,6 +131,21 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  sup_slide_title_size:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sup_slide_top_hero:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings:
+      change_labels:
+        field_label_overwrite: ''
   sup_sup_image:
     type: media_library_widget
     weight: 1
@@ -79,4 +155,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true
