@@ -1,0 +1,65 @@
+adding:
+  entity_config:
+    node:
+      sum_summer_courses:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+        routes_enabled: true
+    taxonomy_term:
+      sum_course_availability:
+        enabled: true
+      sum_course_interest_area:
+        enabled: true
+      sum_course_population:
+        enabled: true
+  field_config:
+    config_pages:
+      stanford_basic_site_settings:
+        sum_site_header_prim:
+          enabled: true
+        sum_site_header_sec:
+          enabled: true
+    node:
+      sum_summer_courses:
+        sum_course_availability:
+          enabled: true
+        sum_course_catalog_number:
+          enabled: true
+        sum_course_class_number:
+          enabled: true
+        sum_course_course_cost:
+          enabled: true
+        sum_course_cross_listing:
+          enabled: true
+        sum_course_description:
+          enabled: true
+        sum_course_end_date:
+          enabled: true
+        sum_course_format:
+          enabled: true
+        sum_course_instructors:
+          enabled: true
+        sum_course_interest_area:
+          enabled: true
+        sum_course_length:
+          enabled: true
+        sum_course_notes:
+          enabled: true
+        sum_course_population:
+          enabled: true
+        sum_course_prerequisites:
+          enabled: true
+        sum_course_schedule:
+          enabled: true
+        sum_course_start_date:
+          enabled: true
+        sum_course_syllabus_file:
+          enabled: true
+        sum_course_unique_import_id:
+          enabled: true
+        sum_course_units:
+          enabled: true
+        sum_students_also_studied:
+          enabled: true
+removing: {  }

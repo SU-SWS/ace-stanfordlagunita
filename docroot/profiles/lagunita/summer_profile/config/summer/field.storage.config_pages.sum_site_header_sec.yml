@@ -1,0 +1,19 @@
+uuid: 12a60913-52e9-49ff-b67c-c32f45edc92b
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - link
+id: config_pages.sum_site_header_sec
+field_name: sum_site_header_sec
+entity_type: config_pages
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

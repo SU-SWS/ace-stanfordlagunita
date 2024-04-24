@@ -47,3 +47,4 @@ partial_list:
   - '*stanford_*'
   - 'user.role.*'
   - 'search_api.index.*'
+  - graphql_compose.settings

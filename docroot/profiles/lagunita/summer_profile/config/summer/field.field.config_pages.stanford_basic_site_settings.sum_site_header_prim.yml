@@ -1,0 +1,23 @@
+uuid: 63c222e2-0f83-4d29-b37a-9ce1cb8cc820
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_basic_site_settings
+    - field.storage.config_pages.sum_site_header_prim
+  module:
+    - link
+id: config_pages.stanford_basic_site_settings.sum_site_header_prim
+field_name: sum_site_header_prim
+entity_type: config_pages
+bundle: stanford_basic_site_settings
+label: 'Header Primary Button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

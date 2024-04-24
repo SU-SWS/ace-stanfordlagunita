@@ -1,0 +1,23 @@
+adding:
+  dependencies:
+    config:
+      - field.field.config_pages.stanford_basic_site_settings.sum_site_header_prim
+      - field.field.config_pages.stanford_basic_site_settings.sum_site_header_sec
+  content:
+    sum_site_header_prim:
+      type: link_default
+      weight: 22
+      region: content
+      settings:
+        placeholder_url: ''
+        placeholder_title: ''
+      third_party_settings: {  }
+    sum_site_header_sec:
+      type: link_default
+      weight: 23
+      region: content
+      settings:
+        placeholder_url: ''
+        placeholder_title: ''
+      third_party_settings: {  }
+removing: {  }
