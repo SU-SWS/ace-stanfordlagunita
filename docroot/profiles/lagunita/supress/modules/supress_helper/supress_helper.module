@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Installer\InstallerKernel;
+use Drupal\search_api\IndexInterface;
+use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_cron().
@@ -68,5 +70,35 @@ function supress_helper_cron() {
   catch (\Exception $e) {
     \Drupal::logger('supress_helper')
       ->error('Error in press cron job: ' . $e->getMessage());
+  }
+}
+
+/**
+ * Implements hook_search_api_algolia_objects_alter().
+ */
+function supress_helper_search_api_algolia_objects_alter(array &$objects, IndexInterface $index, array $items) {
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  foreach ($objects as &$object) {
+    // Useful to limit record data for local algolia testing.
+    if (Settings::get('algolia_limit_record')) {
+      $object['html'] = substr($object['html'] ?? 'empty', 0, 50);
+    }
+
+    if (isset($object['book_subject'])) {
+      $object['book_subject'] = is_array($object['book_subject']) ? $object['book_subject'] : [$object['book_subject']];
+      foreach ($object['book_subject'] as &$term_id) {
+        while ($term_id) {
+          $term = $term_storage->load($term_id);
+          $term_id = $term->get('parent')->getString();
+
+          if (!$term_storage->load($term_id)) {
+            $term_id = FALSE;
+          }
+        }
+        $term_id = $term->label();
+      }
+      asort($object['book_subject']);
+      $object['book_subject'] = array_values(array_unique($object['book_subject']));
+    }
   }
 }

@@ -62,6 +62,7 @@ $additionalSettingsFiles = [
   __DIR__ . '/fast404.settings.php',
   __DIR__ . '/saml.settings.php',
   __DIR__ . '/xmlsitemap.settings.php',
+  DRUPAL_ROOT . '/../keys/secrets.settings.php',
 ];
 
 foreach ($additionalSettingsFiles as $settingsFile) {

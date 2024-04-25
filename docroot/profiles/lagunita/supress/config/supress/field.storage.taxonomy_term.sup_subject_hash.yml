@@ -1,0 +1,21 @@
+uuid: a82ca145-a332-4d56-bdbc-cc6f3563e719
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.sup_subject_hash
+field_name: sup_subject_hash
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

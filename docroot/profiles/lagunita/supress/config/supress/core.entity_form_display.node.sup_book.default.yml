@@ -71,106 +71,161 @@ third_party_settings:
   field_group:
     group_catalog_information:
       children:
-        - sup_catalog_month
-        - sup_catalog_page
-        - sup_catalog_season_yyyy
+        - sup_book_catalog_season_yyyy
       label: 'Catalog Information'
       region: content
       parent_name: ''
-      weight: 6
-      format_type: fieldset
+      weight: 7
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
         description: ''
         required_fields: true
     group_web_coupon_codes:
       children:
-        - sup_web_code_cloth
-        - sup_web_code_paper
+        - sup_book_web_code_paper
+        - sup_book_web_code_cloth
       label: 'Web Coupon Codes'
       region: content
       parent_name: group_prices
       weight: 51
-      format_type: fieldset
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
         description: ''
         required_fields: true
     group_publication_status:
       children:
-        - sup_status_cloth
-        - sup_status_paper
-        - sup_status_digital
+        - sup_book_status_cloth
+        - sup_book_status_paper
+        - sup_book_status_digital
+        - sup_book_in_print_status
+        - sup_book_new_paperback_yn
+        - sup_book_print_desk_copies
       label: 'Publication Status'
       region: content
       parent_name: ''
-      weight: 22
-      format_type: fieldset
+      weight: 20
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
         description: ''
         required_fields: true
     group_publication_dates:
       children:
-        - sup_pub_date_cloth
-        - sup_pub_date_paper
-        - sup_pub_date_digital
-        - sup_pub_date_first
-        - sup_pub_year_first
+        - sup_book_pub_year_first
+        - sup_book_pub_date_cloth
+        - sup_book_pub_date_paper
+        - sup_book_pub_date_digital
+        - sup_book_pub_date_first
       label: 'Publication Dates'
       region: content
       parent_name: ''
-      weight: 23
-      format_type: fieldset
+      weight: 21
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
         description: ''
         required_fields: true
     group_prices:
       children:
-        - sup_price_cloth
-        - sup_price_paper
-        - sup_price_digital
-        - sup_cloth_sale_percent
-        - sup_cloth_sale_price
-        - sup_paper_sale_percent
-        - sup_paper_sale_price
+        - sup_book_price_cloth
+        - sup_book_cloth_sale_price
+        - sup_book_cloth_sale_percent
+        - sup_book_paper_sale_price
+        - sup_book_paper_sale_percent
+        - sup_book_price_digital
+        - sup_book_sales_rank
+        - sup_book_price_paper
         - group_web_coupon_codes
       label: Prices
       region: content
       parent_name: ''
-      weight: 7
-      format_type: fieldset
+      weight: 8
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
         description: ''
         required_fields: true
     group_isbn_information:
       children:
-        - sup_isbn_13_cloth
-        - sup_isbn_13_paper
-        - sup_isbn_13_digital
-        - sup_isbn_13_alt
-        - sup_isbn_13_isw
+        - sup_book_isbn_13_cloth
+        - sup_book_isbn_13_paper
+        - sup_book_isbn_13_digital
+        - sup_book_isbn_13_alt
+        - sup_book_isbn_13_isw
       label: 'ISBN Information'
       region: content
       parent_name: ''
       weight: 17
-      format_type: fieldset
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_author_information:
+      children:
+        - sup_book_authors
+        - sup_book_authors_full
+        - sup_book_author_info
+      label: 'Author Information'
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_table_of_contents:
+      children:
+        - sup_book_table_of_contents
+      label: 'Table of Contents'
+      region: content
+      parent_name: ''
+      weight: 33
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_reviews:
+      children:
+        - sup_book_reviews
+      label: Reviews
+      region: content
+      parent_name: ''
+      weight: 32
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
         description: ''
         required_fields: true
 id: node.sup_book.default
@@ -180,20 +235,20 @@ mode: default
 content:
   publish_on:
     type: datetime_timestamp
-    weight: 33
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 32
+    weight: 28
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_book_author_info:
     type: text_textarea
-    weight: 42
+    weight: 5
     region: content
     settings:
       rows: 5
@@ -233,7 +288,7 @@ content:
     third_party_settings: {  }
   sup_book_authors_full:
     type: string_textfield
-    weight: 40
+    weight: 4
     region: content
     settings:
       size: 60
@@ -241,7 +296,7 @@ content:
     third_party_settings: {  }
   sup_book_avail_desc:
     type: string_textfield
-    weight: 9
+    weight: 10
     region: content
     settings:
       size: 60
@@ -249,7 +304,7 @@ content:
     third_party_settings: {  }
   sup_book_awards:
     type: inline_entity_form_complex
-    weight: 31
+    weight: 27
     region: content
     settings:
       form_mode: default
@@ -272,7 +327,7 @@ content:
         force_single_cardinality: 0
   sup_book_catalog_month:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
@@ -280,7 +335,7 @@ content:
     third_party_settings: {  }
   sup_book_catalog_page:
     type: string_textfield
-    weight: 5
+    weight: 4
     region: content
     settings:
       size: 60
@@ -288,7 +343,7 @@ content:
     third_party_settings: {  }
   sup_book_catalog_season_yyyy:
     type: string_textfield
-    weight: 6
+    weight: 7
     region: content
     settings:
       size: 60
@@ -296,21 +351,21 @@ content:
     third_party_settings: {  }
   sup_book_cloth_sale_percent:
     type: number
-    weight: 46
+    weight: 45
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_cloth_sale_price:
     type: number
-    weight: 48
+    weight: 44
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_copublisher_name:
     type: string_textfield
-    weight: 10
+    weight: 11
     region: content
     settings:
       size: 60
@@ -318,21 +373,21 @@ content:
     third_party_settings: {  }
   sup_book_copublisher_yn:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_book_copyright:
     type: number
-    weight: 12
+    weight: 13
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_description:
     type: text_textarea
-    weight: 8
+    weight: 9
     region: content
     settings:
       rows: 5
@@ -340,14 +395,14 @@ content:
     third_party_settings: {  }
   sup_book_digital_comp_link:
     type: boolean_checkbox
-    weight: 13
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_book_html_page_title:
     type: string_textfield
-    weight: 14
+    weight: 15
     region: content
     settings:
       size: 60
@@ -355,7 +410,7 @@ content:
     third_party_settings: {  }
   sup_book_illustrations:
     type: string_textfield
-    weight: 15
+    weight: 16
     region: content
     settings:
       size: 60
@@ -370,7 +425,7 @@ content:
     third_party_settings: {  }
   sup_book_imprint:
     type: entity_reference_autocomplete
-    weight: 34
+    weight: 30
     region: content
     settings:
       match_operator: CONTAINS
@@ -380,7 +435,7 @@ content:
     third_party_settings: {  }
   sup_book_in_print_status:
     type: string_textfield
-    weight: 16
+    weight: 51
     region: content
     settings:
       size: 60
@@ -388,7 +443,7 @@ content:
     third_party_settings: {  }
   sup_book_instructor_recommended:
     type: string_textfield
-    weight: 29
+    weight: 25
     region: content
     settings:
       size: 60
@@ -396,7 +451,7 @@ content:
     third_party_settings: {  }
   sup_book_isbn_13_alt:
     type: string_textfield
-    weight: 29
+    weight: 28
     region: content
     settings:
       size: 60
@@ -420,7 +475,7 @@ content:
     third_party_settings: {  }
   sup_book_isbn_13_isw:
     type: string_textfield
-    weight: 30
+    weight: 29
     region: content
     settings:
       size: 60
@@ -444,28 +499,28 @@ content:
     third_party_settings: {  }
   sup_book_new_paperback_yn:
     type: boolean_checkbox
-    weight: 19
+    weight: 52
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_book_pages:
     type: number
-    weight: 20
+    weight: 19
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_paper_sale_percent:
     type: number
-    weight: 49
+    weight: 47
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_paper_sale_price:
     type: number
-    weight: 50
+    weight: 46
     region: content
     settings:
       placeholder: ''
@@ -479,21 +534,21 @@ content:
     third_party_settings: {  }
   sup_book_price_digital:
     type: number
-    weight: 45
+    weight: 48
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_price_paper:
     type: number
-    weight: 44
+    weight: 50
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_print_desk_copies:
     type: string_textfield
-    weight: 21
+    weight: 53
     region: content
     settings:
       size: 60
@@ -501,25 +556,25 @@ content:
     third_party_settings: {  }
   sup_book_pub_date_cloth:
     type: datetime_default
-    weight: 25
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   sup_book_pub_date_digital:
     type: datetime_default
-    weight: 27
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
   sup_book_pub_date_first:
     type: datetime_default
-    weight: 28
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
   sup_book_pub_date_paper:
     type: datetime_default
-    weight: 26
+    weight: 31
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -533,7 +588,7 @@ content:
     third_party_settings: {  }
   sup_book_related_titles:
     type: entity_reference_autocomplete
-    weight: 36
+    weight: 34
     region: content
     settings:
       match_operator: CONTAINS
@@ -543,7 +598,7 @@ content:
     third_party_settings: {  }
   sup_book_reviews:
     type: text_textarea
-    weight: 24
+    weight: 22
     region: content
     settings:
       rows: 5
@@ -551,7 +606,7 @@ content:
     third_party_settings: {  }
   sup_book_rights_description:
     type: string_textfield
-    weight: 25
+    weight: 23
     region: content
     settings:
       size: 60
@@ -559,14 +614,14 @@ content:
     third_party_settings: {  }
   sup_book_sales_rank:
     type: number
-    weight: 26
+    weight: 49
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_series:
     type: entity_reference_autocomplete
-    weight: 35
+    weight: 31
     region: content
     settings:
       match_operator: CONTAINS
@@ -582,7 +637,7 @@ content:
     third_party_settings: {  }
   sup_book_status_digital:
     type: options_select
-    weight: 51
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -594,7 +649,7 @@ content:
     third_party_settings: {  }
   sup_book_subjects:
     type: entity_reference_autocomplete
-    weight: 30
+    weight: 26
     region: content
     settings:
       match_operator: CONTAINS
@@ -612,7 +667,7 @@ content:
     third_party_settings: {  }
   sup_book_table_of_contents:
     type: text_textarea
-    weight: 27
+    weight: 24
     region: content
     settings:
       rows: 5
@@ -620,7 +675,7 @@ content:
     third_party_settings: {  }
   sup_book_url_isw:
     type: string_textfield
-    weight: 28
+    weight: 24
     region: content
     settings:
       size: 60
@@ -628,7 +683,7 @@ content:
     third_party_settings: {  }
   sup_book_web_code_cloth:
     type: string_textfield
-    weight: 21
+    weight: 26
     region: content
     settings:
       size: 60
@@ -636,7 +691,7 @@ content:
     third_party_settings: {  }
   sup_book_web_code_paper:
     type: string_textfield
-    weight: 22
+    weight: 25
     region: content
     settings:
       size: 60

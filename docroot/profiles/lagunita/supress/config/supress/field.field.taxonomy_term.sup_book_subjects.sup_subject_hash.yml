@@ -1,0 +1,19 @@
+uuid: d6c1b696-a77f-4f17-86f4-11c25e14219f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.sup_subject_hash
+    - taxonomy.vocabulary.sup_book_subjects
+id: taxonomy_term.sup_book_subjects.sup_subject_hash
+field_name: sup_subject_hash
+entity_type: taxonomy_term
+bundle: sup_book_subjects
+label: 'Subject hash'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

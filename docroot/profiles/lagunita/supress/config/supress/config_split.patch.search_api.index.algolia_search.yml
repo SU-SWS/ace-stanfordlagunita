@@ -1,12 +1,30 @@
 adding:
   dependencies:
     config:
+      - field.storage.node.sup_book_authors_full
+      - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_subjects
   field_settings:
-    book_subject:
-      label: 'Book Subjects » Taxonomy term » Name'
+    book_authors:
+      label: 'Authors (full)'
       datasource_id: 'entity:node'
-      property_path: 'sup_book_subjects:entity:name'
+      property_path: sup_book_authors_full
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_authors_full
+    book_published:
+      label: 'Publication Date First'
+      datasource_id: 'entity:node'
+      property_path: sup_book_pub_date_first
+      type: integer
+      dependencies:
+        config:
+          - field.storage.node.sup_book_pub_date_first
+    book_subject:
+      label: 'Book Subjects » Taxonomy term » Parent Name'
+      datasource_id: 'entity:node'
+      property_path: 'sup_book_subjects:entity:tid'
       type: string
       dependencies:
         config:
@@ -18,8 +36,16 @@ adding:
         view_mode:
           'entity:node':
             sup_book: search_indexing
+    photo:
+      configuration:
+        value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image|node:sup_book_image:entity:field_media_image:large]'
   processor_settings:
     html_filter:
       fields:
+        - book_authors
         - book_subject
-removing: {  }
+removing:
+  field_settings:
+    photo:
+      configuration:
+        value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'

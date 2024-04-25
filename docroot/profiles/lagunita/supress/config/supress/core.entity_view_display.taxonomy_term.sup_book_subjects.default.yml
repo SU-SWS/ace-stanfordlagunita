@@ -1,0 +1,16 @@
+uuid: 1132d6f1-8437-4f9d-9bdd-e5632b5e0fa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sup_book_subjects.sup_subject_hash
+    - taxonomy.vocabulary.sup_book_subjects
+id: taxonomy_term.sup_book_subjects.default
+targetEntityType: taxonomy_term
+bundle: sup_book_subjects
+mode: default
+content: {  }
+hidden:
+  description: true
+  search_api_excerpt: true
+  sup_subject_hash: true

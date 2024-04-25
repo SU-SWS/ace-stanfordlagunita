@@ -361,7 +361,7 @@ process:
   sup_book_authors/3/middle: author_3_middle
   sup_book_authors/3/title: author_3_preceding
   sup_book_authors/3/credentials: author_3_role
-  sup_book_author_info:
+  sup_book_author_info/value:
     -
       plugin: str_replace
       source: author_info
@@ -371,6 +371,7 @@ process:
       replace:
         - '<em>'
         - '</em>'
+  sup_book_author_info/format: constants/stanford_html
   sup_book_authors_full: authors_full
   sup_book_avail_desc: availability_description
   sup_book_catalog_month: catalog_month
@@ -393,10 +394,7 @@ process:
         - '<em>'
         - '</em>'
         - '<br />'
-  sup_book_description/format:
-    -
-      plugin: default_value
-      default_value: stanford_html
+  sup_book_description/format: constants/stanford_html
   sup_book_digital_comp_link: digital_comp_link
   sup_book_html_page_title: html_page_title
   sup_book_illustrations: illustrations
@@ -424,7 +422,8 @@ process:
   sup_book_isbn_13_digital: isbn_13_digital
   sup_book_isbn_13_isw: isbn_13_isw
   sup_book_isbn_13_paper: isbn_13_paper
-  sup_book_local_web_blurb: local_web_blurb
+  sup_book_local_web_blurb/value: local_web_blurb
+  sup_book_local_web_blurb/format: constants/stanford_html
   sup_book_new_paperback_yn: new_paperback_yn
   sup_book_pages: pages
   sup_book_paper_sale_percent: paper_sale_percent
@@ -450,10 +449,7 @@ process:
         - '<em>'
         - '</em>'
         - '<br />'
-  sup_book_reviews/format:
-    -
-      plugin: default_value
-      default_value: stanford_html
+  sup_book_reviews/format: constants/stanford_html
   sup_book_rights_description: rights_description
   sup_book_sales_rank: sales_rank
   sup_book_series:
@@ -477,26 +473,96 @@ process:
   sup_book_status_digital: status_digital
   sup_book_status_paper: status_paper
   sup_book_subtitle: subtitle
-  sup_book_table_of_contents: table_of_contents
+  sup_book_table_of_contents/value: table_of_contents
+  sup_book_table_of_contents/format: constants/stanford_html
   sup_book_url_isw: url_isw
   sup_book_web_code_cloth: web_code_cloth
   sup_book_web_code_paper: web_code_paper
   sup_book_work_id_number: work_id_number
   sup_book_subjects:
     -
-      plugin: str_replace
+      plugin: skip_on_empty
       source: subjects_press_all
-      search:
-        - "\r"
-      replace:
-        - " \r "
+      method: process
+    -
+      plugin: str_replace
+      regex: true
+      search: "/\\r$/"
+      replace: ""
     -
       plugin: explode
       delimiter: "\r"
     -
-      plugin: nested_term_generate
-      vocabulary: sup_book_subjects
-      delimiter: '--'
+      plugin: explode
+      delimiter: "-"
+      limit: 2
+    -
+      plugin: sub_process
+      process:
+        subject_parent_name:
+          -
+            plugin: skip_on_empty
+            method: process
+            source: "0"
+          -
+            plugin: str_replace
+            regex: true
+            search: "/ +$/"
+            replace: ""
+        subject_parent:
+          -
+            plugin: skip_on_empty
+            method: process
+            source: "@subject_parent_name"
+          -
+            plugin: entity_generate
+            entity_type: taxonomy_term
+            bundle_key: vid
+            bundle: sup_book_subjects
+            value_key: sup_subject_hash
+            values:
+              name: "@subject_parent_name"
+        subject_child_name:
+          -
+            plugin: skip_on_empty
+            method: process
+            source: "1"
+          -
+            plugin: str_replace
+            regex: true
+            search: "/^([- ]+)/"
+            replace: ""
+        subject_child_path:
+          -
+            plugin: skip_on_empty
+            method: process
+            source: "@subject_child_name"
+          -
+            plugin: concat
+            delimiter: "|"
+            source:
+              - "@subject_parent_name"
+              - "@subject_child_name"
+        subject_child:
+          -
+            plugin: skip_on_empty
+            source: "@subject_child_path"
+            method: process
+          -
+            plugin: entity_generate
+            entity_type: taxonomy_term
+            bundle_key: vid
+            bundle: sup_book_subjects
+            value_key: sup_subject_hash
+            source: "@subject_child_path"
+            values:
+              name: "@subject_child_name"
+              parent: "@subject_parent"
+        target_id:
+          plugin: null_coalesce
+          source:
+            - "@subject_child"
+            - "@subject_parent"
   sup_book_awards:
     -
       plugin: explode

@@ -23,3 +23,4 @@ shared_configuration:
       timeout: 60
     constants:
       minimal_html: stanford_minimal_html
+      stanford_html: stanford_html

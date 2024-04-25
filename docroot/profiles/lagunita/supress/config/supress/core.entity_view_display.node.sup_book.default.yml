@@ -60,7 +60,11 @@ dependencies:
     - field.field.node.sup_book.sup_book_work_id_number
     - node.type.sup_book
   module:
+    - cshs
     - datetime
+    - empty_fields
+    - field_formatter_class
+    - field_label
     - name
     - options
     - text
@@ -493,11 +497,22 @@ content:
     weight: 168
     region: content
   sup_book_subjects:
-    type: entity_reference_label
+    type: cshs_group_by_root
     label: above
     settings:
-      link: true
-    third_party_settings: {  }
+      sort: asc
+      depth: '0'
+      linked: 0
+      reverse: 0
+      last_child: 0
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 177
     region: content
   sup_book_subtitle:
