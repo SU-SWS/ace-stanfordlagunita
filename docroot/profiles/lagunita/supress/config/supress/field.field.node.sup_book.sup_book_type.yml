@@ -1,0 +1,23 @@
+uuid: 6f37ad17-0286-4040-8d25-6e4018e2c15e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_type
+    - node.type.sup_book
+  module:
+    - options
+id: node.sup_book.sup_book_type
+field_name: sup_book_type
+entity_type: node
+bundle: sup_book
+label: Type
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: book
+default_value_callback: ''
+settings: {  }
+field_type: list_string

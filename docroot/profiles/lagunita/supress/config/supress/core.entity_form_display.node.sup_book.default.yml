@@ -54,6 +54,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
     - field.field.node.sup_book.sup_book_table_of_contents
+    - field.field.node.sup_book.sup_book_type
     - field.field.node.sup_book.sup_book_url_isw
     - field.field.node.sup_book.sup_book_web_code_cloth
     - field.field.node.sup_book.sup_book_web_code_paper
@@ -75,7 +76,7 @@ third_party_settings:
       label: 'Catalog Information'
       region: content
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: details
       format_settings:
         classes: ''
@@ -111,7 +112,7 @@ third_party_settings:
       label: 'Publication Status'
       region: content
       parent_name: ''
-      weight: 20
+      weight: 21
       format_type: details
       format_settings:
         classes: ''
@@ -130,7 +131,7 @@ third_party_settings:
       label: 'Publication Dates'
       region: content
       parent_name: ''
-      weight: 21
+      weight: 22
       format_type: details
       format_settings:
         classes: ''
@@ -153,7 +154,7 @@ third_party_settings:
       label: Prices
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: details
       format_settings:
         classes: ''
@@ -172,7 +173,7 @@ third_party_settings:
       label: 'ISBN Information'
       region: content
       parent_name: ''
-      weight: 17
+      weight: 18
       format_type: details
       format_settings:
         classes: ''
@@ -189,7 +190,7 @@ third_party_settings:
       label: 'Author Information'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -296,7 +297,7 @@ content:
     third_party_settings: {  }
   sup_book_avail_desc:
     type: string_textfield
-    weight: 10
+    weight: 11
     region: content
     settings:
       size: 60
@@ -365,7 +366,7 @@ content:
     third_party_settings: {  }
   sup_book_copublisher_name:
     type: string_textfield
-    weight: 11
+    weight: 12
     region: content
     settings:
       size: 60
@@ -373,21 +374,21 @@ content:
     third_party_settings: {  }
   sup_book_copublisher_yn:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_book_copyright:
     type: number
-    weight: 13
+    weight: 14
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_description:
     type: text_textarea
-    weight: 9
+    weight: 10
     region: content
     settings:
       rows: 5
@@ -395,14 +396,14 @@ content:
     third_party_settings: {  }
   sup_book_digital_comp_link:
     type: boolean_checkbox
-    weight: 14
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_book_html_page_title:
     type: string_textfield
-    weight: 15
+    weight: 16
     region: content
     settings:
       size: 60
@@ -410,7 +411,7 @@ content:
     third_party_settings: {  }
   sup_book_illustrations:
     type: string_textfield
-    weight: 16
+    weight: 17
     region: content
     settings:
       size: 60
@@ -491,7 +492,7 @@ content:
     third_party_settings: {  }
   sup_book_local_web_blurb:
     type: text_textarea
-    weight: 18
+    weight: 19
     region: content
     settings:
       rows: 5
@@ -506,7 +507,7 @@ content:
     third_party_settings: {  }
   sup_book_pages:
     type: number
-    weight: 19
+    weight: 20
     region: content
     settings:
       placeholder: ''
@@ -672,6 +673,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  sup_book_type:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
   sup_book_url_isw:
     type: string_textfield

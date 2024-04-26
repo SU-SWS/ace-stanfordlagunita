@@ -81,7 +81,7 @@ function supress_helper_search_api_algolia_objects_alter(array &$objects, IndexI
   foreach ($objects as &$object) {
     // Useful to limit record data for local algolia testing.
     if (Settings::get('algolia_limit_record')) {
-      $object['html'] = substr($object['html'] ?? 'empty', 0, 50);
+      $object['html'] = implode(' ', array_slice(explode(' ', $object['html'] ?? ''), 0, 10));
     }
 
     if (isset($object['book_subject'])) {

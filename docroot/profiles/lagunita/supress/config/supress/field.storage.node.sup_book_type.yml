@@ -1,0 +1,27 @@
+uuid: 77d399cc-cf65-47a8-afc0-ca4ab8d4f564
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.sup_book_type
+field_name: sup_book_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: book
+      label: 'Standard Book'
+    -
+      value: digital_project
+      label: 'Digital Project'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

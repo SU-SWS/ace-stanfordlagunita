@@ -54,6 +54,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
     - field.field.node.sup_book.sup_book_table_of_contents
+    - field.field.node.sup_book.sup_book_type
     - field.field.node.sup_book.sup_book_url_isw
     - field.field.node.sup_book.sup_book_web_code_cloth
     - field.field.node.sup_book.sup_book_web_code_paper
@@ -529,6 +530,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 170
+    region: content
+  sup_book_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 191
     region: content
   sup_book_url_isw:
     type: string
