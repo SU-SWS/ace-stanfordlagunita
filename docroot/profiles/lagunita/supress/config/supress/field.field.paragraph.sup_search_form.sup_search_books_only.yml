@@ -1,0 +1,21 @@
+uuid: c0fb6aff-767d-4455-b942-7b8476d1db4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_search_books_only
+    - paragraphs.paragraphs_type.sup_search_form
+id: paragraph.sup_search_form.sup_search_books_only
+field_name: sup_search_books_only
+entity_type: paragraph
+bundle: sup_search_form
+label: 'Books Only'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

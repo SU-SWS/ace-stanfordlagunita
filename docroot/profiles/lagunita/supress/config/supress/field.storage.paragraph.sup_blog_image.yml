@@ -1,0 +1,20 @@
+uuid: 40932c91-a04e-4372-9ccb-0340660b033d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sup_blog_image
+field_name: sup_blog_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

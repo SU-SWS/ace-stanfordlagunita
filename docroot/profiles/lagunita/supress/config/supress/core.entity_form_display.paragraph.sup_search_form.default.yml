@@ -1,0 +1,42 @@
+uuid: 2596d8bd-3438-49e7-8e9c-fe0da628eb53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_search_form.sup_search_books_only
+    - field.field.paragraph.sup_search_form.sup_search_subject
+    - paragraphs.paragraphs_type.sup_search_form
+  module:
+    - change_labels
+id: paragraph.sup_search_form.default
+targetEntityType: paragraph
+bundle: sup_search_form
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sup_search_books_only:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sup_search_subject:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+hidden:
+  created: true

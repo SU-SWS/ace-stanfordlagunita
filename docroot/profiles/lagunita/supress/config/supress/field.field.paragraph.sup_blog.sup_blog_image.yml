@@ -1,0 +1,29 @@
+uuid: 089b7aca-1a39-402e-b502-c03dde68a383
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_blog_image
+    - media.type.image
+    - paragraphs.paragraphs_type.sup_blog
+id: paragraph.sup_blog.sup_blog_image
+field_name: sup_blog_image
+entity_type: paragraph
+bundle: sup_blog
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

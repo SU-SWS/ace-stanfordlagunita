@@ -13,6 +13,7 @@ folder: profiles/lagunita/supress/config/supress
 module: {  }
 theme: {  }
 complete_list:
+  - core.entity_view_mode.paragraph.sup_form_preview
   - 'config_pages.type.sup_*'
   - 'node.type.sup_*'
   - 'paragraphs.paragraphs_type.sup_*'

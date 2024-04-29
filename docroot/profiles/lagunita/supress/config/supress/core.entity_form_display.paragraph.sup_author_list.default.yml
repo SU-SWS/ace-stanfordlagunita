@@ -1,0 +1,20 @@
+uuid: 86af4743-d164-4f32-95ee-1e7d40140fbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sup_author_list
+id: paragraph.sup_author_list.default
+targetEntityType: paragraph
+bundle: sup_author_list
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true

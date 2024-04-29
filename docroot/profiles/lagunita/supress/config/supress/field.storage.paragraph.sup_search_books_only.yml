@@ -1,0 +1,18 @@
+uuid: 8705e457-d4b3-4d95-844d-ab30bf1260e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sup_search_books_only
+field_name: sup_search_books_only
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

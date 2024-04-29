@@ -9,13 +9,22 @@ adding:
     paragraph:
       stanford_page_title_banner:
         query_load_enabled: true
+      sup_author_list:
+        enabled: true
+      sup_blog:
+        enabled: true
+      sup_blog_teaser:
+        enabled: true
       sup_carousel:
         enabled: true
       sup_carousel_slide:
         enabled: true
       sup_file_list:
         enabled: true
-      sup_pre_built:
+      sup_search_form:
+        enabled: true
+    sup_award:
+      sup_award:
         enabled: true
     taxonomy_term:
       sup_book_subjects:
@@ -27,14 +36,9 @@ adding:
       sup_series:
         enabled: true
         query_load_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
   field_config:
     node:
       sup_book:
-        sup_book_awards:
-          enabled: true
         sup_book_author_info:
           enabled: true
         sup_book_authors:
@@ -42,6 +46,8 @@ adding:
         sup_book_authors_full:
           enabled: true
         sup_book_avail_desc:
+          enabled: true
+        sup_book_awards:
           enabled: true
         sup_book_catalog_month:
           enabled: true
@@ -135,6 +141,8 @@ adding:
           enabled: true
         sup_book_table_of_contents:
           enabled: true
+        sup_book_type:
+          enabled: true
         sup_book_url_isw:
           enabled: true
         sup_book_web_code_cloth:
@@ -144,16 +152,26 @@ adding:
         sup_book_work_id_number:
           enabled: true
     paragraph:
+      sup_blog:
+        sup_blog_body:
+          enabled: true
+        sup_blog_image:
+          enabled: true
+        sup_blog_title:
+          enabled: true
+        sup_blog_url:
+          enabled: true
+      sup_blog_teaser:
+        sup_blog_teaser_header:
+          enabled: true
+        sup_blog_teaser_items:
+          enabled: true
+        sup_blog_teaser_link:
+          enabled: true
       sup_carousel:
         sup_carousel_slides:
           enabled: true
         sup_carousel_top_hero:
-          enabled: true
-      sup_file_list:
-        sup_file_list_files:
-          enabled: true
-      sup_pre_built:
-        sup_prebuilt_component:
           enabled: true
       sup_carousel_slide:
         sup_slide_body:
@@ -179,6 +197,14 @@ adding:
         sup_slide_title_size:
           enabled: true
         sup_sup_image:
+          enabled: true
+      sup_file_list:
+        sup_file_list_files:
+          enabled: true
+      sup_search_form:
+        sup_search_books_only:
+          enabled: true
+        sup_search_subject:
           enabled: true
     sup_award:
       sup_award:

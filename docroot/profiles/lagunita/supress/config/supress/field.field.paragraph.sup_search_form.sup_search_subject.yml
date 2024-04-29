@@ -1,0 +1,29 @@
+uuid: 040063a4-b3fa-48e4-92fb-d3fcfdc1e284
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_search_subject
+    - paragraphs.paragraphs_type.sup_search_form
+    - taxonomy.vocabulary.sup_book_subjects
+id: paragraph.sup_search_form.sup_search_subject
+field_name: sup_search_subject
+entity_type: paragraph
+bundle: sup_search_form
+label: 'Book Subject'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_book_subjects: sup_book_subjects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

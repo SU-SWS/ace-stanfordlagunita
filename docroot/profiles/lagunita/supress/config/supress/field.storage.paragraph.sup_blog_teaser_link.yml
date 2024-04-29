@@ -1,0 +1,19 @@
+uuid: e72ea133-6a3c-4306-b421-aa90245a93ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.sup_blog_teaser_link
+field_name: sup_blog_teaser_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

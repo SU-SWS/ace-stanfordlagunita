@@ -1,26 +1,42 @@
 adding:
   dependencies:
     config:
+      - paragraphs.paragraphs_type.sup_author_list
+      - paragraphs.paragraphs_type.sup_blog_teaser
       - paragraphs.paragraphs_type.sup_carousel
       - paragraphs.paragraphs_type.sup_file_list
-      - paragraphs.paragraphs_type.sup_pre_built
+      - paragraphs.paragraphs_type.sup_search_form
   settings:
     handler_settings:
       target_bundles:
         sup_file_list: sup_file_list
         sup_carousel: sup_carousel
-        sup_pre_built: sup_pre_built
+        sup_author_list: sup_author_list
+        sup_blog_teaser: sup_blog_teaser
+        sup_search_form: sup_search_form
       target_bundles_drag_drop:
         stanford_page_title_banner:
           weight: 24
           enabled: false
+        sup_author_list:
+          weight: 33
+          enabled: true
+        sup_blog:
+          weight: 35
+          enabled: false
+        sup_blog_teaser:
+          weight: 36
+          enabled: true
         sup_carousel:
           weight: 30
           enabled: true
+        sup_carousel_slide:
+          weight: 35
+          enabled: false
         sup_file_list:
           weight: 29
           enabled: true
-        sup_pre_built:
-          weight: 30
+        sup_search_form:
+          weight: 38
           enabled: true
 removing: {  }

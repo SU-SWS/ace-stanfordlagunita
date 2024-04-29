@@ -1,0 +1,11 @@
+uuid: 7abed702-7ff8-4b7f-b244-edf8444f5a2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sup_form_preview
+label: 'Form Preview'
+description: ''
+targetEntityType: paragraph
+cache: true
