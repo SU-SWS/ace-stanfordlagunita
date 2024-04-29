@@ -14,14 +14,13 @@ dependencies:
     - field_label
     - stanford_fields
     - stanford_media
-    - text
 id: paragraph.sup_blog.default
 targetEntityType: paragraph
 bundle: sup_blog
 mode: default
 content:
   sup_blog_body:
-    type: text_default
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }

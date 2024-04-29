@@ -475,7 +475,16 @@ process:
   sup_book_status_cloth: status_cloth
   sup_book_status_digital: status_digital
   sup_book_status_paper: status_paper
-  sup_book_subtitle: subtitle
+  sup_book_subtitle:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: subtitle
+    -
+      plugin: str_replace
+      regex: true
+      search: "/<.*?>/"
+      replace: ""
   sup_book_table_of_contents/value: table_of_contents
   sup_book_table_of_contents/format: constants/stanford_html
   sup_book_url_isw: url_isw

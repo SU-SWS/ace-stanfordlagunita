@@ -1,16 +1,16 @@
-uuid: 76f793d2-46d4-4315-a552-a11ef5631094
+uuid: e883fb5e-aaa5-48cb-8846-4ac826b6bb3a
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-    - text
 id: paragraph.sup_blog_body
 field_name: sup_blog_body
 entity_type: paragraph
-type: text_long
-settings: {  }
-module: text
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true
