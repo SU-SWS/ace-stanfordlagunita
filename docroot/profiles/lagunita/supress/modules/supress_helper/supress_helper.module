@@ -5,8 +5,10 @@
  * supress_helper.module
  */
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\search_api\IndexInterface;
 
@@ -102,6 +104,14 @@ function supress_helper_search_api_algolia_objects_alter(array &$objects, IndexI
       $object['book_subject'] = array_values(array_unique($object['book_subject']));
     }
   }
+}
+
+/**
+ * Implements hook_entity_create_access().
+ */
+function supress_helper_entity_create_access(AccountInterface $account, array $context, $entity_bundle) {
+  // Disable the banner paragraph type.
+  return AccessResult::forbiddenIf($entity_bundle == 'stanford_banner');
 }
 
 /**

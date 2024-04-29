@@ -1,0 +1,31 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_page_title_banner.sup_title_banner_color
+    module:
+      - field_group
+  third_party_settings:
+    field_group:
+      group_styles_behaviors:
+        children:
+          - sup_title_banner_color
+        label: Styles/Behaviors
+        region: content
+        parent_name: ''
+        weight: 1
+        format_type: details
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          open: false
+          description: ''
+          required_fields: true
+  content:
+    sup_title_banner_color:
+      type: options_select
+      weight: 2
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+removing: {  }

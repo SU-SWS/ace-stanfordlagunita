@@ -1,0 +1,21 @@
+uuid: 20a2e8a5-73dc-4bf1-b6e3-6ec35afc7c67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_title_banner_color
+    - paragraphs.paragraphs_type.stanford_page_title_banner
+  module:
+    - options
+id: paragraph.stanford_page_title_banner.sup_title_banner_color
+field_name: sup_title_banner_color
+entity_type: paragraph
+bundle: stanford_page_title_banner
+label: 'Background Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

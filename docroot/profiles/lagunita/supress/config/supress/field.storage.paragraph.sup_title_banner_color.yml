@@ -1,0 +1,33 @@
+uuid: 167b14e1-5a97-439f-b228-08320c08f2a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_title_banner_color
+field_name: sup_title_banner_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: magenta
+      label: Magenta
+    -
+      value: grass
+      label: Grass
+    -
+      value: steel
+      label: Steel
+    -
+      value: indigo
+      label: Indigo
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
