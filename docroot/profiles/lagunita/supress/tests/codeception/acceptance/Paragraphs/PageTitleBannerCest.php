@@ -43,6 +43,7 @@ class PageTitleBannerCest {
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->seeInField('Title', $node->label());
     $I->click('Add Page Title Banner');
+    $I->selectOption('Background Color', 'magenta');
     $I->fillField('[name="su_page_banner[0][subform][su_title_banner_image][media_library_selection]"]', $media->id());
     $I->click('Update widget');
     $I->click('Save');

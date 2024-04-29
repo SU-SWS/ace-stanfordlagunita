@@ -268,7 +268,7 @@ class BasicPageCest {
    *
    * @group metadata
    */
-  public function testMetaData(AcceptanceTester $I) {
+  protected function testMetaData(AcceptanceTester $I) {
     $values = [
       'banner_image_alt' => $this->faker->words(3, TRUE),
       'meta_image_alt' => $this->faker->words(3, TRUE),

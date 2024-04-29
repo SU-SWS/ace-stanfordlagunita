@@ -8,7 +8,7 @@ use Faker\Factory;
  * @group paragraphs
  * @group banner
  */
-class BannerCest {
+abstract class BannerCest {
 
   /**
    * Faker service.
