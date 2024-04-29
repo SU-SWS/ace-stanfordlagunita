@@ -3,9 +3,11 @@ adding:
   dependencies:
     config:
       - field.storage.node.sup_book_authors_full
+      - field.storage.node.sup_book_authors
       - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_type
+  read_only: true
   field_settings:
     book_authors:
       label: 'Authors (full)'
@@ -15,6 +17,14 @@ adding:
       dependencies:
         config:
           - field.storage.node.sup_book_authors_full
+    book_authors_last_name:
+      label: 'Book Authors » Family'
+      datasource_id: 'entity:node'
+      property_path: 'sup_book_authors:family'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_authors
     book_published:
       label: 'Publication Date First'
       datasource_id: 'entity:node'
@@ -49,19 +59,27 @@ adding:
     photo:
       configuration:
         value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image|node:sup_book_image:entity:field_media_image:large]'
+    summary:
+      configuration:
+        value: '[node:su_page_description|node:sup_book_subtitle|node:summary]'
   processor_settings:
     html_filter:
       fields:
         - book_authors
+        - book_authors_last_name
         - book_subject
         - book_type
   options:
     algolia_index_name: ''
 removing:
   status: true
+  read_only: false
   field_settings:
     photo:
       configuration:
         value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
+    summary:
+      configuration:
+        value: '[node:su_page_description|node:summary]'
   options:
     algolia_index_name: test_cardinalsites
