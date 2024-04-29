@@ -1,0 +1,66 @@
+uuid: 0e65e4d7-95e8-4fa2-aa08-a998693dde4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_blog.sup_blog_body
+    - field.field.paragraph.sup_blog.sup_blog_image
+    - field.field.paragraph.sup_blog.sup_blog_title
+    - field.field.paragraph.sup_blog.sup_blog_url
+    - paragraphs.paragraphs_type.sup_blog
+  module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
+    - stanford_fields
+    - stanford_media
+    - text
+id: paragraph.sup_blog.default
+targetEntityType: paragraph
+bundle: sup_blog
+mode: default
+content:
+  sup_blog_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sup_blog_image:
+    type: media_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: card_1x_478x318
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 0
+    region: content
+  sup_blog_title:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h3
+      linked: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
+  sup_blog_url: true

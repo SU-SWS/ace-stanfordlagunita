@@ -1,0 +1,38 @@
+uuid: a5ad5d3c-5509-42a8-9023-2776e29f3243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sup_blog_teaser.sup_blog_teaser_header
+    - field.field.paragraph.sup_blog_teaser.sup_blog_teaser_items
+    - field.field.paragraph.sup_blog_teaser.sup_blog_teaser_link
+    - paragraphs.paragraphs_type.sup_blog_teaser
+  module:
+    - entity_reference_revisions
+    - stanford_fields
+id: paragraph.sup_blog_teaser.default
+targetEntityType: paragraph
+bundle: sup_blog_teaser
+mode: default
+content:
+  sup_blog_teaser_header:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sup_blog_teaser_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
+  sup_blog_teaser_link: true

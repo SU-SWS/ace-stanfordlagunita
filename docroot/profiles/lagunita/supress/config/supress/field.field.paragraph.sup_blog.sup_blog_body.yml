@@ -1,0 +1,24 @@
+uuid: ae3a811a-8488-4942-b581-89d3d06d5069
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_blog_body
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sup_blog
+  module:
+    - text
+id: paragraph.sup_blog.sup_blog_body
+field_name: sup_blog_body
+entity_type: paragraph
+bundle: sup_blog
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

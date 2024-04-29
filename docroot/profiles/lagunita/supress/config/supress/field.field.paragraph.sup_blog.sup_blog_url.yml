@@ -1,0 +1,23 @@
+uuid: 6748ce6d-133b-4ff2-85df-2dda4eb52afe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_blog_url
+    - paragraphs.paragraphs_type.sup_blog
+  module:
+    - link
+id: paragraph.sup_blog.sup_blog_url
+field_name: sup_blog_url
+entity_type: paragraph
+bundle: sup_blog
+label: 'Blog URL'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

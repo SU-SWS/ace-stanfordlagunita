@@ -1,0 +1,23 @@
+uuid: d19b1198-4c42-4202-850e-d0fb7f6317b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_blog_teaser_link
+    - paragraphs.paragraphs_type.sup_blog_teaser
+  module:
+    - link
+id: paragraph.sup_blog_teaser.sup_blog_teaser_link
+field_name: sup_blog_teaser_link
+entity_type: paragraph
+bundle: sup_blog_teaser
+label: 'Header Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

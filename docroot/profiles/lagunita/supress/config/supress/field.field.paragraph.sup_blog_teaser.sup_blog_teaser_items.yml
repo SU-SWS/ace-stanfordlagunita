@@ -1,0 +1,88 @@
+uuid: af50b642-bd1c-4f2a-bd60-4b74ff19c3ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_blog_teaser_items
+    - paragraphs.paragraphs_type.sup_blog
+    - paragraphs.paragraphs_type.sup_blog_teaser
+  module:
+    - entity_reference_revisions
+id: paragraph.sup_blog_teaser.sup_blog_teaser_items
+field_name: sup_blog_teaser_items
+entity_type: paragraph
+bundle: sup_blog_teaser
+label: 'Blog Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sup_blog: sup_blog
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 21
+        enabled: false
+      stanford_banner:
+        weight: 22
+        enabled: false
+      stanford_card:
+        weight: 23
+        enabled: false
+      stanford_entity:
+        weight: 24
+        enabled: false
+      stanford_gallery:
+        weight: 25
+        enabled: false
+      stanford_layout:
+        weight: 26
+        enabled: false
+      stanford_lists:
+        weight: 27
+        enabled: false
+      stanford_media_caption:
+        weight: 28
+        enabled: false
+      stanford_page_title_banner:
+        weight: 29
+        enabled: false
+      stanford_person_cta:
+        weight: 30
+        enabled: false
+      stanford_schedule:
+        weight: 31
+        enabled: false
+      stanford_spacer:
+        weight: 32
+        enabled: false
+      stanford_wysiwyg:
+        weight: 33
+        enabled: false
+      sup_author_list:
+        weight: 34
+        enabled: false
+      sup_blog:
+        weight: 35
+        enabled: true
+      sup_blog_teaser:
+        weight: 36
+        enabled: false
+      sup_carousel:
+        weight: 37
+        enabled: false
+      sup_carousel_slide:
+        weight: 38
+        enabled: false
+      sup_file_list:
+        weight: 39
+        enabled: false
+      sup_search_form:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

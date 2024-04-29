@@ -2,12 +2,11 @@ adding:
   status: false
   dependencies:
     config:
-      - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_authors
-      - field.storage.node.sup_book_subjects
+      - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_pub_date_first
+      - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_type
-  read_only: true
   field_settings:
     book_authors:
       label: 'Authors (full)'
@@ -73,7 +72,6 @@ adding:
     algolia_index_name: ''
 removing:
   status: true
-  read_only: false
   field_settings:
     photo:
       configuration:

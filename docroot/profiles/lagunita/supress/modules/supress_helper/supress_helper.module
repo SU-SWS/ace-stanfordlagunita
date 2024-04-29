@@ -5,9 +5,10 @@
  * supress_helper.module
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
-use Drupal\search_api\IndexInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\search_api\IndexInterface;
 
 /**
  * Implements hook_cron().
@@ -100,5 +101,15 @@ function supress_helper_search_api_algolia_objects_alter(array &$objects, IndexI
       asort($object['book_subject']);
       $object['book_subject'] = array_values(array_unique($object['book_subject']));
     }
+  }
+}
+
+/**
+ * Implements hook_field_widget_complete_WIDGET_TYPE_form_alter().
+ */
+function supress_helper_field_widget_complete_options_select_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  if ($context['items']->getName() == 'sup_search_subject') {
+    // Only show the top level terms and the "None" option.
+    $field_widget_complete_form['widget']['#options'] = array_filter($field_widget_complete_form['widget']['#options'], fn($option) => !str_starts_with($option, '-') || $option == '- None -');
   }
 }

@@ -1,0 +1,50 @@
+uuid: 1d200cd2-333c-433c-bd4e-8100cdbb215d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sup_form_preview
+    - field.field.paragraph.sup_search_form.sup_search_books_only
+    - field.field.paragraph.sup_search_form.sup_search_subject
+    - paragraphs.paragraphs_type.sup_search_form
+  module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.sup_search_form.sup_form_preview
+targetEntityType: paragraph
+bundle: sup_search_form
+mode: sup_form_preview
+content:
+  sup_search_books_only:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sup_search_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 13d788c7-1507-4f43-943a-8b3145c22333
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_blog_title
+    - paragraphs.paragraphs_type.sup_blog
+id: paragraph.sup_blog.sup_blog_title
+field_name: sup_blog_title
+entity_type: paragraph
+bundle: sup_blog
+label: 'Blog Title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
