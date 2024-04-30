@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_in_print_status
     - field.field.node.sup_book.sup_book_instructor_recommended
+    - field.field.node.sup_book.sup_book_intl_cart
     - field.field.node.sup_book.sup_book_isbn_13_alt
     - field.field.node.sup_book.sup_book_isbn_13_cloth
     - field.field.node.sup_book.sup_book_isbn_13_digital
@@ -141,6 +142,7 @@ hidden:
   sup_book_imprint: true
   sup_book_in_print_status: true
   sup_book_instructor_recommended: true
+  sup_book_intl_cart: true
   sup_book_isbn_13_alt: true
   sup_book_isbn_13_cloth: true
   sup_book_isbn_13_digital: true

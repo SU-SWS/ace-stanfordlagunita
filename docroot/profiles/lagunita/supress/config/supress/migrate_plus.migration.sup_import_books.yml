@@ -327,6 +327,10 @@ source:
       name: work_id_number
       label: work_id_number
       selector: fieldData/work_id_number
+    -
+      name: intl_cart
+      label: intl_cart
+      selector: fieldData/intl_cart
   ids:
     work_id_number:
       type: integer
@@ -618,6 +622,16 @@ process:
     -
       plugin: skip_on_empty
       method: process
+  sup_book_intl_cart:
+    -
+      plugin: str_replace
+      source: intl_cart
+      search:
+        - yes
+        - no
+      replace:
+        - 1
+        - 0
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

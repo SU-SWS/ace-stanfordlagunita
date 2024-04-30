@@ -23,6 +23,9 @@ adding:
         enabled: true
       sup_search_form:
         enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
     taxonomy_term:
       sup_book_subjects:
         enabled: true
@@ -33,9 +36,6 @@ adding:
       sup_series:
         enabled: true
         query_load_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
   field_config:
     node:
       sup_book:
@@ -80,6 +80,8 @@ adding:
         sup_book_in_print_status:
           enabled: true
         sup_book_instructor_recommended:
+          enabled: true
+        sup_book_intl_cart:
           enabled: true
         sup_book_isbn_13_alt:
           enabled: true

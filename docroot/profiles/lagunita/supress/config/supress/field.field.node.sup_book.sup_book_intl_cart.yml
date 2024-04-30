@@ -1,0 +1,21 @@
+uuid: e81b2f27-1d4d-40cd-8eaf-ac0047cbdfb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_intl_cart
+    - node.type.sup_book
+id: node.sup_book.sup_book_intl_cart
+field_name: sup_book_intl_cart
+entity_type: node
+bundle: sup_book
+label: 'International Cart'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

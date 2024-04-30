@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_in_print_status
     - field.field.node.sup_book.sup_book_instructor_recommended
+    - field.field.node.sup_book.sup_book_intl_cart
     - field.field.node.sup_book.sup_book_isbn_13_alt
     - field.field.node.sup_book.sup_book_isbn_13_cloth
     - field.field.node.sup_book.sup_book_isbn_13_digital
@@ -93,7 +94,7 @@ third_party_settings:
       label: 'Web Coupon Codes'
       region: content
       parent_name: group_prices
-      weight: 51
+      weight: 63
       format_type: details
       format_settings:
         classes: ''
@@ -143,6 +144,7 @@ third_party_settings:
         required_fields: true
     group_prices:
       children:
+        - sup_book_intl_cart
         - sup_book_price_cloth
         - sup_book_cloth_sale_price
         - sup_book_cloth_sale_percent
@@ -353,14 +355,14 @@ content:
     third_party_settings: {  }
   sup_book_cloth_sale_percent:
     type: number
-    weight: 45
+    weight: 57
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_cloth_sale_price:
     type: number
-    weight: 44
+    weight: 56
     region: content
     settings:
       placeholder: ''
@@ -451,6 +453,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  sup_book_intl_cart:
+    type: boolean_checkbox
+    weight: 54
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sup_book_isbn_13_alt:
     type: string_textfield
     weight: 28
@@ -515,35 +524,35 @@ content:
     third_party_settings: {  }
   sup_book_paper_sale_percent:
     type: number
-    weight: 47
+    weight: 59
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_paper_sale_price:
     type: number
-    weight: 46
+    weight: 58
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_price_cloth:
     type: number
-    weight: 43
+    weight: 55
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_price_digital:
     type: number
-    weight: 48
+    weight: 60
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_book_price_paper:
     type: number
-    weight: 50
+    weight: 62
     region: content
     settings:
       placeholder: ''
@@ -616,7 +625,7 @@ content:
     third_party_settings: {  }
   sup_book_sales_rank:
     type: number
-    weight: 49
+    weight: 61
     region: content
     settings:
       placeholder: ''
