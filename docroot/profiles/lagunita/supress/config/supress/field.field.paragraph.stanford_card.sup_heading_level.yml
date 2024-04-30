@@ -1,0 +1,23 @@
+uuid: afd41048-905d-40a1-904a-c8375c59b125
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_heading_level
+    - paragraphs.paragraphs_type.stanford_card
+  module:
+    - options
+id: paragraph.stanford_card.sup_heading_level
+field_name: sup_heading_level
+entity_type: paragraph
+bundle: stanford_card
+label: 'Heading Level'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

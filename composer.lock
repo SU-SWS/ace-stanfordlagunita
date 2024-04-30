@@ -17463,16 +17463,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.6.7",
+            "version": "9.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "97eb9fbf929b9bbd503d55c3f1e4d65fedc59786"
+                "reference": "181e9bbd5aa49684c3fbb528a2063b752a19b1ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/97eb9fbf929b9bbd503d55c3f1e4d65fedc59786",
-                "reference": "97eb9fbf929b9bbd503d55c3f1e4d65fedc59786",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/181e9bbd5aa49684c3fbb528a2063b752a19b1ad",
+                "reference": "181e9bbd5aa49684c3fbb528a2063b752a19b1ad",
                 "shasum": ""
             },
             "require": {
@@ -17559,9 +17559,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.6.7"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.6.8"
             },
-            "time": "2024-04-10T17:29:22+00:00"
+            "time": "2024-04-30T16:04:19+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",

@@ -23,19 +23,19 @@ adding:
         enabled: true
       sup_search_form:
         enabled: true
+    sup_award:
+      sup_award:
+        enabled: true
     taxonomy_term:
       sup_book_subjects:
         enabled: true
-        query_load_enabled: true
+        routes_enabled: true
       sup_imprints:
         enabled: true
         query_load_enabled: true
       sup_series:
         enabled: true
         query_load_enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
   field_config:
     node:
       sup_book:
@@ -152,6 +152,15 @@ adding:
         sup_book_work_id_number:
           enabled: true
     paragraph:
+      stanford_card:
+        sup_card_link_style:
+          enabled: true
+        sup_card_style:
+          enabled: true
+        sup_heading_level:
+          enabled: true
+        sup_vis_hide_heading:
+          enabled: true
       stanford_page_title_banner:
         sup_title_banner_color:
           enabled: true

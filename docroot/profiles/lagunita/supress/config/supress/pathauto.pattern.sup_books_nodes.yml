@@ -7,12 +7,12 @@ dependencies:
 id: sup_books_nodes
 label: Books
 type: 'canonical_entities:node'
-pattern: 'book/[node:title]'
+pattern: 'books/[node:sup_book_subjects:0:entity:parent|node:sup_book_subjects:0:entity:name]/[node:title]'
 selection_criteria:
-  ab1ae450-6331-439b-a0a0-c224803598b2:
+  0404f437-9c05-4ae1-a297-174fbaa0612a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: ab1ae450-6331-439b-a0a0-c224803598b2
+    uuid: 0404f437-9c05-4ae1-a297-174fbaa0612a
     context_mapping:
       node: node
     bundles:

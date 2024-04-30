@@ -1,0 +1,27 @@
+uuid: 3035317f-a2e1-493f-8c73-bce3eb3ec3c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_card_link_style
+field_name: sup_card_link_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: button
+      label: Button
+    -
+      value: action_link
+      label: 'Action Link'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

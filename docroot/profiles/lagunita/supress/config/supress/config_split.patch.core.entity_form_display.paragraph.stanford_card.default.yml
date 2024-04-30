@@ -1,0 +1,65 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.sup_card_link_style
+      - field.field.paragraph.stanford_card.sup_card_style
+      - field.field.paragraph.stanford_card.sup_heading_level
+      - field.field.paragraph.stanford_card.sup_vis_hide_heading
+    module:
+      - field_group
+  third_party_settings:
+    field_group:
+      group_styles_behaviors:
+        children:
+          - sup_heading_level
+          - sup_vis_hide_heading
+          - sup_card_link_style
+          - sup_card_style
+        label: Styles/Behaviors
+        region: content
+        parent_name: ''
+        weight: 9
+        format_type: details
+        format_settings:
+          classes: ''
+          show_empty_fields: false
+          id: ''
+          open: false
+          description: ''
+          required_fields: false
+  content:
+    status:
+      weight: 5
+    su_card_link:
+      weight: 4
+    sup_card_link_style:
+      type: options_select
+      weight: 8
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    sup_card_style:
+      type: options_select
+      weight: 9
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    sup_heading_level:
+      type: options_select
+      weight: 6
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    sup_vis_hide_heading:
+      type: boolean_checkbox
+      weight: 7
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
+removing:
+  content:
+    status:
+      weight: 6
+    su_card_link:
+      weight: 5
