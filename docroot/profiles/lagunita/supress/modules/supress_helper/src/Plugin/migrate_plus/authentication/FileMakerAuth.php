@@ -62,7 +62,6 @@ class FileMakerAuth extends AuthenticationPluginBase implements ContainerFactory
     }
 
     $response = $this->client->request('POST', $this->configuration['token_url'], [
-      'verify' => FALSE,
       'headers' => ['Content-Type' => 'application/json'],
       'auth' => [
         $this->configuration['client_id'],
@@ -72,7 +71,6 @@ class FileMakerAuth extends AuthenticationPluginBase implements ContainerFactory
     $token_response = json_decode((string) $response->getBody(), TRUE, 513, JSON_THROW_ON_ERROR);
 
     return [
-      'verify' => FALSE,
       'headers' => [
         'Authorization' => 'Bearer ' . $token_response['response']['token'],
       ],

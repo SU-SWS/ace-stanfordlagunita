@@ -74,7 +74,6 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
 
     // Fetch the OAuth-like token form the API.
     $token_response = (string) $this->client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
-      'verify' => FALSE,
       'headers' => ['Content-Type' => 'application/json'],
       'auth' => [$client_id, $client_secret],
     ])->getBody();
@@ -83,7 +82,6 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     // Use the token to fetch the cover record for this one item.
     try {
       $covers_response = (string) $this->client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/records/$data", [
-        'verify' => FALSE,
         'headers' => [
           'Content-Type' => 'application/json',
           'Authorization' => 'Bearer ' . $token['response']['token'],
@@ -125,7 +123,6 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     // Call the API to update the flag in the system.
     try {
       $this->client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/script/ClearFlags?script.param=$work_id", [
-        'verify' => FALSE,
         'headers' => [
           'Content-Type' => 'application/json',
           'Authorization' => 'Bearer ' . $token['response']['token'],
@@ -158,7 +155,6 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $sink_path = $this->fileSystem->realpath($temp_destination);
 
     $this->client->request('GET', $image_url, [
-      'verify' => FALSE,
       'sink' => $sink_path,
       'cookies' => new CookieJar(),
       'timeout' => 60,

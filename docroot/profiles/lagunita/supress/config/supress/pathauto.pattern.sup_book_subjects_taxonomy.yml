@@ -7,12 +7,12 @@ dependencies:
 id: sup_book_subjects_taxonomy
 label: 'Book Subjects Taxonomy'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'subjects/[term:parents:join-path]/[term:name]'
+pattern: 'books/[term:parents:join-path]/[term:name]'
 selection_criteria:
-  9502394b-f5ac-476f-9c80-ec6c60c84b59:
+  86f3d6da-bdda-42ec-a5de-52f2ad482e14:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 9502394b-f5ac-476f-9c80-ec6c60c84b59
+    uuid: 86f3d6da-bdda-42ec-a5de-52f2ad482e14
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
