@@ -13,6 +13,13 @@ use Drupal\Core\Site\Settings;
 use Drupal\search_api\IndexInterface;
 
 /**
+ * Implements hook_paragraphs_behavior_info_alter().
+ */
+function supress_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
+  $paragraphs_behavior['su_card_styles']['class'] = '\Drupal\supress_helper\Plugin\paragraphs\Behavior\PressCardBehaviors';
+}
+
+/**
  * Implements hook_cron().
  */
 function supress_helper_cron() {
