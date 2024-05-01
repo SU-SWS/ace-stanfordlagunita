@@ -17,6 +17,7 @@ source:
     type: sum_summer_courses
     basic_html: stanford_html
     minimal_html: stanford_minimal_html
+    markdown:
     image_destination: 'public://media/image/csv/'
     apply_link_title: Apply
     learn_more_link_title: 'Learn More'
@@ -109,7 +110,7 @@ source:
   ids:
     - unique_import_id
 process:
-  title: course_name
+  title: class_number
   sum_course_unique_import_id: unique_import_id
   sum_course_catalog_number: catalog_number
   status:
@@ -133,17 +134,34 @@ process:
       id_only: true
       reuse: true
   sum_course_cross_listing: cross_listing
-  sum_course_description: description
+  sum_course_description/value: description
+  sum_course_description/format: constants/markdown
   sum_course_start_date:
     -
       plugin: skip_on_empty
       method: process
       source: start_date
+    -
+      plugin: callback
+      callable: strtotime
+    -
+      plugin: format_date
+      from_format: 'U'
+      to_format: 'Y-m-d\TH:i:s'
+      timezone: 'UTC'
   sum_course_end_date:
     -
       plugin: skip_on_empty
       method: process
       source: end_date
+    -
+      plugin: callback
+      callable: strtotime
+    -
+      plugin: format_date
+      from_format: 'U'
+      to_format: 'Y-m-d\TH:i:s'
+      timezone: 'UTC'
   sum_course_instructors: instructors
   sum_course_interest_area:
     -

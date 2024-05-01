@@ -1,0 +1,29 @@
+uuid: 57643216-bc7e-4dac-8461-dd902847e704
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_image
+    - media.type.image
+    - node.type.sum_summer_courses
+id: node.sum_summer_courses.sum_course_image
+field_name: sum_course_image
+entity_type: node
+bundle: sum_summer_courses
+label: 'Course Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
