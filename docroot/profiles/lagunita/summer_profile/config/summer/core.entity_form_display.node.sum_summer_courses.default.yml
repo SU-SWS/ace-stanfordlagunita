@@ -37,50 +37,46 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sum_course_availability:
-    type: entity_reference_autocomplete
-    weight: 144
+    type: options_select
+    weight: 26
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   sum_course_catalog_number:
     type: string_textfield
-    weight: 128
+    weight: 11
     region: content
     settings:
       size: 60
@@ -88,21 +84,21 @@ content:
     third_party_settings: {  }
   sum_course_class_number:
     type: number
-    weight: 136
+    weight: 19
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sum_course_course_cost:
     type: number
-    weight: 137
+    weight: 20
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sum_course_cross_listing:
     type: string_textfield
-    weight: 132
+    weight: 15
     region: content
     settings:
       size: 60
@@ -110,7 +106,7 @@ content:
     third_party_settings: {  }
   sum_course_description:
     type: text_textarea
-    weight: 127
+    weight: 10
     region: content
     settings:
       rows: 5
@@ -118,13 +114,13 @@ content:
     third_party_settings: {  }
   sum_course_end_date:
     type: datetime_default
-    weight: 143
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
   sum_course_format:
     type: string_textfield
-    weight: 139
+    weight: 21
     region: content
     settings:
       size: 60
@@ -132,32 +128,28 @@ content:
     third_party_settings: {  }
   sum_course_image:
     type: media_library_widget
-    weight: 149
+    weight: 1
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   sum_course_instructors:
     type: string_textfield
-    weight: 129
+    weight: 12
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   sum_course_interest_area:
-    type: entity_reference_autocomplete
-    weight: 133
+    type: options_select
+    weight: 16
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   sum_course_length:
     type: string_textfield
-    weight: 140
+    weight: 22
     region: content
     settings:
       size: 60
@@ -165,25 +157,21 @@ content:
     third_party_settings: {  }
   sum_course_notes:
     type: text_textarea
-    weight: 126
+    weight: 9
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
   sum_course_population:
-    type: entity_reference_autocomplete
-    weight: 134
+    type: options_select
+    weight: 17
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   sum_course_prerequisites:
     type: text_textarea
-    weight: 131
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -191,7 +179,7 @@ content:
     third_party_settings: {  }
   sum_course_schedule:
     type: string_textfield
-    weight: 141
+    weight: 23
     region: content
     settings:
       size: 60
@@ -199,41 +187,41 @@ content:
     third_party_settings: {  }
   sum_course_start_date:
     type: datetime_default
-    weight: 142
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   sum_course_syllabus_file:
     type: media_library_widget
-    weight: 147
+    weight: 28
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   sum_course_unique_import_id:
     type: number
-    weight: 146
+    weight: 27
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sum_course_units:
     type: number
-    weight: 130
+    weight: 13
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sum_students_also_studied:
     type: number
-    weight: 135
+    weight: 18
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -241,7 +229,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -250,7 +238,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

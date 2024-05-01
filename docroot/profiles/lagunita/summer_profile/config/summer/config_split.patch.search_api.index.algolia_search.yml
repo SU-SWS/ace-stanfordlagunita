@@ -1,16 +1,16 @@
 adding:
   dependencies:
     config:
+      - field.storage.node.sum_course_availability
       - field.storage.node.sum_course_catalog_number
       - field.storage.node.sum_course_class_number
-      - field.storage.node.sum_course_availability
       - field.storage.node.sum_course_course_cost
-      - field.storage.node.sum_course_format
-      - field.storage.node.sum_course_length
-      - field.storage.node.sum_course_notes
       - field.storage.node.sum_course_cross_listing
       - field.storage.node.sum_course_end_date
+      - field.storage.node.sum_course_format
       - field.storage.node.sum_course_interest_area
+      - field.storage.node.sum_course_length
+      - field.storage.node.sum_course_notes
       - field.storage.node.sum_course_population
       - field.storage.node.sum_course_prerequisites
       - field.storage.node.sum_course_schedule
@@ -22,6 +22,9 @@ adding:
         view_mode:
           'entity:node':
             sum_summer_courses: search_indexing
+    photo:
+      configuration:
+        value: '[node:sum_course_image:entity:field_media_image:large|node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
     sum_course_availability:
       label: 'Course Availability » Taxonomy term » Name'
       datasource_id: 'entity:node'
@@ -161,4 +164,8 @@ adding:
         - sum_course_population
         - sum_course_prerequisites
         - sum_course_schedule
-removing: {  }
+removing:
+  field_settings:
+    photo:
+      configuration:
+        value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'

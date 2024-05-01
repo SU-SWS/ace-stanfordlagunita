@@ -2,12 +2,12 @@ uuid: 9a0d77ad-0009-46f6-b9ee-5b99fc6b22a3
 langcode: en
 status: true
 dependencies: {  }
-id: csv_summer_courses
+id: sum_csv_summer_courses
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: {  }
-migration_group: csv_importers
+migration_group: default
 label: 'CSV Summer Courses'
 source:
   plugin: csv
@@ -17,7 +17,7 @@ source:
     type: sum_summer_courses
     basic_html: stanford_html
     minimal_html: stanford_minimal_html
-    markdown:
+    markdown: sum_markdown
     image_destination: 'public://media/image/csv/'
     apply_link_title: Apply
     learn_more_link_title: 'Learn More'
@@ -25,7 +25,7 @@ source:
   fields:
     -
       name: unique_import_id
-      label: 'ID'
+      label: ID
       selector: unique_import_id
     -
       name: catalog_number
@@ -37,7 +37,7 @@ source:
       selector: course_name
     -
       name: description
-      label: 'Description'
+      label: Description
       selector: description
     -
       name: course_notes
@@ -45,11 +45,11 @@ source:
       selector: course_notes
     -
       name: instructors
-      label: 'Instructors'
+      label: Instructors
       selector: instructors
     -
       name: units
-      label: 'Units'
+      label: Units
       selector: units
     -
       name: cross_listing
@@ -65,7 +65,7 @@ source:
       selector: course_format
     -
       name: population
-      label: 'Population'
+      label: Population
       selector: population
     -
       name: interest_area
@@ -97,7 +97,7 @@ source:
       selector: end_date
     -
       name: schedule
-      label: 'Schedule'
+      label: Schedule
       selector: schedule
     -
       name: course_availability
@@ -113,11 +113,6 @@ process:
   title: course_name
   sum_course_unique_import_id: unique_import_id
   sum_course_catalog_number: catalog_number
-  status:
-    plugin: default_value
-    source: status
-    default_value: 1
-    strict: true
   sum_course_course_cost: course_cost
   sum_course_format: course_format
   sum_course_length: course_length
@@ -133,7 +128,14 @@ process:
       destination: constants/pdf_destination
       id_only: true
       reuse: true
-  sum_course_cross_listing: cross_listing
+  sum_course_cross_listing:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cross_listing
+    -
+      plugin: explode
+      delimiter: ','
   sum_course_description/value: description
   sum_course_description/format: constants/markdown
   sum_course_start_date:
@@ -142,27 +144,28 @@ process:
       method: process
       source: start_date
     -
-      plugin: callback
-      callable: strtotime
-    -
       plugin: format_date
-      from_format: 'U'
-      to_format: 'Y-m-d\TH:i:s'
-      timezone: 'UTC'
+      from_format: 'n/j/Y'
+      to_format: 'Y-m-d'
+      timezone: UTC
   sum_course_end_date:
     -
       plugin: skip_on_empty
       method: process
       source: end_date
     -
-      plugin: callback
-      callable: strtotime
-    -
       plugin: format_date
-      from_format: 'U'
-      to_format: 'Y-m-d\TH:i:s'
-      timezone: 'UTC'
-  sum_course_instructors: instructors
+      from_format: 'n/j/Y'
+      to_format: 'Y-m-d'
+      timezone: UTC
+  sum_course_instructors:
+    -
+      plugin: skip_on_empty
+      source: instructors
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
   sum_course_interest_area:
     -
       plugin: skip_on_empty
@@ -179,6 +182,9 @@ process:
       plugin: skip_on_empty
       method: process
       source: population
+    -
+      plugin: explode
+      delimiter: ','
     -
       plugin: entity_generate
       value_key: name
@@ -202,9 +208,6 @@ process:
       bundle: sum_course_availability
       entity_type: taxonomy_term
 destination:
-  plugin: 'entity_reference_revisions:node'
+  plugin: 'entity:node'
   default_bundle: sum_summer_courses
-  new_revisions: true
-  force_revision: true
-migration_dependencies:
-  required: {  }
+migration_dependencies: {  }
