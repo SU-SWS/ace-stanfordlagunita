@@ -8,13 +8,13 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: {  }
 migration_group: csv_importers
-label: 'CSV Courses'
+label: 'CSV Summer Courses'
 source:
   plugin: csv
   path: /tmp/summer_courses.csv
   constants:
     status: 1
-    type: su_opportunity
+    type: sum_summer_courses
     basic_html: stanford_html
     minimal_html: stanford_minimal_html
     image_destination: 'public://media/image/csv/'
@@ -99,23 +99,16 @@ source:
       label: 'Schedule'
       selector: schedule
     -
-      name: course_syllabus_file
-      label: 'Course Syllabus File'
-      selector: course_syllabus_file
-    -
       name: course_availability
       label: 'Course Availability'
       selector: course_availability
     -
-      name: pre_requisites
-      label: 'Prerequisites'
-      selector: pre_requisites
+      name: course_syllabus_file
+      label: 'Course Syllabus File'
+      selector: course_syllabus_file
   ids:
     - id
 process:
-  type:
-    plugin: default_value
-    default_value: sum_summer_courses
   title: course_name
   sum_course_unique_import_id: id
   sum_course_catalog_number: catalog_number
@@ -133,7 +126,7 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: image
+      source: course_syllabus_file
     -
       plugin: file_import
       destination: constants/pdf_destination
