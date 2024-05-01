@@ -186,7 +186,8 @@ process:
       bundle_key: vid
       bundle: sum_course_population
       entity_type: taxonomy_term
-  sum_course_prerequisites: prerequisites
+  sum_course_prerequisites/value: prerequisites
+  sum_course_prerequisites/format: constants/markdown
   sum_course_schedule: schedule
   sum_students_also_studied: students_also_studied
   sum_course_units: units
