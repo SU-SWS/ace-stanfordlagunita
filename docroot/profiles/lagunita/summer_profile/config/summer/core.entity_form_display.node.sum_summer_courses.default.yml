@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_course_instructors
     - field.field.node.sum_summer_courses.sum_course_interest_area
     - field.field.node.sum_summer_courses.sum_course_length
-    - field.field.node.sum_summer_courses.sum_course_name
     - field.field.node.sum_summer_courses.sum_course_notes
     - field.field.node.sum_summer_courses.sum_course_population
     - field.field.node.sum_summer_courses.sum_course_prerequisites
@@ -159,14 +158,6 @@ content:
   sum_course_length:
     type: string_textfield
     weight: 140
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  sum_course_name:
-    type: string_textfield
-    weight: 148
     region: content
     settings:
       size: 60
