@@ -43,6 +43,8 @@ adding:
           enabled: true
         sum_course_format:
           enabled: true
+        sum_course_image:
+          enabled: true
         sum_course_instructors:
           enabled: true
         sum_course_interest_area:

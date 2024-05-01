@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_course_description
     - field.field.node.sum_summer_courses.sum_course_end_date
     - field.field.node.sum_summer_courses.sum_course_format
+    - field.field.node.sum_summer_courses.sum_course_image
     - field.field.node.sum_summer_courses.sum_course_instructors
     - field.field.node.sum_summer_courses.sum_course_interest_area
     - field.field.node.sum_summer_courses.sum_course_length
@@ -38,58 +39,28 @@ targetEntityType: node
 bundle: sum_summer_courses
 mode: search_indexing
 content:
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  sum_course_catalog_number:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  sum_course_cross_listing:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
   sum_course_description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
-  sum_course_instructors:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  sum_course_notes:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
 hidden:
+  links: true
   search_api_excerpt: true
   sum_course_availability: true
+  sum_course_catalog_number: true
   sum_course_class_number: true
   sum_course_course_cost: true
+  sum_course_cross_listing: true
   sum_course_end_date: true
   sum_course_format: true
+  sum_course_image: true
+  sum_course_instructors: true
   sum_course_interest_area: true
   sum_course_length: true
+  sum_course_notes: true
   sum_course_population: true
   sum_course_prerequisites: true
   sum_course_schedule: true

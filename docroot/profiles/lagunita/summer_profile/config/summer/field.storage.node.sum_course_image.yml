@@ -1,17 +1,17 @@
-uuid: b3b0d480-8464-481e-9500-af773bf64b95
+uuid: 96e16a05-02ef-4cf0-8d73-cb8fe33b9ebf
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
+    - media
     - node
-id: node.sum_course_end_date
-field_name: sum_course_end_date
+id: node.sum_course_image
+field_name: sum_course_image
 entity_type: node
-type: datetime
+type: entity_reference
 settings:
-  datetime_type: date
-module: datetime
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

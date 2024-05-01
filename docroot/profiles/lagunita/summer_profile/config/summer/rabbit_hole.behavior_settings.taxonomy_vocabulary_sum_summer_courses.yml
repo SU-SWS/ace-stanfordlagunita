@@ -1,0 +1,14 @@
+uuid: 40901b51-0a38-4c5a-a304-69247f29e603
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sum_summer_courses
+id: taxonomy_vocabulary_sum_summer_courses
+entity_type_id: taxonomy_vocabulary
+entity_id: sum_summer_courses
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
