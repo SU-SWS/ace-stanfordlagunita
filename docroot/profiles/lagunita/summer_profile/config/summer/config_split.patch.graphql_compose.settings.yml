@@ -6,6 +6,11 @@ adding:
         query_load_enabled: true
         edges_enabled: true
         routes_enabled: true
+    paragraph:
+      sum_course_filter:
+        enabled: true
+      sum_user_favorites:
+        enabled: true
     taxonomy_term:
       sum_course_availability:
         enabled: true
