@@ -83,10 +83,6 @@ source:
       label: 'Class Number'
       selector: class_number
     -
-      name: class_number
-      label: 'Class Number'
-      selector: class_number
-    -
       name: course_length
       label: 'Course Length'
       selector: course_length
@@ -110,6 +106,10 @@ source:
       name: course_availability
       label: 'Course Availability'
       selector: course_availability
+    -
+      name: pre_requisites
+      label: 'Prerequisites'
+      selector: pre_requisites
   ids:
     - id
 process:
@@ -148,32 +148,44 @@ process:
       plugin: skip_on_empty
       method: process
       source: end_date
-  sum_course_instructors: sum_course_instructors
+  sum_course_instructors: instructors
   sum_course_interest_area:
-    source: interest_area
-    plugin: entity_generate
-    value_key: name
-    bundle_key: vid
-    bundle: sum_summer_courses
-    entity_type: taxonomy_term
+    -
+      plugin: skip_on_empty
+      method: process
+      source: interest_area
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_summer_courses
+      entity_type: taxonomy_term
   sum_course_population:
-    source: sum_course_population
-    plugin: entity_generate
-    value_key: name
-    bundle_key: vid
-    bundle: sum_course_availability
-    entity_type: taxonomy_term
-  sum_course_prerequisites: sum_course_prerequisites
+    -
+      plugin: skip_on_empty
+      method: process
+      source: population
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_availability
+      entity_type: taxonomy_term
+  sum_course_prerequisites: prerequisites
   sum_course_schedule: schedule
   sum_students_also_studied: students_also_studied
   sum_course_units: units
   sum_course_availability:
-    source: course_availability
-    plugin: entity_generate
-    value_key: name
-    bundle_key: vid
-    bundle: sum_course_availability
-    entity_type: taxonomy_term
+    -
+      plugin: skip_on_empty
+      method: process
+      source: course_availability
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_availability
+      entity_type: taxonomy_term
 destination:
   plugin: 'entity_reference_revisions:node'
   new_revisions: true
