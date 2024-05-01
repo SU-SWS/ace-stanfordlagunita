@@ -1,0 +1,21 @@
+adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.sum_course_filter
+      - paragraphs.paragraphs_type.sum_user_favorites
+  settings:
+    handler_settings:
+      target_bundles:
+        sum_course_filter: sum_course_filter
+        sum_user_favorites: sum_user_favorites
+      target_bundles_drag_drop:
+        stanford_page_title_banner:
+          weight: 24
+          enabled: false
+        sum_course_filter:
+          weight: 29
+          enabled: true
+        sum_user_favorites:
+          weight: 30
+          enabled: true
+removing: {  }

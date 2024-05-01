@@ -1,0 +1,20 @@
+uuid: fa736991-af43-4b24-90cf-c255a7c3b016
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sum_user_favorites
+id: paragraph.sum_user_favorites.default
+targetEntityType: paragraph
+bundle: sum_user_favorites
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true

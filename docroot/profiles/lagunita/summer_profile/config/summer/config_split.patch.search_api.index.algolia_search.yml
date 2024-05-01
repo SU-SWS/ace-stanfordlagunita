@@ -1,8 +1,164 @@
 adding:
+  dependencies:
+    config:
+      - field.storage.node.sum_course_catalog_number
+      - field.storage.node.sum_course_class_number
+      - field.storage.node.sum_course_availability
+      - field.storage.node.sum_course_course_cost
+      - field.storage.node.sum_course_format
+      - field.storage.node.sum_course_length
+      - field.storage.node.sum_course_notes
+      - field.storage.node.sum_course_cross_listing
+      - field.storage.node.sum_course_end_date
+      - field.storage.node.sum_course_interest_area
+      - field.storage.node.sum_course_population
+      - field.storage.node.sum_course_prerequisites
+      - field.storage.node.sum_course_schedule
+      - field.storage.node.sum_course_start_date
+      - field.storage.node.sum_course_units
   field_settings:
     html:
       configuration:
         view_mode:
           'entity:node':
             sum_summer_courses: search_indexing
+    sum_course_availability:
+      label: 'Course Availability » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sum_course_availability:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_availability
+        module:
+          - taxonomy
+    sum_course_catalog_number:
+      label: 'Catalog Number'
+      datasource_id: 'entity:node'
+      property_path: sum_course_catalog_number
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_catalog_number
+    sum_course_class_number:
+      label: 'Class Number'
+      datasource_id: 'entity:node'
+      property_path: sum_course_class_number
+      type: integer
+      dependencies:
+        config:
+          - field.storage.node.sum_course_class_number
+    sum_course_course_cost:
+      label: 'Course Cost'
+      datasource_id: 'entity:node'
+      property_path: sum_course_course_cost
+      type: integer
+      dependencies:
+        config:
+          - field.storage.node.sum_course_course_cost
+    sum_course_cross_listing:
+      label: 'Cross Listing'
+      datasource_id: 'entity:node'
+      property_path: sum_course_cross_listing
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_cross_listing
+    sum_course_end_date:
+      label: 'End Date'
+      datasource_id: 'entity:node'
+      property_path: sum_course_end_date
+      type: date
+      dependencies:
+        config:
+          - field.storage.node.sum_course_end_date
+    sum_course_format:
+      label: 'Course Format'
+      datasource_id: 'entity:node'
+      property_path: sum_course_format
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_format
+    sum_course_interest:
+      label: 'Interest Area » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sum_course_interest_area:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_interest_area
+        module:
+          - taxonomy
+    sum_course_length:
+      label: 'Course Length'
+      datasource_id: 'entity:node'
+      property_path: sum_course_length
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_length
+    sum_course_notes:
+      label: 'Course Notes'
+      datasource_id: 'entity:node'
+      property_path: sum_course_notes
+      type: text
+      dependencies:
+        config:
+          - field.storage.node.sum_course_notes
+    sum_course_population:
+      label: 'Population » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sum_course_population:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_population
+        module:
+          - taxonomy
+    sum_course_prerequisites:
+      label: Prerequisites
+      datasource_id: 'entity:node'
+      property_path: sum_course_prerequisites
+      type: text
+      dependencies:
+        config:
+          - field.storage.node.sum_course_prerequisites
+    sum_course_schedule:
+      label: Schedule
+      datasource_id: 'entity:node'
+      property_path: sum_course_schedule
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_schedule
+    sum_course_start_date:
+      label: 'Start Date'
+      datasource_id: 'entity:node'
+      property_path: sum_course_start_date
+      type: date
+      dependencies:
+        config:
+          - field.storage.node.sum_course_start_date
+    sum_course_units:
+      label: Units
+      datasource_id: 'entity:node'
+      property_path: sum_course_units
+      type: integer
+      dependencies:
+        config:
+          - field.storage.node.sum_course_units
+  processor_settings:
+    html_filter:
+      fields:
+        - sum_course_availability
+        - sum_course_catalog_number
+        - sum_course_cross_listing
+        - sum_course_format
+        - sum_course_interest
+        - sum_course_length
+        - sum_course_notes
+        - sum_course_population
+        - sum_course_prerequisites
+        - sum_course_schedule
 removing: {  }

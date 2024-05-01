@@ -1,7 +1,10 @@
 adding:
   dependencies:
     config:
+      - core.entity_view_display.node.stanford_page.default
       - filter.format.sum_markdown
   permissions:
+    - 'configure all stanford_page node layout overrides'
+    - 'configure editable stanford_page node layout overrides'
     - 'use text format sum_markdown'
 removing: {  }

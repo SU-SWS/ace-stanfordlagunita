@@ -27,7 +27,6 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_students_also_studied
     - node.type.sum_summer_courses
   module:
-    - datetime
     - layout_builder
     - text
     - user
@@ -43,172 +42,45 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
-    region: content
-  sum_course_availability:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 124
+    weight: 0
     region: content
   sum_course_catalog_number:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 108
-    region: content
-  sum_course_class_number:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 116
-    region: content
-  sum_course_course_cost:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 117
+    weight: 3
     region: content
   sum_course_cross_listing:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 112
+    weight: 4
     region: content
   sum_course_description:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 107
-    region: content
-  sum_course_end_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 123
-    region: content
-  sum_course_format:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 119
+    weight: 1
     region: content
   sum_course_instructors:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 109
-    region: content
-  sum_course_interest_area:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 113
-    region: content
-  sum_course_length:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 120
+    weight: 5
     region: content
   sum_course_notes:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 106
-    region: content
-  sum_course_population:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 114
-    region: content
-  sum_course_prerequisites:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 111
-    region: content
-  sum_course_schedule:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 121
-    region: content
-  sum_course_start_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 122
-    region: content
-  sum_course_syllabus_file:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 127
-    region: content
-  sum_course_unique_import_id:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 126
-    region: content
-  sum_course_units:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 110
-    region: content
-  sum_students_also_studied:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 115
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true
