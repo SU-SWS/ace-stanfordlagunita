@@ -1,0 +1,20 @@
+uuid: 1015f93d-4943-46ef-a140-4a78a0dd66f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sum_course_filter
+id: paragraph.sum_course_filter.default
+targetEntityType: paragraph
+bundle: sum_course_filter
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
