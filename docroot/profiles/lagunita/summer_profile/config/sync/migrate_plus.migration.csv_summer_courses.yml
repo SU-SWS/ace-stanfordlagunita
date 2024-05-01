@@ -23,7 +23,7 @@ source:
     image_alt: ''
   fields:
     -
-      name: id
+      name: unique_import_id
       label: 'ID'
       selector: unique_import_id
     -
@@ -107,10 +107,10 @@ source:
       label: 'Course Syllabus File'
       selector: course_syllabus_file
   ids:
-    - id
+    - unique_import_id
 process:
   title: course_name
-  sum_course_unique_import_id: id
+  sum_course_unique_import_id: unique_import_id
   sum_course_catalog_number: catalog_number
   status:
     plugin: default_value
@@ -184,6 +184,7 @@ process:
       entity_type: taxonomy_term
 destination:
   plugin: 'entity_reference_revisions:node'
+  default_bundle: sum_summer_courses
   new_revisions: true
   force_revision: true
 migration_dependencies:
