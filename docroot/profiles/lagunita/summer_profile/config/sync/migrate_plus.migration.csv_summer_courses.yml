@@ -113,6 +113,9 @@ source:
   ids:
     - id
 process:
+  type:
+    plugin: default_value
+    default_value: sum_summer_courses
   title: course_name
   sum_course_unique_import_id: id
   sum_course_catalog_number: catalog_number
@@ -158,7 +161,7 @@ process:
       plugin: entity_generate
       value_key: name
       bundle_key: vid
-      bundle: sum_summer_courses
+      bundle: sum_course_interest_area
       entity_type: taxonomy_term
   sum_course_population:
     -
@@ -169,7 +172,7 @@ process:
       plugin: entity_generate
       value_key: name
       bundle_key: vid
-      bundle: sum_course_availability
+      bundle: sum_course_population
       entity_type: taxonomy_term
   sum_course_prerequisites: prerequisites
   sum_course_schedule: schedule
