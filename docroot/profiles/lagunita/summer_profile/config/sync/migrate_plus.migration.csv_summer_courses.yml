@@ -110,7 +110,7 @@ source:
   ids:
     - unique_import_id
 process:
-  title: class_number
+  title: catalog_number
   sum_course_unique_import_id: unique_import_id
   sum_course_catalog_number: catalog_number
   status:
@@ -122,7 +122,8 @@ process:
   sum_course_format: course_format
   sum_course_length: course_length
   sum_course_name: course_name
-  sum_course_notes: course_notes
+  sum_course_notes/value: course_notes
+  sum_course_notes/format: constants/markdown
   sum_course_syllabus_file:
     -
       plugin: skip_on_empty
