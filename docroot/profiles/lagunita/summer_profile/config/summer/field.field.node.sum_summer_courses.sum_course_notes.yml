@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.sum_course_notes
     - filter.format.stanford_html
+    - filter.format.sum_markdown
     - node.type.sum_summer_courses
   module:
     - text
@@ -21,4 +22,5 @@ default_value_callback: ''
 settings:
   allowed_formats:
     - stanford_html
+    - sum_markdown
 field_type: text_long

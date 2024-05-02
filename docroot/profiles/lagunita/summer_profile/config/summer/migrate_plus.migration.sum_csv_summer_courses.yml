@@ -1,0 +1,213 @@
+uuid: 9a0d77ad-0009-46f6-b9ee-5b99fc6b22a3
+langcode: en
+status: true
+dependencies: {  }
+id: sum_csv_summer_courses
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: default
+label: 'CSV Summer Courses'
+source:
+  plugin: csv
+  path: /tmp/summer_courses.csv
+  constants:
+    status: 1
+    type: sum_summer_courses
+    basic_html: stanford_html
+    minimal_html: stanford_minimal_html
+    markdown: sum_markdown
+    image_destination: 'public://media/image/csv/'
+    apply_link_title: Apply
+    learn_more_link_title: 'Learn More'
+    image_alt: ''
+  fields:
+    -
+      name: unique_import_id
+      label: ID
+      selector: unique_import_id
+    -
+      name: catalog_number
+      label: 'Catalog Number'
+      selector: catalog_number
+    -
+      name: course_name
+      label: 'Course Name'
+      selector: course_name
+    -
+      name: description
+      label: Description
+      selector: description
+    -
+      name: course_notes
+      label: 'Course Notes'
+      selector: course_notes
+    -
+      name: instructors
+      label: Instructors
+      selector: instructors
+    -
+      name: units
+      label: Units
+      selector: units
+    -
+      name: cross_listing
+      label: 'Cross Listing'
+      selector: cross_listing
+    -
+      name: pre_requisites
+      label: 'Pre Requisites'
+      selector: pre_requisites
+    -
+      name: course_format
+      label: 'Course Format'
+      selector: course_format
+    -
+      name: population
+      label: Population
+      selector: population
+    -
+      name: interest_area
+      label: 'Interest Area'
+      selector: interest_area
+    -
+      name: students_also_studied
+      label: 'Students Also Studied'
+      selector: students_also_studied
+    -
+      name: course_cost
+      label: 'Course Cost'
+      selector: course_cost
+    -
+      name: class_number
+      label: 'Class Number'
+      selector: class_number
+    -
+      name: course_length
+      label: 'Course Length'
+      selector: course_length
+    -
+      name: start_date
+      label: 'Start Date'
+      selector: start_date
+    -
+      name: end_date
+      label: 'End Date'
+      selector: end_date
+    -
+      name: schedule
+      label: Schedule
+      selector: schedule
+    -
+      name: course_availability
+      label: 'Course Availability'
+      selector: course_availability
+    -
+      name: course_syllabus_file
+      label: 'Course Syllabus File'
+      selector: course_syllabus_file
+  ids:
+    - unique_import_id
+process:
+  title: course_name
+  sum_course_unique_import_id: unique_import_id
+  sum_course_catalog_number: catalog_number
+  sum_course_course_cost: course_cost
+  sum_course_format: course_format
+  sum_course_length: course_length
+  sum_course_notes/value: course_notes
+  sum_course_notes/format: constants/markdown
+  sum_course_syllabus_file:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: course_syllabus_file
+    -
+      plugin: file_import
+      destination: constants/pdf_destination
+      id_only: true
+      reuse: true
+  sum_course_cross_listing:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cross_listing
+    -
+      plugin: explode
+      delimiter: ','
+  sum_course_description/value: description
+  sum_course_description/format: constants/markdown
+  sum_course_start_date:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: start_date
+    -
+      plugin: format_date
+      from_format: 'n/j/Y'
+      to_format: 'Y-m-d'
+      timezone: UTC
+  sum_course_end_date:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: end_date
+    -
+      plugin: format_date
+      from_format: 'n/j/Y'
+      to_format: 'Y-m-d'
+      timezone: UTC
+  sum_course_instructors:
+    -
+      plugin: skip_on_empty
+      source: instructors
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
+  sum_course_interest_area:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: interest_area
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_interest_area
+      entity_type: taxonomy_term
+  sum_course_population:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: population
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_population
+      entity_type: taxonomy_term
+  sum_course_prerequisites/value: prerequisites
+  sum_course_prerequisites/format: constants/markdown
+  sum_course_schedule: schedule
+  sum_students_also_studied: students_also_studied
+  sum_course_units: units
+  sum_course_availability:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: course_availability
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_availability
+      entity_type: taxonomy_term
+destination:
+  plugin: 'entity:node'
+  default_bundle: sum_summer_courses
+migration_dependencies: {  }
