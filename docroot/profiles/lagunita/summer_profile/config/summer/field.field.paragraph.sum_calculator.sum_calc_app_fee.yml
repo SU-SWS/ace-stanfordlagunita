@@ -1,0 +1,48 @@
+uuid: 14a2869b-7e9f-4a0c-bfe5-b90895d93135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_app_fee
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - double_field
+id: paragraph.sum_calculator.sum_calc_app_fee
+field_name: sum_calc_app_fee
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Application Fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: 'Student Type'
+    list: true
+    allowed_values:
+      -
+        label: 'High School'
+        value: highschool
+      -
+        label: Undergraduate
+        value: undergraduate
+      -
+        label: Graduate
+        value: graduate
+    max: null
+    min: null
+    required: true
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    label: 'Fee Cost'
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: true
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

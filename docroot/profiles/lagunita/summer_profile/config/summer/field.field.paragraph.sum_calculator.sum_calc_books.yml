@@ -1,0 +1,23 @@
+uuid: 3c31bb3d-620f-4f2f-af33-866658a4c257
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_books
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_books
+field_name: sum_calc_books
+entity_type: paragraph
+bundle: sum_calculator
+label: Books
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

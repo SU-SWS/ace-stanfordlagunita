@@ -1,0 +1,23 @@
+uuid: 9b442b46-c864-4ec0-a551-ef6dec4ebaa8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_health_fee
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_health_fee
+field_name: sum_calc_health_fee
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Health Services fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

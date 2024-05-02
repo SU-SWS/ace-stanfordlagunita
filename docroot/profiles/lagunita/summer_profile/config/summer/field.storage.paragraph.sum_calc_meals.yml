@@ -1,0 +1,20 @@
+uuid: d5875899-e90c-43b7-a992-79092f98e7f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_calc_meals
+field_name: sum_calc_meals
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

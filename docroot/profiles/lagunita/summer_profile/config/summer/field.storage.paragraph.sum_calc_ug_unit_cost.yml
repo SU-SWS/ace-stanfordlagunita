@@ -1,0 +1,32 @@
+uuid: 48b3e10d-c1c4-4a50-a9fb-ed9767e433e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - double_field
+    - paragraphs
+id: paragraph.sum_calc_ug_unit_cost
+field_name: sum_calc_ug_unit_cost
+entity_type: paragraph
+type: double_field
+settings:
+  storage:
+    first:
+      type: integer
+      maxlength: 2
+      precision: 10
+      scale: 0
+      datetime_type: datetime
+    second:
+      type: numeric
+      maxlength: 15
+      precision: 10
+      scale: 2
+      datetime_type: datetime
+module: double_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

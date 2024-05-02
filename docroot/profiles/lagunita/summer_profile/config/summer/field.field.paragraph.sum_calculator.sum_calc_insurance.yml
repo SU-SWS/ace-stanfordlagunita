@@ -1,0 +1,23 @@
+uuid: 3779444b-0a37-4089-be61-f4c5fbc0ca95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_insurance
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_insurance
+field_name: sum_calc_insurance
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Insurance Cost'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

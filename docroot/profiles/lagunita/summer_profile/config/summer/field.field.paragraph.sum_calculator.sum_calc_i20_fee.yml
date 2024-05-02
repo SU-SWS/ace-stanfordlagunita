@@ -1,0 +1,23 @@
+uuid: 208acbf7-05a5-437a-bae6-5622c51036d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_i20_fee
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_i20_fee
+field_name: sum_calc_i20_fee
+entity_type: paragraph
+bundle: sum_calculator
+label: 'I-20 Processing Fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

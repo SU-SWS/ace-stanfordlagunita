@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "drupal/double_field": "^4.2",
         "drupal/markdown": "^3.0",
         "league/commonmark": "^1.0"
     },

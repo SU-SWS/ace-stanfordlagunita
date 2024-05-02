@@ -1,0 +1,20 @@
+uuid: abd0abd7-0abf-4199-ac64-d22e193841d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_calc_insurance
+field_name: sum_calc_insurance
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

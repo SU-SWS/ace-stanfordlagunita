@@ -1,0 +1,23 @@
+uuid: 7b106624-50a5-4be6-bca1-62a3a2dc2c07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_meals
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_meals
+field_name: sum_calc_meals
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Meal Plan'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

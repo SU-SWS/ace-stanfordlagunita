@@ -1,0 +1,23 @@
+uuid: 16acc4a6-18c7-4dda-bd62-46b7b6210ac5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_mail_fee
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_mail_fee
+field_name: sum_calc_mail_fee
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Mail Fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,23 @@
+uuid: 537467a8-bbe5-41a2-9ddf-9aba203f8ede
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_tech_fee
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.sum_calc_tech_fee
+field_name: sum_calc_tech_fee
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Tech Fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

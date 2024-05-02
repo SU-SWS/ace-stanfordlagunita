@@ -1,0 +1,20 @@
+uuid: 4b327c32-41fe-4fb3-bce8-5112ffc87974
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_calc_mail_fee
+field_name: sum_calc_mail_fee
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
