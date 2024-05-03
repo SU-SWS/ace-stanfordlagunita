@@ -1,17 +1,16 @@
-uuid: 2bf64ed6-b00a-4364-a755-6377f69afb5d
+uuid: 51fdfd1e-98ef-4909-8777-198adb1d991a
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.sum_calc_app_fee
-field_name: sum_calc_app_fee
+    - text
+id: paragraph.sum_calc_ins_help
+field_name: sum_calc_ins_help
 entity_type: paragraph
-type: decimal
-settings:
-  precision: 10
-  scale: 2
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

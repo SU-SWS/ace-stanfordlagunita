@@ -77,17 +77,35 @@ adding:
           enabled: true
         sum_calc_books:
           enabled: true
+        sum_calc_commute_help:
+          enabled: true
         sum_calc_documents:
+          enabled: true
+        sum_calc_grad_app_help:
           enabled: true
         sum_calc_grad_unit_cost:
           enabled: true
+        sum_calc_grad_unit_help:
+          enabled: true
         sum_calc_health_fee:
+          enabled: true
+        sum_calc_high_app_help:
           enabled: true
         sum_calc_high_unit_cost:
           enabled: true
+        sum_calc_high_unit_help:
+          enabled: true
         sum_calc_house_fees:
           enabled: true
+        sum_calc_house_help:
+          enabled: true
         sum_calc_i20_fee:
+          enabled: true
+        sum_calc_i20_help:
+          enabled: true
+        sum_calc_ins_help:
+          enabled: true
+        sum_calc_ins_wave_help:
           enabled: true
         sum_calc_insurance:
           enabled: true
@@ -99,6 +117,10 @@ adding:
           enabled: true
         sum_calc_tech_fee:
           enabled: true
+        sum_calc_ug_app_help:
+          enabled: true
         sum_calc_ug_unit_cost:
+          enabled: true
+        sum_calc_ug_unit_help:
           enabled: true
 removing: {  }

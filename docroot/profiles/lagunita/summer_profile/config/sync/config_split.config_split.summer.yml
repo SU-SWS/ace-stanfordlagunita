@@ -16,6 +16,7 @@ module:
   summer_helper: 0
 theme: {  }
 complete_list:
+  - core.entity_view_mode.paragraph.sum_editing_preview
   - filter.format.sum_markdown
   - 'config_pages.type.sum_*'
   - 'core.base_field_override.node.sum_*'

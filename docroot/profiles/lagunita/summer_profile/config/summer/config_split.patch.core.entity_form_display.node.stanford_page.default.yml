@@ -1,0 +1,15 @@
+adding:
+  content:
+    su_page_components:
+      settings:
+        preview_view_mode: sum_editing_preview
+      third_party_settings:
+        change_labels:
+          field_label_overwrite: ''
+          hide_add_another: 0
+          force_single_cardinality: 0
+removing:
+  content:
+    su_page_components:
+      settings:
+        preview_view_mode: default

@@ -1,0 +1,24 @@
+uuid: 0d22a764-7527-41ad-9891-1e6e24ef4143
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_ins_help
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - text
+id: paragraph.sum_calculator.sum_calc_ins_help
+field_name: sum_calc_ins_help
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Insurance Help text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long
