@@ -7,6 +7,8 @@ adding:
         edges_enabled: true
         routes_enabled: true
     paragraph:
+      sum_calculator:
+        enabled: true
       sum_course_filter:
         enabled: true
       sum_user_favorites:
@@ -68,5 +70,57 @@ adding:
         sum_course_units:
           enabled: true
         sum_students_also_studied:
+          enabled: true
+    paragraph:
+      sum_calculator:
+        sum_calc_app_fee:
+          enabled: true
+        sum_calc_books:
+          enabled: true
+        sum_calc_commute_help:
+          enabled: true
+        sum_calc_documents:
+          enabled: true
+        sum_calc_grad_app_help:
+          enabled: true
+        sum_calc_grad_unit_cost:
+          enabled: true
+        sum_calc_grad_unit_help:
+          enabled: true
+        sum_calc_health_fee:
+          enabled: true
+        sum_calc_high_app_help:
+          enabled: true
+        sum_calc_high_unit_cost:
+          enabled: true
+        sum_calc_high_unit_help:
+          enabled: true
+        sum_calc_house_fees:
+          enabled: true
+        sum_calc_house_help:
+          enabled: true
+        sum_calc_i20_fee:
+          enabled: true
+        sum_calc_i20_help:
+          enabled: true
+        sum_calc_ins_help:
+          enabled: true
+        sum_calc_ins_wave_help:
+          enabled: true
+        sum_calc_insurance:
+          enabled: true
+        sum_calc_mail_fee:
+          enabled: true
+        sum_calc_meals:
+          enabled: true
+        sum_calc_prog_fee:
+          enabled: true
+        sum_calc_tech_fee:
+          enabled: true
+        sum_calc_ug_app_help:
+          enabled: true
+        sum_calc_ug_unit_cost:
+          enabled: true
+        sum_calc_ug_unit_help:
           enabled: true
 removing: {  }

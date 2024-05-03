@@ -1,0 +1,19 @@
+uuid: f61c859f-d0c0-4353-8943-e892d970e547
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_calc_high_app_help
+field_name: sum_calc_high_app_help
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

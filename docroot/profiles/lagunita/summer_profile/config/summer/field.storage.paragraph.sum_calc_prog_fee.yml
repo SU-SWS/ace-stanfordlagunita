@@ -1,0 +1,32 @@
+uuid: 5a00b01b-f3fc-434a-b040-5237ac71dceb
+langcode: en
+status: true
+dependencies:
+  module:
+    - double_field
+    - paragraphs
+id: paragraph.sum_calc_prog_fee
+field_name: sum_calc_prog_fee
+entity_type: paragraph
+type: double_field
+settings:
+  storage:
+    first:
+      type: string
+      maxlength: 255
+      precision: 10
+      scale: 2
+      datetime_type: datetime
+    second:
+      type: numeric
+      maxlength: 255
+      precision: 10
+      scale: 2
+      datetime_type: datetime
+module: double_field
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+uuid: 6e898a67-66ee-4da9-ae4b-45d072af5d77
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_editing_preview
+label: 'Editing Preview'
+description: ''
+targetEntityType: paragraph
+cache: true

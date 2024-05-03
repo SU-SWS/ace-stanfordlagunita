@@ -1,0 +1,333 @@
+uuid: 3feffa84-4659-437f-9602-fad6b6781dc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sum_editing_preview
+    - field.field.paragraph.sum_calculator.sum_calc_app_fee
+    - field.field.paragraph.sum_calculator.sum_calc_books
+    - field.field.paragraph.sum_calculator.sum_calc_commute_help
+    - field.field.paragraph.sum_calculator.sum_calc_documents
+    - field.field.paragraph.sum_calculator.sum_calc_grad_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_grad_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_grad_unit_help
+    - field.field.paragraph.sum_calculator.sum_calc_health_fee
+    - field.field.paragraph.sum_calculator.sum_calc_high_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_high_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_high_unit_help
+    - field.field.paragraph.sum_calculator.sum_calc_house_fees
+    - field.field.paragraph.sum_calculator.sum_calc_house_help
+    - field.field.paragraph.sum_calculator.sum_calc_i20_fee
+    - field.field.paragraph.sum_calculator.sum_calc_i20_help
+    - field.field.paragraph.sum_calculator.sum_calc_ins_help
+    - field.field.paragraph.sum_calculator.sum_calc_ins_wave_help
+    - field.field.paragraph.sum_calculator.sum_calc_insurance
+    - field.field.paragraph.sum_calculator.sum_calc_mail_fee
+    - field.field.paragraph.sum_calculator.sum_calc_meals
+    - field.field.paragraph.sum_calculator.sum_calc_prog_fee
+    - field.field.paragraph.sum_calculator.sum_calc_tech_fee
+    - field.field.paragraph.sum_calculator.sum_calc_ug_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_ug_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_ug_unit_help
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - double_field
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.sum_calculator.sum_editing_preview
+targetEntityType: paragraph
+bundle: sum_calculator
+mode: sum_editing_preview
+content:
+  sum_calc_books:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  sum_calc_commute_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  sum_calc_documents:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  sum_calc_grad_app_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  sum_calc_grad_unit_cost:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sum_calc_grad_unit_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  sum_calc_health_fee:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  sum_calc_high_app_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  sum_calc_high_unit_cost:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_calc_high_unit_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  sum_calc_house_fees:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  sum_calc_house_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  sum_calc_i20_fee:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  sum_calc_i20_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  sum_calc_ins_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  sum_calc_ins_wave_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  sum_calc_insurance:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  sum_calc_mail_fee:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  sum_calc_meals:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  sum_calc_prog_fee:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sum_calc_tech_fee:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  sum_calc_ug_app_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  sum_calc_ug_unit_cost:
+    type: double_field_unformatted_list
+    label: above
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_calc_ug_unit_help:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
+hidden:
+  search_api_excerpt: true
+  sum_calc_app_fee: true

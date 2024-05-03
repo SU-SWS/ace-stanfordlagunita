@@ -11,10 +11,13 @@ no_patching: false
 storage: folder
 folder: profiles/lagunita/summer_profile/config/summer
 module:
+  double_field: 0
   markdown: 0
   summer_helper: 0
 theme: {  }
 complete_list:
+  - core.entity_view_mode.paragraph.sum_editing_preview
+  - filter.format.sum_markdown
   - 'config_pages.type.sum_*'
   - 'core.base_field_override.node.sum_*'
   - 'core.entity_form_display.config_pages.sum_*'
@@ -43,10 +46,9 @@ complete_list:
   - 'taxonomy.vocabulary.sum_*'
   - 'user.role.sum_*'
   - 'views.view.sum_*'
-  - filter.format.sum_markdown
 partial_list:
+  - graphql_compose.settings
   - '*su_*'
   - '*stanford_*'
   - 'user.role.*'
   - 'search_api.index.*'
-  - graphql_compose.settings

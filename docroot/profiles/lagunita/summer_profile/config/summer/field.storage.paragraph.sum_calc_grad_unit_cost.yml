@@ -1,0 +1,32 @@
+uuid: 572d849b-496a-4751-aca1-503272a6155a
+langcode: en
+status: true
+dependencies:
+  module:
+    - double_field
+    - paragraphs
+id: paragraph.sum_calc_grad_unit_cost
+field_name: sum_calc_grad_unit_cost
+entity_type: paragraph
+type: double_field
+settings:
+  storage:
+    first:
+      type: integer
+      maxlength: 2
+      precision: 10
+      scale: 0
+      datetime_type: datetime
+    second:
+      type: numeric
+      maxlength: 15
+      precision: 10
+      scale: 2
+      datetime_type: datetime
+module: double_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

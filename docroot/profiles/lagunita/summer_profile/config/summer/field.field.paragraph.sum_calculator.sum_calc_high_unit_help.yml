@@ -1,0 +1,24 @@
+uuid: 51efef52-8af6-4ecd-abe8-2b9c0f84c5e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_high_unit_help
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - text
+id: paragraph.sum_calculator.sum_calc_high_unit_help
+field_name: sum_calc_high_unit_help
+entity_type: paragraph
+bundle: sum_calculator
+label: 'High School Unit Help text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

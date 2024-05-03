@@ -1,0 +1,24 @@
+uuid: f42bf37e-e635-46a9-9d98-fdd43a03aa58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_house_help
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - text
+id: paragraph.sum_calculator.sum_calc_house_help
+field_name: sum_calc_house_help
+entity_type: paragraph
+bundle: sum_calculator
+label: 'On-campus Help Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

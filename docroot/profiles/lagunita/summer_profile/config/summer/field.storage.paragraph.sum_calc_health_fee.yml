@@ -1,0 +1,20 @@
+uuid: d8dce94f-46c9-49d6-9a6e-ee8874923ec4
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_calc_health_fee
+field_name: sum_calc_health_fee
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

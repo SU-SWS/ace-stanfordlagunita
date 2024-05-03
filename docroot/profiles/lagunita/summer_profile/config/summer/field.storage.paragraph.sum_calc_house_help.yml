@@ -1,0 +1,19 @@
+uuid: a4df0ad2-bb7b-492b-aea0-587e56f7de42
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_calc_house_help
+field_name: sum_calc_house_help
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

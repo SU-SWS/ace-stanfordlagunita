@@ -1,0 +1,20 @@
+uuid: ae481dca-f34d-4c04-ad76-84c83495da69
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_calc_books
+field_name: sum_calc_books
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

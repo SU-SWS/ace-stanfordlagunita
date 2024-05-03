@@ -1,0 +1,527 @@
+uuid: 0439ce03-2f4a-4ea9-99cb-c380059d8f7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_calculator.sum_calc_app_fee
+    - field.field.paragraph.sum_calculator.sum_calc_books
+    - field.field.paragraph.sum_calculator.sum_calc_commute_help
+    - field.field.paragraph.sum_calculator.sum_calc_documents
+    - field.field.paragraph.sum_calculator.sum_calc_grad_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_grad_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_grad_unit_help
+    - field.field.paragraph.sum_calculator.sum_calc_health_fee
+    - field.field.paragraph.sum_calculator.sum_calc_high_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_high_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_high_unit_help
+    - field.field.paragraph.sum_calculator.sum_calc_house_fees
+    - field.field.paragraph.sum_calculator.sum_calc_house_help
+    - field.field.paragraph.sum_calculator.sum_calc_i20_fee
+    - field.field.paragraph.sum_calculator.sum_calc_i20_help
+    - field.field.paragraph.sum_calculator.sum_calc_ins_help
+    - field.field.paragraph.sum_calculator.sum_calc_ins_wave_help
+    - field.field.paragraph.sum_calculator.sum_calc_insurance
+    - field.field.paragraph.sum_calculator.sum_calc_mail_fee
+    - field.field.paragraph.sum_calculator.sum_calc_meals
+    - field.field.paragraph.sum_calculator.sum_calc_prog_fee
+    - field.field.paragraph.sum_calculator.sum_calc_tech_fee
+    - field.field.paragraph.sum_calculator.sum_calc_ug_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_ug_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_ug_unit_help
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - change_labels
+    - double_field
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_unit_costs:
+      children:
+        - sum_calc_ug_unit_cost
+        - sum_calc_grad_unit_cost
+        - sum_calc_high_unit_cost
+        - group_unit_costs_help_text
+      label: 'Unit Costs'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_housing_fees:
+      children:
+        - sum_calc_house_fees
+        - sum_calc_meals
+        - sum_calc_tech_fee
+        - sum_calc_mail_fee
+        - group_housing_help_text
+      label: 'Housing Fees'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_extra_fees:
+      children:
+        - sum_calc_books
+        - sum_calc_health_fee
+        - sum_calc_documents
+      label: 'Extra Fees'
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_student_type_fees:
+      children:
+        - sum_calc_app_fee
+        - sum_calc_prog_fee
+        - group_application_help_texts
+      label: 'Student Type Fees'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_i_20_fee:
+      children:
+        - sum_calc_i20_fee
+        - group_i_20_help_text
+      label: 'I-20 Fee'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_insurance:
+      children:
+        - sum_calc_insurance
+        - group_insurance_help_text
+      label: Insurance
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_application_help_texts:
+      children:
+        - sum_calc_high_app_help
+        - sum_calc_ug_app_help
+        - sum_calc_grad_app_help
+      label: 'Application Help Texts'
+      region: content
+      parent_name: group_student_type_fees
+      weight: 15
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_unit_costs_help_text:
+      children:
+        - sum_calc_ug_unit_help
+        - sum_calc_grad_unit_help
+        - sum_calc_high_unit_help
+      label: 'Unit Costs Help Text'
+      region: content
+      parent_name: group_unit_costs
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_i_20_help_text:
+      children:
+        - sum_calc_i20_help
+      label: 'I-20 Help text'
+      region: content
+      parent_name: group_i_20_fee
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_housing_help_text:
+      children:
+        - sum_calc_house_help
+        - sum_calc_commute_help
+      label: 'Housing Help Text'
+      region: content
+      parent_name: group_housing_fees
+      weight: 9
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_insurance_help_text:
+      children:
+        - sum_calc_ins_wave_help
+        - sum_calc_ins_help
+      label: 'Insurance Help text'
+      region: content
+      parent_name: group_insurance
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: paragraph.sum_calculator.default
+targetEntityType: paragraph
+bundle: sum_calculator
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sum_calc_app_fee:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_books:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_commute_help:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_documents:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_grad_app_help:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_grad_unit_cost:
+    type: double_field
+    weight: 3
+    region: content
+    settings:
+      first:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  sum_calc_grad_unit_help:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_health_fee:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_high_app_help:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_high_unit_cost:
+    type: double_field
+    weight: 4
+    region: content
+    settings:
+      first:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  sum_calc_high_unit_help:
+    type: text_textarea
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_house_fees:
+    type: double_field
+    weight: 5
+    region: content
+    settings:
+      first:
+        type: select
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  sum_calc_house_help:
+    type: text_textarea
+    weight: 10
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_i20_fee:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_i20_help:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_ins_help:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_ins_wave_help:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_insurance:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_mail_fee:
+    type: number
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_meals:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_prog_fee:
+    type: double_field
+    weight: 14
+    region: content
+    settings:
+      first:
+        type: select
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  sum_calc_tech_fee:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_ug_app_help:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_calc_ug_unit_cost:
+    type: double_field
+    weight: 2
+    region: content
+    settings:
+      first:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: number
+        label_display: block
+        size: 30
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  sum_calc_ug_unit_help:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true

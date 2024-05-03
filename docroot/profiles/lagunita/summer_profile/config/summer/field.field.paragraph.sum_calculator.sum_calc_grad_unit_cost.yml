@@ -1,0 +1,39 @@
+uuid: 96cce343-d93c-4164-9058-7fab447a3ab2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_grad_unit_cost
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - double_field
+id: paragraph.sum_calculator.sum_calc_grad_unit_cost
+field_name: sum_calc_grad_unit_cost
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Graduate Unit costs'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: Units
+    list: false
+    allowed_values: {  }
+    max: 20
+    min: 1
+    required: true
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    label: 'Total Cost'
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: true
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

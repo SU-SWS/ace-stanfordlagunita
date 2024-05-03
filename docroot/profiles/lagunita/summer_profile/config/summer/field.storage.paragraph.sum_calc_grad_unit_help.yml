@@ -1,0 +1,19 @@
+uuid: 305b5b64-4c47-4445-8d9a-0a80a1dbbdbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_calc_grad_unit_help
+field_name: sum_calc_grad_unit_help
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

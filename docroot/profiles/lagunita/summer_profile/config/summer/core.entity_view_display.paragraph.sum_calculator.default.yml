@@ -1,0 +1,63 @@
+uuid: a88ef7e2-3f56-48ed-bcc9-9f62fc494ee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_calculator.sum_calc_app_fee
+    - field.field.paragraph.sum_calculator.sum_calc_books
+    - field.field.paragraph.sum_calculator.sum_calc_commute_help
+    - field.field.paragraph.sum_calculator.sum_calc_documents
+    - field.field.paragraph.sum_calculator.sum_calc_grad_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_grad_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_grad_unit_help
+    - field.field.paragraph.sum_calculator.sum_calc_health_fee
+    - field.field.paragraph.sum_calculator.sum_calc_high_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_high_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_high_unit_help
+    - field.field.paragraph.sum_calculator.sum_calc_house_fees
+    - field.field.paragraph.sum_calculator.sum_calc_house_help
+    - field.field.paragraph.sum_calculator.sum_calc_i20_fee
+    - field.field.paragraph.sum_calculator.sum_calc_i20_help
+    - field.field.paragraph.sum_calculator.sum_calc_ins_help
+    - field.field.paragraph.sum_calculator.sum_calc_ins_wave_help
+    - field.field.paragraph.sum_calculator.sum_calc_insurance
+    - field.field.paragraph.sum_calculator.sum_calc_mail_fee
+    - field.field.paragraph.sum_calculator.sum_calc_meals
+    - field.field.paragraph.sum_calculator.sum_calc_prog_fee
+    - field.field.paragraph.sum_calculator.sum_calc_tech_fee
+    - field.field.paragraph.sum_calculator.sum_calc_ug_app_help
+    - field.field.paragraph.sum_calculator.sum_calc_ug_unit_cost
+    - field.field.paragraph.sum_calculator.sum_calc_ug_unit_help
+    - paragraphs.paragraphs_type.sum_calculator
+id: paragraph.sum_calculator.default
+targetEntityType: paragraph
+bundle: sum_calculator
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true
+  sum_calc_app_fee: true
+  sum_calc_books: true
+  sum_calc_commute_help: true
+  sum_calc_documents: true
+  sum_calc_grad_app_help: true
+  sum_calc_grad_unit_cost: true
+  sum_calc_grad_unit_help: true
+  sum_calc_health_fee: true
+  sum_calc_high_app_help: true
+  sum_calc_high_unit_cost: true
+  sum_calc_high_unit_help: true
+  sum_calc_house_fees: true
+  sum_calc_house_help: true
+  sum_calc_i20_fee: true
+  sum_calc_i20_help: true
+  sum_calc_ins_help: true
+  sum_calc_ins_wave_help: true
+  sum_calc_insurance: true
+  sum_calc_mail_fee: true
+  sum_calc_meals: true
+  sum_calc_prog_fee: true
+  sum_calc_tech_fee: true
+  sum_calc_ug_app_help: true
+  sum_calc_ug_unit_cost: true
+  sum_calc_ug_unit_help: true

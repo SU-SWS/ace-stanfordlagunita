@@ -1,17 +1,22 @@
 adding:
   dependencies:
     config:
+      - paragraphs.paragraphs_type.sum_calculator
       - paragraphs.paragraphs_type.sum_course_filter
       - paragraphs.paragraphs_type.sum_user_favorites
   settings:
     handler_settings:
       target_bundles:
         sum_course_filter: sum_course_filter
+        sum_calculator: sum_calculator
         sum_user_favorites: sum_user_favorites
       target_bundles_drag_drop:
         stanford_page_title_banner:
           weight: 24
           enabled: false
+        sum_calculator:
+          weight: 30
+          enabled: true
         sum_course_filter:
           weight: 29
           enabled: true

@@ -1,0 +1,24 @@
+uuid: c673c185-fd83-46ec-af52-a7f2202cacee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_calc_commute_help
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_calculator
+  module:
+    - text
+id: paragraph.sum_calculator.sum_calc_commute_help
+field_name: sum_calc_commute_help
+entity_type: paragraph
+bundle: sum_calculator
+label: 'Commuter Help Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long
