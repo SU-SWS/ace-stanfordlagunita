@@ -16,7 +16,7 @@ dependencies:
     - user
     - views_infinite_scroll
     - views_taxonomy_term_name_depth
-id: sul_people_table
+id: sul_people
 label: 'People Table'
 module: views
 description: 'A list of people in a table with node as the base table'
