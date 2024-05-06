@@ -23,14 +23,17 @@ settings:
     stanford_shared_tags: stanford_shared_tags
     stanford_basic_pages: stanford_basic_pages
     stanford_events: stanford_events
+    sul_people: sul_people
     stanford_news: stanford_news
     stanford_person: stanford_person
     sul_study_places: sul_study_places
     su_block_edit_links: '0'
     change_logs: '0'
     content: '0'
-    stanford_courses: '0'
     block_content: '0'
+    stanford_courses: '0'
+    editoria11y_dismissals: '0'
+    editoria11y_results: '0'
     stanford_events_past: '0'
     stanford_events_schedule: '0'
     stanford_event_series: '0'
@@ -42,6 +45,7 @@ settings:
     policies: '0'
     stanford_publications: '0'
     redirect: '0'
+    samlauth_map: '0'
     search: '0'
     taxonomy_term_pages: '0'
     user_admin_people: '0'
@@ -49,6 +53,7 @@ settings:
     viewfield_block: viewfield_block
     block: '0'
     default: '0'
+    graphql: '0'
     page: '0'
   handler: 'default:view'
   handler_settings: {  }
