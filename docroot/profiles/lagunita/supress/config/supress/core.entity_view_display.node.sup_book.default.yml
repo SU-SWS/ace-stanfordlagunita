@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copyright
     - field.field.node.sup_book.sup_book_description
     - field.field.node.sup_book.sup_book_digital_comp_link
+    - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_html_page_title
     - field.field.node.sup_book.sup_book_illustrations
     - field.field.node.sup_book.sup_book_image
@@ -65,6 +66,7 @@ dependencies:
     - cshs
     - datetime
     - empty_fields
+    - entity_reference_revisions
     - field_formatter_class
     - field_label
     - name
@@ -214,6 +216,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 137
+    region: content
+  sup_book_excerpts:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 193
     region: content
   sup_book_html_page_title:
     type: string
@@ -394,12 +405,14 @@ content:
     weight: 155
     region: content
   sup_book_print_desk_copies:
-    type: string
+    type: boolean
     label: above
     settings:
-      link_to_entity: false
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    weight: 156
+    weight: 194
     region: content
   sup_book_pub_date_cloth:
     type: datetime_default

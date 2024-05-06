@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copyright
     - field.field.node.sup_book.sup_book_description
     - field.field.node.sup_book.sup_book_digital_comp_link
+    - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_html_page_title
     - field.field.node.sup_book.sup_book_illustrations
     - field.field.node.sup_book.sup_book_image
@@ -91,6 +92,7 @@ hidden:
   sup_book_copyright: true
   sup_book_description: true
   sup_book_digital_comp_link: true
+  sup_book_excerpts: true
   sup_book_html_page_title: true
   sup_book_illustrations: true
   sup_book_image: true

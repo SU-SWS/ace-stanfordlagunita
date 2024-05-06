@@ -331,6 +331,10 @@ source:
       name: intl_cart
       label: intl_cart
       selector: fieldData/intl_cart
+    -
+      name: digital_comp_link_yn
+      label: digital_comp_link_yn
+      selector: fieldData/digital_comp_link_yn
   ids:
     work_id_number:
       type: integer
@@ -402,7 +406,16 @@ process:
         - '</em>'
         - '<br />'
   sup_book_description/format: constants/stanford_html
-  sup_book_digital_comp_link: digital_comp_link
+  sup_book_digital_comp_link:
+    -
+      plugin: skip_on_empty
+      source: digital_comp_link_yn
+      method: process
+    -
+      plugin: static_map
+      map:
+        yes: 1
+      default_value: null
   sup_book_html_page_title: html_page_title
   sup_book_illustrations: illustrations
   sup_book_imprint:
@@ -438,7 +451,16 @@ process:
   sup_book_price_cloth: price_cloth
   sup_book_price_digital: price_digital
   sup_book_price_paper: price_paper
-  sup_book_print_desk_copies: print_desk_copies
+  sup_book_print_desk_copies:
+    -
+      plugin: skip_on_empty
+      source: print_desk_copies
+      method: process
+    -
+      plugin: static_map
+      map:
+        yes: 1
+      default_value: null
   sup_book_pub_date_cloth: pub_date_cloth
   sup_book_pub_date_digital: pub_date_digital
   sup_book_pub_date_first: pub_date_first
@@ -487,8 +509,8 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: "/<.*?>/"
-      replace: ""
+      search: '/<.*?>/'
+      replace: ''
   sup_book_table_of_contents/value: table_of_contents
   sup_book_table_of_contents/format: constants/stanford_html
   sup_book_url_isw: url_isw
@@ -503,14 +525,14 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: "/\\r$/"
-      replace: ""
+      search: /\r$/
+      replace: ''
     -
       plugin: explode
       delimiter: "\r"
     -
       plugin: explode
-      delimiter: "-"
+      delimiter: '-'
       limit: 2
     -
       plugin: sub_process
@@ -519,17 +541,17 @@ process:
           -
             plugin: skip_on_empty
             method: process
-            source: "0"
+            source: '0'
           -
             plugin: str_replace
             regex: true
-            search: "/ +$/"
-            replace: ""
+            search: '/ +$/'
+            replace: ''
         subject_parent:
           -
             plugin: skip_on_empty
             method: process
-            source: "@subject_parent_name"
+            source: '@subject_parent_name'
           -
             plugin: entity_generate
             entity_type: taxonomy_term
@@ -537,32 +559,32 @@ process:
             bundle: sup_book_subjects
             value_key: sup_subject_hash
             values:
-              name: "@subject_parent_name"
+              name: '@subject_parent_name'
         subject_child_name:
           -
             plugin: skip_on_empty
             method: process
-            source: "1"
+            source: '1'
           -
             plugin: str_replace
             regex: true
-            search: "/^([- ]+)/"
-            replace: ""
+            search: '/^([- ]+)/'
+            replace: ''
         subject_child_path:
           -
             plugin: skip_on_empty
             method: process
-            source: "@subject_child_name"
+            source: '@subject_child_name'
           -
             plugin: concat
-            delimiter: "|"
+            delimiter: '|'
             source:
-              - "@subject_parent_name"
-              - "@subject_child_name"
+              - '@subject_parent_name'
+              - '@subject_child_name'
         subject_child:
           -
             plugin: skip_on_empty
-            source: "@subject_child_path"
+            source: '@subject_child_path'
             method: process
           -
             plugin: entity_generate
@@ -570,15 +592,15 @@ process:
             bundle_key: vid
             bundle: sup_book_subjects
             value_key: sup_subject_hash
-            source: "@subject_child_path"
+            source: '@subject_child_path'
             values:
-              name: "@subject_child_name"
-              parent: "@subject_parent"
+              name: '@subject_child_name'
+              parent: '@subject_parent'
         target_id:
           plugin: null_coalesce
           source:
-            - "@subject_child"
-            - "@subject_parent"
+            - '@subject_child'
+            - '@subject_parent'
   sup_book_awards:
     -
       plugin: explode
@@ -600,7 +622,7 @@ process:
       method: process
     -
       plugin: explode
-      delimiter: ","
+      delimiter: ','
     -
       plugin: entity_lookup
       value_key: sup_book_work_id_number
@@ -627,8 +649,8 @@ process:
       plugin: str_replace
       source: intl_cart
       search:
-        - yes
-        - no
+        - 'yes'
+        - 'no'
       replace:
         - 1
         - 0

@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copyright
     - field.field.node.sup_book.sup_book_description
     - field.field.node.sup_book.sup_book_digital_comp_link
+    - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_html_page_title
     - field.field.node.sup_book.sup_book_illustrations
     - field.field.node.sup_book.sup_book_image
@@ -67,6 +68,7 @@ dependencies:
     - datetime
     - field_group
     - inline_entity_form
+    - layout_paragraphs
     - media_library
     - name
     - text
@@ -404,6 +406,21 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  sup_book_excerpts:
+    type: layout_paragraphs
+    weight: 64
+    region: content
+    settings:
+      preview_view_mode: sup_form_preview
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
   sup_book_html_page_title:
     type: string_textfield
     weight: 16
@@ -558,12 +575,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   sup_book_print_desk_copies:
-    type: string_textfield
-    weight: 53
+    type: boolean_checkbox
+    weight: 65
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      display_label: true
     third_party_settings: {  }
   sup_book_pub_date_cloth:
     type: datetime_default

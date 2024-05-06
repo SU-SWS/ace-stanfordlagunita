@@ -1,4 +1,4 @@
-uuid: 717ae93e-4e36-494d-a3b7-7732e6a47cf4
+uuid: a2dfc9e1-ceb4-4d82-b9e5-dc3bca14b77c
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,8 @@ dependencies:
 id: node.sup_book_print_desk_copies
 field_name: sup_book_print_desk_copies
 entity_type: node
-type: string
-settings:
-  max_length: 5
-  case_sensitive: false
-  is_ascii: false
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

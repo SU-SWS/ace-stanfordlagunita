@@ -1,4 +1,4 @@
-uuid: a961803f-f9e3-462e-b0fc-1427f6671636
+uuid: 41577790-ac0e-44b2-889f-0ad99ee6199a
 langcode: en
 status: true
 dependencies:
@@ -12,8 +12,10 @@ bundle: sup_book
 label: 'Print Desk Copies'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -69,6 +69,8 @@ adding:
           enabled: true
         sup_book_digital_comp_link:
           enabled: true
+        sup_book_excerpts:
+          enabled: true
         sup_book_html_page_title:
           enabled: true
         sup_book_illustrations:
