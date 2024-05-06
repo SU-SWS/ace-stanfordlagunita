@@ -28,6 +28,7 @@ use Drupal\user\EntityOwnerTrait;
  *   handlers = {
  *     "list_builder" = "Drupal\supress_helper\PressAwardListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "access" = "Drupal\supress_helper\PressAwardAccessControlHandler",
  *     "form" = {
  *       "edit" = "Drupal\supress_helper\Form\PressAwardForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
