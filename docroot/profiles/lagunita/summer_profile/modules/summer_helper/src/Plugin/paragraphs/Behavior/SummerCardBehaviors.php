@@ -39,6 +39,7 @@ class SummerCardBehaviors extends CardBehavior {
         'semicircle-bottom' => $this->t('Semicircle bottom'),
         'oval' => $this->t('Oval'),
       ],
+      '#default_value' => 'oval'
     ];
 
     return $element;
