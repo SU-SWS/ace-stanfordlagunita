@@ -7,7 +7,7 @@ use Drupal\paragraphs\ParagraphInterface;
 use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
 
 /**
- * Add desired behaviors to card plugin.
+ * Add desired behaviors to paragraph.
  *
  * @codeCoverageIgnore No functionality to test.
  */
