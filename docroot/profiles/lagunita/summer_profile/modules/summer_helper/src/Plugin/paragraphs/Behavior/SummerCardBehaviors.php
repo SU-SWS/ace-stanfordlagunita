@@ -29,15 +29,17 @@ class SummerCardBehaviors extends CardBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-    $element['card_variant'] = [
+    $element['sum_card_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Card variant'),
+      '#default_option' => $this->t('Default'),
       '#options' => [
         'circle' => $this->t('Circle'),
         'semicircle-top' => $this->t('Semicircle top'),
         'semicircle-bottom' => $this->t('Semicircle bottom'),
         'oval' => $this->t('Oval'),
       ],
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'bg_color'),
     ];
 
     return $element;
