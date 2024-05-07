@@ -2,7 +2,6 @@
 
 namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
-// Your class definition
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
@@ -15,7 +14,18 @@ use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
 class SummerCardBehaviors extends CardBehavior {
 
   /**
-   * {@inheritDoc}
+   * Builds card behavior form for a paragraph.
+   *
+   * @param \Drupal\paragraphs\ParagraphInterface $paragraph
+   *   The paragraph entity object.
+   * @param array $form
+   *   An associative array representing the form structure.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   *
+   * @return array
+   *   An updated associative array representing the form structure with the
+   *   added 'card_variant' element.
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
@@ -27,8 +37,9 @@ class SummerCardBehaviors extends CardBehavior {
         'semicircle-top' => $this->t('Semicircle top'),
         'semicircle-bottom' => $this->t('Semicircle bottom'),
         'oval' => $this->t('Oval'),
-      ]
+      ],
     ];
+
     return $element;
   }
 }
