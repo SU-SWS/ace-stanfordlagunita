@@ -2,6 +2,7 @@
 
 namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
+// Your class definition
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
@@ -11,7 +12,7 @@ use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
  *
  * @codeCoverageIgnore No functionality to test.
  */
-class PressCardBehaviors extends CardBehavior {
+class SummerCardBehaviors extends CardBehavior {
 
   /**
    * {@inheritDoc}
