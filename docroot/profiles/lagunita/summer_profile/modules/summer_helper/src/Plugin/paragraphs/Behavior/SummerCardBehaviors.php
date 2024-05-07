@@ -39,7 +39,6 @@ class SummerCardBehaviors extends CardBehavior {
         'semicircle-bottom' => $this->t('Semicircle bottom'),
         'oval' => $this->t('Oval'),
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'bg_color'),
     ];
 
     return $element;
