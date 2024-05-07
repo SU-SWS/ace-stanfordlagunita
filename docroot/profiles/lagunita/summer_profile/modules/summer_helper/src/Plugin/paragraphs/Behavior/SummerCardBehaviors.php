@@ -44,4 +44,5 @@ class SummerCardBehaviors extends CardBehavior {
 
     return $element;
   }
+
 }
