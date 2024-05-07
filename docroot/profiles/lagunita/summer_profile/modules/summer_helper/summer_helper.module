@@ -4,3 +4,10 @@
  * @file
  * Primary module hooks for Summer Helper module.
  */
+
+/**
+ * Implements hook_paragraphs_behavior_info_alter().
+ */
+function summer_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
+  $paragraphs_behavior['su_card_styles']['class'] = '\Drupal\summer_helper\Plugin\paragraphs\Behavior\SummerCardBehaviors';
+}
