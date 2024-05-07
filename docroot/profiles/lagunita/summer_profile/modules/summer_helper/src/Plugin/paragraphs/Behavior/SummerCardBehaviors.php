@@ -19,33 +19,16 @@ class SummerCardBehaviors extends CardBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-    $element['card_style'] = [
+    $element['card_variant'] = [
       '#type' => 'select',
-      '#title' => $this->t('Card Style'),
+      '#title' => $this->t('Card variant'),
       '#options' => [
-        'bg-image' => $this->t('Background Image'),
-      ],
-      '#empty_option' => $this->t('Default'),
-      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'card_style'),
-    ];
-    $element['bg_color'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Background Color'),
-      '#options' => [
-        'magenta' => $this->t('Magenta'),
-        'grass' => $this->t('Grass'),
-        'steel' => $this->t('Steel'),
-        'indigo' => $this->t('Indigo'),
-      ],
-      '#empty_option' => $this->t('None'),
-      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'bg_color'),
-      '#states' => [
-        'invisible' => [
-          ['[name="behavior_plugins[su_card_styles][card_style]"]' => ['value' => '']],
-        ],
-      ],
+        'circle' => $this->t('Circle'),
+        'semicircle-top' => $this->t('Semicircle top'),
+        'semicircle-bottom' => $this->t('Semicircle bottom'),
+        'oval' => $this->t('Oval'),
+      ]
     ];
     return $element;
   }
-
 }
