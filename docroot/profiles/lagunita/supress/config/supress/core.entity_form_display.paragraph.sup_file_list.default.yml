@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sup_file_list.sup_file_list_files
+    - field.field.paragraph.sup_file_list.sup_file_list_label
     - paragraphs.paragraphs_type.sup_file_list
   module:
     - media_library
@@ -14,10 +15,18 @@ mode: default
 content:
   sup_file_list_files:
     type: media_library_widget
-    weight: 0
+    weight: 1
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  sup_file_list_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

@@ -473,7 +473,7 @@ process:
       search:
         - '<I>'
         - '</I>'
-        - \r
+        - "\r"
       replace:
         - '<em>'
         - '</em>'

@@ -208,6 +208,8 @@ adding:
       sup_file_list:
         sup_file_list_files:
           enabled: true
+        sup_file_list_label:
+          enabled: true
       sup_search_form:
         sup_search_books_only:
           enabled: true

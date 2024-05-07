@@ -1,0 +1,21 @@
+uuid: b2d07779-901c-4ed0-811a-97fa5f285d39
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sup_file_list_label
+field_name: sup_file_list_label
+entity_type: paragraph
+type: string
+settings:
+  max_length: 100
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
