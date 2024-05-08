@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sup_carousel_slide.sup_slide_bg_image
     - field.field.paragraph.sup_carousel_slide.sup_slide_body
     - field.field.paragraph.sup_carousel_slide.sup_slide_body_size
     - field.field.paragraph.sup_carousel_slide.sup_slide_book
@@ -10,23 +11,42 @@ dependencies:
     - field.field.paragraph.sup_carousel_slide.sup_slide_color
     - field.field.paragraph.sup_carousel_slide.sup_slide_eyebrow
     - field.field.paragraph.sup_carousel_slide.sup_slide_hide
+    - field.field.paragraph.sup_carousel_slide.sup_slide_image
     - field.field.paragraph.sup_carousel_slide.sup_slide_orientation
     - field.field.paragraph.sup_carousel_slide.sup_slide_subtitle
     - field.field.paragraph.sup_carousel_slide.sup_slide_title
     - field.field.paragraph.sup_carousel_slide.sup_slide_title_size
-    - field.field.paragraph.sup_carousel_slide.sup_sup_image
     - paragraphs.paragraphs_type.sup_carousel_slide
   module:
     - empty_fields
     - field_formatter_class
     - field_label
     - link
+    - stanford_media
     - text
 id: paragraph.sup_carousel_slide.default
 targetEntityType: paragraph
 bundle: sup_carousel_slide
 mode: default
 content:
+  sup_slide_bg_image:
+    type: media_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: card_1x_478x318
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 5
+    region: content
   sup_slide_body:
     type: text_default
     label: hidden
@@ -61,6 +81,24 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  sup_slide_image:
+    type: media_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: card_478x239
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 6
+    region: content
   sup_slide_subtitle:
     type: string
     label: hidden
@@ -85,4 +123,3 @@ hidden:
   sup_slide_hide: true
   sup_slide_orientation: true
   sup_slide_title_size: true
-  sup_sup_image: true

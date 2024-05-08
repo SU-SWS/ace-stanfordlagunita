@@ -184,6 +184,8 @@ adding:
         sup_carousel_top_hero:
           enabled: true
       sup_carousel_slide:
+        sup_slide_bg_image:
+          enabled: true
         sup_slide_body:
           enabled: true
         sup_slide_body_size:
@@ -198,6 +200,8 @@ adding:
           enabled: true
         sup_slide_hide:
           enabled: true
+        sup_slide_image:
+          enabled: true
         sup_slide_orientation:
           enabled: true
         sup_slide_subtitle:
@@ -205,8 +209,6 @@ adding:
         sup_slide_title:
           enabled: true
         sup_slide_title_size:
-          enabled: true
-        sup_sup_image:
           enabled: true
       sup_file_list:
         sup_file_list_files:

@@ -1,12 +1,12 @@
-uuid: 698aaecd-f206-445b-9620-104ad5f38ad4
+uuid: 36424592-9dc6-45e2-9f46-20ddceb7c61d
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - paragraphs
-id: paragraph.sup_sup_image
-field_name: sup_sup_image
+id: paragraph.sup_slide_image
+field_name: sup_slide_image
 entity_type: paragraph
 type: entity_reference
 settings:

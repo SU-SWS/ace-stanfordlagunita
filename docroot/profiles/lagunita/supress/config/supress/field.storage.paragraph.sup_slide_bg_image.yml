@@ -1,0 +1,20 @@
+uuid: 9dde1350-938b-451c-b065-9fda5cd9c3b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sup_slide_bg_image
+field_name: sup_slide_bg_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
