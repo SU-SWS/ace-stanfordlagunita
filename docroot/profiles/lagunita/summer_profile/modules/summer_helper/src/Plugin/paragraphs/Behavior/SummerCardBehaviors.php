@@ -39,7 +39,7 @@ class SummerCardBehaviors extends CardBehavior {
         'semicircle-bottom' => $this->t('Semicircle bottom'),
         'oval' => $this->t('Oval'),
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('sum_card_styles', 'sum_card_variant'),
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant'),
     ];
 
     return $element;
