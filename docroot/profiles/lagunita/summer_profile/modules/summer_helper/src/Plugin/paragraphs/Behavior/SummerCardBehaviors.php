@@ -32,14 +32,14 @@ class SummerCardBehaviors extends CardBehavior {
     $element['sum_card_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Card variant'),
-      '#default_option' => $this->t('Default'),
+      '#empty_option' => $this->t('Default'),
       '#options' => [
         'circle' => $this->t('Circle'),
         'semicircle-top' => $this->t('Semicircle top'),
         'semicircle-bottom' => $this->t('Semicircle bottom'),
         'oval' => $this->t('Oval'),
       ],
-      '#default_value' => 'oval',
+      '#default_value' => $paragraph->getBehaviorSetting('sum_card_style', 'sum_card_variant'),
     ];
 
     return $element;
