@@ -156,6 +156,9 @@ adding:
         sup_book_work_id_number:
           enabled: true
     paragraph:
+      stanford_lists:
+        sup_list_eyebrow:
+          enabled: true
       stanford_page_title_banner:
         sup_title_banner_color:
           enabled: true

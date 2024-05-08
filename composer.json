@@ -48,7 +48,7 @@
         "drupal/stage_file_proxy": "^2.1",
         "drush/drush": "^12",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/stanford_profile": "^11.2",
+        "su-sws/stanford_profile": "11.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {

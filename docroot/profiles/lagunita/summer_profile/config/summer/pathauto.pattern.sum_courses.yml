@@ -1,0 +1,22 @@
+uuid: 79f3af7c-1b4a-4c1a-bc31-3b03224d5a6e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sum_courses
+label: 'Summer Courses'
+type: 'canonical_entities:node'
+pattern: 'courses/[node:sum_course_interest_area:entity:name]/[node:title]'
+selection_criteria:
+  c9d13827-0008-473f-9788-c10988c30cf2:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c9d13827-0008-473f-9788-c10988c30cf2
+    context_mapping:
+      node: node
+    bundles:
+      sum_summer_courses: sum_summer_courses
+selection_logic: and
+weight: -5
+relationships: {  }
