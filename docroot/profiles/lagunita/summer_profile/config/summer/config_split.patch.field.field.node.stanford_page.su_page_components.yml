@@ -1,16 +1,20 @@
 adding:
   dependencies:
     config:
+      - paragraphs.paragraphs_type.stanford_accordion
       - paragraphs.paragraphs_type.sum_calculator
       - paragraphs.paragraphs_type.sum_course_filter
       - paragraphs.paragraphs_type.sum_user_favorites
   settings:
     handler_settings:
       target_bundles:
+        stanford_accordion: stanford_accordion
         sum_course_filter: sum_course_filter
         sum_calculator: sum_calculator
         sum_user_favorites: sum_user_favorites
       target_bundles_drag_drop:
+        stanford_accordion:
+          enabled: true
         stanford_page_title_banner:
           weight: 24
           enabled: false
@@ -23,4 +27,9 @@ adding:
         sum_user_favorites:
           weight: 30
           enabled: true
-removing: {  }
+removing:
+  settings:
+    handler_settings:
+      target_bundles_drag_drop:
+        stanford_accordion:
+          enabled: false
