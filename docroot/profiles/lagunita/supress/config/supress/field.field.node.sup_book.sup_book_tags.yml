@@ -1,0 +1,29 @@
+uuid: 0b822155-ffd6-4db4-884c-32446ed909d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_tags
+    - node.type.sup_book
+    - taxonomy.vocabulary.sup_book_tags
+id: node.sup_book.sup_book_tags
+field_name: sup_book_tags
+entity_type: node
+bundle: sup_book
+label: 'Book Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_book_tags: sup_book_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

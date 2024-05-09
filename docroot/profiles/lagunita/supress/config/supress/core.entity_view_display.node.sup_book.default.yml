@@ -56,6 +56,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
     - field.field.node.sup_book.sup_book_table_of_contents
+    - field.field.node.sup_book.sup_book_tags
     - field.field.node.sup_book.sup_book_type
     - field.field.node.sup_book.sup_book_url_isw
     - field.field.node.sup_book.sup_book_web_code_cloth
@@ -65,10 +66,7 @@ dependencies:
   module:
     - cshs
     - datetime
-    - empty_fields
     - entity_reference_revisions
-    - field_formatter_class
-    - field_label
     - name
     - options
     - text
@@ -554,6 +552,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 170
+    region: content
+  sup_book_tags:
+    type: cshs_group_by_root
+    label: above
+    settings:
+      linked: false
+      reverse: false
+      sort: none
+      depth: 0
+      last_child: false
+    third_party_settings: {  }
+    weight: 195
     region: content
   sup_book_type:
     type: list_default

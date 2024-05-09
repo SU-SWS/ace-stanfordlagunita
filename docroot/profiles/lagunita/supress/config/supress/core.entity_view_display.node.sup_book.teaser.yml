@@ -57,6 +57,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
     - field.field.node.sup_book.sup_book_table_of_contents
+    - field.field.node.sup_book.sup_book_tags
     - field.field.node.sup_book.sup_book_type
     - field.field.node.sup_book.sup_book_url_isw
     - field.field.node.sup_book.sup_book_web_code_cloth
@@ -130,6 +131,7 @@ hidden:
   sup_book_subjects: true
   sup_book_subtitle: true
   sup_book_table_of_contents: true
+  sup_book_tags: true
   sup_book_type: true
   sup_book_url_isw: true
   sup_book_web_code_cloth: true

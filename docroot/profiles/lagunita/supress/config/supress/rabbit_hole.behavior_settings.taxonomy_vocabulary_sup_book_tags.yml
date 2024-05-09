@@ -1,0 +1,14 @@
+uuid: 168f9a2c-f28c-403d-8853-cff0a0d5f176
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sup_book_tags
+id: taxonomy_vocabulary_sup_book_tags
+entity_type_id: taxonomy_vocabulary
+entity_id: sup_book_tags
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
