@@ -7,11 +7,11 @@ adding:
         edges_enabled: true
         routes_enabled: true
     paragraph:
-      sum_calculator:
-        enabled: true
       sum_course_filter:
         enabled: true
       sum_user_favorites:
+        enabled: true
+      sum_calculator:
         enabled: true
     taxonomy_term:
       sum_course_availability:
@@ -45,8 +45,6 @@ adding:
           enabled: true
         sum_course_format:
           enabled: true
-        sum_course_image:
-          enabled: true
         sum_course_instructors:
           enabled: true
         sum_course_interest_area:
@@ -70,6 +68,8 @@ adding:
         sum_course_units:
           enabled: true
         sum_students_also_studied:
+          enabled: true
+        sum_course_image:
           enabled: true
     paragraph:
       sum_calculator:
