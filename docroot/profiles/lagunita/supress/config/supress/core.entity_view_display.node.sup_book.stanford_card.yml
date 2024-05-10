@@ -66,7 +66,11 @@ dependencies:
     - node.type.sup_book
   module:
     - ds
+    - empty_fields
+    - field_formatter_class
+    - field_label
     - layout_builder
+    - stanford_media
     - user
 third_party_settings:
   layout_builder:
@@ -83,12 +87,17 @@ third_party_settings:
           field_templates: default
           variant: default
     regions:
+      card_image:
+        - sup_book_image
       card_headline:
         - node_title
+      card_body:
+        - sup_book_subtitle
+        - sup_book_authors_full
     fields:
       node_title:
         plugin_id: node_title
-        weight: 0
+        weight: 1
         label: hidden
         formatter: default
         settings:
@@ -101,13 +110,46 @@ id: node.sup_book.stanford_card
 targetEntityType: node
 bundle: sup_book
 mode: stanford_card
-content: {  }
+content:
+  sup_book_authors_full:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: card_body
+  sup_book_image:
+    type: media_image_formatter
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+      image_style: card_2x_956x636
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 0
+    region: card_image
+  sup_book_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: card_body
 hidden:
   links: true
   search_api_excerpt: true
   sup_book_author_info: true
   sup_book_authors: true
-  sup_book_authors_full: true
   sup_book_avail_desc: true
   sup_book_awards: true
   sup_book_catalog_month: true
@@ -123,7 +165,6 @@ hidden:
   sup_book_excerpts: true
   sup_book_html_page_title: true
   sup_book_illustrations: true
-  sup_book_image: true
   sup_book_imprint: true
   sup_book_in_print_status: true
   sup_book_instructor_recommended: true
@@ -156,7 +197,6 @@ hidden:
   sup_book_status_digital: true
   sup_book_status_paper: true
   sup_book_subjects: true
-  sup_book_subtitle: true
   sup_book_table_of_contents: true
   sup_book_tags: true
   sup_book_type: true
