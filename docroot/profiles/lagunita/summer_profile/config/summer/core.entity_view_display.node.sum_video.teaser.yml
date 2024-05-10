@@ -1,0 +1,23 @@
+uuid: 9e9fa941-6f5d-488d-98e7-7ee6ec25b0e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sum_video.sum_youtube_url
+    - node.type.sum_video
+  module:
+    - user
+id: node.sum_video.teaser
+targetEntityType: node
+bundle: sum_video
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true
+  sum_youtube_url: true

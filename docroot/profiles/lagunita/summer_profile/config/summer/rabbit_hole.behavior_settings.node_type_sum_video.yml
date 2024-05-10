@@ -1,0 +1,14 @@
+uuid: e2cc1e83-fee9-4615-b4f0-3987ce306217
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sum_video
+id: node_type_sum_video
+entity_type_id: node_type
+entity_id: sum_video
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

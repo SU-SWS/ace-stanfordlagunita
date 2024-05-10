@@ -1,0 +1,13 @@
+uuid: 59fbd666-bc95-45ab-83f2-f2f8d0879bd1
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_person
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: '/tags/views:all/views:stanford_person'
