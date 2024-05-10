@@ -654,6 +654,7 @@ process:
       replace:
         - 1
         - 0
+  sup_book_e_retailers: ebook_retailers
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

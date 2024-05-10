@@ -10,6 +10,9 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\migrate\Plugin\MigrateSourceInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Row;
 use Drupal\search_api\IndexInterface;
 
 /**
@@ -27,6 +30,54 @@ function supress_helper_cron() {
   $queue_factory = \Drupal::service('queue');
   $queue = $queue_factory->get('press_cover_downloader');
 
+  $token = _supress_helper_get_api_token();
+  if (!$token && $queue->numberOfItems() > 0) {
+    return;
+  }
+
+  $client = \Drupal::httpClient();
+
+  // Post a query to find the covers that are flagged to be updated. The API
+  // is slow to respond so limiting to only 100 items will make it more
+  // reliable.
+  try {
+    $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=100', [
+      'headers' => [
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer ' . $token,
+      ],
+      'body' => json_encode(['query' => [['flag' => '=x']]]),
+      'timeout' => 60,
+    ])->getBody();
+  }
+  catch (\Exception $e) {
+    // When there are no covers that match, the response is a 500 "error" even
+    // though it should actually be a 204. Only log when the message doesn't
+    // mention "no records".
+    if (!str_contains($e->getMessage(), 'No records match the request')) {
+      throw $e;
+    }
+    return;
+  }
+
+  // Create a cron queue task for each cover.
+  $covers = json_decode($covers_response, TRUE, 512, JSON_THROW_ON_ERROR);
+  foreach ($covers['response']['data'] as $cover) {
+    $queue->createItem($cover['recordId']);
+  }
+}
+
+/**
+ * Get the filemaker api token.
+ *
+ * @return string|false
+ *   Token or false and any failure.
+ */
+function _supress_helper_get_api_token(): string|false {
+  $cache = \Drupal::cache();
+  if ($cached_item = $cache->get('filemaker_api_token')) {
+    return $cached_item->data;
+  }
   $config_page_loader = \Drupal::service('config_pages.loader');
   $client_id = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
   $client_secret = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
@@ -34,14 +85,13 @@ function supress_helper_cron() {
   if (
     !$client_id ||
     !$client_secret ||
-    $queue->numberOfItems() > 0 ||
     InstallerKernel::installationAttempted()
   ) {
-    return;
+    return FALSE;
   }
 
-  $client = \Drupal::httpClient();
   try {
+    $client = \Drupal::httpClient();
     // Grab the OAuth-like token from the api.
     $token_response = $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
       'headers' => ['Content-Type' => 'application/json'],
@@ -49,39 +99,11 @@ function supress_helper_cron() {
     ]);
     $token = json_decode((string) $token_response->getBody(), TRUE, 512, JSON_THROW_ON_ERROR);
     $token = $token['response']['token'];
-
-    // Post a query to find the covers that are flagged to be updated. The API
-    // is slow to respond so limiting to only 100 items will make it more
-    // reliable.
-    try {
-      $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=100', [
-        'headers' => [
-          'Content-Type' => 'application/json',
-          'Authorization' => 'Bearer ' . $token,
-        ],
-        'body' => json_encode(['query' => [['flag' => '=x']]]),
-        'timeout' => 60,
-      ])->getBody();
-    }
-    catch (\Exception $e) {
-      // When there are no covers that match, the response is a 500 "error" even
-      // though it should actually be a 204. Only log when the message doesn't
-      // mention "no records".
-      if (!str_contains($e->getMessage(), 'No records match the request')) {
-        throw $e;
-      }
-      return;
-    }
-
-    // Create a cron queue task for each cover.
-    $covers = json_decode($covers_response, TRUE, 512, JSON_THROW_ON_ERROR);
-    foreach ($covers['response']['data'] as $cover) {
-      $queue->createItem($cover['recordId']);
-    }
+    $cache->set('filemaker_api_token', $token, time() + 60 * 5);
+    return $token;
   }
   catch (\Exception $e) {
-    \Drupal::logger('supress_helper')
-      ->error('Error in press cron job: ' . $e->getMessage());
+    return FALSE;
   }
 }
 
@@ -131,4 +153,66 @@ function supress_helper_field_widget_complete_options_select_form_alter(&$field_
     // Only show the top level terms and the "None" option.
     $field_widget_complete_form['widget']['#options'] = array_filter($field_widget_complete_form['widget']['#options'], fn($option) => !str_starts_with($option, '-') || $option == '- None -');
   }
+}
+
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function supress_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  if ($migration->id() != 'sup_import_books') {
+    return;
+  }
+  $work_id = $row->getIdMap()['sourceid1'];
+  $retailers = _supress_get_ebook_retailers();
+  $row->setSourceProperty('ebook_retailers', array_values(array_filter($retailers, fn($retailer) => (int) $retailer['work_id_number'] == (int) $work_id)));
+}
+
+/**
+ * Get the list of all ebooks from the FileMaker API.
+ *
+ * @return array
+ *   Array of retailer data.
+ */
+function _supress_get_ebook_retailers() {
+  $cache = \Drupal::cache();
+  if ($cached_item = $cache->get('filemaker_ebook_retailers')) {
+    return $cached_item->data;
+  }
+
+  $token = _supress_helper_get_api_token();
+  if (!$token) {
+    return [];
+  }
+
+  $client = \Drupal::httpClient();
+  $fetch_more = TRUE;
+  $page = 0;
+  $retailers = [];
+
+  while ($fetch_more) {
+    $limit = 10000;
+    $offset = ($page * $limit) + 1;
+    $ebook_retailers_page = (string) $client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/records?_limit=$limit&_offset=$offset", [
+      'headers' => [
+        'Content-Type' => 'application/json',
+        'Authorization' => 'Bearer ' . $token,
+      ],
+      'body' => json_encode(['query' => [['flag' => '=x']]]),
+      'timeout' => 60,
+    ])->getBody();
+    $ebook_retailers_page = json_decode($ebook_retailers_page, TRUE);
+
+    foreach ($ebook_retailers_page['response']['data'] as $record) {
+      $retailers[] = [
+        'work_id_number' => $record['fieldData']['work_id_number'],
+        'title' => $record['fieldData']['retailer'],
+        'uri' => $record['fieldData']['link'],
+      ];
+    }
+    $fetch_more = $ebook_retailers_page['response']['dataInfo']['returnedCount'] == $limit;
+    $page++;
+  }
+
+  $cache->set('filemaker_ebook_retailers', $retailers, time() + 60 * 60 * 24 * 7);
+  return $retailers;
 }

@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copyright
     - field.field.node.sup_book.sup_book_description
     - field.field.node.sup_book.sup_book_digital_comp_link
+    - field.field.node.sup_book.sup_book_e_retailers
     - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_html_page_title
     - field.field.node.sup_book.sup_book_illustrations
@@ -70,6 +71,7 @@ dependencies:
     - field_group
     - inline_entity_form
     - layout_paragraphs
+    - link
     - media_library
     - name
     - text
@@ -407,9 +409,17 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  sup_book_e_retailers:
+    type: link_default
+    weight: 36
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   sup_book_excerpts:
     type: layout_paragraphs
-    weight: 64
+    weight: 35
     region: content
     settings:
       preview_view_mode: sup_form_preview
@@ -711,7 +721,7 @@ content:
     third_party_settings: {  }
   sup_book_tags:
     type: cshs
-    weight: 66
+    weight: 37
     region: content
     settings:
       save_lineage: false
