@@ -1,0 +1,13 @@
+uuid: 673bacf4-ada2-4ff7-ae36-c1c2f668d738
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_policy
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: '/tags/views:all/views:stanford_policy'

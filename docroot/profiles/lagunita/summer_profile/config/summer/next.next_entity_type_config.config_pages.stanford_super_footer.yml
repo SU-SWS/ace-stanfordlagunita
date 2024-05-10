@@ -1,0 +1,13 @@
+uuid: cec3d522-a067-4872-95bc-1553fc145a61
+langcode: en
+status: true
+dependencies: {  }
+id: config_pages.stanford_super_footer
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local
+revalidator: path
+revalidator_configuration:
+  revalidate_page: false
+  additional_paths: /tags/config-pages
