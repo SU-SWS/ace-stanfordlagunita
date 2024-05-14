@@ -1,0 +1,23 @@
+uuid: 5dddea97-64cb-413d-af0a-75d340694491
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_video.sum_video_video
+    - paragraphs.paragraphs_type.sum_video
+id: paragraph.sum_video.default
+targetEntityType: paragraph
+bundle: sum_video
+mode: default
+content:
+  sum_video_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
