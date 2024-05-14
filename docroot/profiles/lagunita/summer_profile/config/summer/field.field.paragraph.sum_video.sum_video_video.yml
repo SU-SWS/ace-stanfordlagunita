@@ -1,13 +1,13 @@
-uuid: 93f3b2dc-789f-46c5-9e66-5cea5c691727
+uuid: 1788fc8f-8050-4174-abb7-6f0886543537
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.sum_youtube_url
+    - field.storage.paragraph.sum_video_video
     - media.type.video
     - paragraphs.paragraphs_type.sum_video
-id: paragraph.sum_video.sum_youtube_url
-field_name: sum_youtube_url
+id: paragraph.sum_video.sum_video_video
+field_name: sum_video_video
 entity_type: paragraph
 bundle: sum_video
 label: 'YouTube URL'

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.sum_video.sum_youtube_url
+    - field.field.paragraph.sum_video.sum_video_video
     - paragraphs.paragraphs_type.sum_video
   module:
     - media_library
@@ -12,7 +12,7 @@ targetEntityType: paragraph
 bundle: sum_video
 mode: default
 content:
-  sum_youtube_url:
+  sum_video_video:
     type: media_library_widget
     weight: 0
     region: content

@@ -1,12 +1,12 @@
-uuid: 1229d88f-fece-44e4-a247-f8b1f2996f9d
+uuid: 5c46af9b-37a1-4593-bfa2-d71a016deb58
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - paragraphs
-id: paragraph.sum_youtube_url
-field_name: sum_youtube_url
+id: paragraph.sum_video_video
+field_name: sum_video_video
 entity_type: paragraph
 type: entity_reference
 settings:
