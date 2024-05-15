@@ -41,12 +41,23 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
     $element['sum_top_banner_alignment'] = [
       '#type' => 'select',
-      '#title' => $this->t('Banner Alignment'),
+      '#title' => $this->t('Overlay Alignment'),
       '#empty_option' => $this->t('Right'),
       '#options' => [
         'left' => $this->t('Left'),
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_top_banner_styles', 'sum_top_banner_alignment'),
+    ];
+    $element['sum_top_banner_background_color'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Banner Background Color'),
+      '#empty_option' => $this->t('Poppy Light'),
+      '#options' => [
+        'olive' => $this->t('Olive Light'),
+        'spirited_light' => $this->t('Spirited Light'),
+        'spirited_dark' => $this->t('Spirited Dark'),
+      ],
+      '#default_value' => $paragraph->getBehaviorSetting('su_top_banner_styles', 'sum_top_banner_background_color'),
     ];
 
     return $element;
