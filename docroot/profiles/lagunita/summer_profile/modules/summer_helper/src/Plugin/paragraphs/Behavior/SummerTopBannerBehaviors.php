@@ -52,6 +52,17 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
       ],
       '#default_value' => $paragraph->getBehaviorSetting('sum_top_banner_behavior', 'sum_top_banner_alignment'),
     ];
+    $element['sum_top_banner_background_color'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Banner Background Color'),
+      '#empty_option' => $this->t('Poppy Light'),
+      '#options' => [
+        'olive' => $this->t('Olive Light'),
+        'spirited_light' => $this->t('Spirited Light'),
+        'spirited_dark' => $this->t('Spirited Dark'),
+      ],
+      '#default_value' => $paragraph->getBehaviorSetting('su_top_banner_styles', 'sum_top_banner_background_color'),
+    ];
 
     return $element;
   }
