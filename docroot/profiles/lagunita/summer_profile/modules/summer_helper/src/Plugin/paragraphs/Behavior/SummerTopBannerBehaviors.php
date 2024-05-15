@@ -19,6 +19,7 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * )
  */
 class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
+
   /**
    * {@inheritDoc}
    */
