@@ -42,7 +42,7 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
     $element['sum_top_banner_alignment'] = [
       '#type' => 'select',
       '#title' => $this->t('Banner Alignment'),
-      '#empty_option' => $this->t('Default'),
+      '#empty_option' => $this->t('Right'),
       '#options' => [
         'left' => $this->t('Left'),
       ],
