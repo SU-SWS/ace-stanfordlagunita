@@ -26,6 +26,9 @@ adding:
         sum_course_filter:
           weight: 29
           enabled: true
+        sum_top_banner:
+          weight: 34
+          enabled: false
         sum_user_favorites:
           weight: 30
           enabled: true
