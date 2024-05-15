@@ -8,7 +8,6 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\paragraphs\ParagraphsBehaviorBase;
-use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
 
 /**
  * Add desired behaviors to paragraph.
@@ -16,6 +15,7 @@ use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
  * @codeCoverageIgnore No functionality to test.
  */
 class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
+
   /**
    * {@inheritDoc}
    */
@@ -52,8 +52,11 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
     return $element;
   }
 
+  /**
+   *
+   */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
-    // TODO: Implement view() method.
+    // @todo Implement view() method.
   }
 
 }
