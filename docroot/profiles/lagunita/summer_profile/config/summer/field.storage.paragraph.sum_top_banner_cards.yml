@@ -1,0 +1,20 @@
+uuid: 6d9d2356-59a0-45fd-9e9f-ce406f95675e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.sum_top_banner_cards
+field_name: sum_top_banner_cards
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: cc9874c1-3838-4810-8c69-87cfaf74478d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_top_banner_descrip
+    - filter.format.stanford_html
+    - paragraphs.paragraphs_type.sum_top_banner
+  module:
+    - text
+id: paragraph.sum_top_banner.sum_top_banner_descrip
+field_name: sum_top_banner_descrip
+entity_type: paragraph
+bundle: sum_top_banner
+label: 'Description '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_html
+field_type: text_long

@@ -129,4 +129,17 @@ adding:
       sum_video:
         sum_video_video:
           enabled: true
+      sum_top_banner:
+        sum_top_banner_cards:
+          enabled: true
+        sum_top_banner_descrip:
+          enabled: true
+        sum_top_banner_headline:
+          enabled: true
+        sum_top_banner_image:
+          enabled: true
+        sum_top_banner_link:
+          enabled: true
+        sum_top_banner_superhead:
+          enabled: true
 removing: {  }

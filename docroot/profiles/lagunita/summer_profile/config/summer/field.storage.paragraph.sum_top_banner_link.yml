@@ -1,0 +1,19 @@
+uuid: 418c38a8-d1a9-4246-b360-e3b62c0b5fde
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.sum_top_banner_link
+field_name: sum_top_banner_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

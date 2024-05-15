@@ -10,7 +10,7 @@ targetEntityType: paragraph
 bundle: sum_video
 mode: default
 content:
-  sum_video_video:
+  sum_youtube_url:
     type: entity_reference_entity_view
     label: above
     settings:

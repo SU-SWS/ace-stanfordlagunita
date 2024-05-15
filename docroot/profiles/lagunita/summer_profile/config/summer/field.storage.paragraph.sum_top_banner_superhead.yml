@@ -1,0 +1,21 @@
+uuid: 4005c3cd-0e52-4c41-8331-bc73730b05bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_top_banner_superhead
+field_name: sum_top_banner_superhead
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
