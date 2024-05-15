@@ -5,6 +5,7 @@ adding:
       - paragraphs.paragraphs_type.sum_calculator
       - paragraphs.paragraphs_type.sum_course_filter
       - paragraphs.paragraphs_type.sum_user_favorites
+      - paragraphs.paragraphs_type.sum_video
   settings:
     handler_settings:
       target_bundles:
@@ -12,6 +13,7 @@ adding:
         sum_course_filter: sum_course_filter
         sum_calculator: sum_calculator
         sum_user_favorites: sum_user_favorites
+        sum_video: sum_video
       target_bundles_drag_drop:
         stanford_accordion:
           enabled: true
