@@ -38,7 +38,7 @@ class SummerCardBehaviors extends CardBehavior {
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant'),
     ];
-    $element['sum_card_color_variant'] = [
+    $element['sum_card_bg_color_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Banner Background Color'),
       '#empty_option' => $this->t('Poppy Light'),
@@ -49,7 +49,7 @@ class SummerCardBehaviors extends CardBehavior {
         'spirited' => $this->t('Spirited Light'),
         'semitransparent_spirited' => $this->t('Semitransparent Spirited Light'),
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_color_variant'),
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
     ];
 
     return $element;
