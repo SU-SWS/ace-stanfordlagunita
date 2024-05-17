@@ -40,7 +40,7 @@ class SummerCardBehaviors extends CardBehavior {
     ];
     $element['sum_card_bg_color_variant'] = [
       '#type' => 'select',
-      '#title' => $this->t('Banner Background Color'),
+      '#title' => $this->t('Card Background Color'),
       '#empty_option' => $this->t('Poppy Light'),
       '#options' => [
         'semitransparent_poppy' => $this->t('Semitransparent Poppy Light'),
