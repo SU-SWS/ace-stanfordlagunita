@@ -1,18 +1,18 @@
-uuid: 5fbe4fd4-9472-4a1e-8932-68e237e1377d
+uuid: 69bc8bf4-2453-4b4f-876a-8b558d679ab3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.sup_sup_image
+    - field.storage.paragraph.sup_slide_bg_image
     - media.type.image
     - paragraphs.paragraphs_type.sup_carousel_slide
-id: paragraph.sup_carousel_slide.sup_sup_image
-field_name: sup_sup_image
+id: paragraph.sup_carousel_slide.sup_slide_bg_image
+field_name: sup_slide_bg_image
 entity_type: paragraph
 bundle: sup_carousel_slide
-label: Image
-description: 'Provide a chosen image instead of the image from the book (if one is selected).'
-required: false
+label: 'Background Image'
+description: ''
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

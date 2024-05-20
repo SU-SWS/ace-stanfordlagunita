@@ -123,4 +123,7 @@ adding:
           enabled: true
         sum_calc_ug_unit_help:
           enabled: true
+      sum_video:
+        sum_video_video:
+          enabled: true
 removing: {  }

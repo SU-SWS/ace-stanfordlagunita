@@ -1,0 +1,9 @@
+adding:
+  dependencies:
+    config:
+      - node.type.sup_book
+  settings:
+    handler_settings:
+      target_bundles:
+        sup_book: sup_book
+removing: {  }

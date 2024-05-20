@@ -1,0 +1,24 @@
+uuid: 966d7f6f-8aa2-451f-8f1f-52b9febe57a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_video.sum_video_video
+    - paragraphs.paragraphs_type.sum_video
+  module:
+    - media_library
+id: paragraph.sum_video.default
+targetEntityType: paragraph
+bundle: sum_video
+mode: default
+content:
+  sum_video_video:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

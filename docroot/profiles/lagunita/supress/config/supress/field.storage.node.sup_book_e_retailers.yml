@@ -1,0 +1,19 @@
+uuid: 6d35ccb5-73a5-4018-82e2-78e5e929db34
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.sup_book_e_retailers
+field_name: sup_book_e_retailers
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

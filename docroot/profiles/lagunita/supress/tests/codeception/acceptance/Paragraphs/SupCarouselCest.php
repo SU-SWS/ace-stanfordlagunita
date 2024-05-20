@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Factory;
+use Drupal\Core\File\FileSystemInterface;
 
 /**
  * Test carousel paragraph type.
@@ -33,6 +34,17 @@ class SupCarouselCest {
       '[name="su_page_banner[0][subform][sup_carousel_slides][0][subform][sup_slide_button][0][uri]"]' => $this->faker->url,
       '[name="su_page_banner[0][subform][sup_carousel_slides][0][subform][sup_slide_button][0][title]"]' => $this->faker->words(3, TRUE),
     ];
+    /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+    $file_system = \Drupal::service('file_system');
+
+    $name = preg_replace('/[^a-z]/', '-', strtolower($this->faker->words(3, TRUE)));
+    $file_system->copy(__DIR__ . '/../assets/logo.jpg', "public://$name.jpg", FileSystemInterface::EXISTS_REPLACE);
+    $file = $I->createEntity(['uri' => "public://$name.jpg"], 'file');
+
+    $media = $I->createEntity([
+      'bundle' => 'image',
+      'field_media_image' => $file->id(),
+    ], 'media');
 
     $node = $I->createEntity([
       'type' => 'stanford_page',
@@ -46,7 +58,8 @@ class SupCarouselCest {
     foreach ($fields as $field => $contents) {
       $I->fillField($field, $contents);
     }
-
+    $I->fillField('[name="su_page_banner[0][subform][sup_carousel_slides][0][subform][sup_slide_bg_image][media_library_selection]"]', $media->id());
+    $I->click('Update widget', '.field--name-sup-slide-bg-image');
     $I->canSeeInField('Background Color', 'Magenta');
     $I->canSeeInField('Orientation', 'Left Image');
     $I->canSeeInField('Title Font Size', 'Large');
