@@ -12,7 +12,7 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
  * @ParagraphsBehavior(
- *   id = "summer_top_banner_behavior",
+ *   id = "sum_top_banner_behavior",
  *   label = @Translation("Summer Top Banner Behavior"),
  *   description = @Translation("This plugin offers top banner variants."),
  *   weight = 1,
@@ -24,7 +24,7 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
    * {@inheritDoc}
    */
   public static function isApplicable(ParagraphsType $paragraphs_type): bool {
-    return $paragraphs_type->id() == 'sum_top_banner';
+    return $paragraphs_type->id() == 'sum_top_banner_behavior';
   }
 
   /**
@@ -50,7 +50,7 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
       '#options' => [
         'left' => $this->t('Left'),
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('su_top_banner_styles', 'sum_top_banner_alignment'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_top_banner_behavior', 'sum_top_banner_alignment'),
     ];
 
     return $element;
