@@ -38,6 +38,19 @@ class SummerCardBehaviors extends CardBehavior {
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant'),
     ];
+    $element['sum_card_bg_color_variant'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Pill Card Background Color'),
+      '#empty_option' => $this->t('Poppy Light'),
+      '#options' => [
+        'semitransparent_poppy' => $this->t('Semitransparent Poppy Light'),
+        'olive' => $this->t('Olive Light'),
+        'semitransparent_olive' => $this->t('Semitransparent Olive Light'),
+        'spirited' => $this->t('Spirited Light'),
+        'semitransparent_spirited' => $this->t('Semitransparent Spirited Light'),
+      ],
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
+    ];
 
     return $element;
   }
