@@ -38,24 +38,6 @@ class SummerCardBehaviors extends CardBehavior {
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant'),
     ];
-    $element['name'] = [
-      '#type' => 'textfield',
-      '#title' => t('Name'),
-      '#states' => array(
-        'invisible' => array(
-          ':input[name="anonymous"]' => array('checked' => TRUE),
-        ),
-      ),
-    ];
-    $element['anonymous'] = [
-      '#type' => 'checkbox',
-      '#title' => t('I prefer to remain anonymous'),
-      '#states' => array(
-        'unchecked' => array(
-          ':input[name="name"]' => array('filled' => TRUE),
-        ),
-      ),
-    ];
     $element['sum_card_bg_color_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Pill Card Background Color'),
