@@ -50,6 +50,11 @@ class SummerCardBehaviors extends CardBehavior {
         'semitransparent_spirited' => $this->t('Semitransparent Spirited Light'),
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
+      '#states' => [
+        'visible' => [
+          ':input[name="pill_or_default"]' => ['value' => 'pill'],
+        ],
+      ]
     ];
 
     return $element;
