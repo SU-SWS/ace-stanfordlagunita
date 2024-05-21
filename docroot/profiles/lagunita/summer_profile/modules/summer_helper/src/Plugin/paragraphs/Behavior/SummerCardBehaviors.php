@@ -52,7 +52,7 @@ class SummerCardBehaviors extends CardBehavior {
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
       '#states' => [
         'visible' => [
-          ':input[name="pill_or_default"]' => ['value' => 'pill'],
+          ':select[name="sum_card_variant"]' => ['value' => 'pill'],
         ],
       ]
     ];
