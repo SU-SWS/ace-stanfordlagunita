@@ -70,7 +70,7 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
   }
 
   /**
-   * Included to view the top banner in the admin UI.
+   * Included to view the top banner.
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // @todo Implement view() method.
