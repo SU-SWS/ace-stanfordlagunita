@@ -1,0 +1,76 @@
+uuid: 822d3a9a-a422-4bf5-8bff-dc3081290d56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_top_banner.sum_top_banner_cards
+    - field.field.paragraph.sum_top_banner.sum_top_banner_descrip
+    - field.field.paragraph.sum_top_banner.sum_top_banner_headline
+    - field.field.paragraph.sum_top_banner.sum_top_banner_image
+    - field.field.paragraph.sum_top_banner.sum_top_banner_link
+    - field.field.paragraph.sum_top_banner.sum_top_banner_superhead
+    - paragraphs.paragraphs_type.sum_top_banner
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.sum_top_banner.default
+targetEntityType: paragraph
+bundle: sum_top_banner
+mode: default
+content:
+  sum_top_banner_cards:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  sum_top_banner_descrip:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_top_banner_headline:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sum_top_banner_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sum_top_banner_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sum_top_banner_superhead:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

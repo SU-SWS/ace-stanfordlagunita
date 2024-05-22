@@ -1,0 +1,19 @@
+uuid: f9c3476e-cb61-48f6-a384-04cd4d2c4cd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_top_banner_superhead
+    - paragraphs.paragraphs_type.sum_top_banner
+id: paragraph.sum_top_banner.sum_top_banner_superhead
+field_name: sum_top_banner_superhead
+entity_type: paragraph
+bundle: sum_top_banner
+label: Superhead
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

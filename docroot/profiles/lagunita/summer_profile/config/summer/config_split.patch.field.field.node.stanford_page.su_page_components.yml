@@ -9,10 +9,10 @@ adding:
   settings:
     handler_settings:
       target_bundles:
-        stanford_accordion: stanford_accordion
         sum_course_filter: sum_course_filter
-        sum_calculator: sum_calculator
         sum_user_favorites: sum_user_favorites
+        sum_calculator: sum_calculator
+        stanford_accordion: stanford_accordion
         sum_video: sum_video
       target_bundles_drag_drop:
         stanford_accordion:
@@ -26,6 +26,9 @@ adding:
         sum_course_filter:
           weight: 29
           enabled: true
+        sum_top_banner:
+          weight: 34
+          enabled: false
         sum_user_favorites:
           weight: 30
           enabled: true

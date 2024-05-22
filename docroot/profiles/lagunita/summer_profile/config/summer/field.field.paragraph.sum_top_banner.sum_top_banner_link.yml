@@ -1,0 +1,23 @@
+uuid: 04684386-4a1a-49f5-a8f6-2abfa8120132
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_top_banner_link
+    - paragraphs.paragraphs_type.sum_top_banner
+  module:
+    - link
+id: paragraph.sum_top_banner.sum_top_banner_link
+field_name: sum_top_banner_link
+entity_type: paragraph
+bundle: sum_top_banner
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

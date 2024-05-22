@@ -1,0 +1,29 @@
+uuid: 515204e6-2fdc-4367-a3fd-d95e65621c1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_top_banner_image
+    - media.type.image
+    - paragraphs.paragraphs_type.sum_top_banner
+id: paragraph.sum_top_banner.sum_top_banner_image
+field_name: sum_top_banner_image
+entity_type: paragraph
+bundle: sum_top_banner
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

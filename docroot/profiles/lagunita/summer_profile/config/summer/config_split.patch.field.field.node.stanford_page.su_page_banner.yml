@@ -1,0 +1,80 @@
+adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.sum_top_banner
+  settings:
+    handler_settings:
+      target_bundles:
+        sum_top_banner: sum_top_banner
+      target_bundles_drag_drop:
+        stanford_accordion:
+          weight: -34
+        stanford_banner:
+          weight: -37
+        stanford_card:
+          weight: -36
+        stanford_entity:
+          weight: -33
+        stanford_gallery:
+          weight: -32
+        stanford_layout:
+          weight: -31
+        stanford_lists:
+          weight: -30
+        stanford_media_caption:
+          weight: -29
+        stanford_page_title_banner:
+          weight: -27
+        stanford_person_cta:
+          weight: -26
+        stanford_schedule:
+          weight: -25
+        stanford_spacer:
+          weight: -24
+        stanford_wysiwyg:
+          weight: -35
+        sum_calculator:
+          weight: -23
+          enabled: false
+        sum_course_filter:
+          weight: -22
+          enabled: false
+        sum_top_banner:
+          weight: -28
+          enabled: true
+        sum_user_favorites:
+          weight: -21
+          enabled: false
+        sum_video:
+          weight: -20
+          enabled: false
+removing:
+  settings:
+    handler_settings:
+      target_bundles_drag_drop:
+        stanford_accordion:
+          weight: 14
+        stanford_banner:
+          weight: 4
+        stanford_card:
+          weight: 5
+        stanford_entity:
+          weight: 17
+        stanford_gallery:
+          weight: 18
+        stanford_layout:
+          weight: 19
+        stanford_lists:
+          weight: 20
+        stanford_media_caption:
+          weight: 21
+        stanford_page_title_banner:
+          weight: 22
+        stanford_person_cta:
+          weight: 23
+        stanford_schedule:
+          weight: 24
+        stanford_spacer:
+          weight: 25
+        stanford_wysiwyg:
+          weight: 6
