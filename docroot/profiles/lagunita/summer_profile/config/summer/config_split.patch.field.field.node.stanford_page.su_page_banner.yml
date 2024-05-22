@@ -33,6 +33,7 @@ adding:
           weight: -24
         stanford_wysiwyg:
           weight: -35
+<<<<<<< HEAD
         sum_calculator:
           weight: -23
           enabled: false
@@ -78,18 +79,49 @@ removing:
           weight: 25
         stanford_wysiwyg:
           weight: 6
+
         sum_calculator:
-          weight: 32
+          weight: -23
           enabled: false
         sum_course_filter:
-          weight: 33
+          weight: -22
           enabled: false
         sum_top_banner:
-          weight: 34
+          weight: -28
           enabled: true
         sum_user_favorites:
-          weight: 35
+          weight: -21
           enabled: false
         sum_video:
-          weight: 36
+          weight: -20
           enabled: false
+removing:
+  settings:
+    handler_settings:
+      target_bundles_drag_drop:
+        stanford_accordion:
+          weight: 14
+        stanford_banner:
+          weight: 4
+        stanford_card:
+          weight: 5
+        stanford_entity:
+          weight: 17
+        stanford_gallery:
+          weight: 18
+        stanford_layout:
+          weight: 19
+        stanford_lists:
+          weight: 20
+        stanford_media_caption:
+          weight: 21
+        stanford_page_title_banner:
+          weight: 22
+        stanford_person_cta:
+          weight: 23
+        stanford_schedule:
+          weight: 24
+        stanford_spacer:
+          weight: 25
+        stanford_wysiwyg:
+          weight: 6
