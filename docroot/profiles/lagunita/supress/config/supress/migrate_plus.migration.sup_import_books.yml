@@ -532,7 +532,7 @@ process:
       delimiter: "\r"
     -
       plugin: explode
-      delimiter: '-'
+      delimiter: ' / '
       limit: 2
     -
       plugin: sub_process

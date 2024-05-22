@@ -162,9 +162,12 @@ function supress_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $so
   if ($migration->id() != 'sup_import_books') {
     return;
   }
-  $work_id = $row->getIdMap()['sourceid1'];
+  $id_map = $row->getIdMap();
+  if (!isset($id_map['sourceid1'])) {
+    return;
+  }
   $retailers = _supress_get_ebook_retailers();
-  $row->setSourceProperty('ebook_retailers', array_values(array_filter($retailers, fn($retailer) => (int) $retailer['work_id_number'] == (int) $work_id)));
+  $row->setSourceProperty('ebook_retailers', array_values(array_filter($retailers, fn($retailer) => (int) $retailer['work_id_number'] == (int) $id_map['sourceid1'])));
 }
 
 /**
