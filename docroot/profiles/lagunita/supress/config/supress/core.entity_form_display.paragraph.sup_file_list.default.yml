@@ -3,16 +3,41 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sup_file_list.sup_file_list_display
     - field.field.paragraph.sup_file_list.sup_file_list_files
     - field.field.paragraph.sup_file_list.sup_file_list_label
     - paragraphs.paragraphs_type.sup_file_list
   module:
+    - field_group
     - media_library
+third_party_settings:
+  field_group:
+    group_styles_behaviors:
+      children:
+        - sup_file_list_display
+      label: Styles/Behaviors
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: paragraph.sup_file_list.default
 targetEntityType: paragraph
 bundle: sup_file_list
 mode: default
 content:
+  sup_file_list_display:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sup_file_list_files:
     type: media_library_widget
     weight: 1

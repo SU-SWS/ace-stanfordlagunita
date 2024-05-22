@@ -3,14 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sup_file_list.sup_file_list_display
     - field.field.paragraph.sup_file_list.sup_file_list_files
     - field.field.paragraph.sup_file_list.sup_file_list_label
     - paragraphs.paragraphs_type.sup_file_list
+  module:
+    - options
 id: paragraph.sup_file_list.default
 targetEntityType: paragraph
 bundle: sup_file_list
 mode: default
 content:
+  sup_file_list_display:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   sup_file_list_files:
     type: entity_reference_entity_view
     label: hidden

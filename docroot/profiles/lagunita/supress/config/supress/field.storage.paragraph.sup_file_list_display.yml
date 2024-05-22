@@ -1,0 +1,27 @@
+uuid: d8f48b24-9130-4e12-a287-e52d5aeabc0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sup_file_list_display
+field_name: sup_file_list_display
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: select
+      label: 'Select List'
+    -
+      value: icons
+      label: 'Icon List'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

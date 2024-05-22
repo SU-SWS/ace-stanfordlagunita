@@ -213,6 +213,8 @@ adding:
         sup_slide_title_size:
           enabled: true
       sup_file_list:
+        sup_file_list_display:
+          enabled: true
         sup_file_list_files:
           enabled: true
         sup_file_list_label:

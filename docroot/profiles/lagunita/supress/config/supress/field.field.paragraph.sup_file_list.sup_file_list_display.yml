@@ -1,0 +1,23 @@
+uuid: 4b301259-beae-4fef-b851-f62a2de9af54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sup_file_list_display
+    - paragraphs.paragraphs_type.sup_file_list
+  module:
+    - options
+id: paragraph.sup_file_list.sup_file_list_display
+field_name: sup_file_list_display
+entity_type: paragraph
+bundle: sup_file_list
+label: Display
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: select
+default_value_callback: ''
+settings: {  }
+field_type: list_string
