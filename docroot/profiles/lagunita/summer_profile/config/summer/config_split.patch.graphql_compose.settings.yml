@@ -13,6 +13,9 @@ adding:
         enabled: true
       sum_user_favorites:
         enabled: true
+      sum_video:
+        enabled: true
+        query_load_enabled: true
     taxonomy_term:
       sum_course_availability:
         enabled: true
