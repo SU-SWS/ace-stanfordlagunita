@@ -1,0 +1,43 @@
+uuid: 3f02c081-8a06-4321-8871-58c18bd46921
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_accordions.sum_accordions_accords
+    - field.field.paragraph.sum_accordions.sum_accordions_desc
+    - field.field.paragraph.sum_accordions.sum_accordions_heading
+    - paragraphs.paragraphs_type.sum_accordions
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.sum_accordions.default
+targetEntityType: paragraph
+bundle: sum_accordions
+mode: default
+content:
+  sum_accordions_accords:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_accordions_desc:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sum_accordions_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

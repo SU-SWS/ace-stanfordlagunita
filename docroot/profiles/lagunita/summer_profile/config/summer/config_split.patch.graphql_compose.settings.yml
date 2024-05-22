@@ -7,6 +7,8 @@ adding:
         edges_enabled: true
         routes_enabled: true
     paragraph:
+      sum_accordions:
+        enabled: true
       sum_calculator:
         enabled: true
       sum_course_filter:
@@ -75,6 +77,13 @@ adding:
         sum_students_also_studied:
           enabled: true
     paragraph:
+      sum_accordions:
+        sum_accordions_accords:
+          enabled: true
+        sum_accordions_desc:
+          enabled: true
+        sum_accordions_heading:
+          enabled: true
       sum_calculator:
         sum_calc_app_fee:
           enabled: true
@@ -142,4 +151,8 @@ adding:
       sum_video:
         sum_video_video:
           enabled: true
-removing: {  }
+removing:
+  entity_config:
+    paragraph:
+      stanford_accordion:
+        query_load_enabled: true

@@ -1,0 +1,85 @@
+uuid: c3d924f0-6fa5-4f9b-ade4-a9a60ccce8dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_accordions_accords
+    - paragraphs.paragraphs_type.stanford_accordion
+    - paragraphs.paragraphs_type.sum_accordions
+  module:
+    - entity_reference_revisions
+id: paragraph.sum_accordions.sum_accordions_accords
+field_name: sum_accordions_accords
+entity_type: paragraph
+bundle: sum_accordions
+label: Accordions
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_accordion: stanford_accordion
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 20
+        enabled: true
+      stanford_banner:
+        weight: 21
+        enabled: false
+      stanford_card:
+        weight: 22
+        enabled: false
+      stanford_entity:
+        weight: 23
+        enabled: false
+      stanford_gallery:
+        weight: 24
+        enabled: false
+      stanford_layout:
+        weight: 25
+        enabled: false
+      stanford_lists:
+        weight: 26
+        enabled: false
+      stanford_media_caption:
+        weight: 27
+        enabled: false
+      stanford_page_title_banner:
+        weight: 28
+        enabled: false
+      stanford_person_cta:
+        weight: 29
+        enabled: false
+      stanford_schedule:
+        weight: 30
+        enabled: false
+      stanford_spacer:
+        weight: 31
+        enabled: false
+      stanford_wysiwyg:
+        weight: 32
+        enabled: false
+      sum_accordions:
+        weight: 33
+        enabled: false
+      sum_calculator:
+        weight: 34
+        enabled: false
+      sum_course_filter:
+        weight: 35
+        enabled: false
+      sum_top_banner:
+        weight: 36
+        enabled: false
+      sum_user_favorites:
+        weight: 37
+        enabled: false
+      sum_video:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

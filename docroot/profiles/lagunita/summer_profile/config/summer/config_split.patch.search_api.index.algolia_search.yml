@@ -1,4 +1,5 @@
 adding:
+  status: false
   dependencies:
     config:
       - field.storage.node.sum_course_availability
@@ -164,8 +165,13 @@ adding:
         - sum_course_population
         - sum_course_prerequisites
         - sum_course_schedule
+  options:
+    algolia_index_name: ''
 removing:
+  status: true
   field_settings:
     photo:
       configuration:
         value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
+  options:
+    algolia_index_name: test_summer_session

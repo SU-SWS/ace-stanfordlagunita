@@ -1,0 +1,24 @@
+uuid: 52fe087f-e176-4f78-ad0e-16a588904882
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_accordions_desc
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_accordions
+  module:
+    - text
+id: paragraph.sum_accordions.sum_accordions_desc
+field_name: sum_accordions_desc
+entity_type: paragraph
+bundle: sum_accordions
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

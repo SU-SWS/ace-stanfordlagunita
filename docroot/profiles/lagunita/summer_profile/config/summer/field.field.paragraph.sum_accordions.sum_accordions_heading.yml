@@ -1,0 +1,19 @@
+uuid: 88e44af6-d8cc-4b8f-8abe-790369ff6e3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_accordions_heading
+    - paragraphs.paragraphs_type.sum_accordions
+id: paragraph.sum_accordions.sum_accordions_heading
+field_name: sum_accordions_heading
+entity_type: paragraph
+bundle: sum_accordions
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

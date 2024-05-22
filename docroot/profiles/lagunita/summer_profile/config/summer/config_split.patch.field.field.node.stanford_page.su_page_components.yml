@@ -1,7 +1,7 @@
 adding:
   dependencies:
     config:
-      - paragraphs.paragraphs_type.stanford_accordion
+      - paragraphs.paragraphs_type.sum_accordions
       - paragraphs.paragraphs_type.sum_calculator
       - paragraphs.paragraphs_type.sum_course_filter
       - paragraphs.paragraphs_type.sum_user_favorites
@@ -10,16 +10,17 @@ adding:
     handler_settings:
       target_bundles:
         sum_course_filter: sum_course_filter
-        sum_user_favorites: sum_user_favorites
         sum_calculator: sum_calculator
-        stanford_accordion: stanford_accordion
+        sum_user_favorites: sum_user_favorites
+        sum_accordions: sum_accordions
         sum_video: sum_video
       target_bundles_drag_drop:
-        stanford_accordion:
-          enabled: true
         stanford_page_title_banner:
           weight: 24
           enabled: false
+        sum_accordions:
+          weight: 33
+          enabled: true
         sum_calculator:
           weight: 30
           enabled: true
@@ -35,9 +36,4 @@ adding:
         sum_video:
           weight: 34
           enabled: true
-removing:
-  settings:
-    handler_settings:
-      target_bundles_drag_drop:
-        stanford_accordion:
-          enabled: false
+removing: {  }
