@@ -1,0 +1,13 @@
+uuid: c9afc2a1-46dd-4afb-a2e2-94ab3a199346
+langcode: en
+status: true
+dependencies: {  }
+id: config_pages.stanford_local_footer
+site_resolver: site_selector
+configuration:
+  sites:
+    local: local
+revalidator: path
+revalidator_configuration:
+  revalidate_page: false
+  additional_paths: /tags/config-pages

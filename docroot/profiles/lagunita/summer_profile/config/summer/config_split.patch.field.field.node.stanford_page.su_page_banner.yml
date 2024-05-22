@@ -78,3 +78,18 @@ removing:
           weight: 25
         stanford_wysiwyg:
           weight: 6
+        sum_calculator:
+          weight: 32
+          enabled: false
+        sum_course_filter:
+          weight: 33
+          enabled: false
+        sum_top_banner:
+          weight: 34
+          enabled: true
+        sum_user_favorites:
+          weight: 35
+          enabled: false
+        sum_video:
+          weight: 36
+          enabled: false
