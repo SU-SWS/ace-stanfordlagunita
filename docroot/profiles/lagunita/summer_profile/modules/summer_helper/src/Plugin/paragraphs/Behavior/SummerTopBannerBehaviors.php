@@ -11,6 +11,8 @@ use Drupal\paragraphs\ParagraphInterface;
 use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
+ * Manages and controlling the behavior and display of "top banner" element.
+ *
  * @ParagraphsBehavior(
  *   id = "sum_top_banner_behavior",
  *   label = @Translation("Summer Top Banner Behavior"),
@@ -68,7 +70,7 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
   }
 
   /**
-   *
+   * Included to view the top banner in the admin UI.
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // @todo Implement view() method.
