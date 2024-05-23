@@ -55,7 +55,7 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
       '#default_value' => $paragraph->getBehaviorSetting('sum_top_banner_behavior', 'sum_top_banner_alignment'),
       '#states' => [
         'invisible' => [
-          ':input:[name="sum_top_banner_arc"]' => ['checked' => TRUE],
+          ':input[name="su_page_banner[0][behavior_plugins][sum_top_banner_behavior][sum_top_banner_arc]"]' => ['checked' => TRUE],
         ],
       ],
     ];
