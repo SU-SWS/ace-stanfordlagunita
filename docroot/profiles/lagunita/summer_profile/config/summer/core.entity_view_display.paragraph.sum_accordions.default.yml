@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.sum_accordions
   module:
     - entity_reference_revisions
+    - stanford_fields
     - text
 id: paragraph.sum_accordions.default
 targetEntityType: paragraph
@@ -17,7 +18,7 @@ mode: default
 content:
   sum_accordions_accords:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -26,16 +27,17 @@ content:
     region: content
   sum_accordions_desc:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   sum_accordions_heading:
-    type: string
-    label: above
+    type: entity_title_heading
+    label: hidden
     settings:
-      link_to_entity: false
+      tag: h2
+      linked: false
     third_party_settings: {  }
     weight: 0
     region: content
