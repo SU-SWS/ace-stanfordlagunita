@@ -1,0 +1,21 @@
+uuid: aa51bc91-ac90-4a29-bb55-026ef9d2d57f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_arc_superhead
+field_name: sum_arc_superhead
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

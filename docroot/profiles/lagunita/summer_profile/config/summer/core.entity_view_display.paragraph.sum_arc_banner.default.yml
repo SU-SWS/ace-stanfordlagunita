@@ -1,0 +1,51 @@
+uuid: 3a32d021-4863-4f67-b6c7-eccb854b3797
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_arc_banner.sum_arc_description
+    - field.field.paragraph.sum_arc_banner.sum_arc_headline
+    - field.field.paragraph.sum_arc_banner.sum_arc_image
+    - field.field.paragraph.sum_arc_banner.sum_arc_superhead
+    - paragraphs.paragraphs_type.sum_arc_banner
+  module:
+    - text
+id: paragraph.sum_arc_banner.default
+targetEntityType: paragraph
+bundle: sum_arc_banner
+mode: default
+content:
+  sum_arc_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_arc_headline:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sum_arc_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sum_arc_superhead:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

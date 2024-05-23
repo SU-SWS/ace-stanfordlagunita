@@ -1,0 +1,19 @@
+uuid: 9c6eb883-4630-41e7-a638-a6892d6b1e4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_arc_superhead
+    - paragraphs.paragraphs_type.sum_arc_banner
+id: paragraph.sum_arc_banner.sum_arc_superhead
+field_name: sum_arc_superhead
+entity_type: paragraph
+bundle: sum_arc_banner
+label: Superhead
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
