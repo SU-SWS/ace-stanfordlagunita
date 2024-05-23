@@ -5,6 +5,7 @@
  * supress_helper.module
  */
 
+use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
@@ -167,7 +168,9 @@ function supress_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $so
     return;
   }
   $retailers = _supress_get_ebook_retailers();
-  $row->setSourceProperty('ebook_retailers', array_values(array_filter($retailers, fn($retailer) => (int) $retailer['work_id_number'] == (int) $id_map['sourceid1'])));
+  $retailers = array_filter($retailers, fn($retailer) => (int) $retailer['work_id_number'] == (int) $id_map['sourceid1']);
+  uasort($retailers, [SortArray::class, 'sortByTitleElement']);
+  $row->setSourceProperty('ebook_retailers', array_values($retailers));
 }
 
 /**

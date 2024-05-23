@@ -16,9 +16,9 @@ elseif (EnvironmentDetector::isLocalEnv()) {
 }
 
 if ($next_domain) {
-//  $config['next.next_site.netlify'] = [
-//    'base_url' => $next_domain,
-//    'preview_url' => "$next_domain/api/draft",
-//    'revalidate_url' => "$next_domain/api/revalidate",
-//  ];
+  $config['next.next_site.vercel'] = [
+    'base_url' => $next_domain,
+    'preview_url' => "$next_domain/api/draft",
+    'revalidate_url' => "$next_domain/api/revalidate",
+  ];
 }

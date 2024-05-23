@@ -3,6 +3,8 @@ content/**/*.jpg
 content/**/*.png
 content/**/*.gif
 
+next.next_entity_type_config.*
+
 # deal with ignoring or not  bin, vendor, phpstorm files...
 .idea
 .idea/**
