@@ -13,13 +13,13 @@ adding:
         enabled: true
       sum_course_filter:
         enabled: true
+      sum_top_banner:
+        enabled: true
       sum_user_favorites:
         enabled: true
       sum_video:
         enabled: true
         query_load_enabled: true
-      sum_top_banner:
-        enabled: true
     taxonomy_term:
       sum_course_availability:
         enabled: true
