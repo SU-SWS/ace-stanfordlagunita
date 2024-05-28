@@ -63,8 +63,7 @@
         "drupal/coder": "*"
     },
     "conflict": {
-        "drupal/drupal": "*",
-        "drupal/diff": ">1.1.0"
+        "drupal/drupal": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
