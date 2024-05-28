@@ -65,6 +65,8 @@ class BasicPageParagraphsCest {
 
   /**
    * The user should be able to see all revisions of a node.
+   *
+   * @group revisions
    */
   public function testViewRevisions(FunctionalTester $I) {
     $paragraph = $I->createEntity([
