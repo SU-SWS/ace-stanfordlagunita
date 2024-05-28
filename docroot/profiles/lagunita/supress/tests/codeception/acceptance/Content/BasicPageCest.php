@@ -114,6 +114,8 @@ class BasicPageCest {
    * The revision history tab should be functional.
    *
    * Regression test for D8CORE-1547.
+   *
+   * @group D8CORE-1547
    */
   public function testRevisionPage(AcceptanceTester $I) {
     $title = $this->faker->words(3, TRUE);
