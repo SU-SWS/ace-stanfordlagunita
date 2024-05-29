@@ -2087,27 +2087,27 @@
         },
         {
             "name": "drupal/acquia_connector",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/acquia_connector.git",
-                "reference": "4.0.6"
+                "reference": "4.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acquia_connector-4.0.6.zip",
-                "reference": "4.0.6",
-                "shasum": "68ecb1b51cf8be3d3a7b21c9ccc33c40431c376d"
+                "url": "https://ftp.drupal.org/files/projects/acquia_connector-4.0.7.zip",
+                "reference": "4.0.7",
+                "shasum": "adcbf7536a8749138835c2c56747422a9737bf91"
             },
             "require": {
-                "drupal/core": ">=8.9 <11.0.0-stable",
+                "drupal/core": ">=9.5 <12.0.0-stable",
                 "ext-json": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.6",
-                    "datestamp": "1712677384",
+                    "version": "4.0.7",
+                    "datestamp": "1717000629",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6983,26 +6983,26 @@
         },
         {
             "name": "drupal/jquery_ui",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jquery_ui.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jquery_ui-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "0ddccdcf35a066de1843e1d9670677ee1a2faac0"
+                "url": "https://ftp.drupal.org/files/projects/jquery_ui-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "3f893843ec30fed18fa1b0cb326e51880b0cb686"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.2 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1668521197",
+                    "version": "8.x-1.7",
+                    "datestamp": "1717002098",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -17389,16 +17389,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "8.5.9",
+            "version": "8.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "7acf1a719a97f73c5fc4bcf604ba2a50b17a453d"
+                "reference": "0b8d5c6d11997fcb76cfd2c027f10b7fe76ac57a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/7acf1a719a97f73c5fc4bcf604ba2a50b17a453d",
-                "reference": "7acf1a719a97f73c5fc4bcf604ba2a50b17a453d",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/0b8d5c6d11997fcb76cfd2c027f10b7fe76ac57a",
+                "reference": "0b8d5c6d11997fcb76cfd2c027f10b7fe76ac57a",
                 "shasum": ""
             },
             "require": {
@@ -17439,9 +17439,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.5.9"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.5.10"
             },
-            "time": "2024-04-05T17:51:19+00:00"
+            "time": "2024-05-29T17:44:13+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
@@ -17730,16 +17730,16 @@
         },
         {
             "name": "su-sws/stanford_samlauth",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_samlauth.git",
-                "reference": "7fa15c9c8baa33dd2961ce05e02affc6624905a6"
+                "reference": "66cce5b5b082bb41038f37c050060f87ddfeadc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_samlauth/zipball/7fa15c9c8baa33dd2961ce05e02affc6624905a6",
-                "reference": "7fa15c9c8baa33dd2961ce05e02affc6624905a6",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_samlauth/zipball/66cce5b5b082bb41038f37c050060f87ddfeadc2",
+                "reference": "66cce5b5b082bb41038f37c050060f87ddfeadc2",
                 "shasum": ""
             },
             "require": {
@@ -17755,9 +17755,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_samlauth/issues",
-                "source": "https://github.com/SU-SWS/stanford_samlauth/tree/1.0.8"
+                "source": "https://github.com/SU-SWS/stanford_samlauth/tree/1.0.9"
             },
-            "time": "2024-05-28T17:16:52+00:00"
+            "time": "2024-05-29T15:32:15+00:00"
         },
         {
             "name": "symfony/cache",
