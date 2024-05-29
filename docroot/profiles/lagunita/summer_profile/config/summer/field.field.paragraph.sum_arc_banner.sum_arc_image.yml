@@ -1,0 +1,29 @@
+uuid: 0823a2fc-0c21-4513-9a42-b794c93054a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_arc_image
+    - media.type.image
+    - paragraphs.paragraphs_type.sum_arc_banner
+id: paragraph.sum_arc_banner.sum_arc_image
+field_name: sum_arc_image
+entity_type: paragraph
+bundle: sum_arc_banner
+label: image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

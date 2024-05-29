@@ -1,11 +1,13 @@
 adding:
   dependencies:
     config:
+      - paragraphs.paragraphs_type.sum_arc_banner
       - paragraphs.paragraphs_type.sum_top_banner
   settings:
     handler_settings:
       target_bundles:
         sum_top_banner: sum_top_banner
+        sum_arc_banner: sum_arc_banner
       target_bundles_drag_drop:
         stanford_accordion:
           weight: -34
@@ -33,6 +35,12 @@ adding:
           weight: -24
         stanford_wysiwyg:
           weight: -35
+        sum_accordions:
+          weight: 34
+          enabled: false
+        sum_arc_banner:
+          weight: 40
+          enabled: true
         sum_calculator:
           weight: -23
           enabled: false

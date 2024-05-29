@@ -53,17 +53,6 @@ class SummerTopBannerBehaviors extends ParagraphsBehaviorBase {
         'left' => $this->t('Left'),
       ],
       '#default_value' => $paragraph->getBehaviorSetting('sum_top_banner_behavior', 'sum_top_banner_alignment'),
-      '#states' => [
-        'invisible' => [
-          ':input:[name="sum_top_banner_arc"]' => ['checked' => TRUE],
-        ],
-      ],
-    ];
-    $element['sum_top_banner_arc'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Arched banner'),
-      '#description' => $this->t("Check if you want the top banner to be arched."),
-      '#default_value' => $paragraph->getBehaviorSetting('sum_top_banner_behavior', 'sum_top_banner_arc'),
     ];
 
     return $element;

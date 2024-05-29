@@ -1,0 +1,19 @@
+uuid: d7fa5a47-f108-4469-aa59-62367ee1e764
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_arc_description
+field_name: sum_arc_description
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

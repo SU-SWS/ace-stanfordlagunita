@@ -1,0 +1,24 @@
+uuid: 6a7a169d-f271-4e41-950e-a8830ba7c305
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_arc_description
+    - filter.format.stanford_html
+    - paragraphs.paragraphs_type.sum_arc_banner
+  module:
+    - text
+id: paragraph.sum_arc_banner.sum_arc_description
+field_name: sum_arc_description
+entity_type: paragraph
+bundle: sum_arc_banner
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_html
+field_type: text_long

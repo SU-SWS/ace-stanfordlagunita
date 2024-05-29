@@ -1,0 +1,10 @@
+uuid: a78f5b85-53b8-4520-8f23-856a04ad2b92
+langcode: en
+status: true
+dependencies: {  }
+id: sum_arc_banner
+label: 'Arc Banner'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
