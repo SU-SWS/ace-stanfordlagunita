@@ -30,11 +30,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -65,11 +65,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-
       - name: Get Sites
         id: set-matrix
         run: |
@@ -112,11 +112,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-
       - name: Install Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -184,11 +184,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-
       - name: Sync and Update Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -220,11 +220,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
+            2.1-${{ hashFiles('blt/blt.yml') }}-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
