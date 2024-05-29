@@ -35,8 +35,11 @@ adding:
           weight: -24
         stanford_wysiwyg:
           weight: -35
+        sum_accordions:
+          weight: 34
+          enabled: false
         sum_arc_banner:
-          weight: 35
+          weight: 40
           enabled: true
         sum_calculator:
           weight: -23
