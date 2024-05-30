@@ -13,6 +13,7 @@ adding:
           weight: -34
         stanford_banner:
           weight: -37
+          enabled: false
         stanford_card:
           weight: -36
         stanford_entity:
@@ -57,13 +58,19 @@ adding:
           weight: -20
           enabled: false
 removing:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.stanford_banner
   settings:
     handler_settings:
+      target_bundles:
+        stanford_banner: stanford_banner
       target_bundles_drag_drop:
         stanford_accordion:
           weight: 14
         stanford_banner:
           weight: 4
+          enabled: true
         stanford_card:
           weight: 5
         stanford_entity:
