@@ -41,6 +41,8 @@ adding:
     paragraph:
       sum_accordions:
         enabled: true
+      sum_arc_banner:
+        enabled: true
       sum_calculator:
         enabled: true
       sum_carousel:
@@ -56,21 +58,19 @@ adding:
       sum_video:
         enabled: true
         query_load_enabled: true
-      sum_arc_banner:
-        enabled: true
     taxonomy_term:
-      sum_course_availability:
-        enabled: true
-      sum_course_interest_area:
-        enabled: true
-      sum_course_population:
-        enabled: true
       cap_org_codes:
         enabled: false
       media_tags:
         enabled: false
       site_owner_orgs:
         enabled: false
+      sum_course_availability:
+        enabled: true
+      sum_course_interest_area:
+        enabled: true
+      sum_course_population:
+        enabled: true
       sum_summer_courses:
         enabled: false
   field_config:
@@ -219,15 +219,6 @@ adding:
           enabled: true
       sum_video:
         sum_video_video:
-          enabled: true
-      sum_arc_banner:
-        sum_arc_description:
-          enabled: true
-        sum_arc_headline:
-          enabled: true
-        sum_arc_image:
-          enabled: true
-        sum_arc_superhead:
           enabled: true
 removing:
   entity_config:
