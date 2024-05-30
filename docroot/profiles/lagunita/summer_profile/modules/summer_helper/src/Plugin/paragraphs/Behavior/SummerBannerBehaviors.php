@@ -22,31 +22,17 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  */
 class SummerBannerBehaviors extends ParagraphsBehaviorBase {
 
+
   /**
-   * Limits to Stanford banner.
-   *
-   * @param \Drupal\paragraphs\Entity\ParagraphsType $paragraphs_type
-   *   The ParagraphsType entity from the Paragraphs module to be evaluated.
-   *
-   * @return bool
-   *   Returns TRUE if the limit is applicable, FALSE otherwise.
+   * {@inheritdoc}
    */
   public static function isApplicable(ParagraphsType $paragraphs_type) {
     return $paragraphs_type->id() == 'stanford_banner';
   }
 
+
   /**
-   * Builds the background color, alignment and button for variant.
-   *
-   * @param \Drupal\paragraphs\ParagraphInterface $paragraph
-   *   The paragraph object which provides context for the variant.
-   * @param array $form
-   *   An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The current state of the form which includes user input data.
-   *
-   * @return array
-   *   Array of the background color, alignment and button data for the variant.
+   * {@inheritdoc}
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
