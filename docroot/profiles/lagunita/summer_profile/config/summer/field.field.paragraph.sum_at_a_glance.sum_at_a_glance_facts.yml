@@ -12,7 +12,7 @@ id: paragraph.sum_at_a_glance.sum_at_a_glance_facts
 field_name: sum_at_a_glance_facts
 entity_type: paragraph
 bundle: sum_at_a_glance
-label: facts
+label: 'At-a-glance Facts'
 description: ''
 required: false
 translatable: false
@@ -25,9 +25,6 @@ settings:
       sum_facts: sum_facts
     negate: 0
     target_bundles_drag_drop:
-      at_a_glance:
-        weight: 23
-        enabled: false
       stanford_accordion:
         weight: 24
         enabled: false

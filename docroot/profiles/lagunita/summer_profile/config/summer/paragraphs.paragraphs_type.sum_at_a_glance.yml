@@ -1,10 +1,14 @@
 uuid: 02a2757c-76d8-4d78-92c9-cd23e2676049
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - summer_helper
 id: sum_at_a_glance
 label: 'At a Glance'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  sum_at_a_glance_behavior:
+    enabled: true
