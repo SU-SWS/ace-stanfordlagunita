@@ -12,7 +12,14 @@ content:
   sum_at_a_glance_descrip:
     settings: {  }
     third_party_settings: {  }
+  sum_at_a_glance_facts:
+    settings:
+      features: {  }
+    third_party_settings: {  }
   sum_at_a_glance_headline:
+    settings: {  }
+    third_party_settings: {  }
+  sum_at_a_glance_link:
     settings: {  }
     third_party_settings: {  }
 hidden:

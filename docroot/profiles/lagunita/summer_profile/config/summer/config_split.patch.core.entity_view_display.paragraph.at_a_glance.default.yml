@@ -2,8 +2,12 @@ adding:
   dependencies:
     config:
       - field.field.paragraph.at_a_glance.sum_at_a_glance_descrip
+      - field.field.paragraph.at_a_glance.sum_at_a_glance_facts
       - field.field.paragraph.at_a_glance.sum_at_a_glance_headline
+      - field.field.paragraph.at_a_glance.sum_at_a_glance_link
     module:
+      - entity_reference_revisions
+      - link
       - text
   content:
     sum_at_a_glance_descrip:
@@ -13,6 +17,15 @@ adding:
       third_party_settings: {  }
       weight: 1
       region: content
+    sum_at_a_glance_facts:
+      type: entity_reference_revisions_entity_view
+      label: above
+      settings:
+        view_mode: default
+        link: ''
+      third_party_settings: {  }
+      weight: 2
+      region: content
     sum_at_a_glance_headline:
       type: string
       label: above
@@ -20,5 +33,17 @@ adding:
         link_to_entity: false
       third_party_settings: {  }
       weight: 0
+      region: content
+    sum_at_a_glance_link:
+      type: link
+      label: above
+      settings:
+        trim_length: 80
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
+      third_party_settings: {  }
+      weight: 3
       region: content
 removing: {  }

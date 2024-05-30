@@ -1,0 +1,19 @@
+uuid: bb7e867d-10b3-42ad-a28f-cf4051fc1909
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.sum_at_a_glance_link
+field_name: sum_at_a_glance_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
