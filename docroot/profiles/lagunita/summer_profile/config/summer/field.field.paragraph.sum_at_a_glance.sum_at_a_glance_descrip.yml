@@ -1,17 +1,17 @@
-uuid: cfa80c43-b596-4747-9bfc-0cad6beaaf06
+uuid: 3fd4f71a-8049-41a3-b6e2-3f6accc2f45e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.sum_at_a_glance_descrip
     - filter.format.stanford_minimal_html
-    - paragraphs.paragraphs_type.at_a_glance
+    - paragraphs.paragraphs_type.sum_at_a_glance
   module:
     - text
-id: paragraph.at_a_glance.sum_at_a_glance_descrip
+id: paragraph.sum_at_a_glance.sum_at_a_glance_descrip
 field_name: sum_at_a_glance_descrip
 entity_type: paragraph
-bundle: at_a_glance
+bundle: sum_at_a_glance
 label: description
 description: ''
 required: false

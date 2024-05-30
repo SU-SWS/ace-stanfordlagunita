@@ -1,0 +1,57 @@
+uuid: 6f88e7aa-a75a-41a0-b1c9-41f1d78e9abb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_at_a_glance.sum_at_a_glance_descrip
+    - field.field.paragraph.sum_at_a_glance.sum_at_a_glance_facts
+    - field.field.paragraph.sum_at_a_glance.sum_at_a_glance_headline
+    - field.field.paragraph.sum_at_a_glance.sum_at_a_glance_link
+    - paragraphs.paragraphs_type.sum_at_a_glance
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.sum_at_a_glance.default
+targetEntityType: paragraph
+bundle: sum_at_a_glance
+mode: default
+content:
+  sum_at_a_glance_descrip:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sum_at_a_glance_facts:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_at_a_glance_headline:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_at_a_glance_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

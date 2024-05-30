@@ -1,14 +1,14 @@
-uuid: 7bbc0725-3115-499a-88f3-a6f1bbd72f3c
+uuid: a2a26a17-fb49-4886-b5ac-974f1f33d20b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.sum_at_a_glance_headline
-    - paragraphs.paragraphs_type.at_a_glance
-id: paragraph.at_a_glance.sum_at_a_glance_headline
+    - paragraphs.paragraphs_type.sum_at_a_glance
+id: paragraph.sum_at_a_glance.sum_at_a_glance_headline
 field_name: sum_at_a_glance_headline
 entity_type: paragraph
-bundle: at_a_glance
+bundle: sum_at_a_glance
 label: Headline
 description: ''
 required: false

@@ -11,8 +11,8 @@ adding:
     handler_settings:
       target_bundles:
         sum_course_filter: sum_course_filter
-        sum_calculator: sum_calculator
         sum_user_favorites: sum_user_favorites
+        sum_calculator: sum_calculator
         sum_accordions: sum_accordions
         sum_video: sum_video
         sum_carousel: sum_carousel
