@@ -3,6 +3,7 @@ adding:
     config:
       - paragraphs.paragraphs_type.sum_accordions
       - paragraphs.paragraphs_type.sum_calculator
+      - paragraphs.paragraphs_type.sum_carousel
       - paragraphs.paragraphs_type.sum_course_filter
       - paragraphs.paragraphs_type.sum_user_favorites
       - paragraphs.paragraphs_type.sum_video
@@ -10,10 +11,11 @@ adding:
     handler_settings:
       target_bundles:
         sum_course_filter: sum_course_filter
-        sum_user_favorites: sum_user_favorites
         sum_calculator: sum_calculator
-        sum_video: sum_video
+        sum_user_favorites: sum_user_favorites
         sum_accordions: sum_accordions
+        sum_video: sum_video
+        sum_carousel: sum_carousel
       target_bundles_drag_drop:
         stanford_page_title_banner:
           weight: 24
@@ -21,8 +23,14 @@ adding:
         sum_accordions:
           weight: 33
           enabled: true
+        sum_arc_banner:
+          weight: 36
+          enabled: false
         sum_calculator:
           weight: 30
+          enabled: true
+        sum_carousel:
+          weight: 38
           enabled: true
         sum_course_filter:
           weight: 29

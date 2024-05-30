@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sum_arc_banner.sum_arc_description
-    - field.field.paragraph.sum_arc_banner.sum_arc_headline
     - field.field.paragraph.sum_arc_banner.sum_arc_image
     - field.field.paragraph.sum_arc_banner.sum_arc_superhead
     - paragraphs.paragraphs_type.sum_arc_banner
@@ -29,14 +28,6 @@ content:
     region: content
     settings:
       rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  sum_arc_headline:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   sum_arc_image:

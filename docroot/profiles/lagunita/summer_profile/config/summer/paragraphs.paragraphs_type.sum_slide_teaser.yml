@@ -1,0 +1,10 @@
+uuid: 42e4ff70-efa5-4842-a9ca-bce21bb94a12
+langcode: en
+status: true
+dependencies: {  }
+id: sum_slide_teaser
+label: 'Teaser Slide'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

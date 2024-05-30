@@ -1,0 +1,19 @@
+uuid: 157a649c-dd99-428f-8a78-9472a3737270
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_carousel_header
+    - paragraphs.paragraphs_type.sum_carousel
+id: paragraph.sum_carousel.sum_carousel_header
+field_name: sum_carousel_header
+entity_type: paragraph
+bundle: sum_carousel
+label: Header
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

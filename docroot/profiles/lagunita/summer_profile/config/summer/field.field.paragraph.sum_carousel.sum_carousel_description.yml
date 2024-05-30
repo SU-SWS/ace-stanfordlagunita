@@ -1,0 +1,24 @@
+uuid: dc4830e4-24d9-4567-9179-3292754ad1d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_carousel_description
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_carousel
+  module:
+    - text
+id: paragraph.sum_carousel.sum_carousel_description
+field_name: sum_carousel_description
+entity_type: paragraph
+bundle: sum_carousel
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

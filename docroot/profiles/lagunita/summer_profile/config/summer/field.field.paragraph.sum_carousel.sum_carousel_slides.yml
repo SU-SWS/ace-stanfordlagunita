@@ -1,0 +1,96 @@
+uuid: d64ecd9c-e3b5-4428-9835-284eb65e895e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_carousel_slides
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.sum_carousel
+    - paragraphs.paragraphs_type.sum_slide_teaser
+  module:
+    - entity_reference_revisions
+id: paragraph.sum_carousel.sum_carousel_slides
+field_name: sum_carousel_slides
+entity_type: paragraph
+bundle: sum_carousel
+label: Slides
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_card: stanford_card
+      sum_slide_teaser: sum_slide_teaser
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 23
+        enabled: false
+      stanford_banner:
+        weight: 24
+        enabled: false
+      stanford_card:
+        weight: 25
+        enabled: true
+      stanford_entity:
+        weight: 26
+        enabled: false
+      stanford_gallery:
+        weight: 27
+        enabled: false
+      stanford_layout:
+        weight: 28
+        enabled: false
+      stanford_lists:
+        weight: 29
+        enabled: false
+      stanford_media_caption:
+        weight: 30
+        enabled: false
+      stanford_page_title_banner:
+        weight: 31
+        enabled: false
+      stanford_person_cta:
+        weight: 32
+        enabled: false
+      stanford_schedule:
+        weight: 33
+        enabled: false
+      stanford_spacer:
+        weight: 34
+        enabled: false
+      stanford_wysiwyg:
+        weight: 35
+        enabled: false
+      sum_accordions:
+        weight: 36
+        enabled: false
+      sum_arc_banner:
+        weight: 37
+        enabled: false
+      sum_calculator:
+        weight: 38
+        enabled: false
+      sum_carousel:
+        weight: 39
+        enabled: false
+      sum_course_filter:
+        weight: 40
+        enabled: false
+      sum_slide_teaser:
+        weight: 42
+        enabled: true
+      sum_top_banner:
+        weight: 43
+        enabled: false
+      sum_user_favorites:
+        weight: 44
+        enabled: false
+      sum_video:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

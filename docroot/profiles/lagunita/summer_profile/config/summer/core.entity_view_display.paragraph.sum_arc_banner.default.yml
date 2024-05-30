@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sum_arc_banner.sum_arc_description
-    - field.field.paragraph.sum_arc_banner.sum_arc_headline
     - field.field.paragraph.sum_arc_banner.sum_arc_image
     - field.field.paragraph.sum_arc_banner.sum_arc_superhead
     - paragraphs.paragraphs_type.sum_arc_banner
@@ -21,14 +20,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
-    region: content
-  sum_arc_headline:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
   sum_arc_image:
     type: entity_reference_entity_view

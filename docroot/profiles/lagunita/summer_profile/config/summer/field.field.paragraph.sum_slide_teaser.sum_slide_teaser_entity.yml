@@ -1,0 +1,45 @@
+uuid: 634fab43-343c-4c85-ba8a-259b3e8fa67f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_slide_teaser_entity
+    - node.type.stanford_course
+    - node.type.stanford_event
+    - node.type.stanford_event_series
+    - node.type.stanford_news
+    - node.type.stanford_page
+    - node.type.stanford_person
+    - node.type.stanford_policy
+    - node.type.stanford_publication
+    - node.type.sum_summer_courses
+    - paragraphs.paragraphs_type.sum_slide_teaser
+id: paragraph.sum_slide_teaser.sum_slide_teaser_entity
+field_name: sum_slide_teaser_entity
+entity_type: paragraph
+bundle: sum_slide_teaser
+label: 'Content Item'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      stanford_page: stanford_page
+      stanford_course: stanford_course
+      stanford_event: stanford_event
+      stanford_event_series: stanford_event_series
+      stanford_news: stanford_news
+      stanford_person: stanford_person
+      stanford_policy: stanford_policy
+      stanford_publication: stanford_publication
+      sum_summer_courses: sum_summer_courses
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: stanford_page
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: d40e6c8f-bf68-4bb3-90ac-18146423422c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_carousel_superheader
+    - paragraphs.paragraphs_type.sum_carousel
+id: paragraph.sum_carousel.sum_carousel_superheader
+field_name: sum_carousel_superheader
+entity_type: paragraph
+bundle: sum_carousel
+label: SuperHeader
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

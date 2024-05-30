@@ -1,0 +1,34 @@
+uuid: 5a7d6529-d8f0-44ba-9af7-d0576ac1936b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_slide_teaser.sum_slide_teaser_entity
+    - paragraphs.paragraphs_type.sum_slide_teaser
+  module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
+id: paragraph.sum_slide_teaser.default
+targetEntityType: paragraph
+bundle: sum_slide_teaser
+mode: default
+content:
+  sum_slide_teaser_entity:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: stanford_card
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

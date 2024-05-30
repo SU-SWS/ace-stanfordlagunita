@@ -1,11 +1,11 @@
-uuid: 7ed03031-6d20-48d6-8e86-af1c1dc044ba
+uuid: cb107fb9-ffac-48f4-88ad-c4108dd074f4
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.sum_arc_headline
-field_name: sum_arc_headline
+id: paragraph.sum_carousel_superheader
+field_name: sum_carousel_superheader
 entity_type: paragraph
 type: string
 settings:

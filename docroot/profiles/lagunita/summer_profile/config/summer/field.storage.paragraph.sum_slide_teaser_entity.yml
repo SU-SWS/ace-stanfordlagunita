@@ -1,0 +1,20 @@
+uuid: 3145e2cc-7541-498b-b91e-b8ebc824d0dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.sum_slide_teaser_entity
+field_name: sum_slide_teaser_entity
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

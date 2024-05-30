@@ -45,7 +45,11 @@ adding:
         enabled: true
       sum_calculator:
         enabled: true
+      sum_carousel:
+        enabled: true
       sum_course_filter:
+        enabled: true
+      sum_slide_teaser:
         enabled: true
       sum_top_banner:
         enabled: true
@@ -131,8 +135,6 @@ adding:
       sum_arc_banner:
         sum_arc_description:
           enabled: true
-        sum_arc_headline:
-          enabled: true
         sum_arc_image:
           enabled: true
         sum_arc_superhead:
@@ -187,6 +189,20 @@ adding:
         sum_calc_ug_unit_cost:
           enabled: true
         sum_calc_ug_unit_help:
+          enabled: true
+      sum_carousel:
+        sum_carousel_description:
+          enabled: true
+        sum_carousel_header:
+          enabled: true
+        sum_carousel_link:
+          enabled: true
+        sum_carousel_slides:
+          enabled: true
+        sum_carousel_superheader:
+          enabled: true
+      sum_slide_teaser:
+        sum_slide_teaser_entity:
           enabled: true
       sum_top_banner:
         sum_top_banner_cards:

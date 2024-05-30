@@ -1,0 +1,19 @@
+uuid: 02744a59-a453-447e-8b32-6722152e09d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_carousel_description
+field_name: sum_carousel_description
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

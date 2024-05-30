@@ -1,0 +1,25 @@
+uuid: 28cc1d40-3ef7-4ed1-bc00-f02c23022660
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_slide_teaser.sum_slide_teaser_entity
+    - paragraphs.paragraphs_type.sum_slide_teaser
+id: paragraph.sum_slide_teaser.default
+targetEntityType: paragraph
+bundle: sum_slide_teaser
+mode: default
+content:
+  sum_slide_teaser_entity:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

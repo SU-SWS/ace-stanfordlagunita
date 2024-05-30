@@ -1,0 +1,23 @@
+uuid: dbe1c29c-a5de-4d40-8ce3-ac505b304d3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_carousel_link
+    - paragraphs.paragraphs_type.sum_carousel
+  module:
+    - link
+id: paragraph.sum_carousel.sum_carousel_link
+field_name: sum_carousel_link
+entity_type: paragraph
+bundle: sum_carousel
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

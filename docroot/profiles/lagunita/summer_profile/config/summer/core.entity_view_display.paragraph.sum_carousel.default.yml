@@ -1,0 +1,68 @@
+uuid: 6bbeaa5d-5a6d-4c0d-897b-f4375fe1c1ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_carousel.sum_carousel_description
+    - field.field.paragraph.sum_carousel.sum_carousel_header
+    - field.field.paragraph.sum_carousel.sum_carousel_link
+    - field.field.paragraph.sum_carousel.sum_carousel_slides
+    - field.field.paragraph.sum_carousel.sum_carousel_superheader
+    - paragraphs.paragraphs_type.sum_carousel
+  module:
+    - entity_reference_revisions
+    - link
+    - stanford_fields
+    - text
+id: paragraph.sum_carousel.default
+targetEntityType: paragraph
+bundle: sum_carousel
+mode: default
+content:
+  sum_carousel_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_carousel_header:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_carousel_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sum_carousel_slides:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sum_carousel_superheader:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
