@@ -1,0 +1,24 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.at_a_glance.sum_at_a_glance_descrip
+      - field.field.paragraph.at_a_glance.sum_at_a_glance_headline
+    module:
+      - text
+  content:
+    sum_at_a_glance_descrip:
+      type: text_default
+      label: above
+      settings: {  }
+      third_party_settings: {  }
+      weight: 1
+      region: content
+    sum_at_a_glance_headline:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 0
+      region: content
+removing: {  }

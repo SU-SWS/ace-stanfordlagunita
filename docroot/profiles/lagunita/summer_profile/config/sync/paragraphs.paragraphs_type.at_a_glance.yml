@@ -1,0 +1,10 @@
+uuid: 0ee2e27a-a24a-403b-87de-707aed9b5e80
+langcode: en
+status: true
+dependencies: {  }
+id: at_a_glance
+label: 'At a Glance'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

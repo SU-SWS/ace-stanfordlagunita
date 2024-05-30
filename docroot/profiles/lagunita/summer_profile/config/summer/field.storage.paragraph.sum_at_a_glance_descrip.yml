@@ -1,0 +1,19 @@
+uuid: 8b853cb7-fb53-4734-ad7d-9cbfb3416579
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_at_a_glance_descrip
+field_name: sum_at_a_glance_descrip
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

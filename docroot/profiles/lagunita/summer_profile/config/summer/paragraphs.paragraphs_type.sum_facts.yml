@@ -1,0 +1,10 @@
+uuid: 35d73c30-d94b-4e25-a95c-00e607cb5014
+langcode: en
+status: true
+dependencies: {  }
+id: sum_facts
+label: 'Facts for At-a-Glance'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,20 @@
+uuid: 7c9bbdfb-d74a-4af2-87d5-d1d338ffd1d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.at_a_glance
+id: paragraph.at_a_glance.default
+targetEntityType: paragraph
+bundle: at_a_glance
+mode: default
+content:
+  sum_at_a_glance_descrip:
+    settings: {  }
+    third_party_settings: {  }
+  sum_at_a_glance_headline:
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
