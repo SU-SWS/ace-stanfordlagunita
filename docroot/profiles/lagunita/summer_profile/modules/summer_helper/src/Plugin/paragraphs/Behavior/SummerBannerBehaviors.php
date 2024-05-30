@@ -4,7 +4,7 @@ namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\jumpstart_ui\Plugin\paragraphs\Behavior\HeroPatternBehavior;
+use Drupal\paragraphs\Annotation\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -20,7 +20,11 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  *   weight = 0,
  * )
  */
-class SummerBannerBehaviors extends HeroPatternBehavior {
+class SummerBannerBehaviors extends ParagraphsBehaviorBase {
+
+  public static function isApplicable(ParagraphsType $paragraphs_type) {
+    return $paragraphs_type->id() == 'stanford_banner';
+  }
 
   /**
    * @param \Drupal\paragraphs\ParagraphInterface $paragraph
@@ -61,10 +65,9 @@ class SummerBannerBehaviors extends HeroPatternBehavior {
   }
 
   /**
-   * Included to view the banner variant.
+   * Included to view the top banner.
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
-    // @todo Implement view() method.
+    // Simple changes for the edit form.
   }
-
 }
