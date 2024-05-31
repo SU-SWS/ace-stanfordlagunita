@@ -1,0 +1,29 @@
+uuid: 5c86dc8a-1db4-46fe-9910-eb81333f6929
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_testimonial_bkg_img
+    - media.type.image
+    - paragraphs.paragraphs_type.sum_testimonial
+id: paragraph.sum_testimonial.sum_testimonial_bkg_img
+field_name: sum_testimonial_bkg_img
+entity_type: paragraph
+bundle: sum_testimonial
+label: 'Background Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

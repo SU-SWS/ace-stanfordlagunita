@@ -1,0 +1,19 @@
+uuid: e6fde094-4dca-4eb8-ba3b-f4e18f372566
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_testimonial_heading
+    - paragraphs.paragraphs_type.sum_testimonial
+id: paragraph.sum_testimonial.sum_testimonial_heading
+field_name: sum_testimonial_heading
+entity_type: paragraph
+bundle: sum_testimonial
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

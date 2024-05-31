@@ -1,0 +1,20 @@
+uuid: a0862ffa-74bf-445e-b02f-24519b2f9ca0
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sum_testimonial_headshot
+field_name: sum_testimonial_headshot
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

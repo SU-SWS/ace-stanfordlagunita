@@ -1,0 +1,93 @@
+uuid: 2f2593c8-fa76-4fac-b46b-e9ca352ca247
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_testimonial.sum_testimonial_bkg_img
+    - field.field.paragraph.sum_testimonial.sum_testimonial_button
+    - field.field.paragraph.sum_testimonial.sum_testimonial_descrip
+    - field.field.paragraph.sum_testimonial.sum_testimonial_heading
+    - field.field.paragraph.sum_testimonial.sum_testimonial_headshot
+    - field.field.paragraph.sum_testimonial.sum_testimonial_name
+    - field.field.paragraph.sum_testimonial.sum_testimonial_type
+    - field.field.paragraph.sum_testimonial.sum_testimontial_univ
+    - paragraphs.paragraphs_type.sum_testimonial
+  module:
+    - link
+    - options
+    - text
+id: paragraph.sum_testimonial.default
+targetEntityType: paragraph
+bundle: sum_testimonial
+mode: default
+content:
+  sum_testimonial_bkg_img:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  sum_testimonial_button:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  sum_testimonial_descrip:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sum_testimonial_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_testimonial_headshot:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  sum_testimonial_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_testimonial_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sum_testimontial_univ:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

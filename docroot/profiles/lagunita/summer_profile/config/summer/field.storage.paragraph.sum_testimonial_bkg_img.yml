@@ -1,0 +1,20 @@
+uuid: 73e4c942-e72c-463a-8dcf-ce35b58a6424
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sum_testimonial_bkg_img
+field_name: sum_testimonial_bkg_img
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

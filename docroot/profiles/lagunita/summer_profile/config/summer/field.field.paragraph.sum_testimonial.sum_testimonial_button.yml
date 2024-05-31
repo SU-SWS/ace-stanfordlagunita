@@ -1,0 +1,23 @@
+uuid: ab3d89bb-e3ba-4a41-a212-54265c8abc50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_testimonial_button
+    - paragraphs.paragraphs_type.sum_testimonial
+  module:
+    - link
+id: paragraph.sum_testimonial.sum_testimonial_button
+field_name: sum_testimonial_button
+entity_type: paragraph
+bundle: sum_testimonial
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

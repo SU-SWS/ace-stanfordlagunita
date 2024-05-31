@@ -1,0 +1,19 @@
+uuid: 4a52fff3-de54-41d8-865e-7a14e257387b
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.sum_testimonial_button
+field_name: sum_testimonial_button
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

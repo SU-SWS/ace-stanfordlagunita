@@ -1,0 +1,24 @@
+uuid: a7124917-b9f9-4620-a4c1-20e6be759769
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_testimonial_descrip
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_testimonial
+  module:
+    - text
+id: paragraph.sum_testimonial.sum_testimonial_descrip
+field_name: sum_testimonial_descrip
+entity_type: paragraph
+bundle: sum_testimonial
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long
