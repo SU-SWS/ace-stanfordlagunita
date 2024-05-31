@@ -22,14 +22,12 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  */
 class SummerBannerBehaviors extends ParagraphsBehaviorBase {
 
-
   /**
    * {@inheritdoc}
    */
   public static function isApplicable(ParagraphsType $paragraphs_type) {
     return $paragraphs_type->id() == 'stanford_banner';
   }
-
 
   /**
    * {@inheritdoc}
