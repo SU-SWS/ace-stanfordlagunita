@@ -39,6 +39,8 @@ class SummerAtAGlanceBehaviors extends ParagraphsBehaviorBase {
       '#description' => $this->t('Aligns overlay to the left.'),
       '#default_value' => $paragraph->getBehaviorSetting('sum_at_a_glance', 'sum_at_a_glance_alignment'),
     ];
+
+    return $element;
   }
 
   /**
