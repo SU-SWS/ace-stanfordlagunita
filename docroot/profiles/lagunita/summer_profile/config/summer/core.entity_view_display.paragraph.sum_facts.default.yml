@@ -1,0 +1,31 @@
+uuid: bf03062e-a7c5-4a65-88d3-bcc17cd46080
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_facts.sum_facts_label
+    - field.field.paragraph.sum_facts.sum_facts_text
+    - paragraphs.paragraphs_type.sum_facts
+id: paragraph.sum_facts.default
+targetEntityType: paragraph
+bundle: sum_facts
+mode: default
+content:
+  sum_facts_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_facts_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

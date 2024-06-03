@@ -1,0 +1,24 @@
+uuid: 3fd4f71a-8049-41a3-b6e2-3f6accc2f45e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_at_a_glance_descrip
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_at_a_glance
+  module:
+    - text
+id: paragraph.sum_at_a_glance.sum_at_a_glance_descrip
+field_name: sum_at_a_glance_descrip
+entity_type: paragraph
+bundle: sum_at_a_glance
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

@@ -1,0 +1,100 @@
+uuid: 35cbbc1a-7b7a-4696-bea4-a119ed6a0689
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_at_a_glance_facts
+    - paragraphs.paragraphs_type.sum_at_a_glance
+    - paragraphs.paragraphs_type.sum_facts
+  module:
+    - entity_reference_revisions
+id: paragraph.sum_at_a_glance.sum_at_a_glance_facts
+field_name: sum_at_a_glance_facts
+entity_type: paragraph
+bundle: sum_at_a_glance
+label: 'At-a-glance Facts'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sum_facts: sum_facts
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 24
+        enabled: false
+      stanford_banner:
+        weight: 25
+        enabled: false
+      stanford_card:
+        weight: 26
+        enabled: false
+      stanford_entity:
+        weight: 27
+        enabled: false
+      stanford_gallery:
+        weight: 28
+        enabled: false
+      stanford_layout:
+        weight: 29
+        enabled: false
+      stanford_lists:
+        weight: 30
+        enabled: false
+      stanford_media_caption:
+        weight: 31
+        enabled: false
+      stanford_page_title_banner:
+        weight: 32
+        enabled: false
+      stanford_person_cta:
+        weight: 33
+        enabled: false
+      stanford_schedule:
+        weight: 34
+        enabled: false
+      stanford_spacer:
+        weight: 35
+        enabled: false
+      stanford_wysiwyg:
+        weight: 36
+        enabled: false
+      sum_accordions:
+        weight: 37
+        enabled: false
+      sum_arc_banner:
+        weight: 38
+        enabled: false
+      sum_at_a_glance:
+        weight: 42
+        enabled: false
+      sum_calculator:
+        weight: 39
+        enabled: false
+      sum_carousel:
+        weight: 44
+        enabled: false
+      sum_course_filter:
+        weight: 40
+        enabled: false
+      sum_facts:
+        weight: 41
+        enabled: true
+      sum_slide_teaser:
+        weight: 47
+        enabled: false
+      sum_top_banner:
+        weight: 42
+        enabled: false
+      sum_user_favorites:
+        weight: 43
+        enabled: false
+      sum_video:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

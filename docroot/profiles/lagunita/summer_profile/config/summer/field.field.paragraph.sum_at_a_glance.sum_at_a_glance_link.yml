@@ -1,0 +1,23 @@
+uuid: 2c58cdd4-3ce1-40bd-aa5e-27868d8a378f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_at_a_glance_link
+    - paragraphs.paragraphs_type.sum_at_a_glance
+  module:
+    - link
+id: paragraph.sum_at_a_glance.sum_at_a_glance_link
+field_name: sum_at_a_glance_link
+entity_type: paragraph
+bundle: sum_at_a_glance
+label: link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
