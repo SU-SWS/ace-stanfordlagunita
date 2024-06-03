@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: sum_at_a_glance
 label: 'At-a-glance Facts'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

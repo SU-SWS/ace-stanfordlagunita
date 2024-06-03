@@ -19,14 +19,14 @@ mode: default
 content:
   sum_at_a_glance_descrip:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   sum_at_a_glance_facts:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -35,7 +35,7 @@ content:
     region: content
   sum_at_a_glance_headline:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -43,7 +43,7 @@ content:
     region: content
   sum_at_a_glance_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

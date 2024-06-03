@@ -14,8 +14,8 @@ adding:
         sum_course_filter: sum_course_filter
         sum_calculator: sum_calculator
         sum_user_favorites: sum_user_favorites
-        sum_accordions: sum_accordions
         sum_video: sum_video
+        sum_accordions: sum_accordions
         sum_carousel: sum_carousel
         sum_at_a_glance: sum_at_a_glance
       target_bundles_drag_drop:

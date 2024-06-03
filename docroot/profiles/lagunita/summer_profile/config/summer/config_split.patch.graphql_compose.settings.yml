@@ -52,7 +52,7 @@ adding:
       sum_course_filter:
         enabled: true
       sum_facts:
-        enabled: false
+        enabled: true
       sum_slide_teaser:
         enabled: true
       sum_top_banner:
@@ -213,6 +213,11 @@ adding:
         sum_carousel_slides:
           enabled: true
         sum_carousel_superheader:
+          enabled: true
+      sum_facts:
+        sum_facts_label:
+          enabled: true
+        sum_facts_text:
           enabled: true
       sum_slide_teaser:
         sum_slide_teaser_entity:
