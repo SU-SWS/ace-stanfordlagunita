@@ -54,6 +54,7 @@
     "require-dev": {
         "acquia/blt-drupal-test": "^1.0",
         "acquia/blt-multisite": "^1.0",
+        "drupal/graphql_compose_fragments-graphql_compose_fragments": "^1.0@beta",
         "drupal/restui": "^1.21",
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
