@@ -41,7 +41,8 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
     ];
     $element['sum_testimonial_banner_heading'] = [
       '#type' => 'select',
-      '#title' => $this->t('Heading Level'),
+      '#title' => $this->t('Heading level'),
+      '#description' => $this->t('Options for headings.'),
       '#options' => [
         'h2' => 'H2',
         'h3' => 'H3',
