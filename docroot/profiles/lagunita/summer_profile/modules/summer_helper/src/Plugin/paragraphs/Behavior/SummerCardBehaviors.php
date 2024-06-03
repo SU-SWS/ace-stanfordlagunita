@@ -48,6 +48,7 @@ class SummerCardBehaviors extends CardBehavior {
         'semitransparent_olive' => $this->t('Semitransparent Olive Light'),
         'spirited' => $this->t('Spirited Light'),
         'semitransparent_spirited' => $this->t('Semitransparent Spirited Light'),
+        'transparent' => $this->t('No background'),
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
       '#states' => [
