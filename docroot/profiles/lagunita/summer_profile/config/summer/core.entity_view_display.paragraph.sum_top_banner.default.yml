@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.sum_top_banner.sum_top_banner_cards
     - field.field.paragraph.sum_top_banner.sum_top_banner_descrip
-    - field.field.paragraph.sum_top_banner.sum_top_banner_headline
     - field.field.paragraph.sum_top_banner.sum_top_banner_image
     - field.field.paragraph.sum_top_banner.sum_top_banner_link
     - field.field.paragraph.sum_top_banner.sum_top_banner_superhead
@@ -35,14 +34,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
-    region: content
-  sum_top_banner_headline:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
   sum_top_banner_image:
     type: entity_reference_entity_view
