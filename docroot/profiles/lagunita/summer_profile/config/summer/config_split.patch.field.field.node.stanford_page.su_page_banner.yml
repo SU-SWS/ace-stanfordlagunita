@@ -13,6 +13,7 @@ adding:
           weight: -34
         stanford_banner:
           weight: -37
+          enabled: false
         stanford_card:
           weight: -36
         stanford_entity:
@@ -44,8 +45,14 @@ adding:
         sum_calculator:
           weight: -23
           enabled: false
+        sum_carousel:
+          weight: 44
+          enabled: false
         sum_course_filter:
           weight: -22
+          enabled: false
+        sum_slide_teaser:
+          weight: 40
           enabled: false
         sum_top_banner:
           weight: -28
@@ -57,13 +64,19 @@ adding:
           weight: -20
           enabled: false
 removing:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.stanford_banner
   settings:
     handler_settings:
+      target_bundles:
+        stanford_banner: stanford_banner
       target_bundles_drag_drop:
         stanford_accordion:
           weight: 14
         stanford_banner:
           weight: 4
+          enabled: true
         stanford_card:
           weight: 5
         stanford_entity:
