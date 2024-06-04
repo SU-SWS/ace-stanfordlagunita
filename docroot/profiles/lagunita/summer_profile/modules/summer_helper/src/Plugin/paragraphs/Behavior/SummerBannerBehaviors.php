@@ -13,6 +13,8 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 /**
  * Manages and controlling the behavior and display of banner component.
  *
+ * @codeCoverageIgnore
+ *
  * @ParagraphsBehavior(
  *   id = "sum_banner_behaviors",
  *   label = @Translation("Summer Banner Component Behavior"),

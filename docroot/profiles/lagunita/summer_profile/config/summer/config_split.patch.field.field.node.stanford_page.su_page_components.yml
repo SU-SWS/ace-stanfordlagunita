@@ -6,6 +6,7 @@ adding:
       - paragraphs.paragraphs_type.sum_calculator
       - paragraphs.paragraphs_type.sum_carousel
       - paragraphs.paragraphs_type.sum_course_filter
+      - paragraphs.paragraphs_type.sum_pill_banner
       - paragraphs.paragraphs_type.sum_user_favorites
       - paragraphs.paragraphs_type.sum_video
   settings:
@@ -18,6 +19,7 @@ adding:
         sum_video: sum_video
         sum_carousel: sum_carousel
         sum_at_a_glance: sum_at_a_glance
+        sum_pill_banner: sum_pill_banner
       target_bundles_drag_drop:
         stanford_page_title_banner:
           weight: 24
@@ -43,6 +45,9 @@ adding:
         sum_facts:
           weight: 44
           enabled: false
+        sum_pill_banner:
+          weight: 50
+          enabled: true
         sum_slide_teaser:
           weight: 45
           enabled: false

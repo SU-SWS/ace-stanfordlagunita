@@ -13,6 +13,8 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 /**
  * Manages and controlling the behavior and display of "top banner" element.
  *
+ * @codeCoverageIgnore
+ *
  * @ParagraphsBehavior(
  *   id = "sum_top_banner_behavior",
  *   label = @Translation("Summer Top Banner Behavior"),

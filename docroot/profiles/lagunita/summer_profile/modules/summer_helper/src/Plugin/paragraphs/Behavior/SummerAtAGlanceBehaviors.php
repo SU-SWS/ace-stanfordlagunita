@@ -12,6 +12,8 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 /**
  * Manages and controlling the behavior and display of "facts" element.
  *
+ * @codeCoverageIgnore
+ *
  * @ParagraphsBehavior(
  *   id = "sum_at_a_glance_behavior",
  *   label = @Translation("Summer Top Banner Behavior"),

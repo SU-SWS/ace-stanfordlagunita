@@ -9,6 +9,8 @@ use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
 /**
  * Add desired behaviors to paragraph.
  *
+ * @codeCoverageIgnore
+ *
  * @codeCoverageIgnore No functionality to test.
  */
 class SummerCardBehaviors extends CardBehavior {
@@ -55,7 +57,7 @@ class SummerCardBehaviors extends CardBehavior {
         'visible' => [
           '[name="behavior_plugins[su_card_styles][sum_card_variant]"]' => ['value' => 'pill'],
         ],
-      ]
+      ],
     ];
 
     return $element;
