@@ -252,6 +252,8 @@ adding:
           enabled: true
         sum_testimonial_headshot:
           enabled: true
+        sum_testimonial_hs_video:
+          enabled: true
         sum_testimonial_name:
           enabled: true
         sum_testimonial_type:

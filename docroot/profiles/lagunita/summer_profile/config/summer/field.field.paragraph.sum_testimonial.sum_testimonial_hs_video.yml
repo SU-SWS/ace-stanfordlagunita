@@ -1,16 +1,17 @@
-uuid: 5c86dc8a-1db4-46fe-9910-eb81333f6929
+uuid: 69cbe9f0-3bd9-42ab-8e07-d9bdf8f8a81e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.sum_testimonial_bkg_img
+    - field.storage.paragraph.sum_testimonial_hs_video
     - media.type.image
+    - media.type.video
     - paragraphs.paragraphs_type.sum_testimonial
-id: paragraph.sum_testimonial.sum_testimonial_bkg_img
-field_name: sum_testimonial_bkg_img
+id: paragraph.sum_testimonial.sum_testimonial_hs_video
+field_name: sum_testimonial_hs_video
 entity_type: paragraph
 bundle: sum_testimonial
-label: 'Background Image'
+label: 'Circle Headshot or Video'
 description: ''
 required: false
 translatable: false
@@ -21,6 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      video: video
     sort:
       field: _none
       direction: ASC

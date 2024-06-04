@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.sum_testimonial.sum_testimonial_descrip
     - field.field.paragraph.sum_testimonial.sum_testimonial_heading
     - field.field.paragraph.sum_testimonial.sum_testimonial_headshot
+    - field.field.paragraph.sum_testimonial.sum_testimonial_hs_video
     - field.field.paragraph.sum_testimonial.sum_testimonial_name
     - field.field.paragraph.sum_testimonial.sum_testimonial_type
     - field.field.paragraph.sum_testimonial.sum_testimontial_univ
@@ -74,6 +75,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  sum_testimonial_hs_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 9
     region: content
   sum_testimonial_name:
     type: string
