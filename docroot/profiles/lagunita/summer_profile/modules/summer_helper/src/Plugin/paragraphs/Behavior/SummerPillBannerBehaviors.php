@@ -44,17 +44,17 @@ class SummerPillBannerBehaviors extends ParagraphsBehaviorBase {
         'spirited_dark' => $this->t('Spirited Dark'),
         'white' => $this->t('White'),
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_pill_banner_overlay_bkg'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_pill_banner_behaviors', 'sum_pill_banner_overlay_bkg'),
     ];
     $element['sum_pill_banner_oval_bkgd'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Add oval background'),
-      '#default_value' => $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_button'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_pill_banner_behaviors', 'sum_banner_button'),
     ];
-    $element['sum_pill_banner_copy'] = [
+    $element['sum_pill_banner_copy_size'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Add oval background'),
-      '#default_value' => $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_button'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_pill_banner_behaviors', 'sum_pill_banner_copy_size'),
     ];
 
     return $element;
