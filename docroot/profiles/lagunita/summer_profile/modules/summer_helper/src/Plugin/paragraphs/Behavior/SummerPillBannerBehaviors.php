@@ -51,6 +51,11 @@ class SummerPillBannerBehaviors extends ParagraphsBehaviorBase {
       '#title' => $this->t('Add oval background'),
       '#default_value' => $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_button'),
     ];
+    $element['sum_pill_banner_copy'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Add oval background'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_button'),
+    ];
 
     return $element;
   }

@@ -64,11 +64,32 @@ settings:
       stanford_wysiwyg:
         weight: 31
         enabled: false
+      sum_accordions:
+        weight: 39
+        enabled: false
+      sum_arc_banner:
+        weight: 40
+        enabled: false
+      sum_at_a_glance:
+        weight: 41
+        enabled: false
       sum_calculator:
         weight: 32
         enabled: false
+      sum_carousel:
+        weight: 43
+        enabled: false
       sum_course_filter:
         weight: 33
+        enabled: false
+      sum_facts:
+        weight: 45
+        enabled: false
+      sum_pill_banner:
+        weight: 46
+        enabled: false
+      sum_slide_teaser:
+        weight: 47
         enabled: false
       sum_top_banner:
         weight: 34
