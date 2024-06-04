@@ -2,12 +2,14 @@ adding:
   dependencies:
     config:
       - paragraphs.paragraphs_type.sum_arc_banner
+      - paragraphs.paragraphs_type.sum_pill_banner
       - paragraphs.paragraphs_type.sum_top_banner
   settings:
     handler_settings:
       target_bundles:
         sum_top_banner: sum_top_banner
         sum_arc_banner: sum_arc_banner
+        sum_pill_banner: sum_pill_banner
       target_bundles_drag_drop:
         stanford_accordion:
           weight: -34
@@ -42,6 +44,9 @@ adding:
         sum_arc_banner:
           weight: 40
           enabled: true
+        sum_at_a_glance:
+          weight: 41
+          enabled: false
         sum_calculator:
           weight: -23
           enabled: false
@@ -51,6 +56,12 @@ adding:
         sum_course_filter:
           weight: -22
           enabled: false
+        sum_facts:
+          weight: 45
+          enabled: false
+        sum_pill_banner:
+          weight: 46
+          enabled: true
         sum_slide_teaser:
           weight: 40
           enabled: false

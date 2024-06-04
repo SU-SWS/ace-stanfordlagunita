@@ -1,0 +1,20 @@
+uuid: 21db7364-8feb-4631-a6ce-8c4beb8751b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.sum_pill_banner_cards
+field_name: sum_pill_banner_cards
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

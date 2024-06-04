@@ -1,0 +1,20 @@
+uuid: 5a8a3aa0-f1b9-4d72-82d4-d767da4b136d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sum_pill_banner_bkgd
+field_name: sum_pill_banner_bkgd
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

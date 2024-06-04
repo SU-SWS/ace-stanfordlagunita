@@ -1,0 +1,19 @@
+uuid: 785dd40d-8b7c-4ed0-a82e-427a6bea2288
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.sum_pill_banner_link
+field_name: sum_pill_banner_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

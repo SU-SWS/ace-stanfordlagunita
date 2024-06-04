@@ -1,0 +1,14 @@
+uuid: 92e6e381-2f3a-4ddf-80fc-f0b5598d1cd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - summer_helper
+id: sum_pill_banner
+label: 'Pill Banner'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  sum_pill_banner_behaviors:
+    enabled: true

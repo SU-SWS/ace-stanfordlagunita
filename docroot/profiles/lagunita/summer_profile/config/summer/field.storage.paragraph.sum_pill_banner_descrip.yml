@@ -1,0 +1,19 @@
+uuid: b5feb97c-74fc-43d1-973f-0f7a0f933bda
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_pill_banner_descrip
+field_name: sum_pill_banner_descrip
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

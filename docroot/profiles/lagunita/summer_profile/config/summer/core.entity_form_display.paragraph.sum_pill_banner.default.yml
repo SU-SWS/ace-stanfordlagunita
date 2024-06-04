@@ -1,0 +1,73 @@
+uuid: d1a20329-8eee-4b67-9490-9be30cb1fa31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_bkgd
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_cards
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_descrip
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_headline
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_link
+    - paragraphs.paragraphs_type.sum_pill_banner
+  module:
+    - link
+    - media_library
+    - paragraphs
+    - text
+id: paragraph.sum_pill_banner.default
+targetEntityType: paragraph
+bundle: sum_pill_banner
+mode: default
+content:
+  sum_pill_banner_bkgd:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  sum_pill_banner_cards:
+    type: paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  sum_pill_banner_descrip:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_pill_banner_headline:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sum_pill_banner_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
