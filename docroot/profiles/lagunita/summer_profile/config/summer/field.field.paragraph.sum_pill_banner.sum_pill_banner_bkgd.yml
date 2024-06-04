@@ -1,0 +1,29 @@
+uuid: 1e6c48d3-cfd2-4e81-8f4a-6a3bc1ca18d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_pill_banner_bkgd
+    - media.type.image
+    - paragraphs.paragraphs_type.sum_pill_banner
+id: paragraph.sum_pill_banner.sum_pill_banner_bkgd
+field_name: sum_pill_banner_bkgd
+entity_type: paragraph
+bundle: sum_pill_banner
+label: Background
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

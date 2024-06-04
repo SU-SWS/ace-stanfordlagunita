@@ -12,6 +12,8 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 /**
  * Manages and controlling the behavior and display of "Carousel" element.
  *
+ * @codeCoverageIgnore
+ *
  * @ParagraphsBehavior(
  *   id = "sum_carousel",
  *   label = @Translation("Summer Carousel Behavior"),

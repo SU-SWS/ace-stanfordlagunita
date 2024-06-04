@@ -1,0 +1,19 @@
+uuid: d71a8c03-06dd-4b4e-821f-eee22be45467
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_pill_banner_suphead
+    - paragraphs.paragraphs_type.sum_pill_banner
+id: paragraph.sum_pill_banner.sum_pill_banner_suphead
+field_name: sum_pill_banner_suphead
+entity_type: paragraph
+bundle: sum_pill_banner
+label: Superheader
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

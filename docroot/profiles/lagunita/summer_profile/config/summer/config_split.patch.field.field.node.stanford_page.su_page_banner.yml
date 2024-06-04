@@ -42,6 +42,9 @@ adding:
         sum_arc_banner:
           weight: 40
           enabled: true
+        sum_at_a_glance:
+          weight: 41
+          enabled: false
         sum_calculator:
           weight: -23
           enabled: false
@@ -50,6 +53,12 @@ adding:
           enabled: false
         sum_course_filter:
           weight: -22
+          enabled: false
+        sum_facts:
+          weight: 45
+          enabled: false
+        sum_pill_banner:
+          weight: 46
           enabled: false
         sum_slide_teaser:
           weight: 40

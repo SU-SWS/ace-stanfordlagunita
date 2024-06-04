@@ -1,0 +1,24 @@
+uuid: 327a16f5-a2bc-4c45-a4dc-5d688d7d0c22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_pill_banner_descrip
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sum_pill_banner
+  module:
+    - text
+id: paragraph.sum_pill_banner.sum_pill_banner_descrip
+field_name: sum_pill_banner_descrip
+entity_type: paragraph
+bundle: sum_pill_banner
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

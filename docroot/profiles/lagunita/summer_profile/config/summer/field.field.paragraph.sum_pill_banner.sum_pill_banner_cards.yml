@@ -1,17 +1,17 @@
-uuid: 75c9037e-a253-421d-b065-f59b03633c64
+uuid: 21bcb402-e380-4246-bce0-fed4f0543a61
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.sum_top_banner_cards
+    - field.storage.paragraph.sum_pill_banner_cards
     - paragraphs.paragraphs_type.stanford_card
-    - paragraphs.paragraphs_type.sum_top_banner
+    - paragraphs.paragraphs_type.sum_pill_banner
   module:
     - entity_reference_revisions
-id: paragraph.sum_top_banner.sum_top_banner_cards
-field_name: sum_top_banner_cards
+id: paragraph.sum_pill_banner.sum_pill_banner_cards
+field_name: sum_pill_banner_cards
 entity_type: paragraph
-bundle: sum_top_banner
+bundle: sum_pill_banner
 label: Cards
 description: ''
 required: false
@@ -26,43 +26,43 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       stanford_accordion:
-        weight: 19
-        enabled: false
-      stanford_banner:
-        weight: 20
-        enabled: false
-      stanford_card:
-        weight: 21
-        enabled: true
-      stanford_entity:
-        weight: 22
-        enabled: false
-      stanford_gallery:
-        weight: 23
-        enabled: false
-      stanford_layout:
-        weight: 24
-        enabled: false
-      stanford_lists:
-        weight: 25
-        enabled: false
-      stanford_media_caption:
         weight: 26
         enabled: false
-      stanford_page_title_banner:
+      stanford_banner:
         weight: 27
         enabled: false
-      stanford_person_cta:
+      stanford_card:
         weight: 28
-        enabled: false
-      stanford_schedule:
+        enabled: true
+      stanford_entity:
         weight: 29
         enabled: false
-      stanford_spacer:
+      stanford_gallery:
         weight: 30
         enabled: false
-      stanford_wysiwyg:
+      stanford_layout:
         weight: 31
+        enabled: false
+      stanford_lists:
+        weight: 32
+        enabled: false
+      stanford_media_caption:
+        weight: 33
+        enabled: false
+      stanford_page_title_banner:
+        weight: 34
+        enabled: false
+      stanford_person_cta:
+        weight: 35
+        enabled: false
+      stanford_schedule:
+        weight: 36
+        enabled: false
+      stanford_spacer:
+        weight: 37
+        enabled: false
+      stanford_wysiwyg:
+        weight: 38
         enabled: false
       sum_accordions:
         weight: 39
@@ -74,13 +74,13 @@ settings:
         weight: 41
         enabled: false
       sum_calculator:
-        weight: 32
+        weight: 42
         enabled: false
       sum_carousel:
         weight: 43
         enabled: false
       sum_course_filter:
-        weight: 33
+        weight: 44
         enabled: false
       sum_facts:
         weight: 45
@@ -92,12 +92,12 @@ settings:
         weight: 47
         enabled: false
       sum_top_banner:
-        weight: 34
+        weight: 48
         enabled: false
       sum_user_favorites:
-        weight: 35
+        weight: 49
         enabled: false
       sum_video:
-        weight: 36
+        weight: 50
         enabled: false
 field_type: entity_reference_revisions

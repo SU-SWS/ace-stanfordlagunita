@@ -1,0 +1,76 @@
+uuid: ae91fc0d-65dc-498f-906c-b2b6671b557a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_bkgd
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_cards
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_descrip
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_headline
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_link
+    - field.field.paragraph.sum_pill_banner.sum_pill_banner_suphead
+    - paragraphs.paragraphs_type.sum_pill_banner
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.sum_pill_banner.default
+targetEntityType: paragraph
+bundle: sum_pill_banner
+mode: default
+content:
+  sum_pill_banner_bkgd:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_pill_banner_cards:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  sum_pill_banner_descrip:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sum_pill_banner_headline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sum_pill_banner_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sum_pill_banner_suphead:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
