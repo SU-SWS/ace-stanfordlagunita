@@ -21,6 +21,7 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * )
  */
 class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
+
   /**
    * {@inheritDoc}
    */
@@ -53,6 +54,9 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
     return $element;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // Implements the view method.
   }
