@@ -53,7 +53,8 @@ class SummerPillBannerBehaviors extends ParagraphsBehaviorBase {
     ];
     $element['sum_pill_banner_copy_size'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Add oval background'),
+      '#title' => $this->t('Alternative font size'),
+      '#description' => $this->t('Change font size for the description.'),
       '#default_value' => $paragraph->getBehaviorSetting('sum_pill_banner_behaviors', 'sum_pill_banner_copy_size'),
     ];
 
