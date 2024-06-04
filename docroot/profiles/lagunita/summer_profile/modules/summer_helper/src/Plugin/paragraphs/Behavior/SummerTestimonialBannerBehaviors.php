@@ -45,9 +45,9 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
       '#description' => $this->t('Options for smaller font size for larger quotes.'),
       '#empty_option' => $this->t('None'),
       '#options' => [
-        'Long quote' => 'type_4',
+        'Long quote (smaller font)' => 'type_4',
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_heading', 'h2'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_heading'),
     ];
 
     return $element;
