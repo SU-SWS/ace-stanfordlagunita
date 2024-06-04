@@ -43,11 +43,17 @@ adding:
         enabled: true
       sum_arc_banner:
         enabled: true
+      sum_at_a_glance:
+        enabled: true
       sum_calculator:
         enabled: true
       sum_carousel:
         enabled: true
       sum_course_filter:
+        enabled: true
+      sum_facts:
+        enabled: true
+      sum_pill_banner:
         enabled: true
       sum_slide_teaser:
         enabled: true
@@ -58,10 +64,6 @@ adding:
       sum_video:
         enabled: true
         query_load_enabled: true
-      sum_at_a_glance:
-        enabled: true
-      sum_facts:
-        enabled: true
     taxonomy_term:
       cap_org_codes:
         enabled: false
@@ -143,6 +145,15 @@ adding:
           enabled: true
         sum_arc_superhead:
           enabled: true
+      sum_at_a_glance:
+        sum_at_a_glance_descrip:
+          enabled: true
+        sum_at_a_glance_facts:
+          enabled: true
+        sum_at_a_glance_headline:
+          enabled: true
+        sum_at_a_glance_link:
+          enabled: true
       sum_calculator:
         sum_calc_app_fee:
           enabled: true
@@ -205,6 +216,22 @@ adding:
           enabled: true
         sum_carousel_superheader:
           enabled: true
+      sum_facts:
+        sum_facts_label:
+          enabled: true
+        sum_facts_text:
+          enabled: true
+      sum_pill_banner:
+        sum_pill_banner_bkgd:
+          enabled: true
+        sum_pill_banner_cards:
+          enabled: true
+        sum_pill_banner_descrip:
+          enabled: true
+        sum_pill_banner_headline:
+          enabled: true
+        sum_pill_banner_link:
+          enabled: true
       sum_slide_teaser:
         sum_slide_teaser_entity:
           enabled: true
@@ -221,20 +248,6 @@ adding:
           enabled: true
       sum_video:
         sum_video_video:
-          enabled: true
-      sum_at_a_glance:
-        sum_at_a_glance_descrip:
-          enabled: true
-        sum_at_a_glance_facts:
-          enabled: true
-        sum_at_a_glance_headline:
-          enabled: true
-        sum_at_a_glance_link:
-          enabled: true
-      sum_facts:
-        sum_facts_label:
-          enabled: true
-        sum_facts_text:
           enabled: true
 removing:
   entity_config:
