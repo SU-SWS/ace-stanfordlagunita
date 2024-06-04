@@ -10,6 +10,7 @@ dependencies:
     - field.field.paragraph.sum_pill_banner.sum_pill_banner_link
     - paragraphs.paragraphs_type.sum_pill_banner
   module:
+    - change_labels
     - link
     - media_library
     - paragraphs
@@ -33,17 +34,24 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
-      autocollapse: none
+      autocollapse: all
       closed_mode_threshold: 0
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: stanford_card
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
+        convert: '0'
         duplicate: duplicate
-    third_party_settings: {  }
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
   sum_pill_banner_descrip:
     type: text_textarea
     weight: 2

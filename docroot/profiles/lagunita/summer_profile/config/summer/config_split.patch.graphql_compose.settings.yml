@@ -53,8 +53,6 @@ adding:
         enabled: true
       sum_facts:
         enabled: true
-      sum_pill_banner:
-        enabled: true
       sum_slide_teaser:
         enabled: true
       sum_top_banner:
@@ -64,6 +62,8 @@ adding:
       sum_video:
         enabled: true
         query_load_enabled: true
+      sum_pill_banner:
+        enabled: true
     taxonomy_term:
       cap_org_codes:
         enabled: false
@@ -221,17 +221,6 @@ adding:
           enabled: true
         sum_facts_text:
           enabled: true
-      sum_pill_banner:
-        sum_pill_banner_bkgd:
-          enabled: true
-        sum_pill_banner_cards:
-          enabled: true
-        sum_pill_banner_descrip:
-          enabled: true
-        sum_pill_banner_headline:
-          enabled: true
-        sum_pill_banner_link:
-          enabled: true
       sum_slide_teaser:
         sum_slide_teaser_entity:
           enabled: true
@@ -248,6 +237,17 @@ adding:
           enabled: true
       sum_video:
         sum_video_video:
+          enabled: true
+      sum_pill_banner:
+        sum_pill_banner_bkgd:
+          enabled: true
+        sum_pill_banner_cards:
+          enabled: true
+        sum_pill_banner_descrip:
+          enabled: true
+        sum_pill_banner_headline:
+          enabled: true
+        sum_pill_banner_link:
           enabled: true
 removing:
   entity_config:
