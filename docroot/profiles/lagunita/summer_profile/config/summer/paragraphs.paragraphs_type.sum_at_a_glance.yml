@@ -2,6 +2,8 @@ uuid: 02a2757c-76d8-4d78-92c9-cd23e2676049
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'file:file:3b9a4041-b068-40a2-a5d4-bca638f5628d'
   module:
     - summer_helper
 id: sum_at_a_glance
