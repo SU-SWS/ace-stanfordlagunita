@@ -1,0 +1,46 @@
+uuid: ab870b4f-319c-4e76-a66b-ffc08d5cdd77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.sup_media_file
+    - media.type.sup_protected_file
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: 'media/sup-file/[media:sup_media_file_group:entity:name]'
+      options:
+        slashes: true
+        pathauto: true
+        transliterate: true
+    file_name:
+      value: ''
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: media.sup_protected_file.sup_media_file
+field_name: sup_media_file
+entity_type: media
+bundle: sup_protected_file
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: media/protected
+  file_extensions: 'txt doc docx pdf'
+  max_filesize: ''
+  description_field: false
+field_type: file

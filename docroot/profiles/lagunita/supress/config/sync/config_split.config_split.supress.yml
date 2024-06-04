@@ -10,7 +10,8 @@ stackable: false
 no_patching: false
 storage: folder
 folder: profiles/lagunita/supress/config/supress
-module: {  }
+module:
+  filefield_paths: 0
 theme: {  }
 complete_list:
   - core.entity_view_mode.paragraph.sup_form_preview
@@ -44,6 +45,9 @@ complete_list:
   - 'migrate_plus.migration_group.sup_*'
   - 'migrate_plus.migration.sup_*'
   - 'pathauto.pattern.sup_*'
+  - 'field.field.media.sup_*'
+  - 'field.storage.media.sup_*'
+  - 'media.type.sup_*'
 partial_list:
   - graphql_compose.settings
   - '*su_*'

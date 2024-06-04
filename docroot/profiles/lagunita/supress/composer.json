@@ -11,7 +11,9 @@
             "url": "https://packages.drupal.org/8"
         }
     ],
-    "require": {},
+    "require": {
+        "drupal/filefield_paths": "^1.0@beta"
+    },
     "config": {
         "sort-packages": true
     },

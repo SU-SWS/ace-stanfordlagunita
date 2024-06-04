@@ -1,0 +1,37 @@
+uuid: 87a1cf09-d114-4b09-bb52-81a534a75c6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.sup_protected_file.sup_media_file
+    - field.field.media.sup_protected_file.sup_media_file_group
+    - media.type.sup_protected_file
+  module:
+    - file
+id: media.sup_protected_file.default
+targetEntityType: media
+bundle: sup_protected_file
+mode: default
+content:
+  sup_media_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sup_media_file_group:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

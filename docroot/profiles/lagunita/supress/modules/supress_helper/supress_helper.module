@@ -24,6 +24,13 @@ function supress_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function supress_helper_media_access(\Drupal\media\MediaInterface $media, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  return AccessResult::forbiddenIf($media->bundle() == 'sup_protected_file' && $account->isAnonymous());
+}
+
+/**
  * Implements hook_cron().
  */
 function supress_helper_cron() {

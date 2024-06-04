@@ -1,0 +1,29 @@
+uuid: 7ab00310-624f-45d8-8f86-203440831852
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.sup_media_file_group
+    - media.type.sup_protected_file
+    - taxonomy.vocabulary.sup_file_groups
+id: media.sup_protected_file.sup_media_file_group
+field_name: sup_media_file_group
+entity_type: media
+bundle: sup_protected_file
+label: 'Group Access'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sup_file_groups: sup_file_groups
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

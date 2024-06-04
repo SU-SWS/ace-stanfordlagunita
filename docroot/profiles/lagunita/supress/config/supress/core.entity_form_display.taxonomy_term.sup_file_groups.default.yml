@@ -1,0 +1,25 @@
+uuid: 5a9bebfa-9df0-42f2-a737-1f1c75364a26
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sup_file_groups
+id: taxonomy_term.sup_file_groups.default
+targetEntityType: taxonomy_term
+bundle: sup_file_groups
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  publish_on: true
+  status: true
+  unpublish_on: true

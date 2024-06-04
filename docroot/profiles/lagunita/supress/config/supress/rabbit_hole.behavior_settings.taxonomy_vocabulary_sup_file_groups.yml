@@ -1,0 +1,14 @@
+uuid: 278452d9-30c7-47b0-b990-a2397beaa8ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sup_file_groups
+id: taxonomy_vocabulary_sup_file_groups
+entity_type_id: taxonomy_vocabulary
+entity_id: sup_file_groups
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

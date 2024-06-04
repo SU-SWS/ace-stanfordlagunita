@@ -1,0 +1,31 @@
+uuid: 3ceaf877-3288-4bb1-a675-144e384f84ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.sup_protected_file.sup_media_file
+    - field.field.media.sup_protected_file.sup_media_file_group
+    - media.type.sup_protected_file
+id: media.sup_protected_file.media_library
+targetEntityType: media
+bundle: sup_protected_file
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  publish_on: true
+  status: true
+  sup_media_file: true
+  sup_media_file_group: true
+  uid: true
+  unpublish_on: true

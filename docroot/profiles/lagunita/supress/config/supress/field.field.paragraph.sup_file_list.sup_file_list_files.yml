@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.sup_file_list_files
     - media.type.file
+    - media.type.sup_protected_file
     - paragraphs.paragraphs_type.sup_file_list
 id: paragraph.sup_file_list.sup_file_list_files
 field_name: sup_file_list_files
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       file: file
+      sup_protected_file: sup_protected_file
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: file
 field_type: entity_reference
