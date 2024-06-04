@@ -33,19 +33,20 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-    $element['sum_testimonal_banner_align'] = [
+    $element['sum_testimonial_banner_align'] = [
       '#type' => 'checkbox',
+      '#description' => $this->t('Aligns overlay to the left.'),
       '#title' => $this->t('Align left'),
       '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonal_banner_align'),
     ];
-    $element['sum_testimonal_banner_heading'] = [
+    $element['sum_testimonial_banner_heading'] = [
       '#type' => 'select',
       '#title' => $this->t('Heading Level'),
       '#options' => [
-        'type one' => 'H2',
-        'Type two' => 'H3',
+        'h2' => 'H2',
+        'h3' => 'H3',
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'heading', 'h2'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_heading', 'h2'),
     ];
 
     return $element;
@@ -54,4 +55,5 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // Implements the view method.
   }
+
 }
