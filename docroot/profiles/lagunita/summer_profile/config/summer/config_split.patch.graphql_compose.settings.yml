@@ -240,6 +240,8 @@ adding:
         sum_slide_teaser_entity:
           enabled: true
       sum_testimonial:
+        sum_testimonial_affi:
+          enabled: true
         sum_testimonial_bkg_img:
           enabled: true
         sum_testimonial_button:

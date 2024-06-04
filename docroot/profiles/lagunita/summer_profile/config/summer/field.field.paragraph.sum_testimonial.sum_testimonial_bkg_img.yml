@@ -5,12 +5,13 @@ dependencies:
   config:
     - field.storage.paragraph.sum_testimonial_bkg_img
     - media.type.image
+    - media.type.video
     - paragraphs.paragraphs_type.sum_testimonial
 id: paragraph.sum_testimonial.sum_testimonial_bkg_img
 field_name: sum_testimonial_bkg_img
 entity_type: paragraph
 bundle: sum_testimonial
-label: 'Background Image'
+label: 'Background Image or Video'
 description: ''
 required: false
 translatable: false
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      video: video
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference

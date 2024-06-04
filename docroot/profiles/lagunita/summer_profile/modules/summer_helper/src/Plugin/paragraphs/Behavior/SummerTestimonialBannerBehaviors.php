@@ -42,10 +42,10 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
     $element['sum_testimonial_banner_heading'] = [
       '#type' => 'select',
       '#title' => $this->t('Heading level'),
-      '#description' => $this->t('Options for headings.'),
+      '#description' => $this->t('Options for smaller font size for larger quotes.'),
+      '#empty_option' => $this->t('None'),
       '#options' => [
-        'h2' => 'H2',
-        'h3' => 'H3',
+        'Long quote' => 'type_4',
       ],
       '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_heading', 'h2'),
     ];

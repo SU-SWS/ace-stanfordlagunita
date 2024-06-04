@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sum_testimonial.sum_testimonial_affi
     - field.field.paragraph.sum_testimonial.sum_testimonial_bkg_img
     - field.field.paragraph.sum_testimonial.sum_testimonial_button
     - field.field.paragraph.sum_testimonial.sum_testimonial_descrip
@@ -21,9 +22,17 @@ targetEntityType: paragraph
 bundle: sum_testimonial
 mode: default
 content:
+  sum_testimonial_affi:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   sum_testimonial_bkg_img:
     type: media_library_widget
-    weight: 7
+    weight: 8
     region: content
     settings:
       media_types: {  }
@@ -54,7 +63,7 @@ content:
     third_party_settings: {  }
   sum_testimonial_headshot:
     type: media_library_widget
-    weight: 6
+    weight: 7
     region: content
     settings:
       media_types: {  }

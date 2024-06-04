@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sum_testimonial.sum_testimonial_affi
     - field.field.paragraph.sum_testimonial.sum_testimonial_bkg_img
     - field.field.paragraph.sum_testimonial.sum_testimonial_button
     - field.field.paragraph.sum_testimonial.sum_testimonial_descrip
@@ -21,6 +22,14 @@ targetEntityType: paragraph
 bundle: sum_testimonial
 mode: default
 content:
+  sum_testimonial_affi:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
   sum_testimonial_bkg_img:
     type: entity_reference_entity_view
     label: hidden

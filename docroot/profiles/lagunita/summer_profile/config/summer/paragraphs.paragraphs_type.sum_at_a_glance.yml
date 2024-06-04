@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'file:file:3b9a4041-b068-40a2-a5d4-bca638f5628d'
+    - 'file:file:f9017c0b-266a-4f00-be90-fa8bb124fe37'
   module:
     - summer_helper
 id: sum_at_a_glance

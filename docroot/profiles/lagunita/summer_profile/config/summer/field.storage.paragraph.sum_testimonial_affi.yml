@@ -1,0 +1,21 @@
+uuid: 5044e8bf-e6ab-4f5e-b567-2b97815d44f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_testimonial_affi
+field_name: sum_testimonial_affi
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
