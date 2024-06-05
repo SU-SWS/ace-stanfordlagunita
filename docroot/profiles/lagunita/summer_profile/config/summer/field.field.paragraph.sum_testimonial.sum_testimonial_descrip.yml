@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: sum_testimonial
 label: Description
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
