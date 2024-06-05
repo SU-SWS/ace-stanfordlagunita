@@ -46,9 +46,21 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
       '#description' => $this->t('Options for smaller font size for larger quotes.'),
       '#empty_option' => $this->t('None'),
       '#options' => [
-        'Long quote (smaller font)' => 'type_4',
+        'type_4' => 'Long quote (smaller font)',
       ],
       '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_heading'),
+    ];
+    $element['sum_testimonial_banner_overlay_bkg'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Pill Banner Background Color'),
+      '#empty_option' => $this->t('Poppy Light'),
+      '#options' => [
+        'olive' => $this->t('Olive Light'),
+        'spirited' => $this->t('Spirited Light'),
+        'spirited_dark' => $this->t('Spirited Dark'),
+        'white' => $this->t('White'),
+      ],
+      '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_overlay_bkg'),
     ];
 
     return $element;

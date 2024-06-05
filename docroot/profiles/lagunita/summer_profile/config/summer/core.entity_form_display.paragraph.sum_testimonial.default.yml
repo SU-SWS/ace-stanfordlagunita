@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.sum_testimonial.sum_testimonial_button
     - field.field.paragraph.sum_testimonial.sum_testimonial_descrip
     - field.field.paragraph.sum_testimonial.sum_testimonial_heading
-    - field.field.paragraph.sum_testimonial.sum_testimonial_headshot
     - field.field.paragraph.sum_testimonial.sum_testimonial_hs_video
     - field.field.paragraph.sum_testimonial.sum_testimonial_name
     - field.field.paragraph.sum_testimonial.sum_testimonial_type
@@ -62,16 +61,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  sum_testimonial_headshot:
-    type: media_library_widget
-    weight: 7
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   sum_testimonial_hs_video:
     type: media_library_widget
-    weight: 9
+    weight: 7
     region: content
     settings:
       media_types: {  }
