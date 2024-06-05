@@ -256,7 +256,7 @@ adding:
           enabled: true
         sum_testimonial_type:
           enabled: true
-        sum_testimontial_univ:
+        sum_testimonial_univ:
           enabled: true
       sum_top_banner:
         sum_top_banner_cards:

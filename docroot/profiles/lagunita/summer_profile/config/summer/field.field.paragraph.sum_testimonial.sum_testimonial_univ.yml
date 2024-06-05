@@ -1,12 +1,12 @@
-uuid: 322eab45-fd2f-4203-b5c5-023574bf292c
+uuid: 8a8321eb-9d7b-47fd-b6b7-acadb920f40a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.sum_testimontial_univ
+    - field.storage.paragraph.sum_testimonial_univ
     - paragraphs.paragraphs_type.sum_testimonial
-id: paragraph.sum_testimonial.sum_testimontial_univ
-field_name: sum_testimontial_univ
+id: paragraph.sum_testimonial.sum_testimonial_univ
+field_name: sum_testimonial_univ
 entity_type: paragraph
 bundle: sum_testimonial
 label: University

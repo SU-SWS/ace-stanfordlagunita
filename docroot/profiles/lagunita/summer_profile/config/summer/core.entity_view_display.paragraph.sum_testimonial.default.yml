@@ -11,7 +11,7 @@ dependencies:
     - field.field.paragraph.sum_testimonial.sum_testimonial_hs_video
     - field.field.paragraph.sum_testimonial.sum_testimonial_name
     - field.field.paragraph.sum_testimonial.sum_testimonial_type
-    - field.field.paragraph.sum_testimonial.sum_testimontial_univ
+    - field.field.paragraph.sum_testimonial.sum_testimonial_univ
     - paragraphs.paragraphs_type.sum_testimonial
   module:
     - link
@@ -90,13 +90,13 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  sum_testimontial_univ:
+  sum_testimonial_univ:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 10
     region: content
 hidden:
   search_api_excerpt: true
