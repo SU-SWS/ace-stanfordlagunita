@@ -52,7 +52,7 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
     ];
     $element['sum_testimonial_banner_overlay_bkg'] = [
       '#type' => 'select',
-      '#title' => $this->t('Pill Banner Background Color'),
+      '#title' => $this->t('Overlay Background Color'),
       '#empty_option' => $this->t('Poppy Light'),
       '#options' => [
         'olive' => $this->t('Olive Light'),
