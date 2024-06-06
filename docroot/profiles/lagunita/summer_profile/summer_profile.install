@@ -22,7 +22,8 @@ function summer_profile_update_8002() {
 /**
  * Create the new layout paragraph type.
  */
-function stanford_profile_update_9000(&$sandbox) {
+function summer_profile_update_9000(&$sandbox) {
+  return;
   \Drupal::service('module_installer')->install([
     'layout_paragraphs',
     'stanford_layout_paragraphs',
@@ -53,7 +54,8 @@ function stanford_profile_update_9000(&$sandbox) {
 /**
  * Install Claro theme and uninstall Seven.
  */
-function stanford_profile_update_9001() {
+function summer_profile_update_9001() {
+  return;
   /** @var \Drupal\Core\Extension\ThemeInstallerInterface $theme_installer */
   $theme_installer = \Drupal::service('theme_installer');
   $theme_installer->install(['claro', 'stanford_profile_admin']);
@@ -72,7 +74,8 @@ function stanford_profile_update_9001() {
 /**
  * Correct path aliases that somehow are incorrectly formatted.
  */
-function stanford_profile_update_9004() {
+function summer_profile_update_9004() {
+  return;
   $database = \Drupal::database();
   $query = $database->select('path_alias', 'p')
     ->fields('p');
@@ -108,7 +111,8 @@ function stanford_profile_update_9004() {
 /**
  * Migrate Basic Page react paragraphs to layout paragraphs.
  */
-function stanford_profile_update_9005(&$sandbox) {
+function summer_profile_update_9005(&$sandbox) {
+  return;
   $node_storage = \Drupal::entityTypeManager()
     ->getStorage('node');
   if (!isset($sandbox['count'])) {
@@ -181,7 +185,7 @@ function stanford_profile_update_9005(&$sandbox) {
       }
     }
     $node->set('su_page_components', $new_components)->save();
-    _stanford_profile_reset_node_changed_time($node, $changed_time);
+    _summer_profile_reset_node_changed_time($node, $changed_time);
   }
   foreach ($delete_entities as $entity) {
     $entity->delete();
@@ -192,7 +196,8 @@ function stanford_profile_update_9005(&$sandbox) {
 /**
  * Migrate Publications react paragraphs to layout paragraphs.
  */
-function stanford_profile_update_9006(&$sandbox) {
+function summer_profile_update_9006(&$sandbox) {
+  return;
   $node_storage = \Drupal::entityTypeManager()
     ->getStorage('node');
   if (!isset($sandbox['count'])) {
@@ -245,7 +250,7 @@ function stanford_profile_update_9006(&$sandbox) {
         unset($behaviors['react']);
         $behaviors['layout_paragraphs'] = [
           'parent_uuid' => $new_row_entity->uuid(),
-          'region' => _stanford_profile_update_9005_get_item_region($delta, $layout_id),
+          'region' => _summer_profile_update_9005_get_item_region($delta, $layout_id),
         ];
         $new_paragraph = $paragraph->createDuplicate();
         $new_paragraph->enforceIsNew();
@@ -262,7 +267,7 @@ function stanford_profile_update_9006(&$sandbox) {
     }
 
     $node->set('su_publication_components', $new_components)->save();
-    _stanford_profile_reset_node_changed_time($node, $changed_time);
+    _summer_profile_reset_node_changed_time($node, $changed_time);
   }
   foreach ($delete_entities as $entity) {
     $entity->delete();
@@ -281,7 +286,7 @@ function stanford_profile_update_9006(&$sandbox) {
  * @return string
  *   New region.
  */
-function _stanford_profile_update_9005_get_item_region(int $delta, string $layout_id): string {
+function _summer_profile_update_9005_get_item_region(int $delta, string $layout_id): string {
   switch ($layout_id) {
     case 'layout_paragraphs_2_column':
       return $delta ? 'right' : 'left';
@@ -296,7 +301,8 @@ function _stanford_profile_update_9005_get_item_region(int $delta, string $layou
 /**
  * Update pages with custom layout builder settings.
  */
-function stanford_profile_update_9007(&$sandbox) {
+function summer_profile_update_9007(&$sandbox) {
+  return;
   $node_storage = \Drupal::entityTypeManager()
     ->getStorage('node');
   if (!isset($sandbox['count'])) {
@@ -341,7 +347,7 @@ function stanford_profile_update_9007(&$sandbox) {
     if ($save_node) {
       $node->save();
 
-      _stanford_profile_reset_node_changed_time($node, $changed_time);
+      _summer_profile_reset_node_changed_time($node, $changed_time);
     }
   }
 
@@ -351,7 +357,7 @@ function stanford_profile_update_9007(&$sandbox) {
 /**
  * Uninstall Stable theme.
  */
-function stanford_profile_update_9100(&$sandbox) {
+function summer_profile_update_9100(&$sandbox) {
   try {
     \Drupal::service('theme_installer')->uninstall(['stable']);
   }
@@ -363,7 +369,8 @@ function stanford_profile_update_9100(&$sandbox) {
 /**
  * Install menu_link module and configure the field.
  */
-function stanford_profile_update_9101() {
+function summer_profile_update_9101() {
+  return;
   $entity_type_manager = \Drupal::entityTypeManager();
 
   \Drupal::service('module_installer')->install(['menu_link']);
@@ -404,7 +411,8 @@ function stanford_profile_update_9101() {
 /**
  * Update menu links on nodes for the updated version of menu_link_weight.
  */
-function stanford_profile_update_9102() {
+function summer_profile_update_9102() {
+  return;
   // Instantiate the path alias path processor because it doesn't get added in
   // this update hook.
   \Drupal::service('path_processor_manager')
@@ -415,13 +423,13 @@ function stanford_profile_update_9102() {
   $parameters = new MenuTreeParameters();
 
   $menu = $menu_link_tree->load('main', $parameters);
-  _stanford_profile_fix_menu($menu);
+  _summer_profile_fix_menu($menu);
 }
 
 /**
  * Re-run stanford_card update.
  */
-function stanford_profile_update_9103(&$sandbox) {
+function summer_profile_update_9103(&$sandbox) {
   if ($field = FieldConfig::loadByName('paragraph', 'stanford_card', 'su_card_link_display')) {
     module_load_install('stanford_paragraph_card');
     stanford_paragraph_card_update_8001($sandbox);
@@ -460,7 +468,7 @@ function stanford_profile_update_9103(&$sandbox) {
  * @param string|null $parent
  *   Parent menu id.
  */
-function _stanford_profile_fix_menu(array $menu_items = [], string $parent = NULL): void {
+function _summer_profile_fix_menu(array $menu_items = [], string $parent = NULL): void {
   $node_storage = \Drupal::entityTypeManager()
     ->getStorage('node');
   /** @var \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager */
@@ -496,10 +504,10 @@ function _stanford_profile_fix_menu(array $menu_items = [], string $parent = NUL
         $node->set('field_menulink', $menu_field_data)->save();
         $new_parent = 'menu_link_field:node_field_menulink_' . $node->uuid() . '_und';
 
-        _stanford_profile_reset_node_changed_time($node, $changed_time);
+        _summer_profile_reset_node_changed_time($node, $changed_time);
 
         if ($menu_item->subtree) {
-          _stanford_profile_fix_menu($menu_item->subtree, $new_parent);
+          _summer_profile_fix_menu($menu_item->subtree, $new_parent);
         }
 
         if (!$link->isEnabled()) {
@@ -510,7 +518,7 @@ function _stanford_profile_fix_menu(array $menu_items = [], string $parent = NUL
         }
 
         // Update layout builder settings before deleting the link.
-        _stanford_profile_update_menu_block($link->getPluginId(), $new_parent);
+        _summer_profile_update_menu_block($link->getPluginId(), $new_parent);
         $link->deleteLink();
         continue;
       }
@@ -532,7 +540,7 @@ function _stanford_profile_fix_menu(array $menu_items = [], string $parent = NUL
     }
 
     if ($menu_item->subtree) {
-      _stanford_profile_fix_menu($menu_item->subtree, $id);
+      _summer_profile_fix_menu($menu_item->subtree, $id);
     }
   }
 }
@@ -545,7 +553,7 @@ function _stanford_profile_fix_menu(array $menu_items = [], string $parent = NUL
  * @param string $new_id
  *   New menu link id.
  */
-function _stanford_profile_update_menu_block(string $old_id, string $new_id): void {
+function _summer_profile_update_menu_block(string $old_id, string $new_id): void {
   $node_storage = \Drupal::entityTypeManager()->getStorage('node');
   $nids = $node_storage->getQuery()
     ->accessCheck(FALSE)
@@ -570,7 +578,7 @@ function _stanford_profile_update_menu_block(string $old_id, string $new_id): vo
     }
     if ($save_node) {
       $node->save();
-      _stanford_profile_reset_node_changed_time($node, $changed_time);
+      _summer_profile_reset_node_changed_time($node, $changed_time);
     }
   }
 }
@@ -583,7 +591,7 @@ function _stanford_profile_update_menu_block(string $old_id, string $new_id): vo
  * @param int $changed
  *   Changed time.
  */
-function _stanford_profile_reset_node_changed_time(NodeInterface $node, int $changed) {
+function _summer_profile_reset_node_changed_time(NodeInterface $node, int $changed) {
   $database = \Drupal::database();
   // Reset the changed time to the value before this process.
   $database->update('node_field_data')
@@ -599,7 +607,8 @@ function _stanford_profile_reset_node_changed_time(NodeInterface $node, int $cha
 /**
  * Update configs 'stanford_profile_admin' with 'stanford_profile_admin_theme'.
  */
-function stanford_profile_update_9104() {
+function summer_profile_update_9104() {
+  return;
   $config_factory = \Drupal::configFactory();
   foreach ($config_factory->listAll() as $config_name) {
     $config = $config_factory->getEditable($config_name);
@@ -633,7 +642,8 @@ function stanford_profile_update_9104() {
 /**
  * Remove data for paragraph rows.
  */
-function stanford_profile_update_9105() {
+function summer_profile_update_9105() {
+  return;
   $tables = [
     'paragraph_row__su_page_components',
     'paragraph_row__su_pubs_components',
