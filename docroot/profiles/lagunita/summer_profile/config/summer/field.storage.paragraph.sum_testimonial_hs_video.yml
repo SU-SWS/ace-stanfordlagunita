@@ -1,0 +1,20 @@
+uuid: a95a4114-c275-4ebe-8cbf-d1ec719113df
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sum_testimonial_hs_video
+field_name: sum_testimonial_hs_video
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

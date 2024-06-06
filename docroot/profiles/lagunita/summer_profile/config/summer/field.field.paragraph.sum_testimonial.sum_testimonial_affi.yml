@@ -1,0 +1,19 @@
+uuid: 7993fb9f-3bc5-46fd-8563-2c7791220843
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_testimonial_affi
+    - paragraphs.paragraphs_type.sum_testimonial
+id: paragraph.sum_testimonial.sum_testimonial_affi
+field_name: sum_testimonial_affi
+entity_type: paragraph
+bundle: sum_testimonial
+label: 'Stanford Summer Session Affiliation'
+description: 'Stanford Summer Session Affiliation (e.g., Student)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

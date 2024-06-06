@@ -1,0 +1,21 @@
+uuid: 87e60e60-6959-4659-96e5-98eca9b07713
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sum_testimonial_type
+    - paragraphs.paragraphs_type.sum_testimonial
+  module:
+    - options
+id: paragraph.sum_testimonial.sum_testimonial_type
+field_name: sum_testimonial_type
+entity_type: paragraph
+bundle: sum_testimonial
+label: 'Student Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

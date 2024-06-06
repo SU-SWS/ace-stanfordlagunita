@@ -1,0 +1,95 @@
+uuid: 8e7d8520-c2fb-4b5b-8a3d-6b35b2548df3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sum_testimonial.sum_testimonial_affi
+    - field.field.paragraph.sum_testimonial.sum_testimonial_bkg_img
+    - field.field.paragraph.sum_testimonial.sum_testimonial_button
+    - field.field.paragraph.sum_testimonial.sum_testimonial_descrip
+    - field.field.paragraph.sum_testimonial.sum_testimonial_heading
+    - field.field.paragraph.sum_testimonial.sum_testimonial_hs_video
+    - field.field.paragraph.sum_testimonial.sum_testimonial_name
+    - field.field.paragraph.sum_testimonial.sum_testimonial_type
+    - field.field.paragraph.sum_testimonial.sum_testimonial_univ
+    - paragraphs.paragraphs_type.sum_testimonial
+  module:
+    - link
+    - media_library
+    - text
+id: paragraph.sum_testimonial.default
+targetEntityType: paragraph
+bundle: sum_testimonial
+mode: default
+content:
+  sum_testimonial_affi:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sum_testimonial_bkg_img:
+    type: media_library_widget
+    weight: 8
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  sum_testimonial_button:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  sum_testimonial_descrip:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  sum_testimonial_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sum_testimonial_hs_video:
+    type: media_library_widget
+    weight: 7
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  sum_testimonial_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sum_testimonial_type:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sum_testimonial_univ:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

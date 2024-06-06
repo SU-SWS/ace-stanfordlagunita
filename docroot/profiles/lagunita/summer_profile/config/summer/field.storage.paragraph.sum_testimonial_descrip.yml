@@ -1,0 +1,19 @@
+uuid: e5e7d0c5-ff3f-4680-9935-1f598c2f481a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sum_testimonial_descrip
+field_name: sum_testimonial_descrip
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -57,6 +57,8 @@ adding:
         enabled: true
       sum_slide_teaser:
         enabled: true
+      sum_testimonial:
+        enabled: true
       sum_top_banner:
         enabled: true
       sum_user_favorites:
@@ -236,6 +238,25 @@ adding:
           enabled: true
       sum_slide_teaser:
         sum_slide_teaser_entity:
+          enabled: true
+      sum_testimonial:
+        sum_testimonial_affi:
+          enabled: true
+        sum_testimonial_bkg_img:
+          enabled: true
+        sum_testimonial_button:
+          enabled: true
+        sum_testimonial_descrip:
+          enabled: true
+        sum_testimonial_heading:
+          enabled: true
+        sum_testimonial_hs_video:
+          enabled: true
+        sum_testimonial_name:
+          enabled: true
+        sum_testimonial_type:
+          enabled: true
+        sum_testimonial_univ:
           enabled: true
       sum_top_banner:
         sum_top_banner_cards:

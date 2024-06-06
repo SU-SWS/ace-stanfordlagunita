@@ -1,0 +1,21 @@
+uuid: 74d8ccf2-fe03-4f8e-8bc6-49c7a2cfec78
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sum_testimonial_univ
+field_name: sum_testimonial_univ
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

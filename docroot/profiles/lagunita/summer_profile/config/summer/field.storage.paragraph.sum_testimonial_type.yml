@@ -1,0 +1,36 @@
+uuid: 7604303a-1045-4373-916f-5f313d690fcd
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.sum_testimonial_type
+field_name: sum_testimonial_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: sum_undergraduate_student
+      label: 'Undergraduate Student'
+    -
+      value: sum_high_school
+      label: 'High School'
+    -
+      value: sum_graduate
+      label: Graduate
+    -
+      value: sum_gap_year
+      label: 'Gap Year'
+    -
+      value: sum_current_stanford_students
+      label: 'Current Stanford Students'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
