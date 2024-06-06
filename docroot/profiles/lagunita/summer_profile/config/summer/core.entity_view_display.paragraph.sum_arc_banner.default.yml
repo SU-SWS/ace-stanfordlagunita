@@ -8,6 +8,10 @@ dependencies:
     - field.field.paragraph.sum_arc_banner.sum_arc_superhead
     - paragraphs.paragraphs_type.sum_arc_banner
   module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
+    - stanford_media
     - text
 id: paragraph.sum_arc_banner.default
 targetEntityType: paragraph
@@ -22,12 +26,21 @@ content:
     weight: 2
     region: content
   sum_arc_image:
-    type: entity_reference_entity_view
+    type: media_image_formatter
     label: hidden
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+      image_style: medium_square
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 3
     region: content
   sum_arc_superhead:

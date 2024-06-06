@@ -1,0 +1,1 @@
+.grid-container-2{-ms-grid-columns:(1fr)[2];grid-gap:20px;display:-ms-grid;display:grid;grid-template-columns:repeat(2,1fr)}.grid-container-3{-ms-grid-columns:(1fr)[3];grid-gap:20px;display:-ms-grid;display:grid;grid-template-columns:repeat(3,1fr)}

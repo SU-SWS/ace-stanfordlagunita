@@ -11,3 +11,10 @@
 function summer_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
   $paragraphs_behavior['su_card_styles']['class'] = '\Drupal\summer_helper\Plugin\paragraphs\Behavior\SummerCardBehaviors';
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function summer_helper_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'summer_helper/admin';
+}

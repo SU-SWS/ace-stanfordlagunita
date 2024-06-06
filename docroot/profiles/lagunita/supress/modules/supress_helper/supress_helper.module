@@ -11,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
@@ -26,7 +27,7 @@ function supress_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
 /**
  * Implements hook_ENTITY_TYPE_access().
  */
-function supress_helper_media_access(\Drupal\media\MediaInterface $media, $operation, \Drupal\Core\Session\AccountInterface $account) {
+function supress_helper_media_access(MediaInterface $media, $operation, AccountInterface $account) {
   return AccessResult::forbiddenIf($media->bundle() == 'sup_protected_file' && $account->isAnonymous());
 }
 

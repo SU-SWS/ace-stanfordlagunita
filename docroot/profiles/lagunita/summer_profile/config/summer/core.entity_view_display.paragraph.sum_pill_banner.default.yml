@@ -11,8 +11,13 @@ dependencies:
     - field.field.paragraph.sum_pill_banner.sum_pill_banner_suphead
     - paragraphs.paragraphs_type.sum_pill_banner
   module:
+    - empty_fields
     - entity_reference_revisions
+    - field_formatter_class
+    - field_label
     - link
+    - stanford_fields
+    - stanford_media
     - text
 id: paragraph.sum_pill_banner.default
 targetEntityType: paragraph
@@ -20,12 +25,21 @@ bundle: sum_pill_banner
 mode: default
 content:
   sum_pill_banner_bkgd:
-    type: entity_reference_entity_view
+    type: media_image_formatter
     label: hidden
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+      image_style: medium_square
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 0
     region: content
   sum_pill_banner_cards:
@@ -34,7 +48,14 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: grid-container-3
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 5
     region: content
   sum_pill_banner_descrip:
@@ -45,12 +66,13 @@ content:
     weight: 3
     region: content
   sum_pill_banner_headline:
-    type: string
+    type: entity_title_heading
     label: hidden
     settings:
-      link_to_entity: false
+      tag: h2
+      linked: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   sum_pill_banner_link:
     type: link
@@ -70,7 +92,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

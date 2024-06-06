@@ -14,8 +14,12 @@ dependencies:
     - field.field.paragraph.sum_testimonial.sum_testimonial_univ
     - paragraphs.paragraphs_type.sum_testimonial
   module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
     - link
     - options
+    - stanford_media
     - text
 id: paragraph.sum_testimonial.default
 targetEntityType: paragraph
@@ -28,15 +32,24 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   sum_testimonial_bkg_img:
-    type: entity_reference_entity_view
+    type: media_image_formatter
     label: hidden
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
+      image_style: medium_square
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 7
     region: content
   sum_testimonial_button:
@@ -67,13 +80,22 @@ content:
     weight: 0
     region: content
   sum_testimonial_hs_video:
-    type: entity_reference_entity_view
+    type: media_image_formatter
     label: hidden
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
-    weight: 9
+      image_style: medium_square
+      remove_alt: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 8
     region: content
   sum_testimonial_name:
     type: string
@@ -92,11 +114,11 @@ content:
     region: content
   sum_testimonial_univ:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 3
     region: content
 hidden:
   search_api_excerpt: true
