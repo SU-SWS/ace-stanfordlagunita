@@ -14,17 +14,45 @@ dependencies:
     - field.field.paragraph.sum_testimonial.sum_testimonial_univ
     - paragraphs.paragraphs_type.sum_testimonial
   module:
+    - field_group
     - link
     - media_library
     - text
+third_party_settings:
+  field_group:
+    group_attribution:
+      children:
+        - sum_testimonial_name
+        - sum_testimonial_univ
+        - sum_testimonial_type
+        - sum_testimonial_affi
+      label: Attribution
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: paragraph.sum_testimonial.default
 targetEntityType: paragraph
 bundle: sum_testimonial
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sum_testimonial_affi:
     type: string_textfield
-    weight: 6
+    weight: 5
     region: content
     settings:
       size: 60
@@ -32,14 +60,14 @@ content:
     third_party_settings: {  }
   sum_testimonial_bkg_img:
     type: media_library_widget
-    weight: 8
+    weight: 4
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   sum_testimonial_button:
     type: link_default
-    weight: 5
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
@@ -63,7 +91,7 @@ content:
     third_party_settings: {  }
   sum_testimonial_hs_video:
     type: media_library_widget
-    weight: 7
+    weight: 3
     region: content
     settings:
       media_types: {  }
@@ -84,7 +112,7 @@ content:
     third_party_settings: {  }
   sum_testimonial_univ:
     type: string_textfield
-    weight: 9
+    weight: 3
     region: content
     settings:
       size: 60
@@ -92,4 +120,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

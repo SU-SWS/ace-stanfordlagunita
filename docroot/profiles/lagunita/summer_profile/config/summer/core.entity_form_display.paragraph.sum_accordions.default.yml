@@ -16,6 +16,13 @@ targetEntityType: paragraph
 bundle: sum_accordions
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sum_accordions_accords:
     type: paragraphs
     weight: 2
@@ -59,4 +66,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

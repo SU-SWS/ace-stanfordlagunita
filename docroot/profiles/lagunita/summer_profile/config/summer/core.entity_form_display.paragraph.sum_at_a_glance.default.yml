@@ -17,6 +17,13 @@ targetEntityType: paragraph
 bundle: sum_at_a_glance
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sum_at_a_glance_descrip:
     type: text_textarea
     weight: 1
@@ -61,4 +68,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

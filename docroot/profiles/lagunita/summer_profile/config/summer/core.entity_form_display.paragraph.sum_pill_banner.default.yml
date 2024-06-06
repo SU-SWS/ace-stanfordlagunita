@@ -21,6 +21,13 @@ targetEntityType: paragraph
 bundle: sum_pill_banner
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sum_pill_banner_bkgd:
     type: media_library_widget
     weight: 0
@@ -87,4 +94,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

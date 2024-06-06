@@ -39,7 +39,7 @@ class SummerTestimonialBannerBehaviors extends ParagraphsBehaviorBase {
       '#type' => 'checkbox',
       '#description' => $this->t('Aligns overlay to the left.'),
       '#title' => $this->t('Align left'),
-      '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonal_banner_align'),
+      '#default_value' => $paragraph->getBehaviorSetting('sum_testimonial_banner', 'sum_testimonial_banner_align'),
     ];
     $element['sum_testimonial_banner_heading'] = [
       '#type' => 'select',

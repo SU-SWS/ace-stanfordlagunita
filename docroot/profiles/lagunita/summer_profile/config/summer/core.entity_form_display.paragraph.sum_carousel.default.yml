@@ -19,6 +19,13 @@ targetEntityType: paragraph
 bundle: sum_carousel
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sum_carousel_description:
     type: text_textarea
     weight: 2
@@ -78,4 +85,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

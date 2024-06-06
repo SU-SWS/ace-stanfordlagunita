@@ -12,6 +12,13 @@ targetEntityType: paragraph
 bundle: sum_video
 mode: default
 content:
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sum_video_video:
     type: media_library_widget
     weight: 0
@@ -21,4 +28,3 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  status: true
