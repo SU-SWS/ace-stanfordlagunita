@@ -129,18 +129,22 @@ function supress_helper_search_api_algolia_objects_alter(array &$objects, IndexI
 
     if (isset($object['book_subject'])) {
       $object['book_subject'] = is_array($object['book_subject']) ? $object['book_subject'] : [$object['book_subject']];
-      foreach ($object['book_subject'] as &$term_id) {
-        while ($term_id) {
-          $term = $term_storage->load($term_id);
-          $term_id = $term->get('parent')->getString();
+      $all_subjects = [];
 
-          if (!$term_storage->load($term_id)) {
-            $term_id = FALSE;
-          }
+      foreach ($object['book_subject'] as &$term_id) {
+        $term = $term_storage->load($term_id);
+        $all_subjects[] = $term->label();
+        while ($parent = $term_storage->loadParents($term_id)) {
+          $term = reset($parent);
+          $all_subjects[] = $term->label();
+          $term_id = $term->id();
         }
         $term_id = $term->label();
       }
+
+      asort($all_subjects);
       asort($object['book_subject']);
+      $object['book_subject_all'] = $all_subjects;
       $object['book_subject'] = array_values(array_unique($object['book_subject']));
     }
   }

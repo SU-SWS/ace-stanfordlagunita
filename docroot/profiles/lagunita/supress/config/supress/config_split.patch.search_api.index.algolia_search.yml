@@ -2,11 +2,14 @@ adding:
   status: false
   dependencies:
     config:
-      - field.storage.node.sup_book_authors
       - field.storage.node.sup_book_authors_full
-      - field.storage.node.sup_book_pub_date_first
+      - field.storage.node.sup_book_authors
       - field.storage.node.sup_book_subjects
+      - field.storage.node.sup_book_imprint
+      - field.storage.node.sup_book_pub_date_first
+      - field.storage.node.sup_book_series
       - field.storage.node.sup_book_type
+  read_only: true
   field_settings:
     book_authors:
       label: 'Authors (full)'
@@ -24,6 +27,16 @@ adding:
       dependencies:
         config:
           - field.storage.node.sup_book_authors
+    book_imprint:
+      label: 'Imprint » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sup_book_imprint:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_imprint
+        module:
+          - taxonomy
     book_published:
       label: 'Publication Date First'
       datasource_id: 'entity:node'
@@ -32,6 +45,16 @@ adding:
       dependencies:
         config:
           - field.storage.node.sup_book_pub_date_first
+    book_series:
+      label: 'Series » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sup_book_series:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_series
+        module:
+          - taxonomy
     book_subject:
       label: 'Book Subjects » Taxonomy term » Parent Name'
       datasource_id: 'entity:node'
@@ -66,12 +89,11 @@ adding:
       fields:
         - book_authors
         - book_authors_last_name
+        - book_imprint
+        - book_series
         - book_subject
         - book_type
-  options:
-    algolia_index_name: ''
 removing:
-  status: true
   field_settings:
     photo:
       configuration:
@@ -79,5 +101,3 @@ removing:
     summary:
       configuration:
         value: '[node:su_page_description|node:summary]'
-  options:
-    algolia_index_name: test_cardinalsites
