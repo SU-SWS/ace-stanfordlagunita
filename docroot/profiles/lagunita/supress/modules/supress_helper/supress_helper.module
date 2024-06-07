@@ -230,3 +230,29 @@ function _supress_get_ebook_retailers() {
   $cache->set('filemaker_ebook_retailers', $retailers, time() + 60 * 60 * 24 * 7);
   return $retailers;
 }
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ */
+/**
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
+ */
+function supress_helper_field_widget_single_element_viewfield_select_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  $element['view_options']['helper'] = [
+    '#type' => 'container',
+    'help_text' => [
+      '#markup' => t('Book view arguments should be constructed like %subject/%series/%tags/%work. To skip an argument, provide an empty quotes: "".', [
+        '%subject' => 'subject-term-names',
+        '%series' => 'series-term-names',
+        '%tags' => 'book-tag-names',
+        '%work' => 'work+id+numbers',
+      ]),
+    ],
+    '#weight' => 21,
+    '#states' => [
+      'visible' => [
+        '[name="su_list_view[0][target_id]"]' => ['value' => 'sup_books'],
+      ],
+    ],
+  ];
+}

@@ -13,3 +13,21 @@ function supress_helper_update_9001() {
   $entity_type = \Drupal::entityTypeManager()->getDefinition('sup_award');
   $update_manager->installEntityType($entity_type);
 }
+
+/**
+ * Update list paragraph arguments.
+ */
+function supress_helper_update_9002() {
+  $paragraph_storage = \Drupal::entityTypeManager()
+    ->getStorage('paragraph');
+  $paragraphs = $paragraph_storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('su_list_view.target_id', 'sup_books')
+    ->condition('su_list_view.arguments', "", '!=')
+    ->execute();
+  foreach ($paragraph_storage->loadMultiple($paragraphs) as $paragraph) {
+    $view_settings = $paragraph->get('su_list_view')->getValue();
+    $view_settings[0]['arguments'] = str_replace('/', '/""/', $view_settings[0]['arguments']);
+    $paragraph->set('su_list_view', $view_settings)->save();
+  }
+}
