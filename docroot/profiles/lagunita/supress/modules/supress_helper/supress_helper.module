@@ -245,10 +245,11 @@ function supress_helper_field_widget_single_element_viewfield_select_form_alter(
   $element['view_options']['helper'] = [
     '#type' => 'container',
     'help_text' => [
-      '#markup' => t('Book view arguments should be constructed like %subject/%series/%tags/%work. To skip an argument, provide an empty quotes: "".', [
+      '#markup' => t('Book view arguments should be constructed like %subject/%series/%tags/%imprints/%work. To skip an argument, provide an empty quotes: "".', [
         '%subject' => 'subject-term-names',
         '%series' => 'series-term-names',
         '%tags' => 'book-tag-names',
+        '%imprints' => 'book-imprint-names',
         '%work' => 'work+id+numbers',
       ]),
     ],
