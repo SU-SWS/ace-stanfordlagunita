@@ -2,6 +2,25 @@ adding:
   dependencies:
     config:
       - filter.format.sum_markdown
+      - node.type.sum_summer_courses
   permissions:
+    - 'create sum_summer_courses content'
+    - 'delete own sum_summer_courses content'
+    - 'edit any sum_summer_courses content'
+    - 'edit own sum_summer_courses content'
     - 'use text format sum_markdown'
-removing: {  }
+    - 'view any unpublished sum_summer_courses content'
+    - 'view sum_summer_courses revisions'
+removing:
+  permissions:
+    - 'create stanford_event content'
+    - 'create stanford_news content'
+    - 'create stanford_person content'
+    - 'create stanford_publication content'
+    - 'edit any stanford_course content'
+    - 'edit any stanford_event content'
+    - 'edit any stanford_event_series content'
+    - 'edit any stanford_news content'
+    - 'edit any stanford_person content'
+    - 'edit any stanford_policy content'
+    - 'edit any stanford_publication content'
