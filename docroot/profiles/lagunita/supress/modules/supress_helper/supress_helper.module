@@ -28,7 +28,8 @@ function supress_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
  * Implements hook_ENTITY_TYPE_access().
  */
 function supress_helper_media_access(MediaInterface $media, $operation, AccountInterface $account) {
-  return AccessResult::forbiddenIf($media->bundle() == 'sup_protected_file' && $account->isAnonymous());
+  $route = \Drupal::routeMatch()->getRouteName();
+  return AccessResult::forbiddenIf($route != 'graphql.query.graphql_compose_server' && $media->bundle() == 'sup_protected_file' && $account->isAnonymous());
 }
 
 /**
