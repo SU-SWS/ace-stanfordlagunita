@@ -1,5 +1,19 @@
 # Lagunita
 
+2.4.45
+--------------------------------------------------------------------------------
+_Release Date: 2024-06-12_
+
+- SUP: Adjusted protected files access logic
+- SUP: Headline not required in list paragraph
+- sup: Added imprint taxonomy filter for book view
+- SUP: Add imprints and series to algolia index data
+- SUP: Added additional contextual argument for book view
+- Fixed incorrectly named update hooks for press and summer'
+- SUM: Adjustments to make editing page better
+- Sum: Fixed testimonial banner behaviors
+- SUM-111 - Testimonial banner paragraph (#111)
+
 2.4.4
 --------------------------------------------------------------------------------
 _Release Date: 2024-06-05_
