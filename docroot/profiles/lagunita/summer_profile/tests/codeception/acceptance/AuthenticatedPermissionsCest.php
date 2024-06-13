@@ -121,7 +121,7 @@ class AuthenticatedPermissionsCest {
   /**
    * PHP code is escaped and not run when added to content.
    */
-  public function testPhpInContent(AcceptanceTester $I) {
+  protected function testPhpInContent(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_page');
     $I->fillField('#edit-title-0-value', '<?php echo("injection test"); die(); ?>');
