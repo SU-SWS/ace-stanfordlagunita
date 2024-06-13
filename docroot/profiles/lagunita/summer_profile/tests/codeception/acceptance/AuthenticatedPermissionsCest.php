@@ -84,7 +84,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee($site_manager->getDisplayName());
     $I->click(['link' => $site_manager->getDisplayName()]);
-    $I->click('.roles.tabs__tab a');
+    $I->click('Roles');
     $I->canSeeInCurrentUrl("/user/$site_manager_id/roles");
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
@@ -99,7 +99,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee('Morgan');
     $I->click('Morgan');
-    $I->click('.roles.tabs__tab a');
+    $I->click('Roles');
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
     $I->dontSee('Site Developer');
