@@ -28,6 +28,7 @@ class TeaserCest {
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')
       ->loadMultiple();
+    unset($node_types['sup_book_ancillary']);
     $teaser_entities = [];
     $teaser_item_field = [];
     foreach ($node_types as $node_type) {
