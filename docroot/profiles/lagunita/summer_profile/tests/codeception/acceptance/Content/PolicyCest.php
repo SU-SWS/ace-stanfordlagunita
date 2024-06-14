@@ -9,7 +9,7 @@ use Drupal\config_pages\Entity\ConfigPages;
  * @group content
  * @group policy
  */
-abstract PolicyCest {
+abstract class PolicyCest {
 
   /**
    * Faker provider.
