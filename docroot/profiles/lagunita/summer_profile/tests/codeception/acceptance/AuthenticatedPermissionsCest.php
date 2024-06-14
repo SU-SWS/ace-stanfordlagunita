@@ -84,7 +84,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee($site_manager->getDisplayName());
     $I->click(['link' => $site_manager->getDisplayName()]);
-    $I->click('Roles');
+    $I->click('.roles.tabs__tab a');
     $I->canSeeInCurrentUrl("/user/$site_manager_id/roles");
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
@@ -99,7 +99,7 @@ class AuthenticatedPermissionsCest {
     $I->amOnPage('/admin/users');
     $I->canSee('Morgan');
     $I->click('Morgan');
-    $I->click('Roles');
+    $I->click('.roles.tabs__tab a');
     $I->dontSee('Administrator');
     $I->dontSee('Site Builder');
     $I->dontSee('Site Developer');
@@ -121,7 +121,7 @@ class AuthenticatedPermissionsCest {
   /**
    * PHP code is escaped and not run when added to content.
    */
-  protected function testPhpInContent(AcceptanceTester $I) {
+  public function testPhpInContent(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_page');
     $I->fillField('#edit-title-0-value', '<?php echo("injection test"); die(); ?>');
