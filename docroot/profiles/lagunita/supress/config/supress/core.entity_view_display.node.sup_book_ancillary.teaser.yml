@@ -1,0 +1,25 @@
+uuid: db344138-0eb9-4bf1-831f-0eb63d1d962f
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sup_book_ancillary.sup_ancillary_book
+    - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
+    - node.type.sup_book_ancillary
+  module:
+    - user
+id: node.sup_book_ancillary.teaser
+targetEntityType: node
+bundle: sup_book_ancillary
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true
+  sup_ancillary_book: true
+  sup_ancillary_paragraphs: true

@@ -1,0 +1,98 @@
+uuid: c3713e12-6ed7-456c-bc27-931668638ff8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_ancillary_paragraphs
+    - node.type.sup_book_ancillary
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_gallery
+    - paragraphs.paragraphs_type.stanford_layout
+    - paragraphs.paragraphs_type.stanford_spacer
+    - paragraphs.paragraphs_type.stanford_wysiwyg
+    - paragraphs.paragraphs_type.sup_file_list
+  module:
+    - entity_reference_revisions
+id: node.sup_book_ancillary.sup_ancillary_paragraphs
+field_name: sup_ancillary_paragraphs
+entity_type: node
+bundle: sup_book_ancillary
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_card: stanford_card
+      stanford_gallery: stanford_gallery
+      stanford_layout: stanford_layout
+      stanford_spacer: stanford_spacer
+      stanford_wysiwyg: stanford_wysiwyg
+      sup_file_list: sup_file_list
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 21
+        enabled: false
+      stanford_banner:
+        weight: 22
+        enabled: false
+      stanford_card:
+        weight: 23
+        enabled: true
+      stanford_entity:
+        weight: 24
+        enabled: false
+      stanford_gallery:
+        weight: 25
+        enabled: true
+      stanford_layout:
+        weight: 26
+        enabled: true
+      stanford_lists:
+        weight: 27
+        enabled: false
+      stanford_media_caption:
+        weight: 28
+        enabled: false
+      stanford_page_title_banner:
+        weight: 29
+        enabled: false
+      stanford_person_cta:
+        weight: 30
+        enabled: false
+      stanford_schedule:
+        weight: 31
+        enabled: false
+      stanford_spacer:
+        weight: 32
+        enabled: true
+      stanford_wysiwyg:
+        weight: 33
+        enabled: true
+      sup_author_list:
+        weight: 34
+        enabled: false
+      sup_blog:
+        weight: 35
+        enabled: false
+      sup_blog_teaser:
+        weight: 36
+        enabled: false
+      sup_carousel:
+        weight: 37
+        enabled: false
+      sup_carousel_slide:
+        weight: 38
+        enabled: false
+      sup_file_list:
+        weight: 39
+        enabled: true
+      sup_search_form:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

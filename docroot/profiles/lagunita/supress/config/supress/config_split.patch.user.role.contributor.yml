@@ -1,13 +1,26 @@
 adding:
   dependencies:
     config:
+      - media.type.sup_protected_file
       - node.type.sup_book
+      - node.type.sup_book_ancillary
   permissions:
     - 'create sup_book content'
+    - 'create sup_book_ancillary content'
+    - 'create sup_protected_file media'
     - 'delete own sup_book content'
+    - 'delete own sup_book_ancillary content'
+    - 'delete own sup_protected_file media'
     - 'edit any sup_book content'
+    - 'edit any sup_book_ancillary content'
+    - 'edit any sup_protected_file media'
     - 'edit own sup_book content'
+    - 'edit own sup_book_ancillary content'
+    - 'edit own sup_protected_file media'
+    - 'view any unpublished sup_book content'
+    - 'view any unpublished sup_book_ancillary content'
     - 'view sup_book revisions'
+    - 'view sup_book_ancillary revisions'
 removing:
   dependencies:
     config:
@@ -18,7 +31,10 @@ removing:
       - node.type.stanford_person
       - node.type.stanford_policy
       - node.type.stanford_publication
+    module:
+      - book
   permissions:
+    - 'add content to books'
     - 'create stanford_event content'
     - 'create stanford_news content'
     - 'create stanford_person content'

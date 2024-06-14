@@ -1,0 +1,22 @@
+uuid: c6ae65d8-e6f1-41d6-b98d-339421dc7345
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sup_book_ancillary
+id: node.sup_book_ancillary.promote
+field_name: promote
+entity_type: node
+bundle: sup_book_ancillary
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

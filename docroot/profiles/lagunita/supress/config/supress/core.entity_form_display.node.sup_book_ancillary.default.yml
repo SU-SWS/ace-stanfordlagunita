@@ -1,0 +1,77 @@
+uuid: b4ce3181-1832-4545-8eea-a9ce785420fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sup_book_ancillary.sup_ancillary_book
+    - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
+    - node.type.sup_book_ancillary
+  module:
+    - change_labels
+    - layout_paragraphs
+    - path
+id: node.sup_book_ancillary.default
+targetEntityType: node
+bundle: sup_book_ancillary
+mode: default
+content:
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sup_ancillary_book:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  sup_ancillary_paragraphs:
+    type: layout_paragraphs
+    weight: 2
+    region: content
+    settings:
+      view_mode: sup_form_preview
+      preview_view_mode: sup_form_preview
+      form_display_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings:
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  publish_on: true
+  sticky: true
+  uid: true
+  unpublish_on: true

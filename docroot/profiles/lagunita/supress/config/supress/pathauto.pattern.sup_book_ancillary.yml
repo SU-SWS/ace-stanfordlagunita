@@ -1,0 +1,22 @@
+uuid: 86585753-959f-42e7-b5a8-7909a788c504
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sup_book_ancillary
+label: 'Book Ancilary Page'
+type: 'canonical_entities:node'
+pattern: '[node:sup_ancillary_book:entity:url:relative]/excerpt/[node:title]'
+selection_criteria:
+  df58eb26-a384-4216-a08d-c6df70dfd630:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: df58eb26-a384-4216-a08d-c6df70dfd630
+    context_mapping:
+      node: node
+    bundles:
+      sup_book_ancillary: sup_book_ancillary
+selection_logic: and
+weight: -5
+relationships: {  }

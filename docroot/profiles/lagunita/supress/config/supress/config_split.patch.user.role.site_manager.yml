@@ -1,7 +1,9 @@
 adding:
   dependencies:
     config:
+      - media.type.sup_protected_file
       - node.type.sup_book
+      - node.type.sup_book_ancillary
       - taxonomy.vocabulary.sup_book_subjects
       - taxonomy.vocabulary.sup_book_tags
       - taxonomy.vocabulary.sup_file_groups
@@ -12,21 +14,32 @@ adding:
   permissions:
     - 'administer sup_award'
     - 'create sup_book content'
+    - 'create sup_book_ancillary content'
+    - 'create sup_protected_file media'
     - 'create terms in sup_book_subjects'
     - 'create terms in sup_book_tags'
     - 'create terms in sup_file_groups'
     - 'create terms in sup_imprints'
     - 'create terms in sup_series'
     - 'delete any sup_book content'
+    - 'delete any sup_book_ancillary content'
+    - 'delete any sup_protected_file media'
     - 'delete own sup_book content'
+    - 'delete own sup_book_ancillary content'
+    - 'delete own sup_protected_file media'
     - 'delete sup_book revisions'
+    - 'delete sup_book_ancillary revisions'
     - 'delete terms in sup_book_subjects'
     - 'delete terms in sup_book_tags'
     - 'delete terms in sup_file_groups'
     - 'delete terms in sup_imprints'
     - 'delete terms in sup_series'
     - 'edit any sup_book content'
+    - 'edit any sup_book_ancillary content'
+    - 'edit any sup_protected_file media'
     - 'edit own sup_book content'
+    - 'edit own sup_book_ancillary content'
+    - 'edit own sup_protected_file media'
     - 'edit terms in sup_book_subjects'
     - 'edit terms in sup_book_tags'
     - 'edit terms in sup_file_groups'
@@ -35,6 +48,9 @@ adding:
     - 'import sup_awards migration'
     - 'import sup_import_books migration'
     - 'revert sup_book revisions'
+    - 'revert sup_book_ancillary revisions'
+    - 'view any unpublished sup_book content'
+    - 'view any unpublished sup_book_ancillary content'
 removing:
   dependencies:
     config:
@@ -50,7 +66,20 @@ removing:
       - taxonomy.vocabulary.stanford_news_topics
       - taxonomy.vocabulary.stanford_person_types
       - taxonomy.vocabulary.stanford_publication_topics
+    module:
+      - block_content_permissions
+      - book
   permissions:
+    - 'add content to books'
+    - 'administer book outlines'
+    - 'administer news-topics menu items'
+    - 'administer stanford-event-types menu items'
+    - 'administer stanford-person-type menu items'
+    - 'administer url aliases'
+    - 'assign stanford_faculty role'
+    - 'assign stanford_staff role'
+    - 'assign stanford_student role'
+    - 'create new books'
     - 'create stanford_course content'
     - 'create stanford_event content'
     - 'create stanford_event_series content'
@@ -115,6 +144,7 @@ removing:
     - 'revert stanford_person revisions'
     - 'revert stanford_policy revisions'
     - 'revert stanford_publication revisions'
+    - 'update any stanford_component_block block content'
     - 'view any unpublished stanford_course content'
     - 'view any unpublished stanford_event content'
     - 'view any unpublished stanford_event_series content'

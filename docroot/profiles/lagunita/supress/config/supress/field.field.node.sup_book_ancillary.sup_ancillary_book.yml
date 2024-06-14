@@ -1,0 +1,29 @@
+uuid: 68885192-4ac1-4371-94a0-4f1daca11a52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_ancillary_book
+    - node.type.sup_book
+    - node.type.sup_book_ancillary
+id: node.sup_book_ancillary.sup_ancillary_book
+field_name: sup_ancillary_book
+entity_type: node
+bundle: sup_book_ancillary
+label: Book
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sup_book: sup_book
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

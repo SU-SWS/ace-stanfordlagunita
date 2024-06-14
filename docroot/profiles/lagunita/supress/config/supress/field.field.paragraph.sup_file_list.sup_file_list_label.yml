@@ -9,9 +9,9 @@ id: paragraph.sup_file_list.sup_file_list_label
 field_name: sup_file_list_label
 entity_type: paragraph
 bundle: sup_file_list
-label: Label
+label: 'Select List Label'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

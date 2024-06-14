@@ -5,4 +5,5 @@ adding:
         view_mode:
           'entity:node':
             sup_book: search_indexing
+            sup_book_ancillary: search_indexing
 removing: {  }

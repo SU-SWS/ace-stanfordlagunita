@@ -54,5 +54,6 @@ partial_list:
   - '*stanford_*'
   - 'core.entity_view_display.media.*'
   - 'core.entity_form_display.media.*'
+  - 'field.field.media.file.field_*'
   - 'search_api.index.*'
   - 'user.role.*'
