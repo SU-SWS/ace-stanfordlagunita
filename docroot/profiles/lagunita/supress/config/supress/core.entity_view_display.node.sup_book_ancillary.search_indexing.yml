@@ -1,0 +1,35 @@
+uuid: 43128b65-3949-4380-8675-4dbb9380088e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_indexing
+    - field.field.node.sup_book_ancillary.sup_ancillary_book
+    - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
+    - node.type.sup_book_ancillary
+  module:
+    - layout_builder
+    - layout_paragraphs
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.sup_book_ancillary.search_indexing
+targetEntityType: node
+bundle: sup_book_ancillary
+mode: search_indexing
+content:
+  sup_ancillary_paragraphs:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true
+  sup_ancillary_book: true

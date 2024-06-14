@@ -172,10 +172,8 @@ function supress_helper_field_widget_complete_options_select_form_alter(&$field_
 /**
  * Implements hook_migrate_prepare_row().
  */
-function supress_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
-  if ($migration->id() != 'sup_import_books') {
-    return;
-  }
+function supress_helper_migrate_sup_import_books_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
+  $row->setSourceProperty('current_feed_url', NULL);
   $id_map = $row->getIdMap();
   if (!isset($id_map['sourceid1'])) {
     return;

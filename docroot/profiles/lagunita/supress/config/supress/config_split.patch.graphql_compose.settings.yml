@@ -41,6 +41,11 @@ adding:
         query_load_enabled: true
         edges_enabled: true
         routes_enabled: true
+      sup_book_ancillary:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+        routes_enabled: true
     paragraph:
       stanford_page_title_banner:
         query_load_enabled: true
@@ -75,6 +80,8 @@ adding:
       site_owner_orgs:
         enabled: false
       sup_book_tags:
+        enabled: false
+      sup_file_groups:
         enabled: false
     sup_award:
       sup_award:
@@ -203,6 +210,11 @@ adding:
         sup_book_excerpts:
           enabled: true
         sup_book_e_retailers:
+          enabled: true
+      sup_book_ancillary:
+        sup_ancillary_book:
+          enabled: true
+        sup_ancillary_paragraphs:
           enabled: true
     paragraph:
       stanford_lists:

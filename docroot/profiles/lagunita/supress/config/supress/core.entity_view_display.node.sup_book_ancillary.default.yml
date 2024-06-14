@@ -1,0 +1,29 @@
+uuid: 3a71719d-00fc-4c46-9f1a-7026f62d06aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sup_book_ancillary.sup_ancillary_book
+    - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
+    - node.type.sup_book_ancillary
+  module:
+    - layout_paragraphs
+    - user
+id: node.sup_book_ancillary.default
+targetEntityType: node
+bundle: sup_book_ancillary
+mode: default
+content:
+  sup_ancillary_paragraphs:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true
+  sup_ancillary_book: true

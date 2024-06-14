@@ -2,14 +2,13 @@ adding:
   status: false
   dependencies:
     config:
-      - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_authors
-      - field.storage.node.sup_book_subjects
+      - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_imprint
       - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_series
+      - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_type
-  read_only: true
   field_settings:
     book_authors:
       label: 'Authors (full)'
@@ -78,6 +77,7 @@ adding:
         view_mode:
           'entity:node':
             sup_book: search_indexing
+            sup_book_ancillary: search_indexing
     photo:
       configuration:
         value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image|node:sup_book_image:entity:field_media_image:large]'
@@ -93,7 +93,10 @@ adding:
         - book_series
         - book_subject
         - book_type
+  options:
+    algolia_index_name: ''
 removing:
+  status: true
   field_settings:
     photo:
       configuration:
@@ -101,3 +104,5 @@ removing:
     summary:
       configuration:
         value: '[node:su_page_description|node:summary]'
+  options:
+    algolia_index_name: prod_supress
