@@ -166,7 +166,7 @@ class AuthenticatedPermissionsCest {
   /**
    * Vocabs aren't seen if there are no permissions for them.
    */
-  public function testTaxonomyOverviewPage(AcceptanceTester $I) {
+  protected function testTaxonomyOverviewPage(AcceptanceTester $I) {
     $name = $this->faker->firstName;
     $vocab = $I->createEntity([
       'vid' => strtolower($name),
