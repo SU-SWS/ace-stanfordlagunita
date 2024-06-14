@@ -14,6 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Cron queue worker for migrating book ancillary contents.
  *
+ * @codeCoverageIgnore One time use for migration.
+ *
  * @QueueWorker(
  *   id = "press_book_ancillary_migrator",
  *   title = @Translation("Book cover downloader"),
