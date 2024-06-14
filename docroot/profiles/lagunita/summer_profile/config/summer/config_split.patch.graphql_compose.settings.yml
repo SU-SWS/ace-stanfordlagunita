@@ -39,46 +39,46 @@ adding:
         edges_enabled: true
         routes_enabled: true
     paragraph:
-      sum_course_filter:
-        enabled: true
-      sum_user_favorites:
-        enabled: true
-      sum_calculator:
-        enabled: true
-      sum_video:
-        enabled: true
-        query_load_enabled: true
       sum_accordions:
-        enabled: true
-      sum_top_banner:
         enabled: true
       sum_arc_banner:
         enabled: true
+      sum_at_a_glance:
+        enabled: true
+      sum_calculator:
+        enabled: true
       sum_carousel:
         enabled: true
-      sum_slide_teaser:
-        enabled: true
-      sum_at_a_glance:
+      sum_course_filter:
         enabled: true
       sum_facts:
         enabled: true
       sum_pill_banner:
         enabled: true
+      sum_slide_teaser:
+        enabled: true
       sum_testimonial:
         enabled: true
+      sum_top_banner:
+        enabled: true
+      sum_user_favorites:
+        enabled: true
+      sum_video:
+        enabled: true
+        query_load_enabled: true
     taxonomy_term:
-      sum_course_availability:
-        enabled: true
-      sum_course_interest_area:
-        enabled: true
-      sum_course_population:
-        enabled: true
       cap_org_codes:
         enabled: false
       media_tags:
         enabled: false
       site_owner_orgs:
         enabled: false
+      sum_course_availability:
+        enabled: true
+      sum_course_interest_area:
+        enabled: true
+      sum_course_population:
+        enabled: true
       sum_summer_courses:
         enabled: false
   field_config:
@@ -106,6 +106,8 @@ adding:
           enabled: true
         sum_course_format:
           enabled: true
+        sum_course_image:
+          enabled: true
         sum_course_instructors:
           enabled: true
         sum_course_interest_area:
@@ -130,9 +132,30 @@ adding:
           enabled: true
         sum_students_also_studied:
           enabled: true
-        sum_course_image:
-          enabled: true
     paragraph:
+      sum_accordions:
+        sum_accordions_accords:
+          enabled: true
+        sum_accordions_desc:
+          enabled: true
+        sum_accordions_heading:
+          enabled: true
+      sum_arc_banner:
+        sum_arc_description:
+          enabled: true
+        sum_arc_image:
+          enabled: true
+        sum_arc_superhead:
+          enabled: true
+      sum_at_a_glance:
+        sum_at_a_glance_descrip:
+          enabled: true
+        sum_at_a_glance_facts:
+          enabled: true
+        sum_at_a_glance_headline:
+          enabled: true
+        sum_at_a_glance_link:
+          enabled: true
       sum_calculator:
         sum_calc_app_fee:
           enabled: true
@@ -184,34 +207,6 @@ adding:
           enabled: true
         sum_calc_ug_unit_help:
           enabled: true
-      sum_video:
-        sum_video_video:
-          enabled: true
-      sum_top_banner:
-        sum_top_banner_cards:
-          enabled: true
-        sum_top_banner_descrip:
-          enabled: true
-        sum_top_banner_image:
-          enabled: true
-        sum_top_banner_link:
-          enabled: true
-        sum_top_banner_superhead:
-          enabled: true
-      sum_accordions:
-        sum_accordions_accords:
-          enabled: true
-        sum_accordions_desc:
-          enabled: true
-        sum_accordions_heading:
-          enabled: true
-      sum_arc_banner:
-        sum_arc_description:
-          enabled: true
-        sum_arc_image:
-          enabled: true
-        sum_arc_superhead:
-          enabled: true
       sum_carousel:
         sum_carousel_description:
           enabled: true
@@ -222,18 +217,6 @@ adding:
         sum_carousel_slides:
           enabled: true
         sum_carousel_superheader:
-          enabled: true
-      sum_slide_teaser:
-        sum_slide_teaser_entity:
-          enabled: true
-      sum_at_a_glance:
-        sum_at_a_glance_descrip:
-          enabled: true
-        sum_at_a_glance_facts:
-          enabled: true
-        sum_at_a_glance_headline:
-          enabled: true
-        sum_at_a_glance_link:
           enabled: true
       sum_facts:
         sum_facts_label:
@@ -253,6 +236,9 @@ adding:
           enabled: true
         sum_pill_banner_suphead:
           enabled: true
+      sum_slide_teaser:
+        sum_slide_teaser_entity:
+          enabled: true
       sum_testimonial:
         sum_testimonial_affi:
           enabled: true
@@ -271,6 +257,20 @@ adding:
         sum_testimonial_type:
           enabled: true
         sum_testimonial_univ:
+          enabled: true
+      sum_top_banner:
+        sum_top_banner_cards:
+          enabled: true
+        sum_top_banner_descrip:
+          enabled: true
+        sum_top_banner_image:
+          enabled: true
+        sum_top_banner_link:
+          enabled: true
+        sum_top_banner_superhead:
+          enabled: true
+      sum_video:
+        sum_video_video:
           enabled: true
 removing:
   entity_config:
