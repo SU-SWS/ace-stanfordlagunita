@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.sum_top_banner.sum_top_banner_cards
     - field.field.paragraph.sum_top_banner.sum_top_banner_descrip
+    - field.field.paragraph.sum_top_banner.sum_top_banner_headline
     - field.field.paragraph.sum_top_banner.sum_top_banner_image
     - field.field.paragraph.sum_top_banner.sum_top_banner_link
     - field.field.paragraph.sum_top_banner.sum_top_banner_superhead
@@ -15,6 +16,7 @@ dependencies:
     - field_formatter_class
     - field_label
     - link
+    - stanford_fields
     - stanford_media
     - text
 id: paragraph.sum_top_banner.default
@@ -44,6 +46,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  sum_top_banner_headline:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   sum_top_banner_image:
     type: media_image_formatter

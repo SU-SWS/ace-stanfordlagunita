@@ -34,7 +34,13 @@ adding:
     - 'view any unpublished sum_summer_courses content'
     - 'view sum_summer_courses revisions'
 removing:
+  dependencies:
+    module:
+      - book
   permissions:
+    - 'add content to books'
+    - 'administer book outlines'
+    - 'create new books'
     - 'create stanford_course content'
     - 'create stanford_event content'
     - 'create stanford_event_series content'
@@ -42,7 +48,11 @@ removing:
     - 'create stanford_person content'
     - 'create stanford_policy content'
     - 'create stanford_publication content'
+    - 'create terms in event_audience'
+    - 'create terms in stanford_event_types'
     - 'create terms in stanford_news_topics'
+    - 'create terms in stanford_person_types'
+    - 'create terms in stanford_publication_topics'
     - 'edit any stanford_course content'
     - 'edit any stanford_event content'
     - 'edit any stanford_event_series content'
@@ -50,3 +60,9 @@ removing:
     - 'edit any stanford_person content'
     - 'edit any stanford_policy content'
     - 'edit any stanford_publication content'
+    - 'edit terms in event_audience'
+    - 'edit terms in media_tags'
+    - 'edit terms in stanford_event_types'
+    - 'edit terms in stanford_news_topics'
+    - 'edit terms in stanford_person_types'
+    - 'edit terms in stanford_publication_topics'
