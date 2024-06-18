@@ -16,6 +16,7 @@ deploy:
   gitignore_file: '${repo.root}/blt/deploy/.gitignore'
   dir: '${repo.root}/deploy'
 drush:
+  sanitize: false
   aliases:
     ci: self
   default_alias: '${drush.aliases.local}'

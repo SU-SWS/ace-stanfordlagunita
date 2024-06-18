@@ -18,6 +18,7 @@ repo_root="/var/www/html/$site.$target_env"
 export PATH=$repo_root/vendor/bin:$PATH
 cd $repo_root
 
-blt artifact:ac-hooks:db-scrub $site $target_env $db_name $source_env -D drush.ansi=false
+drush sql-sanitize --ignored-roles=decoupled_site_users --uri=$db_name
+#blt artifact:ac-hooks:db-scrub $site $target_env $db_name $source_env -D drush.ansi=false
 
 set +v
