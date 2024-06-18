@@ -40,6 +40,9 @@ removing:
   permissions:
     - 'add content to books'
     - 'administer book outlines'
+    - 'administer news-topics menu items'
+    - 'administer stanford-event-types menu items'
+    - 'administer stanford-person-type menu items'
     - 'create new books'
     - 'create stanford_course content'
     - 'create stanford_event content'
