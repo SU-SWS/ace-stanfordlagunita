@@ -22,6 +22,7 @@ adding:
     - 'use text format sum_markdown'
 removing:
   permissions:
+    - 'create terms in event_audience'
     - 'create terms in stanford_event_types'
     - 'create terms in stanford_news_topics'
     - 'create terms in stanford_person_types'
