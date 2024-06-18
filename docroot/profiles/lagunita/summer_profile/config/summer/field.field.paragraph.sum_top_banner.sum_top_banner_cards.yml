@@ -91,6 +91,9 @@ settings:
       sum_slide_teaser:
         weight: 47
         enabled: false
+      sum_testimonial:
+        weight: 49
+        enabled: false
       sum_top_banner:
         weight: 34
         enabled: false
