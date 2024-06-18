@@ -88,8 +88,8 @@ class LagunitaHooksCommands extends BltTasks {
    *
    * @hook pre-command artifact:ac-hooks:db-scrub
    */
-  public function preDbScrub(CommandData $comand_data) {
-    $args_options = $comand_data->getArgsAndOptions();
+  public function preDbScrub(CommandData $command_data) {
+    $args_options = $command_data->getArgsAndOptions();
     // Databases should correlate directly to the site name. Except the default
     // directory which has a different database name. This allows the db scrub
     // drush command to operate on the correct database.
