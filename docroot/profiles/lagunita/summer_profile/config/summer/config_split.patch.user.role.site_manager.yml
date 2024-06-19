@@ -2,6 +2,29 @@ adding:
   dependencies:
     config:
       - filter.format.sum_markdown
+      - node.type.sum_summer_courses
   permissions:
+    - 'create sum_summer_courses content'
     - 'use text format sum_markdown'
-removing: {  }
+removing:
+  dependencies:
+    module:
+      - book
+  permissions:
+    - 'add content to books'
+    - 'administer book outlines'
+    - 'administer news-topics menu items'
+    - 'administer stanford-event-types menu items'
+    - 'administer stanford-person-type menu items'
+    - 'create new books'
+    - 'create stanford_course content'
+    - 'create stanford_event content'
+    - 'create stanford_event_series content'
+    - 'create stanford_news content'
+    - 'create stanford_person content'
+    - 'create stanford_policy content'
+    - 'create stanford_publication content'
+    - 'create terms in stanford_event_types'
+    - 'create terms in stanford_news_topics'
+    - 'create terms in stanford_person_types'
+    - 'create terms in stanford_publication_topics'
