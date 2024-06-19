@@ -2,33 +2,6 @@ adding:
   dependencies:
     config:
       - filter.format.sum_markdown
-      - taxonomy.vocabulary.sum_course_availability
-      - taxonomy.vocabulary.sum_course_interest_area
-      - taxonomy.vocabulary.sum_course_population
-      - taxonomy.vocabulary.sum_summer_courses
   permissions:
-    - 'create terms in sum_course_availability'
-    - 'create terms in sum_course_interest_area'
-    - 'create terms in sum_course_population'
-    - 'create terms in sum_summer_courses'
-    - 'delete terms in sum_course_availability'
-    - 'delete terms in sum_course_interest_area'
-    - 'delete terms in sum_course_population'
-    - 'delete terms in sum_summer_courses'
-    - 'edit terms in sum_course_availability'
-    - 'edit terms in sum_course_interest_area'
-    - 'edit terms in sum_course_population'
-    - 'edit terms in sum_summer_courses'
     - 'use text format sum_markdown'
-removing:
-  permissions:
-    - 'create terms in event_audience'
-    - 'create terms in stanford_event_types'
-    - 'create terms in stanford_news_topics'
-    - 'create terms in stanford_person_types'
-    - 'create terms in stanford_publication_topics'
-    - 'edit terms in event_audience'
-    - 'edit terms in stanford_event_types'
-    - 'edit terms in stanford_news_topics'
-    - 'edit terms in stanford_person_types'
-    - 'edit terms in stanford_publication_topics'
+removing: {  }
