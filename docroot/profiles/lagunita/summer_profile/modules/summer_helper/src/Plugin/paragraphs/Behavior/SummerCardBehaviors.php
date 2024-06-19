@@ -41,6 +41,18 @@ class SummerCardBehaviors extends CardBehavior {
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant'),
     ];
     $element['sum_card_bg_color_variant'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('No Card Background'),
+      'description' => $this->t('Removes background from card.'),
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
+      'weight' => 2,
+      '#states' => [
+        'invisible' => [
+          '[name="behavior_plugins[su_card_styles][sum_card_variant]"]' => ['value' => 'pill'],
+        ],
+      ],
+    ];
+    $element['sum_card_pill_bg_color_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Pill Card Background Color'),
       '#empty_option' => $this->t('Poppy Light'),
@@ -50,9 +62,8 @@ class SummerCardBehaviors extends CardBehavior {
         'semitransparent_olive' => $this->t('Semitransparent Olive Light'),
         'spirited' => $this->t('Spirited Light'),
         'semitransparent_spirited' => $this->t('Semitransparent Spirited Light'),
-        'transparent' => $this->t('No background'),
       ],
-      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_pill_bg_color_variant'),
       '#states' => [
         'visible' => [
           '[name="behavior_plugins[su_card_styles][sum_card_variant]"]' => ['value' => 'pill'],
