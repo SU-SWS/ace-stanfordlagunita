@@ -45,7 +45,6 @@ class SummerCardBehaviors extends CardBehavior {
       '#title' => $this->t('No Card Background'),
       'description' => $this->t('Removes background from card.'),
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
-      'weight' => 2,
       '#states' => [
         'invisible' => [
           '[name="behavior_plugins[su_card_styles][sum_card_variant]"]' => ['value' => 'pill'],
