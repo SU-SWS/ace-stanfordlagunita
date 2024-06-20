@@ -5,6 +5,8 @@ adding:
       - node.type.sum_summer_courses
   permissions:
     - 'create sum_summer_courses content'
+    - 'delete own sum_summer_courses content'
+    - 'delete sum_summer_courses revisions'
     - 'edit any sum_summer_courses content'
     - 'edit own sum_summer_courses content'
     - 'revert sum_summer_courses revisions'
@@ -39,6 +41,13 @@ removing:
     - 'edit any stanford_person content'
     - 'edit any stanford_policy content'
     - 'edit any stanford_publication content'
+    - 'edit own stanford_course content'
+    - 'edit own stanford_event content'
+    - 'edit own stanford_event_series content'
+    - 'edit own stanford_news content'
+    - 'edit own stanford_person content'
+    - 'edit own stanford_policy content'
+    - 'edit own stanford_publication content'
     - 'revert stanford_course revisions'
     - 'revert stanford_event revisions'
     - 'revert stanford_event_series revisions'

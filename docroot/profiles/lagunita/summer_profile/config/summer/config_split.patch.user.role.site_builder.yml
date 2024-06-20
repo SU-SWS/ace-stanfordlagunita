@@ -8,6 +8,8 @@ adding:
     - 'configure all stanford_page node layout overrides'
     - 'configure editable stanford_page node layout overrides'
     - 'create sum_summer_courses content'
+    - 'delete own sum_summer_courses content'
+    - 'delete sum_summer_courses revisions'
     - 'edit any sum_summer_courses content'
     - 'edit own sum_summer_courses content'
     - 'revert sum_summer_courses revisions'
