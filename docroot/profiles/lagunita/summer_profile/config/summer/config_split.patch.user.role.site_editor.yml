@@ -3,17 +3,37 @@ adding:
     config:
       - filter.format.sum_markdown
       - node.type.sum_summer_courses
+      - taxonomy.vocabulary.sum_course_availability
+      - taxonomy.vocabulary.sum_course_interest_area
+      - taxonomy.vocabulary.sum_course_population
+      - taxonomy.vocabulary.sum_summer_courses
   permissions:
     - 'create sum_summer_courses content'
+    - 'create terms in sum_course_availability'
+    - 'create terms in sum_course_interest_area'
+    - 'create terms in sum_course_population'
     - 'delete own sum_summer_courses content'
     - 'delete sum_summer_courses revisions'
+    - 'delete terms in sum_course_availability'
+    - 'delete terms in sum_course_interest_area'
+    - 'delete terms in sum_course_population'
+    - 'delete terms in sum_summer_courses'
     - 'edit any sum_summer_courses content'
     - 'edit own sum_summer_courses content'
+    - 'edit terms in sum_course_availability'
+    - 'edit terms in sum_course_interest_area'
+    - 'edit terms in sum_course_population'
+    - 'edit terms in sum_summer_courses'
     - 'revert sum_summer_courses revisions'
     - 'use text format sum_markdown'
     - 'view sum_summer_courses revisions'
 removing:
   dependencies:
+    config:
+      - taxonomy.vocabulary.stanford_event_types
+      - taxonomy.vocabulary.stanford_news_topics
+      - taxonomy.vocabulary.stanford_person_types
+      - taxonomy.vocabulary.stanford_publication_topics
     module:
       - book
   permissions:
@@ -34,6 +54,16 @@ removing:
     - 'create terms in stanford_news_topics'
     - 'create terms in stanford_person_types'
     - 'create terms in stanford_publication_topics'
+    - 'delete any stanford_course content'
+    - 'delete any stanford_event content'
+    - 'delete any stanford_event_series content'
+    - 'delete any stanford_news content'
+    - 'delete any stanford_person content'
+    - 'delete any stanford_publication content'
+    - 'delete terms in stanford_event_types'
+    - 'delete terms in stanford_news_topics'
+    - 'delete terms in stanford_person_types'
+    - 'delete terms in stanford_publication_topics'
     - 'edit any stanford_course content'
     - 'edit any stanford_event content'
     - 'edit any stanford_event_series content'
@@ -48,6 +78,10 @@ removing:
     - 'edit own stanford_person content'
     - 'edit own stanford_policy content'
     - 'edit own stanford_publication content'
+    - 'edit terms in stanford_event_types'
+    - 'edit terms in stanford_news_topics'
+    - 'edit terms in stanford_person_types'
+    - 'edit terms in stanford_publication_topics'
     - 'revert stanford_course revisions'
     - 'revert stanford_event revisions'
     - 'revert stanford_event_series revisions'

@@ -100,7 +100,7 @@ class BasicPageCest {
   /**
    * Number of h1 tags should always be 1.
    */
-  public function testH1Tags(AcceptanceTester $I) {
+  protected function testH1Tags(AcceptanceTester $I) {
     $I->amOnPage('/' . $this->faker->text);
     $I->canSeeResponseCodeIs(404);
     $I->canSeeNumberOfElements('h1', 1);
