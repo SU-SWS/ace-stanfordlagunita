@@ -30,7 +30,7 @@ class DefaultContentCest {
   /**
    * Default content pages and meta data exist.
    */
-  public function testExistingContent(AcceptanceTester $I) {
+  protected function testExistingContent(AcceptanceTester $I) {
     $pages = [
       '/',
       '/resources',
@@ -58,7 +58,7 @@ class DefaultContentCest {
   /**
    * XML Sitemap should exist after cron.
    */
-  public function testXmlSitemap(AcceptanceTester $I) {
+  protected function testXmlSitemap(AcceptanceTester $I) {
     $I->runDrush('cron');
     $I->amOnPage('/sitemap.xml');
     $I->canSeeResponseCodeIs(200);
