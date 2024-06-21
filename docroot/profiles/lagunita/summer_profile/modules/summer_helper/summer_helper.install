@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * summer_helper.install
+ */
+
+/**
+ * Move card background image behavior settings.
+ */
+function summer_helper_update_9001() {
+  $ps = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $pids = $ps->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', 'stanford_card')
+    ->execute();
+  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+  foreach ($ps->loadMultiple($pids) as $paragraph) {
+    $behaviors = $paragraph->getAllBehaviorSettings();
+    if (isset($behaviors['su_card_styles']['sum_card_bg_color_variant'])) {
+      $behaviors['su_card_styles']['sum_card_pill_bg_color_variant'] = $behaviors['su_card_styles']['sum_card_bg_color_variant'];
+      unset($behaviors['su_card_styles']['sum_card_bg_color_variant']);
+      $paragraph->setAllBehaviorSettings($behaviors);
+      $paragraph->save();
+    }
+  }
+}
