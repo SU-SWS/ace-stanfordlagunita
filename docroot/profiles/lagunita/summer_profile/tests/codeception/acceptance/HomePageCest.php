@@ -3,7 +3,7 @@
 /**
  * Test the home page exists.
  */
-class HomePageCest {
+abstract class HomePageCest {
 
   /**
    * Validate the homepage loads.
