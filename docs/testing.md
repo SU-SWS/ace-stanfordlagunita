@@ -21,7 +21,7 @@ To run with test coverage, add the following argument to the above `--coverage-h
 
 ### Acceptance
 `blt codecption --suite=acceptance`. This shouldn't require anything additional to run. If you wish to run a specific
-test, the recommendation is to add a group, which is defined in class/method's comment and will look like `@group content`.  Then you can use that to run that specific test. Example: `blt codecption --suite=acceptance --group=lists`.
+test, the recommendation is to add a group, which is defined in class/method's comment and will look like `@group content`.  Also you can specify which set of tests to run using the `--test` option. Use this to run only the tests within a specified profile. Then you can use that to run that specific test. Example: `blt codecption --suite=acceptance --group=lists --test=supress`.
 
 ### Functional
 `blt codeception --suite=functional`. This relies on selenium standalone or some other chromedriver like mechanism.
