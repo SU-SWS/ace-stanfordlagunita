@@ -22,6 +22,7 @@ settings:
   allowed_views:
     stanford_shared_tags: stanford_shared_tags
     stanford_basic_pages: stanford_basic_pages
+    sul_branch_locations: sul_branch_locations
     stanford_events: stanford_events
     sul_people: sul_people
     stanford_news: stanford_news

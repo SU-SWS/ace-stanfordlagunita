@@ -162,3 +162,5 @@ $settings['trusted_host_patterns'] = array(
 );
 
 error_reporting(E_ALL & ~E_DEPRECATED);
+
+$config['user.role.anonymous']['permissions'][99] = 'access content';
