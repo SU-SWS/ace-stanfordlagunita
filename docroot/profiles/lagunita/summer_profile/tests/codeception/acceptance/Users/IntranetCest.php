@@ -46,7 +46,7 @@ class IntranetCest {
   /**
    * Simple full site access check.
    */
-  public function testIntranet(AcceptanceTester $I) {
+  protected function testIntranet(AcceptanceTester $I) {
     if (!$this->intranetWasEnabled) {
       $I->runDrush('sset stanford_intranet 1');
       $I->runDrush('cache-rebuild');
