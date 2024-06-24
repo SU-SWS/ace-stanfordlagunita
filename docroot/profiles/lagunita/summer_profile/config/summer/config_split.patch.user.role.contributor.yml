@@ -10,6 +10,7 @@ adding:
     - 'create sum_summer_courses content'
     - 'delete any stanford_event_series content'
     - 'delete any stanford_policy content'
+    - 'delete any sum_summer_courses content'
     - 'delete own sum_summer_courses content'
     - 'delete stanford_event_series revisions'
     - 'delete stanford_policy revisions'
@@ -21,6 +22,7 @@ adding:
     - 'revert stanford_policy revisions'
     - 'revert sum_summer_courses revisions'
     - 'use text format sum_markdown'
+    - 'view any unpublished sum_summer_courses content'
     - 'view sum_summer_courses revisions'
 removing:
   permissions:

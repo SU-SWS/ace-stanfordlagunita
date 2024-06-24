@@ -12,6 +12,8 @@ adding:
     - 'create terms in sum_course_availability'
     - 'create terms in sum_course_interest_area'
     - 'create terms in sum_course_population'
+    - 'create terms in sum_summer_courses'
+    - 'delete any sum_summer_courses content'
     - 'delete own sum_summer_courses content'
     - 'delete sum_summer_courses revisions'
     - 'delete terms in sum_course_availability'
@@ -24,8 +26,10 @@ adding:
     - 'edit terms in sum_course_interest_area'
     - 'edit terms in sum_course_population'
     - 'edit terms in sum_summer_courses'
+    - 'import sum_csv_summer_courses migration'
     - 'revert sum_summer_courses revisions'
     - 'use text format sum_markdown'
+    - 'view any unpublished sum_summer_courses content'
     - 'view sum_summer_courses revisions'
 removing:
   dependencies:
