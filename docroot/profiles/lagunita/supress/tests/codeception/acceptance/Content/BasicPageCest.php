@@ -90,7 +90,8 @@ class BasicPageCest {
     $I->canSeeLink($node_title, $node->toUrl()->toString());
 
     $I->amOnPage($node->toUrl('delete-form')->toString());
-    $I->click('Delete');
+    $I->click('Delete', 'form');
+    $I->canSee('has been deleted');
 
     $I->amOnPage('/');
     $I->cantSeeLink($node_title);
