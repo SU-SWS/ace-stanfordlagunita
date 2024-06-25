@@ -143,6 +143,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/core": {
+                "https://www.drupal.org/project/drupal/issues/3410100": "https://www.drupal.org/files/issues/2024-01-23/drupal-revert-source-editing-validation-tightening-3410100-38.patch"
+            },
             "drupal/hook_event_dispatcher": {
                 "https://www.drupal.org/project/hook_event_dispatcher/issues/3354751": "https://www.drupal.org/files/issues/2023-04-17/hook_event_dispatcher-4.x-3354751.patch"
             },
