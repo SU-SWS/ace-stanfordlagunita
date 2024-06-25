@@ -43,7 +43,7 @@ class SummerCardBehaviors extends CardBehavior {
     $element['sum_card_bg_color_variant'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('No Card Background'),
-      'description' => $this->t('Removes background from card.'),
+      '#description' => $this->t('Removes background from card.'),
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant'),
       '#states' => [
         'invisible' => [
