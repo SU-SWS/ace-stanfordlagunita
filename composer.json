@@ -43,13 +43,11 @@
         "drupal/core": "^10.2",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.0",
-        "drupal/mysql56": "^1.1",
         "drupal/pdb": "2.0.0",
         "drupal/stage_file_proxy": "^2.1",
         "drush/drush": "^12",
         "su-sws/blt-sws": "dev-main",
         "su-sws/stanford_profile": "11.x-dev",
-        "su-sws/stanford_profile_helper": "9.x-dev as 9.6.15",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
@@ -145,9 +143,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/core": {
-                "https://www.drupal.org/project/drupal/issues/3413508": "patches/core-3413508.patch"
-            },
             "drupal/hook_event_dispatcher": {
                 "https://www.drupal.org/project/hook_event_dispatcher/issues/3354751": "https://www.drupal.org/files/issues/2023-04-17/hook_event_dispatcher-4.x-3354751.patch"
             },

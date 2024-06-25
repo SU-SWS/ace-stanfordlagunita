@@ -3,15 +3,15 @@ adding:
     su_page_banner:
       type: layout_paragraphs
       settings:
+        view_mode: default
         preview_view_mode: default
         nesting_depth: 0
         require_layouts: 0
         empty_message: ''
-        view_mode: default
     su_page_components:
       settings:
-        preview_view_mode: sum_editing_preview
         view_mode: default
+        preview_view_mode: sum_editing_preview
         form_display_mode: default
       third_party_settings:
         change_labels:
