@@ -23,5 +23,6 @@ third_party_settings:
     unpublish_revision: false
 name: 'Study Place Capacity'
 vid: study_place_capacity
-description: ''
+description: null
 weight: 0
+new_revision: false

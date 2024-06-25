@@ -1,5 +1,4 @@
 adding:
-  status: false
   dependencies:
     config:
       - field.storage.node.sup_book_authors
@@ -93,10 +92,7 @@ adding:
         - book_series
         - book_subject
         - book_type
-  options:
-    algolia_index_name: ''
 removing:
-  status: true
   field_settings:
     photo:
       configuration:
@@ -104,5 +100,3 @@ removing:
     summary:
       configuration:
         value: '[node:su_page_description|node:summary]'
-  options:
-    algolia_index_name: prod_supress

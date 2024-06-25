@@ -22,3 +22,4 @@ name: 'Book Series'
 vid: sup_series
 description: 'A series of related books'
 weight: 0
+new_revision: false
