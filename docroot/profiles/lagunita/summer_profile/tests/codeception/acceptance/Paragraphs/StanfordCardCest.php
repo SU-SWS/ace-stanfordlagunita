@@ -26,7 +26,7 @@ class StanfordCardCest {
   /**
    * Test a card with a button link.
    */
-  publc function testCardButtonLinkText(AcceptanceTester $I) {
+  public function testCardButtonLinkText(AcceptanceTester $I) {
     $node = $this->createNodeWithLink($I);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSeeLink('It\'s a "test" link & title', 'http://google.com');
