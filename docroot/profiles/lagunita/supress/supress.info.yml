@@ -13,7 +13,6 @@ install:
   - 'chosen:chosen'
   - 'chosen:chosen_lib'
   - 'components:components'
-  - 'config_filter:config_filter'
   - 'config_pages:config_pages'
   - 'config_pages_overrides:config_pages_overrides'
   - 'config_readonly:config_readonly'

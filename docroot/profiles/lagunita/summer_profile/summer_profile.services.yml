@@ -4,7 +4,7 @@ services:
     parent: default_plugin_manager
   summer_profile.event_subscriber:
     class: '\Drupal\summer_profile\EventSubscriber\EventSubscriber'
-    arguments: ['@file_system', '@logger.factory', '@messenger']
+    arguments: ['@file_system', '@http_client', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }
   summer_profile.config_overrider:
