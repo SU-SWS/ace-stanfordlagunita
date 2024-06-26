@@ -24,8 +24,8 @@ third_party_settings:
     unpublish_revision: false
 name: Book
 type: sup_book
-description: ''
-help: ''
+description: null
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false

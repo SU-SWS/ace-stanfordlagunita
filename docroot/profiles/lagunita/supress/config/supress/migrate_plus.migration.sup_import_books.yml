@@ -334,8 +334,15 @@ process:
     replace: ''
     regex: true
   sup_book_type:
-    plugin: default_value
-    default_value: book
+    -
+      plugin: str_replace
+      source: isbn_13_isw
+      regex: true
+      search: /^[0-9]{1,}$/
+      replace: digital_project
+    -
+      plugin: default_value
+      default_value: book
   sup_book_authors/0/given: author_0_first_name
   sup_book_authors/0/following: author_0_following
   sup_book_authors/0/family: author_0_last_name

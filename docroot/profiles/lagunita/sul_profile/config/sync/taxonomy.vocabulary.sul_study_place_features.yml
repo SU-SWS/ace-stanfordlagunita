@@ -23,5 +23,6 @@ third_party_settings:
     unpublish_revision: false
 name: 'Study Place Features'
 vid: sul_study_place_features
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -23,5 +23,6 @@ third_party_settings:
     unpublish_revision: false
 name: 'Protected File Groups'
 vid: sup_file_groups
-description: ''
+description: null
 weight: 0
+new_revision: false
