@@ -4,8 +4,6 @@ use Faker\Factory;
 
 /**
  * Codeception tests on card paragraph type.
- *
- * @group cards
  */
 class StanfordCardCest {
 
