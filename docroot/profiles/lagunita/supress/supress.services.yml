@@ -4,7 +4,7 @@ services:
     parent: default_plugin_manager
   supress.event_subscriber:
     class: '\Drupal\supress\EventSubscriber\EventSubscriber'
-    arguments: ['@file_system', '@logger.factory', '@messenger']
+    arguments: ['@file_system', '@http_client', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }
   supress.config_overrider:
