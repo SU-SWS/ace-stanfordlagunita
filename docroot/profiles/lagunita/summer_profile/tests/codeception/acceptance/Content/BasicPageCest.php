@@ -100,7 +100,7 @@ class BasicPageCest {
   /**
    * Number of h1 tags should always be 1.
    */
-  protected function testH1Tags(AcceptanceTester $I) {
+  public function testH1Tags(AcceptanceTester $I) {
     $I->amOnPage('/' . $this->faker->text);
     $I->canSeeResponseCodeIs(404);
     $I->canSeeNumberOfElements('h1', 1);
@@ -271,7 +271,7 @@ class BasicPageCest {
    *
    * @group metadata
    */
-  protected function testMetaData(AcceptanceTester $I) {
+  public function testMetaData(AcceptanceTester $I) {
     $values = [
       'banner_image_alt' => $this->faker->words(3, TRUE),
       'meta_image_alt' => $this->faker->words(3, TRUE),

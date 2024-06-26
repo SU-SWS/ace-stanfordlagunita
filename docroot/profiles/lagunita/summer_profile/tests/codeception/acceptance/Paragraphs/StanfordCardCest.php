@@ -26,7 +26,7 @@ class StanfordCardCest {
   /**
    * Test a card with a button link.
    */
-  protected function testCardButtonLinkText(AcceptanceTester $I) {
+  publc function testCardButtonLinkText(AcceptanceTester $I) {
     $node = $this->createNodeWithLink($I);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSeeLink('It\'s a "test" link & title', 'http://google.com');
@@ -35,7 +35,7 @@ class StanfordCardCest {
   /**
    * Test a card with an action link.
    */
-  protected function testCardActionLinkText(AcceptanceTester $I) {
+  public function testCardActionLinkText(AcceptanceTester $I) {
     $node = $this->createNodeWithLink($I, 'action');
     $I->amOnPage($node->toUrl()->toString());
     $I->canSeeLink('It\'s a "test" link & title', 'http://google.com');
