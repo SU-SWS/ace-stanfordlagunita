@@ -5,7 +5,7 @@ use Faker\Factory;
 /**
  *
  */
-class TeaserCest {
+abstract class TeaserCest {
 
   /**
    * Faker service.

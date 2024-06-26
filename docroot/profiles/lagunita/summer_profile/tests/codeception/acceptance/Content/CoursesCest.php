@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group content
  */
-class CoursesCest {
+abstract class CoursesCest {
 
   /**
    * @var \Faker\Generator

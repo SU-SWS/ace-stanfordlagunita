@@ -7,7 +7,7 @@ use Faker\Factory;
  *
  * @group content
  */
-class PersonCest {
+abstract class PersonCest {
 
   /**
    * Faker service.
