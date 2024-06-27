@@ -1,0 +1,8 @@
+admin:
+  css:
+    theme:
+      styles/dist/css/admin.css: {}
+ckeditor:
+  css:
+    theme:
+      styles/dist/css/ckeditor.css: {}

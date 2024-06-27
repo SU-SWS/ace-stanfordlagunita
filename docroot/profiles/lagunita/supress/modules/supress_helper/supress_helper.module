@@ -18,6 +18,29 @@ use Drupal\migrate\Row;
 use Drupal\search_api\IndexInterface;
 
 /**
+ * Implements hook_page_attachments().
+ */
+function supress_helper_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'supress_helper/admin';
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function supress_helper_library_info_alter(&$libraries, $extension) {
+  if ($extension === 'ckeditor5') {
+    $module_path = \Drupal::service('extension.list.module')->getPath('supress_helper');
+    $libraries['internal.drupal.ckeditor5.stylesheets'] = [
+      'css' => [
+        'theme' => [
+          "/$module_path/styles/dist/css/ckeditor.css" => []
+        ],
+      ],
+    ];
+  }
+}
+
+/**
  * Implements hook_paragraphs_behavior_info_alter().
  */
 function supress_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {

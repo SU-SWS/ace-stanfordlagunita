@@ -18,3 +18,19 @@ function summer_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
 function summer_helper_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'summer_helper/admin';
 }
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function summer_helper_library_info_alter(&$libraries, $extension) {
+  if ($extension === 'ckeditor5') {
+    $module_path = \Drupal::service('extension.list.module')->getPath('summer_helper');
+    $libraries['internal.drupal.ckeditor5.stylesheets'] = [
+      'css' => [
+        'theme' => [
+          "/$module_path/styles/dist/css/ckeditor.css" => []
+        ],
+      ],
+    ];
+  }
+}

@@ -7,7 +7,10 @@ dependencies:
     - field.field.paragraph.sup_carousel.sup_carousel_top_hero
     - paragraphs.paragraphs_type.sup_carousel
   module:
+    - empty_fields
     - entity_reference_revisions
+    - field_formatter_class
+    - field_label
 id: paragraph.sup_carousel.default
 targetEntityType: paragraph
 bundle: sup_carousel
@@ -19,8 +22,15 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings: {  }
-    weight: 0
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

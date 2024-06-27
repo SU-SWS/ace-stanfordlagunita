@@ -1,0 +1,82 @@
+.ck-content {
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 23px;
+  line-height: 1.7;
+  color: rgb(84, 73, 72);
+
+  p {
+    margin-bottom: 38px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .su-font-splash {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 78px;
+  }
+
+  .su-quote-text {
+    font-size: 26px;
+  }
+
+  .su-drop-cap {
+    font-size: 26px;
+
+    &:first-letter {
+      font-size: 65px;
+      float: left;
+      font-weight: 700;
+      line-height: .6;
+      margin: 11px 12px 0 0;
+    }
+  }
+
+  .su-related-text {
+    box-shadow: 0 10px 15px -3px rgb(0, 0, 0 / 0.1), 0 4px 6px -4px rgb(0, 0, 0 / 0.1);
+    padding: 40px;
+  }
+
+  .su-callout-text {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .su-subheading {
+
+  }
+
+  a {
+
+  }
+
+  .su-button {
+    padding: 10px 20px;
+    background-color: #B1040E;
+    color: #fff;
+  }
+
+  .su-button--big {
+    font-size: 30px;
+    padding: 15px 30px;
+    background-color: #B1040E;
+    color: #fff;
+  }
+
+  .su-button--secondary {
+    padding: 10px 20px;
+    border: 1px solid #B6B1A9;
+    color: #B1040E;
+  }
+
+  .su-link--action {
+    color: #B1040E;
+
+    &::after {
+      content: "->";
+      display: inline-block;
+    }
+  }
+}

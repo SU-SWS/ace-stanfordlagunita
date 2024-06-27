@@ -1,0 +1,28 @@
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.grid-container-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.paragraph--type--sup-carousel-slide {
+  position: relative;
+  padding: 30px 50px;
+  overflow: hidden;
+
+  .field:not(.field--name-sup-slide-bg-image) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.field--name-sup-slide-bg-image img {
+  position: absolute;
+  object-fit: contain;
+  width: 100%;
+}
