@@ -10,7 +10,6 @@ migration_tags: null
 migration_group: sup_press
 label: 'Import Stanford University Press Books'
 source:
-  orphan_action: unpublish
   plugin: url
   urls:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
@@ -323,6 +322,10 @@ source:
       name: digital_comp_link_yn
       label: digital_comp_link_yn
       selector: fieldData/digital_comp_link_yn
+    -
+      name: book_tags
+      label: book_tags
+      selector: fieldData/book_tags
   ids:
     work_id_number:
       type: integer
@@ -532,6 +535,21 @@ process:
         - 1
         - 0
   sup_book_e_retailers: ebook_retailers
+  sup_book_tags:
+    -
+      plugin: skip_on_empty
+      source: book_tags
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: sup_book_tags
+      value_key: name
+      ignore_case: true
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

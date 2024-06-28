@@ -16,7 +16,7 @@ index 60dcf9e..6972ac0 100644
      }
 -
 +    if (Settings::get('graphql_log')) {
-+      \Drupal::logger('graphql_debug_query')->info($operations->query);
++      \Drupal::logger('graphql_debug_query')->info('%query', ['%query' => $operations->query]);
 +      if ($operations->variables) {
 +        \Drupal::logger('graphql_debug_variables')
 +          ->info('%variables', ['%variables' => json_encode($operations->variables)]);
