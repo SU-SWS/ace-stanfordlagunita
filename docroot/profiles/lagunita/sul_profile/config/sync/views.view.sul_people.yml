@@ -584,7 +584,7 @@ display:
         - 'config:field.storage.node.su_person_type_group'
   table_list_all:
     id: table_list_all
-    display_title: 'table - All Results'
+    display_title: 'Library People Table'
     display_plugin: viewfield_block
     position: 1
     display_options:
