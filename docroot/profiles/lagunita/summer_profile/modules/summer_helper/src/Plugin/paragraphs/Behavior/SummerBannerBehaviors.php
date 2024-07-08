@@ -36,15 +36,6 @@ class SummerBannerBehaviors extends ParagraphsBehaviorBase {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-    $element['sum_banner_alignment'] = [
-      '#type' => 'select',
-      '#title' => $this->t('Overlay Alignment'),
-      '#empty_option' => $this->t('Right'),
-      '#options' => [
-        'left' => $this->t('Left'),
-      ],
-      '#default_value' => $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_alignment'),
-    ];
     $element['sum_banner_overlay_bkg'] = [
       '#type' => 'select',
       '#title' => $this->t('Banner Background Color'),
