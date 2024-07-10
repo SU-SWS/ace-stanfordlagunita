@@ -1,6 +1,28 @@
 # Lagunita
 
-2.4.45
+2.4.6
+--------------------------------------------------------------------------------
+_Release Date: 2024-07-10_
+- Summer: Adjust top banner form display setting to match UI of paragraphs fields
+- SUM - card number and banner overlay fixup (#120)
+- SUP: Excerpt ancillary pages content type and permission updates (#121)
+- SUL23-489: Modified places to study view to allow table option (#122)
+- Skip decoupled user sanitizing
+- SUM & PRESS: Remove anonymous access to site
+- Update stanford profile helper
+- SUL23-490: Added branch locations view to support tabular layout (#125)
+- SUM-186 Moving transparent background to card from pill. (#124)
+- Update drupal 10.3
+- Updated dependencies
+- patch environment indicator
+- SUP: Use isbn to indicate digital projects
+- SUM-137 - Adjust permissions for taxonomy and content type (#116)
+- SUP & SUM: Added some wysiwyg styles
+- SUP: Import book tags
+- SUL23-504: Relabeled view display to match the others (#129)
+- SUM: Update pill banner form display settings
+
+2.4.5
 --------------------------------------------------------------------------------
 _Release Date: 2024-06-12_
 
