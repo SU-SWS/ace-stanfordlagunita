@@ -1,12 +1,12 @@
 local:
-  uri: supress.sites-pro.stanford.edu
+  uri: supress
   root: '${env.cwd}/docroot'
 dev:
   root: /var/www/html/stanfordpress.dev/docroot
   ac-site: stanfordpress
   ac-env: dev
   ac-realm: prod
-  uri: supress.sites-pro.stanford.edu
+  uri: supress
   dev.livedev:
     parent: '@stanfordpress.dev'
     root: /mnt/gfs/stanfordpress.dev/livedev/docroot
@@ -17,7 +17,7 @@ test:
   ac-site: stanfordpress
   ac-env: test
   ac-realm: prod
-  uri: supress.sites-pro.stanford.edu
+  uri: supress
   test.livedev:
     parent: '@stanfordpress.stage'
     root: /mnt/gfs/stanfordpress.stage/livedev/docroot
@@ -28,7 +28,7 @@ prod:
   ac-site: stanfordpress
   ac-env: prod
   ac-realm: prod
-  uri: supress.sites-pro.stanford.edu
+  uri: supress
   prod.livedev:
     parent: '@stanfordpress.prod'
     root: /mnt/gfs/stanfordpress.prod/livedev/docroot

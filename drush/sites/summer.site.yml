@@ -1,12 +1,12 @@
 local:
-  uri: summer.sites-pro.stanford.edu
+  uri: summer
   root: '${env.cwd}/docroot'
 dev:
   root: /var/www/html/stanfordsummer.dev/docroot
   ac-site: stanfordsummer
   ac-env: dev
   ac-realm: prod
-  uri: summer.sites-pro.stanford.edu
+  uri: summer
   dev.livedev:
     parent: '@stanfordsummer.dev'
     root: /mnt/gfs/stanfordsummer.dev/livedev/docroot
@@ -17,7 +17,7 @@ test:
   ac-site: stanfordsummer
   ac-env: test
   ac-realm: prod
-  uri: summer.sites-pro.stanford.edu
+  uri: summer
   test.livedev:
     parent: '@stanfordsummer.stage'
     root: /mnt/gfs/stanfordsummer.stage/livedev/docroot
@@ -28,7 +28,7 @@ prod:
   ac-site: stanfordsummer
   ac-env: prod
   ac-realm: prod
-  uri: summer.sites-pro.stanford.edu
+  uri: summer
   prod.livedev:
     parent: '@stanfordsummer.prod'
     root: /mnt/gfs/stanfordsummer.prod/livedev/docroot

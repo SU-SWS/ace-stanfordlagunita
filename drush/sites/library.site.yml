@@ -6,7 +6,7 @@ dev:
   ac-site: stanfordlagunita
   ac-env: dev
   ac-realm: prod
-  uri: library-dev.sites-pro.stanford.edu
+  uri: library
   dev.livedev:
     parent: '@library.dev'
     root: /mnt/gfs/stanfordlagunita.dev/livedev/docroot
@@ -17,7 +17,7 @@ test:
   ac-site: stanfordlagunita
   ac-env: test
   ac-realm: prod
-  uri: library-test.sites-pro.stanford.edu
+  uri: library
   test.livedev:
     parent: '@library.test'
     root: /mnt/gfs/stanfordlagunita.test/livedev/docroot
@@ -28,7 +28,7 @@ prod:
   ac-site: stanfordlagunita
   ac-env: prod
   ac-realm: prod
-  uri: library.sites-pro.stanford.edu
+  uri: library
   prod.livedev:
     parent: '@library.prod'
     root: /mnt/gfs/stanfordlagunita.prod/livedev/docroot

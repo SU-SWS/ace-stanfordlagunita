@@ -4,10 +4,13 @@
 drush:
   paths:
     config:
-      # Load a drush.yml configuration file from the current working directory.
+      # Load a drush.yml configuration file from the current working directory. These are relative to where the drush
+      # is being executed, so we add various paths to the same file in case we're in different directories.
+      - docroot/sites/default/local.drush.yml
       - ../docroot/sites/default/local.drush.yml
       # Allow local global config overrides.
       - local.drush.yml
-    include:
-      - '${env.home}/.drush'
-      - /usr/share/drush/commands
+      - drush/local.drush.yml
+  include:
+    - '${env.home}/.drush'
+    - /usr/share/drush/commands
