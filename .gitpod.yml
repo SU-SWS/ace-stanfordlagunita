@@ -19,7 +19,8 @@ ports:
     visibility: public
   - port: 8002-9999
     onOpen: ignore
-image: pookmish/drupal8ci:gitpod
+image:
+  file: .gitpod.Dockerfile
 tasks:
   - name: Drupal Prep
     init: >
