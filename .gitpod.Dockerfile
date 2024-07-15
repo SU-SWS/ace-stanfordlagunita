@@ -38,6 +38,5 @@ RUN echo 'keychain id_rsa' >> /etc/bash.bashrc
 RUN echo '. ~/.keychain/`uname -n` -sh' >> /etc/bash.bashrc
 
 RUN mkdir -p /home/gitpod/.ssh
-COPY ssh_config /home/gitpod/.ssh/config
 
 RUN ls /etc/apache2/mods-enabled/
