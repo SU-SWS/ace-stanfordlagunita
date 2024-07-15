@@ -1,4 +1,4 @@
-FROM gitpod/workspace-mysql:2024-07-02-14-18-47
+FROM gitpod/workspace-mysql:2024-06-10-10-39-01
 
 RUN sudo apt-get update && sudo apt-get install -y \
     imagemagick \
