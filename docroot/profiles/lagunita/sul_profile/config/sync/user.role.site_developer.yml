@@ -63,7 +63,6 @@ dependencies:
     - metatag
     - node
     - node_revision_delete
-    - page_manager
     - paragraphs
     - path
     - pathauto
@@ -150,7 +149,6 @@ permissions:
   - 'administer node_revision_delete'
   - 'administer node_type labels'
   - 'administer nodes'
-  - 'administer pages'
   - 'administer paragraph display'
   - 'administer paragraph fields'
   - 'administer paragraph form display'
