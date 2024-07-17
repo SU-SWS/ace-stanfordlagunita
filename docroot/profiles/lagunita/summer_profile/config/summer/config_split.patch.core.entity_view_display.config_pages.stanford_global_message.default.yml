@@ -1,0 +1,7 @@
+adding: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.config_pages.stanford_global_message.su_global_msg_type
+  hidden:
+    su_global_msg_type: true
