@@ -277,3 +277,8 @@ removing:
     paragraph:
       stanford_accordion:
         query_load_enabled: true
+  field_config:
+    config_pages:
+      stanford_global_message:
+        su_global_msg_type:
+          enabled: true

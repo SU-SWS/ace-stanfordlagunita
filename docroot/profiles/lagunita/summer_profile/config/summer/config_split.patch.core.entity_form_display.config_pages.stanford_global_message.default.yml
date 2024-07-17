@@ -1,9 +1,25 @@
-adding: {  }
-removing:
-  dependencies:
-    config:
-      - field.field.config_pages.stanford_global_message.su_global_msg_type
+adding:
   content:
+    su_global_msg_header:
+      weight: 2
+    su_global_msg_label:
+      weight: 1
+    su_global_msg_link:
+      weight: 4
+    su_global_msg_message:
+      weight: 3
+  hidden:
+    su_global_msg_type: true
+removing:
+  content:
+    su_global_msg_header:
+      weight: 3
+    su_global_msg_label:
+      weight: 2
+    su_global_msg_link:
+      weight: 5
+    su_global_msg_message:
+      weight: 4
     su_global_msg_type:
       type: options_select
       weight: 1
