@@ -16881,16 +16881,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "10.1.17",
+            "version": "10.1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "3cf05609834071edcc6792ec2c3acc696587d915"
+                "reference": "42a8b308b9e51f6dfa7712099938d1c700d08e50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/3cf05609834071edcc6792ec2c3acc696587d915",
-                "reference": "3cf05609834071edcc6792ec2c3acc696587d915",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/42a8b308b9e51f6dfa7712099938d1c700d08e50",
+                "reference": "42a8b308b9e51f6dfa7712099938d1c700d08e50",
                 "shasum": ""
             },
             "require": {
@@ -16951,6 +16951,9 @@
                     "drupal/google_analytics": {
                         "https://www.drupal.org/project/google_analytics/issues/3373921": "https://www.drupal.org/files/issues/2023-08-07/google-analytics-issues-3373921-cannot-install-from-existing-config-11.patch"
                     },
+                    "drupal/graphql_compose": {
+                        "https://www.drupal.org/project/graphql_compose/issues/3461818": "https://git.drupalcode.org/project/graphql_compose/-/merge_requests/90.patch"
+                    },
                     "drupal/jsonapi_views": {
                         "https://www.drupal.org/project/jsonapi_views/issues/3213575": "https://www.drupal.org/files/issues/2023-09-29/3213575-views_json-pagination-10.patch"
                     },
@@ -16997,9 +17000,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.17"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.18"
             },
-            "time": "2024-07-15T15:39:26+00:00"
+            "time": "2024-07-16T18:31:32+00:00"
         },
         {
             "name": "su-sws/react_paragraphs",
@@ -17166,16 +17169,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "8.6.0",
+            "version": "8.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "6b26c5f884019b97d23ff28da70fca4aee2fb7cb"
+                "reference": "8e5960f089e1a045a75bb93bd85949a0d2790321"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/6b26c5f884019b97d23ff28da70fca4aee2fb7cb",
-                "reference": "6b26c5f884019b97d23ff28da70fca4aee2fb7cb",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/8e5960f089e1a045a75bb93bd85949a0d2790321",
+                "reference": "8e5960f089e1a045a75bb93bd85949a0d2790321",
                 "shasum": ""
             },
             "require": {
@@ -17217,9 +17220,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.0"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.1"
             },
-            "time": "2024-06-26T17:56:53+00:00"
+            "time": "2024-07-17T17:47:30+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
@@ -17227,12 +17230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "a6329a0d3eef7e99a3147f35bf008e7699537685"
+                "reference": "05ec5d1552e8454c30cc4f3bf1e0e72f16390a8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/a6329a0d3eef7e99a3147f35bf008e7699537685",
-                "reference": "a6329a0d3eef7e99a3147f35bf008e7699537685",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/05ec5d1552e8454c30cc4f3bf1e0e72f16390a8f",
+                "reference": "05ec5d1552e8454c30cc4f3bf1e0e72f16390a8f",
                 "shasum": ""
             },
             "require": {
@@ -17399,7 +17402,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
             },
-            "time": "2024-07-05T16:43:34+00:00"
+            "time": "2024-07-17T17:03:25+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -17407,12 +17410,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "bc69fb6f207051c1b29a38a2e78778877b99e8a3"
+                "reference": "f873c31ec89e9cc2a09710a6d28fe0eb621ab4e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/bc69fb6f207051c1b29a38a2e78778877b99e8a3",
-                "reference": "bc69fb6f207051c1b29a38a2e78778877b99e8a3",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/f873c31ec89e9cc2a09710a6d28fe0eb621ab4e4",
+                "reference": "f873c31ec89e9cc2a09710a6d28fe0eb621ab4e4",
                 "shasum": ""
             },
             "require": {
@@ -17503,7 +17506,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2024-07-15T15:30:19+00:00"
+            "time": "2024-07-16T21:43:50+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
