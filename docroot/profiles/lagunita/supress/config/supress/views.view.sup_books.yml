@@ -10,6 +10,7 @@ dependencies:
     - graphql_compose_views
     - node
     - stanford_fields
+    - supress_helper
     - user
     - views_taxonomy_term_name_depth
 id: sup_books
@@ -466,34 +467,15 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  award_winners_graphql:
-    id: award_winners_graphql
-    display_title: 'GraphQL: Award Winners'
-    display_plugin: graphql
+  award_winners_filtered:
+    id: award_winners_filtered
+    display_title: 'Award Winners Filtered'
+    display_plugin: viewfield_block
     position: 1
     display_options:
-      pager:
-        type: full
-        options:
-          offset: 0
-          pagination_heading_level: h4
-          items_per_page: 3
-          total_pages: null
-          id: 0
-          tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: true
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72,75,78,81,84,87,90,93,96,99'
-            items_per_page_options_all: true
-            items_per_page_options_all_label: '- All -'
-            offset: true
-            offset_label: Offset
-          quantity: 9
+      display_extenders: {  }
+      display_description: ''
+      block_category: 'Press Books (Views)'
       filters:
         status:
           id: status
@@ -522,16 +504,15 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
           operator: 'not empty'
           value:
             min: ''
             max: ''
             value: ''
-          group: 1
+          group: '1'
           exposed: false
           expose:
-            operator_id: ''
+            operator_id: false
             label: ''
             description: ''
             use_operator: false
@@ -544,6 +525,197 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  award_winners_graphql:
+    id: award_winners_graphql
+    display_title: 'GraphQL: Award Winners'
+    display_plugin: graphql
+    position: 1
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 3
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: true
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72,75,78,81,84,87,90,93,96,99'
+            items_per_page_options_all: true
+            items_per_page_options_all_label: '- All -'
+            offset: true
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: graphql
+        options:
+          submit_button: Apply
+          reset_button: 0
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: 1
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            sup_book: sup_book
+        sup_year_value:
+          id: sup_year_value
+          table: sup_award__sup_year
+          field: sup_year_value
+          relationship: sup_book_awards
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: sup_year_value_op
+            label: 'Min Award Year (sup_year)'
+            description: ''
+            use_operator: false
+            operator: sup_year_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: year_min
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+              layout_builder_user: '0'
+              su_site_embedder: '0'
+              decoupled_site_users: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        sup_year_value_1:
+          id: sup_year_value_1
+          table: sup_award__sup_year
+          field: sup_year_value
+          relationship: sup_book_awards
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: sup_year_value_1_op
+            label: 'Year (sup_year)'
+            description: ''
+            use_operator: false
+            operator: sup_year_value_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: year_max
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
+              contributor: '0'
+              site_manager: '0'
+              site_editor: '0'
+              site_builder: '0'
+              site_developer: '0'
+              layout_builder_user: '0'
+              su_site_embedder: '0'
+              decoupled_site_users: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
@@ -564,8 +736,19 @@ display:
         groups:
           1: AND
       defaults:
+        relationships: false
         filters: false
         filter_groups: false
+      relationships:
+        sup_book_awards:
+          id: sup_book_awards
+          table: node__sup_book_awards
+          field: sup_book_awards
+          relationship: none
+          group_type: group
+          admin_label: 'sup_book_awards: Press Award'
+          plugin_id: standard
+          required: true
       display_description: ''
       display_extenders: {  }
       graphql_query_name: supBooksAwardWinners
