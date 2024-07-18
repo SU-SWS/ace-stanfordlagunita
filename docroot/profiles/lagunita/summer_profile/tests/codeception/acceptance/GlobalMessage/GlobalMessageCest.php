@@ -42,7 +42,6 @@ class GlobalMessageCest {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/global-message');
     $I->checkOption('#edit-su-global-msg-enabled-value');
-    $I->selectOption("#edit-su-global-msg-type", "success");
     $I->fillField('Label', 'MESSAGE LABEL');
     $I->fillField('Headline', 'MESSAGE HEADER');
     $I->fillField('#edit-su-global-msg-message-0-value', '<p>This is the message body.</p>');
@@ -57,8 +56,6 @@ class GlobalMessageCest {
     $I->canSee("MESSAGE HEADER");
     $I->canSee("This is the message body");
     $I->canSee("Action link");
-    $I->amOnPage('/admin/config/system/global-message');
-    $I->selectOption("#edit-su-global-msg-type", "error");
     $I->click('Save');
     $I->see('Global Message has been', '.messages-list');
 
