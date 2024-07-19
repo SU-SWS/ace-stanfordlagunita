@@ -17176,16 +17176,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "8.6.1",
+            "version": "8.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "8e5960f089e1a045a75bb93bd85949a0d2790321"
+                "reference": "bef0e3eeee1d1c5121079ba597a53110b48ac456"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/8e5960f089e1a045a75bb93bd85949a0d2790321",
-                "reference": "8e5960f089e1a045a75bb93bd85949a0d2790321",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/bef0e3eeee1d1c5121079ba597a53110b48ac456",
+                "reference": "bef0e3eeee1d1c5121079ba597a53110b48ac456",
                 "shasum": ""
             },
             "require": {
@@ -17227,9 +17227,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.1"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.2"
             },
-            "time": "2024-07-17T17:47:30+00:00"
+            "time": "2024-07-19T20:56:30+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
@@ -17417,12 +17417,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "dc4078b9495ed5afe01e7950329f63d06376935b"
+                "reference": "b08e631c4a75e7c46cf1a5b6d78fa890479f20fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/dc4078b9495ed5afe01e7950329f63d06376935b",
-                "reference": "dc4078b9495ed5afe01e7950329f63d06376935b",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/b08e631c4a75e7c46cf1a5b6d78fa890479f20fd",
+                "reference": "b08e631c4a75e7c46cf1a5b6d78fa890479f20fd",
                 "shasum": ""
             },
             "require": {
@@ -17513,7 +17513,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2024-07-19T20:01:26+00:00"
+            "time": "2024-07-19T20:57:02+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
