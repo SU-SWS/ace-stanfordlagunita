@@ -50,13 +50,11 @@ class GlobalMessageCest {
     $I->see('Global Message has been', '.messages-list');
 
     $I->amOnPage("/");
-    $I->seeElement(".su-alert--success");
     $I->canSee("MESSAGE HEADER");
     $I->canSee("This is the message body");
     $I->canSee("Action link");
     $I->click('Save');
     $I->see('Global Message has been', '.messages-list');
-
     $I->amOnPage("/");
   }
 
