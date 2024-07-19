@@ -1,16 +1,18 @@
 adding:
   dependencies:
     config:
-      - field.storage.node.sup_book_authors
-      - field.storage.node.sup_book_authors_full
-      - field.storage.node.sup_book_imprint
       - field.storage.node.sup_book_pub_date_first
+      - field.storage.node.sup_book_authors_full
+      - field.storage.node.sup_book_authors
+      - field.storage.node.sup_book_awards
+      - field.storage.node.sup_book_imprint
       - field.storage.node.sup_book_series
       - field.storage.node.sup_book_subjects
+      - field.storage.node.sup_book_subtitle
       - field.storage.node.sup_book_type
   field_settings:
     book_authors:
-      label: 'Authors (full)'
+      label: 'Sup Book Authors (full)'
       datasource_id: 'entity:node'
       property_path: sup_book_authors_full
       type: string
@@ -18,15 +20,23 @@ adding:
         config:
           - field.storage.node.sup_book_authors_full
     book_authors_last_name:
-      label: 'Book Authors » Family'
+      label: 'Sup Book Authors » Family'
       datasource_id: 'entity:node'
       property_path: 'sup_book_authors:family'
       type: string
       dependencies:
         config:
           - field.storage.node.sup_book_authors
+    book_award_winner:
+      label: 'Sup Book Awards'
+      datasource_id: 'entity:node'
+      property_path: sup_book_awards
+      type: boolean
+      dependencies:
+        config:
+          - field.storage.node.sup_book_awards
     book_imprint:
-      label: 'Imprint » Taxonomy term » Name'
+      label: 'Sup Book Imprint » Taxonomy term » Name'
       datasource_id: 'entity:node'
       property_path: 'sup_book_imprint:entity:name'
       type: string
@@ -44,7 +54,7 @@ adding:
         config:
           - field.storage.node.sup_book_pub_date_first
     book_series:
-      label: 'Series » Taxonomy term » Name'
+      label: 'Sup Book Series » Taxonomy term » Name'
       datasource_id: 'entity:node'
       property_path: 'sup_book_series:entity:name'
       type: string
@@ -54,7 +64,7 @@ adding:
         module:
           - taxonomy
     book_subject:
-      label: 'Book Subjects » Taxonomy term » Parent Name'
+      label: 'Sup Book Subjects » Taxonomy term » Parent Name'
       datasource_id: 'entity:node'
       property_path: 'sup_book_subjects:entity:tid'
       type: string
@@ -63,8 +73,16 @@ adding:
           - field.storage.node.sup_book_subjects
         module:
           - taxonomy
+    book_subtitle:
+      label: 'Sup Book Subtitle'
+      datasource_id: 'entity:node'
+      property_path: sup_book_subtitle
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_subtitle
     book_type:
-      label: Type
+      label: 'Sup Book Type'
       datasource_id: 'entity:node'
       property_path: sup_book_type
       type: string
@@ -91,6 +109,7 @@ adding:
         - book_imprint
         - book_series
         - book_subject
+        - book_subtitle
         - book_type
 removing:
   field_settings:
