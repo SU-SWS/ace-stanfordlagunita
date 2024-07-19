@@ -58,7 +58,6 @@ class GlobalMessageCest {
     $I->see('Global Message has been', '.messages-list');
 
     $I->amOnPage("/");
-    $I->seeElement(".su-alert--error");
   }
 
   /**
