@@ -38,7 +38,7 @@ class GlobalMessageCest {
   /**
    * Test the Form Settings.
    */
-  protected function testFormSettings(AcceptanceTester $I) {
+  public function testFormSettings(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/global-message');
     $I->checkOption('#edit-su-global-msg-enabled-value');
