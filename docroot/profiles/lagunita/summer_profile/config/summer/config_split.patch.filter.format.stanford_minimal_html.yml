@@ -1,0 +1,13 @@
+adding:
+  filters:
+    filter_html:
+      settings:
+        allowed_html: '<br> <p id class> <a class aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id href> <div class id> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <cite> <dd> <blockquote cite> <strong> <em> <code> <ul> <ol reversed start> <li>'
+removing:
+  dependencies:
+    module:
+      - responsive_tables_filter
+  filters:
+    filter_html:
+      settings:
+        allowed_html: '<br> <p id class> <a class aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id href> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <cite> <dd> <div id class> <blockquote cite> <strong> <em> <code> <ul> <ol reversed start> <li>'

@@ -1,0 +1,10 @@
+adding:
+  filters:
+    filter_html:
+      settings:
+        allowed_html: '<br> <p class id> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <a class aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name href> <div class id> <b> <cite> <dt> <pre class> <code data-* class> <dl class> <dd class> <i class> <aside class> <img src alt title class> <abbr id title> <span id class> <blockquote cite> <ul id type class> <ol id type class start> <li id class> <table id class> <tbody class> <th scope id class rowspan colspan> <td id class rowspan colspan> <tr id> <drupal-media data-* title alt> <strong> <em> <s> <sub> <sup> <hr> <thead> <tfoot> <caption>'
+removing:
+  filters:
+    filter_html:
+      settings:
+        allowed_html: '<br> <p class id> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <a class aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name href> <b> <cite> <dt> <pre class> <code data-* class> <dl class> <dd class> <div id class> <i class> <aside class> <img src alt title class> <abbr id title> <span id class> <blockquote cite> <ul id type class> <ol id type class start> <li id class> <table id class> <tbody class> <th scope id class rowspan colspan> <td id class rowspan colspan> <tr id> <drupal-media data-* title alt> <strong> <em> <s> <sub> <sup> <hr> <thead> <tfoot> <caption>'

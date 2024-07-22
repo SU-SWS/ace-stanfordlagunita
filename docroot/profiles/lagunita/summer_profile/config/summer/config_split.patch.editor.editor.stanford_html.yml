@@ -1,0 +1,9 @@
+adding:
+  settings:
+    plugins:
+      ckeditor5_style:
+        styles:
+          -
+            label: 'Left Vertical Bar'
+            element: '<div class="sum-left-bar">'
+removing: {  }
