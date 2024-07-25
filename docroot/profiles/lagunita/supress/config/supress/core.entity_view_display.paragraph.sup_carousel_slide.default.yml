@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.sup_carousel_slide.sup_slide_bg_image
     - field.field.paragraph.sup_carousel_slide.sup_slide_body
-    - field.field.paragraph.sup_carousel_slide.sup_slide_body_size
-    - field.field.paragraph.sup_carousel_slide.sup_slide_book
     - field.field.paragraph.sup_carousel_slide.sup_slide_button
     - field.field.paragraph.sup_carousel_slide.sup_slide_color
     - field.field.paragraph.sup_carousel_slide.sup_slide_eyebrow
@@ -53,22 +51,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  sup_slide_book:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: teaser
-      link: false
-    third_party_settings:
-      empty_fields:
-        handler: ''
-      field_formatter_class:
-        class: ''
-      field_label:
-        label_value: ''
-        label_tag: ''
-    weight: 1
     region: content
   sup_slide_button:
     type: link
@@ -133,7 +115,6 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
-  sup_slide_body_size: true
   sup_slide_color: true
   sup_slide_hide: true
   sup_slide_orientation: true

@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.sup_carousel_slide.sup_slide_bg_image
     - field.field.paragraph.sup_carousel_slide.sup_slide_body
-    - field.field.paragraph.sup_carousel_slide.sup_slide_body_size
-    - field.field.paragraph.sup_carousel_slide.sup_slide_book
     - field.field.paragraph.sup_carousel_slide.sup_slide_button
     - field.field.paragraph.sup_carousel_slide.sup_slide_color
     - field.field.paragraph.sup_carousel_slide.sup_slide_eyebrow
@@ -29,12 +27,11 @@ third_party_settings:
         - sup_slide_color
         - sup_slide_orientation
         - sup_slide_title_size
-        - sup_slide_body_size
         - sup_slide_hide
       label: Styles/Behaviors
       region: content
       parent_name: ''
-      weight: 8
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -50,7 +47,7 @@ mode: default
 content:
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 8
     region: content
     settings:
       display_label: true
@@ -64,31 +61,15 @@ content:
     third_party_settings: {  }
   sup_slide_body:
     type: text_textarea
-    weight: 6
+    weight: 5
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  sup_slide_body_size:
-    type: options_select
-    weight: 12
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  sup_slide_book:
-    type: entity_reference_autocomplete
-    weight: 1
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   sup_slide_button:
     type: link_default
-    weight: 7
+    weight: 6
     region: content
     settings:
       placeholder_url: ''
@@ -102,7 +83,7 @@ content:
     third_party_settings: {  }
   sup_slide_eyebrow:
     type: string_textfield
-    weight: 3
+    weight: 2
     region: content
     settings:
       size: 60
@@ -116,7 +97,7 @@ content:
     third_party_settings: {  }
   sup_slide_image:
     type: media_library_widget
-    weight: 2
+    weight: 1
     region: content
     settings:
       media_types: {  }
@@ -129,7 +110,7 @@ content:
     third_party_settings: {  }
   sup_slide_subtitle:
     type: string_textfield
-    weight: 5
+    weight: 4
     region: content
     settings:
       size: 60
@@ -137,7 +118,7 @@ content:
     third_party_settings: {  }
   sup_slide_title:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60

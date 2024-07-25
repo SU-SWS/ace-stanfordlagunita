@@ -238,10 +238,6 @@ adding:
       sup_carousel_slide:
         sup_slide_body:
           enabled: true
-        sup_slide_body_size:
-          enabled: true
-        sup_slide_book:
-          enabled: true
         sup_slide_button:
           enabled: true
         sup_slide_color:
