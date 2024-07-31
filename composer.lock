@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01b7ac2a5d22030d05e24b128c93ab19",
+    "content-hash": "47f2bdb3cc61077cc932cc140565a6d3",
     "packages": [
         {
             "name": "acquia/blt",
@@ -5889,26 +5889,26 @@
         },
         {
             "name": "drupal/field_label",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_label.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_label-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "e114bcc413674a3b36b0555652217814d7cb8906"
+                "url": "https://ftp.drupal.org/files/projects/field_label-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "13c25ff0eead4a727547613e0af561aa1848a15c"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^8.8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1707244848",
+                    "version": "8.x-1.5",
+                    "datestamp": "1722439742",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7962,20 +7962,20 @@
         },
         {
             "name": "drupal/layout_paragraphs",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_paragraphs.git",
-                "reference": "2.0.7"
+                "reference": "2.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-2.0.7.zip",
-                "reference": "2.0.7",
-                "shasum": "fcfbcfdd019bf12c95124e701764aa126b3ec000"
+                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-2.0.8.zip",
+                "reference": "2.0.8",
+                "shasum": "a47e8cb60657c5aad1ad0b267d0c621c7e01a31c"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10",
+                "drupal/core": "^9.2 || ^10 || ^11",
                 "drupal/paragraphs": "^1.6"
             },
             "require-dev": {
@@ -7986,8 +7986,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.7",
-                    "datestamp": "1722017952",
+                    "version": "2.0.8",
+                    "datestamp": "1722385148",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -17461,12 +17461,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "ae0f48c656b296e330da855448e037c6c7231ec6"
+                "reference": "24ef7a95559d700112d74424f8f751e089b670d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/ae0f48c656b296e330da855448e037c6c7231ec6",
-                "reference": "ae0f48c656b296e330da855448e037c6c7231ec6",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/24ef7a95559d700112d74424f8f751e089b670d6",
+                "reference": "24ef7a95559d700112d74424f8f751e089b670d6",
                 "shasum": ""
             },
             "require": {
@@ -17558,7 +17558,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2024-07-30T16:42:02+00:00"
+            "time": "2024-07-31T16:26:44+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",

@@ -20,12 +20,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  sup_media_file_group:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   path: true
   publish_on: true
   status: true
   sup_media_file: true
-  sup_media_file_group: true
   uid: true
   unpublish_on: true
