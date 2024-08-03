@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Factory;
-use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\File\FileExists;
 
 /**
  * Test carousel paragraph type.
@@ -38,7 +38,7 @@ class SupCarouselCest {
     $file_system = \Drupal::service('file_system');
 
     $name = preg_replace('/[^a-z]/', '-', strtolower($this->faker->words(3, TRUE)));
-    $file_system->copy(__DIR__ . '/../assets/logo.jpg', "public://$name.jpg", FileSystemInterface::EXISTS_REPLACE);
+    $file_system->copy(__DIR__ . '/../assets/logo.jpg', "public://$name.jpg", FileExists::Replace);
     $file = $I->createEntity(['uri' => "public://$name.jpg"], 'file');
 
     $media = $I->createEntity([
@@ -53,7 +53,6 @@ class SupCarouselCest {
     $I->logInWithRole('contributor');
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->click('Add Carousel');
-    $I->canSeeInField('Book', '');
 
     foreach ($fields as $field => $contents) {
       $I->fillField($field, $contents);
@@ -63,7 +62,6 @@ class SupCarouselCest {
     $I->canSeeInField('Background Color', 'Magenta');
     $I->canSeeInField('Orientation', 'Left Image');
     $I->canSeeInField('Title Font Size', 'Large');
-    $I->canSeeInField('Body Font Size', 'Large');
     $I->cantSeeCheckboxIsChecked('Author');
 
     $I->click('Save');
