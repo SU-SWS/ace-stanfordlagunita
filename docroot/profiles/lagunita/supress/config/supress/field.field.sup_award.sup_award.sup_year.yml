@@ -12,7 +12,7 @@ entity_type: sup_award
 bundle: sup_award
 label: Year
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

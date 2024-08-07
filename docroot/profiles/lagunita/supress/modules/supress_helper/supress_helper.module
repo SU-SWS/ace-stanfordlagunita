@@ -33,7 +33,7 @@ function supress_helper_library_info_alter(&$libraries, $extension) {
     $libraries['internal.drupal.ckeditor5.stylesheets'] = [
       'css' => [
         'theme' => [
-          "/$module_path/styles/dist/css/ckeditor.css" => []
+          "/$module_path/styles/dist/css/ckeditor.css" => [],
         ],
       ],
     ];
