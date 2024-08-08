@@ -17229,16 +17229,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "8.6.3",
+            "version": "8.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "6741704bf5b4f1a7947adf2afd4b5b48ab5ee5b5"
+                "reference": "4578493dbddb2c44e5f9e8c231601a51ca3a8af0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/6741704bf5b4f1a7947adf2afd4b5b48ab5ee5b5",
-                "reference": "6741704bf5b4f1a7947adf2afd4b5b48ab5ee5b5",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/4578493dbddb2c44e5f9e8c231601a51ca3a8af0",
+                "reference": "4578493dbddb2c44e5f9e8c231601a51ca3a8af0",
                 "shasum": ""
             },
             "require": {
@@ -17280,9 +17280,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.3"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.4"
             },
-            "time": "2024-07-31T16:39:35+00:00"
+            "time": "2024-08-08T22:50:27+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
@@ -26962,12 +26962,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford-caravan.git",
-                "reference": "96a9b4d61d8ee32c726332f712e493d0a70049ec"
+                "reference": "d942917c0e879e154239dcc58ba4b3d1de473f9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/96a9b4d61d8ee32c726332f712e493d0a70049ec",
-                "reference": "96a9b4d61d8ee32c726332f712e493d0a70049ec",
+                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/d942917c0e879e154239dcc58ba4b3d1de473f9a",
+                "reference": "d942917c0e879e154239dcc58ba4b3d1de473f9a",
                 "shasum": ""
             },
             "require": {
@@ -26997,7 +26997,7 @@
                 "issues": "https://github.com/SU-SWS/stanford-caravan/issues",
                 "source": "https://github.com/SU-SWS/stanford-caravan/tree/10.x"
             },
-            "time": "2023-12-12T16:28:32+00:00"
+            "time": "2024-08-08T17:42:44+00:00"
         },
         {
             "name": "symfony/browser-kit",

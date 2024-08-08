@@ -14,8 +14,11 @@ use Drupal\stanford_migrate\Plugin\migrate_plus\data_parser\LocalistJson;
  */
 class SulLocalistJson extends LocalistJson {
 
-  protected function getSourceData(string $url): array {
-    $source_data = parent::getSourceData($url);
+  /**
+   * {@inheritDoc}
+   */
+  protected function getSourceData(string $url, string|int $item_selector = ''): array {
+    $source_data = parent::getSourceData($url, $item_selector);
 
     $event_ids = [];
     foreach ($source_data as $key => $item) {
