@@ -164,7 +164,6 @@ permissions:
   - 'create media'
   - 'create new books'
   - 'create policy log'
-  - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_gallery_images media'
   - 'create stanford_news content'
