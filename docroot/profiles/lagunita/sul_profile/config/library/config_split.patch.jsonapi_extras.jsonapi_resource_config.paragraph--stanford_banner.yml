@@ -1,9 +1,0 @@
-adding:
-  resourceFields:
-    metatag:
-      disabled: true
-      fieldName: metatag
-      publicName: metatag
-      enhancer:
-        id: ''
-removing: {  }

@@ -1,8 +1,0 @@
-adding:
-  resourceFields:
-    title:
-      disabled: true
-removing:
-  resourceFields:
-    title:
-      disabled: false
