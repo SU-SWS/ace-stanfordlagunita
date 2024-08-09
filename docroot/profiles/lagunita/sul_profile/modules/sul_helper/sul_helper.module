@@ -11,7 +11,6 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
-use Drupal\paragraphs\ParagraphInterface;
 
 /**
  * Implements hook_paragraphs_behavior_info_alter().
