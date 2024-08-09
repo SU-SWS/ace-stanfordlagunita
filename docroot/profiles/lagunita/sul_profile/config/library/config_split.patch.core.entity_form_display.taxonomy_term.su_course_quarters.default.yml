@@ -1,5 +1,4 @@
 adding:
-  uuid: 4947512f-b10b-4bf7-b6e3-e0cda39d800e
   dependencies:
     module:
       - path
@@ -24,7 +23,6 @@ adding:
     status:
       weight: 100
 removing:
-  uuid: 2cf25db6-2fc0-470a-b8cc-9e8757ad6366
   content:
     name:
       weight: 0

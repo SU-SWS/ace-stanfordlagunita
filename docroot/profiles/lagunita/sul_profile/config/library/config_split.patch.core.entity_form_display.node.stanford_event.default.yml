@@ -102,5 +102,4 @@ removing:
     su_metatags:
       weight: 12
   hidden:
-    layout_builder__layout: true
     unpublish_on: true

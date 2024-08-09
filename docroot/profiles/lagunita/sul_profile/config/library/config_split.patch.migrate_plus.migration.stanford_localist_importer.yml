@@ -100,6 +100,70 @@ adding:
         name: departments
         label: Departments
         selector: event/departments
+      -
+        name: geo_zip
+        label: 'Geo Zip'
+        selector: event/geo/zip
+      -
+        name: filters
+        label: Filters
+        selector: event/filters
+      -
+        name: event_audience
+        label: 'Event Audience'
+        selector: event/filters/event_audience
+      -
+        name: event_subject
+        label: 'Event Subject'
+        selector: event/filters/event_subject
+      -
+        name: event_types
+        label: 'Event Types'
+        selector: event/filters/event_types
+      -
+        name: custom_fields
+        label: 'Custom Fields'
+        selector: event/custom_fields
+      -
+        name: localist_url
+        label: 'Localist URL'
+        selector: event/localist_url
+      -
+        name: localist_ics_url
+        label: 'Localist ICS URL'
+        selector: event/localist_ics_url
+      -
+        name: photo_url
+        label: 'Photo URL'
+        selector: event/photo_url
+      -
+        name: venue_url
+        label: 'Venue URL'
+        selector: event/venue_url
+      -
+        name: event_instances
+        label: 'Event Instances'
+        selector: event/event_instances
+      -
+        name: event_instance_id
+        label: 'Event Instance ID'
+        selector: event/event_instances/0/event_instance/id
+      -
+        name: event_instance_start
+        label: 'Event Instance Start'
+        selector: event/event_instances/0/event_instance/start
+      -
+        name: event_instance_end
+        label: 'Event Instance End'
+        selector: event/event_instances/0/event_instance/end
+      -
+        name: groups
+        label: Groups
+        selector: event/groups
+      -
+        name: departments
+        label: Departments
+        selector: event/departments
     ids:
       event_id:
         type: string
@@ -123,27 +187,6 @@ adding:
           - geo_state
           - constants/plus
           - geo_zip
-    start_time:
-      plugin: str_replace
-      regex: true
-      source: event_instance_start
-      search: '/.*(T.*)-.*$/'
-      replace: $1
-    end_time:
-      -
-        plugin: null_coalesce
-        source:
-          - event_instance_end
-          - event_instance_start
-      -
-        plugin: str_replace
-        regex: true
-        search: '/.*(T.*)-.*$/'
-        replace: $1
-      -
-        plugin: str_replace
-        search: '00:00:00'
-        replace: '23:59:00'
     su_event_date_time/value:
       -
         plugin: concat
@@ -166,6 +209,27 @@ adding:
         from_format: 'Y-m-d\TH:i:s'
         to_format: U
         from_timezone: America/Los_Angeles
+    start_time:
+      plugin: str_replace
+      regex: true
+      source: event_instance_start
+      search: '/.*(T.*)-.*$/'
+      replace: $1
+    end_time:
+      -
+        plugin: null_coalesce
+        source:
+          - event_instance_end
+          - event_instance_start
+      -
+        plugin: str_replace
+        regex: true
+        search: '/.*(T.*)-.*$/'
+        replace: $1
+      -
+        plugin: str_replace
+        search: '00:00:00'
+        replace: '23:59:00'
     image_file:
       -
         plugin: skip_on_empty
@@ -311,6 +375,166 @@ removing:
         name: school_id
         label: 'School ID'
         selector: event/school_id
+      -
+        name: campus_id
+        label: 'Campus ID'
+        selector: event/campus_id
+      -
+        name: recurring
+        label: Recurring
+        selector: event/recurring
+      -
+        name: free
+        label: Free
+        selector: event/free
+      -
+        name: private
+        label: Private
+        selector: event/private
+      -
+        name: verified
+        label: Verified
+        selector: event/verified
+      -
+        name: rejected
+        label: Rejected
+        selector: event/rejected
+      -
+        name: sponsored
+        label: Sponsored
+        selector: event/sponsored
+      -
+        name: venue_id
+        label: 'Venue ID'
+        selector: event/venue_id
+      -
+        name: ticket_url
+        label: 'Ticket URL'
+        selector: event/ticket_url
+      -
+        name: ticket_cost
+        label: 'Ticket Cost'
+        selector: event/ticket_cost
+      -
+        name: keywords
+        label: 'Keywords Array'
+        selector: event/keywords
+      -
+        name: tags
+        label: 'Tags Array'
+        selector: event/tags
+      -
+        name: description_text
+        label: 'Description Plaintext'
+        selector: event/description_text
+      -
+        name: photo_id
+        label: 'Photo ID'
+        selector: event/photo_id
+      -
+        name: detail_view
+        label: 'Detail View'
+        selector: event/detail_view
+      -
+        name: address
+        label: Address
+        selector: event/address
+      -
+        name: description
+        label: Description
+        selector: event/description
+      -
+        name: featured
+        label: Featured
+        selector: event/featured
+      -
+        name: geo_latitude
+        label: 'Geo Latitutde'
+        selector: event/geo/latitude
+      -
+        name: geo_longitude
+        label: 'Geo Longitude'
+        selector: event/geo/longitude
+      -
+        name: geo_street
+        label: 'Geo Street'
+        selector: event/geo/street
+      -
+        name: geo_city
+        label: 'Geo City'
+        selector: event/geo/city
+      -
+        name: geo_state
+        label: 'Geo State'
+        selector: event/geo/state
+      -
+        name: geo_country
+        label: 'Geo Country'
+        selector: event/geo/country
+      -
+        name: geo_zip
+        label: 'Geo Zip'
+        selector: event/geo/zip
+      -
+        name: filters
+        label: Filters
+        selector: event/filters
+      -
+        name: event_audience
+        label: 'Event Audience'
+        selector: event/filters/event_audience
+      -
+        name: event_subject
+        label: 'Event Subject'
+        selector: event/filters/event_subject
+      -
+        name: event_types
+        label: 'Event Types'
+        selector: event/filters/event_types
+      -
+        name: custom_fields
+        label: 'Custom Fields'
+        selector: event/custom_fields
+      -
+        name: localist_url
+        label: 'Localist URL'
+        selector: event/localist_url
+      -
+        name: localist_ics_url
+        label: 'Localist ICS URL'
+        selector: event/localist_ics_url
+      -
+        name: photo_url
+        label: 'Photo URL'
+        selector: event/photo_url
+      -
+        name: venue_url
+        label: 'Venue URL'
+        selector: event/venue_url
+      -
+        name: event_instances
+        label: 'Event Instances'
+        selector: event/event_instances
+      -
+        name: event_instance_id
+        label: 'Event Instance ID'
+        selector: event/event_instances/0/event_instance/id
+      -
+        name: event_instance_start
+        label: 'Event Instance Start'
+        selector: event/event_instances/0/event_instance/start
+      -
+        name: event_instance_end
+        label: 'Event Instance End'
+        selector: event/event_instances/0/event_instance/end
+      -
+        name: groups
+        label: Groups
+        selector: event/groups
+      -
+        name: departments
+        label: Departments
+        selector: event/departments
     ids:
       event_instance_id:
         type: string

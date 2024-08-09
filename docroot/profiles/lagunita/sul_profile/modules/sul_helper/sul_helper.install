@@ -95,7 +95,8 @@ function sul_helper_update_8005() {
     ->setData($config_storage->read('config_ignore.settings'))
     ->save();
 
-  foreach($config_storage->listAll('block.block.') as $name){
+  // Set the block configs to fix any issues like uuid's or others.
+  foreach ($config_storage->listAll('block.block.') as $name) {
     $config_factory->getEditable($name)
       ->setData($config_storage->read($name))
       ->save();

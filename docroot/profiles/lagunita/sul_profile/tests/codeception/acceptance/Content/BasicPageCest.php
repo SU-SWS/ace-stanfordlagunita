@@ -124,7 +124,7 @@ class BasicPageCest {
     $I->logInWithRole('site_manager');
     $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $I->amOnPage($node->toUrl()->toString());
-    $I->click('Revisions');
+    $I->click('Version History');
     $I->canSeeResponseCodeIs(200);
   }
 

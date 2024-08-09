@@ -24,6 +24,24 @@ adding:
           -
             label: 'Sub Title'
             element: '<p class="su-subheading">'
+          -
+            label: 'Splash Font'
+            element: '<p class="su-font-splash">'
+          -
+            label: 'Quote Text'
+            element: '<p class="su-quote-text">'
+          -
+            label: 'Drop Cap First Letter'
+            element: '<p class="su-drop-cap">'
+          -
+            label: 'Card Text'
+            element: '<p class="su-related-text">'
+          -
+            label: 'Callout Text'
+            element: '<p class="su-callout-text">'
+          -
+            label: 'Sub Title'
+            element: '<p class="su-subheading">'
 removing:
   settings:
     toolbar:
@@ -56,3 +74,30 @@ removing:
           -
             label: 'Secondary Button'
             element: '<a class="su-button--secondary">'
+          -
+            label: 'Action Link'
+            element: '<a class="su-link--action">'
+          -
+            label: Normal
+            element: '<p class="plain-text">'
+          -
+            label: 'Intro Text'
+            element: '<p class="su-intro-text">'
+          -
+            label: 'Splash Font'
+            element: '<p class="su-font-splash">'
+          -
+            label: 'Quote Text'
+            element: '<p class="su-quote-text">'
+          -
+            label: 'Drop Cap First Letter'
+            element: '<p class="su-drop-cap">'
+          -
+            label: 'Card Text'
+            element: '<p class="su-related-text">'
+          -
+            label: 'Callout Text'
+            element: '<p class="su-callout-text">'
+          -
+            label: 'Sub Title'
+            element: '<p class="su-subheading">'

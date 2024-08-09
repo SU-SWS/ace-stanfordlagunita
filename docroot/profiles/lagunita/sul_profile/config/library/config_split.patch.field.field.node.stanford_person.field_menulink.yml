@@ -1,11 +1,9 @@
 adding:
-  uuid: ead28c29-d74a-4364-be0b-31fc4deb1e4a
   settings:
     available_menus:
-      devel: '0'
       stanford-person-type: '0'
+      devel: '0'
 removing:
-  uuid: 7bf0fdd9-3c86-4662-af99-4076b4bb1f0e
   settings:
     available_menus:
       stanford-person-type: stanford-person-type

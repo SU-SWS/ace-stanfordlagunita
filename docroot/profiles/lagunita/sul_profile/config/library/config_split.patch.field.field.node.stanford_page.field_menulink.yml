@@ -1,9 +1,7 @@
 adding:
-  uuid: 4b42efbf-e5f6-4aad-9a42-79b69c5485ad
   translatable: true
   settings:
     available_menus:
       devel: '0'
 removing:
-  uuid: 41c50d8c-53e4-4ed3-b1e0-516915ddeb14
   translatable: false

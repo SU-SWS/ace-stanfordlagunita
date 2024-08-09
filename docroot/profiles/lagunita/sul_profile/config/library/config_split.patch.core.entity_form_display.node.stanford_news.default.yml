@@ -57,5 +57,4 @@ removing:
     su_shared_tags:
       weight: 9
   hidden:
-    layout_builder__layout: true
     unpublish_on: true

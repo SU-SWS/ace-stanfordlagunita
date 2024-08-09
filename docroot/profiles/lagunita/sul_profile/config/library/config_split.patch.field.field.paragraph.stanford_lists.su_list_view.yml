@@ -1,17 +1,17 @@
 adding:
   settings:
     allowed_views:
+      stanford_courses: '0'
+      stanford_publications: '0'
       sul_branch_locations: sul_branch_locations
       sul_people: sul_people
       sul_study_places: sul_study_places
       sul_shared_tag_events: sul_shared_tag_events
       change_logs: '0'
-      stanford_courses: '0'
       editoria11y_dismissals: '0'
       editoria11y_results: '0'
       authmap: '0'
       policies: '0'
-      stanford_publications: '0'
       samlauth_map: '0'
       taxonomy_term_pages: '0'
     allowed_display_types:
