@@ -774,7 +774,7 @@ class ListsCest {
       'type' => 'stanford_page',
       'title' => 'A' . $this->faker->text(15),
       'su_basic_page_type' => $type_term->id(),
-      'created' => time() - 120,
+      'created' => time() - (60 * 60 * 24 * 7),
     ]);
 
     $I->amOnPage("/node/{$basic_page_entity->id()}/edit");
