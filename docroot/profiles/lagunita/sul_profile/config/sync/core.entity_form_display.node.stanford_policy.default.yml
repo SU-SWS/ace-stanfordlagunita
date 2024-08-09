@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.stanford_policy.body
     - field.field.node.stanford_policy.field_menulink
+    - field.field.node.stanford_policy.layout_builder__layout
     - field.field.node.stanford_policy.su_policy_authority
     - field.field.node.stanford_policy.su_policy_auto_prefix
     - field.field.node.stanford_policy.su_policy_changelog
@@ -66,7 +67,7 @@ content:
         hide_guidelines: '0'
   field_menulink:
     type: menu_link_default
-    weight: 13
+    weight: 53
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -78,18 +79,18 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 52
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 11
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -111,7 +112,7 @@ content:
     third_party_settings: {  }
   su_policy_changelog:
     type: inline_entity_form_complex
-    weight: 10
+    weight: 11
     region: content
     settings:
       form_mode: default
@@ -125,7 +126,6 @@ content:
       collapsible: false
       collapsed: false
       revision: false
-      removed_reference: optional
     third_party_settings: {  }
   su_policy_chapter:
     type: string_textfield
@@ -218,7 +218,7 @@ content:
             selector: ''
   su_policy_related:
     type: options_select
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -287,6 +287,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  layout_builder__layout: true
   promote: true
   sticky: true
   uid: true

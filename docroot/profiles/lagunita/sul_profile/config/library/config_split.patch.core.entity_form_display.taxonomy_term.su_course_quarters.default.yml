@@ -1,0 +1,33 @@
+adding:
+  dependencies:
+    module:
+      - path
+      - text
+  content:
+    description:
+      type: text_textfield
+      weight: 0
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    name:
+      weight: -5
+    path:
+      type: path
+      weight: 30
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    status:
+      weight: 100
+removing:
+  content:
+    name:
+      weight: 0
+    status:
+      weight: 1
+  hidden:
+    description: true
+    path: true

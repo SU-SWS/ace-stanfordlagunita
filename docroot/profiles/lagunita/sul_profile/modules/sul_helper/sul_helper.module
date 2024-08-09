@@ -11,7 +11,6 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
-use Drupal\paragraphs\ParagraphInterface;
 
 /**
  * Implements hook_paragraphs_behavior_info_alter().
@@ -25,43 +24,6 @@ function sul_helper_paragraphs_behavior_info_alter(&$paragraphs_behavior) {
  */
 function sul_helper_paragraph_create_access(AccountInterface $account, array $context, $entity_bundle) {
   return AccessResult::forbiddenIf($entity_bundle == 'stanford_gallery');
-}
-
-/**
- * Implements hook_entity_type_alter().
- */
-function sul_helper_entity_type_alter(array &$entity_types) {
-  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
-  $entity_types['paragraph']->setLinkTemplate('canonical', '/admin/paragraph/{paragraph}');
-  $entity_types['paragraph']->setHandlerClass('route_provider', ['html' => '\Drupal\Core\Entity\Routing\AdminHtmlRouteProvider']);
-}
-
-/**
- * Implements hook_next_site_preview_alter().
- */
-function sul_helper_next_site_preview_alter(array &$preview, array $context) {
-  $accepted_previews = ['node', 'paragraph'];
-  if (!in_array($context['entity']->getEntityTypeid(), $accepted_previews)) {
-    $preview = $context['original_build'][0]['content'];
-  }
-}
-
-/**
- * Implements hook_entity_display_build_alter().
- */
-function sul_helper_entity_display_build_alter(&$build, $context) {
-  $current_route = \Drupal::routeMatch()->getRouteName();
-  $allowed_routes = [
-    'layout_paragraphs.builder.insert',
-    'layout_paragraphs.builder.edit_item',
-    'entity.node.edit_form',
-  ];
-
-  if (!in_array($current_route, $allowed_routes) || !($context['entity'] instanceof ParagraphInterface)) {
-    return;
-  }
-  \Drupal::service('sul_helper.jsonapi_serializer')
-    ->alterEntityBuild($build, $context['entity'], $context['display']);
 }
 
 /**

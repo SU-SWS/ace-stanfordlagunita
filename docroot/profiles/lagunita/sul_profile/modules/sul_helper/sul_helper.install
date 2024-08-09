@@ -6,13 +6,6 @@
  */
 
 /**
- * Set state at install.
- */
-function sul_helper_install() {
-  \Drupal::state()->set('stanford_profile_helper.decoupled', TRUE);
-}
-
-/**
  * Uninstall stable theme.
  */
 function sul_helper_update_8001() {
@@ -75,4 +68,30 @@ function sul_helper_update_8004() {
   $ignored_configs[] = 'build_hooks.frontend_environment.*';
   $ignore_settings->set('ignored_config_entities', $ignored_configs);
   $ignore_settings->save();
+}
+
+/**
+ * Create config split setting for easier inheritance.
+ */
+function sul_helper_update_8005() {
+  \Drupal::service('theme_installer')->install([
+    'minimally_branded_subtheme',
+    'stanford_basic',
+  ]);
+  /** @var \Drupal\Core\Config\FileStorage $config_storage */
+  $config_storage = \Drupal::service('config.storage.sync');
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('config_split.config_split.library')
+    ->setData($config_storage->read('config_split.config_split.library'))
+    ->save();
+  $config_factory->getEditable('config_ignore.settings')
+    ->setData($config_storage->read('config_ignore.settings'))
+    ->save();
+
+  // Set the block configs to fix any issues like uuid's or others.
+  foreach ($config_storage->listAll('block.block.') as $name) {
+    $config_factory->getEditable($name)
+      ->setData($config_storage->read($name))
+      ->save();
+  }
 }

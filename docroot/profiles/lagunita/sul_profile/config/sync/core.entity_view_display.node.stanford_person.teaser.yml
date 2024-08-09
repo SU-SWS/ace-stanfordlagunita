@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.stanford_person.body
     - field.field.node.stanford_person.field_menulink
+    - field.field.node.stanford_person.layout_builder__layout
     - field.field.node.stanford_person.stanford_intranet__access
     - field.field.node.stanford_person.su_metatags
     - field.field.node.stanford_person.su_person_academic_appt
@@ -34,8 +35,6 @@ dependencies:
     - field.field.node.stanford_person.su_person_telephone
     - field.field.node.stanford_person.su_person_type_group
     - field.field.node.stanford_person.su_shared_tags
-    - field.field.node.stanford_person.sul_person__libcal_id
-    - field.field.node.stanford_person.sul_person__libguide_id
     - node.type.stanford_person
   module:
     - text
@@ -60,6 +59,7 @@ content:
     region: content
 hidden:
   field_menulink: true
+  layout_builder__layout: true
   search_api_excerpt: true
   stanford_intranet__access: true
   su_metatags: true
@@ -89,5 +89,3 @@ hidden:
   su_person_telephone: true
   su_person_type_group: true
   su_shared_tags: true
-  sul_person__libcal_id: true
-  sul_person__libguide_id: true

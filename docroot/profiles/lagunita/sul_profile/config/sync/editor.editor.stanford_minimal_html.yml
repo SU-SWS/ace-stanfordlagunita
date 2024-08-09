@@ -15,17 +15,17 @@ settings:
       - italic
       - style
       - '|'
-      - bulletedList
-      - numberedList
-      - outdent
-      - indent
-      - '|'
       - link
       - '|'
-      - sourceEditing
+      - bulletedList
+      - numberedList
       - '|'
       - blockQuote
+      - '|'
+      - sourceEditing
       - code
+      - undo
+      - redo
   plugins:
     ckeditor5_list:
       properties:
@@ -34,12 +34,17 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
+        - '<h2 id class>'
+        - '<h3 id class>'
+        - '<h4 id class>'
+        - '<h5 id class>'
+        - '<h6 id class>'
         - '<cite>'
         - '<dd>'
-        - '<div id class lang>'
+        - '<div id class>'
         - '<blockquote cite>'
-        - '<p id class lang>'
-        - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class lang>'
+        - '<p id class>'
+        - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class>'
     ckeditor5_style:
       styles:
         -

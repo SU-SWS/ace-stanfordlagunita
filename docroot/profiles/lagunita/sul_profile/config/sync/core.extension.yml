@@ -3,7 +3,6 @@ _core:
 module:
   address: 0
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
   auto_entitylabel: 0
@@ -14,7 +13,6 @@ module:
   block_content_permissions: 0
   book: 0
   breakpoint: 0
-  build_hooks: 0
   change_labels: 0
   chosen: 0
   chosen_lib: 0
@@ -48,7 +46,6 @@ module:
   domain_301_redirect: 0
   dropzonejs: 0
   ds_extras: 0
-  dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
   editoria11y: 0
@@ -121,7 +118,6 @@ module:
   layout_library: 0
   layout_paragraphs: 0
   link: 0
-  link_attributes: 0
   link_title_formatter: 0
   linkit: 0
   markup: 0
@@ -187,7 +183,6 @@ module:
   smart_date: 0
   smart_trim: 0
   sophron: 0
-  stage_file_proxy: 0
   stanford_actions: 0
   stanford_basic_page_types: 0
   stanford_courses: 0
@@ -214,7 +209,6 @@ module:
   stanford_publication: 0
   stanford_samlauth: 0
   subrequests: 0
-  sul_helper: 0
   syslog: 0
   system: 0
   taxonomy: 0
@@ -246,6 +240,7 @@ module:
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0
+  webp: 0
   xmlsitemap_engines: 0
   ds: 1
   extlink: 1
@@ -261,6 +256,8 @@ module:
   sul_profile: 1000
 theme:
   claro: 0
+  minimally_branded_subtheme: 0
   stable9: 0
+  stanford_basic: 0
   stanford_profile_admin_theme: 0
 profile: sul_profile

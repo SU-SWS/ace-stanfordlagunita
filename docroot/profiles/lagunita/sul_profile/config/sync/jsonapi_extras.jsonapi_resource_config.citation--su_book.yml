@@ -39,7 +39,7 @@ resourceFields:
     enhancer:
       id: ''
   title:
-    disabled: true
+    disabled: false
     fieldName: title
     publicName: title
     enhancer:

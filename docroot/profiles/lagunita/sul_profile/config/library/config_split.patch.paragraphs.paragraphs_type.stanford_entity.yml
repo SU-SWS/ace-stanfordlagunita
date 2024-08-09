@@ -1,0 +1,8 @@
+adding:
+  dependencies:
+    module:
+      - sul_helper
+  behavior_plugins:
+    sul_teaser_styles:
+      enabled: true
+removing: {  }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_h3_card
+    - field.field.node.stanford_publication.layout_builder__layout
     - field.field.node.stanford_publication.stanford_intranet__access
     - field.field.node.stanford_publication.su_metatags
     - field.field.node.stanford_publication.su_publication_author_ref

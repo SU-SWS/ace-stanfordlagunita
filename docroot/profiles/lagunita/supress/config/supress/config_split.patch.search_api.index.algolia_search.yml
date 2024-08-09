@@ -1,11 +1,11 @@
 adding:
   dependencies:
     config:
-      - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_authors
       - field.storage.node.sup_book_awards
       - field.storage.node.sup_book_imprint
+      - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_series
       - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_subtitle
@@ -101,6 +101,11 @@ adding:
     summary:
       configuration:
         value: '[node:su_page_description|node:sup_book_subtitle|node:summary]'
+  datasource_settings:
+    'entity:node':
+      bundles:
+        selected:
+          - sup_book_ancillary
   processor_settings:
     html_filter:
       fields:

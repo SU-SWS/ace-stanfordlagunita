@@ -1,0 +1,6 @@
+adding:
+  paragraph_behaviors_label: Behaviors
+  paragraph_behaviors_position: -99
+removing:
+  paragraph_behaviors_label: Styles/Behaviors
+  paragraph_behaviors_position: 99

@@ -1,4 +1,4 @@
-uuid: 1421973e-6c6d-4c89-8188-945f4adb673f
+uuid: 00e7c30b-c653-43c8-8548-8bb67377e21a
 langcode: en
 status: true
 dependencies:
@@ -81,13 +81,13 @@ resourceFields:
     enhancer:
       id: ''
   su_site_403:
-    disabled: false
+    disabled: true
     fieldName: su_site_403
     publicName: su_site_403
     enhancer:
       id: ''
   su_site_404:
-    disabled: false
+    disabled: true
     fieldName: su_site_404
     publicName: su_site_404
     enhancer:
@@ -147,7 +147,7 @@ resourceFields:
     enhancer:
       id: ''
   su_site_email:
-    disabled: false
+    disabled: true
     fieldName: su_site_email
     publicName: su_site_email
     enhancer:
@@ -207,7 +207,7 @@ resourceFields:
     enhancer:
       id: ''
   su_site_url:
-    disabled: false
+    disabled: true
     fieldName: su_site_url
     publicName: su_site_url
     enhancer:

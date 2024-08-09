@@ -759,10 +759,11 @@ class ListsCest {
    *
    * @group D8CORE-7422
    */
-  public function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
+  protected function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
 
-    $type_term = $this->createTaxonomyTerm($I, 'basic_page_types', 'Basic Page Test Term');
+    $term_name = strtolower(implode('-', $this->faker->words()));
+    $type_term = $this->createTaxonomyTerm($I, 'basic_page_types', $term_name);
 
     $basic_page_entity = $I->createEntity([
       'type' => 'stanford_page',
@@ -784,7 +785,7 @@ class ListsCest {
       'target_id' => 'stanford_basic_pages',
       'display_id' => 'basic_page_type_list',
       'items_to_display' => 100,
-      'arguments' => 'Basic-Page-Test-Term',
+      'arguments' => $term_name,
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
@@ -816,7 +817,7 @@ class ListsCest {
       'target_id' => 'stanford_basic_pages',
       'display_id' => 'viewfield_block_1',
       'items_to_display' => 100,
-      'arguments' => 'Basic-Page-Test-Term',
+      'arguments' => $term_name,
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
@@ -833,7 +834,7 @@ class ListsCest {
       'target_id' => 'stanford_basic_pages',
       'display_id' => 'card_grid_alpha',
       'items_to_display' => 100,
-      'arguments' => 'Basic-Page-Test-Term',
+      'arguments' => $term_name,
     ]);
 
     $I->amOnPage($node->toUrl()->toString());

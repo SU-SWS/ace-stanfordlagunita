@@ -1,0 +1,81 @@
+uuid: 1268bf42-1000-420f-a5cd-7bb17f1011c3
+langcode: en
+status: true
+dependencies: {  }
+id: library
+label: Library
+description: 'Configuration specific for Library website that overrides stanford_profile'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: profiles/lagunita/sul_profile/config/library
+module:
+  build_hooks: 0
+  dynamic_entity_reference: 0
+  link_attributes: 0
+  stage_file_proxy: 0
+  sul_helper: 0
+theme: {  }
+complete_list:
+  - core.entity_form_display.paragraph.collection.default
+  - core.entity_form_display.paragraph.collection_card.default
+  - core.entity_form_display.paragraph.layout.default
+  - core.entity_form_display.taxonomy_term.study_place_capacity.default
+  - core.entity_form_mode.paragraph.nested
+  - core.entity_view_display.paragraph.collection.default
+  - core.entity_view_display.paragraph.collection_card.default
+  - layout_library.layout.sul_library_full_width
+  - paragraphs.paragraphs_type.collection
+  - paragraphs.paragraphs_type.collection_card
+  - paragraphs.paragraphs_type.layout
+  - pathauto.pattern.branch_location
+  - rabbit_hole.behavior_settings.taxonomy_vocabulary_study_place_capacity
+  - taxonomy.vocabulary.study_place_capacity
+  - core.entity_view_mode.paragraph.sul_form_preview
+  - 'config_pages.type.sul_*'
+  - 'node.type.sul_*'
+  - 'paragraphs.paragraphs_type.sul_*'
+  - 'taxonomy.vocabulary.sul_*'
+  - 'user.role.sul_*'
+  - 'core.base_field_override.node.sul_*'
+  - 'core.entity_form_display.config_pages.sul_*'
+  - 'core.entity_view_display.config_pages.sul_*'
+  - 'core.entity_form_display.paragraph.sul_*'
+  - 'core.entity_view_display.paragraph.sul_*'
+  - 'core.entity_form_display.node.sul_*'
+  - 'core.entity_form_display.sul_*'
+  - 'core.entity_view_display.node.sul_*'
+  - 'core.entity_view_display.sul_*'
+  - 'core.entity_form_display.taxonomy_term.sul_*'
+  - 'core.entity_view_display.taxonomy_term.sul_*'
+  - 'field.field.config_pages.sul_*'
+  - 'field.field.node.sul_*'
+  - 'field.field.sul_.*'
+  - 'field.field.paragraph.sul_*'
+  - 'field.field.taxonomy_term.sul_*'
+  - 'field.storage.config_pages.sul_*'
+  - 'field.storage.node.sul_*'
+  - 'field.storage.sul_*'
+  - 'field.storage.paragraph.sul_*'
+  - 'field.storage.taxonomy_term.sul_*'
+  - 'views.view.sul_*'
+  - 'migrate_plus.migration_group.sul_*'
+  - 'migrate_plus.migration.sul_*'
+  - 'pathauto.pattern.sul_*'
+  - 'field.field.media.sul_*'
+  - 'field.storage.media.sul_*'
+  - 'media.type.sul_*'
+  - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_layout
+partial_list:
+  - field_ui.settings
+  - graphql_compose.settings
+  - layout_paragraphs.settings
+  - '*su_*'
+  - '*stanford_*'
+  - 'core.entity_view_display.media.*'
+  - 'core.entity_form_display.media.*'
+  - 'field.field.media.file.field_*'
+  - 'search_api.index.*'
+  - 'user.role.*'
+  - 'jsonapi_extras.jsonapi_resource_config.*'

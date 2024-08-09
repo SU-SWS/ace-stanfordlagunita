@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.stanford_html
     - filter.format.stanford_minimal_html
+    - media.type.embeddable
     - media.type.file
     - media.type.google_form
     - media.type.image
@@ -18,19 +19,19 @@ dependencies:
     - node.type.stanford_person
     - node.type.stanford_policy
     - node.type.stanford_publication
-    - node.type.sul_library
-    - node.type.sul_study_place
   module:
     - book
     - content_lock
     - dropzonejs
+    - editoria11y
     - file
     - filter
     - help
     - media
-    - menu_admin_per_menu
     - node
     - paragraphs
+    - pathauto
+    - scheduler
     - stanford_policy
     - stanford_publication
     - system
@@ -51,7 +52,6 @@ permissions:
   - 'access user profiles'
   - 'add citation entities'
   - 'add content to books'
-  - 'administer main menu items'
   - 'break content lock'
   - 'create file media'
   - 'create google_form media'
@@ -63,8 +63,7 @@ permissions:
   - 'create stanford_news content'
   - 'create stanford_page content'
   - 'create stanford_person content'
-  - 'create sul_library content'
-  - 'create sul_study_place content'
+  - 'create stanford_publication content'
   - 'create video media'
   - 'delete citation entities'
   - 'delete media'
@@ -81,10 +80,11 @@ permissions:
   - 'delete own stanford_person content'
   - 'delete own stanford_policy content'
   - 'delete own stanford_publication content'
-  - 'delete own sul_library content'
-  - 'delete own sul_study_place content'
   - 'delete own video media'
   - 'dropzone upload files'
+  - 'edit any embeddable media'
+  - 'edit any file media'
+  - 'edit any google_form media'
   - 'edit any image media'
   - 'edit any stanford_course content'
   - 'edit any stanford_event content'
@@ -95,10 +95,10 @@ permissions:
   - 'edit any stanford_person content'
   - 'edit any stanford_policy content'
   - 'edit any stanford_publication content'
-  - 'edit any sul_library content'
-  - 'edit any sul_study_place content'
+  - 'edit any video media'
   - 'edit behavior plugin settings'
   - 'edit citation entities'
+  - 'edit own embeddable media'
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
@@ -111,10 +111,13 @@ permissions:
   - 'edit own stanford_person content'
   - 'edit own stanford_policy content'
   - 'edit own stanford_publication content'
-  - 'edit own sul_library content'
-  - 'edit own sul_study_place content'
   - 'edit own video media'
   - 'edit policy log'
+  - 'mark as hidden in editoria11y'
+  - 'mark as ok in editoria11y'
+  - 'notify of path changes'
+  - 'schedule publishing of nodes'
+  - 'update any media'
   - 'update media'
   - 'use text format stanford_html'
   - 'use text format stanford_minimal_html'
@@ -127,11 +130,11 @@ permissions:
   - 'view any unpublished stanford_person content'
   - 'view any unpublished stanford_policy content'
   - 'view any unpublished stanford_publication content'
-  - 'view any unpublished sul_library content'
-  - 'view any unpublished sul_study_place content'
+  - 'view editoria11y checker'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view policy log'
+  - 'view scheduled content'
   - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
@@ -140,6 +143,4 @@ permissions:
   - 'view stanford_person revisions'
   - 'view stanford_policy revisions'
   - 'view stanford_publication revisions'
-  - 'view sul_library revisions'
-  - 'view sul_study_place revisions'
   - 'view the administration theme'

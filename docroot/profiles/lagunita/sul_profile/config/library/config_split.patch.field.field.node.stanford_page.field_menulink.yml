@@ -1,0 +1,7 @@
+adding:
+  translatable: true
+  settings:
+    available_menus:
+      devel: '0'
+removing:
+  translatable: false

@@ -182,25 +182,7 @@ entity_config:
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
-    sul_library:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    sul_study_place:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
   paragraph:
-    collection:
-      enabled: true
-      query_load_enabled: true
-    collection_card:
-      enabled: true
-      query_load_enabled: true
-    layout:
-      enabled: true
-      query_load_enabled: true
     stanford_accordion:
       enabled: true
       query_load_enabled: true
@@ -214,6 +196,9 @@ entity_config:
       enabled: true
       query_load_enabled: true
     stanford_gallery:
+      enabled: true
+      query_load_enabled: true
+    stanford_layout:
       enabled: true
       query_load_enabled: true
     stanford_lists:
@@ -234,18 +219,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
     stanford_wysiwyg:
-      enabled: true
-      query_load_enabled: true
-    sul_button:
-      enabled: true
-      query_load_enabled: true
-    sul_contact_card:
-      enabled: true
-      query_load_enabled: true
-    sul_feat_collection:
-      enabled: true
-      query_load_enabled: true
-    sul_libguide:
       enabled: true
       query_load_enabled: true
   redirect:
@@ -288,9 +261,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
       routes_enabled: true
-    study_place_capacity:
-      enabled: true
-      query_load_enabled: true
     su_course_quarters:
       enabled: true
       query_load_enabled: true
@@ -302,12 +272,6 @@ entity_config:
       enabled: true
     su_shared_tags:
       enabled: true
-    sul_study_place_features:
-      enabled: true
-      query_load_enabled: true
-    sul_study_place_type:
-      enabled: true
-      query_load_enabled: true
 field_config:
   block_content:
     stanford_component_block:
@@ -613,8 +577,6 @@ field_config:
         enabled: true
       su_event_type:
         enabled: true
-      sul_event__image:
-        enabled: true
     stanford_event_series:
       su_event_series_components:
         enabled: true
@@ -713,10 +675,6 @@ field_config:
         enabled: true
       su_person_type_group:
         enabled: true
-      sul_person__libcal_id:
-        enabled: true
-      sul_person__libguide_id:
-        enabled: true
     stanford_policy:
       body:
         enabled: true
@@ -753,57 +711,7 @@ field_config:
         enabled: true
       su_publication_topics:
         enabled: true
-    sul_library:
-      layout_selection:
-        enabled: true
-      su_library__address:
-        enabled: true
-      su_library__banner:
-        enabled: true
-      su_library__contact_img:
-        enabled: true
-      su_library__email:
-        enabled: true
-      su_library__hours:
-        enabled: true
-      su_library__map_link:
-        enabled: true
-      su_library__paragraphs:
-        enabled: true
-      su_library__phone:
-        enabled: true
-      sul_library__a11y:
-        enabled: true
-      sul_library__type:
-        enabled: true
-    sul_study_place:
-      sul_study__branch:
-        enabled: true
-      sul_study__capacity:
-        enabled: true
-      sul_study__features:
-        enabled: true
-      sul_study__image:
-        enabled: true
-      sul_study__libcal_id:
-        enabled: true
-      sul_study__room_donor_name:
-        enabled: true
-      sul_study__room_number:
-        enabled: true
-      sul_study__type:
-        enabled: true
   paragraph:
-    collection:
-      sul_collection_card:
-        enabled: true
-      sul_collection_heading:
-        enabled: true
-    collection_card:
-      sul_card:
-        enabled: true
-      sul_card_info:
-        enabled: true
     stanford_accordion:
       su_accordion_body:
         enabled: true
@@ -895,44 +803,6 @@ field_config:
         enabled: true
     stanford_wysiwyg:
       su_wysiwyg_text:
-        enabled: true
-    sul_button:
-      sul_button_headline:
-        enabled: true
-      sul_button_link:
-        enabled: true
-    sul_contact_card:
-      sul_contact__address:
-        enabled: true
-      sul_contact__branch:
-        enabled: true
-      sul_contact__email:
-        enabled: true
-      sul_contact__hours:
-        enabled: true
-      sul_contact__image:
-        enabled: true
-      sul_contact__link:
-        enabled: true
-      sul_contact__map_link:
-        enabled: true
-      sul_contact__phone:
-        enabled: true
-      sul_contact__title:
-        enabled: true
-    sul_feat_collection:
-      sul_collection__cards:
-        enabled: true
-      sul_collection__headline:
-        enabled: true
-      sul_collection__link:
-        enabled: true
-    sul_libguide:
-      sul_libguide__desc:
-        enabled: true
-      sul_libguide__headline:
-        enabled: true
-      sul_libguide_id:
         enabled: true
   su_policy_log:
     su_policy_log:

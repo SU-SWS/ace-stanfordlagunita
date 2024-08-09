@@ -1,0 +1,5 @@
+adding:
+  hidden:
+    sul_person__libcal_id: true
+    sul_person__libguide_id: true
+removing: {  }

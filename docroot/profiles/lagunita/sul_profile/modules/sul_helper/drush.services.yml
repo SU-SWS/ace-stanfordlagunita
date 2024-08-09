@@ -1,6 +1,0 @@
-services:
-  sul_helper.drush_commands:
-    class: \Drupal\sul_helper\Commands\SulCommands
-    arguments: ['@entity_type.manager']
-    tags:
-      - { name: drush.command }

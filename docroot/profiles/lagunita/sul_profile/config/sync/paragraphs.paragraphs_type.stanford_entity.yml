@@ -5,7 +5,6 @@ dependencies:
   content:
     - 'file:file:111422eb-d4bf-4360-8667-ab41bb117376'
   module:
-    - sul_helper
     - jumpstart_ui
 id: stanford_entity
 label: Teaser
@@ -16,5 +15,3 @@ behavior_plugins:
   stanford_teaser:
     enabled: true
     heading_behavior: show
-  sul_teaser_styles:
-    enabled: true

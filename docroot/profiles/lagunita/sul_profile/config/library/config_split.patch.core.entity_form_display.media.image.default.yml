@@ -1,0 +1,27 @@
+adding:
+  dependencies:
+    config:
+      - field.field.media.image.sul_image_credit
+  content:
+    field_media_image:
+      weight: 1
+    name:
+      weight: 0
+    su_media_category:
+      weight: 3
+    sul_image_credit:
+      type: string_textfield
+      weight: 2
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+removing:
+  content:
+    field_media_image:
+      weight: 26
+    name:
+      weight: -5
+    su_media_category:
+      weight: 27

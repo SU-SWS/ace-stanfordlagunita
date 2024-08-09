@@ -100,12 +100,6 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
-  metatag:
-    disabled: true
-    fieldName: metatag
-    publicName: metatag
-    enhancer:
-      id: ''
   su_person_cta_image:
     disabled: false
     fieldName: su_person_cta_image

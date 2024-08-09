@@ -1,16 +1,23 @@
-uuid: 055b399c-7907-4040-aa68-c36558e3ae25
+uuid: 0b212d23-3346-42da-87f2-e21a4c27f26f
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.su_course_tags
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--su_course_tags
 disabled: false
 path: taxonomy_term/su_course_tags
 resourceType: taxonomy_term--su_course_tags
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:

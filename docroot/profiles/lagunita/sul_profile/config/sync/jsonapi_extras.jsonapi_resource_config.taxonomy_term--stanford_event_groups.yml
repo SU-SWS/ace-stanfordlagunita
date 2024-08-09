@@ -1,16 +1,23 @@
-uuid: d13eb074-2de4-4099-95da-bad8beb8b1cc
+uuid: e5ddaab4-bfe9-4f52-bffc-f32a0ad4a403
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.stanford_event_groups
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--stanford_event_groups
 disabled: false
 path: taxonomy_term/stanford_event_groups
 resourceType: taxonomy_term--stanford_event_groups
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:

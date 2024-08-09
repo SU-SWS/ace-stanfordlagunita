@@ -1,0 +1,51 @@
+adding:
+  dependencies:
+    module:
+      - change_labels
+      - link_attributes
+  content:
+    status:
+      weight: 4
+    su_card_body:
+      weight: 2
+    su_card_header:
+      weight: 1
+    su_card_link:
+      type: link_attributes
+      weight: 3
+      region: content
+      settings:
+        enabled_attributes:
+          aria-label: true
+          id: false
+          name: false
+          target: false
+          rel: false
+          class: false
+          accesskey: false
+          title: false
+      third_party_settings:
+        change_labels:
+          field_label_overwrite: ''
+  hidden:
+    su_card_super_header: true
+removing:
+  dependencies:
+    module:
+      - link
+  content:
+    status:
+      weight: 6
+    su_card_body:
+      weight: 3
+    su_card_header:
+      weight: 2
+    su_card_link:
+      type: link_default
+      weight: 5
+    su_card_super_header:
+      settings:
+        size: 60
+        placeholder: ''
+      type: string_textfield
+      weight: 1

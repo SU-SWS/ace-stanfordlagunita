@@ -1,0 +1,14 @@
+adding:
+  dependencies:
+    config:
+      - core.entity_view_display.node.stanford_event.default
+      - core.entity_view_display.node.stanford_news.default
+      - core.entity_view_display.node.stanford_page.default
+      - core.entity_view_display.node.stanford_person.default
+  permissions:
+    - 'configure all stanford_page node layout overrides'
+    - 'configure editable stanford_event node layout overrides'
+    - 'configure editable stanford_news node layout overrides'
+    - 'configure editable stanford_page node layout overrides'
+    - 'configure editable stanford_person node layout overrides'
+removing: {  }

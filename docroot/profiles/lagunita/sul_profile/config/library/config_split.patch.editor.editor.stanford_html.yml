@@ -1,0 +1,103 @@
+adding:
+  settings:
+    plugins:
+      ckeditor5_sourceEditing:
+        allowed_tags:
+          - '<cite lang>'
+          - '<div id class lang>'
+          - '<span id class lang>'
+          - '<li id class lang>'
+          - '<h2 id class lang>'
+          - '<h3 id class lang>'
+          - '<h4 id class lang>'
+          - '<h5 id class lang>'
+          - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name class lang>'
+          - '<p id class lang>'
+      ckeditor5_style:
+        styles:
+          -
+            label: 'Quote Text'
+            element: '<p class="su-quote-text">'
+          -
+            label: 'Card Text'
+            element: '<p class="su-related-text">'
+          -
+            label: 'Sub Title'
+            element: '<p class="su-subheading">'
+          -
+            label: 'Splash Font'
+            element: '<p class="su-font-splash">'
+          -
+            label: 'Quote Text'
+            element: '<p class="su-quote-text">'
+          -
+            label: 'Drop Cap First Letter'
+            element: '<p class="su-drop-cap">'
+          -
+            label: 'Card Text'
+            element: '<p class="su-related-text">'
+          -
+            label: 'Callout Text'
+            element: '<p class="su-callout-text">'
+          -
+            label: 'Sub Title'
+            element: '<p class="su-subheading">'
+removing:
+  settings:
+    toolbar:
+      items:
+        config_split_sequence_tbit2kn6pdjt130: strikethrough
+        config_split_sequence_ebjcmuvg25kao45: removeFormat
+        config_split_sequence_s364sk6l54ovvps4: undo
+        config_split_sequence_3q9d6597e7lhs7bs: redo
+    plugins:
+      ckeditor5_sourceEditing:
+        allowed_tags:
+          - '<cite>'
+          - '<div id class>'
+          - '<span id class>'
+          - '<li id class>'
+          - '<h2 id class>'
+          - '<h3 id class>'
+          - '<h4 id class>'
+          - '<h5 id class>'
+          - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name class>'
+          - '<p id class>'
+      ckeditor5_style:
+        styles:
+          -
+            label: Button
+            element: '<a class="su-button">'
+          -
+            label: 'Big Button'
+            element: '<a class="su-button--big">'
+          -
+            label: 'Secondary Button'
+            element: '<a class="su-button--secondary">'
+          -
+            label: 'Action Link'
+            element: '<a class="su-link--action">'
+          -
+            label: Normal
+            element: '<p class="plain-text">'
+          -
+            label: 'Intro Text'
+            element: '<p class="su-intro-text">'
+          -
+            label: 'Splash Font'
+            element: '<p class="su-font-splash">'
+          -
+            label: 'Quote Text'
+            element: '<p class="su-quote-text">'
+          -
+            label: 'Drop Cap First Letter'
+            element: '<p class="su-drop-cap">'
+          -
+            label: 'Card Text'
+            element: '<p class="su-related-text">'
+          -
+            label: 'Callout Text'
+            element: '<p class="su-callout-text">'
+          -
+            label: 'Sub Title'
+            element: '<p class="su-subheading">'

@@ -1,0 +1,98 @@
+adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.collection
+      - paragraphs.paragraphs_type.layout
+      - paragraphs.paragraphs_type.sul_button
+      - paragraphs.paragraphs_type.sul_contact_card
+      - paragraphs.paragraphs_type.sul_feat_collection
+      - paragraphs.paragraphs_type.sul_libguide
+  translatable: true
+  settings:
+    handler_settings:
+      target_bundles:
+        layout: layout
+        sul_contact_card: sul_contact_card
+        collection: collection
+        sul_button: sul_button
+        sul_feat_collection: sul_feat_collection
+        sul_libguide: sul_libguide
+      target_bundles_drag_drop:
+        collection:
+          weight: -20
+          enabled: true
+        collection_card:
+          weight: -26
+          enabled: false
+        layout:
+          weight: -29
+          enabled: true
+        stanford_accordion:
+          weight: -31
+        stanford_banner:
+          weight: -28
+        stanford_card:
+          weight: -27
+        stanford_entity:
+          weight: -19
+        stanford_gallery:
+          weight: -21
+        stanford_lists:
+          weight: -18
+        stanford_media_caption:
+          weight: -25
+        stanford_person_cta:
+          weight: -24
+        stanford_schedule:
+          weight: -23
+        stanford_spacer:
+          weight: -17
+        stanford_wysiwyg:
+          weight: -30
+        sul_button:
+          weight: 32
+          enabled: true
+        sul_contact_card:
+          weight: -22
+          enabled: true
+        sul_feat_collection:
+          weight: 32
+          enabled: true
+        sul_libguide:
+          weight: 36
+          enabled: true
+removing:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.stanford_layout
+  translatable: false
+  settings:
+    handler_settings:
+      target_bundles:
+        stanford_layout: stanford_layout
+      target_bundles_drag_drop:
+        stanford_accordion:
+          weight: -25
+        stanford_banner:
+          weight: -22
+        stanford_card:
+          weight: -23
+        stanford_entity:
+          weight: -20
+        stanford_gallery:
+          weight: -19
+        stanford_lists:
+          weight: -17
+        stanford_media_caption:
+          weight: -21
+        stanford_person_cta:
+          weight: -16
+        stanford_schedule:
+          weight: -15
+        stanford_spacer:
+          weight: -14
+        stanford_wysiwyg:
+          weight: -24
+        stanford_layout:
+          weight: -18
+          enabled: true

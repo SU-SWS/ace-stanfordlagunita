@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
+    - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
     - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
@@ -20,8 +21,8 @@ dependencies:
     - node.type.stanford_news
   module:
     - datetime
-    - entity_reference_revisions
     - field_formatter_class
+    - layout_paragraphs
     - link
     - stanford_media
     - user
@@ -41,7 +42,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 7
+    weight: 8
     region: content
   su_news_banner_media_caption:
     type: string
@@ -49,7 +50,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   su_news_byline:
     type: string
@@ -60,13 +61,13 @@ content:
     weight: 3
     region: content
   su_news_components:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   su_news_dek:
     type: string
@@ -75,6 +76,17 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  su_news_featured_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
     region: content
   su_news_publishing_date:
     type: datetime_custom
@@ -95,7 +107,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   su_news_topics:
     type: entity_reference_label
@@ -106,11 +118,11 @@ content:
     weight: 0
     region: content
 hidden:
+  layout_builder__layout: true
   layout_selection: true
   links: true
   search_api_excerpt: true
   stanford_intranet__access: true
   su_metatags: true
-  su_news_featured_media: true
   su_news_hide_social: true
   su_shared_tags: true

@@ -1,0 +1,41 @@
+adding:
+  settings:
+    handler_settings:
+      target_bundles_drag_drop:
+        collection:
+          weight: 20
+          enabled: false
+        collection_card:
+          weight: 21
+          enabled: false
+        layout:
+          weight: 22
+          enabled: false
+        stanford_page_title_banner:
+          enabled: false
+        sul_button:
+          weight: 35
+          enabled: false
+        sul_contact_card:
+          weight: 36
+          enabled: false
+        sul_feat_collection:
+          weight: 37
+          enabled: false
+        sul_libguide:
+          weight: 38
+          enabled: false
+removing:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.stanford_page_title_banner
+  settings:
+    handler_settings:
+      target_bundles:
+        stanford_page_title_banner: stanford_page_title_banner
+      target_bundles_drag_drop:
+        stanford_layout:
+          weight: 19
+          enabled: false
+        stanford_page_title_banner:
+          enabled: true

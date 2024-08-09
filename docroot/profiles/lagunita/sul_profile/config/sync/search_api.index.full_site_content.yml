@@ -14,7 +14,7 @@ description: ''
 read_only: false
 field_settings:
   changed:
-    label: changed
+    label: Changed
     datasource_id: 'entity:node'
     property_path: changed
     type: date
@@ -45,7 +45,6 @@ field_settings:
           stanford_person: search_indexing
           stanford_policy: search_indexing
           stanford_publication: search_indexing
-          sul_library: search_indexing
   role_access:
     label: 'Role-based access information'
     property_path: search_api_role_access
@@ -86,8 +85,7 @@ datasource_settings:
   'entity:node':
     bundles:
       default: true
-      selected:
-        - sul_study_place
+      selected: {  }
     languages:
       default: true
       selected: {  }

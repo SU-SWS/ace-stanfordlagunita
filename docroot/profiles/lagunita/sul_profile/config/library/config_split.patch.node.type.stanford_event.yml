@@ -1,0 +1,8 @@
+adding:
+  third_party_settings:
+    scheduler:
+      unpublish_enable: true
+removing:
+  third_party_settings:
+    scheduler:
+      unpublish_enable: false
