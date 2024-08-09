@@ -6,13 +6,6 @@
  */
 
 /**
- * Set state at install.
- */
-function sul_helper_install() {
-  \Drupal::state()->set('stanford_profile_helper.decoupled', TRUE);
-}
-
-/**
  * Uninstall stable theme.
  */
 function sul_helper_update_8001() {

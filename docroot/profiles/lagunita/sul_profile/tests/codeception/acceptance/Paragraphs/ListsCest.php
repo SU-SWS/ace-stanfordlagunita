@@ -786,7 +786,7 @@ class ListsCest {
       'items_to_display' => 100,
       'arguments' => 'Basic-Page-Test-Term',
     ]);
-    drupal_flush_all_caches();
+
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($basic_page_entity->label(), 'h3');
     $I->canSee($second_basic_page_entity->label(), 'h3');
