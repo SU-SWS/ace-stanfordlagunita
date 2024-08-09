@@ -783,7 +783,7 @@ class ListsCest {
       'items_to_display' => 100,
       'arguments' => 'Basic-Page-Test-Term',
     ]);
-
+    $I->runDrush('cr');
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($basic_page_entity->label(), 'h3');
     $I->canSee($second_basic_page_entity->label(), 'h3');
@@ -805,6 +805,7 @@ class ListsCest {
     ]);
     $I->amOnPage($layout_changed_page->toUrl('edit-form')->toString());
     $I->click('Save');
+    $I->runDrush('cr');
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($layout_changed_page->label(), 'h3');
     $I->canSee($layout_changed_page->get('su_page_description')->getString());
@@ -832,7 +833,7 @@ class ListsCest {
       'items_to_display' => 100,
       'arguments' => 'Basic-Page-Test-Term',
     ]);
-
+    $I->runDrush('cr');
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($basic_page_entity->label(), 'h3');
     $I->canSee($second_basic_page_entity->label(), 'h3');

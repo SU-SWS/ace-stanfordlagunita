@@ -15,7 +15,184 @@ dependencies:
   module:
     - empty_fields
     - field_formatter_class
+    - jumpstart_ui
+    - layout_builder
+    - layout_library
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: defaults
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          extra_classes: ''
+          centered: centered-container
+          columns: default
+        components:
+          6ff101e0-bffe-495d-bbf2-9fcfbbad3681:
+            uuid: 6ff101e0-bffe-495d-bbf2-9fcfbbad3681
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: hidden
+                settings:
+                  tag: h1
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 0
+            additional: {  }
+          06f2d25b-8862-4c66-9b02-67af8a6c1e5d:
+            uuid: 06f2d25b-8862-4c66-9b02-67af8a6c1e5d
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__branch'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 1
+            additional: {  }
+          b4a78fa8-12bb-4370-9760-4376873adab6:
+            uuid: b4a78fa8-12bb-4370-9760-4376873adab6
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__features'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+                  ds:
+                    ds_limit: ''
+            weight: 2
+            additional: {  }
+          76f3b1e6-66bc-42e4-ae44-22b7561b8fa3:
+            uuid: 76f3b1e6-66bc-42e4-ae44-22b7561b8fa3
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__type'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 3
+            additional: {  }
+          7313a7b1-8a60-4179-941c-10a29eae2d05:
+            uuid: 7313a7b1-8a60-4179-941c-10a29eae2d05
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__room_donor_name'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          81d4c2eb-ff85-4bb2-aec3-c969b4f5cc81:
+            uuid: 81d4c2eb-ff85-4bb2-aec3-c969b4f5cc81
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__capacity'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+            weight: 5
+            additional: {  }
+          64235048-9290-4f99-aacc-a6256310b527:
+            uuid: 64235048-9290-4f99-aacc-a6256310b527
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          6336f1e4-0964-4626-bf1f-ffbf91e4ee6a:
+            uuid: 6336f1e4-0964-4626-bf1f-ffbf91e4ee6a
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__room_number'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
 id: node.sul_study_place.default
 targetEntityType: node
 bundle: sul_study_place
