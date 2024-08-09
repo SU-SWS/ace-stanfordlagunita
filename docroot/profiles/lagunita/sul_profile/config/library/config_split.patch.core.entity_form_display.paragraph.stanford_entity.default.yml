@@ -1,0 +1,31 @@
+adding:
+  dependencies:
+    module:
+      - change_labels
+      - link_attributes
+  content:
+    su_entity_button:
+      type: link_attributes
+      weight: 3
+      region: content
+      settings:
+        enabled_attributes:
+          aria-label: true
+          id: false
+          name: false
+          target: false
+          rel: false
+          class: false
+          accesskey: false
+          title: false
+      third_party_settings:
+        change_labels:
+          field_label_overwrite: ''
+removing:
+  dependencies:
+    module:
+      - link
+  content:
+    su_entity_button:
+      type: link_default
+      weight: 5

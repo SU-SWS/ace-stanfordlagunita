@@ -1,0 +1,70 @@
+adding:
+  dependencies:
+    config:
+      - node.type.sul_library
+      - node.type.sul_study_place
+      - taxonomy.vocabulary.study_place_capacity
+      - taxonomy.vocabulary.sul_study_place_features
+      - taxonomy.vocabulary.sul_study_place_type
+  permissions:
+    - 'choose layout for node sul_library'
+    - 'create sul_library content'
+    - 'create sul_study_place content'
+    - 'create terms in study_place_capacity'
+    - 'create terms in sul_study_place_features'
+    - 'create terms in sul_study_place_type'
+    - 'delete any sul_library content'
+    - 'delete any sul_study_place content'
+    - 'delete own sul_library content'
+    - 'delete own sul_study_place content'
+    - 'delete sul_library revisions'
+    - 'delete sul_study_place revisions'
+    - 'delete terms in study_place_capacity'
+    - 'delete terms in sul_study_place_features'
+    - 'delete terms in sul_study_place_type'
+    - 'edit any sul_library content'
+    - 'edit any sul_study_place content'
+    - 'edit own sul_library content'
+    - 'edit own sul_study_place content'
+    - 'edit terms in study_place_capacity'
+    - 'edit terms in sul_study_place_features'
+    - 'edit terms in sul_study_place_type'
+    - 'revert sul_library revisions'
+    - 'revert sul_study_place revisions'
+    - 'view any unpublished sul_library content'
+    - 'view any unpublished sul_study_place content'
+    - 'view sul_library revisions'
+    - 'view sul_study_place revisions'
+removing:
+  dependencies:
+    config:
+      - core.entity_view_display.node.stanford_event.default
+      - core.entity_view_display.node.stanford_event_series.default
+      - core.entity_view_display.node.stanford_news.default
+      - core.entity_view_display.node.stanford_page.default
+      - core.entity_view_display.node.stanford_person.default
+      - core.entity_view_display.node.stanford_policy.default
+      - core.entity_view_display.node.stanford_publication.default
+    module:
+      - editoria11y
+      - pathauto
+  permissions:
+    - 'administer news-topics menu items'
+    - 'administer stanford-event-types menu items'
+    - 'administer stanford-person-type menu items'
+    - 'configure all stanford_page node layout overrides'
+    - 'configure editable stanford_event node layout overrides'
+    - 'configure editable stanford_event_series node layout overrides'
+    - 'configure editable stanford_news node layout overrides'
+    - 'configure editable stanford_page node layout overrides'
+    - 'configure editable stanford_person node layout overrides'
+    - 'configure editable stanford_policy node layout overrides'
+    - 'configure editable stanford_publication node layout overrides'
+    - 'create stanford_course content'
+    - 'create stanford_event_series content'
+    - 'create stanford_policy content'
+    - 'create stanford_publication content'
+    - 'mark as hidden in editoria11y'
+    - 'mark as ok in editoria11y'
+    - 'notify of path changes'
+    - 'view editoria11y checker'

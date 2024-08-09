@@ -1,0 +1,42 @@
+adding:
+  resourceFields:
+    metatag:
+      disabled: false
+    field_menulink:
+      disabled: false
+    su_metatags:
+      disabled: false
+    su_person_scholarly_interests:
+      enhancer:
+        id: nested
+        settings:
+          path: processed
+    sul_person__libcal_id:
+      disabled: false
+      fieldName: sul_person__libcal_id
+      publicName: sul_person__libcal_id
+      enhancer:
+        id: ''
+    sul_person__libguide_id:
+      disabled: false
+      fieldName: sul_person__libguide_id
+      publicName: sul_person__libguide_id
+      enhancer:
+        id: ''
+removing:
+  resourceFields:
+    metatag:
+      disabled: true
+    field_menulink:
+      disabled: true
+    layout_builder__layout:
+      disabled: true
+      fieldName: layout_builder__layout
+      publicName: layout_builder__layout
+      enhancer:
+        id: ''
+    su_metatags:
+      disabled: true
+    su_person_scholarly_interests:
+      enhancer:
+        id: ''

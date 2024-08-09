@@ -1,0 +1,30 @@
+adding: {  }
+removing:
+  dependencies:
+    config:
+      - core.entity_view_display.node.stanford_event.default
+      - core.entity_view_display.node.stanford_event_series.default
+      - core.entity_view_display.node.stanford_news.default
+      - core.entity_view_display.node.stanford_page.default
+      - core.entity_view_display.node.stanford_person.default
+      - core.entity_view_display.node.stanford_policy.default
+      - core.entity_view_display.node.stanford_publication.default
+      - core.entity_view_display.taxonomy_term.stanford_event_types.default
+      - core.entity_view_display.taxonomy_term.stanford_news_topics.default
+      - core.entity_view_display.taxonomy_term.stanford_person_types.default
+      - core.entity_view_display.taxonomy_term.stanford_publication_topics.default
+    module:
+      - ui_patterns_library
+  permissions:
+    - 'access patterns page'
+    - 'configure editable stanford_event node layout overrides'
+    - 'configure editable stanford_event_series node layout overrides'
+    - 'configure editable stanford_event_types taxonomy_term layout overrides'
+    - 'configure editable stanford_news node layout overrides'
+    - 'configure editable stanford_news_topics taxonomy_term layout overrides'
+    - 'configure editable stanford_page node layout overrides'
+    - 'configure editable stanford_person node layout overrides'
+    - 'configure editable stanford_person_types taxonomy_term layout overrides'
+    - 'configure editable stanford_policy node layout overrides'
+    - 'configure editable stanford_publication node layout overrides'
+    - 'configure editable stanford_publication_topics taxonomy_term layout overrides'

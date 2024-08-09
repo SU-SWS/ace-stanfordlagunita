@@ -1,16 +1,23 @@
-uuid: 71e8dc72-10e5-44d5-9503-94f91390f9b9
+uuid: e5dcd5d1-1fee-4f99-b62d-89c32867c8c0
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.su_course_quarters
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--su_course_quarters
 disabled: false
 path: taxonomy_term/su_course_quarters
 resourceType: taxonomy_term--su_course_quarters
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:
@@ -159,5 +166,11 @@ resourceFields:
     disabled: true
     fieldName: unpublish_on
     publicName: unpublish_on
+    enhancer:
+      id: ''
+  layout_builder__layout:
+    disabled: true
+    fieldName: layout_builder__layout
+    publicName: layout_builder__layout
     enhancer:
       id: ''

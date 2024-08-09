@@ -1,4 +1,4 @@
-uuid: af237bd4-3ac7-4e4c-8739-ffc49a9e4cf6
+uuid: e4ba21f8-bb44-46ee-be34-c957c9ba4e6d
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
 third_party_settings:
   jsonapi_defaults:
     default_include:
-      - su_gallery_image
       - su_media_category
+      - su_gallery_image
     page_limit: 50
 id: media--stanford_gallery_images
 disabled: false

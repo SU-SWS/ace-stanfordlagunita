@@ -1,0 +1,13 @@
+uuid: 7dd8a0de-33d3-4a10-9fd4-0d9d64d35000
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_publication
+site_resolver: site_selector
+configuration:
+  sites:
+    netlify: netlify
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''

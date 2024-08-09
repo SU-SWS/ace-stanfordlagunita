@@ -1,4 +1,4 @@
-uuid: eda849e5-5d67-41bf-9b64-7b83049e8b6c
+uuid: b4bfde9d-d42a-4cae-89da-4ff1dd57c657
 langcode: en
 status: true
 dependencies:
@@ -56,7 +56,7 @@ resourceFields:
     enhancer:
       id: ''
   label:
-    disabled: true
+    disabled: false
     fieldName: label
     publicName: label
     enhancer:
@@ -68,7 +68,7 @@ resourceFields:
     enhancer:
       id: ''
   description:
-    disabled: true
+    disabled: false
     fieldName: description
     publicName: description
     enhancer:
@@ -92,7 +92,7 @@ resourceFields:
     enhancer:
       id: ''
   display:
-    disabled: true
+    disabled: false
     fieldName: display
     publicName: display
     enhancer:

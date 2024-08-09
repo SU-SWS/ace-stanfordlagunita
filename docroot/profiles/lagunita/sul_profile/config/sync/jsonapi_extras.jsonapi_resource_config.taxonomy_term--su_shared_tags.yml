@@ -1,16 +1,23 @@
-uuid: a88e407e-81c9-4006-b3e6-a188f18ec9ee
+uuid: d84f308e-3267-4a78-bb7b-530f339c0c3d
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.su_shared_tags
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--su_shared_tags
 disabled: false
 path: taxonomy_term/su_shared_tags
 resourceType: taxonomy_term--su_shared_tags
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:

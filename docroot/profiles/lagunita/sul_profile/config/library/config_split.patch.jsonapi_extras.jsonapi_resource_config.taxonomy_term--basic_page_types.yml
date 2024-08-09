@@ -1,0 +1,18 @@
+adding:
+  uuid: c6a7079b-7c3a-4337-b448-2d1b3ef8cd96
+  resourceFields:
+    tid:
+      disabled: false
+    vid:
+      disabled: true
+removing:
+  uuid: 668c288e-9118-4f49-a6f0-9d56d2de34ee
+  third_party_settings:
+    jsonapi_defaults:
+      default_include:
+        - parent
+  resourceFields:
+    tid:
+      disabled: true
+    vid:
+      disabled: false

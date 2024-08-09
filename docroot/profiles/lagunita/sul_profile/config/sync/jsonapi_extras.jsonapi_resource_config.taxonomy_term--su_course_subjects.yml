@@ -1,16 +1,23 @@
-uuid: 063d4301-2b8d-48b6-96a3-9c60d33f3ffd
+uuid: f066856e-a4c2-438c-9ded-71949f7588df
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.su_course_subjects
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--su_course_subjects
 disabled: false
 path: taxonomy_term/su_course_subjects
 resourceType: taxonomy_term--su_course_subjects
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:
@@ -159,5 +166,17 @@ resourceFields:
     disabled: true
     fieldName: unpublish_on
     publicName: unpublish_on
+    enhancer:
+      id: ''
+  layout_builder__layout:
+    disabled: true
+    fieldName: layout_builder__layout
+    publicName: layout_builder__layout
+    enhancer:
+      id: ''
+  su_courses_dept_long:
+    disabled: false
+    fieldName: su_courses_dept_long
+    publicName: su_courses_dept_long
     enhancer:
       id: ''

@@ -1,4 +1,4 @@
-uuid: 6312c8fe-713e-493e-9dfa-34f342d97402
+uuid: 89fab672-c55a-44b0-a22e-32dcfbc71309
 langcode: en
 status: true
 dependencies:
@@ -14,37 +14,37 @@ path: layout/layout
 resourceType: layout--layout
 resourceFields:
   uuid:
-    disabled: true
+    disabled: false
     fieldName: uuid
     publicName: uuid
     enhancer:
       id: ''
   langcode:
-    disabled: false
+    disabled: true
     fieldName: langcode
     publicName: langcode
     enhancer:
       id: ''
   status:
-    disabled: false
+    disabled: true
     fieldName: status
     publicName: status
     enhancer:
       id: ''
   dependencies:
-    disabled: false
+    disabled: true
     fieldName: dependencies
     publicName: dependencies
     enhancer:
       id: ''
   third_party_settings:
-    disabled: false
+    disabled: true
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
       id: ''
   _core:
-    disabled: false
+    disabled: true
     fieldName: _core
     publicName: _core
     enhancer:
@@ -62,13 +62,13 @@ resourceFields:
     enhancer:
       id: ''
   targetEntityType:
-    disabled: false
+    disabled: true
     fieldName: targetEntityType
     publicName: targetEntityType
     enhancer:
       id: ''
   targetBundle:
-    disabled: false
+    disabled: true
     fieldName: targetBundle
     publicName: targetBundle
     enhancer:

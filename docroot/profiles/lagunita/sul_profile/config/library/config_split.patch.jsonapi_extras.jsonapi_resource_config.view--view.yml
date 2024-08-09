@@ -1,0 +1,18 @@
+adding:
+  uuid: eda849e5-5d67-41bf-9b64-7b83049e8b6c
+  resourceFields:
+    label:
+      disabled: true
+    description:
+      disabled: true
+    display:
+      disabled: true
+removing:
+  uuid: b4bfde9d-d42a-4cae-89da-4ff1dd57c657
+  resourceFields:
+    label:
+      disabled: false
+    description:
+      disabled: false
+    display:
+      disabled: false

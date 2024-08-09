@@ -1,0 +1,13 @@
+uuid: 904da43b-5e5f-4ca0-b6fc-d1674f74169d
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_event
+site_resolver: site_selector
+configuration:
+  sites:
+    netlify: netlify
+revalidator: path
+revalidator_configuration:
+  revalidate_page: false
+  additional_paths: "/events\r\n/tags/views:stanford_event/views:all"

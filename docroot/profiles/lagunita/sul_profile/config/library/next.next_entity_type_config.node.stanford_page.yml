@@ -1,0 +1,13 @@
+uuid: 0c9ff75c-b422-489c-8c2c-435b555882ba
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_page
+site_resolver: site_selector
+configuration:
+  sites:
+    netlify: netlify
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: '/tags/views:all'

@@ -1,0 +1,7 @@
+adding:
+  dependencies:
+    module:
+      - file
+  permissions:
+    - 'delete own files'
+removing: {  }

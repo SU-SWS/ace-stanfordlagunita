@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
+    - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
     - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
@@ -133,6 +134,7 @@ content:
     weight: 4
     region: news_topics
 hidden:
+  layout_builder__layout: true
   layout_selection: true
   links: true
   search_api_excerpt: true

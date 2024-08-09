@@ -22,8 +22,6 @@ source:
     file_destination: 'public://media/person/'
     file_extension: .jpg
     photo_params: '?placeHolderImage=false&access_token='
-    email_domain: '@stanford.edu'
-    law_email_domain: '@law.stanford.edu'
   urls: {  }
   item_selector: values
   fields:
@@ -131,10 +129,6 @@ source:
       name: community
       label: community
       selector: community
-    -
-      name: searchTokens
-      label: searchTokens
-      selector: searchTokens
   ids:
     sunetid:
       type: string
@@ -298,82 +292,6 @@ process:
       source:
         - scholarly_interests_fulltext
         - scholarly_interests_tersetext
-  nosave_email:
-    -
-      plugin: skip_on_empty
-      source: sunetid
-      method: process
-    -
-      plugin: concat
-      source:
-        - sunetid
-        - constants/email_domain
-  alias_email:
-    -
-      plugin: skip_on_empty
-      source: alias
-      method: process
-    -
-      plugin: concat
-      source:
-        - alias
-        - constants/email_domain
-  law_email:
-    -
-      plugin: skip_on_empty
-      source: alias
-      method: process
-    -
-      plugin: concat
-      source:
-        - alias
-        - constants/law_email_domain
-  libcal_email:
-    -
-      plugin: skip_on_empty
-      source:
-        - email
-        - '@nosave_email'
-        - '@alias_email'
-        - '@law_email'
-      method: process
-    -
-      plugin: libcal_lookup
-  libcal_search:
-    -
-      plugin: skip_on_empty
-      source: searchTokens
-      method: process
-    -
-      plugin: libcal_lookup
-  sul_person__libcal_id:
-    plugin: null_coalesce
-    source:
-      - '@libcal_email'
-      - '@libcal_search'
-  libguide_email:
-    -
-      plugin: skip_on_empty
-      method: process
-      source:
-        - email
-        - '@nosave_email'
-        - '@alias_email'
-        - '@law_email'
-    -
-      plugin: libguide_lookup
-  libguide_search:
-    -
-      plugin: skip_on_empty
-      source: searchTokens
-      method: process
-    -
-      plugin: libguide_lookup
-  sul_person__libguide_id:
-    plugin: null_coalesce
-    source:
-      - '@libguide_email'
-      - '@libguide_search'
 destination:
   plugin: 'entity:node'
   overwrite_properties:
@@ -396,7 +314,6 @@ destination:
     - su_person_last_name
     - su_person_links
     - su_person_mail_code
-    - su_person_telephone
     - su_person_mobile_phone
     - su_person_photo/target_id
     - su_person_profile_link/title
@@ -405,8 +322,7 @@ destination:
     - su_person_scholarly_interests/format
     - su_person_scholarly_interests/value
     - su_person_short_title
-    - sul_person__libcal_id
-    - sul_person__libguide_id
+    - su_person_telephone
     - title
     - type
 migration_dependencies:

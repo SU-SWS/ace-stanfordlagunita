@@ -1,0 +1,98 @@
+adding:
+  source:
+    constants:
+      email_domain: '@stanford.edu'
+      law_email_domain: '@law.stanford.edu'
+    fields:
+      -
+        name: searchTokens
+        label: searchTokens
+        selector: searchTokens
+  process:
+    nosave_email:
+      -
+        plugin: skip_on_empty
+        source: sunetid
+        method: process
+      -
+        plugin: concat
+        source:
+          - sunetid
+          - constants/email_domain
+    alias_email:
+      -
+        plugin: skip_on_empty
+        source: alias
+        method: process
+      -
+        plugin: concat
+        source:
+          - alias
+          - constants/email_domain
+    law_email:
+      -
+        plugin: skip_on_empty
+        source: alias
+        method: process
+      -
+        plugin: concat
+        source:
+          - alias
+          - constants/law_email_domain
+    libcal_email:
+      -
+        plugin: skip_on_empty
+        source:
+          - email
+          - '@nosave_email'
+          - '@alias_email'
+          - '@law_email'
+        method: process
+      -
+        plugin: libcal_lookup
+    libcal_search:
+      -
+        plugin: skip_on_empty
+        source: searchTokens
+        method: process
+      -
+        plugin: libcal_lookup
+    sul_person__libcal_id:
+      plugin: null_coalesce
+      source:
+        - '@libcal_email'
+        - '@libcal_search'
+    libguide_email:
+      -
+        plugin: skip_on_empty
+        method: process
+        source:
+          - email
+          - '@nosave_email'
+          - '@alias_email'
+          - '@law_email'
+      -
+        plugin: libguide_lookup
+    libguide_search:
+      -
+        plugin: skip_on_empty
+        source: searchTokens
+        method: process
+      -
+        plugin: libguide_lookup
+    sul_person__libguide_id:
+      plugin: null_coalesce
+      source:
+        - '@libguide_email'
+        - '@libguide_search'
+  destination:
+    overwrite_properties:
+      - sul_person__libcal_id
+      - sul_person__libguide_id
+removing:
+  source:
+    fields:
+      -
+        name: sunetid
+        label: sunetid
+        selector: uid

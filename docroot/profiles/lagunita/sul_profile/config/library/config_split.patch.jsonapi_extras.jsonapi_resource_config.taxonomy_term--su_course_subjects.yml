@@ -1,0 +1,34 @@
+adding:
+  uuid: 063d4301-2b8d-48b6-96a3-9c60d33f3ffd
+  resourceFields:
+    tid:
+      disabled: false
+    vid:
+      disabled: true
+removing:
+  uuid: f066856e-a4c2-438c-9ded-71949f7588df
+  dependencies:
+    module:
+      - jsonapi_defaults
+  third_party_settings:
+    jsonapi_defaults:
+      default_include:
+        - parent
+      page_limit: 50
+  resourceFields:
+    tid:
+      disabled: true
+    vid:
+      disabled: false
+    layout_builder__layout:
+      disabled: true
+      fieldName: layout_builder__layout
+      publicName: layout_builder__layout
+      enhancer:
+        id: ''
+    su_courses_dept_long:
+      disabled: false
+      fieldName: su_courses_dept_long
+      publicName: su_courses_dept_long
+      enhancer:
+        id: ''

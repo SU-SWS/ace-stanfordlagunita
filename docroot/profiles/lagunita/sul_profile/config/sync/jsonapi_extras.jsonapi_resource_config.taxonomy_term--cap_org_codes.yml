@@ -1,16 +1,23 @@
-uuid: 1b105b2d-dcfb-478c-8dd6-592152a95b6e
+uuid: 89437034-dfb5-4e02-b2cf-16ab1c80bfc6
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.cap_org_codes
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--cap_org_codes
 disabled: false
 path: taxonomy_term/cap_org_codes
 resourceType: taxonomy_term--cap_org_codes
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:
@@ -159,5 +166,11 @@ resourceFields:
     disabled: true
     fieldName: unpublish_on
     publicName: unpublish_on
+    enhancer:
+      id: ''
+  su_cap_org_code:
+    disabled: false
+    fieldName: su_cap_org_code
+    publicName: su_cap_org_code
     enhancer:
       id: ''

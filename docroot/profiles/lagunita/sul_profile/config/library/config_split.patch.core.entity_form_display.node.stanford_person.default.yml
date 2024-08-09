@@ -1,0 +1,89 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_person.sul_person__libcal_id
+      - field.field.node.stanford_person.sul_person__libguide_id
+    module:
+      - paragraphs
+  third_party_settings:
+    field_group:
+      group_bio_content:
+        children:
+          - sul_person__libcal_id
+          - sul_person__libguide_id
+  content:
+    body:
+      weight: 7
+    field_menulink:
+      weight: 13
+    publish_on:
+      weight: 10
+    scheduler_settings:
+      weight: 11
+    su_metatags:
+      weight: 9
+    su_person_components:
+      type: entity_reference_paragraphs
+      weight: 8
+      settings:
+        title: Paragraph
+        title_plural: Paragraphs
+        edit_mode: closed
+        add_mode: dropdown
+        form_display_mode: default
+        default_paragraph_type: stanford_wysiwyg
+    su_shared_tags:
+      weight: 8
+    sul_person__libcal_id:
+      type: number
+      weight: 5
+      region: content
+      settings:
+        placeholder: ''
+      third_party_settings: {  }
+    sul_person__libguide_id:
+      type: number
+      weight: 6
+      region: content
+      settings:
+        placeholder: ''
+      third_party_settings: {  }
+    unpublish_on:
+      type: datetime_timestamp_no_default
+      weight: 12
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_person.layout_builder__layout
+    module:
+      - change_labels
+      - layout_paragraphs
+  content:
+    body:
+      weight: 5
+    field_menulink:
+      weight: 53
+    publish_on:
+      weight: 52
+    scheduler_settings:
+      weight: 50
+    su_metatags:
+      weight: 32
+    su_person_components:
+      type: layout_paragraphs
+      weight: 7
+      settings:
+        preview_view_mode: default
+        nesting_depth: 0
+        require_layouts: 1
+        empty_message: ''
+      third_party_settings:
+        change_labels:
+          add_another: ''
+    su_shared_tags:
+      weight: 31
+  hidden:
+    unpublish_on: true

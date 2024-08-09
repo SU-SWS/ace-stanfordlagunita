@@ -1,16 +1,23 @@
-uuid: 986d65e0-0c27-41ed-b0c5-72712b968786
+uuid: 3b128b8f-21df-4ad9-8d39-34f57d8d3db9
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.stanford_event_keywords
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - parent
+    page_limit: 50
 id: taxonomy_term--stanford_event_keywords
 disabled: false
 path: taxonomy_term/stanford_event_keywords
 resourceType: taxonomy_term--stanford_event_keywords
 resourceFields:
   tid:
-    disabled: false
+    disabled: true
     fieldName: tid
     publicName: tid
     enhancer:
@@ -34,7 +41,7 @@ resourceFields:
     enhancer:
       id: ''
   vid:
-    disabled: true
+    disabled: false
     fieldName: vid
     publicName: vid
     enhancer:

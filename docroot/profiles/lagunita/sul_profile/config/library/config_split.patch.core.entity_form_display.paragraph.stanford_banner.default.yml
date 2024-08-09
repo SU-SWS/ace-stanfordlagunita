@@ -1,0 +1,51 @@
+adding:
+  dependencies:
+    module:
+      - change_labels
+      - link_attributes
+  content:
+    status:
+      weight: 4
+    su_banner_body:
+      weight: 2
+    su_banner_button:
+      type: link_attributes
+      weight: 3
+      region: content
+      settings:
+        enabled_attributes:
+          aria-label: true
+          id: false
+          name: false
+          target: false
+          rel: false
+          class: false
+          accesskey: false
+          title: false
+      third_party_settings:
+        change_labels:
+          field_label_overwrite: ''
+    su_banner_header:
+      weight: 1
+  hidden:
+    su_banner_sup_header: true
+removing:
+  dependencies:
+    module:
+      - link
+  content:
+    status:
+      weight: 5
+    su_banner_body:
+      weight: 3
+    su_banner_button:
+      type: link_default
+      weight: 5
+    su_banner_header:
+      weight: 2
+    su_banner_sup_header:
+      settings:
+        size: 60
+        placeholder: ''
+      type: string_textfield
+      weight: 1

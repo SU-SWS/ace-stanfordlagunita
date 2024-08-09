@@ -1,0 +1,13 @@
+uuid: a24dd616-c13d-4acd-864b-8ba031ef8d99
+langcode: en
+status: true
+dependencies: {  }
+id: node.stanford_person
+site_resolver: site_selector
+configuration:
+  sites:
+    netlify: netlify
+revalidator: path
+revalidator_configuration:
+  revalidate_page: false
+  additional_paths: '/tags/views:stanford_person/views:all'

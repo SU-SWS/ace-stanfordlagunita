@@ -1,0 +1,14 @@
+uuid: cda4d11a-e180-4394-8beb-9f983c304076
+langcode: en
+status: true
+dependencies:
+  module:
+    - sul_helper
+id: redirect.redirect
+site_resolver: site_selector
+configuration:
+  sites:
+    netlify: netlify
+  field_name: {  }
+revalidator: redirect_path
+revalidator_configuration: {  }

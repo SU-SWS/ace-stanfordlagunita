@@ -9,10 +9,10 @@ label: Policies
 type: 'canonical_entities:node'
 pattern: '[node:book:parent:url:relative|node:menu-link:parent:url:relative]/[node:su_policy_title]'
 selection_criteria:
-  01db68ea-e005-487b-ae54-655539554c02:
+  ab61ebc7-31dc-4efc-b1c9-80422f08548c:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 01db68ea-e005-487b-ae54-655539554c02
+    uuid: ab61ebc7-31dc-4efc-b1c9-80422f08548c
     context_mapping:
       node: node
     bundles:

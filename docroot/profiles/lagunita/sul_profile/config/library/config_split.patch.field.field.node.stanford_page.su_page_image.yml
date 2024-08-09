@@ -1,0 +1,4 @@
+adding:
+  description: 'Maximum one image. The <i>"page image"</i> will only appear as a thumbnail image on Teaser and List page display. The image will also be used for social media sharing and search engine results.'
+removing:
+  description: 'Maximum one image. The <i>"page image"</i> will only appear as a thumbnail image on Teaser and List page display. Use the Banner paragraph to add a Featured Media to a page.'

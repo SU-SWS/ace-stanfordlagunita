@@ -1,0 +1,18 @@
+adding:
+  field_settings:
+    changed:
+      label: changed
+    rendered_item:
+      configuration:
+        view_mode:
+          'entity:node':
+            sul_library: search_indexing
+  datasource_settings:
+    'entity:node':
+      bundles:
+        selected:
+          - sul_study_place
+removing:
+  field_settings:
+    changed:
+      label: Changed

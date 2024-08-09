@@ -1,0 +1,22 @@
+adding:
+  uuid: fd1fd8b1-6972-4f67-9b40-3275da0a2e88
+  resourceFields:
+    tid:
+      disabled: false
+    vid:
+      disabled: true
+removing:
+  uuid: acaf1e13-377c-48f5-8519-db2a8216a2ab
+  dependencies:
+    module:
+      - jsonapi_defaults
+  third_party_settings:
+    jsonapi_defaults:
+      default_include:
+        - parent
+      page_limit: 50
+  resourceFields:
+    tid:
+      disabled: true
+    vid:
+      disabled: false

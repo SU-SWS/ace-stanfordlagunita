@@ -1,4 +1,4 @@
-uuid: ead28c29-d74a-4364-be0b-31fc4deb1e4a
+uuid: 7bf0fdd9-3c86-4662-af99-4076b4bb1f0e
 langcode: en
 status: true
 dependencies:
@@ -20,12 +20,11 @@ default_value_callback: ''
 settings:
   available_menus:
     main: main
+    stanford-person-type: stanford-person-type
     admin: '0'
     courses-menu: '0'
-    devel: '0'
     stanford-event-types: '0'
     footer: '0'
-    stanford-person-type: '0'
     stanford-publication-topics: '0'
     tools: '0'
     news-topics: '0'

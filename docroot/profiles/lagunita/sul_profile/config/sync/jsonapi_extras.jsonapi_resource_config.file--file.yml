@@ -1,4 +1,4 @@
-uuid: 7d235aa4-9ad7-495b-ad30-4eb66d8e7050
+uuid: fb76e257-9c56-43a3-bf72-9a40822b3f20
 langcode: en
 status: true
 dependencies:
@@ -50,7 +50,7 @@ resourceFields:
     enhancer:
       id: base64_image
       settings:
-        style: blur
+        style: tiny_blur
   filemime:
     disabled: false
     fieldName: filemime
@@ -64,7 +64,7 @@ resourceFields:
     enhancer:
       id: ''
   status:
-    disabled: true
+    disabled: false
     fieldName: status
     publicName: status
     enhancer:

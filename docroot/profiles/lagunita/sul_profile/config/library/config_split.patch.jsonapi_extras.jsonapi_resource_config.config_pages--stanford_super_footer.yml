@@ -1,0 +1,22 @@
+adding:
+  uuid: 40a6120a-01f2-4751-b5f6-892c84f3a431
+  resourceFields:
+    su_super_foot_intranet:
+      enhancer:
+        id: ''
+    su_super_foot_link:
+      enhancer:
+        id: ''
+removing:
+  uuid: e015c348-ef19-441b-b3ec-a8c6876b169f
+  resourceFields:
+    su_super_foot_intranet:
+      enhancer:
+        id: url_link
+        settings:
+          absolute_url: 0
+    su_super_foot_link:
+      enhancer:
+        id: url_link
+        settings:
+          absolute_url: 0

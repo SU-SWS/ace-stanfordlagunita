@@ -1,0 +1,4 @@
+adding:
+  description: 'Maximum 255 characters.  The <i>"page description"</i> is a brief summary that appears below the page title - in smaller font - on the list page. This will also be used for social media sharing and search engine results.'
+removing:
+  description: 'Maximum 255 characters.  The <i>"page description"</i> is a brief summary that appears below the page title - in smaller font - on the list page.'

@@ -1,0 +1,28 @@
+adding:
+  third_party_settings:
+    jsonapi_defaults:
+      default_include:
+        - sul_event__image.field_media_image
+  resourceFields:
+    metatag:
+      disabled: false
+    su_metatags:
+      disabled: false
+    sul_event__image:
+      disabled: false
+      fieldName: sul_event__image
+      publicName: sul_event__image
+      enhancer:
+        id: ''
+removing:
+  resourceFields:
+    metatag:
+      disabled: true
+    layout_builder__layout:
+      disabled: true
+      fieldName: layout_builder__layout
+      publicName: layout_builder__layout
+      enhancer:
+        id: ''
+    su_metatags:
+      disabled: true

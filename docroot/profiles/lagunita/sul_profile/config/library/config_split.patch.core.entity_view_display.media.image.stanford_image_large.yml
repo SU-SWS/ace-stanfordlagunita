@@ -1,0 +1,20 @@
+adding:
+  dependencies:
+    config:
+      - field.field.media.image.su_media_category
+      - field.field.media.image.sul_image_credit
+  content:
+    field_media_image:
+      weight: 0
+    sul_image_credit:
+      type: string
+      label: hidden
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 1
+      region: content
+removing:
+  content:
+    field_media_image:
+      weight: 6

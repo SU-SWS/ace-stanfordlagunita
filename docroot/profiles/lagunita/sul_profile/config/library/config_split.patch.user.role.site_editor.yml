@@ -1,0 +1,62 @@
+adding:
+  dependencies:
+    config:
+      - node.type.sul_library
+      - node.type.sul_study_place
+      - taxonomy.vocabulary.stanford_publication_topics
+      - taxonomy.vocabulary.study_place_capacity
+      - taxonomy.vocabulary.sul_study_place_features
+      - taxonomy.vocabulary.sul_study_place_type
+  permissions:
+    - 'create sul_library content'
+    - 'create sul_study_place content'
+    - 'create terms in study_place_capacity'
+    - 'create terms in sul_study_place_features'
+    - 'create terms in sul_study_place_type'
+    - 'delete any sul_library content'
+    - 'delete any sul_study_place content'
+    - 'delete own sul_library content'
+    - 'delete own sul_study_place content'
+    - 'delete sul_library revisions'
+    - 'delete sul_study_place revisions'
+    - 'delete terms in study_place_capacity'
+    - 'delete terms in sul_study_place_features'
+    - 'delete terms in sul_study_place_type'
+    - 'edit any sul_library content'
+    - 'edit any sul_study_place content'
+    - 'edit own sul_library content'
+    - 'edit own sul_study_place content'
+    - 'edit terms in study_place_capacity'
+    - 'edit terms in sul_study_place_features'
+    - 'edit terms in sul_study_place_type'
+    - 'revert sul_library revisions'
+    - 'revert sul_study_place revisions'
+    - 'view any unpublished sul_library content'
+    - 'view any unpublished sul_study_place content'
+    - 'view sul_library revisions'
+    - 'view sul_study_place revisions'
+removing:
+  dependencies:
+    module:
+      - editoria11y
+      - pathauto
+  permissions:
+    - 'administer news-topics menu items'
+    - 'administer stanford-event-types menu items'
+    - 'administer stanford-person-type menu items'
+    - 'create stanford_course content'
+    - 'create stanford_event_series content'
+    - 'create stanford_policy content'
+    - 'create stanford_publication content'
+    - 'create terms in stanford_publication_topics'
+    - 'delete terms in stanford_publication_topics'
+    - 'edit any embeddable media'
+    - 'edit any file media'
+    - 'edit any google_form media'
+    - 'edit any video media'
+    - 'edit terms in stanford_publication_topics'
+    - 'mark as hidden in editoria11y'
+    - 'mark as ok in editoria11y'
+    - 'notify of path changes'
+    - 'update any media'
+    - 'view editoria11y checker'

@@ -1,0 +1,28 @@
+adding:
+  uuid: 1c6e367a-c7be-4f4b-a22c-d4db14b87491
+  resourceFields:
+    tid:
+      disabled: false
+    vid:
+      disabled: true
+removing:
+  uuid: 6c064315-4f80-4e44-8d55-32b103b5acea
+  dependencies:
+    module:
+      - jsonapi_defaults
+  third_party_settings:
+    jsonapi_defaults:
+      default_include:
+        - parent
+      page_limit: 50
+  resourceFields:
+    tid:
+      disabled: true
+    vid:
+      disabled: false
+    layout_builder__layout:
+      disabled: true
+      fieldName: layout_builder__layout
+      publicName: layout_builder__layout
+      enhancer:
+        id: ''

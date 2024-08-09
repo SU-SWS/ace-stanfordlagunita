@@ -1,0 +1,13 @@
+uuid: 0fa1207e-a0d9-4214-a82d-0fabbea5be72
+langcode: en
+status: true
+dependencies: {  }
+id: config_pages.stanford_global_message
+site_resolver: site_selector
+configuration:
+  sites:
+    netlify: netlify
+revalidator: path
+revalidator_configuration:
+  revalidate_page: false
+  additional_paths: /tags/config-pages

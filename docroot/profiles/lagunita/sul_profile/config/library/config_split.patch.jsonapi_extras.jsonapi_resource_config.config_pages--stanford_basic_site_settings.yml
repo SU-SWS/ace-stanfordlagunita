@@ -1,0 +1,22 @@
+adding:
+  uuid: 1421973e-6c6d-4c89-8188-945f4adb673f
+  resourceFields:
+    su_site_403:
+      disabled: false
+    su_site_404:
+      disabled: false
+    su_site_email:
+      disabled: false
+    su_site_url:
+      disabled: false
+removing:
+  uuid: 00e7c30b-c653-43c8-8548-8bb67377e21a
+  resourceFields:
+    su_site_403:
+      disabled: true
+    su_site_404:
+      disabled: true
+    su_site_email:
+      disabled: true
+    su_site_url:
+      disabled: true

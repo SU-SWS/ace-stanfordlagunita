@@ -1,0 +1,43 @@
+adding:
+  dependencies:
+    config:
+      - node.type.sul_library
+      - node.type.sul_study_place
+    module:
+      - menu_admin_per_menu
+  permissions:
+    - 'administer main menu items'
+    - 'create sul_library content'
+    - 'create sul_study_place content'
+    - 'delete own sul_library content'
+    - 'delete own sul_study_place content'
+    - 'edit any sul_library content'
+    - 'edit any sul_study_place content'
+    - 'edit own sul_library content'
+    - 'edit own sul_study_place content'
+    - 'view any unpublished sul_library content'
+    - 'view any unpublished sul_study_place content'
+    - 'view sul_library revisions'
+    - 'view sul_study_place revisions'
+removing:
+  dependencies:
+    config:
+      - media.type.embeddable
+    module:
+      - editoria11y
+      - pathauto
+      - scheduler
+  permissions:
+    - 'create stanford_publication content'
+    - 'edit any embeddable media'
+    - 'edit any file media'
+    - 'edit any google_form media'
+    - 'edit any video media'
+    - 'edit own embeddable media'
+    - 'mark as hidden in editoria11y'
+    - 'mark as ok in editoria11y'
+    - 'notify of path changes'
+    - 'schedule publishing of nodes'
+    - 'update any media'
+    - 'view editoria11y checker'
+    - 'view scheduled content'
