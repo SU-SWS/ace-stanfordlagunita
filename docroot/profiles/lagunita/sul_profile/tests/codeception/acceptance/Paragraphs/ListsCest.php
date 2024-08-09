@@ -759,7 +759,7 @@ class ListsCest {
    *
    * @group D8CORE-7422
    */
-  public function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
+  protected function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
 
     $term_name = strtolower(implode('-', $this->faker->words()));
