@@ -2442,17 +2442,17 @@
         },
         {
             "name": "drupal/auto_entitylabel",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/auto_entitylabel.git",
-                "reference": "8.x-3.2"
+                "reference": "8.x-3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/auto_entitylabel-8.x-3.2.zip",
-                "reference": "8.x-3.2",
-                "shasum": "0229f2264984e9f33ba339577695dddd3613fd99"
+                "url": "https://ftp.drupal.org/files/projects/auto_entitylabel-8.x-3.3.zip",
+                "reference": "8.x-3.3",
+                "shasum": "38fd79973a7b49441bf622a1429a7c6623b93035"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11"
@@ -2463,8 +2463,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.2",
-                    "datestamp": "1717752307",
+                    "version": "8.x-3.3",
+                    "datestamp": "1723462798",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2952,17 +2952,17 @@
         },
         {
             "name": "drupal/colorbox",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/colorbox.git",
-                "reference": "2.1.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/colorbox-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "6801e500f821b4cfd2519e452a66f1d99172b3d1"
+                "url": "https://ftp.drupal.org/files/projects/colorbox-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "59f2fc48ba12ebc91293f7d33138ae6a7761b4b1"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11"
@@ -2973,8 +2973,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1722959496",
+                    "version": "2.1.1",
+                    "datestamp": "1723487172",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4670,20 +4670,20 @@
         },
         {
             "name": "drupal/dropzonejs",
-            "version": "2.10.0",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/dropzonejs.git",
-                "reference": "8.x-2.10"
+                "reference": "8.x-2.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dropzonejs-8.x-2.10.zip",
-                "reference": "8.x-2.10",
-                "shasum": "72bee3bce2d29eace381edba1a7e0237db6ecd48"
+                "url": "https://ftp.drupal.org/files/projects/dropzonejs-8.x-2.11.zip",
+                "reference": "8.x-2.11",
+                "shasum": "0fb4eff1bba2fd33850db0dfd9929ef4bd4569ee"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10"
+                "drupal/core": "^9.3 || ^10 || ^11"
             },
             "require-dev": {
                 "drupal/entity_browser": "^2.5"
@@ -4694,8 +4694,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.10",
-                    "datestamp": "1709584348",
+                    "version": "8.x-2.11",
+                    "datestamp": "1723381576",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6323,7 +6323,7 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Rajeshreeputra",
+                    "name": "rajeshreeputra",
                     "homepage": "https://www.drupal.org/user/3418561"
                 }
             ],
@@ -7376,20 +7376,20 @@
         },
         {
             "name": "drupal/jsonapi_image_styles",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_image_styles.git",
-                "reference": "3.0.0"
+                "reference": "3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_image_styles-3.0.0.zip",
-                "reference": "3.0.0",
-                "shasum": "9747a66d4da23d07e33768e77a07e86b1916f425"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_image_styles-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "abf894873e4ae448771908a5c3db269a66b41573"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^9 || ^10 || ^11"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
@@ -7398,8 +7398,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1647015398",
+                    "version": "3.0.1",
+                    "datestamp": "1723311931",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10317,26 +10317,26 @@
         },
         {
             "name": "drupal/redirect",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/redirect.git",
-                "reference": "8.x-1.9"
+                "reference": "8.x-1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "2987de20f509e9f7cec8a0f81d3a6774f9b0ba3e"
+                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "9d72d7e0717dbdea3ab3306c5d6840da5bd3024c"
             },
             "require": {
-                "drupal/core": "^9.2 || ^10"
+                "drupal/core": "^9.2 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1693393506",
+                    "version": "8.x-1.10",
+                    "datestamp": "1723277641",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10353,7 +10353,7 @@
                     "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
-                    "name": "Dave Reid",
+                    "name": "dave reid",
                     "homepage": "https://www.drupal.org/user/53892"
                 },
                 {
@@ -16944,16 +16944,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "10.1.20",
+            "version": "10.1.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "f3eaa10de96fcf540ee14a4628f99a851055336b"
+                "reference": "3e49d5b42d3c983578eb184d0e31724eb79908ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/f3eaa10de96fcf540ee14a4628f99a851055336b",
-                "reference": "f3eaa10de96fcf540ee14a4628f99a851055336b",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/3e49d5b42d3c983578eb184d0e31724eb79908ca",
+                "reference": "3e49d5b42d3c983578eb184d0e31724eb79908ca",
                 "shasum": ""
             },
             "require": {
@@ -16976,10 +16976,6 @@
                 "patches": {
                     "drupal/autologout": {
                         "https://www.drupal.org/project/autologout/issues/3372010": "https://www.drupal.org/files/issues/2024-05-28/autologout_3372010-25.patch"
-                    },
-                    "drupal/auto_entitylabel": {
-                        "https://www.drupal.org/project/auto_entitylabel/issues/3076302": "https://www.drupal.org/files/issues/2021-01-09/3076302-19.patch",
-                        "https://www.drupal.org/project/auto_entitylabel/issues/3239799": "https://www.drupal.org/files/issues/2021-09-29/issue-3239799.patch"
                     },
                     "drupal/colorbox": {
                         "https://www.drupal.org/project/colorbox/issues/3278470": "https://git.drupalcode.org/project/colorbox/-/merge_requests/14.patch"
@@ -17029,8 +17025,8 @@
                         "https://www.drupal.org/project/menu_link_weight/issues/3099139": "https://www.drupal.org/files/issues/2019-12-05/menu_link_weight-target_blank-3099139.patch"
                     },
                     "drupal/redirect": {
-                        "https://www.drupal.org/project/redirect/issues/3057250": "https://www.drupal.org/files/issues/2020-12-14/validation-issue-3057250-29.patch",
-                        "https://www.drupal.org/project/redirect/issues/3018897": "https://www.drupal.org/files/issues/2023-09-05/redirect-3018897-22.patch"
+                        "https://www.drupal.org/project/redirect/issues/3057250": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
+                        "https://www.drupal.org/project/redirect/issues/3018897": "https://www.drupal.org/files/issues/2024-08-12/redirect-3018897-28.patch"
                     },
                     "drupal/response_code_condition": {
                         "https://www.drupal.org/project/response_code_condition/issues/3366575": "https://git.drupalcode.org/project/response_code_condition/-/merge_requests/2.patch"
@@ -17060,9 +17056,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.20"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/10.1.22"
             },
-            "time": "2024-08-07T15:53:56+00:00"
+            "time": "2024-08-12T19:00:32+00:00"
         },
         {
             "name": "su-sws/react_paragraphs",
@@ -17290,12 +17286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "e29a4f2579c12ed324fd254793e646f4f959246d"
+                "reference": "c1b53e3ac0d83f56d62fbcd169c554587746d942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/e29a4f2579c12ed324fd254793e646f4f959246d",
-                "reference": "e29a4f2579c12ed324fd254793e646f4f959246d",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/c1b53e3ac0d83f56d62fbcd169c554587746d942",
+                "reference": "c1b53e3ac0d83f56d62fbcd169c554587746d942",
                 "shasum": ""
             },
             "require": {
@@ -17462,7 +17458,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
             },
-            "time": "2024-08-09T20:18:53+00:00"
+            "time": "2024-08-12T20:22:30+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -23097,30 +23093,33 @@
         },
         {
             "name": "drupal/devel",
-            "version": "5.2.1",
+            "version": "5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/devel.git",
-                "reference": "5.2.1"
+                "reference": "5.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/devel-5.2.1.zip",
-                "reference": "5.2.1",
-                "shasum": "793861751e01092fe8bc7c0cd47589ebea2bb8df"
+                "url": "https://ftp.drupal.org/files/projects/devel-5.3.1.zip",
+                "reference": "5.3.1",
+                "shasum": "6a5f13bdf93dc5f7f194b6af847589ae15e37b63"
             },
             "require": {
                 "doctrine/common": "^2.7 || ^3.4",
-                "drupal/core": ">=10.0 <12.0.0-stable",
+                "drupal/core": "^10.3 || ^11 || ^12",
                 "php": ">=8.1",
-                "symfony/var-dumper": "^4 || ^5 || ^6"
+                "symfony/var-dumper": "^4 || ^5 || ^6 || ^7"
             },
             "conflict": {
+                "drupal/core": "<10.3",
                 "drush/drush": "<12.5.1",
                 "kint-php/kint": "<3"
             },
             "require-dev": {
-                "drush/drush": "^12.5.1"
+                "drush/drush": "^13",
+                "firephp/firephp-core": "^0.5.3",
+                "kint-php/kint": "^5.1"
             },
             "suggest": {
                 "kint-php/kint": "Kint provides an informative display of arrays/objects. Useful for debugging and developing."
@@ -23128,8 +23127,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "5.2.1",
-                    "datestamp": "1711328410",
+                    "version": "5.3.1",
+                    "datestamp": "1723258446",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

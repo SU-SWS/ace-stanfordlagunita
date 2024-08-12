@@ -114,7 +114,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content overview'
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -1381,6 +1381,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: false
+      access:
+        type: perm
+        options:
+          perm: 'access content overview'
       sorts: {  }
       arguments: {  }
       filters:
@@ -1663,6 +1667,7 @@ display:
           relationship: none
           view_mode: stanford_h3_card
       defaults:
+        access: false
         title: false
         use_ajax: false
         style: false
