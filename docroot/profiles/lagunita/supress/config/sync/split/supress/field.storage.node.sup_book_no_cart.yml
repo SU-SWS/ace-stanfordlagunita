@@ -1,0 +1,18 @@
+uuid: 5f77cf9f-43cb-4eaa-8d65-760a17295e49
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_no_cart
+field_name: sup_book_no_cart
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

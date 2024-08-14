@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.sup_blog_teaser
   module:
     - entity_reference_revisions
+    - link
     - stanford_fields
 id: paragraph.sup_blog_teaser.default
 targetEntityType: paragraph
@@ -33,6 +34,17 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  sup_blog_teaser_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   search_api_excerpt: true
-  sup_blog_teaser_link: true

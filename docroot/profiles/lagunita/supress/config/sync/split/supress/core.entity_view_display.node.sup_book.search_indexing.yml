@@ -1,9 +1,9 @@
-uuid: d8f57468-6fff-4460-bdbd-b1268a9a35a8
+uuid: baebcbf5-61d9-4134-b666-ae4e32d7eb6e
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_indexing
     - field.field.node.sup_book.sup_book_author_info
     - field.field.node.sup_book.sup_book_authors
     - field.field.node.sup_book.sup_book_authors_full
@@ -35,9 +35,11 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_local_web_blurb
     - field.field.node.sup_book.sup_book_new_paperback_yn
+    - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
     - field.field.node.sup_book.sup_book_paper_sale_percent
     - field.field.node.sup_book.sup_book_paper_sale_price
+    - field.field.node.sup_book.sup_book_preorder
     - field.field.node.sup_book.sup_book_price_cloth
     - field.field.node.sup_book.sup_book_price_digital
     - field.field.node.sup_book.sup_book_price_paper
@@ -66,79 +68,70 @@ dependencies:
     - field.field.node.sup_book.sup_book_work_id_number
     - node.type.sup_book
   module:
-    - ds
-    - empty_fields
-    - field_formatter_class
-    - field_label
-    - stanford_media
+    - layout_builder
+    - text
     - user
 third_party_settings:
-  ds:
-    layout:
-      id: layout_twocol_section
-      library: layout_builder/twocol_section
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        label: ''
-        column_widths: 50-50
-    regions:
-      first:
-        - sup_book_image
-      second:
-        - node_title
-        - sup_book_subtitle
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: false
-          'link class': ''
-          link_target: ''
-          wrapper: h2
-          class: ''
-id: node.sup_book.teaser
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.sup_book.search_indexing
 targetEntityType: node
 bundle: sup_book
-mode: teaser
+mode: search_indexing
 content:
-  sup_book_image:
-    type: media_image_formatter
+  sup_book_avail_desc:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sup_book_awards:
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: false
-      image_style: medium
-      remove_alt: false
-    third_party_settings:
-      empty_fields:
-        handler: ''
-      field_formatter_class:
-        class: ''
-      field_label:
-        label_value: ''
-        label_tag: ''
-    weight: 0
-    region: first
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sup_book_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sup_book_reviews:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   sup_book_subtitle:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
-    region: second
+    weight: 0
+    region: content
+  sup_book_table_of_contents:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
 hidden:
   links: true
   search_api_excerpt: true
   sup_book_author_info: true
   sup_book_authors: true
   sup_book_authors_full: true
-  sup_book_avail_desc: true
-  sup_book_awards: true
   sup_book_catalog_month: true
   sup_book_catalog_page: true
   sup_book_catalog_season_yyyy: true
@@ -147,12 +140,12 @@ hidden:
   sup_book_copublisher_name: true
   sup_book_copublisher_yn: true
   sup_book_copyright: true
-  sup_book_description: true
   sup_book_digital_comp_link: true
   sup_book_e_retailers: true
   sup_book_excerpts: true
   sup_book_html_page_title: true
   sup_book_illustrations: true
+  sup_book_image: true
   sup_book_imprint: true
   sup_book_in_print_status: true
   sup_book_instructor_recommended: true
@@ -164,9 +157,11 @@ hidden:
   sup_book_isbn_13_paper: true
   sup_book_local_web_blurb: true
   sup_book_new_paperback_yn: true
+  sup_book_no_cart: true
   sup_book_pages: true
   sup_book_paper_sale_percent: true
   sup_book_paper_sale_price: true
+  sup_book_preorder: true
   sup_book_price_cloth: true
   sup_book_price_digital: true
   sup_book_price_paper: true
@@ -177,7 +172,6 @@ hidden:
   sup_book_pub_date_paper: true
   sup_book_pub_year_first: true
   sup_book_related_titles: true
-  sup_book_reviews: true
   sup_book_rights_description: true
   sup_book_sales_rank: true
   sup_book_series: true
@@ -185,7 +179,6 @@ hidden:
   sup_book_status_digital: true
   sup_book_status_paper: true
   sup_book_subjects: true
-  sup_book_table_of_contents: true
   sup_book_tags: true
   sup_book_type: true
   sup_book_url_isw: true

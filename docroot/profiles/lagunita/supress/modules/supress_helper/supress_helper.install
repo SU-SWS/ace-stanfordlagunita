@@ -31,3 +31,13 @@ function supress_helper_update_9002() {
     $paragraph->set('su_list_view', $view_settings)->save();
   }
 }
+
+/**
+ * Update config split storage.
+ */
+function supress_helper_update_9003() {
+  \Drupal::configFactory()
+    ->getEditable('config_split.config_split.supress')
+    ->set('storage', 'collection')
+    ->save();
+}

@@ -281,6 +281,7 @@ removing:
         selector: researchInterestTopics
       -
         name: scholarly_interests_fulltext
+        label: 'Scholarly and Research Interests'
         selector: currentResearchInterests/fullText/html
       -
         name: scholarly_interests_tersetext

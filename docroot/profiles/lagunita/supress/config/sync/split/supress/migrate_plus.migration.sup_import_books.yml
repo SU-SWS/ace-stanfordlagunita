@@ -326,6 +326,10 @@ source:
       name: book_tags
       label: book_tags
       selector: fieldData/book_tags
+    -
+      name: cart_button
+      label: cart_button
+      selector: fieldData/cart_button
   ids:
     work_id_number:
       type: integer
@@ -341,7 +345,7 @@ process:
       plugin: str_replace
       source: isbn_13_isw
       regex: true
-      search: /^[0-9]{1,}$/
+      search: '/^[0-9]{1,}$/'
       replace: digital_project
     -
       plugin: default_value
@@ -412,7 +416,7 @@ process:
     -
       plugin: static_map
       map:
-        yes: 1
+        'yes': 1
       default_value: null
   sup_book_html_page_title: html_page_title
   sup_book_illustrations: illustrations
@@ -440,7 +444,7 @@ process:
     -
       plugin: static_map
       map:
-        yes: 1
+        'yes': 1
       default_value: null
   sup_book_pub_date_cloth: pub_date_cloth
   sup_book_pub_date_digital: pub_date_digital
@@ -550,6 +554,20 @@ process:
       bundle: sup_book_tags
       value_key: name
       ignore_case: true
+  sup_book_preorder:
+    plugin: static_map
+    source: cart_button
+    map:
+      preorder: 1
+      all: 0
+      none: 0
+  sup_book_no_cart:
+    plugin: static_map
+    source: cart_button
+    map:
+      preorder: 0
+      all: 0
+      none: 1
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

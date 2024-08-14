@@ -1,0 +1,21 @@
+uuid: f18e1f6c-6189-4291-9d76-aeef2be18998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_no_cart
+    - node.type.sup_book
+id: node.sup_book.sup_book_no_cart
+field_name: sup_book_no_cart
+entity_type: node
+bundle: sup_book
+label: 'No Cart Button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

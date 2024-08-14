@@ -1,0 +1,21 @@
+uuid: ce5ded52-8582-4158-bffa-5d723f9991ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_preorder
+    - node.type.sup_book
+id: node.sup_book.sup_book_preorder
+field_name: sup_book_preorder
+entity_type: node
+bundle: sup_book
+label: Preorder
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

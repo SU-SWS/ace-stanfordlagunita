@@ -27,4 +27,20 @@ adding:
           -
             label: 'Sub Title'
             element: '<p class="su-subheading">'
-removing: {  }
+removing:
+  settings:
+    plugins:
+      ckeditor5_style:
+        styles:
+          -
+            label: Button
+            element: '<a class="su-button">'
+          -
+            label: 'Big Button'
+            element: '<a class="su-button--big">'
+          -
+            label: 'Secondary Button'
+            element: '<a class="su-button--secondary">'
+          -
+            label: 'Action Link'
+            element: '<a class="su-link--action">'
