@@ -3,6 +3,10 @@ _core:
 mode: simple
 ignored_config_entities:
   - 'block.block.*'
+  - 'config_split.patch.search_api.index.algolia_search:adding.options'
+  - 'config_split.patch.search_api.index.algolia_search:adding.status'
+  - 'config_split.patch.search_api.index.algolia_search:removing.options'
+  - 'config_split.patch.search_api.index.algolia_search:removing.status'
   - 'core.extension:theme'
   - 'google_tag.container.*'
   - 'next.next_entity_type_config.*'

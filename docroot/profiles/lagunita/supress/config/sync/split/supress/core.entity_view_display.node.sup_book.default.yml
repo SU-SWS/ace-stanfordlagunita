@@ -34,9 +34,11 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_local_web_blurb
     - field.field.node.sup_book.sup_book_new_paperback_yn
+    - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
     - field.field.node.sup_book.sup_book_paper_sale_percent
     - field.field.node.sup_book.sup_book_paper_sale_price
+    - field.field.node.sup_book.sup_book_preorder
     - field.field.node.sup_book.sup_book_price_cloth
     - field.field.node.sup_book.sup_book_price_digital
     - field.field.node.sup_book.sup_book_price_paper
@@ -364,6 +366,16 @@ content:
     third_party_settings: {  }
     weight: 24
     region: content
+  sup_book_no_cart:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 63
+    region: content
   sup_book_pages:
     type: number_integer
     label: above
@@ -392,6 +404,16 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 27
+    region: content
+  sup_book_preorder:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 62
     region: content
   sup_book_price_cloth:
     type: number_decimal

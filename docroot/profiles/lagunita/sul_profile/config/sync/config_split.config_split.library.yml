@@ -8,7 +8,7 @@ description: 'Configuration specific for Library website that overrides stanford
 weight: 0
 stackable: false
 no_patching: false
-storage: folder
+storage: collection
 folder: profiles/lagunita/sul_profile/config/library
 module:
   build_hooks: 0

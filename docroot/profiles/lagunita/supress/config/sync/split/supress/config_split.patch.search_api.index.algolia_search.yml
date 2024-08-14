@@ -1,8 +1,8 @@
 adding:
   dependencies:
     config:
-      - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_authors
+      - field.storage.node.sup_book_authors_full
       - field.storage.node.sup_book_awards
       - field.storage.node.sup_book_imprint
       - field.storage.node.sup_book_pub_date_first

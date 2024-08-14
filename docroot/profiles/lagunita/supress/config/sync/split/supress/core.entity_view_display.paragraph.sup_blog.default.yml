@@ -12,6 +12,7 @@ dependencies:
     - empty_fields
     - field_formatter_class
     - field_label
+    - link
     - stanford_fields
     - stanford_media
 id: paragraph.sup_blog.default
@@ -60,6 +61,17 @@ content:
         label_tag: ''
     weight: 1
     region: content
+  sup_blog_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   search_api_excerpt: true
-  sup_blog_url: true

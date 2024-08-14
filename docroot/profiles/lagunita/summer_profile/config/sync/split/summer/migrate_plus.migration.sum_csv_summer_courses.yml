@@ -145,8 +145,8 @@ process:
       source: start_date
     -
       plugin: format_date
-      from_format: 'n/j/Y'
-      to_format: 'Y-m-d'
+      from_format: n/j/Y
+      to_format: Y-m-d
       timezone: UTC
   sum_course_end_date:
     -
@@ -155,8 +155,8 @@ process:
       source: end_date
     -
       plugin: format_date
-      from_format: 'n/j/Y'
-      to_format: 'Y-m-d'
+      from_format: n/j/Y
+      to_format: Y-m-d
       timezone: UTC
   sum_course_instructors:
     -

@@ -8,7 +8,7 @@ description: 'Configuration specific for Press website that overrides stanford_p
 weight: 0
 stackable: false
 no_patching: false
-storage: folder
+storage: collection
 folder: profiles/lagunita/supress/config/supress
 module:
   filefield_paths: 0

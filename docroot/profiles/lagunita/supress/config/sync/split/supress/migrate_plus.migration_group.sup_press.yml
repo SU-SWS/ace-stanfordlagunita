@@ -12,7 +12,7 @@ shared_configuration:
     track_changes: true
     authentication:
       plugin: press_filemaker
-      token_url: "https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions"
+      token_url: 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions'
       client_id: '[client_id]'
       client_secret: '[client_secret]'
     plugin: url

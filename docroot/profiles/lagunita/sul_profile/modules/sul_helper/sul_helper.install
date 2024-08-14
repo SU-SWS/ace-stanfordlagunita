@@ -95,3 +95,13 @@ function sul_helper_update_8005() {
       ->save();
   }
 }
+
+/**
+ * Update config split storage.
+ */
+function sul_helper_update_8006() {
+  \Drupal::configFactory()
+    ->getEditable('config_split.config_split.library')
+    ->set('storage', 'collection')
+    ->save();
+}

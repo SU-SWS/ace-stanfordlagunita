@@ -8,7 +8,7 @@ description: ''
 weight: 0
 stackable: false
 no_patching: false
-storage: folder
+storage: collection
 folder: profiles/lagunita/summer_profile/config/summer
 module:
   double_field: 0

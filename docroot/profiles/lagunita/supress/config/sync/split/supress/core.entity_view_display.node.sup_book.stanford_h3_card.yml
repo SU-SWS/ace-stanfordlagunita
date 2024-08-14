@@ -1,9 +1,9 @@
-uuid: 68a100d2-1853-436f-8f48-664a530d8931
+uuid: b03f238a-7c3d-402c-aae1-216c1a44e06d
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.stanford_card
+    - core.entity_view_mode.node.stanford_h3_card
     - field.field.node.sup_book.sup_book_author_info
     - field.field.node.sup_book.sup_book_authors
     - field.field.node.sup_book.sup_book_authors_full
@@ -35,9 +35,11 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_local_web_blurb
     - field.field.node.sup_book.sup_book_new_paperback_yn
+    - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
     - field.field.node.sup_book.sup_book_paper_sale_percent
     - field.field.node.sup_book.sup_book_paper_sale_price
+    - field.field.node.sup_book.sup_book_preorder
     - field.field.node.sup_book.sup_book_price_cloth
     - field.field.node.sup_book.sup_book_price_digital
     - field.field.node.sup_book.sup_book_price_paper
@@ -90,9 +92,8 @@ third_party_settings:
     regions:
       card_image:
         - sup_book_image
-      card_headline:
-        - node_title
       card_body:
+        - node_title
         - sup_book_subtitle
         - sup_book_authors_full
     fields:
@@ -105,12 +106,12 @@ third_party_settings:
           link: true
           'link class': ''
           link_target: ''
-          wrapper: ''
+          wrapper: h3
           class: ''
-id: node.sup_book.stanford_card
+id: node.sup_book.stanford_h3_card
 targetEntityType: node
 bundle: sup_book
-mode: stanford_card
+mode: stanford_h3_card
 content:
   sup_book_authors_full:
     type: string
@@ -178,9 +179,11 @@ hidden:
   sup_book_isbn_13_paper: true
   sup_book_local_web_blurb: true
   sup_book_new_paperback_yn: true
+  sup_book_no_cart: true
   sup_book_pages: true
   sup_book_paper_sale_percent: true
   sup_book_paper_sale_price: true
+  sup_book_preorder: true
   sup_book_price_cloth: true
   sup_book_price_digital: true
   sup_book_price_paper: true

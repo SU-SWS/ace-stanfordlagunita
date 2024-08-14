@@ -21,17 +21,10 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  sup_media_file_group:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   created: true
   name: true
   search_api_excerpt: true
+  sup_media_file_group: true
   thumbnail: true
   uid: true
