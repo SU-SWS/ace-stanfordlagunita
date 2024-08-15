@@ -4,6 +4,7 @@ namespace Drupal\supress_helper\Plugin\QueueWorker;
 
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
@@ -160,7 +161,17 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
       'timeout' => 60,
     ]);
 
+    // Move to the final destinatino.
     $new_file_path = $this->fileSystem->move($sink_path, $destination);
+
+    // Create a temporary image derivative, and then replace the original image
+    // with that.
+    $temp = "temporary://" . basename($new_file_path);
+    $image_style = $this->entityTypeManager->getStorage('image_style')->load("breakpoint_2xl_1x");
+    $success = $image_style->createDerivative($new_file_path, $temp);
+    if ($success) {
+      $this->fileSystem->move($temp, $new_file_path, FileExists::Replace);
+    }
 
     $file_storage = $this->entityTypeManager->getStorage('file');
     $media_storage = $this->entityTypeManager->getStorage('media');
@@ -197,6 +208,25 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     ]);
     $media->save();
     return $media->id();
+  }
+
+  /**
+   * Resize the newly downloaded image, so it's not giant.
+   *
+   * @param $fid
+   *   File entity id.
+   */
+  protected function adjustCoverImageSize(int $fid) {
+    $image_style = $this->entityTypeManager->getStorage('image_style')::load("breakpoint_2xl_1x");
+    $file = $this->entityTypeManager->getStorage("file")->load($fid);
+    $temp = "temporary://" . $file->label();
+    $success = $image_style->createDerivative($file->getFileUri(), $temp);
+    if (!$success) {
+      $this->logger->get('supress')->error('Unable to generate image derivative for file @uri', ['@uri' => $file->getFileUri()]);
+      return;
+    }
+    $this->fileSystem->move($temp, $file->getFileUri(), FileExists::Replace);
+    $file->save();
   }
 
 }
