@@ -41,3 +41,21 @@ function supress_helper_update_9003() {
     ->set('storage', 'collection')
     ->save();
 }
+
+/**
+ * Queue cover images to be resized.
+ */
+function supress_helper_update_9004() {
+  $fids = \Drupal::entityTypeManager()
+    ->getStorage('file')
+    ->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('uri', 'public://media/covers/%', 'LIKE')
+    ->execute();
+  /** @var \Drupal\Core\Queue\QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  $queue = $queue_factory->get('press_image_resize');
+  foreach ($fids as $fid) {
+    $queue->createItem($fid);
+  }
+}
