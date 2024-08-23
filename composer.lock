@@ -17286,12 +17286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "c1b53e3ac0d83f56d62fbcd169c554587746d942"
+                "reference": "869e33c7e8e57fa3c5bae2a97f7826eeccd952c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/c1b53e3ac0d83f56d62fbcd169c554587746d942",
-                "reference": "c1b53e3ac0d83f56d62fbcd169c554587746d942",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/869e33c7e8e57fa3c5bae2a97f7826eeccd952c6",
+                "reference": "869e33c7e8e57fa3c5bae2a97f7826eeccd952c6",
                 "shasum": ""
             },
             "require": {
@@ -17458,7 +17458,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
             },
-            "time": "2024-08-12T20:22:30+00:00"
+            "time": "2024-08-15T21:00:03+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",

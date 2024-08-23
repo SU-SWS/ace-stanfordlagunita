@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.sum_top_banner_cards
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.sum_top_banner
+    - paragraphs.paragraphs_type.sum_video
   module:
     - entity_reference_revisions
 id: paragraph.sum_top_banner.sum_top_banner_cards
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       stanford_card: stanford_card
+      sum_video: sum_video
     negate: 0
     target_bundles_drag_drop:
       stanford_accordion:
@@ -102,5 +104,5 @@ settings:
         enabled: false
       sum_video:
         weight: 36
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions
