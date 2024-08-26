@@ -559,14 +559,14 @@ process:
     source: cart_button
     map:
       preorder: 1
-      all: 0
+      add: 0
       none: 0
   sup_book_no_cart:
     plugin: static_map
     source: cart_button
     map:
       preorder: 0
-      all: 0
+      add: 0
       none: 1
 destination:
   plugin: 'entity:node'
