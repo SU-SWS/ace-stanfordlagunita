@@ -10785,6 +10785,62 @@
             }
         },
         {
+            "name": "drupal/search_api_exclude_entity",
+            "version": "3.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_exclude_entity.git",
+                "reference": "3.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_exclude_entity-3.0.0-beta2.zip",
+                "reference": "3.0.0-beta2",
+                "shasum": "8f07509a3d935409d0bcf6a2d982042169616665"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11",
+                "drupal/search_api": "^1.31",
+                "php": ">=8.1.0"
+            },
+            "require-dev": {
+                "drupal/metatag": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.0-beta2",
+                    "datestamp": "1718043020",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Beltofte (beltofte)",
+                    "homepage": "https://www.drupal.org/u/beltofte",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Stephen Mustgrave (smustgrave)",
+                    "homepage": "https://www.drupal.org/u/smustgrave",
+                    "role": "Co-Maintainer"
+                }
+            ],
+            "description": "Extends Search API to exclude entity from indexing.",
+            "homepage": "https://www.drupal.org/project/search_api_exclude_entity",
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_exclude_entity",
+                "issues": "https://www.drupal.org/project/issues/search_api_exclude_entity"
+            }
+        },
+        {
             "name": "drupal/seckit",
             "version": "2.0.1",
             "source": {
@@ -27502,7 +27558,8 @@
         "su-sws/blt-sws": 20,
         "su-sws/stanford_profile": 20,
         "drupal/graphql_compose_fragments-graphql_compose_fragments": 10,
-        "drupal/filefield_paths": 10
+        "drupal/filefield_paths": 10,
+        "drupal/search_api_exclude_entity": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

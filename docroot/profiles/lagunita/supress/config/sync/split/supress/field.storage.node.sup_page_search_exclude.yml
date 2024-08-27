@@ -1,0 +1,19 @@
+uuid: f7cccdae-e1cd-446b-9b40-7810955e6aa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - search_api_exclude_entity
+id: node.sup_page_search_exclude
+field_name: sup_page_search_exclude
+entity_type: node
+type: search_api_exclude_entity
+settings: {  }
+module: search_api_exclude_entity
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

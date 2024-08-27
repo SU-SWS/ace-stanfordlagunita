@@ -15,6 +15,7 @@ use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
+use Drupal\node\NodeInterface;
 use Drupal\search_api\IndexInterface;
 
 /**
@@ -255,6 +256,18 @@ function _supress_get_ebook_retailers() {
 
   $cache->set('filemaker_ebook_retailers', $retailers, time() + 60 * 60 * 24 * 7);
   return $retailers;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function supress_helper_node_update(NodeInterface $node) {
+  if (
+    $node->hasField('sup_page_search_exclude') &&
+    $node->get('sup_page_search_exclude')->getString()
+  ) {
+    \Drupal::service('search_api_algolia.helper')->entityDelete($node);
+  }
 }
 
 /**

@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "drupal/filefield_paths": "^1.0@beta"
+        "drupal/filefield_paths": "^1.0@beta",
+        "drupal/search_api_exclude_entity": "^3.0@beta"
     },
     "config": {
         "sort-packages": true

@@ -4,8 +4,10 @@ mode: simple
 ignored_config_entities:
   - 'block.block.*'
   - 'config_split.patch.search_api.index.algolia_search:adding.options'
+  - 'config_split.patch.search_api.index.algolia_search:adding.read_only'
   - 'config_split.patch.search_api.index.algolia_search:adding.status'
   - 'config_split.patch.search_api.index.algolia_search:removing.options'
+  - 'config_split.patch.search_api.index.algolia_search:removing.read_only'
   - 'config_split.patch.search_api.index.algolia_search:removing.status'
   - 'core.extension:theme'
   - 'google_tag.container.*'
