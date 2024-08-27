@@ -21,6 +21,7 @@ class BookCoverDownloaderTest extends UnitTestCase {
   protected $entityTypeManager;
 
   protected function setUp(): void {
+    putenv("AH_SITE_ENVIRONMENT=prod");
     parent::setUp();
     $this->client = $this->createMock('\GuzzleHttp\ClientInterface');
     $this->configPageLoader = $this->createMock('\Drupal\config_pages\ConfigPagesLoaderServiceInterface');

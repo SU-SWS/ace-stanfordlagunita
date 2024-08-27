@@ -64,7 +64,7 @@ function supress_helper_cron() {
   $queue = $queue_factory->get('press_cover_downloader');
 
   $token = _supress_helper_get_api_token();
-  if (!$token && $queue->numberOfItems() > 0) {
+  if (!$token || $queue->numberOfItems() > 0) {
     return;
   }
 

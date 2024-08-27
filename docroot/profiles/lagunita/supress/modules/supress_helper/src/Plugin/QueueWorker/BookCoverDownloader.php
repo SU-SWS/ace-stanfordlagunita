@@ -2,6 +2,7 @@
 
 namespace Drupal\supress_helper\Plugin\QueueWorker;
 
+use Acquia\Blt\Robo\Common\EnvironmentDetector;
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileExists;
@@ -69,7 +70,7 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     $client_id = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
     $client_secret = $this->configPagesLoader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
 
-    if (!$client_id || !$client_secret) {
+    if (!$client_id || !$client_secret || !EnvironmentDetector::isProdEnv()) {
       return;
     }
 
