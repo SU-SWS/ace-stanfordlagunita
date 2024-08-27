@@ -118,7 +118,7 @@ abstract class IntranetCest {
   /**
    * Content should be indexed and results displayed.
    */
-  public function testSearchResults(AcceptanceTester $I) {
+  protected function testSearchResults(AcceptanceTester $I) {
     $I->runDrush('sset stanford_intranet 1');
     $I->runDrush('sapi-c');
     $quote = 'Life is like a box of chocolates. You never know what you’re going to get.';
