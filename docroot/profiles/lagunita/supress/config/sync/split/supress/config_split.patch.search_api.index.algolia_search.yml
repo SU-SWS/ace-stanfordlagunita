@@ -10,6 +10,9 @@ adding:
       - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_subtitle
       - field.storage.node.sup_book_type
+    module:
+      - search_api_exclude_entity
+  read_only: true
   field_settings:
     book_authors:
       label: 'Sup Book Authors (full)'
@@ -107,6 +110,15 @@ adding:
         selected:
           - sup_book_ancillary
   processor_settings:
+    decode_html_entities:
+      fields:
+        - book_authors
+        - book_authors_last_name
+        - book_imprint
+        - book_series
+        - book_subject
+        - book_subtitle
+        - book_type
     html_filter:
       fields:
         - book_authors
@@ -116,7 +128,21 @@ adding:
         - book_subject
         - book_subtitle
         - book_type
+    search_api_exclude_entity_processor:
+      fields:
+        node:
+          - sup_page_search_exclude
+    space_tags:
+      fields:
+        - book_authors
+        - book_authors_last_name
+        - book_imprint
+        - book_series
+        - book_subject
+        - book_subtitle
+        - book_type
 removing:
+  read_only: false
   field_settings:
     photo:
       configuration:

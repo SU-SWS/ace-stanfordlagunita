@@ -1,0 +1,21 @@
+uuid: 0fcc1a68-1533-440a-b19c-c7d0d98b56e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_page_search_exclude
+    - node.type.stanford_page
+  module:
+    - search_api_exclude_entity
+id: node.stanford_page.sup_page_search_exclude
+field_name: sup_page_search_exclude
+entity_type: node
+bundle: stanford_page
+label: 'Exclude from search'
+description: "Do not send this page's contents to Algolia for search indexing."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

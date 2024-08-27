@@ -12,105 +12,55 @@ dependencies:
   module:
     - supress_helper
     - text
-    - user
 id: sup_award.sup_award.default
 targetEntityType: sup_award
 bundle: sup_award
 mode: default
 content:
-  created:
-    type: timestamp
-    label: above
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-      tooltip:
-        date_format: long
-        custom_date_format: ''
-      time_diff:
-        enabled: false
-        future_format: '@interval hence'
-        past_format: '@interval ago'
-        granularity: 2
-        refresh: 60
-    third_party_settings: {  }
-    weight: 20
-    region: content
   name:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: -5
-    region: content
-  status:
-    type: boolean
-    label: above
-    settings:
-      format: enabled-disabled
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
     weight: 0
     region: content
   sup_association:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 26
+    weight: 4
     region: content
   sup_description:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 24
+    weight: 2
     region: content
   sup_place:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 25
-    region: content
-  sup_rank:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 22
-    region: content
-  sup_work_id:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 21
+    weight: 3
     region: content
   sup_year:
     type: number_integer
-    label: above
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 23
-    region: content
-  uid:
-    type: author
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 15
+    weight: 1
     region: content
 hidden:
+  created: true
   search_api_excerpt: true
+  status: true
+  sup_rank: true
+  sup_work_id: true
+  uid: true

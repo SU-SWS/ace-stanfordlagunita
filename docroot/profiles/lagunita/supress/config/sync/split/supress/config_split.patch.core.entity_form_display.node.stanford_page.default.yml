@@ -1,13 +1,30 @@
 adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.sup_page_search_exclude
+    module:
+      - search_api_exclude_entity
   content:
     su_page_components:
       settings:
+        view_mode: default
         preview_view_mode: sup_form_preview
+        form_display_mode: default
       third_party_settings:
         change_labels:
           field_label_overwrite: ''
           hide_add_another: 0
           force_single_cardinality: 0
+    sup_page_search_exclude:
+      type: search_api_exclude_entity_widget
+      weight: 27
+      region: content
+      settings:
+        field_label: 'Yes, exclude this entity from the search indexes.'
+        use_details_container: true
+      third_party_settings:
+        change_labels:
+          field_label_overwrite: ''
 removing:
   content:
     su_page_components:

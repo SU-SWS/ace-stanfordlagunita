@@ -1,4 +1,5 @@
 adding:
+  status: false
   field_settings:
     rendered_item:
       configuration:
@@ -6,4 +7,5 @@ adding:
           'entity:node':
             sup_book: search_indexing
             sup_book_ancillary: search_indexing
-removing: {  }
+removing:
+  status: true

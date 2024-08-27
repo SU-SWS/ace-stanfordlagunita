@@ -366,7 +366,7 @@ class BasicPageCest {
   /**
    * @group search-results
    */
-  public function testSearchResult(AcceptanceTester $I) {
+  protected function testSearchResult(AcceptanceTester $I) {
     $text = $this->faker->paragraphs(2, TRUE);
     $wysiwyg = $I->createEntity([
       'type' => 'stanford_wysiwyg',

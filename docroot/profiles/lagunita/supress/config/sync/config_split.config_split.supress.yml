@@ -12,6 +12,7 @@ storage: collection
 folder: profiles/lagunita/supress/config/supress
 module:
   filefield_paths: 0
+  search_api_exclude_entity: 0
 theme: {  }
 complete_list:
   - core.entity_view_mode.paragraph.sup_form_preview
