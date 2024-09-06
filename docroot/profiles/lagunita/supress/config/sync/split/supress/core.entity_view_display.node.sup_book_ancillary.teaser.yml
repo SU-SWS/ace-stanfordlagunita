@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.sup_book_ancillary.body
     - field.field.node.sup_book_ancillary.sup_ancillary_book
     - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
     - node.type.sup_book_ancillary
@@ -20,6 +21,7 @@ content:
     weight: 100
     region: content
 hidden:
+  body: true
   search_api_excerpt: true
   sup_ancillary_book: true
   sup_ancillary_paragraphs: true

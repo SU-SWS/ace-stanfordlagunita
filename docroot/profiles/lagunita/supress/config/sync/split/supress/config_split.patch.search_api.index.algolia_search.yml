@@ -12,7 +12,6 @@ adding:
       - field.storage.node.sup_book_type
     module:
       - search_api_exclude_entity
-  read_only: true
   field_settings:
     book_authors:
       label: 'Sup Book Authors (full)'
@@ -141,8 +140,8 @@ adding:
         - book_subject
         - book_subtitle
         - book_type
+  read_only: true
 removing:
-  read_only: false
   field_settings:
     photo:
       configuration:
@@ -150,3 +149,4 @@ removing:
     summary:
       configuration:
         value: '[node:su_page_description|node:summary]'
+  read_only: false

@@ -5,6 +5,7 @@
  * supress_helper.module
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
@@ -30,7 +31,8 @@ function supress_helper_page_attachments(array &$attachments) {
  */
 function supress_helper_library_info_alter(&$libraries, $extension) {
   if ($extension === 'ckeditor5') {
-    $module_path = \Drupal::service('extension.list.module')->getPath('supress_helper');
+    $module_path = \Drupal::service('extension.list.module')
+      ->getPath('supress_helper');
     $libraries['internal.drupal.ckeditor5.stylesheets'] = [
       'css' => [
         'theme' => [
@@ -60,12 +62,95 @@ function supress_helper_media_access(MediaInterface $media, $operation, AccountI
  * Implements hook_cron().
  */
 function supress_helper_cron() {
+  $token = _supress_helper_get_api_token();
+  if (!$token) {
+    return;
+  }
+  _supress_helper_build_social_links($token);
+  _supress_helper_queue_cover_images($token);
+}
+
+/**
+ * Build the social links json used for the migration.
+ *
+ * @param string $token
+ *   Auth token.
+ */
+function _supress_helper_build_social_links(string $token) {
+  if (file_exists('public://social-links.json')) {
+    return;
+  }
+  $client = \Drupal::httpClient();
+  $page_1 = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000', [
+    'headers' => [
+      'Content-Type' => 'application/json',
+      'Authorization' => 'Bearer ' . $token,
+    ],
+    'timeout' => 15,
+  ])->getBody(), TRUE);
+  $page_2 = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000&_offset=1001', [
+    'headers' => [
+      'Content-Type' => 'application/json',
+      'Authorization' => 'Bearer ' . $token,
+    ],
+    'timeout' => 15,
+  ])->getBody(), TRUE);
+
+  $pages = [...$page_1['response']['data'], ...$page_2['response']['data']];
+
+  $data = [];
+  foreach ($pages as $item) {
+    $item = $item['fieldData'];
+    if (empty($item['title'])) {
+      continue;
+    }
+    $work_id = $item['work_id_number'];
+    $item_html = "<h2><a href=\"{$item['url']}\">{$item['title']}</a></h2><p>";
+    if (!empty($item['description'])) {
+      preg_match_all('/(<iframe.*\/iframe>)/', $item['description'], $iframes);
+      if (!empty($iframes[1])) {
+        foreach ($iframes[1] as $iframe) {
+          $modified_iframe = $iframe;
+          if (!str_contains(' title="', $iframe)) {
+            $iframe_title = Html::escape($item['title']);
+            $modified_iframe = str_replace('<iframe ', "<iframe title=\"$iframe_title\" ", $modified_iframe);
+          }
+          $item['description'] = str_replace($iframe, $modified_iframe, $item['description']);
+        }
+      }
+      $item_html .= $item['description'];
+    }
+    if (!empty($item['source'])) {
+      $item_html .= "<br />&mdash;{$item['source']}";
+    }
+    $item_html .= "</p>";
+    $item_html = str_replace('<p></p>', '', $item_html);
+
+    if (isset($data[$work_id])) {
+      $data[$work_id]['html'] .= $item_html;
+    }
+    else {
+      $data[$work_id] = [
+        'workId' => $work_id,
+        'html' => $item_html,
+      ];
+    }
+  }
+  $data = array_values($data);
+  file_put_contents('public://social-links.json', json_encode(['response' => ['data' => $data]], JSON_PRETTY_PRINT));
+}
+
+/**
+ * Queue up cover images for future cron jobs.
+ *
+ * @param string $token
+ *   Auth token.
+ */
+function _supress_helper_queue_cover_images(string $token) {
   /** @var \Drupal\Core\Queue\QueueFactory $queue_factory */
   $queue_factory = \Drupal::service('queue');
   $queue = $queue_factory->get('press_cover_downloader');
-
-  $token = _supress_helper_get_api_token();
-  if (!$token || $queue->numberOfItems() > 0) {
+  if ($queue->numberOfItems() > 0) {
     return;
   }
 

@@ -1,0 +1,28 @@
+uuid: 43959327-5fc9-47b8-bb9c-f62d54623d3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.stanford_html
+    - filter.format.stanford_minimal_html
+    - node.type.sup_book_ancillary
+  module:
+    - text
+id: node.sup_book_ancillary.body
+field_name: body
+entity_type: node
+bundle: sup_book_ancillary
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - stanford_html
+    - stanford_minimal_html
+field_type: text_with_summary
