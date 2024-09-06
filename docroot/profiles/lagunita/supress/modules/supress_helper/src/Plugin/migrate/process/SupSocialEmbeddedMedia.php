@@ -59,7 +59,7 @@ final class SupSocialEmbeddedMedia extends ProcessPluginBase implements Containe
       throw new \Exception('media_name is required.');
     }
 
-    preg_match_all('/(<iframe.*\/iframe>)/', $value, $iframes);
+    preg_match_all('/(<iframe.*?><\/iframe>)/', $value, $iframes);
     if (empty($iframes[1])) {
       return $value;
     }
@@ -77,7 +77,7 @@ final class SupSocialEmbeddedMedia extends ProcessPluginBase implements Containe
         $media = $media_storage->create([
           'bundle' => 'embeddable',
           'name' => $name,
-          'field_media_embeddable_code' => $iframe,
+          'field_media_embeddable_code' => str_replace('http:', 'https:', $iframe),
         ]);
         $media->save();
       }

@@ -67,7 +67,7 @@ function supress_helper_cron() {
     return;
   }
   _supress_helper_build_social_links($token);
-  _supress_helper_queue_cover_images($token);
+//  _supress_helper_queue_cover_images($token);
 }
 
 /**
@@ -78,7 +78,7 @@ function supress_helper_cron() {
  */
 function _supress_helper_build_social_links(string $token) {
   if (file_exists('public://social-links.json')) {
-    return;
+//    return;
   }
   $client = \Drupal::httpClient();
   $page_1 = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000', [
@@ -107,7 +107,7 @@ function _supress_helper_build_social_links(string $token) {
     $work_id = $item['work_id_number'];
     $item_html = "<h2><a href=\"{$item['url']}\">{$item['title']}</a></h2><p>";
     if (!empty($item['description'])) {
-      preg_match_all('/(<iframe.*\/iframe>)/', $item['description'], $iframes);
+      preg_match_all('/(<iframe.*?>)/', $item['description'], $iframes);
       if (!empty($iframes[1])) {
         foreach ($iframes[1] as $iframe) {
           $modified_iframe = $iframe;

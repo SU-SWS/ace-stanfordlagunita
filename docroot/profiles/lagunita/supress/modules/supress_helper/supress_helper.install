@@ -59,3 +59,21 @@ function supress_helper_update_9004() {
     $queue->createItem($fid);
   }
 }
+
+/**
+ * Delete embeddable media that needs to be recreated.
+ */
+function supress_helper_update_9005() {
+  $ms = \Drupal::entityTypeManager()->getStorage('media');
+  /** @var \Drupal\media\MediaInterface[] $media_items */
+  $media_items = $ms->loadByProperties(['bundle' => 'embeddable', 'uid' => 0]);
+  foreach ($media_items as $media) {
+    if ($media->getCreatedTime() > 1725638520) {
+      $media->delete();
+    }
+  }
+  /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+  $file_system->delete('public://social-links.json');
+  supress_helper_cron();
+}
