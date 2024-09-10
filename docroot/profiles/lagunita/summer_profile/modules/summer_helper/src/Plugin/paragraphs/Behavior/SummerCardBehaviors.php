@@ -31,6 +31,15 @@ class SummerCardBehaviors extends CardBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
+
+    $in_pill_banner = FALSE;
+    if (isset($paragraph->_layoutParagraphsLayout)) {
+      /** @var \Drupal\layout_paragraphs\LayoutParagraphsLayout $layout */
+      $layout = $paragraph->_layoutParagraphsLayout;
+      $in_pill_banner = $layout->getParagraphsReferenceField()
+          ->getName() == 'sum_pill_banner_cards';
+    }
+
     $element['sum_card_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Card variant'),
@@ -38,6 +47,7 @@ class SummerCardBehaviors extends CardBehavior {
       '#options' => [
         'pill' => $this->t('Pill'),
       ],
+      '#access' => !$in_pill_banner,
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant'),
     ];
     $element['sum_card_bg_color_variant'] = [
@@ -50,6 +60,7 @@ class SummerCardBehaviors extends CardBehavior {
           '[name="behavior_plugins[su_card_styles][sum_card_variant]"]' => ['value' => 'pill'],
         ],
       ],
+      '#access' => !$in_pill_banner,
     ];
     $element['sum_card_pill_bg_color_variant'] = [
       '#type' => 'select',
