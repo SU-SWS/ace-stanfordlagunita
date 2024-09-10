@@ -31,7 +31,6 @@ class SummerCardBehaviors extends CardBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-
     $in_pill_banner = FALSE;
     if (isset($paragraph->_layoutParagraphsLayout)) {
       /** @var \Drupal\layout_paragraphs\LayoutParagraphsLayout $layout */
@@ -46,7 +45,6 @@ class SummerCardBehaviors extends CardBehavior {
       '#weight' => 0,
       '#empty_option' => $this->t('Default'),
       '#options' => [
-        'default' => $this->t('Default'),
         'type-4' => $this->t('Large'),
         'type-3' => $this->t('Medium'),
         'type-2' => $this->t('Small'),
