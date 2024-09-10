@@ -45,9 +45,8 @@ class SummerCardBehaviors extends CardBehavior {
       '#weight' => 0,
       '#empty_option' => $this->t('Default'),
       '#options' => [
-        'type-4' => $this->t('Large'),
-        'type-3' => $this->t('Medium'),
-        'type-2' => $this->t('Small'),
+        'type-4' => $this->t('Larger'),
+        'type-2' => $this->t('Smaller'),
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_heading_size'),
     ];
