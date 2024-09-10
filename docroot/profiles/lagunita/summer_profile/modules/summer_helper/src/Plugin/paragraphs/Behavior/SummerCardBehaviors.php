@@ -39,7 +39,20 @@ class SummerCardBehaviors extends CardBehavior {
       $in_pill_banner = $layout->getParagraphsReferenceField()
           ->getName() == 'sum_pill_banner_cards';
     }
-
+    $element['sum_card_heading_size'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Heading Size'),
+      '#description' => $this->t('Adjust header size for accessibility and visual improvements.'),
+      '#weight' => 0,
+      '#empty_option' => $this->t('Default'),
+      '#options' => [
+        'default' => $this->t('Default'),
+        'type-4' => $this->t('Large'),
+        'type-3' => $this->t('Medium'),
+        'type-2' => $this->t('Small'),
+      ],
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_heading_size'),
+    ];
     $element['sum_card_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Card variant'),
