@@ -42,11 +42,10 @@ class SummerCardBehaviors extends CardBehavior {
       '#type' => 'select',
       '#title' => $this->t('Heading Size'),
       '#description' => $this->t('Adjust header size for accessibility and visual improvements.'),
-      '#weight' => 0,
       '#empty_option' => $this->t('Default'),
       '#options' => [
-        'type-4' => $this->t('Larger'),
-        'type-2' => $this->t('Smaller'),
+        'larger' => $this->t('Larger'),
+        'smaller' => $this->t('Smaller'),
       ],
       '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_heading_size'),
     ];
