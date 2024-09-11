@@ -31,7 +31,6 @@ class SummerCardBehaviors extends CardBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-
     $in_pill_banner = FALSE;
     if (isset($paragraph->_layoutParagraphsLayout)) {
       /** @var \Drupal\layout_paragraphs\LayoutParagraphsLayout $layout */
@@ -39,7 +38,17 @@ class SummerCardBehaviors extends CardBehavior {
       $in_pill_banner = $layout->getParagraphsReferenceField()
           ->getName() == 'sum_pill_banner_cards';
     }
-
+    $element['sum_card_heading_size'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Heading Size'),
+      '#description' => $this->t('Adjust header size for accessibility and visual improvements.'),
+      '#empty_option' => $this->t('Default'),
+      '#options' => [
+        'larger' => $this->t('Larger'),
+        'smaller' => $this->t('Smaller'),
+      ],
+      '#default_value' => $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_heading_size'),
+    ];
     $element['sum_card_variant'] = [
       '#type' => 'select',
       '#title' => $this->t('Card variant'),
