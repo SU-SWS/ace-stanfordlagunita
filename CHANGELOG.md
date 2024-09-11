@@ -1,5 +1,19 @@
 # Lagunita
 
+2.4.8
+--------------------------------------------------------------------------------
+_Release Date: 2024-09-11_
+- Drupal 10.3.3
+- SUL: tabular layout frontend support
+
+2.4.7
+--------------------------------------------------------------------------------
+_Release Date: 2024-08-09_
+- SUM: removed banner from home page install content by @pookmish in #131
+- SUM-196 - Hiding message type and label by @mdyoung3 in #133
+- Created Config Split for library for easier inheritance by @pookmish in #134
+
+
 2.4.6
 --------------------------------------------------------------------------------
 _Release Date: 2024-07-10_
