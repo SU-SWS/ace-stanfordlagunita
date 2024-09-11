@@ -58,7 +58,6 @@ dependencies:
     - field.field.node.sup_book.sup_book_status_paper
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
-    - field.field.node.sup_book.sup_book_table_of_contents
     - field.field.node.sup_book.sup_book_tags
     - field.field.node.sup_book.sup_book_type
     - field.field.node.sup_book.sup_book_url_isw
@@ -619,13 +618,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 42
-    region: content
-  sup_book_table_of_contents:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 43
     region: content
   sup_book_tags:
     type: cshs_group_by_root

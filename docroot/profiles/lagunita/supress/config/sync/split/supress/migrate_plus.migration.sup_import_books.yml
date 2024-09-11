@@ -291,10 +291,6 @@ source:
       label: subtitle
       selector: fieldData/subtitle
     -
-      name: table_of_contents
-      label: table_of_contents
-      selector: fieldData/table_of_contents
-    -
       name: title
       label: title
       selector: fieldData/title
@@ -479,8 +475,6 @@ process:
       regex: true
       search: '/<.*?>/'
       replace: ''
-  sup_book_table_of_contents/value: table_of_contents
-  sup_book_table_of_contents/format: constants/stanford_html
   sup_book_url_isw: url_isw
   sup_book_web_code_cloth: web_code_cloth
   sup_book_web_code_paper: web_code_paper

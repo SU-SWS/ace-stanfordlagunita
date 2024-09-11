@@ -1,0 +1,62 @@
+uuid: 40df76b6-4a29-4884-a2a8-cb70dac9a232
+langcode: en
+status: false
+dependencies: {  }
+id: sup_book_toc
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: sup_press
+label: 'Stanford University Press Books Table Of Contents'
+source:
+  plugin: url
+  urls:
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=1001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=2001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=3001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=4001'
+  fields:
+    -
+      name: table_of_contents
+      label: table_of_contents
+      selector: fieldData/table_of_contents
+    -
+      name: work_id_number
+      label: work_id_number
+      selector: fieldData/work_id_number
+  ids:
+    work_id_number:
+      type: integer
+process:
+  title:
+    plugin: default_value
+    default_value: 'Table of Contents'
+  sup_ancillary_book:
+    -
+      plugin: skip_on_empty
+      source: work_id_number
+      method: process
+    -
+      plugin: entity_lookup
+      value_key: sup_book_work_id_number
+      bundle_key: type
+      bundle: sup_book
+      entity_type: node
+      ignore_case: true
+  skip_no_book:
+    plugin: skip_on_empty
+    source: '@sup_ancillary_book'
+    method: row
+  body/value:
+    plugin: skip_on_empty
+    source: table_of_contents
+    method: row
+  body/format: constants/stanford_html
+destination:
+  plugin: 'entity:node'
+  default_bundle: sup_book_ancillary
+migration_dependencies:
+  required:
+    - sup_import_books
