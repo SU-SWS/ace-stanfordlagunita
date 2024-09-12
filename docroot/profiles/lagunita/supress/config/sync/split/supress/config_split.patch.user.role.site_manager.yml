@@ -46,7 +46,6 @@ adding:
     - 'edit terms in sup_imprints'
     - 'edit terms in sup_series'
     - 'import sup_awards migration'
-    - 'import sup_import_books migration'
     - 'revert sup_book revisions'
     - 'revert sup_book_ancillary revisions'
     - 'view any unpublished sup_book content'
