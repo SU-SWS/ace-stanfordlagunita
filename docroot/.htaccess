@@ -60,6 +60,10 @@ AddEncoding gzip svgz
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
+  # Redirect summer sites pro to the edit domain.
+  RewriteCond %{HTTP_HOST} ^summer\.sites-pro\.stanford\.edu$ [NC]
+  RewriteRule ^(.*)$ https://edit-summer.stanford.edu/$1 [R=301,L,QSA]
+
   # Block access to specific files/paths to all users except stanford IP's.
   # Each condition blocks unwanted access to all users at the apache level.
   # This prevents drupal from bootstrapping. Most of these conditions are

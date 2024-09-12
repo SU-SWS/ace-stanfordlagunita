@@ -1,11 +1,15 @@
 diff --git a/docroot/.htaccess b/docroot/.htaccess
-index b1ee36b..a016c31 100644
+index 4031da47..0e1856cb 100644
 --- a/docroot/.htaccess
 +++ b/docroot/.htaccess
-@@ -62,6 +62,39 @@ AddEncoding gzip svgz
+@@ -60,6 +60,43 @@ AddEncoding gzip svgz
  <IfModule mod_rewrite.c>
    RewriteEngine on
  
++  # Redirect summer sites pro to the edit domain.
++  RewriteCond %{HTTP_HOST} ^summer\.sites-pro\.stanford\.edu$ [NC]
++  RewriteRule ^(.*)$ https://edit-summer.stanford.edu/$1 [R=301,L,QSA]
++
 +  # Block access to specific files/paths to all users except stanford IP's.
 +  # Each condition blocks unwanted access to all users at the apache level.
 +  # This prevents drupal from bootstrapping. Most of these conditions are
@@ -42,7 +46,7 @@ index b1ee36b..a016c31 100644
    # Set "protossl" to "s" if we were accessed via https://.  This is used later
    # if you enable "www." stripping or enforcement, in order to ensure that
    # you don't bounce between http and https.
-@@ -139,10 +172,14 @@ AddEncoding gzip svgz
+@@ -137,10 +174,14 @@ AddEncoding gzip svgz
    RewriteCond %{REQUEST_URI} !/core/[^/]*\.php$
    # Allow access to test-specific PHP files:
    RewriteCond %{REQUEST_URI} !/core/modules/system/tests/https?\.php
