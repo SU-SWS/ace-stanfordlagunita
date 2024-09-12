@@ -69,11 +69,13 @@ foreach ($sites_settings as $site_setting) {
   $sites["$site_name-dev.stanford.edu"] = $site_name;
   $sites["dev-$site_name.stanford.edu"] = $site_name;
   $sites["edit-dev-$site_name.stanford.edu"] = $site_name;
+  $sites["dev-edit-$site_name.stanford.edu"] = $site_name;
 
   $sites["$site_name-test.sites-pro.stanford.edu"] = $site_name;
   $sites["$site_name-test.stanford.edu"] = $site_name;
   $sites["test-$site_name.stanford.edu"] = $site_name;
   $sites["edit-test-$site_name.stanford.edu"] = $site_name;
+  $sites["test-edit-$site_name.stanford.edu"] = $site_name;
 
   $sites["$site_name.sites-pro.stanford.edu"] = $site_name;
   $sites["$site_name.stanford.edu"] = $site_name;

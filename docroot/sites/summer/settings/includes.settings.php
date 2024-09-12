@@ -6,10 +6,10 @@ $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/summer_pr
 
 $next_domain = FALSE;
 if (EnvironmentDetector::isAhDevEnv()) {
-  $next_domain = '';
+  $next_domain = 'https://summer-git-dev-stanford-summer-session.vercel.app';
 }
 elseif (EnvironmentDetector::isAhStageEnv()) {
-  $next_domain = '';
+  $next_domain = 'https://summer-git-test-stanford-summer-session.vercel.app';
 }
 elseif (EnvironmentDetector::isLocalEnv()) {
   $next_domain = 'http://localhost:3000';

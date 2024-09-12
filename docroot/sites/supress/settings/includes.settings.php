@@ -6,10 +6,10 @@ $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/supress/c
 
 $next_domain = FALSE;
 if (EnvironmentDetector::isAhDevEnv()) {
-  $next_domain = '';
+  $next_domain = 'https://stanford-university-press-git-dev-stanford-press.vercel.app/';
 }
 elseif (EnvironmentDetector::isAhStageEnv()) {
-  $next_domain = '';
+  $next_domain = 'https://stanford-university-press-git-test-stanford-press.vercel.app/';
 }
 elseif (EnvironmentDetector::isLocalEnv()) {
   $next_domain = 'http://localhost:3000';
