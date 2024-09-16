@@ -1,5 +1,40 @@
 adding:
   entity_config:
+    config_pages:
+      policy_settings:
+        enabled: false
+      stanford_courses_importer:
+        enabled: false
+      stanford_events_importer:
+        enabled: false
+      stanford_person_importer:
+        enabled: false
+      stanford_saml:
+        enabled: false
+    layout:
+      sul_library_full_width:
+        enabled: false
+    menu:
+      account:
+        enabled: false
+      admin:
+        enabled: false
+      courses-menu:
+        enabled: false
+      devel:
+        enabled: false
+      footer:
+        enabled: false
+      news-topics:
+        enabled: false
+      stanford-event-types:
+        enabled: false
+      stanford-person-type:
+        enabled: false
+      stanford-publication-topics:
+        enabled: false
+      tools:
+        enabled: false
     node:
       sul_library:
         enabled: true
@@ -20,6 +55,8 @@ adding:
       layout:
         enabled: true
         query_load_enabled: true
+      stanford_layout:
+        enabled: false
       sul_button:
         enabled: true
         query_load_enabled: true
@@ -33,6 +70,12 @@ adding:
         enabled: true
         query_load_enabled: true
     taxonomy_term:
+      cap_org_codes:
+        enabled: false
+      media_tags:
+        enabled: false
+      site_owner_orgs:
+        enabled: false
       study_place_capacity:
         enabled: true
         query_load_enabled: true
@@ -43,6 +86,10 @@ adding:
         enabled: true
         query_load_enabled: true
   field_config:
+    media:
+      image:
+        sul_image_credit:
+          enabled: true
     node:
       stanford_event:
         sul_event__image:
