@@ -1,0 +1,23 @@
+uuid: 22f5d471-3052-445f-bb33-1ee20bebb09d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_ancillary_weight
+    - node.type.sup_book_ancillary
+id: node.sup_book_ancillary.sup_ancillary_weight
+field_name: sup_ancillary_weight
+entity_type: node
+bundle: sup_book_ancillary
+label: Weight
+description: 'Sort order relative to other excerpt pages on the same book. The lower the number, the higher the priority. 0 weights will appear first. Similar weights will be sorted alphabetically.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

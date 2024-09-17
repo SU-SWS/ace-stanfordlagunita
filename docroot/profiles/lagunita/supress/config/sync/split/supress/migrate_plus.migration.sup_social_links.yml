@@ -62,6 +62,9 @@ process:
       source: html
       media_name: '@media_name'
   body/format: constants/stanford_html
+  sup_ancillary_weight:
+    plugin: default_value
+    default_value: 99
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book_ancillary

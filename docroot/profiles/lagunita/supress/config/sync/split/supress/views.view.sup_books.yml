@@ -832,6 +832,35 @@ display:
         type: none
         options:
           offset: 0
+      sorts:
+        sup_ancillary_weight_value:
+          id: sup_ancillary_weight_value
+          table: node__sup_ancillary_weight
+          field: sup_ancillary_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         uuid:
           id: uuid
@@ -933,6 +962,7 @@ display:
           1: AND
       defaults:
         relationships: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false

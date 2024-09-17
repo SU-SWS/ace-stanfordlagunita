@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.sup_book_ancillary.body
     - field.field.node.sup_book_ancillary.sup_ancillary_book
     - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
+    - field.field.node.sup_book_ancillary.sup_ancillary_weight
     - node.type.sup_book_ancillary
   module:
     - field_formatter_class
@@ -39,3 +40,4 @@ hidden:
   links: true
   search_api_excerpt: true
   sup_ancillary_book: true
+  sup_ancillary_weight: true
