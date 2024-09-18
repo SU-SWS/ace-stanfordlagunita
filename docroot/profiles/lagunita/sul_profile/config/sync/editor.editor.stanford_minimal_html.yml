@@ -45,6 +45,7 @@ settings:
         - '<blockquote cite>'
         - '<p aria-* class dir id lang title>'
         - '<a hreflang data-entity-substitution data-entity-type data-entity-uuid aria-* class dir id lang title>'
+        - '<span aria-* class lang>'
     ckeditor5_style:
       styles:
         -

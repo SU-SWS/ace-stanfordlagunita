@@ -4,26 +4,9 @@ adding:
       items:
         config_split_sequence_7ccdnqilptu22h8p: outdent
         config_split_sequence_a7ucjskq6gltv6l0: indent
-    plugins:
-      ckeditor5_sourceEditing:
-        allowed_tags:
-          - '<div id class lang>'
-          - '<p id class lang>'
-          - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class lang>'
 removing:
   settings:
     toolbar:
       items:
         config_split_sequence_s364sk6l54ovvps4: undo
         config_split_sequence_3q9d6597e7lhs7bs: redo
-    plugins:
-      ckeditor5_sourceEditing:
-        allowed_tags:
-          - '<h2 id class>'
-          - '<h3 id class>'
-          - '<h4 id class>'
-          - '<h5 id class>'
-          - '<h6 id class>'
-          - '<div id class>'
-          - '<p id class>'
-          - '<a aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title id class>'

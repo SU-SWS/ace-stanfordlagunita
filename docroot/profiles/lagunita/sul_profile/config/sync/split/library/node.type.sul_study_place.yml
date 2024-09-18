@@ -24,8 +24,24 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   node_revision_delete:
-    minimum_revisions_to_keep: 5
+    amount:
+      status: true
+      settings:
+        amount: 5
+    created:
+      status: false
+      settings:
+        age: 1
+    drafts:
+      status: false
+      settings:
+        age: 1
     minimum_age_to_delete: 0
+    minimum_revisions_to_keep: 5
+    only_drafts:
+      status: false
+      settings:
+        age: 0
     when_to_delete: 0
 name: 'Place of Study'
 type: sul_study_place
