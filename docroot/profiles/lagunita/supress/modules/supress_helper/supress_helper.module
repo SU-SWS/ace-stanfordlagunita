@@ -67,7 +67,7 @@ function supress_helper_cron() {
     return;
   }
   _supress_helper_build_social_links($token);
-//  _supress_helper_queue_cover_images($token);
+  _supress_helper_queue_cover_images($token);
 }
 
 /**
@@ -77,26 +77,29 @@ function supress_helper_cron() {
  *   Auth token.
  */
 function _supress_helper_build_social_links(string $token) {
-  if (file_exists('public://social-links.json')) {
-//    return;
-  }
   $client = \Drupal::httpClient();
-  $page_1 = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000', [
-    'headers' => [
-      'Content-Type' => 'application/json',
-      'Authorization' => 'Bearer ' . $token,
-    ],
-    'timeout' => 15,
-  ])->getBody(), TRUE);
-  $page_2 = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000&_offset=1001', [
-    'headers' => [
-      'Content-Type' => 'application/json',
-      'Authorization' => 'Bearer ' . $token,
-    ],
-    'timeout' => 15,
-  ])->getBody(), TRUE);
+  $page_num = 0;
+  $fetch_more = TRUE;
+  $pages = [];
 
-  $pages = [...$page_1['response']['data'], ...$page_2['response']['data']];
+  while ($fetch_more) {
+    try {
+      $offset = $page_num ? '&_offset=' . $page_num * 1000 + 1 : '';
+      $page = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000' . $offset, [
+        'headers' => [
+          'Content-Type' => 'application/json',
+          'Authorization' => 'Bearer ' . $token,
+        ],
+        'timeout' => 15,
+      ])->getBody(), TRUE);
+      $pages = [...$pages, ...$page['response']['data']];
+    }
+    catch (\Exception $e) {
+      // Once the offset returns 0 records, the API will throw an error.
+      $fetch_more = FALSE;
+    }
+    $page_num++;
+  }
 
   $data = [];
   foreach ($pages as $item) {
