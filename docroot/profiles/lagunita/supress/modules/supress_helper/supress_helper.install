@@ -81,7 +81,7 @@ function supress_helper_update_9005() {
 /**
  * Resize images over 2MB.
  */
-function _supress_helper_updates_9006() {
+function supress_helper_updates_9006() {
   $file_ids = \Drupal::entityTypeManager()
     ->getStorage('file')
     ->getQuery()
