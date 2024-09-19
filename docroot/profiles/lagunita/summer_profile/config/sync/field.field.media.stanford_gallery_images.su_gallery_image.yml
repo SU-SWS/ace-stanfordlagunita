@@ -22,7 +22,7 @@ settings:
   handler_settings: {  }
   file_directory: media/image/gallery
   file_extensions: 'png gif jpg jpeg'
-  max_filesize: 5MB
+  max_filesize: 2MB
   max_resolution: ''
   min_resolution: ''
   alt_field: true

@@ -77,3 +77,21 @@ function supress_helper_update_9005() {
   $file_system->delete('public://social-links.json');
   supress_helper_cron();
 }
+
+/**
+ * Resize images over 2MB.
+ */
+function _supress_helper_updates_9006() {
+  $file_ids = \Drupal::entityTypeManager()
+    ->getStorage('file')
+    ->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('filesize', 2004591, '>')
+    ->condition('filemime', 'image%', 'LIKE')
+    ->execute();
+  $queue_factory = \Drupal::service('queue');
+  $queue = $queue_factory->get('press_image_resize');
+  foreach ($file_ids as $fid) {
+    $queue->createItem($fid);
+  }
+}

@@ -59,7 +59,7 @@ class ImageResize extends QueueWorkerBase implements ContainerFactoryPluginInter
    * {@inheritDoc}
    */
   public function processItem($data) {
-    $image_style = $this->entityTypeManager->getStorage('image_style')->load("breakpoint_2xl_1x");
+    $image_style = $this->entityTypeManager->getStorage('image_style')->load("breakpoint_2xl_2x");
     $file = $this->entityTypeManager->getStorage("file")->load($data);
     $temp = "temporary://" . $file->label();
     $success = $image_style->createDerivative($file->getFileUri(), $temp);

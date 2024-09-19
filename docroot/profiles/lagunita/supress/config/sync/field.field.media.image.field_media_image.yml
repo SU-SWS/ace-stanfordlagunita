@@ -10,6 +10,12 @@ dependencies:
   enforced:
     module:
       - media
+third_party_settings:
+  filefield_paths:
+    file_path:
+      options: {  }
+    file_name:
+      options: {  }
 _core:
   default_config_hash: 8Vfpi_OK7INkNmigDFwEvT8VvhZqu_Gjykj8CuqD3hM
 id: media.image.field_media_image
@@ -27,7 +33,7 @@ settings:
   handler_settings: {  }
   file_directory: media/image
   file_extensions: 'png gif jpg jpeg'
-  max_filesize: 5MB
+  max_filesize: 2MB
   max_resolution: ''
   min_resolution: ''
   alt_field: true
