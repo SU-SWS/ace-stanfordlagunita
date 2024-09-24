@@ -21,7 +21,7 @@ adding:
       retroactive_update: false
       active_updating: false
   settings:
-    file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf mp3 wav'
+    file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf mp3 wav epub'
 removing:
   settings:
     file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf'

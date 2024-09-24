@@ -3670,7 +3670,7 @@
                     "homepage": "https://www.drupal.org/user/157725"
                 },
                 {
-                    "name": "AstonVictor",
+                    "name": "astonvictor",
                     "homepage": "https://www.drupal.org/user/3466615"
                 },
                 {
@@ -7450,17 +7450,17 @@
         },
         {
             "name": "drupal/jsonapi_image_styles",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_image_styles.git",
-                "reference": "3.0.1"
+                "reference": "3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_image_styles-3.0.1.zip",
-                "reference": "3.0.1",
-                "shasum": "abf894873e4ae448771908a5c3db269a66b41573"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_image_styles-3.0.2.zip",
+                "reference": "3.0.2",
+                "shasum": "63d52eb96eb4b8df241ca9b1e1fbb06707ba8a6c"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11"
@@ -7472,8 +7472,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.1",
-                    "datestamp": "1723311931",
+                    "version": "3.0.2",
+                    "datestamp": "1727189318",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -17629,16 +17629,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.7.2",
+            "version": "9.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "e8cf25208a0cd5508b5a51b81165622092f9a477"
+                "reference": "b9440164b03f99f97e06e540028584efca47819f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/e8cf25208a0cd5508b5a51b81165622092f9a477",
-                "reference": "e8cf25208a0cd5508b5a51b81165622092f9a477",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/b9440164b03f99f97e06e540028584efca47819f",
+                "reference": "b9440164b03f99f97e06e540028584efca47819f",
                 "shasum": ""
             },
             "require": {
@@ -17727,9 +17727,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.7.2"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.7.3"
             },
-            "time": "2024-09-23T22:42:00+00:00"
+            "time": "2024-09-24T17:18:31+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",

@@ -40,7 +40,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: media/protected
-  file_extensions: 'txt doc docx pdf'
+  file_extensions: 'txt doc docx pdf epub'
   max_filesize: ''
   description_field: false
 field_type: file
