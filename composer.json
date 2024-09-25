@@ -143,6 +143,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/graphql_compose": {
+                "Remove link language setting on field results": "patches/contrib/graphql_compose-link_language.patch"
+            },
             "drupal/hook_event_dispatcher": {
                 "https://www.drupal.org/project/hook_event_dispatcher/issues/3354751": "https://www.drupal.org/files/issues/2023-04-17/hook_event_dispatcher-4.x-3354751.patch"
             },

@@ -1,0 +1,14 @@
+diff --git a/src/Plugin/GraphQLCompose/FieldType/LinkItem.php b/src/Plugin/GraphQLCompose/FieldType/LinkItem.php
+index 85db479..b2dfe42 100644
+--- a/src/Plugin/GraphQLCompose/FieldType/LinkItem.php
++++ b/src/Plugin/GraphQLCompose/FieldType/LinkItem.php
+@@ -38,9 +38,6 @@ class LinkItem extends GraphQLComposeFieldTypeBase implements FieldProducerItemI
+       ? $this->getUrlFromLink($item)
+       : $this->getUrlFromOther($item);
+ 
+-    // Match the Url language to the field item language.
+-    $url->setOption('language', $this->languageManager->getLanguage($item->getLangcode()));
+-
+     $link = $url->toString(TRUE);
+     $context->addCacheableDependency($link);
+ 
