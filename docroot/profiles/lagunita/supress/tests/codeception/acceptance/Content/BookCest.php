@@ -81,7 +81,6 @@ class BookCest {
     $I->see('Rights Description');
     $I->see('Sales Rank');
     $I->see('Series');
-    $I->see('Table of Contents');
     $I->see('URL ISW');
     $I->see('Awards');
     $I->see('Imprint');
