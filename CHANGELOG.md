@@ -1,5 +1,31 @@
 # Lagunita
 
+2.5.1
+--------------------------------------------------------------------------------
+_Release Date: 2024-10-02_
+
+- SUP: Add "New Releases" and "Top Sellers" book displays
+
+2.5.0
+--------------------------------------------------------------------------------
+_Release Date: 2024-10-01_
+
+- SUL: Fix person importer
+- SUL-621 SUL-635: Add sort to table views and reverted event importer config
+- SUP: allow epub file extension uploads
+- fixup update hook
+- SUP, SUM: Limit images to 2MB
+- SUP: Update view arguments helper text
+- SUP: Added seasonal list view display
+- SUL23-485: Allow span tag and lang attribute in minimal html wysiwyg
+- SUP: Uncomment cover image queuer
+- SUP: Added weight to excerpt pages for sort orders
+- SUL23-480 Expose image credit field on media
+- remove access content permissions for anonymous
+- Added nextjs preview domains for summer and press dev and test sites
+- SUM: Added edit domain support
+- SUP: Import TOC as excerpt page
+
 2.4.8
 --------------------------------------------------------------------------------
 _Release Date: 2024-09-11_
