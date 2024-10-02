@@ -22,6 +22,7 @@ source:
     apply_link_title: Apply
     learn_more_link_title: 'Learn More'
     image_alt: ''
+    pdf_destination: 'public://media/file/csv/'
   fields:
     -
       name: unique_import_id
@@ -118,7 +119,27 @@ process:
   sum_course_length: course_length
   sum_course_notes/value: course_notes
   sum_course_notes/format: constants/markdown
-  sum_course_syllabus_file:
+  syllabus_basename:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: course_syllabus_file
+    -
+      plugin: explode
+      delimiter: '/'
+    -
+      plugin: array_pop
+  syllabus_media_name:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: syllabus_basename
+    -
+      plugin: str_replace
+      regex: true
+      search: '/^(.*)\..*/'
+      replace: '$1'
+  syllabus_file:
     -
       plugin: skip_on_empty
       method: process
@@ -128,6 +149,22 @@ process:
       destination: constants/pdf_destination
       id_only: true
       reuse: true
+  sum_course_syllabus_file/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@syllabus_file'
+    -
+      plugin: entity_generate
+      source: '@syllabus_file'
+      value_key: field_media_file
+      bundle_key: bundle
+      bundle: file
+      entity_type: media
+      ignore_case: true
+      values:
+        name: '@syllabus_media_name'
+        field_media_file/target_id: '@syllabus_file'
   sum_course_cross_listing:
     -
       plugin: skip_on_empty

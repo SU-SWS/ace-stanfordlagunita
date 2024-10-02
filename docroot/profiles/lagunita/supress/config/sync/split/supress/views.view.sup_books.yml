@@ -399,7 +399,7 @@ display:
     id: award_winners
     display_title: 'Award Winners'
     display_plugin: viewfield_block
-    position: 1
+    position: 2
     display_options:
       display_extenders: {  }
       display_description: ''
@@ -573,7 +573,7 @@ display:
     id: award_winners_graphql
     display_title: 'GraphQL: Award Winners'
     display_plugin: graphql
-    position: 1
+    position: 10
     display_options:
       pager:
         type: full
@@ -822,11 +822,103 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  best_sellers:
+    id: best_sellers
+    display_title: 'Best Sellers'
+    display_plugin: viewfield_block
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_category: 'Press Books (Views)'
+      defaults:
+        arguments: false
+        filters: false
+        filter_groups: false
+        sorts: false
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            sup_book: sup_book
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        sup_book_sales_rank_value:
+          id: sup_book_sales_rank_value
+          table: node__sup_book_sales_rank
+          field: sup_book_sales_rank_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+            field_identifier: ''
+          plugin_id: standard
+        sup_book_pub_date_first_value:
+          id: sup_book_pub_date_first_value
+          table: node__sup_book_pub_date_first
+          field: sup_book_pub_date_first_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: DESC
+          expose:
+            label: 'Publication Date First (sup_book_pub_date_first)'
+            field_identifier: pub_year
+          exposed: false
+          granularity: second
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   book_ancillary:
     id: book_ancillary
     display_title: 'GraphQL: Book Ancilary Referenced'
     display_plugin: graphql
-    position: 5
+    position: 11
     display_options:
       pager:
         type: none
@@ -1011,7 +1103,7 @@ display:
     id: book_list_graphql
     display_title: 'GraphQL: Book List'
     display_plugin: graphql
-    position: 1
+    position: 7
     display_options:
       pager:
         type: full
@@ -1795,11 +1887,423 @@ display:
       tags:
         - 'config:field.storage.node.sup_ancillary_book'
         - 'config:field.storage.node.sup_book_work_id_number'
+  graphql_best_sellers:
+    id: graphql_best_sellers
+    display_title: 'GraphQL: Best Sellers'
+    display_plugin: graphql
+    position: 8
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 3
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: true
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72,75,78,81,84,87,90,93,96,99'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: true
+            offset_label: Offset
+          quantity: 9
+      sorts:
+        sup_book_sales_rank_value:
+          id: sup_book_sales_rank_value
+          table: node__sup_book_sales_rank
+          field: sup_book_sales_rank_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        sup_book_pub_date_first_value:
+          id: sup_book_pub_date_first_value
+          table: node__sup_book_pub_date_first
+          field: sup_book_pub_date_first_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: DESC
+          expose:
+            label: 'Publication Date First (sup_book_pub_date_first)'
+            field_identifier: pub_year
+          exposed: false
+          granularity: second
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            sup_book: sup_book
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        sorts: false
+        arguments: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      graphql_query_name: supBooksBestSellers
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  graphql_new_releases:
+    id: graphql_new_releases
+    display_title: 'GraphQL: New Releases'
+    display_plugin: graphql
+    position: 9
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 3
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: true
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72,75,78,81,84,87,90,93,96,99'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: true
+            offset_label: Offset
+          quantity: 9
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            sup_book: sup_book
+        sup_book_pub_date_first_value:
+          id: sup_book_pub_date_first_value
+          table: node__sup_book_pub_date_first
+          field: sup_book_pub_date_first_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: 'now - 1 month'
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        sup_book_pub_date_first_value_1:
+          id: sup_book_pub_date_first_value_1
+          table: node__sup_book_pub_date_first
+          field: sup_book_pub_date_first_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: 'now + 1 month'
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        arguments: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      graphql_query_name: supBooksNewReleases
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  new_releases:
+    id: new_releases
+    display_title: 'New Releases'
+    display_plugin: viewfield_block
+    position: 5
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_category: 'Press Books (Views)'
+      defaults:
+        arguments: false
+        filters: false
+        filter_groups: false
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            sup_book: sup_book
+        sup_book_pub_date_first_value:
+          id: sup_book_pub_date_first_value
+          table: node__sup_book_pub_date_first
+          field: sup_book_pub_date_first_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: 'now - 1 month'
+            type: offset
+          group: '1'
+          exposed: false
+          expose:
+            operator_id: false
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        sup_book_pub_date_first_value_1:
+          id: sup_book_pub_date_first_value_1
+          table: node__sup_book_pub_date_first
+          field: sup_book_pub_date_first_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: 'now + 1 month'
+            type: offset
+          group: '1'
+          exposed: false
+          expose:
+            operator_id: false
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: 0
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   seasonal_list:
     id: seasonal_list
     display_title: 'Seasonal List'
     display_plugin: viewfield_block
-    position: 1
+    position: 4
     display_options:
       display_extenders: {  }
       display_description: ''
