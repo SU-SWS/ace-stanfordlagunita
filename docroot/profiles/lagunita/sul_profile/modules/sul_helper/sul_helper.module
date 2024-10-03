@@ -137,11 +137,16 @@ function sul_helper_form_node_form_alter(&$form, FormStateInterface $form_state,
   if (!$node->hasField('layout_selection')) {
     return;
   }
+  if ($node->bundle() == 'stanford_page') {
+    // Need to handle the basic page differently due to stanford_profile_helper
+    // hooks moving things around.
+    $form["#process"][] = '_sul_helper_basic_page_node_form_process';
+  }
   $form["#process"][] = '_sul_helper_node_form_process';
 }
 
 /**
- * Process callback to adjust node form rendreing.
+ * Process callback to adjust node form rendering.
  *
  * @param array $form
  *   Complete form.
@@ -157,5 +162,31 @@ function _sul_helper_node_form_process(array $form, FormStateInterface &$form_st
     $form['meta']['#type'] = 'details';
     $form['meta']['#title'] = t('Publishing Information');
   }
+  return $form;
+}
+
+/**
+ * Process callback to adjust node form rendering.
+ *
+ * @param array $form
+ *   Complete form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Current form state.
+ *
+ * @return array
+ *   Modified form.
+ */
+function _sul_helper_basic_page_node_form_process(array $form, FormStateInterface &$form_state) {
+  $form['layout_selection']['rel_links'] = [
+    '#type' => 'container',
+    'sul_rel_links' => $form['sul_rel_links'],
+    'sul_rel_links_heading' => $form['sul_rel_links_heading'],
+    '#states' => [
+      'visible' => [
+        ':input[name="layout_selection"]' => ['value' => 'sul_side_nav'],
+      ]
+    ]
+  ];
+  unset($form['sul_rel_links'], $form['sul_rel_links_heading']);
   return $form;
 }
