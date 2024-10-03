@@ -1,0 +1,19 @@
+uuid: 956fddfc-40b2-4ecd-9222-26586647f993
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_rel_links_heading
+    - node.type.stanford_page
+id: node.stanford_page.sul_rel_links_heading
+field_name: sul_rel_links_heading
+entity_type: node
+bundle: stanford_page
+label: 'Related Links Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

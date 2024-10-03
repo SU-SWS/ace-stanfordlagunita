@@ -1,0 +1,9 @@
+uuid: b157e7f2-798f-4160-aba2-6ef1af72ed35
+langcode: en
+status: true
+dependencies: {  }
+id: sul_side_nav
+label: 'On this page'
+targetEntityType: node
+targetBundle: stanford_page
+layout: {  }

@@ -46,6 +46,7 @@ function sul_helper_library_info_alter(&$libraries, $extension) {
     $libraries['drupal.node']['dependencies'][] = 'sul_helper/node_form';
   }
 }
+
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
@@ -59,8 +60,10 @@ function sul_helper_field_widget_viewfield_select_form_alter(&$element, FormStat
 function sul_helper_preprocess_paragraph__stanford_spacer(&$variables) {
   // Copied from stanford_basic theme.
   $paragraph = $variables['elements']['#paragraph'];
-  if ($paragraph->hasField('su_spacer_size') && !$paragraph->get('su_spacer_size')->isEmpty()) {
-    $variables['attributes']['class'][] = $paragraph->get('su_spacer_size')->getString();
+  if ($paragraph->hasField('su_spacer_size') && !$paragraph->get('su_spacer_size')
+      ->isEmpty()) {
+    $variables['attributes']['class'][] = $paragraph->get('su_spacer_size')
+      ->getString();
   }
 }
 
@@ -123,4 +126,36 @@ function sul_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source
     asort($calendars);
     $row->setSourceProperty('libcal', array_values($calendars));
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function sul_helper_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $form_state->getFormObject()->getEntity();
+  if (!$node->hasField('layout_selection')) {
+    return;
+  }
+  $form["#process"][] = '_sul_helper_node_form_process';
+}
+
+/**
+ * Process callback to adjust node form rendreing.
+ *
+ * @param array $form
+ *   Complete form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Current form state.
+ *
+ * @return array
+ *   Modified form.
+ */
+function _sul_helper_node_form_process(array $form, FormStateInterface &$form_state) {
+  $form['advanced']['#type'] = 'vertical_tabs';
+  if (isset($form['meta'])) {
+    $form['meta']['#type'] = 'details';
+    $form['meta']['#title'] = t('Publishing Information');
+  }
+  return $form;
 }

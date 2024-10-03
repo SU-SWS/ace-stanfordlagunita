@@ -1,0 +1,19 @@
+uuid: 10c54d3a-71e3-49d1-89a8-4588324e5cfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_rel_links_heading
+    - node.type.sul_library
+id: node.sul_library.sul_rel_links_heading
+field_name: sul_rel_links_heading
+entity_type: node
+bundle: sul_library
+label: 'Related Links Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -149,3 +149,5 @@ hidden:
   su_library__hours: true
   sul_library__a11y: true
   sul_library__type: true
+  sul_rel_links: true
+  sul_rel_links_heading: true

@@ -12,7 +12,11 @@ adding:
       stanford_saml:
         enabled: false
     layout:
+      sul_branch_side_nav:
+        enabled: false
       sul_library_full_width:
+        enabled: false
+      sul_side_nav:
         enabled: false
     menu:
       account:
@@ -36,6 +40,8 @@ adding:
       tools:
         enabled: false
     node:
+      stanford_opportunity:
+        enabled: false
       sul_library:
         enabled: true
         query_load_enabled: true
@@ -74,6 +80,12 @@ adding:
         enabled: false
       media_tags:
         enabled: false
+      opportunity_sponsor:
+        enabled: false
+      opportunity_tag_filters:
+        enabled: false
+      opportunity_type:
+        enabled: false
       site_owner_orgs:
         enabled: false
       study_place_capacity:
@@ -93,6 +105,11 @@ adding:
     node:
       stanford_event:
         sul_event__image:
+          enabled: true
+      stanford_page:
+        sul_rel_links:
+          enabled: true
+        sul_rel_links_heading:
           enabled: true
       stanford_person:
         sul_person__libcal_id:
@@ -121,6 +138,10 @@ adding:
         sul_library__a11y:
           enabled: true
         sul_library__type:
+          enabled: true
+        sul_rel_links:
+          enabled: true
+        sul_rel_links_heading:
           enabled: true
       sul_study_place:
         sul_study__branch:

@@ -1,8 +1,8 @@
 adding:
   settings:
     available_menus:
-      stanford-person-type: '0'
       devel: '0'
+      stanford-person-type: '0'
 removing:
   settings:
     available_menus:

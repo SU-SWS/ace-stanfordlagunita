@@ -4,7 +4,7 @@ adding:
       - node_revision_delete
   third_party_settings:
     node_revision_delete:
-      minimum_revisions_to_keep: 5
       minimum_age_to_delete: 0
+      minimum_revisions_to_keep: 5
       when_to_delete: 0
 removing: {  }

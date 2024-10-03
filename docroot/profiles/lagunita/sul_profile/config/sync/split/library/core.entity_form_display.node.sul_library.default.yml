@@ -15,6 +15,8 @@ dependencies:
     - field.field.node.sul_library.su_library__phone
     - field.field.node.sul_library.sul_library__a11y
     - field.field.node.sul_library.sul_library__type
+    - field.field.node.sul_library.sul_rel_links
+    - field.field.node.sul_library.sul_rel_links_heading
     - node.type.sul_library
   module:
     - address
@@ -52,6 +54,25 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+    group_layout_options:
+      children:
+        - layout_selection
+        - sul_rel_links_heading
+        - sul_rel_links
+      label: 'Layout Options'
+      region: content
+      parent_name: ''
+      weight: 18
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        label_as_html: false
+        open: true
+        description: ''
+        required_fields: false
+        weight: -10
 id: node.sul_library.default
 targetEntityType: node
 bundle: sul_library
@@ -59,13 +80,13 @@ mode: default
 content:
   field_menulink:
     type: menu_link_default
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   layout_selection:
     type: options_select
-    weight: 13
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -95,7 +116,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 15
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -221,6 +242,60 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  sul_rel_links:
+    type: link_default
+    weight: 17
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      conditional_fields:
+        bd7da14d-f9b6-4c6c-94f1-2cffe1834da1:
+          entity_type: node
+          bundle: sul_library
+          dependee: layout_selection
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: sul_branch_side_nav
+            effect: show
+            effect_options: {  }
+            selector: ''
+  sul_rel_links_heading:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        c6d58d11-b4c4-4d5e-8995-7cf08e521e87:
+          entity_type: node
+          bundle: sul_library
+          dependee: layout_selection
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: sul_branch_side_nav
+            effect: show
+            effect_options: {  }
+            selector: ''
   title:
     type: string_textfield
     weight: 0

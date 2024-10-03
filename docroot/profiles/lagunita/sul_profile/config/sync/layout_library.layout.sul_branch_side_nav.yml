@@ -1,0 +1,9 @@
+uuid: 68154c93-4add-447f-ac1f-e95c4765e50d
+langcode: en
+status: true
+dependencies: {  }
+id: sul_branch_side_nav
+label: 'On this page'
+targetEntityType: node
+targetBundle: sul_library
+layout: {  }

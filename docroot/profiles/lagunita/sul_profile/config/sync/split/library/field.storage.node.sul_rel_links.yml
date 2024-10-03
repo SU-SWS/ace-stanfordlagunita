@@ -1,0 +1,19 @@
+uuid: d05c4bae-28b5-48fe-9448-7f9999dee262
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.sul_rel_links
+field_name: sul_rel_links
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
