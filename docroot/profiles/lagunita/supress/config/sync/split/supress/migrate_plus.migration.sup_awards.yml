@@ -59,7 +59,10 @@ process:
   sup_place: place
   sup_rank: rank
   sup_work_id: work_id_number
-  sup_year: year
+  sup_year:
+    plugin: skip_on_empty
+    source: year
+    method: process
   sup_description/value: description
   sup_description/format: constant/minimal_html
 destination:
