@@ -62,7 +62,7 @@ process:
   sup_year:
     plugin: skip_on_empty
     source: year
-    method: process
+    method: row
   sup_description/value: description
   sup_description/format: constant/minimal_html
 destination:
