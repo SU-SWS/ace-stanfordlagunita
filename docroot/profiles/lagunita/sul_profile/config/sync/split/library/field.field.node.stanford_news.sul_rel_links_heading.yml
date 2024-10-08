@@ -1,0 +1,19 @@
+uuid: 0226abea-fb3e-4da0-82bb-c968b0d3e028
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_rel_links_heading
+    - node.type.stanford_news
+id: node.stanford_news.sul_rel_links_heading
+field_name: sul_rel_links_heading
+entity_type: node
+bundle: stanford_news
+label: 'Related Links Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

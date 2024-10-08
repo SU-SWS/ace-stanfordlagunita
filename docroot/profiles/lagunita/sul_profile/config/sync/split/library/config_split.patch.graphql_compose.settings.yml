@@ -16,6 +16,8 @@ adding:
         enabled: false
       sul_library_full_width:
         enabled: false
+      sul_news_side_nav:
+        enabled: false
       sul_side_nav:
         enabled: false
     menu:
@@ -105,6 +107,13 @@ adding:
     node:
       stanford_event:
         sul_event__image:
+          enabled: true
+      stanford_news:
+        layout_selection:
+          enabled: true
+        sul_rel_links:
+          enabled: true
+        sul_rel_links_heading:
           enabled: true
       stanford_page:
         sul_rel_links:

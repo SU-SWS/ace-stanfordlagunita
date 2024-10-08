@@ -1,0 +1,27 @@
+uuid: a12735d4-3594-4a81-8d9b-098a0e2b1376
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_rel_links
+    - node.type.stanford_news
+  module:
+    - link
+    - stanford_fields
+third_party_settings:
+  stanford_fields:
+    force_relative: true
+id: node.stanford_news.sul_rel_links
+field_name: sul_rel_links
+entity_type: node
+bundle: stanford_news
+label: 'Related Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

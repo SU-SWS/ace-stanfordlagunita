@@ -1,0 +1,9 @@
+uuid: 0b02890a-2f8e-4a3b-a038-2125f41efa01
+langcode: en
+status: true
+dependencies: {  }
+id: sul_news_side_nav
+label: 'On this page sidebar'
+targetEntityType: node
+targetBundle: stanford_news
+layout: {  }
