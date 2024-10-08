@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: sul_branch_side_nav
-label: 'On this page'
+label: 'On this page sidebar'
 targetEntityType: node
 targetBundle: sul_library
 layout: {  }

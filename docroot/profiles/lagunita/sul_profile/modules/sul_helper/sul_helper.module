@@ -184,9 +184,20 @@ function _sul_helper_basic_page_node_form_process(array $form, FormStateInterfac
     '#states' => [
       'visible' => [
         ':input[name="layout_selection"]' => ['value' => 'sul_side_nav'],
-      ]
-    ]
+      ],
+    ],
   ];
   unset($form['sul_rel_links'], $form['sul_rel_links_heading']);
   return $form;
+}
+
+/**
+ * Implements hook_field_widget_complete_form_alter().
+ */
+function sul_helper_field_widget_complete_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  if ($context['items']->getName() == 'layout_selection') {
+    $node_type = $context['items']->getEntity()->bundle();
+    $none_label = $node_type == 'stanford_page' ? t('Main navigation sidebar') : t('Main navigation sidebar');
+    $field_widget_complete_form['widget']['#options']['_none'] = $none_label;
+  }
 }

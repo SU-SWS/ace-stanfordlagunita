@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: sul_side_nav
-label: 'On this page'
+label: 'On this page sidebar'
 targetEntityType: node
 targetBundle: stanford_page
 layout: {  }

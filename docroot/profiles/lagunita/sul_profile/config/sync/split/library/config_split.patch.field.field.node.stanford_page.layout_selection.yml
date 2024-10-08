@@ -1,0 +1,4 @@
+adding:
+  description: '<ul><li><strong>Main navigation sidebar</strong> appears by default when this page is added to a menu.</li><li><strong>Full width</strong> will display page contents only, removing all types of sidebar menus.</li><li><strong>On this page sidebar</strong> to display a menu of H2s automatically populated from this page. You can also add a section for links that appear on the page.</li></ul>'
+removing:
+  description: ''
