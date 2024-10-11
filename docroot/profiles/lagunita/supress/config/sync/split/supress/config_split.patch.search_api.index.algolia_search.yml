@@ -1,11 +1,16 @@
 adding:
   dependencies:
     config:
-      - field.storage.node.sup_book_authors
+      - field.storage.node.sup_book_isbn_13_alt
+      - field.storage.node.sup_book_isbn_13_cloth
+      - field.storage.node.sup_book_isbn_13_digital
+      - field.storage.node.sup_book_isbn_13_isw
+      - field.storage.node.sup_book_isbn_13_paper
+      - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_authors_full
+      - field.storage.node.sup_book_authors
       - field.storage.node.sup_book_awards
       - field.storage.node.sup_book_imprint
-      - field.storage.node.sup_book_pub_date_first
       - field.storage.node.sup_book_series
       - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_subtitle
@@ -97,6 +102,46 @@ adding:
           'entity:node':
             sup_book: search_indexing
             sup_book_ancillary: search_indexing
+    isbn_13_alt:
+      label: 'ISBN 13 Alternative'
+      datasource_id: 'entity:node'
+      property_path: sup_book_isbn_13_alt
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_isbn_13_alt
+    isbn_13_cloth:
+      label: 'ISBN 13 Cloth'
+      datasource_id: 'entity:node'
+      property_path: sup_book_isbn_13_cloth
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_isbn_13_cloth
+    isbn_13_digital:
+      label: 'ISBN 13 Digital'
+      datasource_id: 'entity:node'
+      property_path: sup_book_isbn_13_digital
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_isbn_13_digital
+    isbn_13_isw:
+      label: 'ISBN 13 ISW'
+      datasource_id: 'entity:node'
+      property_path: sup_book_isbn_13_isw
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_isbn_13_isw
+    isbn_13_paper:
+      label: 'ISBN 13 Paper'
+      datasource_id: 'entity:node'
+      property_path: sup_book_isbn_13_paper
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sup_book_isbn_13_paper
     photo:
       configuration:
         value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image|node:sup_book_image:entity:field_media_image:large]'
@@ -127,6 +172,11 @@ adding:
         - book_subject
         - book_subtitle
         - book_type
+        - isbn_13_alt
+        - isbn_13_cloth
+        - isbn_13_digital
+        - isbn_13_isw
+        - isbn_13_paper
     search_api_exclude_entity_processor:
       fields:
         node:
