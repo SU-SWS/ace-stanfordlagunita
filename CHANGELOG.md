@@ -1,5 +1,18 @@
 # Lagunita
 
+2.5.2
+--------------------------------------------------------------------------------
+_Release Date: 2024-10-11_
+
+- SUP: Include isbn 13 data in algolia
+- SUL23-596: Provide ascending and descending event display options (#143)
+- SUL23-637: Added sidenav layout option to news content type
+- SUL23-643: Added help text to layout selection fields
+- SUP: Fixed award importer
+- SUL-637: Improve basic page node form
+- SUL-636 SUL-637: Add "On This Page" layout option with related links fields
+- SUP: Skip award import if year is empty
+
 2.5.1
 --------------------------------------------------------------------------------
 _Release Date: 2024-10-02_
