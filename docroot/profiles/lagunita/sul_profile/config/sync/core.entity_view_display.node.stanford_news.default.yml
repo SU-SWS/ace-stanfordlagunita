@@ -434,7 +434,7 @@ third_party_settings:
         - 'Stanford SimpleSAML PHP'
         - Views
   layout_library:
-    enable: false
+    enable: true
 id: node.stanford_news.default
 targetEntityType: node
 bundle: stanford_news
