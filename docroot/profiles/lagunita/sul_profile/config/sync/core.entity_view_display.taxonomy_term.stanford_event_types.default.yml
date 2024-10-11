@@ -99,7 +99,7 @@ third_party_settings:
             uuid: 418009ee-2c7e-4d17-a0b6-4316b1ce133f
             region: main
             configuration:
-              id: 'views_block:stanford_events-list_page_filtered'
+              id: 'views_block:sul_events-list_page_filtered'
               label: ''
               label_display: '0'
               provider: views

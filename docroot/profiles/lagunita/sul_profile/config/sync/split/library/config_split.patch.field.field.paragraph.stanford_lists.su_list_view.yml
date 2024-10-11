@@ -4,7 +4,7 @@ adding:
       sul_branch_locations: sul_branch_locations
       sul_people: sul_people
       sul_study_places: sul_study_places
-      sul_shared_tag_events: sul_shared_tag_events
+      sul_events: sul_events
       change_logs: '0'
       stanford_courses: '0'
       editoria11y_dismissals: '0'
@@ -13,13 +13,18 @@ adding:
       policies: '0'
       stanford_publications: '0'
       samlauth_map: '0'
+      sul_shared_tag_events: '0'
       taxonomy_term_pages: '0'
     allowed_display_types:
       graphql: '0'
+    handler_settings:
+      target_bundles: null
+      auto_create: false
 removing:
   settings:
     allowed_views:
       stanford_courses: stanford_courses
+      stanford_events: stanford_events
       stanford_publications: stanford_publications
       stanford_event_terms_utility: '0'
       stanford_news_terms: '0'

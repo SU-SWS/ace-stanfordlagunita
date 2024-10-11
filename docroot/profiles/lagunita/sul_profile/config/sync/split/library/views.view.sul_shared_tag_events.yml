@@ -1,6 +1,6 @@
 uuid: bdfc6cae-6347-448b-8b16-d2c4260219db
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_h3_card
