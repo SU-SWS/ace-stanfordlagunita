@@ -3374,7 +3374,7 @@ display:
     display_plugin: block
     position: 3
     display_options:
-      enabled: false
+      enabled: true
       fields:
         view_node:
           id: view_node

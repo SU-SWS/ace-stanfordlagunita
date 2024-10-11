@@ -543,7 +543,7 @@ third_party_settings:
             uuid: 5bff4484-cf7e-4513-881c-86ec5239e101
             region: main
             configuration:
-              id: 'views_block:stanford_events-schedule'
+              id: 'views_block:sul_events-schedule'
               label: Schedule
               label_display: visible
               provider: views
@@ -566,7 +566,7 @@ third_party_settings:
             uuid: 8e277083-0c99-44f4-ad5f-9f800d0b602e
             region: main
             configuration:
-              id: 'views_block:stanford_events-more_events_block'
+              id: 'views_block:sul_events-more_events_block'
               label: 'Explore More Events'
               label_display: visible
               provider: views
