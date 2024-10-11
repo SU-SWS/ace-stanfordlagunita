@@ -3350,7 +3350,7 @@ display:
           use_taxonomy_term_path: false
           entity_type: node
           plugin_id: taxonomy_index_name_depth
-      enabled: false
+      enabled: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -5492,7 +5492,7 @@ display:
     display_plugin: block
     position: 4
     display_options:
-      enabled: false
+      enabled: true
       fields:
         su_event_date_time_value:
           id: su_event_date_time_value

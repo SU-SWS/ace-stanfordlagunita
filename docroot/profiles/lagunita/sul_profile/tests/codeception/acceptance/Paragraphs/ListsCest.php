@@ -486,7 +486,7 @@ class ListsCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($event->label());
 
-    $I->amOnPage('/jsonapi/views/stanford_events/list_page?page[limit]=99');
+    $I->amOnPage('/jsonapi/views/sul_events/list_page?page[limit]=99');
     $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);
     $I->assertArrayHasKey('data', $json_data);
 
