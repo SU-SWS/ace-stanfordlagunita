@@ -278,7 +278,7 @@ class ListsCest {
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
       'su_list_view' => [
-        'target_id' => 'stanford_events',
+        'target_id' => 'sul_events',
         'display_id' => 'list_page',
         'items_to_display' => 100,
       ],
@@ -308,7 +308,7 @@ class ListsCest {
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
       'su_list_view' => [
-        'target_id' => 'stanford_events',
+        'target_id' => 'sul_events',
         'display_id' => 'list_page',
         'items_to_display' => 100,
       ],
@@ -340,7 +340,7 @@ class ListsCest {
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
       'su_list_view' => [
-        'target_id' => 'stanford_events',
+        'target_id' => 'sul_events',
         'display_id' => 'list_page',
         'items_to_display' => 100,
       ],
@@ -417,7 +417,7 @@ class ListsCest {
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
     ]);
@@ -429,7 +429,7 @@ class ListsCest {
     $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => str_replace(' ', '-', $audience->label()),
@@ -438,7 +438,7 @@ class ListsCest {
     $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => $type->label(),
@@ -447,7 +447,7 @@ class ListsCest {
     $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => "''/" . str_replace(' ', '-', $group->label()),
@@ -456,7 +456,7 @@ class ListsCest {
     $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => "''/''/" . str_replace(' ', '-', $subject->label()),
@@ -465,7 +465,7 @@ class ListsCest {
     $I->canSee($event->label(), 'h3');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => "''/''/''/" . str_replace(' ', '-', $keyword->label()),
@@ -478,7 +478,7 @@ class ListsCest {
       'vid' => 'stanford_event_types',
     ], 'taxonomy_term');
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => str_replace(' ', '-', $type->label()),
@@ -521,7 +521,7 @@ class ListsCest {
     $I->canSee('has been updated');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
     ]);
@@ -555,7 +555,7 @@ class ListsCest {
     $I->canSee('has been updated');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => $random_term->label(),
@@ -592,7 +592,7 @@ class ListsCest {
     $I->canSee('has been updated');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => $event_type->label(),
@@ -629,7 +629,7 @@ class ListsCest {
     $I->canSee('has been updated');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_events',
+      'target_id' => 'sul_events',
       'display_id' => 'list_page',
       'items_to_display' => 100,
       'arguments' => $event_audience->label(),

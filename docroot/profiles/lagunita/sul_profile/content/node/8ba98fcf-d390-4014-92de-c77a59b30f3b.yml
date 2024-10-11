@@ -175,7 +175,7 @@ default:
               value: "Events"
           su_list_view:
             -
-              target_id: stanford_events
+              target_id: sul_events
               display_id: list_page
               arguments: ''
               items_to_display: ''

@@ -86,7 +86,7 @@ default:
               value: 'Events that have occurred'
           su_list_view:
             -
-              target_id: stanford_events
+              target_id: sul_events
               display_id: past_events_list_block
               arguments: ''
               items_to_display: ''
