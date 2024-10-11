@@ -172,6 +172,9 @@
             },
             "drupal/next": {
                 "Prevent unnecessary logs": "patches/contrib/next.patch"
+            },
+            "drupal/viewfield": {
+                "https://www.drupal.org/project/viewfield/issues/3480225": "https://www.drupal.org/files/issues/2024-10-11/3480225-viewfield-diabled_displays.patch"
             }
         }
     },
