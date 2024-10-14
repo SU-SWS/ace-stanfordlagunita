@@ -147,6 +147,10 @@ source:
       label: cloth_sale_price
       selector: fieldData/cloth_sale_price
     -
+      name: publisher
+      label: publisher
+      selector: fieldData/publisher
+    -
       name: copublisher_name
       label: copublisher_name
       selector: fieldData/copublisher_name
@@ -383,14 +387,11 @@ process:
   sup_book_author_info/format: constants/stanford_html
   sup_book_authors_full: authors_full
   sup_book_avail_desc: availability_description
-  sup_book_catalog_month: catalog_month
-  sup_book_catalog_page: catalog_page
   sup_book_catalog_season_yyyy: catalog_season_yyyy
   sup_book_cloth_sale_percent: cloth_sale_percent
   sup_book_cloth_sale_price: cloth_sale_price
+  sup_book_publisher: publisher
   sup_book_copublisher_name: copublisher_name
-  sup_book_copublisher_yn: copublisher_yn
-  sup_book_copyright: copyright
   sup_book_description/value:
     -
       plugin: str_replace
@@ -414,23 +415,16 @@ process:
       map:
         'yes': 1
       default_value: null
-  sup_book_html_page_title: html_page_title
-  sup_book_illustrations: illustrations
-  sup_book_in_print_status: in_print_status
-  sup_book_instructor_recommended: instructor_recommended
   sup_book_isbn_13_alt: isbn_13_alt
   sup_book_isbn_13_cloth: isbn_13_cloth
   sup_book_isbn_13_digital: isbn_13_digital
   sup_book_isbn_13_isw: isbn_13_isw
   sup_book_isbn_13_paper: isbn_13_paper
-  sup_book_local_web_blurb/value: local_web_blurb
   sup_book_local_web_blurb/format: constants/stanford_html
-  sup_book_new_paperback_yn: new_paperback_yn
   sup_book_pages: pages
   sup_book_paper_sale_percent: paper_sale_percent
   sup_book_paper_sale_price: paper_sale_price
   sup_book_price_cloth: price_cloth
-  sup_book_price_digital: price_digital
   sup_book_price_paper: price_paper
   sup_book_print_desk_copies:
     -
@@ -443,9 +437,7 @@ process:
         'yes': 1
       default_value: null
   sup_book_pub_date_cloth: pub_date_cloth
-  sup_book_pub_date_digital: pub_date_digital
   sup_book_pub_date_first: pub_date_first
-  sup_book_pub_date_paper: pub_date_paper
   sup_book_pub_year_first: pub_year_first
   sup_book_reviews/value:
     -
@@ -460,11 +452,7 @@ process:
         - '</em>'
         - '<br />'
   sup_book_reviews/format: constants/stanford_html
-  sup_book_rights_description: rights_description
   sup_book_sales_rank: sales_rank
-  sup_book_status_cloth: status_cloth
-  sup_book_status_digital: status_digital
-  sup_book_status_paper: status_paper
   sup_book_subtitle:
     -
       plugin: skip_on_empty
@@ -476,8 +464,6 @@ process:
       search: '/<.*?>/'
       replace: ''
   sup_book_url_isw: url_isw
-  sup_book_web_code_cloth: web_code_cloth
-  sup_book_web_code_paper: web_code_paper
   sup_book_work_id_number: work_id_number
   sup_book_awards:
     -

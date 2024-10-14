@@ -1,15 +1,15 @@
-uuid: 02ded562-7c8d-4e3e-b063-02f72833f21e
+uuid: 359cf8aa-9e53-4d36-b1ae-0bacf5d5b75a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.sup_book_in_print_status
-field_name: sup_book_in_print_status
+id: node.sup_book_publisher
+field_name: sup_book_publisher
 entity_type: node
 type: string
 settings:
-  max_length: 25
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core
