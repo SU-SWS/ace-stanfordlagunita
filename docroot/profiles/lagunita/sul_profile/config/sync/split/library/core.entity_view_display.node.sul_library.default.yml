@@ -349,6 +349,7 @@ hidden:
   layout_selection: true
   links: true
   search_api_excerpt: true
+  sul_library__ext_url: true
   sul_library__type: true
   sul_rel_links: true
   sul_rel_links_heading: true

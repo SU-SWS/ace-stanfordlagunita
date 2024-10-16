@@ -1,0 +1,23 @@
+uuid: 23447cf1-27c3-4ae5-abd2-dd93006e3d09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_library__ext_url
+    - node.type.sul_library
+  module:
+    - link
+id: node.sul_library.sul_library__ext_url
+field_name: sul_library__ext_url
+entity_type: node
+bundle: sul_library
+label: 'External Page'
+description: 'Provide an external URL that the branch page will redirect to. Leave this empty to display the branch page on the Library site.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

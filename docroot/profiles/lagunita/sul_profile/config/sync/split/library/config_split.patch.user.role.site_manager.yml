@@ -3,6 +3,7 @@ adding:
     config:
       - node.type.sul_library
       - node.type.sul_study_place
+      - taxonomy.vocabulary.stanford_publication_topics
       - taxonomy.vocabulary.study_place_capacity
       - taxonomy.vocabulary.sul_study_place_features
       - taxonomy.vocabulary.sul_study_place_type
@@ -10,7 +11,6 @@ adding:
       - build_hooks
   permissions:
     - 'access site in maintenance mode'
-    - 'choose layout for node stanford_news'
     - 'choose layout for node sul_library'
     - 'create sul_library content'
     - 'create sul_study_place content'
@@ -52,8 +52,6 @@ adding:
     - 'view sul_study_place revisions'
 removing:
   dependencies:
-    config:
-      - taxonomy.vocabulary.stanford_publication_topics
     module:
       - editoria11y
       - pathauto

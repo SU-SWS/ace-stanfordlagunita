@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.sul_library.su_library__paragraphs
     - field.field.node.sul_library.su_library__phone
     - field.field.node.sul_library.sul_library__a11y
+    - field.field.node.sul_library.sul_library__ext_url
     - field.field.node.sul_library.sul_library__type
     - field.field.node.sul_library.sul_rel_links
     - field.field.node.sul_library.sul_rel_links_heading
@@ -62,7 +63,7 @@ third_party_settings:
       label: 'Layout Options'
       region: content
       parent_name: ''
-      weight: 18
+      weight: 16
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -236,6 +237,14 @@ content:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
+  sul_library__ext_url:
+    type: link_default
+    weight: 15
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   sul_library__type:
     type: options_select
     weight: 2

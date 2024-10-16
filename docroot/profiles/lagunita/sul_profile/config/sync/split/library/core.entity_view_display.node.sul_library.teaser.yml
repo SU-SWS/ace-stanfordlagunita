@@ -42,6 +42,7 @@ hidden:
   su_library__paragraphs: true
   su_library__phone: true
   sul_library__a11y: true
+  sul_library__ext_url: true
   sul_library__type: true
   sul_rel_links: true
   sul_rel_links_heading: true
