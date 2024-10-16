@@ -1,11 +1,5 @@
 adding:
-  third_party_settings:
-    layout_library:
-      enable: false
   hidden:
     sul_rel_links: true
     sul_rel_links_heading: true
-removing:
-  third_party_settings:
-    layout_library:
-      enable: true
+removing: {  }

@@ -3,7 +3,6 @@ adding:
     config:
       - node.type.sul_library
       - node.type.sul_study_place
-      - taxonomy.vocabulary.stanford_publication_topics
       - taxonomy.vocabulary.study_place_capacity
       - taxonomy.vocabulary.sul_study_place_features
       - taxonomy.vocabulary.sul_study_place_type
@@ -37,6 +36,8 @@ adding:
     - 'view sul_study_place revisions'
 removing:
   dependencies:
+    config:
+      - taxonomy.vocabulary.stanford_publication_topics
     module:
       - editoria11y
       - pathauto
