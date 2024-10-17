@@ -5,7 +5,6 @@ adding:
       - field.field.node.stanford_news.sul_rel_links
       - field.field.node.stanford_news.sul_rel_links_heading
     module:
-      - conditional_fields
       - paragraphs
   third_party_settings:
     field_group:
@@ -15,9 +14,9 @@ adding:
           - sul_rel_links_heading
           - sul_rel_links
         label: 'Layout Options'
-        region: content
+        region: hidden
         parent_name: ''
-        weight: 17
+        weight: 14
         format_type: details_sidebar
         format_settings:
           classes: ''
@@ -29,18 +28,12 @@ adding:
           required_fields: false
           weight: 0
   content:
-    layout_selection:
-      type: options_select
-      weight: 16
-      region: content
-      settings: {  }
-      third_party_settings: {  }
     path:
       weight: 10
     publish_on:
       weight: 11
     scheduler_settings:
-      weight: 14
+      weight: 12
     su_metatags:
       weight: 8
     su_news_components:
@@ -56,66 +49,15 @@ adding:
       weight: 9
     su_shared_tags:
       weight: 7
-    sul_rel_links:
-      type: link_default
-      weight: 18
-      region: content
-      settings:
-        placeholder_url: ''
-        placeholder_title: ''
-      third_party_settings:
-        conditional_fields:
-          64777462-d6f8-4ffc-955d-a9e14b6dd78b:
-            entity_type: node
-            bundle: stanford_news
-            dependee: layout_selection
-            settings:
-              state: visible
-              reset: false
-              condition: value
-              grouping: AND
-              values_set: 1
-              value: ''
-              values: {  }
-              value_form:
-                -
-                  target_id: sul_news_side_nav
-              effect: show
-              effect_options: {  }
-              selector: ''
-    sul_rel_links_heading:
-      type: string_textfield
-      weight: 17
-      region: content
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings:
-        conditional_fields:
-          554d3c8c-9321-42cd-a353-eeda063d7cfd:
-            entity_type: node
-            bundle: stanford_news
-            dependee: layout_selection
-            settings:
-              state: visible
-              reset: false
-              condition: value
-              grouping: AND
-              values_set: 1
-              value: ''
-              values: {  }
-              value_form:
-                -
-                  target_id: sul_news_side_nav
-              effect: show
-              effect_options: {  }
-              selector: ''
     unpublish_on:
       type: datetime_timestamp_no_default
-      weight: 15
+      weight: 13
       region: content
       settings: {  }
       third_party_settings: {  }
+  hidden:
+    sul_rel_links: true
+    sul_rel_links_heading: true
 removing:
   dependencies:
     module:
@@ -145,5 +87,4 @@ removing:
     su_shared_tags:
       weight: 9
   hidden:
-    layout_selection: true
     unpublish_on: true

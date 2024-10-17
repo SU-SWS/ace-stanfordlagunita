@@ -12,7 +12,7 @@ field_name: sul_library__ext_url
 entity_type: node
 bundle: sul_library
 label: 'External Page'
-description: 'Provide an external URL that the branch page will redirect to. Leave this empty to display the branch page on the Library site.'
+description: 'Provide an external URL for branch links to redirect users to this page. Leave this field empty for default behavior - branch links will open the branch page on the Library site.'
 required: false
 translatable: false
 default_value: {  }
