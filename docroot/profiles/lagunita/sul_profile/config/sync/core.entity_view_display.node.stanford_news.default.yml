@@ -81,7 +81,7 @@ third_party_settings:
             uuid: 03aed37a-e4ab-4ee4-b996-0523074be664
             region: main
             configuration:
-              id: 'views_block:stanford_news-topics_list'
+              id: 'views_block:sul_news-topics_list'
               label: ''
               label_display: '0'
               provider: views
@@ -324,7 +324,7 @@ third_party_settings:
             uuid: d43e60bd-c832-439e-8151-1b2fd851b98e
             region: main
             configuration:
-              id: 'views_block:stanford_news-vertical_teaser_term'
+              id: 'views_block:sul_news-vertical_teaser_term'
               label: 'More News'
               label_display: visible
               provider: views
