@@ -85,7 +85,7 @@ third_party_settings:
             uuid: 2a5a6a90-b253-44a7-8111-8012baa026ea
             region: main
             configuration:
-              id: 'views_block:stanford_news-term_block'
+              id: 'views_block:sul_news-term_block'
               label: ''
               label_display: '0'
               provider: views

@@ -145,7 +145,7 @@ class ListsCest {
     $I->canSee($title, 'h1');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_news',
+      'target_id' => 'sul_news',
       'display_id' => 'vertical_teaser_term',
       'items_to_display' => 100,
     ]);
@@ -156,7 +156,7 @@ class ListsCest {
     $I->canSeeLink('Google', 'http://google.com');
     $I->canSee($title, 'h3');
 
-    $I->amOnPage('/jsonapi/views/stanford_news/block_1?page[limit]=99');
+    $I->amOnPage('/jsonapi/views/sul_news/block_1?page[limit]=99');
     $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);
     $I->assertArrayHasKey('data', $json_data);
 
@@ -188,7 +188,7 @@ class ListsCest {
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_news',
+      'target_id' => 'sul_news',
       'display_id' => 'vertical_teaser_term',
       'items_to_display' => 100,
     ]);
@@ -217,7 +217,7 @@ class ListsCest {
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_news',
+      'target_id' => 'sul_news',
       'display_id' => 'vertical_teaser_term',
       'items_to_display' => 100,
       'arguments' => $random_term->label(),
@@ -249,7 +249,7 @@ class ListsCest {
     $I->click('Save');
 
     $node = $this->getNodeWithList($I, [
-      'target_id' => 'stanford_news',
+      'target_id' => 'sul_news',
       'display_id' => 'vertical_cards',
       'items_to_display' => 100,
       'arguments' => $topic_term->label(),

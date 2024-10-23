@@ -203,7 +203,7 @@ default:
               value: "News"
           su_list_view:
             -
-              target_id: stanford_news
+              target_id: sul_news
               display_id: block_1
               arguments: ''
               items_to_display: ''

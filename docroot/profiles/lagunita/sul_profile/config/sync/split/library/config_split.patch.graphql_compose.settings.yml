@@ -12,9 +12,9 @@ adding:
       stanford_saml:
         enabled: false
     layout:
-      sul_library_full_width:
-        enabled: false
       sul_branch_side_nav:
+        enabled: false
+      sul_library_full_width:
         enabled: false
       sul_news_side_nav:
         enabled: false
@@ -42,6 +42,8 @@ adding:
       tools:
         enabled: false
     node:
+      stanford_opportunity:
+        enabled: false
       sul_library:
         enabled: true
         query_load_enabled: true
@@ -51,8 +53,6 @@ adding:
         enabled: true
         query_load_enabled: true
         edges_enabled: true
-      stanford_opportunity:
-        enabled: false
     paragraph:
       collection:
         enabled: true
@@ -63,6 +63,8 @@ adding:
       layout:
         enabled: true
         query_load_enabled: true
+      stanford_layout:
+        enabled: false
       sul_button:
         enabled: true
         query_load_enabled: true
@@ -75,9 +77,21 @@ adding:
       sul_libguide:
         enabled: true
         query_load_enabled: true
-      stanford_layout:
-        enabled: false
     taxonomy_term:
+      cap_org_codes:
+        enabled: false
+      media_tags:
+        enabled: false
+      opportunity_sponsor:
+        enabled: false
+      opportunity_tag_filters:
+        enabled: false
+      opportunity_type:
+        enabled: false
+      site_owner_orgs:
+        enabled: false
+      stanford_news_topics:
+        edges_enabled: true
       study_place_capacity:
         enabled: true
         query_load_enabled: true
@@ -87,18 +101,6 @@ adding:
       sul_study_place_type:
         enabled: true
         query_load_enabled: true
-      cap_org_codes:
-        enabled: false
-      media_tags:
-        enabled: false
-      site_owner_orgs:
-        enabled: false
-      opportunity_sponsor:
-        enabled: false
-      opportunity_tag_filters:
-        enabled: false
-      opportunity_type:
-        enabled: false
   field_config:
     media:
       image:
@@ -146,9 +148,9 @@ adding:
           enabled: true
         sul_library__a11y:
           enabled: true
-        sul_library__type:
-          enabled: true
         sul_library__ext_url:
+          enabled: true
+        sul_library__type:
           enabled: true
         sul_rel_links:
           enabled: true
