@@ -1,5 +1,12 @@
 # Lagunita
 
+2.5.4
+--------------------------------------------------------------------------------
+_Release Date: 2024-10-31_
+
+- Updated dependencies
+- require node_revision_delete development version to fix some issues.
+
 2.5.2
 --------------------------------------------------------------------------------
 _Release Date: 2024-10-11_
