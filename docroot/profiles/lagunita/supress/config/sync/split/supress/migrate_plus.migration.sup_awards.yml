@@ -70,7 +70,7 @@ process:
       source: description
     -
       plugin: str_replace
-      search: /<(\/?)i>/
+      search: '/<(\/?)i>/'
       replace: '<$1em>'
       regex: true
   sup_description/format: constants/minimal_html
