@@ -47,6 +47,7 @@ adding:
     sup_award:
       sup_award:
         enabled: true
+        query_load_enabled: true
   field_config:
     media:
       sup_protected_file:

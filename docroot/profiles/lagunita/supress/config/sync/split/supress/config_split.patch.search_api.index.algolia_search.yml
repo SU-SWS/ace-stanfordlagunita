@@ -60,6 +60,14 @@ adding:
       dependencies:
         config:
           - field.storage.node.sup_book_pub_date_first
+    book_published_year:
+      label: 'Publication Year First'
+      datasource_id: 'entity:node'
+      property_path: sup_book_pub_date_first
+      type: integer
+      dependencies:
+        config:
+          - field.storage.node.sup_book_pub_date_first
     book_series:
       label: 'Sup Book Series » Taxonomy term » Name'
       datasource_id: 'entity:node'
@@ -190,7 +198,6 @@ adding:
         - book_subject
         - book_subtitle
         - book_type
-  read_only: true
 removing:
   field_settings:
     photo:
@@ -199,4 +206,3 @@ removing:
     summary:
       configuration:
         value: '[node:su_page_description|node:summary]'
-  read_only: false
