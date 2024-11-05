@@ -330,6 +330,10 @@ source:
       name: cart_button
       label: cart_button
       selector: fieldData/cart_button
+    -
+      name: series
+      label: series
+      selector: fieldData/series
   ids:
     work_id_number:
       type: integer
@@ -548,6 +552,26 @@ process:
       preorder: 0
       add: 0
       none: 1
+  sup_book_series:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: series
+    -
+      plugin: str_replace
+      search: /^\s+|\s+$/
+      replace: ''
+      regex: true
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: sup_series
+      value_key: name
+      ignore_case: true
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

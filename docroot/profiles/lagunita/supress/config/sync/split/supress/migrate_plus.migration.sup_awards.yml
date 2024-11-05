@@ -63,8 +63,17 @@ process:
     plugin: skip_on_empty
     source: year
     method: row
-  sup_description/value: description
-  sup_description/format: constant/minimal_html
+  sup_description/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: description
+    -
+      plugin: str_replace
+      search: /<(\/?)i>/
+      replace: '<$1em>'
+      regex: true
+  sup_description/format: constants/minimal_html
 destination:
   plugin: 'entity:sup_award'
 migration_dependencies: {  }

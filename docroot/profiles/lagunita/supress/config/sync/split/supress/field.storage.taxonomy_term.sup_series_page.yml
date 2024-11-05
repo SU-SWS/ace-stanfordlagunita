@@ -1,0 +1,19 @@
+uuid: 6664056b-57be-44df-bcf7-4f522447bb4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.sup_series_page
+field_name: sup_series_page
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

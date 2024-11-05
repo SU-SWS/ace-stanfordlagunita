@@ -1,43 +1,9 @@
 adding:
   entity_config:
-    config_pages:
-      policy_settings:
-        enabled: false
-      stanford_courses_importer:
-        enabled: false
-      stanford_events_importer:
-        enabled: false
-      stanford_person_importer:
-        enabled: false
-      stanford_saml:
-        enabled: false
     media:
       sup_protected_file:
         enabled: true
-    menu:
-      account:
-        enabled: false
-      admin:
-        enabled: false
-      courses-menu:
-        enabled: false
-      devel:
-        enabled: false
-      footer:
-        enabled: false
-      news-topics:
-        enabled: false
-      stanford-event-types:
-        enabled: false
-      stanford-person-type:
-        enabled: false
-      stanford-publication-topics:
-        enabled: false
-      tools:
-        enabled: false
     node:
-      stanford_opportunity:
-        enabled: false
       sup_book:
         enabled: true
         query_load_enabled: true
@@ -51,49 +17,36 @@ adding:
     paragraph:
       stanford_page_title_banner:
         query_load_enabled: true
-      sup_author_list:
-        enabled: true
-      sup_blog:
-        enabled: true
-      sup_blog_teaser:
-        enabled: true
       sup_carousel:
         enabled: true
       sup_carousel_slide:
         enabled: true
       sup_file_list:
         enabled: true
+      sup_author_list:
+        enabled: true
+      sup_blog:
+        enabled: true
+      sup_blog_teaser:
+        enabled: true
       sup_search_form:
         enabled: true
-    sup_award:
-      sup_award:
-        enabled: true
     taxonomy_term:
-      cap_org_codes:
-        enabled: false
-      media_tags:
-        enabled: false
-      opportunity_sponsor:
-        enabled: false
-      opportunity_tag_filters:
-        enabled: false
-      opportunity_type:
-        enabled: false
-      site_owner_orgs:
-        enabled: false
       sup_book_subjects:
         enabled: true
         query_load_enabled: true
-      sup_book_tags:
-        enabled: false
-      sup_file_groups:
-        enabled: false
       sup_imprints:
         enabled: true
         query_load_enabled: true
       sup_series:
         enabled: true
-        query_load_enabled: true
+      sup_book_tags:
+        enabled: false
+      sup_file_groups:
+        enabled: false
+    sup_award:
+      sup_award:
+        enabled: true
   field_config:
     media:
       sup_protected_file:
@@ -101,6 +54,8 @@ adding:
           enabled: true
     node:
       sup_book:
+        sup_book_awards:
+          enabled: true
         sup_book_author_info:
           enabled: true
         sup_book_authors:
@@ -108,8 +63,6 @@ adding:
         sup_book_authors_full:
           enabled: true
         sup_book_avail_desc:
-          enabled: true
-        sup_book_awards:
           enabled: true
         sup_book_catalog_season_yyyy:
           enabled: true
@@ -123,15 +76,9 @@ adding:
           enabled: true
         sup_book_digital_comp_link:
           enabled: true
-        sup_book_e_retailers:
-          enabled: true
-        sup_book_excerpts:
-          enabled: true
         sup_book_image:
           enabled: true
         sup_book_imprint:
-          enabled: true
-        sup_book_intl_cart:
           enabled: true
         sup_book_isbn_13_alt:
           enabled: true
@@ -143,15 +90,11 @@ adding:
           enabled: true
         sup_book_isbn_13_paper:
           enabled: true
-        sup_book_no_cart:
-          enabled: true
         sup_book_pages:
           enabled: true
         sup_book_paper_sale_percent:
           enabled: true
         sup_book_paper_sale_price:
-          enabled: true
-        sup_book_preorder:
           enabled: true
         sup_book_price_cloth:
           enabled: true
@@ -165,8 +108,6 @@ adding:
           enabled: true
         sup_book_pub_year_first:
           enabled: true
-        sup_book_publisher:
-          enabled: true
         sup_book_related_titles:
           enabled: true
         sup_book_reviews:
@@ -179,18 +120,30 @@ adding:
           enabled: true
         sup_book_subtitle:
           enabled: true
-        sup_book_type:
-          enabled: true
         sup_book_url_isw:
           enabled: true
         sup_book_work_id_number:
           enabled: true
-      sup_book_ancillary:
-        body:
+        sup_book_type:
           enabled: true
+        sup_book_intl_cart:
+          enabled: true
+        sup_book_excerpts:
+          enabled: true
+        sup_book_e_retailers:
+          enabled: true
+        sup_book_no_cart:
+          enabled: true
+        sup_book_preorder:
+          enabled: true
+        sup_book_publisher:
+          enabled: true
+      sup_book_ancillary:
         sup_ancillary_book:
           enabled: true
         sup_ancillary_paragraphs:
+          enabled: true
+        body:
           enabled: true
     paragraph:
       stanford_lists:
@@ -198,6 +151,41 @@ adding:
           enabled: true
       stanford_page_title_banner:
         sup_title_banner_color:
+          enabled: true
+      sup_carousel:
+        sup_carousel_slides:
+          enabled: true
+        sup_carousel_top_hero:
+          enabled: true
+      sup_file_list:
+        sup_file_list_files:
+          enabled: true
+        sup_file_list_label:
+          enabled: true
+        sup_file_list_display:
+          enabled: true
+      sup_carousel_slide:
+        sup_slide_body:
+          enabled: true
+        sup_slide_button:
+          enabled: true
+        sup_slide_color:
+          enabled: true
+        sup_slide_eyebrow:
+          enabled: true
+        sup_slide_hide:
+          enabled: true
+        sup_slide_orientation:
+          enabled: true
+        sup_slide_subtitle:
+          enabled: true
+        sup_slide_title:
+          enabled: true
+        sup_slide_title_size:
+          enabled: true
+        sup_slide_bg_image:
+          enabled: true
+        sup_slide_image:
           enabled: true
       sup_blog:
         sup_blog_body:
@@ -214,41 +202,6 @@ adding:
         sup_blog_teaser_items:
           enabled: true
         sup_blog_teaser_link:
-          enabled: true
-      sup_carousel:
-        sup_carousel_slides:
-          enabled: true
-        sup_carousel_top_hero:
-          enabled: true
-      sup_carousel_slide:
-        sup_slide_bg_image:
-          enabled: true
-        sup_slide_body:
-          enabled: true
-        sup_slide_button:
-          enabled: true
-        sup_slide_color:
-          enabled: true
-        sup_slide_eyebrow:
-          enabled: true
-        sup_slide_hide:
-          enabled: true
-        sup_slide_image:
-          enabled: true
-        sup_slide_orientation:
-          enabled: true
-        sup_slide_subtitle:
-          enabled: true
-        sup_slide_title:
-          enabled: true
-        sup_slide_title_size:
-          enabled: true
-      sup_file_list:
-        sup_file_list_display:
-          enabled: true
-        sup_file_list_files:
-          enabled: true
-        sup_file_list_label:
           enabled: true
       sup_search_form:
         sup_search_books_only:
@@ -268,5 +221,9 @@ adding:
         sup_work_id:
           enabled: true
         sup_year:
+          enabled: true
+    taxonomy_term:
+      sup_series:
+        sup_series_page:
           enabled: true
 removing: {  }

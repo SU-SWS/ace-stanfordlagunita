@@ -3,44 +3,40 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.sup_series.sup_series_page
     - taxonomy.vocabulary.sup_series
   module:
-    - path
-    - text
+    - link
 id: taxonomy_term.sup_series.default
 targetEntityType: taxonomy_term
 bundle: sup_series
 mode: default
 content:
-  description:
-    type: text_textfield
+  name:
+    type: string_textfield
     weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: -5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 2
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  sup_series_page:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
 hidden:
+  description: true
+  path: true
   publish_on: true
   unpublish_on: true
