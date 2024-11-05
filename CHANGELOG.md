@@ -1,5 +1,12 @@
 # Lagunita
 
+2.5.5
+--------------------------------------------------------------------------------
+_Release Date: 2024-11-05_
+
+- Fixed Github actions: Dont deploy a tag if no tag was created
+- SUP: Adjust book and award importers
+
 2.5.4
 --------------------------------------------------------------------------------
 _Release Date: 2024-10-31_
