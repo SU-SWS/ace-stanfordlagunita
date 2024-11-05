@@ -126,7 +126,7 @@ process:
       source: course_syllabus_file
     -
       plugin: explode
-      delimiter: '/'
+      delimiter: /
     -
       plugin: array_pop
   syllabus_media_name:
@@ -138,7 +138,7 @@ process:
       plugin: str_replace
       regex: true
       search: '/^(.*)\..*/'
-      replace: '$1'
+      replace: $1
   syllabus_file:
     -
       plugin: skip_on_empty

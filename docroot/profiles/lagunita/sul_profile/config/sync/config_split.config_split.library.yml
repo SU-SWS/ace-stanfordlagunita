@@ -69,7 +69,6 @@ complete_list:
   - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_layout
 partial_list:
   - field_ui.settings
-  - graphql_compose.settings
   - layout_paragraphs.settings
   - '*su_*'
   - '*stanford_*'

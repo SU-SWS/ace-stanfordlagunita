@@ -21,16 +21,10 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    policy_settings:
-      enabled: false
     stanford_basic_site_settings:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_courses_importer:
-      enabled: false
-    stanford_events_importer:
-      enabled: false
     stanford_global_message:
       enabled: true
       query_load_enabled: true
@@ -39,14 +33,20 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_person_importer:
-      enabled: false
-    stanford_saml:
-      enabled: false
     stanford_super_footer:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
+    policy_settings:
+      enabled: false
+    stanford_courses_importer:
+      enabled: false
+    stanford_events_importer:
+      enabled: false
+    stanford_person_importer:
+      enabled: false
+    stanford_saml:
+      enabled: false
   image_style:
     breakpoint_2xl_1x:
       enabled: true
@@ -129,6 +129,14 @@ entity_config:
   layout:
     stanford_basic_page_full:
       enabled: true
+    sul_library_full_width:
+      enabled: false
+    sul_branch_side_nav:
+      enabled: false
+    sul_news_side_nav:
+      enabled: false
+    sul_side_nav:
+      enabled: false
   media:
     embeddable:
       enabled: true
@@ -149,6 +157,8 @@ entity_config:
       enabled: true
       query_load_enabled: true
   menu:
+    main:
+      enabled: true
     account:
       enabled: false
     admin:
@@ -159,8 +169,6 @@ entity_config:
       enabled: false
     footer:
       enabled: false
-    main:
-      enabled: true
     news-topics:
       enabled: false
     stanford-event-types:
@@ -192,8 +200,6 @@ entity_config:
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
-    stanford_opportunity:
-      enabled: false
     stanford_page:
       enabled: true
       query_load_enabled: true
@@ -214,7 +220,27 @@ entity_config:
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
+    sul_library:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    sul_study_place:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+    stanford_opportunity:
+      enabled: false
   paragraph:
+    collection:
+      enabled: true
+      query_load_enabled: true
+    collection_card:
+      enabled: true
+      query_load_enabled: true
+    layout:
+      enabled: true
+      query_load_enabled: true
     stanford_accordion:
       enabled: true
       query_load_enabled: true
@@ -228,9 +254,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
     stanford_gallery:
-      enabled: true
-      query_load_enabled: true
-    stanford_layout:
       enabled: true
       query_load_enabled: true
     stanford_lists:
@@ -253,6 +276,20 @@ entity_config:
     stanford_wysiwyg:
       enabled: true
       query_load_enabled: true
+    sul_button:
+      enabled: true
+      query_load_enabled: true
+    sul_contact_card:
+      enabled: true
+      query_load_enabled: true
+    sul_feat_collection:
+      enabled: true
+      query_load_enabled: true
+    sul_libguide:
+      enabled: true
+      query_load_enabled: true
+    stanford_layout:
+      enabled: false
   redirect:
     redirect:
       enabled: true
@@ -266,21 +303,9 @@ entity_config:
       enabled: true
       query_load_enabled: true
       routes_enabled: true
-    cap_org_codes:
-      enabled: false
     event_audience:
       enabled: true
       query_load_enabled: true
-    media_tags:
-      enabled: false
-    opportunity_sponsor:
-      enabled: false
-    opportunity_tag_filters:
-      enabled: false
-    opportunity_type:
-      enabled: false
-    site_owner_orgs:
-      enabled: false
     stanford_event_groups:
       enabled: true
       query_load_enabled: true
@@ -297,6 +322,7 @@ entity_config:
     stanford_news_topics:
       enabled: true
       query_load_enabled: true
+      edges_enabled: true
       routes_enabled: true
     stanford_person_types:
       enabled: true
@@ -305,6 +331,9 @@ entity_config:
       enabled: true
       query_load_enabled: true
       routes_enabled: true
+    study_place_capacity:
+      enabled: true
+      query_load_enabled: true
     su_course_quarters:
       enabled: true
       query_load_enabled: true
@@ -316,6 +345,24 @@ entity_config:
       enabled: true
     su_shared_tags:
       enabled: true
+    sul_study_place_features:
+      enabled: true
+      query_load_enabled: true
+    sul_study_place_type:
+      enabled: true
+      query_load_enabled: true
+    cap_org_codes:
+      enabled: false
+    media_tags:
+      enabled: false
+    site_owner_orgs:
+      enabled: false
+    opportunity_sponsor:
+      enabled: false
+    opportunity_tag_filters:
+      enabled: false
+    opportunity_type:
+      enabled: false
 field_config:
   block_content:
     stanford_component_block:
@@ -444,8 +491,6 @@ field_config:
         enabled: true
       su_site_algolia_search:
         enabled: true
-      su_site_algolia_ui:
-        enabled: true
       su_site_dropdowns:
         enabled: true
       su_site_menu_levels:
@@ -453,6 +498,8 @@ field_config:
       su_site_name:
         enabled: true
       su_site_nobots:
+        enabled: true
+      su_site_algolia_ui:
         enabled: true
     stanford_global_message:
       su_global_msg_enabled:
@@ -550,6 +597,8 @@ field_config:
     image:
       field_media_image:
         enabled: true
+      sul_image_credit:
+        enabled: true
     stanford_gallery_images:
       su_gallery_caption:
         enabled: true
@@ -623,6 +672,8 @@ field_config:
         enabled: true
       su_event_type:
         enabled: true
+      sul_event__image:
+        enabled: true
     stanford_event_series:
       su_event_series_components:
         enabled: true
@@ -655,6 +706,12 @@ field_config:
         enabled: true
       su_news_topics:
         enabled: true
+      layout_selection:
+        enabled: true
+      sul_rel_links:
+        enabled: true
+      sul_rel_links_heading:
+        enabled: true
     stanford_page:
       layout_selection:
         enabled: true
@@ -667,6 +724,10 @@ field_config:
       su_page_description:
         enabled: true
       su_page_image:
+        enabled: true
+      sul_rel_links:
+        enabled: true
+      sul_rel_links_heading:
         enabled: true
     stanford_person:
       body:
@@ -721,6 +782,10 @@ field_config:
         enabled: true
       su_person_type_group:
         enabled: true
+      sul_person__libcal_id:
+        enabled: true
+      sul_person__libguide_id:
+        enabled: true
     stanford_policy:
       body:
         enabled: true
@@ -757,7 +822,63 @@ field_config:
         enabled: true
       su_publication_topics:
         enabled: true
+    sul_library:
+      layout_selection:
+        enabled: true
+      su_library__address:
+        enabled: true
+      su_library__banner:
+        enabled: true
+      su_library__contact_img:
+        enabled: true
+      su_library__email:
+        enabled: true
+      su_library__hours:
+        enabled: true
+      su_library__map_link:
+        enabled: true
+      su_library__paragraphs:
+        enabled: true
+      su_library__phone:
+        enabled: true
+      sul_library__a11y:
+        enabled: true
+      sul_library__type:
+        enabled: true
+      sul_library__ext_url:
+        enabled: true
+      sul_rel_links:
+        enabled: true
+      sul_rel_links_heading:
+        enabled: true
+    sul_study_place:
+      sul_study__branch:
+        enabled: true
+      sul_study__capacity:
+        enabled: true
+      sul_study__features:
+        enabled: true
+      sul_study__image:
+        enabled: true
+      sul_study__libcal_id:
+        enabled: true
+      sul_study__room_donor_name:
+        enabled: true
+      sul_study__room_number:
+        enabled: true
+      sul_study__type:
+        enabled: true
   paragraph:
+    collection:
+      sul_collection_card:
+        enabled: true
+      sul_collection_heading:
+        enabled: true
+    collection_card:
+      sul_card:
+        enabled: true
+      sul_card_info:
+        enabled: true
     stanford_accordion:
       su_accordion_body:
         enabled: true
@@ -849,6 +970,44 @@ field_config:
         enabled: true
     stanford_wysiwyg:
       su_wysiwyg_text:
+        enabled: true
+    sul_button:
+      sul_button_headline:
+        enabled: true
+      sul_button_link:
+        enabled: true
+    sul_contact_card:
+      sul_contact__address:
+        enabled: true
+      sul_contact__branch:
+        enabled: true
+      sul_contact__email:
+        enabled: true
+      sul_contact__hours:
+        enabled: true
+      sul_contact__image:
+        enabled: true
+      sul_contact__link:
+        enabled: true
+      sul_contact__map_link:
+        enabled: true
+      sul_contact__phone:
+        enabled: true
+      sul_contact__title:
+        enabled: true
+    sul_feat_collection:
+      sul_collection__cards:
+        enabled: true
+      sul_collection__headline:
+        enabled: true
+      sul_collection__link:
+        enabled: true
+    sul_libguide:
+      sul_libguide__desc:
+        enabled: true
+      sul_libguide__headline:
+        enabled: true
+      sul_libguide_id:
         enabled: true
   su_policy_log:
     su_policy_log:

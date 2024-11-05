@@ -50,7 +50,6 @@ complete_list:
   - 'field.storage.media.sup_*'
   - 'media.type.sup_*'
 partial_list:
-  - graphql_compose.settings
   - '*su_*'
   - '*stanford_*'
   - 'core.entity_view_display.media.*'
