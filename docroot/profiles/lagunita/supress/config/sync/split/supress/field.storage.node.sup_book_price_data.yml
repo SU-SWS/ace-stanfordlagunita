@@ -1,0 +1,20 @@
+uuid: e43df37e-7e56-46ff-a9dd-c182537f98ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - supress_helper
+id: node.sup_book_price_data
+field_name: sup_book_price_data
+entity_type: node
+type: entity_reference
+settings:
+  target_type: press
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

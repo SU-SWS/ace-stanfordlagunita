@@ -1,0 +1,18 @@
+uuid: e5bae817-946a-47da-9477-253f6a1f7369
+langcode: en
+status: true
+dependencies: {  }
+id: node__sup_book
+label: 'Content: Book'
+tags:
+  book_isbn: '[node:sup_book_isbn_13_isw|node:sup_book_isbn_13_paper|node:sup_book_isbn_13_cloth|node:sup_book_isbn_13_digital|node:sup_book_isbn_13_alt]'
+  book_release_date: '[node:sup_book_pub_date_first:date:custom:Y-m-d]'
+  image_src: '[node:sup_book_image:entity:field_media_image:card_1192x596]'
+  og_image: '[node:sup_book_image:entity:field_media_image:card_1192x596]'
+  og_image_alt: '[node:sup_book_image:entity:field_media_image:alt]'
+  og_image_height: '[node:sup_book_image:entity:field_media_image:card_1192x596:height]'
+  og_image_url: '[node:sup_book_image:entity:field_media_image:card_1192x596]'
+  og_image_width: '[node:sup_book_image:entity:field_media_image:card_1192x596:width]'
+  og_type: book
+  twitter_cards_image: '[node:sup_book_image:entity:field_media_image:card_1192x596]'
+  twitter_cards_image_alt: '[node:sup_book_image:entity:field_media_image:alt]'

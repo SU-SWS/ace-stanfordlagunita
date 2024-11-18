@@ -1,0 +1,20 @@
+uuid: 51e4c0ff-a4ea-4a1a-9bec-a0d365434819
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_paper_discount
+field_name: sup_paper_discount
+entity_type: press
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

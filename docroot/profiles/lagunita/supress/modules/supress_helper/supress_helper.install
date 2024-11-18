@@ -95,3 +95,14 @@ function supress_helper_updates_9006() {
     $queue->createItem($fid);
   }
 }
+
+/**
+ * Install new press entity type.
+ */
+function supress_helper_update_9007() {
+  $press_type = \Drupal::entityTypeManager()->getDefinition('press_type');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($press_type);
+
+  $press_entity = \Drupal::entityTypeManager()->getDefinition('press');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($press_entity);
+}

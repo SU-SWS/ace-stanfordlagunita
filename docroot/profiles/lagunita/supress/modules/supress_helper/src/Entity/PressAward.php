@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Drupal\supress_helper\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\supress_helper\PressAwardInterface;
+use Drupal\user\EntityOwnerInterface;
 use Drupal\user\EntityOwnerTrait;
 
 /**
@@ -26,16 +28,9 @@ use Drupal\user\EntityOwnerTrait;
  *     plural = "@count press awards",
  *   ),
  *   handlers = {
- *     "list_builder" = "Drupal\supress_helper\PressAwardListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
- *     "access" = "Drupal\supress_helper\PressAwardAccessControlHandler",
- *     "form" = {
- *       "edit" = "Drupal\supress_helper\Form\PressAwardForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
- *     },
  *     "route_provider" = {
- *       "html" = "Drupal\supress_helper\Routing\PressAwardHtmlRouteProvider",
+ *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
  *     },
  *   },
  *   base_table = "sup_award",
@@ -46,17 +41,10 @@ use Drupal\user\EntityOwnerTrait;
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
- *   links = {
- *     "collection" = "/admin/content/sup-award",
- *     "canonical" = "/admin/content/award/{sup_award}",
- *     "edit-form" = "/admin/content/award/{sup_award}",
- *     "delete-form" = "/admin/content/award/{sup_award}/delete",
- *     "delete-multiple-form" = "/admin/content/sup-award/delete-multiple",
- *   },
  *   field_ui_base_route = "entity.sup_award.settings",
  * )
  */
-final class PressAward extends ContentEntityBase implements PressAwardInterface {
+final class PressAward extends ContentEntityBase implements  ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface {
 
   use EntityChangedTrait;
   use EntityOwnerTrait;

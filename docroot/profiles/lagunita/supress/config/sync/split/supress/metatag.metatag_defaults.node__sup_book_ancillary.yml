@@ -1,0 +1,17 @@
+uuid: 5a223d4c-70e4-43ca-b356-44b8039037af
+langcode: en
+status: true
+dependencies: {  }
+id: node__sup_book_ancillary
+label: 'Content: Book Excerpt Page'
+tags:
+  image_src: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:card_1192x596]'
+  og_image: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:card_1192x596]'
+  og_image_alt: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:alt]'
+  og_image_height: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:card_1192x596:height]'
+  og_image_width: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:card_1192x596:width]'
+  og_title: '[node:sup_ancillary_book:entity:title]: [current-page:title] | [site:name]'
+  title: '[node:sup_ancillary_book:entity:title]: [current-page:title] | [site:name]'
+  twitter_cards_image: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:card_1192x596]'
+  twitter_cards_image_alt: '[node:sup_ancillary_book:entity:sup_book_image:entity:field_media_image:alt]'
+  twitter_cards_title: '[node:sup_ancillary_book:entity:title]: [current-page:title] | [site:name]'

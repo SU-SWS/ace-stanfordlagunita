@@ -1,0 +1,23 @@
+uuid: 43909a53-b034-42ce-be41-81251ad8073a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_rank
+    - supress_helper.press_type.award
+id: press.award.sup_rank
+field_name: sup_rank
+entity_type: press
+bundle: award
+label: Rank
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

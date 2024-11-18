@@ -1,0 +1,21 @@
+uuid: dc0e36f3-c54f-401c-be2f-08238f7b1078
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_intl_cart
+    - supress_helper.press_type.prices
+id: press.prices.sup_intl_cart
+field_name: sup_intl_cart
+entity_type: press
+bundle: prices
+label: 'Has International Cart'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

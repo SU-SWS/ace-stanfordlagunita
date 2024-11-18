@@ -1,0 +1,20 @@
+uuid: 41a75555-22da-4392-800c-c2e2cdf9a62a
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_year
+field_name: sup_year
+entity_type: press
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

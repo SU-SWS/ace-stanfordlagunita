@@ -49,4 +49,12 @@ adding:
         config_item: status
         prefix: ''
         suffix: ''
+      b548e264-2fd8-4ab4-820a-12191f263dca:
+        field: sup_filemaker_user
+        delta: 0
+        column: value
+        config_name: migrate_plus.migration.sup_book_prices
+        config_item: status
+        prefix: ''
+        suffix: ''
 removing: {  }

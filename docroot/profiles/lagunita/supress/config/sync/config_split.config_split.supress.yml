@@ -16,6 +16,11 @@ module:
 theme: {  }
 complete_list:
   - core.entity_view_mode.paragraph.sup_form_preview
+  - 'core.entity_form_display.press.*'
+  - 'core.entity_view_display.press.*'
+  - 'field.field.press.*'
+  - 'field.storage.press.*'
+  - 'supress_helper.press_type.*'
   - 'config_pages.type.sup_*'
   - 'node.type.sup_*'
   - 'paragraphs.paragraphs_type.sup_*'
@@ -49,6 +54,7 @@ complete_list:
   - 'field.field.media.sup_*'
   - 'field.storage.media.sup_*'
   - 'media.type.sup_*'
+  - 'metatag.metatag_defaults.node__sup_*'
 partial_list:
   - '*su_*'
   - '*stanford_*'

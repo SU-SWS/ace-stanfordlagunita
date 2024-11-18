@@ -4,22 +4,20 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_h3_card
+    - field.field.node.sup_book.body
+    - field.field.node.sup_book.su_metatags
     - field.field.node.sup_book.sup_book_author_info
     - field.field.node.sup_book.sup_book_authors
     - field.field.node.sup_book.sup_book_authors_full
     - field.field.node.sup_book.sup_book_avail_desc
     - field.field.node.sup_book.sup_book_awards
     - field.field.node.sup_book.sup_book_catalog_season_yyyy
-    - field.field.node.sup_book.sup_book_cloth_sale_percent
-    - field.field.node.sup_book.sup_book_cloth_sale_price
     - field.field.node.sup_book.sup_book_copublisher_name
-    - field.field.node.sup_book.sup_book_description
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
     - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
-    - field.field.node.sup_book.sup_book_intl_cart
     - field.field.node.sup_book.sup_book_isbn_13_alt
     - field.field.node.sup_book.sup_book_isbn_13_cloth
     - field.field.node.sup_book.sup_book_isbn_13_digital
@@ -27,11 +25,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
-    - field.field.node.sup_book.sup_book_paper_sale_percent
-    - field.field.node.sup_book.sup_book_paper_sale_price
-    - field.field.node.sup_book.sup_book_preorder
-    - field.field.node.sup_book.sup_book_price_cloth
-    - field.field.node.sup_book.sup_book_price_paper
+    - field.field.node.sup_book.sup_book_price_data
     - field.field.node.sup_book.sup_book_print_desk_copies
     - field.field.node.sup_book.sup_book_pub_date_cloth
     - field.field.node.sup_book.sup_book_pub_date_first
@@ -129,8 +123,10 @@ content:
     weight: 2
     region: card_body
 hidden:
+  body: true
   links: true
   search_api_excerpt: true
+  su_metatags: true
   sup_book_author_info: true
   sup_book_authors: true
   sup_book_avail_desc: true
@@ -139,7 +135,6 @@ hidden:
   sup_book_cloth_sale_percent: true
   sup_book_cloth_sale_price: true
   sup_book_copublisher_name: true
-  sup_book_description: true
   sup_book_digital_comp_link: true
   sup_book_e_retailers: true
   sup_book_excerpts: true
@@ -152,11 +147,9 @@ hidden:
   sup_book_isbn_13_paper: true
   sup_book_no_cart: true
   sup_book_pages: true
-  sup_book_paper_sale_percent: true
   sup_book_paper_sale_price: true
-  sup_book_preorder: true
   sup_book_price_cloth: true
-  sup_book_price_paper: true
+  sup_book_price_data: true
   sup_book_print_desk_copies: true
   sup_book_pub_date_cloth: true
   sup_book_pub_date_first: true

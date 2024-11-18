@@ -13,7 +13,6 @@ adding:
     module:
       - supress_helper
   permissions:
-    - 'administer sup_award'
     - 'configure all stanford_page node layout overrides'
     - 'configure editable stanford_page node layout overrides'
     - 'create sup_book content'

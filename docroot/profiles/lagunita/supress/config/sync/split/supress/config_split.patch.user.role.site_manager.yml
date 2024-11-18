@@ -12,7 +12,6 @@ adding:
     module:
       - supress_helper
   permissions:
-    - 'administer sup_award'
     - 'create sup_book content'
     - 'create sup_book_ancillary content'
     - 'create sup_protected_file media'

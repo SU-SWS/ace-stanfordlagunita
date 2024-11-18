@@ -1,0 +1,20 @@
+uuid: 8199fb25-92dc-403d-ab83-ed43fe96fcfa
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_rank
+field_name: sup_rank
+entity_type: press
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

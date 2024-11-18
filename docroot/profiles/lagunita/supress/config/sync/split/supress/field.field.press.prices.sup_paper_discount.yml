@@ -1,0 +1,23 @@
+uuid: 4da560c0-eff1-4181-924a-6a3478a935c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_paper_discount
+    - supress_helper.press_type.prices
+id: press.prices.sup_paper_discount
+field_name: sup_paper_discount
+entity_type: press
+bundle: prices
+label: 'Paper Sale Discount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

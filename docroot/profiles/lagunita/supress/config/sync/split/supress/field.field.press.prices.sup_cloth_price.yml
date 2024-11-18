@@ -1,0 +1,23 @@
+uuid: d76170e4-1d94-4280-985b-ecbc9a16275c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_cloth_price
+    - supress_helper.press_type.prices
+id: press.prices.sup_cloth_price
+field_name: sup_cloth_price
+entity_type: press
+bundle: prices
+label: 'Cloth Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

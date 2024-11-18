@@ -1,0 +1,20 @@
+uuid: e41aa97b-8ead-4b8f-890c-4b0d54146a6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_cloth_price
+field_name: sup_cloth_price
+entity_type: press
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

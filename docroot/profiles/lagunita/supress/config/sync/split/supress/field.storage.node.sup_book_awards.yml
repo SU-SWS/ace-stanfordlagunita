@@ -10,7 +10,7 @@ field_name: sup_book_awards
 entity_type: node
 type: entity_reference
 settings:
-  target_type: sup_award
+  target_type: press
 module: core
 locked: false
 cardinality: -1

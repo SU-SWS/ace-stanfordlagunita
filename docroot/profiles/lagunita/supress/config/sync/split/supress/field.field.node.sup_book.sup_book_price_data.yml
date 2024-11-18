@@ -1,0 +1,29 @@
+uuid: 3ea26d65-a52f-4b64-adc2-c18fc0be5de2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_price_data
+    - node.type.sup_book
+    - supress_helper.press_type.prices
+id: node.sup_book.sup_book_price_data
+field_name: sup_book_price_data
+entity_type: node
+bundle: sup_book
+label: 'Price Data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:press'
+  handler_settings:
+    target_bundles:
+      prices: prices
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

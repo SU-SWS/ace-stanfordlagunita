@@ -1,0 +1,6 @@
+uuid: dad930f0-d4dc-4e34-8d74-d4e7082e10eb
+langcode: en
+status: true
+dependencies: {  }
+id: award
+label: Award
