@@ -3,4 +3,4 @@ langcode: en
 status: true
 dependencies: {  }
 id: award
-label: Award
+label: Awards

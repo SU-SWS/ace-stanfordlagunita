@@ -70,20 +70,6 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
-    group_web_coupon_codes:
-      children: {  }
-      label: 'Web Coupon Codes'
-      region: content
-      parent_name: group_prices
-      weight: 65
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
     group_publication_status:
       children:
         - sup_book_print_desk_copies
@@ -118,6 +104,7 @@ third_party_settings:
         required_fields: true
     group_prices:
       children:
+        - sup_book_price_data
         - sup_book_no_cart
         - sup_book_sales_rank
         - group_web_coupon_codes
@@ -406,7 +393,7 @@ content:
     third_party_settings: {  }
   sup_book_no_cart:
     type: boolean_checkbox
-    weight: 56
+    weight: 32
     region: content
     settings:
       display_label: true
@@ -433,14 +420,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
   sup_book_price_data:
-    type: entity_reference_autocomplete
+    type: inline_entity_form_simple
     weight: 31
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
     third_party_settings: {  }
   sup_book_print_desk_copies:
     type: boolean_checkbox
@@ -497,7 +487,7 @@ content:
     third_party_settings: {  }
   sup_book_sales_rank:
     type: number
-    weight: 63
+    weight: 33
     region: content
     settings:
       placeholder: ''

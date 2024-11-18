@@ -9,7 +9,7 @@ id: press.prices.sup_cloth_discount
 field_name: sup_cloth_discount
 entity_type: press
 bundle: prices
-label: 'Cloth Sale Discount'
+label: 'Cloth Sale Percent'
 description: ''
 required: false
 translatable: false

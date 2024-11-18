@@ -9,7 +9,7 @@ id: press.prices.sup_paper_discount
 field_name: sup_paper_discount
 entity_type: press
 bundle: prices
-label: 'Paper Sale Discount'
+label: 'Paper Sale Percent'
 description: ''
 required: false
 translatable: false
