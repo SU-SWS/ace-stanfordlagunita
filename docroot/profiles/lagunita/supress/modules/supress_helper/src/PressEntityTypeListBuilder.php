@@ -12,6 +12,8 @@ use Drupal\Core\Url;
  * Defines a class to build a listing of press entity type entities.
  *
  * @see \Drupal\supress_helper\Entity\PressEntityType
+ *
+ * @codeCoverageIgnore
  */
 final class PressEntityTypeListBuilder extends ConfigEntityListBuilder {
 

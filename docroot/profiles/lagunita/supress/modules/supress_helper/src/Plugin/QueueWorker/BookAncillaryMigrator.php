@@ -6,7 +6,9 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Queue\Attribute\QueueWorker;
 use Drupal\Core\Queue\QueueWorkerBase;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\file\FileInterface;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -15,13 +17,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Cron queue worker for migrating book ancillary contents.
  *
  * @codeCoverageIgnore One time use for migration.
- *
- * @QueueWorker(
- *   id = "press_book_ancillary_migrator",
- *   title = @Translation("Book cover downloader"),
- *   cron = {"time" = 60}
- * )
  */
+#[QueueWorker(
+  id: "press_book_ancillary_migrator",
+  title: new TranslatableMarkup("Book Ancillary Migrator"),
+  cron: ['time' => 100]
+)]
 class BookAncillaryMigrator extends QueueWorkerBase implements ContainerFactoryPluginInterface {
 
   /**

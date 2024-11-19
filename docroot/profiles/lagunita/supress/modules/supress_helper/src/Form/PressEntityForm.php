@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form controller for the press entity entity edit forms.
+ *
+ * @codeCoverageIgnore
  */
 final class PressEntityForm extends ContentEntityForm {
 
@@ -26,13 +28,17 @@ final class PressEntityForm extends ContentEntityForm {
 
     switch ($result) {
       case SAVED_NEW:
-        $this->messenger()->addStatus($this->t('New press entity %label has been created.', $message_args));
-        $this->logger('supress_helper')->notice('New press entity %label has been created.', $logger_args);
+        $this->messenger()
+          ->addStatus($this->t('New press entity %label has been created.', $message_args));
+        $this->logger('supress_helper')
+          ->notice('New press entity %label has been created.', $logger_args);
         break;
 
       case SAVED_UPDATED:
-        $this->messenger()->addStatus($this->t('The press entity %label has been updated.', $message_args));
-        $this->logger('supress_helper')->notice('The press entity %label has been updated.', $logger_args);
+        $this->messenger()
+          ->addStatus($this->t('The press entity %label has been updated.', $message_args));
+        $this->logger('supress_helper')
+          ->notice('The press entity %label has been updated.', $logger_args);
         break;
 
       default:

@@ -11,6 +11,8 @@ use Drupal\supress_helper\Entity\PressEntityType;
 
 /**
  * Form handler for press entity type forms.
+ *
+ * @codeCoverageIgnore
  */
 final class PressEntityTypeForm extends BundleEntityFormBase {
 
@@ -64,7 +66,7 @@ final class PressEntityTypeForm extends BundleEntityFormBase {
 
     $message_args = ['%label' => $this->entity->label()];
     $this->messenger()->addStatus(
-      match($result) {
+      match ($result) {
         SAVED_NEW => $this->t('The press entity type %label has been added.', $message_args),
         SAVED_UPDATED => $this->t('The press entity type %label has been updated.', $message_args),
       }

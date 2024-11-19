@@ -41,7 +41,7 @@ final class SuPressEventSubscriber implements EventSubscriberInterface {
    */
   public function onNextEntityAction(EntityActionEvent $event) {
     $entity = $event->getEntity();
-    if ($entity->getEntityTypeId() == 'presss') {
+    if ($entity->getEntityTypeId() == 'press') {
       $bundle = $entity->bundle();
       $uuid = $entity->uuid();
       $event->setEntityUrl("/tags/$bundle:$uuid");

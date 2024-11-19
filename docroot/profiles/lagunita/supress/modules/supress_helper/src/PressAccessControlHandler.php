@@ -9,6 +9,8 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Defines the access control handler for the Press entity type.
+ *
+ * @codeCoverageIgnore
  */
 class PressAccessControlHandler extends EntityAccessControlHandler {
 
@@ -16,7 +18,6 @@ class PressAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-   \Drupal::logger('foo')->info($operation . ':' . $entity->uuid());
     if ($account->hasPermission('administer press types')) {
       return AccessResult::allowed()->cachePerPermissions();
     }

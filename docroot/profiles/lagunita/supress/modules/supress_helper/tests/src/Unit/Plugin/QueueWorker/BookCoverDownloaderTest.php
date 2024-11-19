@@ -3,6 +3,7 @@
 namespace Drupal\Tests\supress_helper\Unit\Plugin\QueueWorker;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\image\ImageStyleInterface;
 use Drupal\supress_helper\Plugin\QueueWorker\BookCoverDownloader;
 use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\Psr7\Stream;
@@ -44,9 +45,14 @@ class BookCoverDownloaderTest extends UnitTestCase {
     $entity = $this->createMock('\Drupal\file\FileInterface');
     $entity->method('id')->willReturn(543);
 
+    $image_style = $this->createMock(ImageStyleInterface::class);
+    $image_style->method('createDerivative')->willReturn(TRUE);
+
     $entity_storage = $this->createMock('\Drupal\Core\Entity\EntityStorageInterface');
     $entity_storage->method('create')->willReturn($entity);
     $entity_storage->method('getQuery')->willReturn($entity_query);
+    $entity_storage->method('load')->willReturn($image_style);
+
     $this->entityTypeManager->method('getStorage')->wilLReturn($entity_storage);
 
     $worker = BookCoverDownloader::create($this->getDrupalContainer(), [], '', []);
