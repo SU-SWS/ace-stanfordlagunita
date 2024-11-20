@@ -47,6 +47,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   config_export = {
  *     "id",
  *     "label",
+ *     "description",
  *     "uuid",
  *   },
  * )
@@ -62,5 +63,19 @@ final class PressEntityType extends ConfigEntityBundleBase {
    * The human-readable name of the Book Data type.
    */
   protected string $label;
+
+  /**
+   * A brief description of this entity type.
+   *
+   * @var string|null
+   */
+  protected $description = NULL;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getDescription() {
+    return $this->description ?? '';
+  }
 
 }

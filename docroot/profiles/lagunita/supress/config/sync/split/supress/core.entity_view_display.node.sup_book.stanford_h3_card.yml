@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.sup_book.sup_book_copublisher_name
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
-    - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_isbn_13_alt
@@ -137,7 +136,6 @@ hidden:
   sup_book_copublisher_name: true
   sup_book_digital_comp_link: true
   sup_book_e_retailers: true
-  sup_book_excerpts: true
   sup_book_imprint: true
   sup_book_intl_cart: true
   sup_book_isbn_13_alt: true

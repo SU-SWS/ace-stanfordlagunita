@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.sup_book.sup_book_copublisher_name
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
-    - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_isbn_13_alt
@@ -47,7 +46,6 @@ dependencies:
     - datetime
     - field_group
     - inline_entity_form
-    - layout_paragraphs
     - link
     - media_library
     - metatag
@@ -317,23 +315,6 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  sup_book_excerpts:
-    type: layout_paragraphs
-    weight: 28
-    region: content
-    settings:
-      view_mode: default
-      preview_view_mode: sup_form_preview
-      form_display_mode: default
-      nesting_depth: 0
-      require_layouts: 1
-      empty_message: ''
-    third_party_settings:
-      change_labels:
-        add_another: ''
-        field_label_overwrite: ''
-        hide_add_another: 0
-        force_single_cardinality: 0
   sup_book_image:
     type: media_library_widget
     weight: 3

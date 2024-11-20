@@ -830,8 +830,6 @@ field_config:
         enabled: true
       sup_book_e_retailers:
         enabled: true
-      sup_book_excerpts:
-        enabled: true
       sup_book_image:
         enabled: true
       sup_book_imprint:

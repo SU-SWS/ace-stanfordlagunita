@@ -9,8 +9,6 @@ use Drupal\core_event_dispatcher\EntityHookEvents;
 use Drupal\core_event_dispatcher\Event\Entity\EntityCreateEvent;
 use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
-use Drupal\next\Event\EntityActionEvent;
-use Drupal\next\Event\EntityEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -27,25 +25,7 @@ final class SuPressEventSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents(): array {
-    return [
-      EntityEvents::ENTITY_ACTION => ['onNextEntityAction', 10],
-      EntityHookEvents::ENTITY_CREATE => ['onEntityCreate'],
-    ];
-  }
-
-  /**
-   * Change the entity url if the entity is a price object.
-   *
-   * @param \Drupal\next\Event\EntityActionEvent $event
-   *   Next entity event.
-   */
-  public function onNextEntityAction(EntityActionEvent $event) {
-    $entity = $event->getEntity();
-    if ($entity->getEntityTypeId() == 'press') {
-      $bundle = $entity->bundle();
-      $uuid = $entity->uuid();
-      $event->setEntityUrl("/tags/$bundle:$uuid");
-    }
+    return [EntityHookEvents::ENTITY_CREATE => ['onEntityCreate']];
   }
 
   /**

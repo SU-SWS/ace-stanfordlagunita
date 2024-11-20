@@ -45,6 +45,12 @@ final class PressEntityTypeForm extends BundleEntityFormBase {
       '#description' => $this->t('A unique machine-readable name for this press entity type. It must only contain lowercase letters, numbers, and underscores.'),
     ];
 
+    $form['description'] = [
+      '#title' => $this->t('Description'),
+      '#type' => 'textarea',
+      '#default_value' => $this->entity->getDescription(),
+    ];
+
     return $this->protectBundleIdElement($form);
   }
 

@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.sup_book.sup_book_copublisher_name
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
-    - field.field.node.sup_book.sup_book_excerpts
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_isbn_13_alt
@@ -44,7 +43,6 @@ dependencies:
   module:
     - datetime
     - empty_fields
-    - entity_reference_revisions
     - field_formatter_class
     - field_label
     - link
@@ -153,15 +151,6 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 33
-    region: content
-  sup_book_excerpts:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 30
     region: content
   sup_book_image:
     type: media_thumbnail

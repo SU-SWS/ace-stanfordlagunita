@@ -106,3 +106,28 @@ function supress_helper_update_9007() {
   $press_entity = \Drupal::entityTypeManager()->getDefinition('press');
   \Drupal::entityDefinitionUpdateManager()->installEntityType($press_entity);
 }
+
+/**
+ * Create new next entity configs.
+ */
+function supress_helper_update_9008() {
+  $next_storage = \Drupal::entityTypeManager()
+    ->getStorage('next_entity_type_config');
+  /** @var \Drupal\next\Entity\NextEntityTypeConfigInterface $entity */
+  $entity = $next_storage->create([
+    'id' => 'press.prices',
+  ]);
+  $entity->setSiteResolver('site_selector')
+    ->setSiteResolverConfiguration('site_selector', ['sites' => ['vercel' => 'vercel']])
+    ->setRevalidator('path')
+    ->setRevalidatorConfiguration('path', ['additional_paths' => '/tags/prices:[press:uuid]'])
+    ->save();
+
+  if ($entity = $next_storage->load('node.sup_book_ancillary')) {
+    $entity->setRevalidatorConfiguration('path', [
+      'revalidate_page' => TRUE,
+      'additional_paths' => '/tags/excerpts:[node:sup_ancillary_book:entity:uuid]',
+    ])
+      ->save();
+  }
+}

@@ -38,16 +38,6 @@ class SuPressEventSubscriberTest extends UnitTestCase {
     $this->eventSubscriber = new SuPressEventSubscriber($entity_type_manager, $migration_manager);
   }
 
-  public function testNextEntityAction() {
-    $entity = $this->createMock(ContentEntityInterface::class);
-    $entity->method('getEntityTypeId')->willReturn('press');
-    $entity->method('uuid')->willReturn('foobarbaz');
-    $entity->method('bundle')->willReturn('foo');
-    $event = new EntityActionEvent($entity, 'action', [], '');
-    $this->eventSubscriber->onNextEntityAction($event);
-    $this->assertEquals('/tags/foo:foobarbaz', $event->getEntityUrl());
-  }
-
   public function testEntityInsertEvent() {
     $fieldItem = $this->createMock(FieldItemListInterface::class);
     $fieldItem->method('count')->willReturn(1);
