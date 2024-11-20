@@ -17,12 +17,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Cron queue worker for filemaker cover downloading.
- *
- * @QueueWorker(
- *   id = "press_cover_downloader",
- *   title = @Translation("Book cover downloader"),
- *   cron = {"time" = 60}
- * )
  */
 #[QueueWorker(
   id: "press_cover_downloader",
