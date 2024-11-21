@@ -299,10 +299,12 @@ process:
       plugin: str_replace
       source: description
       search:
+        - <p></p>
         - '<I>'
         - '</I>'
         - \r
       replace:
+        - ''
         - '<em>'
         - '</em>'
         - '<br />'
