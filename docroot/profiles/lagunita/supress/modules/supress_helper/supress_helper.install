@@ -131,3 +131,11 @@ function supress_helper_update_9008() {
       ->save();
   }
 }
+
+/**
+ * Fixed book e-retailers urls with trailing spaces.
+ */
+function supress_helper_update_9009(){
+  \Drupal::database()->query('UPDATE node__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')->execute();
+  \Drupal::database()->query('UPDATE node_revision__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')->execute();
+}

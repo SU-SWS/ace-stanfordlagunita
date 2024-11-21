@@ -18,6 +18,7 @@ use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Row;
 use Drupal\node\NodeInterface;
 use Drupal\search_api\IndexInterface;
+use Drupal\Component\Utility\UrlHelper;
 
 /**
  * Implements hook_page_attachments().
@@ -332,10 +333,14 @@ function _supress_get_ebook_retailers() {
     $ebook_retailers_page = json_decode($ebook_retailers_page, TRUE);
 
     foreach ($ebook_retailers_page['response']['data'] as $record) {
+      $uri = trim($record['fieldData']['link']);
+      if (!UrlHelper::isValid($uri)) {
+        continue;
+      }
       $retailers[] = [
         'work_id_number' => $record['fieldData']['work_id_number'],
         'title' => $record['fieldData']['retailer'],
-        'uri' => $record['fieldData']['link'],
+        'uri' => $uri,
       ];
     }
     $fetch_more = $ebook_retailers_page['response']['dataInfo']['returnedCount'] == $limit;
