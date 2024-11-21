@@ -135,7 +135,37 @@ function supress_helper_update_9008() {
 /**
  * Fixed book e-retailers urls with trailing spaces.
  */
-function supress_helper_update_9009(){
-  \Drupal::database()->query('UPDATE node__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')->execute();
-  \Drupal::database()->query('UPDATE node_revision__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')->execute();
+function supress_helper_update_9009() {
+  \Drupal::database()
+    ->query('UPDATE node__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')
+    ->execute();
+  \Drupal::database()
+    ->query('UPDATE node_revision__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')
+    ->execute();
+}
+
+/**
+ * Rollback award migration.
+ */
+function supress_helper_update_9010(&$sandbox) {
+  $award_storage = \Drupal::entityTypeManager()->getStorage('sup_award');
+  if (empty($sandbox['ids'])) {
+    $sandbox['ids'] = $award_storage->getQuery()
+      ->accessCheck(FALSE)
+      ->execute();
+    $sandbox['total'] = count($sandbox['ids']);
+  }
+
+  $award_ids = array_splice($sandbox['ids'], 0, 50);
+  foreach ($award_storage->loadMultiple($award_ids) as $award) {
+    $award->delete();
+  }
+  $sandbox['#finished'] = count($sandbox['ids']) ? 1 - count($sandbox['ids']) / $sandbox['total'] : 1;
+}
+
+/**
+ * Truncate award migration table.
+ */
+function supress_helper_update_9011() {
+  \Drupal::database()->truncate('migrate_map_sup_awards')->execute();
 }

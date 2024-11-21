@@ -11,6 +11,7 @@ migration_group: sup_press
 label: 'Stanford University Press Books Table Of Contents'
 source:
   plugin: url
+  orphan_action: delete
   urls:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=1001'
