@@ -299,7 +299,7 @@ process:
       plugin: str_replace
       source: description
       search:
-        - <p></p>
+        - '<p></p>'
         - '<I>'
         - '</I>'
         - \r
