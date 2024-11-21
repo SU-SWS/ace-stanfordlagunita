@@ -12,11 +12,29 @@ export default {
   // Attach Drupal Behavior.
   attach(context, settings) {
     (function ($, once) {
+
+      // If some embed code contains a caption, make sure the figure respects
+      // the iframe width of 100%.
+      $('figure', context).each(function() {
+        const $iframeWithin = $('iframe', this);
+        const iframeWidth = $iframeWithin.attr('width');
+        if ($iframeWithin.length && (!iframeWidth || iframeWidth === '100%')) {
+          $(this).css('width', '100%');
+        }
+      })
+
       // Validate there is a skip link anchor for the main content. If not,
       // default to #page-content.
-      var $mc = $('#main-content', context).length;
-      if (!$mc) {
-        $('.su-skipnav--content', context).attr('href', '#page-content');
+      const $title = $('h1', context);
+      if ($title.length) {
+        if (!$title.attr('id')) {
+          $title.attr('id', 'page-title');
+        }
+        $('.su-masthead .su-skipnav--content', context).attr('href', '#' + $title.attr('id'));
+      } else {
+        if (!$('#main-content', context).length) {
+          $('.su-skipnav--content', context).attr('href', '#page-content');
+        }
       }
 
       // Validate there is a skip link for the secondary navigation. If not,
@@ -87,6 +105,55 @@ export default {
         }
         else {
           $(this).attr('aria-expanded', 'false');
+        }
+      });
+
+      $(once('faq-expand-all', '.ptype-stanford-faq', context)).each((index, faq) => {
+        const $details = $('details', faq);
+
+        $('summary', $details).each((sumIndex, summary) => {
+          const $summary = $(summary);
+          const groupId = $summary.text()
+            .toLowerCase()
+            .replace(/[^\w]/g, '-')
+            .replace(/^-+/, '')
+            .replace(/-+$/, '')
+            .substring(0, 25);
+
+          $summary.attr('aria-expanded', 'false')
+            .attr('aria-controls', `${groupId}-panel`)
+            .attr('id', `${groupId}-button`);
+          $summary.next().attr('id', `${groupId}-panel`)
+            .attr('aria-labelledby', `${groupId}-button`);
+        });
+
+        if ($details.length < 2 || $('.ptype-stanford-faq', faq).length) {
+          return;
+        }
+
+        const $button = $(
+          '<button class="expand-collapse-button expand-all su-button--secondary">' +
+          '<span class="expand-collapse">Expand</span> All' +
+          '<span class="visually-hidden"> Items below.</span>' +
+          '</button>',
+        );
+        $button.click(function () {
+          $button.toggleClass('expand-all').toggleClass('collapse-all');
+          const expanded = !$button.hasClass('expand-all');
+
+          $('span', $button).text(expanded ? 'Collapse' : 'Expand');
+          $details.each((i, detail) => {
+            $(detail).attr('open', expanded);
+            $('summary', detail).attr('aria-expanded', expanded)
+              .attr('aria-pressed', expanded);
+          });
+        });
+
+        const $headline = $('.su-faq-headline', faq);
+        if ($headline.length) {
+          $headline.append($('<div class="button-wrapper">').append($button));
+        } else {
+          $(faq).prepend($('<div class="button-wrapper clearfix">').append($button));
         }
       });
 
