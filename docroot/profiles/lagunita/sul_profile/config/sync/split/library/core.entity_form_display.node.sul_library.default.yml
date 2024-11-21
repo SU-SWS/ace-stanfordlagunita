@@ -21,7 +21,6 @@ dependencies:
     - node.type.sul_library
   module:
     - address
-    - allowed_formats
     - change_labels
     - conditional_fields
     - field_group
@@ -234,9 +233,6 @@ content:
     third_party_settings:
       change_labels:
         field_label_overwrite: ''
-      allowed_formats:
-        hide_help: '0'
-        hide_guidelines: '0'
   sul_library__ext_url:
     type: link_default
     weight: 15
