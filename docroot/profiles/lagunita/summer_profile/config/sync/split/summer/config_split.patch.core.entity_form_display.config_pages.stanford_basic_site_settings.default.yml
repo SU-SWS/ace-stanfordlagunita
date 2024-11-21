@@ -3,6 +3,8 @@ adding:
     config:
       - field.field.config_pages.stanford_basic_site_settings.sum_site_header_prim
       - field.field.config_pages.stanford_basic_site_settings.sum_site_header_sec
+    module:
+      - field_formatter_class
   content:
     sum_site_header_prim:
       type: link_default
