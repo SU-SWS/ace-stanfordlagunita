@@ -3,6 +3,8 @@ adding:
     config:
       - field.field.config_pages.stanford_basic_site_settings.sup_filemaker_pass
       - field.field.config_pages.stanford_basic_site_settings.sup_filemaker_user
+    module:
+      - field_formatter_class
   content:
     sup_filemaker_pass:
       type: string_textfield

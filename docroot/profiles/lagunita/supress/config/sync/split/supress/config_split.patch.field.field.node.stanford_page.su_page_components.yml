@@ -17,7 +17,6 @@ adding:
       target_bundles_drag_drop:
         stanford_page_title_banner:
           weight: 24
-          enabled: false
         sup_author_list:
           weight: 33
           enabled: true
@@ -39,4 +38,9 @@ adding:
         sup_search_form:
           weight: 38
           enabled: true
-removing: {  }
+removing:
+  settings:
+    handler_settings:
+      target_bundles_drag_drop:
+        stanford_page_title_banner:
+          weight: 23

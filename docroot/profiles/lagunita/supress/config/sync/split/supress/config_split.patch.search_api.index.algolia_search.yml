@@ -1,16 +1,16 @@
 adding:
   dependencies:
     config:
+      - field.storage.node.sup_book_authors
+      - field.storage.node.sup_book_authors_full
+      - field.storage.node.sup_book_awards
+      - field.storage.node.sup_book_imprint
       - field.storage.node.sup_book_isbn_13_alt
       - field.storage.node.sup_book_isbn_13_cloth
       - field.storage.node.sup_book_isbn_13_digital
       - field.storage.node.sup_book_isbn_13_isw
       - field.storage.node.sup_book_isbn_13_paper
       - field.storage.node.sup_book_pub_date_first
-      - field.storage.node.sup_book_authors_full
-      - field.storage.node.sup_book_authors
-      - field.storage.node.sup_book_awards
-      - field.storage.node.sup_book_imprint
       - field.storage.node.sup_book_series
       - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_subtitle

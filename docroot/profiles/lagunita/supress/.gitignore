@@ -20,6 +20,7 @@ deployment_identifier
 bin/*
 tmp
 reports
+.yarn/
 
 # OS X
 .DS_Store

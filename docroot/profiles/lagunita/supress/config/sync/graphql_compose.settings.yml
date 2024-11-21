@@ -1,6 +1,10 @@
 _core:
   default_config_hash: oByYyT7KZRYvM2OyziogSW_YrSDodQiFDEkUfxI20eM
 entity_config:
+  block_content:
+    stanford_component_block:
+      enabled: true
+      query_load_enabled: true
   citation:
     su_article_journal:
       enabled: true
@@ -17,10 +21,16 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
+    policy_settings:
+      enabled: false
     stanford_basic_site_settings:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
+    stanford_courses_importer:
+      enabled: false
+    stanford_events_importer:
+      enabled: false
     stanford_global_message:
       enabled: true
       query_load_enabled: true
@@ -29,248 +39,14 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_super_footer:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-    policy_settings:
-      enabled: false
-    stanford_courses_importer:
-      enabled: false
-    stanford_events_importer:
-      enabled: false
     stanford_person_importer:
       enabled: false
     stanford_saml:
       enabled: false
-  layout:
-    stanford_basic_page_full:
-      enabled: true
-  media:
-    embeddable:
-      enabled: true
-      query_load_enabled: true
-    file:
-      enabled: true
-      query_load_enabled: true
-    google_form:
-      enabled: true
-      query_load_enabled: true
-    image:
-      enabled: true
-      query_load_enabled: true
-    stanford_gallery_images:
-      enabled: true
-      query_load_enabled: true
-    video:
-      enabled: true
-      query_load_enabled: true
-    sup_protected_file:
-      enabled: true
-  menu:
-    main:
-      enabled: true
-    account:
-      enabled: false
-    admin:
-      enabled: false
-    courses-menu:
-      enabled: false
-    devel:
-      enabled: false
-    footer:
-      enabled: false
-    news-topics:
-      enabled: false
-    stanford-event-types:
-      enabled: false
-    stanford-person-type:
-      enabled: false
-    stanford-publication-topics:
-      enabled: false
-    tools:
-      enabled: false
-  node:
-    stanford_course:
+    stanford_super_footer:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-      routes_enabled: true
-    stanford_event:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_event_series:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_news:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_page:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_person:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_policy:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_publication:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    sup_book:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    sup_book_ancillary:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
-    stanford_opportunity:
-      enabled: false
-  paragraph:
-    stanford_accordion:
-      enabled: true
-      query_load_enabled: true
-    stanford_banner:
-      enabled: true
-      query_load_enabled: true
-    stanford_card:
-      enabled: true
-      query_load_enabled: true
-    stanford_entity:
-      enabled: true
-      query_load_enabled: true
-    stanford_gallery:
-      enabled: true
-      query_load_enabled: true
-    stanford_layout:
-      enabled: true
-      query_load_enabled: true
-    stanford_lists:
-      enabled: true
-      query_load_enabled: true
-    stanford_media_caption:
-      enabled: true
-      query_load_enabled: true
-    stanford_page_title_banner:
-      enabled: true
-      query_load_enabled: true
-    stanford_person_cta:
-      enabled: true
-      query_load_enabled: true
-    stanford_schedule:
-      enabled: true
-      query_load_enabled: true
-    stanford_spacer:
-      enabled: true
-      query_load_enabled: true
-    stanford_wysiwyg:
-      enabled: true
-      query_load_enabled: true
-    sup_carousel:
-      enabled: true
-    sup_carousel_slide:
-      enabled: true
-    sup_file_list:
-      enabled: true
-    sup_author_list:
-      enabled: true
-    sup_blog:
-      enabled: true
-    sup_blog_teaser:
-      enabled: true
-    sup_search_form:
-      enabled: true
-  su_policy_log:
-    su_policy_log:
-      enabled: true
-  taxonomy_term:
-    basic_page_types:
-      enabled: true
-      query_load_enabled: true
-      routes_enabled: true
-    event_audience:
-      enabled: true
-      query_load_enabled: true
-    stanford_event_groups:
-      enabled: true
-      query_load_enabled: true
-    stanford_event_keywords:
-      enabled: true
-      query_load_enabled: true
-    stanford_event_subject:
-      enabled: true
-      query_load_enabled: true
-    stanford_event_types:
-      enabled: true
-      query_load_enabled: true
-      routes_enabled: true
-    stanford_news_topics:
-      enabled: true
-      query_load_enabled: true
-      routes_enabled: true
-    stanford_person_types:
-      enabled: true
-      routes_enabled: true
-    stanford_publication_topics:
-      enabled: true
-      query_load_enabled: true
-      routes_enabled: true
-    su_course_quarters:
-      enabled: true
-      query_load_enabled: true
-    su_course_subjects:
-      enabled: true
-      query_load_enabled: true
-      routes_enabled: true
-    su_course_tags:
-      enabled: true
-    su_shared_tags:
-      enabled: true
-    sup_book_subjects:
-      enabled: true
-      query_load_enabled: true
-    sup_imprints:
-      enabled: true
-      query_load_enabled: true
-    sup_series:
-      enabled: true
-    cap_org_codes:
-      enabled: false
-    media_tags:
-      enabled: false
-    site_owner_orgs:
-      enabled: false
-    sup_book_tags:
-      enabled: false
-    sup_file_groups:
-      enabled: false
-    opportunity_sponsor:
-      enabled: false
-    opportunity_tag_filters:
-      enabled: false
-    opportunity_type:
-      enabled: false
-  block_content:
-    stanford_component_block:
-      enabled: true
-      query_load_enabled: true
   image_style:
     breakpoint_2xl_1x:
       enabled: true
@@ -350,16 +126,247 @@ entity_config:
       enabled: true
     tiny_blur:
       enabled: true
+  layout:
+    stanford_basic_page_full:
+      enabled: true
+  media:
+    embeddable:
+      enabled: true
+      query_load_enabled: true
+    file:
+      enabled: true
+      query_load_enabled: true
+    google_form:
+      enabled: true
+      query_load_enabled: true
+    image:
+      enabled: true
+      query_load_enabled: true
+    stanford_gallery_images:
+      enabled: true
+      query_load_enabled: true
+    sup_protected_file:
+      enabled: true
+    video:
+      enabled: true
+      query_load_enabled: true
+  menu:
+    account:
+      enabled: false
+    admin:
+      enabled: false
+    courses-menu:
+      enabled: false
+    devel:
+      enabled: false
+    footer:
+      enabled: false
+    main:
+      enabled: true
+    news-topics:
+      enabled: false
+    stanford-event-types:
+      enabled: false
+    stanford-person-type:
+      enabled: false
+    stanford-publication-topics:
+      enabled: false
+    tools:
+      enabled: false
+  node:
+    stanford_course:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_event:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_event_series:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_news:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_opportunity:
+      enabled: false
+    stanford_page:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_person:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_policy:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    stanford_publication:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    sup_book:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+    sup_book_ancillary:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
+  paragraph:
+    stanford_accordion:
+      enabled: true
+      query_load_enabled: true
+    stanford_banner:
+      enabled: true
+      query_load_enabled: true
+    stanford_card:
+      enabled: true
+      query_load_enabled: true
+    stanford_entity:
+      enabled: true
+      query_load_enabled: true
+    stanford_faq:
+      enabled: true
+      query_load_enabled: true
+    stanford_gallery:
+      enabled: true
+      query_load_enabled: true
+    stanford_layout:
+      enabled: true
+      query_load_enabled: true
+    stanford_lists:
+      enabled: true
+      query_load_enabled: true
+    stanford_media_caption:
+      enabled: true
+      query_load_enabled: true
+    stanford_page_title_banner:
+      enabled: true
+      query_load_enabled: true
+    stanford_person_cta:
+      enabled: true
+      query_load_enabled: true
+    stanford_schedule:
+      enabled: true
+      query_load_enabled: true
+    stanford_spacer:
+      enabled: true
+      query_load_enabled: true
+    stanford_wysiwyg:
+      enabled: true
+      query_load_enabled: true
+    sup_author_list:
+      enabled: true
+    sup_blog:
+      enabled: true
+    sup_blog_teaser:
+      enabled: true
+    sup_carousel:
+      enabled: true
+    sup_carousel_slide:
+      enabled: true
+    sup_file_list:
+      enabled: true
+    sup_search_form:
+      enabled: true
   redirect:
     redirect:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
+  su_policy_log:
+    su_policy_log:
+      enabled: true
   sup_award:
     sup_award:
       enabled: true
       query_load_enabled: true
+  taxonomy_term:
+    basic_page_types:
+      enabled: true
+      query_load_enabled: true
+      routes_enabled: true
+    cap_org_codes:
+      enabled: false
+    event_audience:
+      enabled: true
+      query_load_enabled: true
+    media_tags:
+      enabled: false
+    opportunity_sponsor:
+      enabled: false
+    opportunity_tag_filters:
+      enabled: false
+    opportunity_type:
+      enabled: false
+    site_owner_orgs:
+      enabled: false
+    stanford_event_groups:
+      enabled: true
+      query_load_enabled: true
+    stanford_event_keywords:
+      enabled: true
+      query_load_enabled: true
+    stanford_event_subject:
+      enabled: true
+      query_load_enabled: true
+    stanford_event_types:
+      enabled: true
+      query_load_enabled: true
+      routes_enabled: true
+    stanford_news_topics:
+      enabled: true
+      query_load_enabled: true
+      routes_enabled: true
+    stanford_person_types:
+      enabled: true
+      routes_enabled: true
+    stanford_publication_topics:
+      enabled: true
+      query_load_enabled: true
+      routes_enabled: true
+    su_course_quarters:
+      enabled: true
+      query_load_enabled: true
+    su_course_subjects:
+      enabled: true
+      query_load_enabled: true
+      routes_enabled: true
+    su_course_tags:
+      enabled: true
+    su_shared_tags:
+      enabled: true
+    sup_book_subjects:
+      enabled: true
+      query_load_enabled: true
+    sup_book_tags:
+      enabled: false
+    sup_file_groups:
+      enabled: false
+    sup_imprints:
+      enabled: true
+      query_load_enabled: true
+    sup_series:
+      enabled: true
 field_config:
+  block_content:
+    stanford_component_block:
+      su_component:
+        enabled: true
   citation:
     su_article_journal:
       su_author:
@@ -483,6 +490,8 @@ field_config:
         enabled: true
       su_site_algolia_search:
         enabled: true
+      su_site_algolia_ui:
+        enabled: true
       su_site_dropdowns:
         enabled: true
       su_site_menu_levels:
@@ -490,8 +499,6 @@ field_config:
       su_site_name:
         enabled: true
       su_site_nobots:
-        enabled: true
-      su_site_algolia_ui:
         enabled: true
     stanford_global_message:
       su_global_msg_enabled:
@@ -594,11 +601,11 @@ field_config:
         enabled: true
       su_gallery_image:
         enabled: true
-    video:
-      field_media_oembed_video:
-        enabled: true
     sup_protected_file:
       sup_media_file:
+        enabled: true
+    video:
+      field_media_oembed_video:
         enabled: true
   node:
     stanford_course:
@@ -800,8 +807,6 @@ field_config:
       su_publication_topics:
         enabled: true
     sup_book:
-      sup_book_awards:
-        enabled: true
       sup_book_author_info:
         enabled: true
       sup_book_authors:
@@ -809,6 +814,8 @@ field_config:
       sup_book_authors_full:
         enabled: true
       sup_book_avail_desc:
+        enabled: true
+      sup_book_awards:
         enabled: true
       sup_book_catalog_season_yyyy:
         enabled: true
@@ -822,9 +829,15 @@ field_config:
         enabled: true
       sup_book_digital_comp_link:
         enabled: true
+      sup_book_e_retailers:
+        enabled: true
+      sup_book_excerpts:
+        enabled: true
       sup_book_image:
         enabled: true
       sup_book_imprint:
+        enabled: true
+      sup_book_intl_cart:
         enabled: true
       sup_book_isbn_13_alt:
         enabled: true
@@ -836,11 +849,15 @@ field_config:
         enabled: true
       sup_book_isbn_13_paper:
         enabled: true
+      sup_book_no_cart:
+        enabled: true
       sup_book_pages:
         enabled: true
       sup_book_paper_sale_percent:
         enabled: true
       sup_book_paper_sale_price:
+        enabled: true
+      sup_book_preorder:
         enabled: true
       sup_book_price_cloth:
         enabled: true
@@ -854,6 +871,8 @@ field_config:
         enabled: true
       sup_book_pub_year_first:
         enabled: true
+      sup_book_publisher:
+        enabled: true
       sup_book_related_titles:
         enabled: true
       sup_book_reviews:
@@ -866,30 +885,18 @@ field_config:
         enabled: true
       sup_book_subtitle:
         enabled: true
+      sup_book_type:
+        enabled: true
       sup_book_url_isw:
         enabled: true
       sup_book_work_id_number:
         enabled: true
-      sup_book_type:
-        enabled: true
-      sup_book_intl_cart:
-        enabled: true
-      sup_book_excerpts:
-        enabled: true
-      sup_book_e_retailers:
-        enabled: true
-      sup_book_no_cart:
-        enabled: true
-      sup_book_preorder:
-        enabled: true
-      sup_book_publisher:
-        enabled: true
     sup_book_ancillary:
+      body:
+        enabled: true
       sup_ancillary_book:
         enabled: true
       sup_ancillary_paragraphs:
-        enabled: true
-      body:
         enabled: true
   paragraph:
     stanford_accordion:
@@ -927,6 +934,13 @@ field_config:
       su_entity_headline:
         enabled: true
       su_entity_item:
+        enabled: true
+    stanford_faq:
+      su_faq_description:
+        enabled: true
+      su_faq_headline:
+        enabled: true
+      su_faq_questions:
         enabled: true
     stanford_gallery:
       su_gallery_button:
@@ -988,41 +1002,6 @@ field_config:
     stanford_wysiwyg:
       su_wysiwyg_text:
         enabled: true
-    sup_carousel:
-      sup_carousel_slides:
-        enabled: true
-      sup_carousel_top_hero:
-        enabled: true
-    sup_file_list:
-      sup_file_list_files:
-        enabled: true
-      sup_file_list_label:
-        enabled: true
-      sup_file_list_display:
-        enabled: true
-    sup_carousel_slide:
-      sup_slide_body:
-        enabled: true
-      sup_slide_button:
-        enabled: true
-      sup_slide_color:
-        enabled: true
-      sup_slide_eyebrow:
-        enabled: true
-      sup_slide_hide:
-        enabled: true
-      sup_slide_orientation:
-        enabled: true
-      sup_slide_subtitle:
-        enabled: true
-      sup_slide_title:
-        enabled: true
-      sup_slide_title_size:
-        enabled: true
-      sup_slide_bg_image:
-        enabled: true
-      sup_slide_image:
-        enabled: true
     sup_blog:
       sup_blog_body:
         enabled: true
@@ -1039,6 +1018,41 @@ field_config:
         enabled: true
       sup_blog_teaser_link:
         enabled: true
+    sup_carousel:
+      sup_carousel_slides:
+        enabled: true
+      sup_carousel_top_hero:
+        enabled: true
+    sup_carousel_slide:
+      sup_slide_bg_image:
+        enabled: true
+      sup_slide_body:
+        enabled: true
+      sup_slide_button:
+        enabled: true
+      sup_slide_color:
+        enabled: true
+      sup_slide_eyebrow:
+        enabled: true
+      sup_slide_hide:
+        enabled: true
+      sup_slide_image:
+        enabled: true
+      sup_slide_orientation:
+        enabled: true
+      sup_slide_subtitle:
+        enabled: true
+      sup_slide_title:
+        enabled: true
+      sup_slide_title_size:
+        enabled: true
+    sup_file_list:
+      sup_file_list_display:
+        enabled: true
+      sup_file_list_files:
+        enabled: true
+      sup_file_list_label:
+        enabled: true
     sup_search_form:
       sup_search_books_only:
         enabled: true
@@ -1053,10 +1067,6 @@ field_config:
       su_policy_public:
         enabled: true
       su_policy_title:
-        enabled: true
-  block_content:
-    stanford_component_block:
-      su_component:
         enabled: true
   sup_award:
     sup_award:
