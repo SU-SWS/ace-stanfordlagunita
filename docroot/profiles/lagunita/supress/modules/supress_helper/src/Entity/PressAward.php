@@ -44,7 +44,7 @@ use Drupal\user\EntityOwnerTrait;
  *   field_ui_base_route = "entity.sup_award.settings",
  * )
  */
-final class PressAward extends ContentEntityBase implements  ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface {
+final class PressAward extends ContentEntityBase implements ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface {
 
   use EntityChangedTrait;
   use EntityOwnerTrait;
