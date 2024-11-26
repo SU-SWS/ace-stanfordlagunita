@@ -8,7 +8,7 @@ jobs:
     name: PHPUnit Coverage Tests
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:latest
+      image: pookmish/drupal8ci:php8.3
     services:
       mysql:
         image: mysql:5.7
@@ -52,7 +52,7 @@ jobs:
   sites_to_test:
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:latest
+      image: pookmish/drupal8ci:php8.3
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -86,7 +86,7 @@ jobs:
         site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:latest
+      image: pookmish/drupal8ci:php8.3
       options: '--network-alias drupal8ci'
     services:
       selenium:
@@ -152,7 +152,7 @@ jobs:
         site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:latest
+      image: pookmish/drupal8ci:php8.3
       options: '--network-alias drupal8ci'
     env:
       STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
@@ -209,7 +209,7 @@ jobs:
     needs: [phpunit, codeception, db_updates]
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:latest
+      image: pookmish/drupal8ci:php8.3
     steps:
       - uses: actions/checkout@v4
       - name: Restore Cache
