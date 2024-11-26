@@ -1,8 +1,9 @@
-uuid: a12fd0c9-c0c7-4561-a7cc-6cc9727a814c
+uuid: 27ce1e09-4a55-4a1c-8626-7499d70ae6fb
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.press.search_indexing
     - field.field.press.award.sup_association
     - field.field.press.award.sup_description
     - field.field.press.award.sup_place
@@ -10,53 +11,43 @@ dependencies:
     - field.field.press.award.sup_year
     - supress_helper.press_type.award
   module:
+    - layout_builder
     - text
-id: press.award.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: press.award.search_indexing
 targetEntityType: press
 bundle: award
-mode: default
+mode: search_indexing
 content:
   sup_association:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  sup_description:
-    type: text_default
-    label: above
-    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  sup_place:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  sup_year:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
+  sup_description:
+    type: text_default
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  sup_place:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true
   sup_rank: true
+  sup_year: true
+  title: true
   work_id: true

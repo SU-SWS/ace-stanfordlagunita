@@ -16,6 +16,7 @@ adding:
       - field.storage.node.sup_book_subtitle
       - field.storage.node.sup_book_type
     module:
+      - search_api
       - search_api_exclude_entity
   field_settings:
     book_authors:

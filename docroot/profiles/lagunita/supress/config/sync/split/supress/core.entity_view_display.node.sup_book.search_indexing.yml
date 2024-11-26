@@ -42,6 +42,9 @@ dependencies:
     - field.field.node.sup_book.sup_book_work_id_number
     - node.type.sup_book
   module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
     - layout_builder
     - text
     - user
@@ -73,9 +76,16 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
+      view_mode: search_indexing
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 2
     region: content
   sup_book_reviews:

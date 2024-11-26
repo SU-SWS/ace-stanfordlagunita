@@ -1,0 +1,127 @@
+uuid: 462ad28a-bb5c-44f8-8995-ef5908477506
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.press.search_indexing
+    - field.field.press.prices.sup_cloth_discount
+    - field.field.press.prices.sup_cloth_price
+    - field.field.press.prices.sup_cloth_sale
+    - field.field.press.prices.sup_coming_soon
+    - field.field.press.prices.sup_intl_cart
+    - field.field.press.prices.sup_paper_discount
+    - field.field.press.prices.sup_paper_price
+    - field.field.press.prices.sup_paper_sale
+    - field.field.press.prices.sup_preorder
+    - supress_helper.press_type.prices
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: press.prices.search_indexing
+targetEntityType: press
+bundle: prices
+mode: search_indexing
+content:
+  sup_cloth_discount:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  sup_cloth_price:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sup_cloth_sale:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sup_coming_soon:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  sup_intl_cart:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sup_paper_discount:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  sup_paper_price:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  sup_paper_sale:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  sup_preorder:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true
+  title: true
+  work_id: true

@@ -1,0 +1,11 @@
+uuid: f203070b-711c-4b0f-8953-b2f5f960813d
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.search_indexing
+label: 'Search Indexing'
+description: ''
+targetEntityType: press
+cache: true
