@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   multiple_values = TRUE
  * )
  */
-class SulLibGuideSelectWidget extends OptionsSelectWidget {
+class SulLibguideSelectWidget extends OptionsSelectWidget {
 
   /**
    * The HTTP client.
