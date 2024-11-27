@@ -10,3 +10,6 @@ supress_helper.press_type.*:
       label: 'Label'
     uuid:
       type: string
+    description:
+      type: string
+      label: 'Description'
