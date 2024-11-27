@@ -39,9 +39,9 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
-          git config --system --add safe.directory '*'
-          composer install -n
-          blt tests:phpunit:coverage --no-interaction
+          git config --system --add safe.directory '*' &&
+          composer install -n &&
+          blt tests:phpunit:coverage
       - name: Save Test Results
         uses: actions/upload-artifact@v4
         if: failure()
