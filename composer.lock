@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "584933367854f861e5853ebb1c09d42d",
+    "content-hash": "64777f1cded4872cea27566cfcdda680",
     "packages": [
         {
             "name": "acquia/blt",
@@ -17636,16 +17636,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "9.8.9",
+            "version": "9.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "b88d5b6d5e3472a4d2ef8d1019b54682c8435809"
+                "reference": "7267ae4a26cef9e49ae38dc81ed9a4d35cc6f3b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/b88d5b6d5e3472a4d2ef8d1019b54682c8435809",
-                "reference": "b88d5b6d5e3472a4d2ef8d1019b54682c8435809",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/7267ae4a26cef9e49ae38dc81ed9a4d35cc6f3b0",
+                "reference": "7267ae4a26cef9e49ae38dc81ed9a4d35cc6f3b0",
                 "shasum": ""
             },
             "require": {
@@ -17709,6 +17709,7 @@
                 "su-sws/stanford_media": ">=9.0 || >=10.0",
                 "su-sws/stanford_migrate": ">=8.4"
             },
+            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -17738,9 +17739,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.8.9"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2024-11-20T21:04:27+00:00"
+            "time": "2024-12-02T18:34:03+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -28032,7 +28033,14 @@
             "time": "2022-06-03T18:03:27+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "su-sws/stanford_profile_helper",
+            "version": "9.9999999.9999999.9999999-dev",
+            "alias": "9.8.9",
+            "alias_normalized": "9.8.9.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/filefield_paths": 10,
@@ -28040,7 +28048,8 @@
         "drupal/node_revision_delete": 20,
         "drupal/search_api_exclude_entity": 10,
         "su-sws/blt-sws": 20,
-        "su-sws/stanford_profile": 20
+        "su-sws/stanford_profile": 20,
+        "su-sws/stanford_profile_helper": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
