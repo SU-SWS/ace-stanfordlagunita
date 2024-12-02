@@ -127,25 +127,9 @@ source:
       label: availability_description
       selector: fieldData/availability_description
     -
-      name: catalog_month
-      label: catalog_month
-      selector: fieldData/catalog_month
-    -
-      name: catalog_page
-      label: catalog_page
-      selector: fieldData/catalog_page
-    -
       name: catalog_season_yyyy
       label: catalog_season_yyyy
       selector: fieldData/catalog_season_yyyy
-    -
-      name: cloth_sale_percent
-      label: cloth_sale_percent
-      selector: fieldData/cloth_sale_percent
-    -
-      name: cloth_sale_price
-      label: cloth_sale_price
-      selector: fieldData/cloth_sale_price
     -
       name: publisher
       label: publisher
@@ -155,33 +139,9 @@ source:
       label: copublisher_name
       selector: fieldData/copublisher_name
     -
-      name: copublisher_yn
-      label: copublisher_yn
-      selector: fieldData/copublisher_yn
-    -
-      name: copyright
-      label: copyright
-      selector: fieldData/copyright
-    -
       name: description
       label: description
       selector: fieldData/description
-    -
-      name: html_page_title
-      label: html_page_title
-      selector: fieldData/html_page_title
-    -
-      name: illustrations
-      label: illustrations
-      selector: fieldData/illustrations
-    -
-      name: in_print_status
-      label: in_print_status
-      selector: fieldData/in_print_status
-    -
-      name: instructor_recommended
-      label: instructor_recommended
-      selector: fieldData/instructor_recommended
     -
       name: isbn_13_alt
       label: isbn_13_alt
@@ -207,33 +167,9 @@ source:
       label: local_web_blurb
       selector: fieldData/local_web_blurb
     -
-      name: new_paperback_yn
-      label: new_paperback_yn
-      selector: fieldData/new_paperback_yn
-    -
       name: pages
       label: pages
       selector: fieldData/pages
-    -
-      name: paper_sale_percent
-      label: paper_sale_percent
-      selector: fieldData/paper_sale_percent
-    -
-      name: paper_sale_price
-      label: paper_sale_price
-      selector: fieldData/paper_sale_price
-    -
-      name: price_cloth
-      label: price_cloth
-      selector: fieldData/price_cloth
-    -
-      name: price_digital
-      label: price_digital
-      selector: fieldData/price_digital
-    -
-      name: price_paper
-      label: price_paper
-      selector: fieldData/price_paper
     -
       name: print_desk_copies
       label: print_desk_copies
@@ -243,17 +179,9 @@ source:
       label: pub_date_cloth
       selector: fieldData/pub_date_cloth
     -
-      name: pub_date_digital
-      label: pub_date_digital
-      selector: fieldData/pub_date_digital
-    -
       name: pub_date_first
       label: pub_date_first
       selector: fieldData/pub_date_first
-    -
-      name: pub_date_paper
-      label: pub_date_paper
-      selector: fieldData/pub_date_paper
     -
       name: pub_year_first
       label: pub_year_first
@@ -271,25 +199,9 @@ source:
       label: reviews
       selector: fieldData/reviews
     -
-      name: rights_description
-      label: rights_description
-      selector: fieldData/rights_description
-    -
       name: sales_rank
       label: sales_rank
       selector: fieldData/sales_rank
-    -
-      name: status_cloth
-      label: status_cloth
-      selector: fieldData/status_cloth
-    -
-      name: status_digital
-      label: status_digital
-      selector: fieldData/status_digital
-    -
-      name: status_paper
-      label: status_paper
-      selector: fieldData/status_paper
     -
       name: subtitle
       label: subtitle
@@ -303,21 +215,9 @@ source:
       label: url_isw
       selector: fieldData/url_isw
     -
-      name: web_code_cloth
-      label: web_code_cloth
-      selector: fieldData/web_code_cloth
-    -
-      name: web_code_paper
-      label: web_code_paper
-      selector: fieldData/web_code_paper
-    -
       name: work_id_number
       label: work_id_number
       selector: fieldData/work_id_number
-    -
-      name: intl_cart
-      label: intl_cart
-      selector: fieldData/intl_cart
     -
       name: digital_comp_link_yn
       label: digital_comp_link_yn
@@ -392,23 +292,23 @@ process:
   sup_book_authors_full: authors_full
   sup_book_avail_desc: availability_description
   sup_book_catalog_season_yyyy: catalog_season_yyyy
-  sup_book_cloth_sale_percent: cloth_sale_percent
-  sup_book_cloth_sale_price: cloth_sale_price
   sup_book_publisher: publisher
   sup_book_copublisher_name: copublisher_name
-  sup_book_description/value:
+  body/value:
     -
       plugin: str_replace
       source: description
       search:
+        - '<p></p>'
         - '<I>'
         - '</I>'
         - \r
       replace:
+        - ''
         - '<em>'
         - '</em>'
         - '<br />'
-  sup_book_description/format: constants/stanford_html
+  body/format: constants/stanford_html
   sup_book_digital_comp_link:
     -
       plugin: skip_on_empty
@@ -426,10 +326,6 @@ process:
   sup_book_isbn_13_paper: isbn_13_paper
   sup_book_local_web_blurb/format: constants/stanford_html
   sup_book_pages: pages
-  sup_book_paper_sale_percent: paper_sale_percent
-  sup_book_paper_sale_price: paper_sale_price
-  sup_book_price_cloth: price_cloth
-  sup_book_price_paper: price_paper
   sup_book_print_desk_copies:
     -
       plugin: skip_on_empty
@@ -477,12 +373,22 @@ process:
       strict: false
     -
       plugin: entity_lookup
-      value_key: sup_work_id
-      entity_type: sup_award
+      value_key: work_id
+      entity_type: press
+      bundle_key: bundle
+      bundle: award
       ignore_case: true
     -
       plugin: skip_on_empty
       method: process
+  sup_book_price_data:
+    plugin: entity_lookup
+    value_key: work_id
+    entity_type: press
+    bundle_key: bundle
+    bundle: prices
+    ignore_case: true
+    source: work_id_number
   sup_book_related_titles:
     -
       plugin: skip_on_empty
@@ -495,6 +401,7 @@ process:
       plugin: entity_lookup
       value_key: sup_book_work_id_number
       entity_type: node
+      bundle_key: type
       bundle: sup_book
       ignore_case: true
     -
@@ -512,16 +419,6 @@ process:
     -
       plugin: skip_on_empty
       method: process
-  sup_book_intl_cart:
-    -
-      plugin: str_replace
-      source: intl_cart
-      search:
-        - 'yes'
-        - 'no'
-      replace:
-        - 1
-        - 0
   sup_book_e_retailers: ebook_retailers
   sup_book_tags:
     -
@@ -538,13 +435,6 @@ process:
       bundle: sup_book_tags
       value_key: name
       ignore_case: true
-  sup_book_preorder:
-    plugin: static_map
-    source: cart_button
-    map:
-      preorder: 1
-      add: 0
-      none: 0
   sup_book_no_cart:
     plugin: static_map
     source: cart_button
@@ -576,5 +466,7 @@ destination:
   plugin: 'entity:node'
   default_bundle: sup_book
 migration_dependencies:
+  required:
+    - sup_book_prices
   optional:
     - sup_awards

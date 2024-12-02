@@ -42,5 +42,6 @@ content:
 hidden:
   links: true
   search_api_excerpt: true
+  su_metatags: true
   sup_ancillary_book: true
   sup_ancillary_weight: true

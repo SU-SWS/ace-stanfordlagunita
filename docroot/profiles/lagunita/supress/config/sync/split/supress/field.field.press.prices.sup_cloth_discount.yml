@@ -1,0 +1,23 @@
+uuid: 62d1c621-0603-49f9-be7a-6673a7083abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_cloth_discount
+    - supress_helper.press_type.prices
+id: press.prices.sup_cloth_discount
+field_name: sup_cloth_discount
+entity_type: press
+bundle: prices
+label: 'Cloth Sale Percent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -600,7 +600,7 @@ display:
       sorts:
         sup_year_value:
           id: sup_year_value
-          table: sup_award__sup_year
+          table: press__sup_year
           field: sup_year_value
           relationship: sup_book_awards
           group_type: max
@@ -613,7 +613,7 @@ display:
           exposed: false
         sup_rank_value:
           id: sup_rank_value
-          table: sup_award__sup_rank
+          table: press__sup_rank
           field: sup_rank_value
           relationship: sup_book_awards
           group_type: max
@@ -676,7 +676,7 @@ display:
             sup_book: sup_book
         sup_year_value:
           id: sup_year_value
-          table: sup_award__sup_year
+          table: press__sup_year
           field: sup_year_value
           relationship: sup_book_awards
           group_type: group
@@ -716,6 +716,7 @@ display:
               layout_builder_user: '0'
               su_site_embedder: '0'
               decoupled_site_users: '0'
+              opportunity_editor: '0'
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
@@ -733,7 +734,7 @@ display:
             group_items: {  }
         sup_year_value_1:
           id: sup_year_value_1
-          table: sup_award__sup_year
+          table: press__sup_year
           field: sup_year_value
           relationship: sup_book_awards
           group_type: group
@@ -773,6 +774,51 @@ display:
               layout_builder_user: '0'
               su_site_embedder: '0'
               decoupled_site_users: '0'
+              opportunity_editor: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        sup_year_value_2:
+          id: sup_year_value_2
+          table: press__sup_year
+          field: sup_year_value
+          relationship: sup_book_awards
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''

@@ -6,6 +6,7 @@ namespace Drupal\supress_helper\Plugin\migrate\process;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\migrate\Attribute\MigrateProcess;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
@@ -13,6 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a sup_social_embedded_media plugin.
+ *
+ * @codeCoverageIgnore
  *
  * Usage:
  *
@@ -22,9 +25,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *     plugin: sup_social_embedded_media
  *     source: foo
  * @endcode
- *
- * @MigrateProcessPlugin(id = "sup_social_embedded_media")
  */
+#[MigrateProcess(
+  id: "sup_social_embedded_media"
+)]
 final class SupSocialEmbeddedMedia extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**

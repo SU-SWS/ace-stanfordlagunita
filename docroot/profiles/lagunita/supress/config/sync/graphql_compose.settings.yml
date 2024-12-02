@@ -283,6 +283,13 @@ entity_config:
       enabled: true
     sup_search_form:
       enabled: true
+  press:
+    award:
+      enabled: true
+      query_load_enabled: true
+    prices:
+      enabled: true
+      query_load_enabled: true
   redirect:
     redirect:
       enabled: true
@@ -291,10 +298,6 @@ entity_config:
   su_policy_log:
     su_policy_log:
       enabled: true
-  sup_award:
-    sup_award:
-      enabled: true
-      query_load_enabled: true
   taxonomy_term:
     basic_page_types:
       enabled: true
@@ -807,6 +810,8 @@ field_config:
       su_publication_topics:
         enabled: true
     sup_book:
+      body:
+        enabled: true
       sup_book_author_info:
         enabled: true
       sup_book_authors:
@@ -819,25 +824,15 @@ field_config:
         enabled: true
       sup_book_catalog_season_yyyy:
         enabled: true
-      sup_book_cloth_sale_percent:
-        enabled: true
-      sup_book_cloth_sale_price:
-        enabled: true
       sup_book_copublisher_name:
-        enabled: true
-      sup_book_description:
         enabled: true
       sup_book_digital_comp_link:
         enabled: true
       sup_book_e_retailers:
         enabled: true
-      sup_book_excerpts:
-        enabled: true
       sup_book_image:
         enabled: true
       sup_book_imprint:
-        enabled: true
-      sup_book_intl_cart:
         enabled: true
       sup_book_isbn_13_alt:
         enabled: true
@@ -853,15 +848,7 @@ field_config:
         enabled: true
       sup_book_pages:
         enabled: true
-      sup_book_paper_sale_percent:
-        enabled: true
-      sup_book_paper_sale_price:
-        enabled: true
-      sup_book_preorder:
-        enabled: true
-      sup_book_price_cloth:
-        enabled: true
-      sup_book_price_paper:
+      sup_book_price_data:
         enabled: true
       sup_book_print_desk_copies:
         enabled: true
@@ -1058,6 +1045,37 @@ field_config:
         enabled: true
       sup_search_subject:
         enabled: true
+  press:
+    award:
+      sup_association:
+        enabled: true
+      sup_description:
+        enabled: true
+      sup_place:
+        enabled: true
+      sup_rank:
+        enabled: true
+      sup_year:
+        enabled: true
+    prices:
+      sup_cloth_discount:
+        enabled: true
+      sup_cloth_price:
+        enabled: true
+      sup_cloth_sale:
+        enabled: true
+      sup_coming_soon:
+        enabled: true
+      sup_intl_cart:
+        enabled: true
+      sup_paper_discount:
+        enabled: true
+      sup_paper_price:
+        enabled: true
+      sup_paper_sale:
+        enabled: true
+      sup_preorder:
+        enabled: true
   su_policy_log:
     su_policy_log:
       su_policy_date:
@@ -1067,20 +1085,6 @@ field_config:
       su_policy_public:
         enabled: true
       su_policy_title:
-        enabled: true
-  sup_award:
-    sup_award:
-      sup_association:
-        enabled: true
-      sup_description:
-        enabled: true
-      sup_place:
-        enabled: true
-      sup_rank:
-        enabled: true
-      sup_work_id:
-        enabled: true
-      sup_year:
         enabled: true
   taxonomy_term:
     sup_series:

@@ -1,0 +1,23 @@
+uuid: 3abe5f3a-fd91-498c-bbff-0bbe0905ac19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_paper_price
+    - supress_helper.press_type.prices
+id: press.prices.sup_paper_price
+field_name: sup_paper_price
+entity_type: press
+bundle: prices
+label: 'Paper Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -7,20 +7,21 @@ use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Queue\Attribute\QueueWorker;
 use Drupal\Core\Queue\QueueWorkerBase;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Cron queue worker for Resizing images
  *
  * @codeCoverageIgnore
- *
- * @QueueWorker(
- *   id = "press_image_resize",
- *   title = @Translation("Image Resize"),
- *   cron = {"time" = 60}
- * )
  */
+#[QueueWorker(
+  id: "press_image_resize",
+  title: new TranslatableMarkup("Image Resize"),
+  cron: ['time' => 100]
+)]
 class ImageResize extends QueueWorkerBase implements ContainerFactoryPluginInterface {
 
   /**

@@ -8,20 +8,21 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Queue\Attribute\QueueWorker;
 use Drupal\Core\Queue\QueueWorkerBase;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Cookie\CookieJar;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Cron queue worker for filemaker cover downloading.
- *
- * @QueueWorker(
- *   id = "press_cover_downloader",
- *   title = @Translation("Book cover downloader"),
- *   cron = {"time" = 60}
- * )
  */
+#[QueueWorker(
+  id: "press_cover_downloader",
+  title: new TranslatableMarkup("Book cover downloader"),
+  cron: ['time' => 100]
+)]
 class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPluginInterface {
 
   const FILE_DIRECTORY = 'public://media/covers';
@@ -209,25 +210,6 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     ]);
     $media->save();
     return $media->id();
-  }
-
-  /**
-   * Resize the newly downloaded image, so it's not giant.
-   *
-   * @param $fid
-   *   File entity id.
-   */
-  protected function adjustCoverImageSize(int $fid) {
-    $image_style = $this->entityTypeManager->getStorage('image_style')::load("breakpoint_2xl_1x");
-    $file = $this->entityTypeManager->getStorage("file")->load($fid);
-    $temp = "temporary://" . $file->label();
-    $success = $image_style->createDerivative($file->getFileUri(), $temp);
-    if (!$success) {
-      $this->logger->get('supress')->error('Unable to generate image derivative for file @uri', ['@uri' => $file->getFileUri()]);
-      return;
-    }
-    $this->fileSystem->move($temp, $file->getFileUri(), FileExists::Replace);
-    $file->save();
   }
 
 }

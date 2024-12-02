@@ -1,0 +1,21 @@
+uuid: d22b0152-6d88-457d-8064-49ed0f4dd6f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_preorder
+    - supress_helper.press_type.prices
+id: press.prices.sup_preorder
+field_name: sup_preorder
+entity_type: press
+bundle: prices
+label: Preorder
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

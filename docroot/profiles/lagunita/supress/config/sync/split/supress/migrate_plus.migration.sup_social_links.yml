@@ -11,6 +11,7 @@ migration_group: sup_press
 label: 'Import Stanford University Press Social Links'
 source:
   plugin: url
+  orphan_action: delete
   data_fetcher_plugin: file
   urls:
     - 'public://social-links.json'

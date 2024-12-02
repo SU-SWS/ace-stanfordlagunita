@@ -24,6 +24,7 @@ content:
 hidden:
   body: true
   search_api_excerpt: true
+  su_metatags: true
   sup_ancillary_book: true
   sup_ancillary_paragraphs: true
   sup_ancillary_weight: true

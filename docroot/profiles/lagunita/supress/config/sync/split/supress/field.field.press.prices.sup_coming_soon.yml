@@ -1,0 +1,21 @@
+uuid: 49694fec-ed6e-4346-b444-f01bc8fac623
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_coming_soon
+    - supress_helper.press_type.prices
+id: press.prices.sup_coming_soon
+field_name: sup_coming_soon
+entity_type: press
+bundle: prices
+label: 'Coming Soon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

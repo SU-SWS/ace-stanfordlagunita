@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\supress_helper\Unit\EventSubscriber;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\core_event_dispatcher\Event\Entity\EntityCreateEvent;
@@ -11,8 +12,8 @@ use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrateIdMapInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
+use Drupal\next\Event\EntityActionEvent;
 use Drupal\supress_helper\EventSubscriber\SuPressEventSubscriber;
-use Drupal\supress_helper\PressAwardInterface;
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -42,8 +43,9 @@ class SuPressEventSubscriberTest extends UnitTestCase {
     $fieldItem->method('count')->willReturn(1);
     $fieldItem->method('getString')->willReturn('321');
 
-    $entity = $this->createMock(PressAwardInterface::class);
+    $entity = $this->createMock(ContentEntityInterface::class);
     $entity->method('get')->willReturn($fieldItem);
+    $entity->method('getEntityTypeId')->willReturn('press');
     $event = new EntityCreateEvent($entity);
     $this->assertNull($this->eventSubscriber->onEntityCreate($event));
 

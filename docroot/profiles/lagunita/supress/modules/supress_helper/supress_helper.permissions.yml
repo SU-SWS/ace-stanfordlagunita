@@ -1,8 +1,4 @@
-administer sup_award:
-  title: 'Administer press awards'
-create sup_award:
-  title: 'Create press awards'
-update sup_award:
-  title: 'Edit press awards'
-delete sup_award:
-  title: 'Delete press awards'
+administer press types:
+  title: 'Administer press entity types'
+  description: 'Maintain the types of press entity.'
+  restrict access: true

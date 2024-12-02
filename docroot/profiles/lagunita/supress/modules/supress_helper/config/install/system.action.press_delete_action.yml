@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press_delete_action
+label: 'Delete press entities'
+type: press
+plugin: entity:delete_action:press
+configuration: {  }

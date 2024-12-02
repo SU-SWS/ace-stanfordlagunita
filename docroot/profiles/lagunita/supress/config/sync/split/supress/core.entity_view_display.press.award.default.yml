@@ -1,0 +1,62 @@
+uuid: a12fd0c9-c0c7-4561-a7cc-6cc9727a814c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.press.award.sup_association
+    - field.field.press.award.sup_description
+    - field.field.press.award.sup_place
+    - field.field.press.award.sup_rank
+    - field.field.press.award.sup_year
+    - supress_helper.press_type.award
+  module:
+    - text
+id: press.award.default
+targetEntityType: press
+bundle: award
+mode: default
+content:
+  sup_association:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sup_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sup_place:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sup_year:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
+  sup_rank: true
+  work_id: true

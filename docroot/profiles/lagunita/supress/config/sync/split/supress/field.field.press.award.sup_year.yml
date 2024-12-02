@@ -1,0 +1,23 @@
+uuid: 0a86259d-5c1b-4483-8bdb-973365cbd081
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_year
+    - supress_helper.press_type.award
+id: press.award.sup_year
+field_name: sup_year
+entity_type: press
+bundle: award
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

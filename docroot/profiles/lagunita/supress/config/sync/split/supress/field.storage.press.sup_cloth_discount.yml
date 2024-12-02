@@ -1,0 +1,20 @@
+uuid: 1119b181-5b82-4e28-93d1-356b920d3b43
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_cloth_discount
+field_name: sup_cloth_discount
+entity_type: press
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

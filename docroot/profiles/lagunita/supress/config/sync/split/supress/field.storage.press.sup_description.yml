@@ -1,0 +1,19 @@
+uuid: 60c85063-9753-4b3a-90a2-4d7753c0cdcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+    - text
+id: press.sup_description
+field_name: sup_description
+entity_type: press
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

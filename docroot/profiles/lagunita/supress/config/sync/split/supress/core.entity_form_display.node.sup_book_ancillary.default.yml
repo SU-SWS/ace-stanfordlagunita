@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.sup_book_ancillary.body
+    - field.field.node.sup_book_ancillary.su_metatags
     - field.field.node.sup_book_ancillary.sup_ancillary_book
     - field.field.node.sup_book_ancillary.sup_ancillary_paragraphs
     - field.field.node.sup_book_ancillary.sup_ancillary_weight
@@ -11,6 +12,7 @@ dependencies:
   module:
     - change_labels
     - layout_paragraphs
+    - metatag
     - path
     - text
 id: node.sup_book_ancillary.default
@@ -40,6 +42,14 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  su_metatags:
+    type: metatag_firehose
+    weight: 32
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   sup_ancillary_book:
     type: entity_reference_autocomplete

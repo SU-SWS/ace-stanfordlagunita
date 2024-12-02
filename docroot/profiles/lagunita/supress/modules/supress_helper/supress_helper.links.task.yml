@@ -1,9 +1,26 @@
-entity.sup_award.settings:
-  title: 'Settings'
-  route_name: entity.sup_award.settings
-  base_route: entity.sup_award.settings
-entity.sup_award.collection:
-  title: 'Press Awards'
-  route_name: entity.sup_award.collection
+entity.press.view:
+  title: 'View'
+  route_name: entity.press.canonical
+  base_route: entity.press.canonical
+entity.press.edit_form:
+  title: 'Edit'
+  route_name: entity.press.edit_form
+  base_route: entity.press.canonical
+entity.press.delete_form:
+  title: 'Delete'
+  route_name: entity.press.delete_form
+  base_route: entity.press.canonical
+  weight: 10
+entity.press.collection:
+  title: 'Book Data'
+  route_name: entity.press.collection
   base_route: system.admin_content
   weight: 10
+entity.press_type.edit_form:
+  title: 'Edit'
+  route_name: entity.press_type.edit_form
+  base_route: entity.press_type.edit_form
+entity.press_type.collection:
+  title: 'List'
+  route_name: entity.press_type.collection
+  base_route: entity.press_type.collection

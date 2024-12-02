@@ -1,0 +1,137 @@
+uuid: 547c864f-0ef6-475f-bea1-bf513df13d51
+langcode: en
+status: false
+dependencies: {  }
+id: sup_book_prices
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: sup_press
+label: 'Import Stanford University Press Books Prices'
+source:
+  orphan_action: delete
+  plugin: url
+  urls:
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=1001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=2001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=3001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=4001'
+  fields:
+    -
+      name: title
+      label: title
+      selector: fieldData/title
+    -
+      name: work_id_number
+      label: work_id_number
+      selector: fieldData/work_id_number
+    -
+      name: cloth_sale_percent
+      label: cloth_sale_percent
+      selector: fieldData/cloth_sale_percent
+    -
+      name: cloth_sale_price
+      label: cloth_sale_price
+      selector: fieldData/cloth_sale_price
+    -
+      name: paper_sale_percent
+      label: paper_sale_percent
+      selector: fieldData/paper_sale_percent
+    -
+      name: paper_sale_price
+      label: paper_sale_price
+      selector: fieldData/paper_sale_price
+    -
+      name: price_cloth
+      label: price_cloth
+      selector: fieldData/price_cloth
+    -
+      name: price_paper
+      label: price_paper
+      selector: fieldData/price_paper
+    -
+      name: intl_cart
+      label: intl_cart
+      selector: fieldData/intl_cart
+    -
+      name: cart_button
+      label: cart_button
+      selector: fieldData/cart_button
+  ids:
+    work_id_number:
+      type: integer
+process:
+  no_cart:
+    plugin: skip_on_value
+    source: cart_button
+    method: row
+    value: none
+  cloth_price:
+    plugin: skip_on_empty
+    source: price_cloth
+    method: process
+  cloth_price_discounted:
+    plugin: skip_on_empty
+    source: cloth_sale_price
+    method: process
+  paper_price:
+    plugin: skip_on_empty
+    source: price_paper
+    method: process
+  paper_price_discounted:
+    plugin: skip_on_empty
+    source: paper_sale_price
+    method: process
+  price:
+    -
+      plugin: null_coalesce
+      source:
+        - '@cloth_price'
+        - '@cloth_price_discounted'
+        - '@paper_price'
+        - '@paper_price_discounted'
+    -
+      plugin: skip_on_empty
+      method: row
+  title:
+    plugin: str_replace
+    source: title
+    search: '/<.*?>/'
+    replace: ''
+    regex: true
+  work_id: work_id_number
+  sup_cloth_price: price_cloth
+  sup_cloth_discount: cloth_sale_percent
+  sup_cloth_sale: cloth_sale_price
+  sup_coming_soon: sup_coming_soon
+  sup_paper_price: price_paper
+  sup_paper_discount: paper_sale_percent
+  sup_paper_sale: paper_sale_price
+  sup_preorder:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cart_button
+    -
+      plugin: static_map
+      source: cart_button
+      map:
+        preorder: 1
+        add: 0
+        none: 0
+  sup_intl_cart:
+    -
+      plugin: str_replace
+      source: intl_cart
+      search:
+        - 'yes'
+        - 'no'
+      replace:
+        - 1
+        - 0
+destination:
+  plugin: 'entity:press'
+  default_bundle: prices
+migration_dependencies: {  }

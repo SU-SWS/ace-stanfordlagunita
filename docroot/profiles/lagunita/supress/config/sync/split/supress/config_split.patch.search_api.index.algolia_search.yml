@@ -16,6 +16,7 @@ adding:
       - field.storage.node.sup_book_subtitle
       - field.storage.node.sup_book_type
     module:
+      - search_api
       - search_api_exclude_entity
   field_settings:
     book_authors:
@@ -152,7 +153,7 @@ adding:
           - field.storage.node.sup_book_isbn_13_paper
     photo:
       configuration:
-        value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image|node:sup_book_image:entity:field_media_image:large]'
+        value: '[node:su_page_image:entity:field_media_image|node:su_page_banner:entity:su_banner_image:entity:field_media_image|node:su_person_photo:entity:field_media_image|node:su_news_featured_media:entity:field_media_image|node:su_news_banner:entity:field_media_image|node:su_event_ext_image|node:sup_book_image:entity:field_media_image]'
     summary:
       configuration:
         value: '[node:su_page_description|node:sup_book_subtitle|node:summary]'

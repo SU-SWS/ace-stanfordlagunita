@@ -1,0 +1,21 @@
+uuid: 2f5a0633-3fac-4030-8fc4-d804d65cb74f
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_association
+field_name: sup_association
+entity_type: press
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+press.type_add:
+  title: 'Add Book Data entity type'
+  route_name: entity.press_type.add_form
+  appears_on:
+    - entity.press_type.collection
+
+press.add_page:
+  title: 'Add Book Data entity'
+  route_name: entity.press.add_page
+  appears_on:
+    - entity.press.collection

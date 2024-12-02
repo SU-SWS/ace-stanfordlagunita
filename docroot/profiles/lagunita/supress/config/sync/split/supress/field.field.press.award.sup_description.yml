@@ -1,0 +1,24 @@
+uuid: a99d20f3-35b3-47f4-a490-c00cfbfb6857
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_description
+    - filter.format.stanford_minimal_html
+    - supress_helper.press_type.award
+  module:
+    - text
+id: press.award.sup_description
+field_name: sup_description
+entity_type: press
+bundle: award
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

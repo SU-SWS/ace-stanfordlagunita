@@ -1,0 +1,7 @@
+uuid: 37ae690e-f973-44e0-af36-d5d06468c769
+langcode: en
+status: true
+dependencies: {  }
+id: prices
+label: Prices
+description: null

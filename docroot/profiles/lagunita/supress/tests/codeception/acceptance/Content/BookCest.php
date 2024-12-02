@@ -27,7 +27,7 @@ class BookCest {
    */
   public function testBookContentType(AcceptanceTester $I) {
     // content type exists
-    $I->logInWithRole('site_manager');
+    $I->logInWithRole('administrator');
     $I->amOnPage('/node/add/sup_book');
     $I->see('Create Book');
     // check the fields
