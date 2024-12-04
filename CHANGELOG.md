@@ -1,5 +1,17 @@
 # Lagunita
 
+2.6.1
+--------------------------------------------------------------------------------
+_Release Date: 2024-12-04_
+
+- Updated github workflows
+- Updated stanford_profile_helper to dev
+- Updated SUL algolia configuration
+- updated metatags configs for SUP
+- updated book and award configs for SUP
+- updated supress_helper modules
+- updated and removed patch for `drupal/filefield_paths`
+
 2.6.0
 --------------------------------------------------------------------------------
 _Release Date: 2024-11-26_
