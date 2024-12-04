@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64777f1cded4872cea27566cfcdda680",
+    "content-hash": "c6592ac6186aeede5404ce0d6635cce5",
     "packages": [
         {
             "name": "acquia/blt",
@@ -6238,32 +6238,36 @@
         },
         {
             "name": "drupal/filefield_paths",
-            "version": "1.0.0-beta7",
+            "version": "1.0.0-beta8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/filefield_paths.git",
-                "reference": "8.x-1.0-beta7"
+                "reference": "8.x-1.0-beta8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/filefield_paths-8.x-1.0-beta7.zip",
-                "reference": "8.x-1.0-beta7",
-                "shasum": "666be9380370aff8c01ad0522508df239d3cfdc2"
+                "url": "https://ftp.drupal.org/files/projects/filefield_paths-8.x-1.0-beta8.zip",
+                "reference": "8.x-1.0-beta8",
+                "shasum": "9f9df4f6e1f50a1c2550a22336ba4383497b52d4"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10"
+                "drupal/core": "^10.3 || ^11"
+            },
+            "conflict": {
+                "drush/drush": "<12.5.0"
             },
             "require-dev": {
                 "drupal/ctools": "*",
                 "drupal/pathauto": "*",
                 "drupal/redirect": "*",
-                "drupal/token": "*"
+                "drupal/token": "*",
+                "drush/drush": ">=12.5.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta7",
-                    "datestamp": "1690204901",
+                    "version": "8.x-1.0-beta8",
+                    "datestamp": "1733186525",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -6523,17 +6527,17 @@
         },
         {
             "name": "drupal/google_tag",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/google_tag.git",
-                "reference": "2.0.6"
+                "reference": "2.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.6.zip",
-                "reference": "2.0.6",
-                "shasum": "c8f2895a81a7898ac909bdc693fcd25ffe6f62be"
+                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.7.zip",
+                "reference": "2.0.7",
+                "shasum": "01e190248c86c592d8d96ea79c918883c0385a76"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10 || ^11"
@@ -6550,8 +6554,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.6",
-                    "datestamp": "1721948116",
+                    "version": "2.0.7",
+                    "datestamp": "1733177458",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10538,7 +10542,7 @@
                     "homepage": "https://www.drupal.org/user/748208"
                 },
                 {
-                    "name": "Jeff Cardwell",
+                    "name": "jeff cardwell",
                     "homepage": "https://www.drupal.org/user/2913129"
                 },
                 {
@@ -12767,16 +12771,16 @@
         },
         {
             "name": "e0ipso/shaper",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/e0ipso/shaper.git",
-                "reference": "7d73018ec4fe8de9730dfe755067cc02460e1a38"
+                "reference": "78e5142a11323ae1359ef569f1c8064177c1fdd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/e0ipso/shaper/zipball/7d73018ec4fe8de9730dfe755067cc02460e1a38",
-                "reference": "7d73018ec4fe8de9730dfe755067cc02460e1a38",
+                "url": "https://api.github.com/repos/e0ipso/shaper/zipball/78e5142a11323ae1359ef569f1c8064177c1fdd4",
+                "reference": "78e5142a11323ae1359ef569f1c8064177c1fdd4",
                 "shasum": ""
             },
             "require": {
@@ -12807,9 +12811,9 @@
             "description": "Lightweight library to handle in and out transformations in PHP.",
             "support": {
                 "issues": "https://github.com/e0ipso/shaper/issues",
-                "source": "https://github.com/e0ipso/shaper/tree/1.2.4"
+                "source": "https://github.com/e0ipso/shaper/tree/1.2.5"
             },
-            "time": "2021-05-19T09:42:57+00:00"
+            "time": "2024-12-03T05:49:15+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -17336,16 +17340,16 @@
         },
         {
             "name": "su-sws/stanford_media",
-            "version": "11.1.2",
+            "version": "11.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_media.git",
-                "reference": "c52f9e03bfa31dbebf1478f03603a5eb73702053"
+                "reference": "c73b3670e217e6f647bd87441343f16f3275c2cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_media/zipball/c52f9e03bfa31dbebf1478f03603a5eb73702053",
-                "reference": "c52f9e03bfa31dbebf1478f03603a5eb73702053",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_media/zipball/c73b3670e217e6f647bd87441343f16f3275c2cb",
+                "reference": "c73b3670e217e6f647bd87441343f16f3275c2cb",
                 "shasum": ""
             },
             "require": {
@@ -17392,9 +17396,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_media",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_media/issues",
-                "source": "https://github.com/SU-SWS/stanford_media/tree/11.1.2"
+                "source": "https://github.com/SU-SWS/stanford_media/tree/11.1.3"
             },
-            "time": "2024-10-29T16:48:32+00:00"
+            "time": "2024-12-02T23:13:58+00:00"
         },
         {
             "name": "su-sws/stanford_migrate",
@@ -17745,16 +17749,16 @@
         },
         {
             "name": "su-sws/stanford_samlauth",
-            "version": "1.0.10",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_samlauth.git",
-                "reference": "a22df73231896876283b2f5d5b4e7f78dd422509"
+                "reference": "04965396e01e49bc9e4c08edc2e082de05159f92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_samlauth/zipball/a22df73231896876283b2f5d5b4e7f78dd422509",
-                "reference": "a22df73231896876283b2f5d5b4e7f78dd422509",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_samlauth/zipball/04965396e01e49bc9e4c08edc2e082de05159f92",
+                "reference": "04965396e01e49bc9e4c08edc2e082de05159f92",
                 "shasum": ""
             },
             "require": {
@@ -17771,9 +17775,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_samlauth/issues",
-                "source": "https://github.com/SU-SWS/stanford_samlauth/tree/1.0.10"
+                "source": "https://github.com/SU-SWS/stanford_samlauth/tree/1.1.0"
             },
-            "time": "2024-09-16T22:30:09+00:00"
+            "time": "2024-12-03T17:56:02+00:00"
         },
         {
             "name": "symfony/cache",
@@ -23738,16 +23742,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v4.29.0",
+            "version": "v4.29.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "0ef6b2eb74b782f3f9023276c324d22e440f7587"
+                "reference": "6042b5483f8029e42473faeb8ef75ba266278381"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/0ef6b2eb74b782f3f9023276c324d22e440f7587",
-                "reference": "0ef6b2eb74b782f3f9023276c324d22e440f7587",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/6042b5483f8029e42473faeb8ef75ba266278381",
+                "reference": "6042b5483f8029e42473faeb8ef75ba266278381",
                 "shasum": ""
             },
             "require": {
@@ -23776,9 +23780,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.29.0"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v4.29.1"
             },
-            "time": "2024-11-27T18:37:40+00:00"
+            "time": "2024-12-03T22:07:45+00:00"
         },
         {
             "name": "league/html-to-markdown",
@@ -27899,10 +27903,10 @@
             },
             "type": "composer-plugin",
             "extra": {
+                "class": "Nevay\\SPI\\Composer\\Plugin",
                 "branch-alias": {
                     "dev-main": "0.2.x-dev"
                 },
-                "class": "Nevay\\SPI\\Composer\\Plugin",
                 "plugin-optional": true
             },
             "autoload": {
