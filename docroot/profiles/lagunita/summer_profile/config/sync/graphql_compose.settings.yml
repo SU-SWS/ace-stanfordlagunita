@@ -1104,6 +1104,8 @@ field_config:
     global_msg:
       sum_global_msg_body:
         enabled: true
+      sum_global_msg_hide:
+        enabled: true
       sum_global_msg_link:
         enabled: true
 settings:

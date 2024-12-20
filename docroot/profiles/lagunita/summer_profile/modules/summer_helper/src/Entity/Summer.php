@@ -24,6 +24,9 @@ use Drupal\summer_helper\SummerInterface;
  *     singular = "@count summer entities",
  *     plural = "@count summer entities",
  *   ),
+ *   constraints = {
+ *     "UniqueGlobalMessage" = {}
+ *   },
  *   bundle_label = @Translation("Summer Entity type"),
  *   handlers = {
  *     "list_builder" = "Drupal\summer_helper\SummerListBuilder",

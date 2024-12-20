@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.summer_entity.global_msg.sum_global_msg_body
+    - field.field.summer_entity.global_msg.sum_global_msg_hide
     - field.field.summer_entity.global_msg.sum_global_msg_link
     - summer_helper.summer_entity_type.global_msg
   module:
@@ -57,6 +58,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 21
+    region: content
+  sum_global_msg_hide:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
     region: content
   sum_global_msg_link:
     type: link
