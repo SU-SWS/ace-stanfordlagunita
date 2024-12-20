@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - summer_helper
+id: summer_entity_save_action
+label: 'Save summer entities'
+type: summer_entity
+plugin: entity:save_action:summer_entity
+configuration: {  }

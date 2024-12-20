@@ -1,0 +1,13 @@
+entity.summer_entity.collection:
+  title: 'Summer Entities'
+  route_name: entity.summer_entity.collection
+  base_route: system.admin_content
+  weight: 10
+entity.summer_entity_type.edit_form:
+  title: 'Edit'
+  route_name: entity.summer_entity_type.edit_form
+  base_route: entity.summer_entity_type.edit_form
+entity.summer_entity_type.collection:
+  title: 'List'
+  route_name: entity.summer_entity_type.collection
+  base_route: entity.summer_entity_type.collection

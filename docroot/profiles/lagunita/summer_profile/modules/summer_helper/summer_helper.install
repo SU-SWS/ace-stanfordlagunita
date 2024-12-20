@@ -35,3 +35,14 @@ function summer_helper_update_9002() {
     ->set('storage', 'collection')
     ->save();
 }
+
+/**
+ * Install new summer entity type.
+ */
+function summer_helper_update_9003() {
+  $press_type = \Drupal::entityTypeManager()->getDefinition('summer_entity_type');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($press_type);
+
+  $press_entity = \Drupal::entityTypeManager()->getDefinition('summer_entity');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($press_entity);
+}

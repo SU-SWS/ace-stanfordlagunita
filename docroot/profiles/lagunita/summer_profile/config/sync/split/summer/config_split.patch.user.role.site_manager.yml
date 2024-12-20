@@ -7,7 +7,10 @@ adding:
       - taxonomy.vocabulary.sum_course_interest_area
       - taxonomy.vocabulary.sum_course_population
       - taxonomy.vocabulary.sum_summer_courses
+    module:
+      - summer_helper
   permissions:
+    - 'administer summer entities'
     - 'create sum_summer_courses content'
     - 'create terms in sum_course_availability'
     - 'create terms in sum_course_interest_area'
@@ -85,6 +88,7 @@ removing:
     - 'edit own stanford_person content'
     - 'edit own stanford_policy content'
     - 'edit own stanford_publication content'
+    - 'edit stanford_global_message config page entity'
     - 'edit terms in event_audience'
     - 'edit terms in stanford_event_types'
     - 'edit terms in stanford_news_topics'
