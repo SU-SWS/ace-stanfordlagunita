@@ -13,8 +13,7 @@ use Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeEntityTypeBase;
  *   id = "summer_entity",
  *   prefix = "Summer",
  *   base_fields = {
- *     "work_id" = {},
- *     "title" = {
+ *     "label" = {
  *       "field_type" = "entity_label",
  *     },
  *   },
