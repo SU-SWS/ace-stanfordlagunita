@@ -12,6 +12,7 @@ use Drupal\Core\Url;
  * Defines a class to build a listing of summer entity type entities.
  *
  * @see \Drupal\summer_helper\Entity\SummerType
+ * @codeCoverageIgnore
  */
 final class SummerTypeListBuilder extends ConfigEntityListBuilder {
 

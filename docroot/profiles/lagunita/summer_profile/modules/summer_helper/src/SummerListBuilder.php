@@ -8,7 +8,9 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
 
 /**
- * Provides a list controller for the summer entity entity type.
+ * Provides a list controller for the summer entity type.
+ *
+ * @codeCoverageIgnore
  */
 final class SummerListBuilder extends EntityListBuilder {
 

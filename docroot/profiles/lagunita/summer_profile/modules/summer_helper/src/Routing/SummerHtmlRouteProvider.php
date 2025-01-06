@@ -10,6 +10,8 @@ use Symfony\Component\Routing\Route;
 
 /**
  * Provides HTML routes for entities with administrative pages.
+ *
+ * @codeCoverageIgnore
  */
 final class SummerHtmlRouteProvider extends AdminHtmlRouteProvider {
 

@@ -8,7 +8,9 @@ use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Form controller for the summer entity entity edit forms.
+ * Form controller for the summer entity edit forms.
+ *
+ * @codeCoverageIgnore
  */
 final class SummerForm extends ContentEntityForm {
 

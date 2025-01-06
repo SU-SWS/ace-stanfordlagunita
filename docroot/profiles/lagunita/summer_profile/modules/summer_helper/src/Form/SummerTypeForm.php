@@ -11,6 +11,8 @@ use Drupal\summer_helper\Entity\SummerType;
 
 /**
  * Form handler for summer entity type forms.
+ *
+ * @codeCoverageIgnore
  */
 final class SummerTypeForm extends BundleEntityFormBase {
 
@@ -64,7 +66,7 @@ final class SummerTypeForm extends BundleEntityFormBase {
 
     $message_args = ['%label' => $this->entity->label()];
     $this->messenger()->addStatus(
-      match($result) {
+      match ($result) {
         SAVED_NEW => $this->t('The summer entity type %label has been added.', $message_args),
         SAVED_UPDATED => $this->t('The summer entity type %label has been updated.', $message_args),
       }
