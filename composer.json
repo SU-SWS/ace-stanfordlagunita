@@ -185,13 +185,31 @@
             "vendor/bin/blt sws:keys"
         ],
         "pull-sul": [
-            "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x"
+            "rm -rf docroot/profiles/lagunita",
+            "git checkout docroot/profiles/lagunita",
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x || true",
+            "git checkout --ours docroot/profiles/lagunita/sul_profile/composer.json",
+            "git checkout --ours docroot/profiles/lagunita/sul_profile/sul_profile.info.yml",
+            "git add docroot/profiles/lagunita/sul_profile/composer.json docroot/profiles/lagunita/sul_profile/sul_profile.info.yml"
         ],
         "pull-press": [
-            "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x"
+            "rm -rf docroot/profiles/lagunita",
+            "git checkout docroot/profiles/lagunita",
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x || true",
+            "git checkout --ours docroot/profiles/lagunita/supress/composer.json",
+            "git checkout --ours docroot/profiles/lagunita/supress/supress.info.yml",
+            "git add docroot/profiles/lagunita/supress/composer.json docroot/profiles/lagunita/supress/supress.info.yml"
         ],
         "pull-summer": [
-            "rm -rf docroot/profiles/lagunita && git checkout docroot/profiles/lagunita && git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git; git subtree pull --prefix=docroot/profiles/lagunita/summer_profile --squash stanford_profile 11.x"
+            "rm -rf docroot/profiles/lagunita",
+            "git checkout docroot/profiles/lagunita",
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/summer_profile --squash stanford_profile 11.x || true",
+            "git checkout --ours docroot/profiles/lagunita/summer_profile/composer.json",
+            "git checkout --ours docroot/profiles/lagunita/summer_profile/supress.info.yml",
+            "git add docroot/profiles/lagunita/summer_profile/composer.json docroot/profiles/lagunita/summer_profile/summer_profile.info.yml"
         ]
     },
     "autoload": {
