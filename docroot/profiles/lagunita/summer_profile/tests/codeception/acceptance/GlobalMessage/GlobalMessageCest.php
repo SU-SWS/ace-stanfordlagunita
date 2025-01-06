@@ -5,7 +5,7 @@
  *
  * @group global-message
  */
-class GlobalMessageCest {
+abstract class GlobalMessageCest {
 
   /**
    * Delete the config page after finishing.
