@@ -40,6 +40,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
         "drupal/acquia_purge": "^1.1",
+        "drupal/block_content_permissions": "^1.11",
         "drupal/core": "^10.2",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.0",
@@ -208,7 +209,7 @@
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
             "git subtree pull --prefix=docroot/profiles/lagunita/summer_profile --squash stanford_profile 11.x || true",
             "git checkout --ours docroot/profiles/lagunita/summer_profile/composer.json",
-            "git checkout --ours docroot/profiles/lagunita/summer_profile/supress.info.yml",
+            "git checkout --ours docroot/profiles/lagunita/summer_profile/summer_profile.info.yml",
             "git add docroot/profiles/lagunita/summer_profile/composer.json docroot/profiles/lagunita/summer_profile/summer_profile.info.yml"
         ]
     },
