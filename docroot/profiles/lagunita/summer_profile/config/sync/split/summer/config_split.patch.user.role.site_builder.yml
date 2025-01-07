@@ -9,7 +9,9 @@ adding:
     - 'administer summer entities'
     - 'configure all stanford_page node layout overrides'
     - 'configure editable stanford_page node layout overrides'
+    - 'schedule publishing of summer_entity'
     - 'use text format sum_markdown'
+    - 'view scheduled summer_entity'
 removing:
   permissions:
     - 'edit stanford_global_message config page entity'

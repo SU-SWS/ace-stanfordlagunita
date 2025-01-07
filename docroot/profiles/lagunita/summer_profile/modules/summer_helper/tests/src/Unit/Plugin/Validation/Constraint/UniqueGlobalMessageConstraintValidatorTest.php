@@ -56,6 +56,7 @@ class UniqueGlobalMessageConstraintValidatorTest extends UnitTestCase {
     $query->method('accessCheck')->willReturnSelf();
     $query->method('condition')->willReturnSelf();
     $query->method('orConditionGroup')->willReturn($condition_group);
+    $query->method('andConditionGroup')->willReturn($condition_group);
     $query->method('execute')->willReturnReference($this->entityQueryResults);
 
     $entity_storage = $this->createMock(EntityStorageInterface::class);
@@ -70,6 +71,7 @@ class UniqueGlobalMessageConstraintValidatorTest extends UnitTestCase {
     $this->validator->initialize($this->getContext());
 
     $this->messageEntity = $this->createMock(SummerInterface::class);
+    $this->messageEntity->method('id')->willReturn(999);
     $this->messageEntity->method('get')
       ->will($this->returnCallback([$this, 'getMessageField']));
   }

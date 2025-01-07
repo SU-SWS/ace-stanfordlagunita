@@ -31,8 +31,10 @@ adding:
     - 'edit terms in sum_summer_courses'
     - 'import sum_csv_summer_courses migration'
     - 'revert sum_summer_courses revisions'
+    - 'schedule publishing of summer_entity'
     - 'use text format sum_markdown'
     - 'view any unpublished sum_summer_courses content'
+    - 'view scheduled summer_entity'
     - 'view sum_summer_courses revisions'
 removing:
   dependencies:

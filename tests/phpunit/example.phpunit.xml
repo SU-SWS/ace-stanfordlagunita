@@ -13,6 +13,7 @@
     <exclude>
       <directory suffix=".post_update.php">../modules/custom/*</directory>
       <directory suffix=".post_update.php">../profiles/*</directory>
+      <directory suffix=".deploy.php">../profiles/*</directory>
       <directory>../modules/custom/*/tests</directory>
       <directory>../modules/custom/*/*/tests</directory>
       <directory>../modules/custom/*/*/*/tests</directory>
