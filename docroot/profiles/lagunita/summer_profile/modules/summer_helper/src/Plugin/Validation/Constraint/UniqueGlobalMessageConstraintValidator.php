@@ -14,6 +14,9 @@ use Symfony\Component\Validator\ConstraintValidator;
  */
 class UniqueGlobalMessageConstraintValidator extends ConstraintValidator implements ContainerInjectionInterface {
 
+  /**
+   * {@inheritDoc}
+   */
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity_type.manager'),
@@ -60,7 +63,16 @@ class UniqueGlobalMessageConstraintValidator extends ConstraintValidator impleme
     }
   }
 
-  protected function isAnyPublished($exclude_id = NULL): bool {
+  /**
+   * Check if any entity is currently published or is scheduled to be published.
+   *
+   * @param int|null $exclude_id
+   *   Entity id to exclude from queries.
+   *
+   * @return bool
+   *   True if any entity conflicts.
+   */
+  protected function isAnyPublished(int $exclude_id = NULL): bool {
     $query = $this->getEntityQuery($exclude_id);
     $condition_group = $query->orConditionGroup();
     $condition_group->condition('status', TRUE)
@@ -70,7 +82,18 @@ class UniqueGlobalMessageConstraintValidator extends ConstraintValidator impleme
     return !empty($query->execute());
   }
 
-  protected function isPublishDateValid($publish_date, $exclude_id = NULL): bool {
+  /**
+   * Check if any entity will conflict with a message scheduled to publish.
+   *
+   * @param int $publish_date
+   *   Publishing time stamp.
+   * @param int|null $exclude_id
+   *   Entity id to exclude from queries.
+   *
+   * @return bool
+   *   True if any entity conflicts.
+   */
+  protected function isPublishDateValid(int $publish_date, int $exclude_id = NULL): bool {
     $query = $this->getEntityQuery($exclude_id);
 
     // A message is currently published and won't be unpublished.
@@ -89,7 +112,18 @@ class UniqueGlobalMessageConstraintValidator extends ConstraintValidator impleme
     return !empty($query->execute());
   }
 
-  protected function isUnpublishDateValid($unpublish_date, $exclude_id = NULL): bool {
+  /**
+   * Check if any entity will conflict with a message scheduled to unpublish.
+   *
+   * @param int $unpublish_date
+   *   Unpublishing time stamp.
+   * @param int|null $exclude_id
+   *   Entity id to exclude from queries.
+   *
+   * @return bool
+   *   True if any entity conflicts.
+   */
+  protected function isUnpublishDateValid(int $unpublish_date, int $exclude_id = NULL): bool {
     $query = $this->getEntityQuery($exclude_id);
 
     // A message is currently published.
@@ -107,7 +141,20 @@ class UniqueGlobalMessageConstraintValidator extends ConstraintValidator impleme
     return !empty($query->execute());
   }
 
-  protected function isBothDatesValid($publish_date, $unpublish_date, $exclude_id = NULL): bool {
+  /**
+   * Check for conflicts with a message scheduled to publish & unpublish.
+   *
+   * @param int $publish_date
+   *   Publishing time stamp.
+   * @param int $unpublish_date
+   *   Unpublishing time stamp.
+   * @param int|null $exclude_id
+   *   Entity id to exclude from queries.
+   *
+   * @return bool
+   *   True if any entity conflicts.
+   */
+  protected function isBothDatesValid(int $publish_date, int $unpublish_date, int $exclude_id = NULL): bool {
     $query = $this->getEntityQuery($exclude_id);
     // A message is currently published and won't be unpublished.
     $first_condition_group = $query->andConditionGroup()
@@ -134,7 +181,16 @@ class UniqueGlobalMessageConstraintValidator extends ConstraintValidator impleme
     return !empty($query->execute());
   }
 
-  protected function getEntityQuery($exclude_id = NULL): QueryInterface {
+  /**
+   * Get the entity query for the entity storage, excluding the id if provided.
+   *
+   * @param int|null $exclude_id
+   *   Entity id to exclude from queries.
+   *
+   * @return \Drupal\Core\Entity\Query\QueryInterface
+   *   Entity query service.
+   */
+  protected function getEntityQuery(int $exclude_id = NULL): QueryInterface {
     $summer_storage = $this->entityTypeManager->getStorage('summer_entity');
     $query = $summer_storage->getQuery()
       ->accessCheck(FALSE)

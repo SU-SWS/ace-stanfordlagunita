@@ -16,6 +16,11 @@ use Symfony\Component\Validator\Constraint;
 )]
 class UniqueGlobalMessageConstraint extends Constraint {
 
+  /**
+   * Error message.
+   *
+   * @var string
+   */
   public $invalidatePublishedDate = 'The published dates are invalid. Only one message can be published at a time.';
 
 }

@@ -55,11 +55,15 @@ final class SummerType extends ConfigEntityBundleBase {
 
   /**
    * The machine name of this summer entity type.
+   *
+   * @var string
    */
   protected string $id;
 
   /**
    * The human-readable name of the summer entity type.
+   *
+   * @var string
    */
   protected string $label;
 
