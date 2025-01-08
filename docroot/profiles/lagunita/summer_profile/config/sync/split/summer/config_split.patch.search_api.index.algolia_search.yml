@@ -16,6 +16,7 @@ adding:
       - field.storage.node.sum_course_schedule
       - field.storage.node.sum_course_start_date
       - field.storage.node.sum_course_units
+  read_only: true
   field_settings:
     html:
       configuration:
@@ -165,6 +166,7 @@ adding:
         - sum_course_prerequisites
         - sum_course_schedule
 removing:
+  read_only: false
   field_settings:
     photo:
       configuration:

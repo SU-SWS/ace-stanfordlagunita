@@ -6,6 +6,13 @@
  */
 
 /**
+ * Implements hook_install().
+ */
+function summer_helper_install() {
+  \Drupal::service('scheduler.manager')->invalidatePluginCache();
+}
+
+/**
  * Move card background image behavior settings.
  */
 function summer_helper_update_9001() {
@@ -34,4 +41,17 @@ function summer_helper_update_9002() {
     ->getEditable('config_split.config_split.summer')
     ->set('storage', 'collection')
     ->save();
+}
+
+/**
+ * Install new summer entity type.
+ */
+function summer_helper_update_9003() {
+  \Drupal::service('scheduler.manager')->invalidatePluginCache();
+  $summer_type = \Drupal::entityTypeManager()
+    ->getDefinition('summer_entity_type');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($summer_type);
+
+  $summer_entity = \Drupal::entityTypeManager()->getDefinition('summer_entity');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($summer_entity);
 }

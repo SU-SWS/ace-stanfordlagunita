@@ -1,0 +1,11 @@
+entity.summer_entity_type.collection:
+  title: 'Summer Entity types'
+  description: 'Manage and CRUD actions on Summer Entity type.'
+  parent: system.admin_structure
+  route_name: entity.summer_entity_type.collection
+
+entity.summer_entity.collection:
+  title: 'Summer Entities'
+  description: 'List of summer entities.'
+  route_name: entity.summer_entity.collection
+  parent: system.admin_content

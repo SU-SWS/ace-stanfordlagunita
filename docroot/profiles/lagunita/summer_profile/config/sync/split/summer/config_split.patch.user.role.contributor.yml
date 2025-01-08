@@ -16,8 +16,10 @@ adding:
     - 'edit own sum_summer_courses content'
     - 'revert stanford_page revisions'
     - 'revert sum_summer_courses revisions'
+    - 'schedule publishing of summer_entity'
     - 'use text format sum_markdown'
     - 'view any unpublished sum_summer_courses content'
+    - 'view scheduled summer_entity'
     - 'view sum_summer_courses revisions'
 removing:
   permissions:

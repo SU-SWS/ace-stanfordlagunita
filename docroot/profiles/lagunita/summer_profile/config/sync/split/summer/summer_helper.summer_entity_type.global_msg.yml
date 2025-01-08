@@ -1,0 +1,22 @@
+uuid: 002a9fa6-d89a-40d5-8635-0834eb86eea5
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: 1
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: 0
+    publish_revision: null
+    publish_touch: false
+    show_message_after_update: 1
+    unpublish_enable: 1
+    unpublish_required: 0
+    unpublish_revision: null
+id: global_msg
+label: 'Global Message'

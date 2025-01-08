@@ -295,6 +295,11 @@ entity_config:
   su_policy_log:
     su_policy_log:
       enabled: true
+  summer_entity:
+    global_msg:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
   taxonomy_term:
     basic_page_types:
       enabled: true
@@ -1094,6 +1099,14 @@ field_config:
       su_policy_public:
         enabled: true
       su_policy_title:
+        enabled: true
+  summer_entity:
+    global_msg:
+      sum_global_msg_body:
+        enabled: true
+      sum_global_msg_hide:
+        enabled: true
+      sum_global_msg_link:
         enabled: true
 settings:
   exclude_unpublished: false

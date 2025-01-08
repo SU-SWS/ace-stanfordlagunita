@@ -1,0 +1,11 @@
+summer_entity.type_add:
+  title: 'Add summer entity type'
+  route_name: entity.summer_entity_type.add_form
+  appears_on:
+    - entity.summer_entity_type.collection
+
+summer_entity.add_page:
+  title: 'Add summer entity'
+  route_name: entity.summer_entity.add_page
+  appears_on:
+    - entity.summer_entity.collection

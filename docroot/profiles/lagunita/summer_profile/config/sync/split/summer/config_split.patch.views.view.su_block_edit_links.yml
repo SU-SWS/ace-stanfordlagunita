@@ -1,0 +1,14 @@
+adding:
+  display:
+    default:
+      display_options:
+        access:
+          options:
+            perm: 'update any stanford_component_block block content'
+removing:
+  display:
+    default:
+      display_options:
+        access:
+          options:
+            perm: 'edit any stanford_component_block block content'

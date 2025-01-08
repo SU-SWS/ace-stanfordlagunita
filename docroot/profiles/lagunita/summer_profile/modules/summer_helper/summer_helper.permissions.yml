@@ -1,0 +1,8 @@
+administer summer entity types:
+  title: 'Administer summer entity types'
+  description: 'Maintain the types of summer entity entity.'
+  restrict access: true
+
+administer summer entities:
+  title: 'Administer Summer Entities'
+  description: 'Create and edit summer entities.'

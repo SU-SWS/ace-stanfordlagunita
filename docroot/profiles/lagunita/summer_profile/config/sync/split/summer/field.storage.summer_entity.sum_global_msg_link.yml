@@ -1,0 +1,19 @@
+uuid: 06dbc61a-b1fd-471a-85a8-0bea5b7edf35
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - summer_helper
+id: summer_entity.sum_global_msg_link
+field_name: sum_global_msg_link
+entity_type: summer_entity
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -5,6 +5,8 @@
  * Primary module hooks for Summer Helper module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_paragraphs_behavior_info_alter().
  */
@@ -24,13 +26,24 @@ function summer_helper_page_attachments(array &$attachments) {
  */
 function summer_helper_library_info_alter(&$libraries, $extension) {
   if ($extension === 'ckeditor5') {
-    $module_path = \Drupal::service('extension.list.module')->getPath('summer_helper');
+    $module_path = \Drupal::service('extension.list.module')
+      ->getPath('summer_helper');
     $libraries['internal.drupal.ckeditor5.stylesheets'] = [
       'css' => [
         'theme' => [
-          "/$module_path/styles/dist/css/ckeditor.css" => []
+          "/$module_path/styles/dist/css/ckeditor.css" => [],
         ],
       ],
     ];
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function summer_helper_form_summer_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $status_element = &$form['status']['widget']['value'];
+  $status_element['#states'] = [
+    'disabled' => [':input[name="publish_on[0][value][time]"]' => ['filled' => TRUE]],
+  ];
 }

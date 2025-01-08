@@ -1,0 +1,82 @@
+uuid: 7e28ea5d-bc59-40c2-bd44-a88bbd53967f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.summer_entity.global_msg.sum_global_msg_body
+    - field.field.summer_entity.global_msg.sum_global_msg_hide
+    - field.field.summer_entity.global_msg.sum_global_msg_link
+    - summer_helper.summer_entity_type.global_msg
+  module:
+    - link
+    - text
+id: summer_entity.global_msg.default
+targetEntityType: summer_entity
+bundle: global_msg
+mode: default
+content:
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+  status:
+    type: boolean
+    label: above
+    settings:
+      format: enabled-disabled
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sum_global_msg_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  sum_global_msg_hide:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  sum_global_msg_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 22
+    region: content
+hidden:
+  search_api_excerpt: true
