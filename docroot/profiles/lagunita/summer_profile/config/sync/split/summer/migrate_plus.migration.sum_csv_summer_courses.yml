@@ -114,6 +114,7 @@ process:
   title: course_name
   sum_course_unique_import_id: unique_import_id
   sum_course_catalog_number: catalog_number
+  sum_course_class_number: class_number
   sum_course_course_cost: course_cost
   sum_course_format: course_format
   sum_course_length: course_length
