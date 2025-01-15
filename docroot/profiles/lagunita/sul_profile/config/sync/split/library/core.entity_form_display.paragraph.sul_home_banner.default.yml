@@ -8,29 +8,31 @@ dependencies:
   module:
     - change_labels
     - field_formatter_class
-    - inline_entity_form
+    - paragraphs
 id: paragraph.sul_home_banner.default
 targetEntityType: paragraph
 bundle: sul_home_banner
 mode: default
 content:
   sul_home_images:
-    type: inline_entity_form_complex
+    type: paragraphs
     weight: 0
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: true
-      collapsed: true
-      revision: false
-      removed_reference: delete
+      title: 'Banner Image'
+      title_plural: 'Banner Images'
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: sul_home_image
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: duplicate
     third_party_settings:
       field_formatter_class:
         class: ''

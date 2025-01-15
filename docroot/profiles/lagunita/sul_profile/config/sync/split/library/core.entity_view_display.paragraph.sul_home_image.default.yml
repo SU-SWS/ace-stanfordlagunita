@@ -5,13 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.sul_home_image.sul_home_image
     - field.field.paragraph.sul_home_image.sul_home_image_credits
-    - field.field.paragraph.sul_home_image.sul_home_image_title
     - paragraphs.paragraphs_type.sul_home_image
   module:
     - empty_fields
     - field_formatter_class
     - field_label
-    - stanford_fields
+    - stanford_media
     - text
 id: paragraph.sul_home_image.default
 targetEntityType: paragraph
@@ -19,27 +18,13 @@ bundle: sul_home_image
 mode: default
 content:
   sul_home_image:
-    type: entity_reference_entity_view
+    type: media_image_formatter
     label: hidden
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  sul_home_image_credits:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  sul_home_image_title:
-    type: entity_title_heading
-    label: hidden
-    settings:
-      tag: h2
-      linked: false
+      image_style: card_478x239
+      remove_alt: false
     third_party_settings:
       empty_fields:
         handler: ''
@@ -48,7 +33,14 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 1
+    weight: 0
+    region: content
+  sul_home_image_credits:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

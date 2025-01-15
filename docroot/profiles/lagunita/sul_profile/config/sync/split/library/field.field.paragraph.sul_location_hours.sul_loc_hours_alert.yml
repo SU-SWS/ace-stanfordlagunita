@@ -1,0 +1,24 @@
+uuid: 4857bca2-dd9d-4f53-ab53-fcb781554f11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_loc_hours_alert
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sul_location_hours
+  module:
+    - text
+id: paragraph.sul_location_hours.sul_loc_hours_alert
+field_name: sul_loc_hours_alert
+entity_type: paragraph
+bundle: sul_location_hours
+label: 'Alert Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text

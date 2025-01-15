@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.sul_home_image.sul_home_image
     - field.field.paragraph.sul_home_image.sul_home_image_credits
-    - field.field.paragraph.sul_home_image.sul_home_image_title
     - paragraphs.paragraphs_type.sul_home_image
   module:
+    - change_labels
+    - field_formatter_class
+    - maxlength
     - media_library
     - text
 id: paragraph.sul_home_image.default
@@ -29,15 +31,13 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  sul_home_image_title:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: true
+      change_labels:
+        field_label_overwrite: ''
 hidden:
   created: true
   status: true

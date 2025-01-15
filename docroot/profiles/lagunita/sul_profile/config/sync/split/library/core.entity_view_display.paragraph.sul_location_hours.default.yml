@@ -1,0 +1,23 @@
+uuid: a1f734b0-9ab6-4ce2-a81a-769f45dfcd56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_location_hours.sul_loc_hours_alert
+    - paragraphs.paragraphs_type.sul_location_hours
+  module:
+    - text
+id: paragraph.sul_location_hours.default
+targetEntityType: paragraph
+bundle: sul_location_hours
+mode: default
+content:
+  sul_loc_hours_alert:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

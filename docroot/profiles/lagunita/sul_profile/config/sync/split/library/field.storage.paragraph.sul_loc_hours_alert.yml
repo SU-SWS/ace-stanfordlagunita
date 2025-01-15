@@ -1,18 +1,17 @@
-uuid: 19053779-6788-4857-9e1f-98433a78f1a7
+uuid: 1e775452-0509-45c9-bdfd-bb68a7304d0e
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.sul_home_image_title
-field_name: sul_home_image_title
+    - text
+id: paragraph.sul_loc_hours_alert
+field_name: sul_loc_hours_alert
 entity_type: paragraph
-type: string
+type: text
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+  max_length: 1000
+module: text
 locked: false
 cardinality: 1
 translatable: true

@@ -297,6 +297,8 @@ entity_config:
     sul_libguide:
       enabled: true
       query_load_enabled: true
+    sul_location_hours:
+      enabled: true
   redirect:
     redirect:
       enabled: true
@@ -1024,14 +1026,15 @@ field_config:
         enabled: true
       sul_home_image_credits:
         enabled: true
-      sul_home_image_title:
-        enabled: true
     sul_libguide:
       sul_libguide__desc:
         enabled: true
       sul_libguide__headline:
         enabled: true
       sul_libguide_id:
+        enabled: true
+    sul_location_hours:
+      sul_loc_hours_alert:
         enabled: true
   su_policy_log:
     su_policy_log:
