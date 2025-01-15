@@ -1,0 +1,24 @@
+uuid: 4b075b76-455c-46fa-b797-bc6f13cea389
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_home_image_credits
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.sul_home_image
+  module:
+    - text
+id: paragraph.sul_home_image.sul_home_image_credits
+field_name: sul_home_image_credits
+entity_type: paragraph
+bundle: sul_home_image
+label: Credits
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long

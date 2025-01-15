@@ -1,0 +1,54 @@
+uuid: 2a176bc3-7c84-4438-a572-0eb266919537
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_home_image.sul_home_image
+    - field.field.paragraph.sul_home_image.sul_home_image_credits
+    - field.field.paragraph.sul_home_image.sul_home_image_title
+    - paragraphs.paragraphs_type.sul_home_image
+  module:
+    - empty_fields
+    - field_formatter_class
+    - field_label
+    - stanford_fields
+    - text
+id: paragraph.sul_home_image.default
+targetEntityType: paragraph
+bundle: sul_home_image
+mode: default
+content:
+  sul_home_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sul_home_image_credits:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sul_home_image_title:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

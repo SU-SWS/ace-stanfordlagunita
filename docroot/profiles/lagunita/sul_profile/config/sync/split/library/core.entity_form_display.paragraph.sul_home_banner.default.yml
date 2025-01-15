@@ -1,0 +1,44 @@
+uuid: d61a1ed6-fb82-427c-b17f-aa8538880236
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_home_banner.sul_home_images
+    - paragraphs.paragraphs_type.sul_home_banner
+  module:
+    - change_labels
+    - field_formatter_class
+    - inline_entity_form
+id: paragraph.sul_home_banner.default
+targetEntityType: paragraph
+bundle: sul_home_banner
+mode: default
+content:
+  sul_home_images:
+    type: inline_entity_form_complex
+    weight: 0
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: true
+      collapsed: true
+      revision: false
+      removed_reference: delete
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      change_labels:
+        add_another: ''
+        field_label_overwrite: ''
+        hide_add_another: 0
+        force_single_cardinality: 0
+hidden:
+  created: true
+  status: true

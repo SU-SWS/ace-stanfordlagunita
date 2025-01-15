@@ -1,0 +1,10 @@
+uuid: 072d8a33-b96a-41dc-a64b-7c33bd034005
+langcode: en
+status: true
+dependencies: {  }
+id: sul_home_image
+label: 'Home Page Image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

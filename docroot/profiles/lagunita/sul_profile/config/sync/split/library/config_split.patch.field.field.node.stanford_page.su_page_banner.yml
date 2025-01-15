@@ -1,6 +1,11 @@
 adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.sul_home_banner
   settings:
     handler_settings:
+      target_bundles:
+        sul_home_banner: sul_home_banner
       target_bundles_drag_drop:
         collection:
           weight: 20
@@ -11,6 +16,11 @@ adding:
         layout:
           weight: 22
           enabled: false
+        stanford_faq:
+          weight: 31
+          enabled: false
+        stanford_layout:
+          weight: 33
         stanford_page_title_banner:
           enabled: false
         sul_button:
@@ -21,6 +31,12 @@ adding:
           enabled: false
         sul_feat_collection:
           weight: 37
+          enabled: false
+        sul_home_banner:
+          weight: 44
+          enabled: true
+        sul_home_image:
+          weight: 45
           enabled: false
         sul_libguide:
           weight: 38
@@ -36,6 +52,5 @@ removing:
       target_bundles_drag_drop:
         stanford_layout:
           weight: 19
-          enabled: false
         stanford_page_title_banner:
           enabled: true
