@@ -1,0 +1,97 @@
+uuid: 2857eb9a-0b42-4453-a053-6f6c7cf66b17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_home_images
+    - paragraphs.paragraphs_type.sul_home_banner
+    - paragraphs.paragraphs_type.sul_home_image
+  module:
+    - entity_reference_revisions
+id: paragraph.sul_home_banner.sul_home_images
+field_name: sul_home_images
+entity_type: paragraph
+bundle: sul_home_banner
+label: Images
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sul_home_image: sul_home_image
+    negate: 0
+    target_bundles_drag_drop:
+      collection:
+        weight: 24
+        enabled: false
+      collection_card:
+        weight: 25
+        enabled: false
+      layout:
+        weight: 26
+        enabled: false
+      stanford_accordion:
+        weight: 27
+        enabled: false
+      stanford_banner:
+        weight: 28
+        enabled: false
+      stanford_card:
+        weight: 29
+        enabled: false
+      stanford_entity:
+        weight: 30
+        enabled: false
+      stanford_faq:
+        weight: 31
+        enabled: false
+      stanford_gallery:
+        weight: 32
+        enabled: false
+      stanford_layout:
+        weight: 33
+        enabled: false
+      stanford_lists:
+        weight: 34
+        enabled: false
+      stanford_media_caption:
+        weight: 35
+        enabled: false
+      stanford_page_title_banner:
+        weight: 36
+        enabled: false
+      stanford_person_cta:
+        weight: 37
+        enabled: false
+      stanford_schedule:
+        weight: 38
+        enabled: false
+      stanford_spacer:
+        weight: 39
+        enabled: false
+      stanford_wysiwyg:
+        weight: 40
+        enabled: false
+      sul_button:
+        weight: 41
+        enabled: false
+      sul_contact_card:
+        weight: 42
+        enabled: false
+      sul_feat_collection:
+        weight: 43
+        enabled: false
+      sul_home_banner:
+        weight: 44
+        enabled: false
+      sul_home_image:
+        weight: 45
+        enabled: true
+      sul_libguide:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

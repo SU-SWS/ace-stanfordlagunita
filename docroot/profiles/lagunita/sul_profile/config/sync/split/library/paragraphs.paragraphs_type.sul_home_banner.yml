@@ -1,0 +1,10 @@
+uuid: 809e7877-8332-4525-94c5-23b81320c9dd
+langcode: en
+status: true
+dependencies: {  }
+id: sul_home_banner
+label: 'Home Page Image Banner'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

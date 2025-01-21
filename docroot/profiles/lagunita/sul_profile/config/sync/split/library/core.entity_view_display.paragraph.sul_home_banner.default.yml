@@ -1,0 +1,25 @@
+uuid: c4e9e211-3a80-43f5-8085-2b84f539c22a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_home_banner.sul_home_images
+    - paragraphs.paragraphs_type.sul_home_banner
+  module:
+    - entity_reference_revisions
+id: paragraph.sul_home_banner.default
+targetEntityType: paragraph
+bundle: sul_home_banner
+mode: default
+content:
+  sul_home_images:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

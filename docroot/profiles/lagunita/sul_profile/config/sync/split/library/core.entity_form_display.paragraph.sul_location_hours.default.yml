@@ -1,0 +1,34 @@
+uuid: defd5492-1e52-4a82-9a0c-e128ea4f2b61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sul_location_hours.sul_loc_hours_alert
+    - paragraphs.paragraphs_type.sul_location_hours
+  module:
+    - change_labels
+    - field_formatter_class
+    - maxlength
+    - text
+id: paragraph.sul_location_hours.default
+targetEntityType: paragraph
+bundle: sul_location_hours
+mode: default
+content:
+  sul_loc_hours_alert:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 60
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: true
+      change_labels:
+        field_label_overwrite: ''
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: 5bbea2f8-e8e4-416a-aa64-49b8314ad6ad
+langcode: en
+status: true
+dependencies: {  }
+id: sul_location_hours
+label: 'Location Hours'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

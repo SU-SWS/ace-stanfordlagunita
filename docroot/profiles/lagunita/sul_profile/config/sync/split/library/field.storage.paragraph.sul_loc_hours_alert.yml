@@ -1,0 +1,20 @@
+uuid: 1e775452-0509-45c9-bdfd-bb68a7304d0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sul_loc_hours_alert
+field_name: sul_loc_hours_alert
+entity_type: paragraph
+type: text
+settings:
+  max_length: 1000
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

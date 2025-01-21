@@ -1,0 +1,20 @@
+uuid: 0b8c2c8e-4cbb-431a-82f7-da253b52a8cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.sul_home_image
+field_name: sul_home_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
