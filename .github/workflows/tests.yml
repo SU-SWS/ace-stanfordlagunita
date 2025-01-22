@@ -87,6 +87,8 @@ jobs:
     container:
       image: pookmish/drupal8ci:php8.3
       options: '--network-alias drupal8ci'
+    env:
+      STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
     services:
       selenium:
         image: selenium/standalone-chrome:latest
