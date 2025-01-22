@@ -151,16 +151,16 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "3.4.1",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "cf87b649f745479c0800299481d91dc303e23cea"
+                "reference": "7505959737f7944507be7ef476752ad761873c4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/cf87b649f745479c0800299481d91dc303e23cea",
-                "reference": "cf87b649f745479c0800299481d91dc303e23cea",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/7505959737f7944507be7ef476752ad761873c4a",
+                "reference": "7505959737f7944507be7ef476752ad761873c4a",
                 "shasum": ""
             },
             "require": {
@@ -219,9 +219,9 @@
             ],
             "support": {
                 "issues": "https://github.com/algolia/algoliasearch-client-php/issues",
-                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.4.1"
+                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.4.2"
             },
-            "time": "2023-08-28T14:34:04+00:00"
+            "time": "2025-01-22T11:13:54+00:00"
         },
         {
             "name": "asm89/stack-cors",
@@ -281,16 +281,16 @@
         },
         {
             "name": "caxy/php-htmldiff",
-            "version": "v0.1.15",
+            "version": "v0.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caxy/php-htmldiff.git",
-                "reference": "6342b02ddb86fd36093ad7e2db2efc21f01ab7cd"
+                "reference": "5c580b4f09285c078f0c5cb261573412a736a8cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caxy/php-htmldiff/zipball/6342b02ddb86fd36093ad7e2db2efc21f01ab7cd",
-                "reference": "6342b02ddb86fd36093ad7e2db2efc21f01ab7cd",
+                "url": "https://api.github.com/repos/caxy/php-htmldiff/zipball/5c580b4f09285c078f0c5cb261573412a736a8cb",
+                "reference": "5c580b4f09285c078f0c5cb261573412a736a8cb",
                 "shasum": ""
             },
             "require": {
@@ -336,9 +336,9 @@
             ],
             "support": {
                 "issues": "https://github.com/caxy/php-htmldiff/issues",
-                "source": "https://github.com/caxy/php-htmldiff/tree/v0.1.15"
+                "source": "https://github.com/caxy/php-htmldiff/tree/v0.1.16"
             },
-            "time": "2023-11-05T23:49:04+00:00"
+            "time": "2025-01-22T17:03:45+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -6440,7 +6440,7 @@
             ],
             "authors": [
                 {
-                    "name": "Daniel.Moberly",
+                    "name": "daniel.moberly",
                     "homepage": "https://www.drupal.org/user/1160788"
                 },
                 {
@@ -10180,7 +10180,11 @@
                     "homepage": "https://www.drupal.org/user/972"
                 },
                 {
-                    "name": "Grayle",
+                    "name": "dieterholvoet",
+                    "homepage": "https://www.drupal.org/user/3567222"
+                },
+                {
+                    "name": "grayle",
                     "homepage": "https://www.drupal.org/user/3145497"
                 },
                 {
@@ -10196,7 +10200,7 @@
                     "homepage": "https://www.drupal.org/user/108440"
                 },
                 {
-                    "name": "Nixou",
+                    "name": "nixou",
                     "homepage": "https://www.drupal.org/user/2304734"
                 },
                 {
@@ -10204,7 +10208,7 @@
                     "homepage": "https://www.drupal.org/user/49851"
                 },
                 {
-                    "name": "RobLoach",
+                    "name": "robloach",
                     "homepage": "https://www.drupal.org/user/61114"
                 },
                 {
@@ -11486,17 +11490,17 @@
         },
         {
             "name": "drupal/taxonomy_entity_index",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/taxonomy_entity_index.git",
-                "reference": "8.x-1.19"
+                "reference": "8.x-1.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/taxonomy_entity_index-8.x-1.19.zip",
-                "reference": "8.x-1.19",
-                "shasum": "239c36e44a63a38606fedfd2f44c9905fca3ec6f"
+                "url": "https://ftp.drupal.org/files/projects/taxonomy_entity_index-8.x-1.20.zip",
+                "reference": "8.x-1.20",
+                "shasum": "8bcc1d70430223c07dae0cf46dfb76055201b7e3"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -11508,8 +11512,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.19",
-                    "datestamp": "1737410836",
+                    "version": "8.x-1.20",
+                    "datestamp": "1737496027",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -27381,12 +27385,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford-caravan.git",
-                "reference": "8d61effccb5dc58196d477f7b0fdaaf6b31a7b7b"
+                "reference": "80e873ef030c0cd5e562eaf026f6c51e8a06c21f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/8d61effccb5dc58196d477f7b0fdaaf6b31a7b7b",
-                "reference": "8d61effccb5dc58196d477f7b0fdaaf6b31a7b7b",
+                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/80e873ef030c0cd5e562eaf026f6c51e8a06c21f",
+                "reference": "80e873ef030c0cd5e562eaf026f6c51e8a06c21f",
                 "shasum": ""
             },
             "require": {
@@ -27416,7 +27420,7 @@
                 "issues": "https://github.com/SU-SWS/stanford-caravan/issues",
                 "source": "https://github.com/SU-SWS/stanford-caravan/tree/10.x"
             },
-            "time": "2025-01-06T21:24:33+00:00"
+            "time": "2025-01-22T19:07:10+00:00"
         },
         {
             "name": "symfony/browser-kit",
