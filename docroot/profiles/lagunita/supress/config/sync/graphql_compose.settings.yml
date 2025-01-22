@@ -1066,6 +1066,8 @@ field_config:
         enabled: true
       sup_coming_soon:
         enabled: true
+      sup_digital_price:
+        enabled: true
       sup_intl_cart:
         enabled: true
       sup_paper_discount:

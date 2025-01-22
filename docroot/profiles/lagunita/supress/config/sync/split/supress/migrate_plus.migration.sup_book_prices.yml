@@ -52,6 +52,10 @@ source:
       label: price_paper
       selector: fieldData/price_paper
     -
+      name: price_digital
+      label: price_digital
+      selector: fieldData/price_digital
+    -
       name: intl_cart
       label: intl_cart
       selector: fieldData/intl_cart
@@ -109,6 +113,7 @@ process:
   sup_paper_price: price_paper
   sup_paper_discount: paper_sale_percent
   sup_paper_sale: paper_sale_price
+  sup_digital_price: price_digital
   sup_preorder:
     -
       plugin: skip_on_empty
