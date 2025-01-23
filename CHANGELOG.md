@@ -1,5 +1,16 @@
 # Lagunita
 
+2.6.4
+--------------------------------------------------------------------------------
+_Release Date: 2025-01-23_
+
+- SUM: Use html instead of markdown for course importer
+- Change global settings to early settings (#158)
+- SUL23-701 SUL-703: Home page image banner & Location hours paragraph types (#156)
+- SUM: Add instructors to algolia index
+- SUM: Add class number for csv import
+- SUM: Fixed CSV importer
+
 2.6.1
 --------------------------------------------------------------------------------
 _Release Date: 2024-12-04_
