@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.stanford_card.su_card_link
     - field.field.paragraph.stanford_card.su_card_media
     - field.field.paragraph.stanford_card.su_card_super_header
+    - field.field.paragraph.stanford_card.sul_card_image_caption
     - paragraphs.paragraphs_type.stanford_card
   module:
     - change_labels
@@ -67,4 +68,5 @@ hidden:
   publish_on: true
   status: true
   su_card_super_header: true
+  sul_card_image_caption: true
   unpublish_on: true

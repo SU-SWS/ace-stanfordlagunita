@@ -63,14 +63,8 @@ removing:
             label: 'Splash Font'
             element: '<p class="su-font-splash">'
           -
-            label: 'Quote LG'
+            label: Quote
             element: '<p class="su-quote-text">'
-          -
-            label: 'Quote MD'
-            element: '<p class="su-quote-text--md">'
-          -
-            label: 'Quote SM'
-            element: '<p class="su-quote-text--sm">'
           -
             label: 'Drop Cap First Letter'
             element: '<p class="su-drop-cap">'

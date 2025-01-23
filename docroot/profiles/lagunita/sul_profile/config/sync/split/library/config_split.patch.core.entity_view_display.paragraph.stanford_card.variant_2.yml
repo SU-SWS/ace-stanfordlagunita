@@ -1,4 +1,9 @@
-adding: {  }
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.sul_card_image_caption
+  hidden:
+    sul_card_image_caption: true
 removing:
   hidden:
     su_card_link_display: true

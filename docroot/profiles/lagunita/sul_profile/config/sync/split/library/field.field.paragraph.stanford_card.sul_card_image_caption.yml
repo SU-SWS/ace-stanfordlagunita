@@ -1,0 +1,19 @@
+uuid: 9aa24cd8-4b3b-4138-a858-c4044f73b745
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_card_image_caption
+    - paragraphs.paragraphs_type.stanford_card
+id: paragraph.stanford_card.sul_card_image_caption
+field_name: sul_card_image_caption
+entity_type: paragraph
+bundle: stanford_card
+label: 'Image Caption'
+description: 'Text that will overlay the bottom of the image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

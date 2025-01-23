@@ -1,0 +1,22 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.sul_card_image_caption
+  third_party_settings:
+    ds:
+      regions:
+        card_image:
+          - sul_card_image_caption
+  content:
+    su_card_media:
+      settings:
+        remove_alt: false
+    sul_card_image_caption:
+      type: string
+      label: hidden
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 5
+      region: card_image
+removing: {  }
