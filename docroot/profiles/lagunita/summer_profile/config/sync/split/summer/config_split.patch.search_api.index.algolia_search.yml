@@ -1,7 +1,6 @@
 adding:
   dependencies:
     config:
-      - field.storage.node.su_course_instructors
       - field.storage.node.sum_course_availability
       - field.storage.node.sum_course_catalog_number
       - field.storage.node.sum_course_class_number
@@ -9,6 +8,7 @@ adding:
       - field.storage.node.sum_course_cross_listing
       - field.storage.node.sum_course_end_date
       - field.storage.node.sum_course_format
+      - field.storage.node.sum_course_instructors
       - field.storage.node.sum_course_interest_area
       - field.storage.node.sum_course_length
       - field.storage.node.sum_course_notes
@@ -26,14 +26,6 @@ adding:
     photo:
       configuration:
         value: '[node:sum_course_image:entity:field_media_image:large|node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
-    su_course_instructors:
-      label: Instructors
-      datasource_id: 'entity:node'
-      property_path: su_course_instructors
-      type: string
-      dependencies:
-        config:
-          - field.storage.node.su_course_instructors
     sum_course_availability:
       label: 'Course Availability » Taxonomy term » Name'
       datasource_id: 'entity:node'
@@ -92,6 +84,14 @@ adding:
       dependencies:
         config:
           - field.storage.node.sum_course_format
+    sum_course_instructors:
+      label: Instructors
+      datasource_id: 'entity:node'
+      property_path: sum_course_instructors
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_instructors
     sum_course_interest:
       label: 'Interest Area » Taxonomy term » Name'
       datasource_id: 'entity:node'
@@ -163,11 +163,11 @@ adding:
   processor_settings:
     html_filter:
       fields:
-        - su_course_instructors
         - sum_course_availability
         - sum_course_catalog_number
         - sum_course_cross_listing
         - sum_course_format
+        - sum_course_instructors
         - sum_course_interest
         - sum_course_length
         - sum_course_notes
