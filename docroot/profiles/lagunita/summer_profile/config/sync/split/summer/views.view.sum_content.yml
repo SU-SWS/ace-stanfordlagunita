@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.sum_course_catalog_number
-    - field.storage.node.sum_course_class_number
   module:
     - node
     - user
@@ -183,70 +182,6 @@ display:
           type: string
           settings:
             link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        sum_course_class_number:
-          id: sum_course_class_number
-          table: node__sum_course_class_number
-          field: sum_course_class_number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Class Number'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -630,64 +565,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        sum_course_class_number_value:
-          id: sum_course_class_number_value
-          table: node__sum_course_class_number
-          field: sum_course_class_number_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: sum_course_class_number_value_op
-            label: 'Class Number'
-            description: ''
-            use_operator: false
-            operator: sum_course_class_number_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: class_num
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              stanford_faculty: '0'
-              stanford_staff: '0'
-              stanford_student: '0'
-              contributor: '0'
-              site_manager: '0'
-              site_editor: '0'
-              site_builder: '0'
-              site_developer: '0'
-              layout_builder_user: '0'
-              su_site_embedder: '0'
-              decoupled_site_users: '0'
-              opportunity_editor: '0'
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
         status_1:
           id: status_1
           table: node_field_data
@@ -839,7 +716,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.sum_course_catalog_number'
-        - 'config:field.storage.node.sum_course_class_number'
   sum_course_page:
     id: sum_course_page
     display_title: 'Course Admin Page'
@@ -869,4 +745,3 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.sum_course_catalog_number'
-        - 'config:field.storage.node.sum_course_class_number'

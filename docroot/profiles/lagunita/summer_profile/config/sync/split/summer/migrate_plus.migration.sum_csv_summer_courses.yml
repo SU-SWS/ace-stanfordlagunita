@@ -202,7 +202,12 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: course_syllabus_file
+      source: catalog_number
+    -
+      plugin: str_replace
+      regex: true
+      search: /-.*/
+      replace: ' '
     -
       plugin: entity_lookup
       value_key: mid
@@ -210,6 +215,7 @@ process:
       bundle: file
       entity_type: media
       ignore_case: true
+      operator: STARTS_WITH
 destination:
   plugin: 'entity:node'
   default_bundle: sum_summer_courses
