@@ -198,6 +198,18 @@ process:
       bundle_key: vid
       bundle: sum_course_availability
       entity_type: taxonomy_term
+  sum_course_syllabus_file:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: course_syllabus_file
+    -
+      plugin: entity_lookup
+      value_key: mid
+      bundle_key: bundle
+      bundle: file
+      entity_type: media
+      ignore_case: true
 destination:
   plugin: 'entity:node'
   default_bundle: sum_summer_courses
