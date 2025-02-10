@@ -198,6 +198,39 @@ process:
       bundle_key: vid
       bundle: sum_course_availability
       entity_type: taxonomy_term
+  sum_course_syllabus_file:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: catalog_number
+    -
+      plugin: str_replace
+      regex: true
+      search: /([a-zA-Z])(\d)/
+      replace: '$1 $2'
+    -
+      plugin: str_replace
+      regex: true
+      search: /-.*/
+      replace: ' '
+    -
+      plugin: str_replace
+      regex: true
+      search: /$/
+      replace: ' '
+    -
+      plugin: str_replace
+      search: '  '
+      replace: ' '
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: bundle
+      bundle: file
+      entity_type: media
+      ignore_case: true
+      operator: STARTS_WITH
+      access_check: false
 destination:
   plugin: 'entity:node'
   default_bundle: sum_summer_courses
