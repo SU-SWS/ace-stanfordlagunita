@@ -17557,16 +17557,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "8.6.9",
+            "version": "8.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "ce92118168ad0ca6caca54a4b7b2389ce8cdf121"
+                "reference": "5f5e665d0a7d4fcfbb819ef496af7a6194916a4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/ce92118168ad0ca6caca54a4b7b2389ce8cdf121",
-                "reference": "ce92118168ad0ca6caca54a4b7b2389ce8cdf121",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/5f5e665d0a7d4fcfbb819ef496af7a6194916a4c",
+                "reference": "5f5e665d0a7d4fcfbb819ef496af7a6194916a4c",
                 "shasum": ""
             },
             "require": {
@@ -17608,9 +17608,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.9"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/8.6.10"
             },
-            "time": "2025-01-09T22:32:15+00:00"
+            "time": "2025-02-10T17:33:22+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
