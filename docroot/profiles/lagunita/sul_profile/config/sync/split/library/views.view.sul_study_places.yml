@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.sul_additional_info
+    - field.storage.node.sul_study__additional_info
     - field.storage.node.sul_study__branch
     - field.storage.node.sul_study__features
     - field.storage.node.sul_study__room_donor_name
@@ -483,10 +483,10 @@ display:
           separator: ', '
           field_api_classes: 0
           plugin_id: field
-        sul_additional_info:
-          id: sul_additional_info
-          table: node__sul_additional_info
-          field: sul_additional_info
+        sul_study__additional_info:
+          id: sul_study__additional_info
+          table: node__sul_study__additional_info
+          field: sul_study__additional_info
           relationship: none
           group_type: group
           admin_label: ''
@@ -565,7 +565,7 @@ display:
             sul_study__branch: sul_study__branch
             sul_study__room_donor_name: sul_study__room_donor_name
             sul_study__features: sul_study__features
-            sul_additional_info: sul_study__features
+            sul_study__additional_info: sul_study__features
           info:
             title:
               sortable: 0
@@ -593,7 +593,7 @@ display:
               separator: ''
               empty_column: 0
               responsive: ''
-            sul_additional_info:
+            sul_study__additional_info:
               sortable: 0
               default_sort_order: asc
               align: ''
@@ -617,7 +617,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.sul_additional_info'
+        - 'config:field.storage.node.sul_study__additional_info'
         - 'config:field.storage.node.sul_study__branch'
         - 'config:field.storage.node.sul_study__features'
         - 'config:field.storage.node.sul_study__room_donor_name'

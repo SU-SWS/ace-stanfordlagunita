@@ -5,8 +5,8 @@ dependencies:
   module:
     - node
     - text
-id: node.sul_additional_info
-field_name: sul_additional_info
+id: node.sul_study__additional_info
+field_name: sul_study__additional_info
 entity_type: node
 type: text
 settings:
