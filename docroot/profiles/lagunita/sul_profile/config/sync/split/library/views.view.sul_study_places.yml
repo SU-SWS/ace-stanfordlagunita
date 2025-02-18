@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.sul_additional_info
     - field.storage.node.sul_study__branch
     - field.storage.node.sul_study__features
     - field.storage.node.sul_study__room_donor_name
@@ -11,6 +12,7 @@ dependencies:
     - graphql_compose_views
     - node
     - stanford_fields
+    - text
     - user
 id: sul_study_places
 label: 'Places To Study'
@@ -481,6 +483,68 @@ display:
           separator: ', '
           field_api_classes: 0
           plugin_id: field
+        sul_additional_info:
+          id: sul_additional_info
+          table: node__sul_additional_info
+          field: sul_additional_info
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: 0
+          alter:
+            alter_text: 0
+            text: ''
+            make_link: 0
+            path: ''
+            absolute: 0
+            external: 0
+            replace_spaces: 0
+            path_case: none
+            trim_whitespace: 0
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: 0
+            max_length: '0'
+            word_boundary: 1
+            ellipsis: 1
+            more_link: 0
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: 0
+            trim: 0
+            preserve_tags: ''
+            html: 0
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: 1
+          empty: ''
+          hide_empty: 0
+          empty_zero: 0
+          hide_alter_empty: 1
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: 0
+          plugin_id: field
       defaults:
         fields: false
         style: false
@@ -501,6 +565,7 @@ display:
             sul_study__branch: sul_study__branch
             sul_study__room_donor_name: sul_study__room_donor_name
             sul_study__features: sul_study__features
+            sul_additional_info: sul_study__features
           info:
             title:
               sortable: 0
@@ -528,6 +593,13 @@ display:
               separator: ''
               empty_column: 0
               responsive: ''
+            sul_additional_info:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
           default: '-1'
           empty_table: 0
       row:
@@ -545,6 +617,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.sul_additional_info'
         - 'config:field.storage.node.sul_study__branch'
         - 'config:field.storage.node.sul_study__features'
         - 'config:field.storage.node.sul_study__room_donor_name'

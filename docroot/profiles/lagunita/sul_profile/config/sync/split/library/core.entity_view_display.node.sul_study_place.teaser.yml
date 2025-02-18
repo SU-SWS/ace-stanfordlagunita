@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.sul_study_place.sul_additional_info
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
@@ -27,6 +28,7 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  sul_additional_info: true
   sul_study__branch: true
   sul_study__capacity: true
   sul_study__features: true

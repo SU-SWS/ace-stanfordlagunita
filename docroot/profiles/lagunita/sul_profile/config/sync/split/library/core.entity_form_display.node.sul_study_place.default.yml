@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sul_study_place.sul_additional_info
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
@@ -17,6 +18,7 @@ dependencies:
     - media_library
     - path
     - scheduler
+    - text
 id: node.sul_study_place.default
 targetEntityType: node
 bundle: sul_study_place
@@ -24,27 +26,35 @@ mode: default
 content:
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  sul_additional_info:
+    type: text_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   sul_study__branch:
     type: options_select
@@ -54,7 +64,7 @@ content:
     third_party_settings: {  }
   sul_study__capacity:
     type: cshs
-    weight: 7
+    weight: 8
     region: content
     settings:
       save_lineage: false
@@ -87,7 +97,7 @@ content:
     third_party_settings: {  }
   sul_study__libcal_id:
     type: number
-    weight: 8
+    weight: 9
     region: content
     settings:
       placeholder: ''
@@ -131,7 +141,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
