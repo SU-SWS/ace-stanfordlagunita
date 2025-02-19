@@ -861,6 +861,8 @@ field_config:
       sul_rel_links_heading:
         enabled: true
     sul_study_place:
+      sul_study__additional_info:
+        enabled: true
       sul_study__branch:
         enabled: true
       sul_study__capacity:

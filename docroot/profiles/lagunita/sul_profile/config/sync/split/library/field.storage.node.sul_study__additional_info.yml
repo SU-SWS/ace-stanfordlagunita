@@ -1,0 +1,20 @@
+uuid: 5712bb67-1554-434a-a461-3901e80cca69
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.sul_study__additional_info
+field_name: sul_study__additional_info
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

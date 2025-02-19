@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sul_study_place.sul_study__additional_info
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
@@ -18,6 +19,7 @@ dependencies:
     - jumpstart_ui
     - layout_builder
     - layout_library
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -190,6 +192,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+          3e0d5208-d96b-4508-8434-38b13bfb48b1:
+            uuid: 3e0d5208-d96b-4508-8434-38b13bfb48b1
+            region: main
+            configuration:
+              id: 'field_block:node:sul_study_place:sul_study__additional_info'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -203,6 +220,13 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  sul_study__additional_info:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: main
   sul_study__branch:
     type: entity_reference_label
     label: above

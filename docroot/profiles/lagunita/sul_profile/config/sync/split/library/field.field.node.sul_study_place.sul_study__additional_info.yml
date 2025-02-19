@@ -1,0 +1,24 @@
+uuid: 87b4fe3d-8082-4fed-a79f-aa6913b33de1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_study__additional_info
+    - filter.format.stanford_minimal_html
+    - node.type.sul_study_place
+  module:
+    - text
+id: node.sul_study_place.sul_study__additional_info
+field_name: sul_study__additional_info
+entity_type: node
+bundle: sul_study_place
+label: 'Additional Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text
