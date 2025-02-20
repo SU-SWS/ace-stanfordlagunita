@@ -14,7 +14,9 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__type
     - node.type.sul_study_place
   module:
+    - change_labels
     - cshs
+    - field_formatter_class
     - media_library
     - path
     - scheduler
@@ -48,6 +50,17 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      change_labels:
+        field_label_overwrite: ''
   sul_study__additional_info:
     type: text_textfield
     weight: 7
@@ -148,6 +161,5 @@ content:
 hidden:
   created: true
   promote: true
-  sticky: true
   uid: true
   url_redirects: true
