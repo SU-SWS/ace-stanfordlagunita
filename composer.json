@@ -31,6 +31,21 @@
                     "reference": "master"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "noli42/chosen",
+                "version": "3.0.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "chosen"
+                },
+                "dist": {
+                    "url": "https://github.com/noli42/chosen/releases/download/3.0.0/chosen-assets-v3.0.0.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -45,7 +60,6 @@
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.0",
         "drupal/pdb": "2.0.0",
-        "drupal/stage_file_proxy": "^3.1",
         "drush/drush": "^12",
         "su-sws/blt-sws": "dev-main",
         "su-sws/stanford_profile": "11.x-dev",
@@ -168,9 +182,6 @@
             },
             "drupal/menu_link_weight": {
                 "https://www.drupal.org/project/menu_link_weight/issues/2875984": "https://git.drupalcode.org/project/menu_link_weight/-/merge_requests/2.diff"
-            },
-            "drupal/next": {
-                "Prevent unnecessary logs": "patches/contrib/next.patch"
             }
         }
     },

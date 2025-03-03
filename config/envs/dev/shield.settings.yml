@@ -1,0 +1,18 @@
+_core:
+  default_config_hash: FLJZME3II5fjmMSrdEvJHp95ZJf8V_X0jbX0VdVU1BU
+shield_enable: true
+credential_provider: shield
+credentials:
+  shield:
+    user: sws
+    pass: sws
+allow_cli: true
+debug_header: false
+unset_basic_auth_headers: true
+print: Authenticate
+method: 0
+paths: /graphql
+allowlist: ''
+http_method_allowlist:
+  post: post
+domains: ''

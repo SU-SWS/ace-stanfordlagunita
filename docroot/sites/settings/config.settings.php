@@ -31,3 +31,6 @@ if (EnvironmentDetector::isAhEnv()) {
   $config['simple_oauth.settings']['public_key'] = EnvironmentDetector::getAhFilesRoot() . '/nobackup/oauth/oauth_public.key';
   $config['simple_oauth.settings']['private_key'] = EnvironmentDetector::getAhFilesRoot() . '/nobackup/oauth/oauth_private.key';
 }
+
+// On this stack, we don't need "shield" since all content is permission based.
+$config['shield.settings']['shield_enable'] = FALSE;
