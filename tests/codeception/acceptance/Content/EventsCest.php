@@ -233,8 +233,6 @@ class EventsCest {
 
   /**
    * Test thing.
-   *
-   * @group foobar
    */
   public function testSiteManagerPerms(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
@@ -304,7 +302,7 @@ class EventsCest {
       'name' => $this->faker->word,
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
-    $I->cantSee('Published');
+    $I->canSeeCheckboxIsChecked('Published');
   }
 
   /**
