@@ -1,0 +1,7 @@
+field.widget.settings.sul_branch_selector:
+  type: mapping
+  label: 'Text field display format settings'
+  mapping:
+    only_primary:
+      type: boolean
+      label: 'Only primary locations'

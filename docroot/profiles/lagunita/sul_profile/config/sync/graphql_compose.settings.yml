@@ -869,6 +869,8 @@ field_config:
         enabled: true
       sul_study__features:
         enabled: true
+      sul_study__hours:
+        enabled: true
       sul_study__image:
         enabled: true
       sul_study__libcal_id:

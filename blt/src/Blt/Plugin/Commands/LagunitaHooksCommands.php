@@ -29,7 +29,7 @@ class LagunitaHooksCommands extends BltTasks {
   /**
    * @hook post-command drupal:sync:db
    */
-  public function postDbSync(){
+  public function postDbSync() {
     return $this->taskDrush()
       ->drush('pm:install')
       ->arg('field_validation_legacy')

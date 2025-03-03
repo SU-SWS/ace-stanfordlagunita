@@ -23,6 +23,7 @@ dependencies:
     - address
     - change_labels
     - conditional_fields
+    - field_formatter_class
     - field_group
     - layout_paragraphs
     - link
@@ -156,9 +157,12 @@ content:
     weight: 4
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      only_primary: true
     third_party_settings:
+      field_formatter_class:
+        class: ''
+      change_labels:
+        field_label_overwrite: ''
       conditional_fields:
         7e60278c-65d4-452c-b3b7-8e5a0c3060d9:
           entity_type: node
