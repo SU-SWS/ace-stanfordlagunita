@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Defines the 'sul_branch_selector' field widget.
  *
+ * @codeCoverageIgnore
+ *
  * @FieldWidget(
  *   id = "sul_branch_selector",
  *   label = @Translation("SUL Branch Selector"),
@@ -60,6 +62,34 @@ class SulBranchSelectorWidget extends StringTextfieldWidget {
   }
 
   /**
+   * {@inheritDoc}
+   */
+  public static function defaultSettings() {
+    return ['only_primary' => FALSE];
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $element['only_primary'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Only Primary Locations'),
+      '#default_value' => $this->getSetting('only_primary'),
+    ];
+    return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary() {
+    return [
+      $this->t('Only Primary Locations: @primary', ['@primary' => $this->getSetting('only_primary') ? 'Yes' : 'No']),
+    ];
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
@@ -67,7 +97,7 @@ class SulBranchSelectorWidget extends StringTextfieldWidget {
     $element['value'] += [
       '#type' => 'select',
       '#default_value' => $items[$delta]->value ?? NULL,
-      '#options' => $this->getBranchOptions(),
+      '#options' => $this->getSetting('only_primary') ? $this->getPrimaryBranchOptions() : $this->getAllLocationOptions(),
       '#empty_option' => $this->t('- Choose a Branch -'),
     ];
 
@@ -77,14 +107,47 @@ class SulBranchSelectorWidget extends StringTextfieldWidget {
   /**
    * Fetch the json data from library-hours and return the keyed array.
    *
+   * @return string[][]
+   *   Keyed array of id => label.
+   */
+  protected function getAllLocationOptions(): array {
+    $hours_data = $this->getHoursData();
+    $primary_locations = $this->getPrimaryBranchOptions();
+
+    $options = [];
+    foreach ($hours_data['included'] as $item) {
+      preg_match('/[\w-]+/', $item['id'], $branch);
+      $options[$primary_locations[strtolower($branch[0])]][] = $item['attributes']['name'];
+    }
+    return $options;
+  }
+
+  /**
+   * Fetch the json data from library-hours and return the keyed array.
+   *
    * @return string[]
    *   Keyed array of id => label.
    */
-  protected function getBranchOptions(): array {
-    if ($cache = $this->cache->get('sul-branches')) {
+  protected function getPrimaryBranchOptions(): array {
+    $hours_data = $this->getHoursData();
+
+    $options = [];
+    foreach ($hours_data['data'] as $item) {
+      $options[strtolower($item['id'])] = $item['attributes']['name'];
+    }
+    return $options;
+  }
+
+  /**
+   * Fetch the json data from library-hours and return the API response.
+   *
+   * @return array
+   *   Full API response.
+   */
+  protected function getHoursData(): array {
+    if ($cache = $this->cache->get('sul-hours')) {
       return $cache->data;
     }
-
     try {
       $response = $this->client->request('GET', 'https://library-hours.stanford.edu/libraries.json');
     }
@@ -92,13 +155,8 @@ class SulBranchSelectorWidget extends StringTextfieldWidget {
       return [];
     }
     $data = json_decode((string) $response->getBody(), TRUE);
-
-    $options = [];
-    foreach ($data['data'] as $item) {
-      $options[strtolower($item['id'])] = $item['attributes']['name'];
-    }
-    $this->cache->set('sul-branches', $options, time() + 60 * 60);
-    return $options;
+    $this->cache->set('sul-hours', $data, time() + 60 * 60);
+    return $data;
   }
 
 }

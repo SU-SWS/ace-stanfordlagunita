@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.sul_study_place.sul_study__branch
     - field.field.node.sul_study_place.sul_study__capacity
     - field.field.node.sul_study_place.sul_study__features
+    - field.field.node.sul_study_place.sul_study__hours
     - field.field.node.sul_study_place.sul_study__image
     - field.field.node.sul_study_place.sul_study__libcal_id
     - field.field.node.sul_study_place.sul_study__room_donor_name
@@ -20,6 +21,7 @@ dependencies:
     - media_library
     - path
     - scheduler
+    - sul_helper
     - text
 id: node.sul_study_place.default
 targetEntityType: node
@@ -28,31 +30,31 @@ mode: default
 content:
   path:
     type: path
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 15
+    weight: 16
     region: content
     settings:
       display_label: true
@@ -63,7 +65,7 @@ content:
         field_label_overwrite: ''
   sul_study__additional_info:
     type: text_textfield
-    weight: 7
+    weight: 8
     region: content
     settings:
       size: 60
@@ -77,7 +79,7 @@ content:
     third_party_settings: {  }
   sul_study__capacity:
     type: cshs
-    weight: 8
+    weight: 9
     region: content
     settings:
       save_lineage: false
@@ -90,7 +92,7 @@ content:
     third_party_settings: {  }
   sul_study__features:
     type: cshs
-    weight: 6
+    weight: 7
     region: content
     settings:
       save_lineage: false
@@ -101,23 +103,30 @@ content:
       required_depth: 0
       none_label: '- Please select -'
     third_party_settings: {  }
+  sul_study__hours:
+    type: sul_branch_selector
+    weight: 3
+    region: content
+    settings:
+      only_primary: false
+    third_party_settings: {  }
   sul_study__image:
     type: media_library_widget
-    weight: 5
+    weight: 6
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   sul_study__libcal_id:
     type: number
-    weight: 9
+    weight: 10
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sul_study__room_donor_name:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
@@ -125,7 +134,7 @@ content:
     third_party_settings: {  }
   sul_study__room_number:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 60
@@ -154,7 +163,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
