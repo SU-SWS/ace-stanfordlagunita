@@ -117,7 +117,21 @@ class SulBranchSelectorWidget extends StringTextfieldWidget {
     $options = [];
     foreach ($hours_data['included'] as $item) {
       preg_match('/[\w-]+/', $item['id'], $branch);
-      $options[$primary_locations[strtolower($branch[0])]][$item['id']] = $item['attributes']['name'];
+
+      // Limit choices only to those that have a relationship in the data.
+      foreach ($hours_data['data'] as $library) {
+        if (strtolower($library['id']) != strtolower($branch[0])) {
+          continue;
+        }
+
+        foreach ($library['relationships']['locations']['data'] as $relationship) {
+          if ($relationship['id'] != $item['id']) {
+            continue;
+          }
+          $options[$primary_locations[strtolower($branch[0])]][$item['id']] = $item['attributes']['name'];
+          continue 3;
+        }
+      }
     }
     return $options;
   }

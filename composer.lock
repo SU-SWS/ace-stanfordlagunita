@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6dbd6aa9d75cc56e91d6717550e624bc",
+    "content-hash": "59d37d21073c5af23d5c6beb7fa70d5a",
     "packages": [
         {
             "name": "acquia/blt",
@@ -17860,12 +17860,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "85b2079c7abad89aa3de46e8a61f95dd30f1076b"
+                "reference": "a4cf2086e25c88fe4e9f6d442e12d4f656fc1534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/85b2079c7abad89aa3de46e8a61f95dd30f1076b",
-                "reference": "85b2079c7abad89aa3de46e8a61f95dd30f1076b",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/a4cf2086e25c88fe4e9f6d442e12d4f656fc1534",
+                "reference": "a4cf2086e25c88fe4e9f6d442e12d4f656fc1534",
                 "shasum": ""
             },
             "require": {
@@ -18038,7 +18038,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
             },
-            "time": "2025-02-28T22:05:44+00:00"
+            "time": "2025-03-03T18:08:13+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -18046,12 +18046,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "2bd3130955e7bd589fb75e37e44550392dfeaa43"
+                "reference": "445fe3a363dbc461e443fd2248fb0bfe4c81c45c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/2bd3130955e7bd589fb75e37e44550392dfeaa43",
-                "reference": "2bd3130955e7bd589fb75e37e44550392dfeaa43",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/445fe3a363dbc461e443fd2248fb0bfe4c81c45c",
+                "reference": "445fe3a363dbc461e443fd2248fb0bfe4c81c45c",
                 "shasum": ""
             },
             "require": {
@@ -18148,7 +18148,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2025-02-28T22:23:21+00:00"
+            "time": "2025-03-04T20:09:56+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
