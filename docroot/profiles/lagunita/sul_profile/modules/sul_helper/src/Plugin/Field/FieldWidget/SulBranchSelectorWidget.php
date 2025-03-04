@@ -117,7 +117,7 @@ class SulBranchSelectorWidget extends StringTextfieldWidget {
     $options = [];
     foreach ($hours_data['included'] as $item) {
       preg_match('/[\w-]+/', $item['id'], $branch);
-      $options[$primary_locations[strtolower($branch[0])]][] = $item['attributes']['name'];
+      $options[$primary_locations[strtolower($branch[0])]][$item['id']] = $item['attributes']['name'];
     }
     return $options;
   }
