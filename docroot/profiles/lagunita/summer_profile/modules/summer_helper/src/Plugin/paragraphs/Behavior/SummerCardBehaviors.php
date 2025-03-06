@@ -2,6 +2,8 @@
 
 namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\stanford_paragraph_card\Plugin\paragraphs\Behavior\CardBehavior;
@@ -91,6 +93,22 @@ class SummerCardBehaviors extends CardBehavior {
     ];
 
     return $element;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function view(array &$build, ParagraphInterface $paragraph, EntityViewDisplayInterface $display, $view_mode): void {
+    parent::view($build, $paragraph, $display, $view_mode);
+    $build['#attributes']['class'][] = Html::cleanCssIdentifier('sum-heading-size-' . $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_heading_size', 'normal'));
+    $build['#attributes']['class'][] = Html::cleanCssIdentifier('sum-variant-' . $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant', 'normal'));
+
+    if ($paragraph->getBehaviorSetting('su_card_styles', 'sum_card_bg_color_variant')) {
+      $build['#attributes']['class'][] = 'sum-remove-background';
+    }
+    if ($paragraph->getBehaviorSetting('su_card_styles', 'sum_card_variant') == 'pill') {
+      $build['#attributes']['class'][] = Html::cleanCssIdentifier('sum-background-' . $paragraph->getBehaviorSetting('su_card_styles', 'sum_card_pill_bg_color_variant', 'poppy-light'));
+    }
   }
 
 }

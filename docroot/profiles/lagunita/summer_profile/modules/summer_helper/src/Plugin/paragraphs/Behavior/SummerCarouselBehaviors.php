@@ -2,6 +2,7 @@
 
 namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -53,7 +54,11 @@ class SummerCarouselBehaviors extends ParagraphsBehaviorBase {
    * {@inheritdoc}
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
-    // Nothing to do.
+    // Simple changes for the edit form.
+    if ($paragraph->getBehaviorSetting('sum_carousel', 'sum_carousel_arc')) {
+      $build['#attributes']['class'][] = 'sum-arc-top';
+    }
+    $build['#attributes']['class'][] = Html::cleanCssIdentifier('sum-text-size-' . $paragraph->getBehaviorSetting('sum_carousel', 'sum_carousel_text_size', 'normal'));
   }
 
 }

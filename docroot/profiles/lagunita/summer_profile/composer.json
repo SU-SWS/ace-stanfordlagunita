@@ -14,8 +14,10 @@
     "require": {
         "drupal/double_field": "^4.2",
         "drupal/markdown": "^3.0",
+        "drupal/splide": "^2.0",
         "drupal/views_data_export": "^1.5",
-        "league/commonmark": "^1.0"
+        "league/commonmark": "^1.0",
+        "webtourismus/splidejs": "^4.1"
     },
     "config": {
         "sort-packages": true

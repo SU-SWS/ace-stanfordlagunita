@@ -2,9 +2,9 @@
 
 namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\paragraphs\Annotation\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -57,10 +57,14 @@ class SummerBannerBehaviors extends ParagraphsBehaviorBase {
   }
 
   /**
-   * Included to view the top banner.
+   * {@inheritDoc}
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // Simple changes for the edit form.
+    $build['#attributes']['class'][] = Html::cleanCssIdentifier('sum-background-' . $paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_overlay_bkg', 'poppy-light'));
+    if ($paragraph->getBehaviorSetting('sum_banner_behaviors', 'sum_banner_button')) {
+      $build['#attributes']['class'][] = 'sum-semi-circle-button';
+    }
   }
 
 }
