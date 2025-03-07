@@ -32,7 +32,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   sum_testimonial_bkg_img:
     type: media_image_formatter
@@ -40,7 +40,7 @@ content:
     settings:
       view_mode: default
       link: false
-      image_style: medium_square
+      image_style: responsive_large
       remove_alt: false
     third_party_settings:
       empty_fields:
@@ -50,7 +50,7 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 7
+    weight: 0
     region: content
   sum_testimonial_button:
     type: link
@@ -62,14 +62,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 8
     region: content
   sum_testimonial_descrip:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   sum_testimonial_heading:
     type: string
@@ -77,7 +77,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   sum_testimonial_hs_video:
     type: media_image_formatter
@@ -85,7 +85,7 @@ content:
     settings:
       view_mode: default
       link: false
-      image_style: medium_square
+      image_style: stanford_circle
       remove_alt: false
     third_party_settings:
       empty_fields:
@@ -95,7 +95,7 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 8
+    weight: 1
     region: content
   sum_testimonial_name:
     type: string
@@ -103,14 +103,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   sum_testimonial_type:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   sum_testimonial_univ:
     type: string
@@ -118,7 +118,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
 hidden:
   search_api_excerpt: true

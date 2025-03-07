@@ -111,6 +111,9 @@
             "docroot/core": [
                 "type:drupal-core"
             ],
+            "docroot/libraries/splide": [
+                "webtourismus/splidejs"
+            ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library"
             ],

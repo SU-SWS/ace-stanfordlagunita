@@ -2,6 +2,7 @@
 
 namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -46,10 +47,11 @@ class SummerAtAGlanceBehaviors extends ParagraphsBehaviorBase {
   }
 
   /**
-   * Included to view the top banner.
+   * {@inheritDoc}
    */
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode) {
     // Simple changes for the edit form.
+    $build['#attributes']['class'][] = Html::cleanCssIdentifier('sum-overlay-' . $paragraph->getBehaviorSetting('hero_pattern', 'overlay_position', 'left'));
   }
 
 }

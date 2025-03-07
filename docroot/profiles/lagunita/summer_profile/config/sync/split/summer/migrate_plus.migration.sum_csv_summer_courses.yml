@@ -206,12 +206,12 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: /([a-zA-Z])(\d)/
+      search: '/([a-zA-Z])(\d)/'
       replace: '$1 $2'
     -
       plugin: str_replace
       regex: true
-      search: /-.*/
+      search: '/-.*/'
       replace: ' '
     -
       plugin: str_replace
