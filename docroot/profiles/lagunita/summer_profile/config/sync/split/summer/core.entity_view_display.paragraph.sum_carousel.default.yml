@@ -36,7 +36,7 @@ content:
       tag: h2
       linked: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   sum_carousel_link:
     type: link
@@ -55,7 +55,7 @@ content:
     label: hidden
     settings:
       caption: {  }
-      optionset: default
+      optionset: sum_carousel
       class: ''
       image: ''
       link: ''
@@ -66,7 +66,7 @@ content:
       layout: ''
       view_mode: default
       cache: 0
-      admin_uri: '/admin/structure/paragraphs_type/sum_carousel/display?ajax_form=1&_wrapper_format=drupal_ajax&_wrapper_format=drupal_ajax'
+      admin_uri: '/admin/structure/paragraphs_type/sum_carousel/display?ajax_form=1&_wrapper_format=drupal_ajax'
       use_lb: false
       background: false
       box_caption: ''
@@ -124,7 +124,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

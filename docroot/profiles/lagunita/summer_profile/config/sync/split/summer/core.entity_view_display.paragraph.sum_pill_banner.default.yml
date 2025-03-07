@@ -72,7 +72,7 @@ content:
       tag: h2
       linked: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   sum_pill_banner_link:
     type: link
@@ -92,7 +92,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

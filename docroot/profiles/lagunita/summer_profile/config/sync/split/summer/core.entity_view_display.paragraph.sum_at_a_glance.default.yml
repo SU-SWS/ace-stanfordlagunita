@@ -11,6 +11,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - link
+    - stanford_fields
     - text
 id: paragraph.sum_at_a_glance.default
 targetEntityType: paragraph
@@ -31,13 +32,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   sum_at_a_glance_headline:
-    type: string
+    type: entity_title_heading
     label: hidden
     settings:
-      link_to_entity: false
+      tag: h2
+      linked: false
     third_party_settings: {  }
     weight: 0
     region: content
@@ -51,7 +53,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   search_api_excerpt: true
