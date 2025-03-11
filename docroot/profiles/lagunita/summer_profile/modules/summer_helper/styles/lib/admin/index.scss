@@ -2,11 +2,12 @@ $su-color-archway-dark: #2F2424;
 $su-color-spirited-dark: #C74632;
 $su-color-sprited: #E04F39;
 $su-color-spirited-light: #F4795B;
-$su-color-spirited-light:  #F4795B;
+$su-color-spirited-light-80:  #F4795B80;
 $su-color-poppy: #E98300;
 $su-color-poppy-light:#F9A44A;
-$su-color-poppy-light-80: #F9A44A;
+$su-color-poppy-light-80: #F9A44A80;
 $su-color-olive-light: #A6B168;
+$su-color-olive-light-80: #A6B16880;
 
 $su-color-grey: #f4f4f4;
 $su-color-white: #ffffff;
@@ -28,134 +29,159 @@ $su-color-white: #ffffff;
   max-width: 75%;
 }
 
-
-// Background colors.
-
 // Pill Card
-.sum-variant-pill.sum-background-spirited .su-card__contents {
-  background-color: $su-color-sprited;
+.sum-variant-pill {
+  &.sum-background-spirited {
+    .su-card__contents {
+      background-color: $su-color-sprited;
+    }
+  }
+  &.sum-background-olive {
+    .su-card__contents {
+      background-color: $su-color-olive-light;
+    }
+  }
+  &.sum-background-semitransparent-poppy {
+    .su-card__contents {
+      background-color: $su-color-poppy-light-80;
+    }
+  }
+  &.sum-background-poppy-light {
+    .su-card__contents {
+      background-color: $su-color-poppy-light;
+    }
+  }
+  &.sum-background-semitransparent-olive {
+    .su-card__contents {
+      background-color: $su-color-olive-light-80;
+    }
+  }
+  &.sum-background-semitransparent-spirited  {
+    .su-card__contents {
+      background-color: $su-color-spirited-light-80;
+    }
+  }
+
 }
 
 // Testimonial.
-.js-lpb-component {
-  &.paragraph-sum-testimonial {
-    display: grid;
-    grid-template-columns: 900px 1fr;
-    column-gap: 10px;
-    width: fit-content;
+.paragraph-sum-testimonial {
+  display: grid;
+  grid-template-columns: 900px 1fr;
+  column-gap: 10px;
+  width: fit-content;
 
-    // Grid setup
-    .field--name-sum-testimonial-bkg-img {
-      &.field--type-entity-reference {
-        grid-row: 1 / 9;
-        grid-column: 1 / 2;
-      }
-    }
+  // Grid setup
+  .field--name-sum-testimonial-bkg-img {
+    grid-row: 1 / 9;
+    grid-column: 1 / 2;
+  }
 
-    .field--name-sum-testimonial-hs-video {
-      grid-row: 2 / 3;
-      grid-column: 2 / 3;
-    }
+  .field--name-sum-testimonial-hs-video {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
 
-    .field--name-sum-testimonial-heading {
-      grid-row: 3 / 4;
-      grid-column: 2 / 3;
-    }
+  .field--name-sum-testimonial-heading {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
 
-    .field--name-sum-testimonial-descrip {
-      grid-row: 4 / 5;
-      grid-column: 2 / 3;
-    }
+  .field--name-sum-testimonial-descrip {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+  }
 
-    .field--name-sum-testimonial-name {
-      grid-row: 5 / 6;
-      grid-column: 2 / 3;
-    }
+  .field--name-sum-testimonial-name {
+    grid-row: 5 / 6;
+    grid-column: 2 / 3;
+  }
 
-    .field--name-sum-testimonial-type {
-      grid-row: 6 / 7;
-      grid-column: 2 / 3;
-    }
+  .field--name-sum-testimonial-type {
+    grid-row: 6 / 7;
+    grid-column: 2 / 3;
+  }
 
-    .field--name-sum-testimonial-affi {
-      grid-row-start: 7 / 8;
-      grid-column: 2 / 3;
-    }
+  .field--name-sum-testimonial-affi {
+    grid-row-start: 7 / 8;
+    grid-column: 2 / 3;
+  }
 
+  .field--name-sum-testimonial-univ {
+    grid-row-start: 8 / 9;
+    grid-column: 2 / 3;
+  }
+
+  &.sum-background-olive {
+    .field--name-sum-testimonial-hs-video,
+    .field--name-sum-testimonial-heading,
+    .field--name-sum-testimonial-descrip,
+    .field--name-sum-testimonial-name,
+    .field--name-sum-testimonial-type,
+    .field--name-sum-testimonial-affi,
     .field--name-sum-testimonial-univ {
-      grid-row-start: 8 / 9;
-      grid-column: 2 / 3;
+      background: $su-color-olive-light;
     }
-
-    &.sum-background-olive {
-      .field--name-sum-testimonial-hs-video,
-      .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip,
-      .field--name-sum-testimonial-name,
-      .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi,
-      .field--name-sum-testimonial-univ {
-        background: $su-color-olive-light;
-      }
+  }
+  &.sum-background-spirited {
+    .field--name-sum-testimonial-hs-video,
+    .field--name-sum-testimonial-heading,
+    .field--name-sum-testimonial-descrip,
+    .field--name-sum-testimonial-name,
+    .field--name-sum-testimonial-type,
+    .field--name-sum-testimonial-affi,
+    .field--name-sum-testimonial-univ {
+      background-color: $su-color-sprited;
     }
-    &.sum-background-spirited {
-      .field--name-sum-testimonial-hs-video,
-      .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip,
-      .field--name-sum-testimonial-name,
-      .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi,
-      .field--name-sum-testimonial-univ {
-        background-color: $su-color-sprited;
-      }
+  }
+  &.sum-background-poppy-light {
+    .field--name-sum-testimonial-hs-video,
+    .field--name-sum-testimonial-heading,
+    .field--name-sum-testimonial-descrip,
+    .field--name-sum-testimonial-name,
+    .field--name-sum-testimonial-type,
+    .field--name-sum-testimonial-affi,
+    .field--name-sum-testimonial-univ {
+      background-color: $su-color-poppy-light;
     }
-    &.sum-background-poppy-light {
-      .field--name-sum-testimonial-hs-video,
-      .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip,
-      .field--name-sum-testimonial-name,
-      .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi,
-      .field--name-sum-testimonial-univ {
-        background-color: $su-color-poppy-light;
-      }
+  }
+  &.sum-background-spirited-light {
+    .field--name-sum-testimonial-hs-video,
+    .field--name-sum-testimonial-heading,
+    .field--name-sum-testimonial-descrip,
+    .field--name-sum-testimonial-name,
+    .field--name-sum-testimonial-type,
+    .field--name-sum-testimonial-affi,
+    .field--name-sum-testimonial-univ {
+      background-color: $su-color-spirited-light;
     }
-    &.sum-background-spirited-light {
-      .field--name-sum-testimonial-hs-video,
-      .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip,
-      .field--name-sum-testimonial-name,
-      .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi,
-      .field--name-sum-testimonial-univ {
-        background-color: $su-color-spirited-light;
-      }
+  }
+  &.sum-background-spirited-dark {
+    .field--name-sum-testimonial-hs-video,
+    .field--name-sum-testimonial-heading,
+    .field--name-sum-testimonial-descrip,
+    .field--name-sum-testimonial-name,
+    .field--name-sum-testimonial-type,
+    .field--name-sum-testimonial-affi,
+    .field--name-sum-testimonial-univ {
+      background-color: $su-color-spirited-dark;
     }
-    &.sum-background-spirited-dark {
-      .field--name-sum-testimonial-hs-video,
-      .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip,
-      .field--name-sum-testimonial-name,
-      .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi,
-      .field--name-sum-testimonial-univ {
-        background-color: $su-color-spirited-dark;
-      }
-    }
-    &.sum-background-white {
-      .field--name-sum-testimonial-hs-video,
-      .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip,
-      .field--name-sum-testimonial-name,
-      .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi,
-      .field--name-sum-testimonial-univ {
-        background-color: $su-color-white;
-      }
+  }
+  &.sum-background-white {
+    .field--name-sum-testimonial-hs-video,
+    .field--name-sum-testimonial-heading,
+    .field--name-sum-testimonial-descrip,
+    .field--name-sum-testimonial-name,
+    .field--name-sum-testimonial-type,
+    .field--name-sum-testimonial-affi,
+    .field--name-sum-testimonial-univ {
+      background-color: $su-color-white;
     }
   }
 }
 
+// Card Variants. Default is gray and when the "No Card Background"
+// is checked, the background is white.
 .sum-variant-normal {
   .su-card {
     background-color: $su-color-grey;
@@ -168,12 +194,36 @@ $su-color-white: #ffffff;
   }
 }
 
-.js-lpb-component {
-  .sum-background-spirited {
-    .ds-entity--stanford-banner {
-      .su-card__contents {
-        background-color: $su-color-sprited;
-      }
+// Banner
+.sum-background-spirited {
+  &.ds-entity--stanford-banner {
+    .su-card__contents {
+      background-color: $su-color-sprited;
     }
+  }
+}
+
+// Top Banner
+.sum-background-olive {
+  &.paragraph-sum-top-banner {
+    background-color: $su-color-olive-light;
+  }
+}
+
+.sum-background-poppy-light {
+  &.paragraph-sum-top-banner {
+    background-color: $su-color-poppy-light;
+  }
+}
+
+.sum-background-spirited-light {
+  &.paragraph-sum-top-banner {
+    background-color: $su-color-spirited-light;
+  }
+}
+
+.sum-background-spirited-dark {
+  &.paragraph-sum-top-banner {
+    background-color: $su-color-spirited-dark;
   }
 }
