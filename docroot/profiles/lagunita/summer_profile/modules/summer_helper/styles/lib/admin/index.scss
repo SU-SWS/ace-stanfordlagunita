@@ -82,13 +82,19 @@ $su-color-white: #ffffff;
       grid-column: 2 / 3;
     }
 
+    .field--name-sum-testimonial-univ {
+      grid-row-start: 8 / 9;
+      grid-column: 2 / 3;
+    }
+
     &.sum-background-olive {
       .field--name-sum-testimonial-hs-video,
       .field--name-sum-testimonial-heading,
       .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi {
+      .field--name-sum-testimonial-affi,
+      .field--name-sum-testimonial-univ {
         background: $su-color-olive-light;
       }
     }
@@ -98,7 +104,8 @@ $su-color-white: #ffffff;
       .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi {
+      .field--name-sum-testimonial-affi,
+      .field--name-sum-testimonial-univ {
         background-color: $su-color-sprited;
       }
     }
@@ -108,7 +115,8 @@ $su-color-white: #ffffff;
       .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi {
+      .field--name-sum-testimonial-affi,
+      .field--name-sum-testimonial-univ {
         background-color: $su-color-poppy-light;
       }
     }
@@ -118,7 +126,8 @@ $su-color-white: #ffffff;
       .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi {
+      .field--name-sum-testimonial-affi,
+      .field--name-sum-testimonial-univ {
         background-color: $su-color-spirited-light;
       }
     }
@@ -128,7 +137,8 @@ $su-color-white: #ffffff;
       .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi {
+      .field--name-sum-testimonial-affi,
+      .field--name-sum-testimonial-univ {
         background-color: $su-color-spirited-dark;
       }
     }
@@ -138,7 +148,8 @@ $su-color-white: #ffffff;
       .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
-      .field--name-sum-testimonial-affi {
+      .field--name-sum-testimonial-affi,
+      .field--name-sum-testimonial-univ {
         background-color: $su-color-white;
       }
     }
