@@ -39,34 +39,107 @@ $su-color-white: #ffffff;
 // Testimonial.
 .js-lpb-component {
   &.paragraph-sum-testimonial {
+    display: grid;
+    grid-template-columns: 900px 1fr;
+    column-gap: 10px;
+    width: fit-content;
 
+    // Grid setup
     .field--name-sum-testimonial-bkg-img {
       &.field--type-entity-reference {
-        float: right;
-        width: 50%;
+        grid-row: 1 / 9;
+        grid-column: 1 / 2;
       }
+    }
+
+    .field--name-sum-testimonial-hs-video {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+    }
+
+    .field--name-sum-testimonial-heading {
+      grid-row: 3 / 4;
+      grid-column: 2 / 3;
+    }
+
+    .field--name-sum-testimonial-descrip {
+      grid-row: 4 / 5;
+      grid-column: 2 / 3;
+    }
+
+    .field--name-sum-testimonial-name {
+      grid-row: 5 / 6;
+      grid-column: 2 / 3;
+    }
+
+    .field--name-sum-testimonial-type {
+      grid-row: 6 / 7;
+      grid-column: 2 / 3;
+    }
+
+    .field--name-sum-testimonial-affi {
+      grid-row-start: 7 / 8;
+      grid-column: 2 / 3;
     }
 
     &.sum-background-olive {
       .field--name-sum-testimonial-hs-video,
       .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip ,
+      .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
       .field--name-sum-testimonial-affi {
         background: $su-color-olive-light;
-        display: flex;
       }
     }
     &.sum-background-spirited {
       .field--name-sum-testimonial-hs-video,
       .field--name-sum-testimonial-heading,
-      .field--name-sum-testimonial-descrip ,
+      .field--name-sum-testimonial-descrip,
       .field--name-sum-testimonial-name,
       .field--name-sum-testimonial-type,
       .field--name-sum-testimonial-affi {
         background-color: $su-color-sprited;
-        display: flex;
+      }
+    }
+    &.sum-background-poppy-light {
+      .field--name-sum-testimonial-hs-video,
+      .field--name-sum-testimonial-heading,
+      .field--name-sum-testimonial-descrip,
+      .field--name-sum-testimonial-name,
+      .field--name-sum-testimonial-type,
+      .field--name-sum-testimonial-affi {
+        background-color: $su-color-poppy-light;
+      }
+    }
+    &.sum-background-spirited-light {
+      .field--name-sum-testimonial-hs-video,
+      .field--name-sum-testimonial-heading,
+      .field--name-sum-testimonial-descrip,
+      .field--name-sum-testimonial-name,
+      .field--name-sum-testimonial-type,
+      .field--name-sum-testimonial-affi {
+        background-color: $su-color-spirited-light;
+      }
+    }
+    &.sum-background-spirited-dark {
+      .field--name-sum-testimonial-hs-video,
+      .field--name-sum-testimonial-heading,
+      .field--name-sum-testimonial-descrip,
+      .field--name-sum-testimonial-name,
+      .field--name-sum-testimonial-type,
+      .field--name-sum-testimonial-affi {
+        background-color: $su-color-spirited-dark;
+      }
+    }
+    &.sum-background-white {
+      .field--name-sum-testimonial-hs-video,
+      .field--name-sum-testimonial-heading,
+      .field--name-sum-testimonial-descrip,
+      .field--name-sum-testimonial-name,
+      .field--name-sum-testimonial-type,
+      .field--name-sum-testimonial-affi {
+        background-color: $su-color-white;
       }
     }
   }
