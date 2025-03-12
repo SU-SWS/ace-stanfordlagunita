@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9401fbd82f7065c940c9c3459ba80257",
+    "content-hash": "90ce086dde8ffbfed35372ec95146b76",
     "packages": [
         {
             "name": "acquia/blt",
@@ -17980,16 +17980,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "11.x-dev",
+            "version": "11.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "e803adabdbca1f44b64006b395db6cfbd07cce85"
+                "reference": "ffbbfe00b6202d43981665278dcc2a328594606e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/e803adabdbca1f44b64006b395db6cfbd07cce85",
-                "reference": "e803adabdbca1f44b64006b395db6cfbd07cce85",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/ffbbfe00b6202d43981665278dcc2a328594606e",
+                "reference": "ffbbfe00b6202d43981665278dcc2a328594606e",
                 "shasum": ""
             },
             "require": {
@@ -18125,7 +18125,6 @@
                 "su-sws/stanford_profile_helper": "^9.8",
                 "su-sws/stanford_samlauth": "^1.0"
             },
-            "default-branch": true,
             "type": "drupal-custom-profile",
             "extra": {
                 "drush": {
@@ -18160,9 +18159,9 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.6.1"
             },
-            "time": "2025-03-06T18:28:18+00:00"
+            "time": "2025-03-10T21:33:16+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -28692,7 +28691,6 @@
         "drupal/graphql_compose_fragments-graphql_compose_fragments": 10,
         "drupal/search_api_exclude_entity": 10,
         "su-sws/blt-sws": 20,
-        "su-sws/stanford_profile": 20,
         "su-sws/stanford_profile_helper": 20
     },
     "prefer-stable": true,
