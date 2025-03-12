@@ -4,7 +4,7 @@ $su-color-sprited: #e04f39;
 $su-color-spirited-light: #f4795b;
 $su-color-spirited-light-80:  #f4795b80;
 $su-color-poppy: #e98300;
-$su-color-poppy-light:#f9a44a;
+$su-color-poppy-light: #f9a44a;
 $su-color-poppy-light-80: #f9a44a80;
 $su-color-olive-light: #a6b168;
 $su-color-olive-light-80: #a6b16880;
@@ -270,6 +270,7 @@ $su-color-white: #ffffff;
     background-color: $su-color-grey;
     border-radius: 25px;
   }
+
   &.sum-remove-background {
     .su-card {
       background-color: $su-color-white;
