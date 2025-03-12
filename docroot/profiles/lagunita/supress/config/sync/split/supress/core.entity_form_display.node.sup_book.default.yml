@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copublisher_name
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
+    - field.field.node.sup_book.sup_book_epub_format
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_isbn_13_alt
@@ -23,6 +24,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
+    - field.field.node.sup_book.sup_book_pdf_format
     - field.field.node.sup_book.sup_book_price_data
     - field.field.node.sup_book.sup_book_print_desk_copies
     - field.field.node.sup_book.sup_book_pub_date_cloth
@@ -105,7 +107,8 @@ third_party_settings:
         - sup_book_price_data
         - sup_book_no_cart
         - sup_book_sales_rank
-        - group_web_coupon_codes
+        - sup_book_epub_format
+        - sup_book_pdf_format
       label: Prices
       region: content
       parent_name: ''
@@ -228,6 +231,7 @@ content:
         credentials: Credentials
       widget_layout: stacked
       show_component_required_marker: false
+      flag_required_input: false
       credentials_inline: false
       size:
         title: 6
@@ -315,6 +319,13 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  sup_book_epub_format:
+    type: boolean_checkbox
+    weight: 34
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sup_book_image:
     type: media_library_widget
     weight: 3
@@ -392,6 +403,13 @@ content:
     region: content
     settings:
       placeholder: ''
+    third_party_settings: {  }
+  sup_book_pdf_format:
+    type: boolean_checkbox
+    weight: 35
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sup_book_price_cloth:
     type: number

@@ -59,6 +59,10 @@ source:
       name: cart_button
       label: cart_button
       selector: fieldData/cart_button
+    -
+      name: price_digital
+      label: price_digital
+      selector: fieldData/price_digital
   ids:
     work_id_number:
       type: integer
@@ -109,6 +113,7 @@ process:
   sup_paper_price: price_paper
   sup_paper_discount: paper_sale_percent
   sup_paper_sale: paper_sale_price
+  sup_digital_price: price_digital
   sup_preorder:
     -
       plugin: skip_on_empty
