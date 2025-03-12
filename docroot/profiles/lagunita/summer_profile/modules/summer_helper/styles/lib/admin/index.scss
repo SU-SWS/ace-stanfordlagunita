@@ -1,13 +1,13 @@
-$su-color-archway-dark: #2F2424;
-$su-color-spirited-dark: #C74632;
-$su-color-sprited: #E04F39;
-$su-color-spirited-light: #F4795B;
-$su-color-spirited-light-80:  #F4795B80;
-$su-color-poppy: #E98300;
-$su-color-poppy-light:#F9A44A;
-$su-color-poppy-light-80: #F9A44A80;
-$su-color-olive-light: #A6B168;
-$su-color-olive-light-80: #A6B16880;
+$su-color-archway-dark: #2f2424;
+$su-color-spirited-dark: #c74632;
+$su-color-sprited: #e04f39;
+$su-color-spirited-light: #f4795b;
+$su-color-spirited-light-80:  #f4795b80;
+$su-color-poppy: #e98300;
+$su-color-poppy-light:#f9a44a;
+$su-color-poppy-light-80: #f9a44a80;
+$su-color-olive-light: #a6b168;
+$su-color-olive-light-80: #a6b16880;
 
 $su-color-grey: #f4f4f4;
 $su-color-white: #ffffff;
@@ -29,39 +29,110 @@ $su-color-white: #ffffff;
   max-width: 75%;
 }
 
-// Pill Card
-.sum-variant-pill {
-  &.sum-background-spirited {
-    .su-card__contents {
-      background-color: $su-color-sprited;
-    }
-  }
-  &.sum-background-olive {
-    .su-card__contents {
-      background-color: $su-color-olive-light;
-    }
-  }
-  &.sum-background-semitransparent-poppy {
-    .su-card__contents {
-      background-color: $su-color-poppy-light-80;
-    }
-  }
+// Pill Banner header background
+.paragraph-sum-pill-banner {
   &.sum-background-poppy-light {
-    .su-card__contents {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
       background-color: $su-color-poppy-light;
     }
   }
-  &.sum-background-semitransparent-olive {
-    .su-card__contents {
-      background-color: $su-color-olive-light-80;
-    }
-  }
-  &.sum-background-semitransparent-spirited  {
-    .su-card__contents {
-      background-color: $su-color-spirited-light-80;
+
+  &.sum-background-olive {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-olive-light;
     }
   }
 
+  &.sum-background-spirited {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-spirited-light;
+    }
+  }
+
+  &.sum-background-spirited-dark {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-spirited-dark;
+    }
+  }
+
+  &.sum-background-white {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-white;
+    }
+  }
+}
+
+
+// Pill Card
+.sum-variant-pill,
+.paragraph-sum-pill-banner {
+  &.sum-background-spirited {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-sprited;
+      }
+    }
+  }
+
+  &.sum-background-olive {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-olive-light;
+      }
+    }
+  }
+
+  &.sum-background-semitransparent-poppy {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-poppy-light-80;
+      }
+    }
+  }
+
+  &.sum-background-poppy-light {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-poppy-light;
+      }
+    }
+  }
+
+  &.sum-background-semitransparent-olive {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-olive-light-80;
+      }
+    }
+  }
+
+  &.sum-background-semitransparent-spirited  {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-spirited-light-80;
+      }
+    }
+  }
 }
 
 // Testimonial.
@@ -119,10 +190,12 @@ $su-color-white: #ffffff;
     .field--name-sum-testimonial-name,
     .field--name-sum-testimonial-type,
     .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ {
+    .field--name-sum-testimonial-univ,
+    .field--name-sum-testimonial-button {
       background: $su-color-olive-light;
     }
   }
+
   &.sum-background-spirited {
     .field--name-sum-testimonial-hs-video,
     .field--name-sum-testimonial-heading,
@@ -130,10 +203,12 @@ $su-color-white: #ffffff;
     .field--name-sum-testimonial-name,
     .field--name-sum-testimonial-type,
     .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ {
+    .field--name-sum-testimonial-univ,
+    .field--name-sum-testimonial-button {
       background-color: $su-color-sprited;
     }
   }
+
   &.sum-background-poppy-light {
     .field--name-sum-testimonial-hs-video,
     .field--name-sum-testimonial-heading,
@@ -141,10 +216,12 @@ $su-color-white: #ffffff;
     .field--name-sum-testimonial-name,
     .field--name-sum-testimonial-type,
     .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ {
+    .field--name-sum-testimonial-univ,
+    .field--name-sum-testimonial-button {
       background-color: $su-color-poppy-light;
     }
   }
+
   &.sum-background-spirited-light {
     .field--name-sum-testimonial-hs-video,
     .field--name-sum-testimonial-heading,
@@ -152,10 +229,12 @@ $su-color-white: #ffffff;
     .field--name-sum-testimonial-name,
     .field--name-sum-testimonial-type,
     .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ {
+    .field--name-sum-testimonial-univ,
+    .field--name-sum-testimonial-button {
       background-color: $su-color-spirited-light;
     }
   }
+
   &.sum-background-spirited-dark {
     .field--name-sum-testimonial-hs-video,
     .field--name-sum-testimonial-heading,
@@ -163,10 +242,13 @@ $su-color-white: #ffffff;
     .field--name-sum-testimonial-name,
     .field--name-sum-testimonial-type,
     .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ {
+    .field--name-sum-testimonial-univ,
+    .field--name-sum-testimonial-button {
       background-color: $su-color-spirited-dark;
+      color: $su-color-white;
     }
   }
+
   &.sum-background-white {
     .field--name-sum-testimonial-hs-video,
     .field--name-sum-testimonial-heading,
@@ -174,7 +256,8 @@ $su-color-white: #ffffff;
     .field--name-sum-testimonial-name,
     .field--name-sum-testimonial-type,
     .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ {
+    .field--name-sum-testimonial-univ,
+    .field--name-sum-testimonial-button {
       background-color: $su-color-white;
     }
   }
@@ -195,10 +278,35 @@ $su-color-white: #ffffff;
 }
 
 // Banner
-.sum-background-spirited {
-  &.ds-entity--stanford-banner {
+.ds-entity--stanford-banner {
+  &.sum-background-spirited {
     .su-card__contents {
       background-color: $su-color-sprited;
+    }
+  }
+
+  &.sum-background-olive {
+    .su-card__contents {
+      background-color: $su-color-olive-light;
+    }
+  }
+
+  &.sum-background-poppy-light {
+    .su-card__contents {
+      background-color: $su-color-poppy-light;
+    }
+  }
+
+  &.sum-background-spirited-light {
+    .su-card__contents {
+      background-color: $su-color-spirited-light;
+    }
+  }
+
+  &.sum-background-spirited-dark {
+    .su-card__contents {
+      background-color: $su-color-spirited-dark;
+      color: $su-color-white;
     }
   }
 }
@@ -225,5 +333,7 @@ $su-color-white: #ffffff;
 .sum-background-spirited-dark {
   &.paragraph-sum-top-banner {
     background-color: $su-color-spirited-dark;
+    color: $su-color-white;
   }
 }
+
