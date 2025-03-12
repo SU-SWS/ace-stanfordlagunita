@@ -6,7 +6,6 @@
  */
 
 use Drupal\Component\Utility\Html;
-use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
@@ -361,7 +360,7 @@ function _supress_get_ebook_retailers() {
  * Perform a search on the filemaker API and return all records.
  *
  * @param string $endpoint
- *   API endpoint, should end in `_find`
+ *   API endpoint, should end in `_find`.
  * @param array $body
  *   Keyed array of search parameters.
  * @param int $limit
