@@ -1,5 +1,14 @@
 # Lagunita
 
+2.8.0
+--------------------------------------------------------------------------------
+_Release Date: 2025-03-12_
+
+- SUL23-723: added Additional Info field to places to study
+- SUL23-721: Added sticky at the top of lists option to places to study
+- SUL23-722: Allow selection of location hour on study place content
+- SUM: Add classes to paragraph types to support authoring styles
+
 2.7.1
 --------------------------------------------------------------------------------
 _Release Date: 2025-02-10_
