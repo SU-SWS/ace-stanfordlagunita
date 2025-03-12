@@ -338,3 +338,47 @@ $su-color-white: #ffffff;
   }
 }
 
+// Arc Banner
+.paragraph-sum-arc-banner {
+  &.paragraph--type--sum-arc-banner {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .field--name-sum-arc-description {
+      order: -1;
+      z-index: 3;
+    }
+
+    .field--name-sum-arc-superhead {
+      z-index: 2;
+    }
+
+    #edit-su-page-banner--description {
+      z-index: 4;
+    }
+
+    .field--name-field-media-image {
+      position: relative;
+      background: $su-color-white;
+      width: 100%;
+      height: 400px;
+      z-index: 1;
+
+      &:after {
+        top: 315px;
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        background: $su-color-white;
+        width: 100%;
+        height: 170px;
+      }
+
+      img {
+        height: inherit;
+        width: inherit;
+      }
+    }
+  }
+}
