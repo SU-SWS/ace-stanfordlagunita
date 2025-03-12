@@ -296,11 +296,17 @@ function supress_helper_migrate_sup_import_books_prepare_row(Row $row, MigrateSo
   $row->setSourceProperty('ebook_retailers', array_values($retailers));
 
   $book_formats = _supress_ebook_formats();
-  $row->setSourceProperty('epub', $book_formats[$id_map['sourceid1']]['epub'] ?? FALSE);
-  $row->setSourceProperty('pdf', $book_formats[$id_map['sourceid1']]['pdf'] ?? FALSE);
+  $row->setSourceProperty('epub', $book_formats[$id_map['sourceid1']]['epub'] ?? NULL);
+  $row->setSourceProperty('pdf', $book_formats[$id_map['sourceid1']]['pdf'] ?? NULL);
 }
 
-function _supress_ebook_formats() {
+/**
+ * Get a list of all books with epub or pdf formats.
+ *
+ * @return array
+ *   Keyed array of work id and it's respective formats.
+ */
+function _supress_ebook_formats(): array {
   $cache = \Drupal::cache();
   if ($cached_item = $cache->get('filemaker_ebook_formats')) {
     return $cached_item->data;
@@ -351,7 +357,22 @@ function _supress_get_ebook_retailers() {
   return $retailers;
 }
 
-function _supress_search_filemaker(string $endpoint, array $body, int $limit = 1000) {
+/**
+ * Perform a search on the filemaker API and return all records.
+ *
+ * @param string $endpoint
+ *   API endpoint, should end in `_find`
+ * @param array $body
+ *   Keyed array of search parameters.
+ * @param int $limit
+ *   Page limit per request.
+ *
+ * @return array
+ *   Array of all records returned in the search.
+ *
+ * @see https://help.claris.com/en/data-api-guide/content/perform-find-request.html
+ */
+function _supress_search_filemaker(string $endpoint, array $body, int $limit = 1000): array {
   $token = _supress_helper_get_api_token();
   if (!$token) {
     return [];
