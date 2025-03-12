@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90ce086dde8ffbfed35372ec95146b76",
+    "content-hash": "9401fbd82f7065c940c9c3459ba80257",
     "packages": [
         {
             "name": "acquia/blt",
@@ -17980,7 +17980,7 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "11.6.1",
+            "version": "11.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
@@ -18125,6 +18125,7 @@
                 "su-sws/stanford_profile_helper": "^9.8",
                 "su-sws/stanford_samlauth": "^1.0"
             },
+            "default-branch": true,
             "type": "drupal-custom-profile",
             "extra": {
                 "drush": {
@@ -28691,6 +28692,7 @@
         "drupal/graphql_compose_fragments-graphql_compose_fragments": 10,
         "drupal/search_api_exclude_entity": 10,
         "su-sws/blt-sws": 20,
+        "su-sws/stanford_profile": 20,
         "su-sws/stanford_profile_helper": 20
     },
     "prefer-stable": true,
