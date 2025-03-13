@@ -31,6 +31,32 @@ $su-color-white: #ffffff;
 
 // Pill Banner header background
 .paragraph-sum-pill-banner {
+  display: flex;
+  flex-direction: column;
+
+  .field {
+    &.field--name-sum-pill-banner-bkgd {
+      order: 5;
+      position: relative;
+      margin-top: -500px;
+      align-self: center;
+      z-index: 1;
+      max-height: 600px;
+      overflow-y: hidden;
+
+      img {
+        height: unset;
+      }
+    }
+  }
+
+  .field--name-sum-pill-banner-cards {
+    &.grid-container-3 {
+      z-index: 3;
+    }
+  }
+
+  // Colors
   &.sum-background-poppy-light {
     .field--name-sum-pill-banner-bkgd,
     .field--name-sum-pill-banner-suphead,
@@ -81,7 +107,6 @@ $su-color-white: #ffffff;
     }
   }
 }
-
 
 // Pill Card
 .sum-variant-pill,
@@ -377,7 +402,6 @@ $su-color-white: #ffffff;
 
       img {
         height: inherit;
-        width: inherit;
       }
     }
   }

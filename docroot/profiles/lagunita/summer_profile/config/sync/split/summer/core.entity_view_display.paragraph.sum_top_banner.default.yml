@@ -51,7 +51,7 @@ content:
     settings:
       view_mode: default
       link: false
-      image_style: medium_square
+      image_style: responsive_large
       remove_alt: false
     third_party_settings:
       empty_fields:
