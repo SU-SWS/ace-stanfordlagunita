@@ -121,10 +121,29 @@ $su-color-white: #ffffff;
 // Pill Card
 .sum-variant-pill,
 .paragraph-sum-pill-banner {
+  .su-card {
+    border: transparent;
+    background: transparent;
+    box-shadow: none;
+
+      img {
+        border-top-left-radius: 80%;
+        border-top-right-radius: 80%;
+      }
+   }
+
+  // Pill banner but normal cards.
+  .sum-variant-normal img {
+    border-radius: unset;
+  }
+
   &.sum-background-spirited {
     > .su-card {
       .su-card__contents {
         background-color: $su-color-sprited;
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+        // border-radius: 30%;
       }
     }
   }
@@ -133,6 +152,9 @@ $su-color-white: #ffffff;
     > .su-card {
       .su-card__contents {
         background-color: $su-color-olive-light;
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+        // border-radius: 30%;
       }
     }
   }
@@ -141,6 +163,9 @@ $su-color-white: #ffffff;
     > .su-card {
       .su-card__contents {
         background-color: $su-color-poppy-light-80;
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+        // border-radius: 30%;
       }
     }
   }
@@ -149,6 +174,9 @@ $su-color-white: #ffffff;
     > .su-card {
       .su-card__contents {
         background-color: $su-color-poppy-light;
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+        // border-radius: 30%;
       }
     }
   }
@@ -157,6 +185,9 @@ $su-color-white: #ffffff;
     > .su-card {
       .su-card__contents {
         background-color: $su-color-olive-light-80;
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+        // border-radius: 30%;
       }
     }
   }
@@ -165,6 +196,9 @@ $su-color-white: #ffffff;
     > .su-card {
       .su-card__contents {
         background-color: $su-color-spirited-light-80;
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+        // border-radius: 30%;
       }
     }
   }
