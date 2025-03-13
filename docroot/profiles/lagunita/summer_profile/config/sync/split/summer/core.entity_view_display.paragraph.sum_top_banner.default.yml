@@ -51,7 +51,7 @@ content:
     settings:
       view_mode: default
       link: false
-      image_style: responsive_large
+      image_style: responsive_medium
       remove_alt: false
     third_party_settings:
       empty_fields:
@@ -61,7 +61,7 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 5
+    weight: 0
     region: content
   sum_top_banner_link:
     type: link

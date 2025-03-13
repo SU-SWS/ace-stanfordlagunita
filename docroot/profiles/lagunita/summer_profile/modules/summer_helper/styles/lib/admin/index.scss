@@ -24,9 +24,11 @@ $su-color-white: #ffffff;
   grid-gap: 20px;
 }
 
-// Carousel narrower width
-.splide {
-  max-width: 75%;
+// Editing form too wide using 1fr.
+.node-form {
+  > .layout-form {
+    grid-template-columns: 99%;
+  }
 }
 
 // Pill Banner header background
@@ -48,6 +50,14 @@ $su-color-white: #ffffff;
         height: unset;
       }
     }
+  }
+
+  .field--name-sum-pill-banner-descrip {
+    z-index: 5;
+  }
+
+  .field.field--name-sum-pill-banner-link {
+    z-index: 6;
   }
 
   .field--name-sum-pill-banner-cards {
@@ -174,37 +184,37 @@ $su-color-white: #ffffff;
   }
 
   .field--name-sum-testimonial-hs-video {
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     grid-column: 2 / 3;
   }
 
   .field--name-sum-testimonial-heading {
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     grid-column: 2 / 3;
   }
 
   .field--name-sum-testimonial-descrip {
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
     grid-column: 2 / 3;
   }
 
   .field--name-sum-testimonial-name {
-    grid-row: 5 / 6;
+    grid-row: 4 / 5;
     grid-column: 2 / 3;
   }
 
   .field--name-sum-testimonial-type {
-    grid-row: 6 / 7;
+    grid-row: 5 / 6;
     grid-column: 2 / 3;
   }
 
   .field--name-sum-testimonial-affi {
-    grid-row-start: 7 / 8;
+    grid-row: 6 / 7;
     grid-column: 2 / 3;
   }
 
   .field--name-sum-testimonial-univ {
-    grid-row-start: 8 / 9;
+    grid-row: 7 / 8;
     grid-column: 2 / 3;
   }
 
@@ -338,6 +348,11 @@ $su-color-white: #ffffff;
 }
 
 // Top Banner
+.paragraph-sum-top-banner {
+  display: flex;
+  flex-direction: column;
+}
+
 .sum-background-olive {
   &.paragraph-sum-top-banner {
     background-color: $su-color-olive-light;
