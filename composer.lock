@@ -17984,12 +17984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "e803adabdbca1f44b64006b395db6cfbd07cce85"
+                "reference": "ffbbfe00b6202d43981665278dcc2a328594606e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/e803adabdbca1f44b64006b395db6cfbd07cce85",
-                "reference": "e803adabdbca1f44b64006b395db6cfbd07cce85",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/ffbbfe00b6202d43981665278dcc2a328594606e",
+                "reference": "ffbbfe00b6202d43981665278dcc2a328594606e",
                 "shasum": ""
             },
             "require": {
@@ -18160,9 +18160,9 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.x"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/11.6.1"
             },
-            "time": "2025-03-06T18:28:18+00:00"
+            "time": "2025-03-10T21:33:16+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
