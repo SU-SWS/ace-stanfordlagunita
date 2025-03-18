@@ -56,7 +56,7 @@ $su-color-white: #ffffff;
     z-index: 5;
   }
 
-  .field.field--name-sum-pill-banner-link {
+  .field--name-sum-pill-banner-link {
     z-index: 6;
   }
 
@@ -127,15 +127,17 @@ $su-color-white: #ffffff;
     background: transparent;
     box-shadow: none;
 
-      img {
-        border-top-left-radius: 220px;
-        border-top-right-radius: 220px;
-      }
+    img {
+      border-top-left-radius: 220px;
+      border-top-right-radius: 220px;
+    }
    }
 
   // Pill banner but normal cards.
-  .sum-variant-normal img {
-    border-radius: unset;
+  .sum-variant-normal {
+    img {
+      border-radius: unset;
+    }
   }
 
   > .su-card {
@@ -148,24 +150,22 @@ $su-color-white: #ffffff;
 
 .sum-variant-pill {
   > .su-card {
-    .su-card__contents {
-      border-bottom-right-radius: 30%;
-      border-bottom-left-radius: 30%;
-    }
+      .su-card__contents {
+        border-bottom-right-radius: 30%;
+        border-bottom-left-radius: 30%;
+      }
   }
-
 }
 
 // Pill Card
 .sum-variant-pill,
 .paragraph-sum-pill-banner {
-
     &.sum-background-spirited {
-    > .su-card {
-      .su-card__contents {
-        background-color: $su-color-sprited;
+      > .su-card {
+        .su-card__contents {
+          background-color: $su-color-sprited;
+        }
       }
-    }
   }
 
   &.sum-background-olive {
@@ -505,7 +505,7 @@ $su-color-white: #ffffff;
 
 // Arc Banner
 // z-index so text is on top of shape to create cut out.
-#edit-su-page-banner--description {
+.fieldset__description {
   position: relative;
   z-index: 4;
 }
@@ -531,7 +531,7 @@ $su-color-white: #ffffff;
       height: 400px;
       z-index: 1;
 
-      &:after {
+      &::after {
         top: 315px;
         display: block;
         position: absolute;
