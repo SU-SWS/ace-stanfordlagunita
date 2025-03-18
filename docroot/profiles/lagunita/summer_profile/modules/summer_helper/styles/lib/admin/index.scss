@@ -128,8 +128,8 @@ $su-color-white: #ffffff;
     box-shadow: none;
 
       img {
-        border-top-left-radius: 80%;
-        border-top-right-radius: 80%;
+        border-top-left-radius: 220px;
+        border-top-right-radius: 220px;
       }
    }
 
@@ -212,7 +212,7 @@ $su-color-white: #ffffff;
 // Testimonial.
 .paragraph-sum-testimonial {
   display: grid;
-  grid-template-columns: 900px 1fr;
+  grid-template-columns: 50% 50%;
   column-gap: 10px;
   width: fit-content;
 
