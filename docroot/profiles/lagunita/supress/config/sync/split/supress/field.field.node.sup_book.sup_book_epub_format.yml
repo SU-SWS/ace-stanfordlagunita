@@ -1,0 +1,21 @@
+uuid: 3ba20ead-25e4-42d5-bf40-7ee99d6d2efc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_epub_format
+    - node.type.sup_book
+id: node.sup_book.sup_book_epub_format
+field_name: sup_book_epub_format
+entity_type: node
+bundle: sup_book
+label: Epub
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

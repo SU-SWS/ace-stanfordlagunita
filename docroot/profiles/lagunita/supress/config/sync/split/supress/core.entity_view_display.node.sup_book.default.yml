@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copublisher_name
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
+    - field.field.node.sup_book.sup_book_epub_format
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_isbn_13_alt
@@ -23,6 +24,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
+    - field.field.node.sup_book.sup_book_pdf_format
     - field.field.node.sup_book.sup_book_price_data
     - field.field.node.sup_book.sup_book_print_desk_copies
     - field.field.node.sup_book.sup_book_pub_date_cloth
@@ -150,7 +152,24 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 33
+    weight: 32
+    region: content
+  sup_book_epub_format:
+    type: boolean
+    label: above
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 36
     region: content
   sup_book_image:
     type: media_thumbnail
@@ -236,7 +255,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 34
+    weight: 33
     region: content
   sup_book_pages:
     type: number_integer
@@ -258,6 +277,23 @@ content:
     third_party_settings: {  }
     weight: 27
     region: content
+  sup_book_pdf_format:
+    type: boolean
+    label: above
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
+    weight: 35
+    region: content
   sup_book_price_cloth:
     type: number_decimal
     label: above
@@ -276,7 +312,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 35
+    weight: 34
     region: content
   sup_book_print_desk_copies:
     type: boolean
@@ -286,7 +322,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 31
+    weight: 30
     region: content
   sup_book_pub_date_cloth:
     type: datetime_default
@@ -391,7 +427,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 32
+    weight: 31
     region: content
   sup_book_type:
     type: list_default

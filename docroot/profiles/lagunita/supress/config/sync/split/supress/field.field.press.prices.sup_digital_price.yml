@@ -1,0 +1,23 @@
+uuid: a55f12fa-19a2-448c-804f-99e9d2dc644f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_digital_price
+    - supress_helper.press_type.prices
+id: press.prices.sup_digital_price
+field_name: sup_digital_price
+entity_type: press
+bundle: prices
+label: 'Digital Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

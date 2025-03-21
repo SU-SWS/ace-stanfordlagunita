@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_copublisher_name
     - field.field.node.sup_book.sup_book_digital_comp_link
     - field.field.node.sup_book.sup_book_e_retailers
+    - field.field.node.sup_book.sup_book_epub_format
     - field.field.node.sup_book.sup_book_image
     - field.field.node.sup_book.sup_book_imprint
     - field.field.node.sup_book.sup_book_isbn_13_alt
@@ -24,6 +25,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_isbn_13_paper
     - field.field.node.sup_book.sup_book_no_cart
     - field.field.node.sup_book.sup_book_pages
+    - field.field.node.sup_book.sup_book_pdf_format
     - field.field.node.sup_book.sup_book_price_data
     - field.field.node.sup_book.sup_book_print_desk_copies
     - field.field.node.sup_book.sup_book_pub_date_cloth
@@ -116,6 +118,7 @@ hidden:
   sup_book_copublisher_name: true
   sup_book_digital_comp_link: true
   sup_book_e_retailers: true
+  sup_book_epub_format: true
   sup_book_image: true
   sup_book_imprint: true
   sup_book_intl_cart: true
@@ -127,6 +130,7 @@ hidden:
   sup_book_no_cart: true
   sup_book_pages: true
   sup_book_paper_sale_price: true
+  sup_book_pdf_format: true
   sup_book_price_cloth: true
   sup_book_price_data: true
   sup_book_print_desk_copies: true

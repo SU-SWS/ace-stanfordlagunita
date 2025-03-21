@@ -7,6 +7,7 @@ dependencies:
     - field.field.press.prices.sup_cloth_price
     - field.field.press.prices.sup_cloth_sale
     - field.field.press.prices.sup_coming_soon
+    - field.field.press.prices.sup_digital_price
     - field.field.press.prices.sup_intl_cart
     - field.field.press.prices.sup_paper_discount
     - field.field.press.prices.sup_paper_price
@@ -60,6 +61,17 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 8
+    region: content
+  sup_digital_price:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
     region: content
   sup_intl_cart:
     type: boolean
