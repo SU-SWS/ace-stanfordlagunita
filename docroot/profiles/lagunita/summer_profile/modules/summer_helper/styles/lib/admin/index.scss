@@ -64,6 +64,11 @@ $su-color-white: #ffffff;
     &.grid-container-3 {
       z-index: 3;
     }
+
+    .su-card {
+      border-bottom-left-radius: 200px;
+      border-bottom-right-radius: 200px;
+    }
   }
 
   // Colors
@@ -133,10 +138,16 @@ $su-color-white: #ffffff;
     }
    }
 
-  // Pill banner but normal cards.
-  .sum-variant-normal {
-    img {
-      border-radius: unset;
+  .field--name-sum-pill-banner-cards {
+    .sum-variant-normal {
+      .su-card {
+        border-bottom-left-radius: 220px;
+        border-bottom-right-radius: 220px;
+
+        article {
+          background-color: $su-color-white;
+        }
+      }
     }
   }
 
@@ -301,81 +312,45 @@ $su-color-white: #ffffff;
   }
 
   &.sum-background-olive {
-    .field--name-sum-testimonial-hs-video,
-    .field--name-sum-testimonial-heading,
-    .field--name-sum-testimonial-descrip,
-    .field--name-sum-testimonial-name,
-    .field--name-sum-testimonial-type,
-    .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ,
-    .field--name-sum-testimonial-button {
+    .testimonial-card-wrapper {
       background: $su-color-olive-light;
+      padding: 80px;
     }
   }
 
   &.sum-background-spirited {
-    .field--name-sum-testimonial-hs-video,
-    .field--name-sum-testimonial-heading,
-    .field--name-sum-testimonial-descrip,
-    .field--name-sum-testimonial-name,
-    .field--name-sum-testimonial-type,
-    .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ,
-    .field--name-sum-testimonial-button {
+    .testimonial-card-wrapper {
       background-color: $su-color-sprited;
+      padding: 80px;
     }
   }
 
   &.sum-background-poppy-light {
-    .field--name-sum-testimonial-hs-video,
-    .field--name-sum-testimonial-heading,
-    .field--name-sum-testimonial-descrip,
-    .field--name-sum-testimonial-name,
-    .field--name-sum-testimonial-type,
-    .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ,
-    .field--name-sum-testimonial-button {
+    .testimonial-card-wrapper {
       background-color: $su-color-poppy-light;
+      padding: 80px;
     }
   }
 
   &.sum-background-spirited-light {
-    .field--name-sum-testimonial-hs-video,
-    .field--name-sum-testimonial-heading,
-    .field--name-sum-testimonial-descrip,
-    .field--name-sum-testimonial-name,
-    .field--name-sum-testimonial-type,
-    .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ,
-    .field--name-sum-testimonial-button {
+    .testimonial-card-wrapper {
       background-color: $su-color-spirited-light;
+      padding: 80px;
     }
   }
 
   &.sum-background-spirited-dark {
-    .field--name-sum-testimonial-hs-video,
-    .field--name-sum-testimonial-heading,
-    .field--name-sum-testimonial-descrip,
-    .field--name-sum-testimonial-name,
-    .field--name-sum-testimonial-type,
-    .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ,
-    .field--name-sum-testimonial-button {
-      background-color: $su-color-spirited-dark;
+    .testimonial-card-wrapper {
+      background-color: $su-color-spirited-light;
       color: $su-color-white;
+      padding: 80px;
     }
   }
 
   &.sum-background-white {
-    .field--name-sum-testimonial-hs-video,
-    .field--name-sum-testimonial-heading,
-    .field--name-sum-testimonial-descrip,
-    .field--name-sum-testimonial-name,
-    .field--name-sum-testimonial-type,
-    .field--name-sum-testimonial-affi,
-    .field--name-sum-testimonial-univ,
-    .field--name-sum-testimonial-button {
+    .testimonial-card-wrapper {
       background-color: $su-color-white;
+      padding: 80px;
     }
   }
 }
@@ -481,18 +456,21 @@ $su-color-white: #ffffff;
 .sum-background-olive {
   .grid-container-2 {
     background-color: $su-color-olive-light;
+    padding: 80px;
   }
 }
 
 .sum-background-poppy-light {
   .grid-container-2 {
     background-color: $su-color-poppy-light;
+    padding: 80px;
   }
 }
 
 .sum-background-spirited-light {
   .grid-container-2 {
     background-color: $su-color-spirited-light;
+    padding: 80px;
   }
 }
 
@@ -500,6 +478,7 @@ $su-color-white: #ffffff;
   .grid-container-2 {
     background-color: $su-color-spirited-dark;
     color: $su-color-white;
+    padding: 80px;
   }
 }
 
