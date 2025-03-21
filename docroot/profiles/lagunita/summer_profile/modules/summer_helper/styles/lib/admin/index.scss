@@ -161,22 +161,22 @@ $su-color-white: #ffffff;
 
 .sum-variant-pill {
   > .su-card {
-      .su-card__contents {
-        border-bottom-right-radius: 30%;
-        border-bottom-left-radius: 30%;
-      }
+    .su-card__contents {
+      border-bottom-right-radius: 30%;
+      border-bottom-left-radius: 30%;
+    }
   }
 }
 
 // Pill Card
 .sum-variant-pill,
 .paragraph-sum-pill-banner {
-    &.sum-background-spirited {
-      > .su-card {
-        .su-card__contents {
-          background-color: $su-color-sprited;
-        }
+  &.sum-background-spirited {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-sprited;
       }
+    }
   }
 
   &.sum-background-olive {
