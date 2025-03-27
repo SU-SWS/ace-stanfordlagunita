@@ -830,6 +830,8 @@ field_config:
         enabled: true
       sup_book_e_retailers:
         enabled: true
+      sup_book_epub_format:
+        enabled: true
       sup_book_image:
         enabled: true
       sup_book_imprint:
@@ -847,6 +849,8 @@ field_config:
       sup_book_no_cart:
         enabled: true
       sup_book_pages:
+        enabled: true
+      sup_book_pdf_format:
         enabled: true
       sup_book_price_data:
         enabled: true
@@ -1065,6 +1069,8 @@ field_config:
       sup_cloth_sale:
         enabled: true
       sup_coming_soon:
+        enabled: true
+      sup_digital_price:
         enabled: true
       sup_intl_cart:
         enabled: true

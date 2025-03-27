@@ -6,7 +6,6 @@
  */
 
 use Drupal\Component\Utility\Html;
-use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Installer\InstallerKernel;
@@ -293,8 +292,38 @@ function supress_helper_migrate_sup_import_books_prepare_row(Row $row, MigrateSo
   }
   $retailers = _supress_get_ebook_retailers();
   $retailers = array_filter($retailers, fn($retailer) => (int) $retailer['work_id_number'] == (int) $id_map['sourceid1']);
-  uasort($retailers, [SortArray::class, 'sortByTitleElement']);
   $row->setSourceProperty('ebook_retailers', array_values($retailers));
+
+  $book_formats = _supress_ebook_formats();
+  $row->setSourceProperty('epub', $book_formats[$id_map['sourceid1']]['epub'] ?? NULL);
+  $row->setSourceProperty('pdf', $book_formats[$id_map['sourceid1']]['pdf'] ?? NULL);
+}
+
+/**
+ * Get a list of all books with epub or pdf formats.
+ *
+ * @return array
+ *   Keyed array of work id and it's respective formats.
+ */
+function _supress_ebook_formats(): array {
+  $cache = \Drupal::cache();
+  if ($cached_item = $cache->get('filemaker_ebook_formats')) {
+    return $cached_item->data;
+  }
+  $search_body = ['query' => [['format_pdf' => '=1'], ['format_epub' => '=1']]];
+  $formats = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
+
+  $book_formats = [];
+  foreach ($formats as &$item) {
+    $book_formats[(int) $item['fieldData']['work_id_number']] = [
+      'epub' => (bool) $item['fieldData']['format_epub'],
+      'pdf' => (bool) $item['fieldData']['format_pdf'],
+    ];
+  }
+  ksort($book_formats);
+
+  $cache->set('filemaker_ebook_formats', $book_formats, time() + 60 * 60 * 24);
+  return $book_formats;
 }
 
 /**
@@ -308,7 +337,41 @@ function _supress_get_ebook_retailers() {
   if ($cached_item = $cache->get('filemaker_ebook_retailers')) {
     return $cached_item->data;
   }
+  $search_body = [
+    'query' => [['link' => 'http']],
+    'sort' => [['fieldName' => 'retailer', 'sortOrder' => 'ascend']],
+  ];
+  $retailers = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
 
+  foreach ($retailers as &$record) {
+    $record = [
+      'work_id_number' => $record['fieldData']['work_id_number'],
+      'title' => $record['fieldData']['retailer'],
+      'uri' => trim($record['fieldData']['link']),
+    ];
+  }
+  $retailers = array_filter($retailers, fn($item) => UrlHelper::isValid($item['uri']));
+
+  $cache->set('filemaker_ebook_retailers', $retailers, time() + 60 * 60 * 24);
+  return $retailers;
+}
+
+/**
+ * Perform a search on the filemaker API and return all records.
+ *
+ * @param string $endpoint
+ *   API endpoint, should end in `_find`.
+ * @param array $body
+ *   Keyed array of search parameters.
+ * @param int $limit
+ *   Page limit per request.
+ *
+ * @return array
+ *   Array of all records returned in the search.
+ *
+ * @see https://help.claris.com/en/data-api-guide/content/perform-find-request.html
+ */
+function _supress_search_filemaker(string $endpoint, array $body, int $limit = 1000): array {
   $token = _supress_helper_get_api_token();
   if (!$token) {
     return [];
@@ -317,38 +380,32 @@ function _supress_get_ebook_retailers() {
   $client = \Drupal::httpClient();
   $fetch_more = TRUE;
   $page = 0;
-  $retailers = [];
+  $return_data = [];
+
+  $body['limit'] = $limit;
 
   while ($fetch_more) {
-    $limit = 10000;
-    $offset = ($page * $limit) + 1;
-    $ebook_retailers_page = (string) $client->request('GET', "https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/records?_limit=$limit&_offset=$offset", [
+    $body['offset'] = ($page * $limit) + 1;
+    $ebook_retailers_page = (string) $client->request('POST', $endpoint, [
       'headers' => [
         'Content-Type' => 'application/json',
         'Authorization' => 'Bearer ' . $token,
       ],
-      'body' => json_encode(['query' => [['flag' => '=x']]]),
+      'body' => json_encode($body),
       'timeout' => 60,
     ])->getBody();
     $ebook_retailers_page = json_decode($ebook_retailers_page, TRUE);
 
-    foreach ($ebook_retailers_page['response']['data'] as $record) {
-      $uri = trim($record['fieldData']['link']);
-      if (!UrlHelper::isValid($uri)) {
-        continue;
-      }
-      $retailers[] = [
-        'work_id_number' => $record['fieldData']['work_id_number'],
-        'title' => $record['fieldData']['retailer'],
-        'uri' => $uri,
-      ];
-    }
+    $return_data = [
+      ...$return_data,
+      ...$ebook_retailers_page['response']['data'],
+    ];
+
     $fetch_more = $ebook_retailers_page['response']['dataInfo']['returnedCount'] == $limit;
     $page++;
   }
 
-  $cache->set('filemaker_ebook_retailers', $retailers, time() + 60 * 60 * 24 * 7);
-  return $retailers;
+  return $return_data;
 }
 
 /**

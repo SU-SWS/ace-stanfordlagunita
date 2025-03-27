@@ -8,6 +8,7 @@ dependencies:
     - field.field.press.prices.sup_cloth_price
     - field.field.press.prices.sup_cloth_sale
     - field.field.press.prices.sup_coming_soon
+    - field.field.press.prices.sup_digital_price
     - field.field.press.prices.sup_intl_cart
     - field.field.press.prices.sup_paper_discount
     - field.field.press.prices.sup_paper_price
@@ -123,5 +124,6 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  sup_digital_price: true
   title: true
   work_id: true
