@@ -1,16 +1,39 @@
-# This file defines drush configuration that applies to drush commands
-# for the entire application. For site-specific settings, like URI, use
-# ../docroot/sites/[site]/drush.yml
 drush:
   paths:
     config:
-      # Load a drush.yml configuration file from the current working directory. These are relative to where the drush
-      # is being executed, so we add various paths to the same file in case we're in different directories.
       - docroot/sites/default/local.drush.yml
       - ../docroot/sites/default/local.drush.yml
-      # Allow local global config overrides.
       - local.drush.yml
+      - drush/local.drush.yml
+      - drush/local.drush.yml
       - drush/local.drush.yml
   include:
     - '${env.home}/.drush'
     - /usr/share/drush/commands
+project:
+  profile: stanford_profile
+command:
+  sql:
+    sanitize:
+      options:
+        ignored-roles: decoupled_site_users
+  sws:
+    options:
+      git-url:
+        - 'stanfordlagunita@svn-45197.prod.hosting.acquia.com:stanfordlagunita.git'
+        - 'stanfordpress@svn-45197.prod.hosting.acquia.com:stanfordpress.git'
+        - 'stanfordsummer@svn-45197.prod.hosting.acquia.com:stanfordsummer.git'
+      post-build-script: drush/deploy-cleanup.sh
+      artifact-dir: deploy
+      alias-dir: drush/sites
+      app-id: 12c62419-8d5c-40e1-b7ab-f7999e0cc3e9
+      sync-ssh: stanfordlagunita.test@stanfordlagunitastg.ssh.prod.acquia-sites.com
+      sync-files:
+        - /mnt/gfs/stanfordlagunita.test/nobackup/simplesamlphp/
+        - /mnt/gfs/stanfordlagunita.test/secrets.settings.php
+        - /mnt/gfs/stanfordlagunita.test/nobackup/oauth/
+      multisites:
+        - default
+        - library
+        - summer
+        - supress

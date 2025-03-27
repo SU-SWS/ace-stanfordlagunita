@@ -1,0 +1,76 @@
+name: Clean Databases & Git
+on:
+  schedule:
+    - cron: "0 9 * * 0"
+jobs:
+  database-cleanup:
+    name: Clean up old database backups
+    runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:php8.3
+      options: '--network-alias drupal8ci'
+    env:
+      ACQUIA_APP_KEY: ${{secrets.ACQUIA_APP_KEY}}
+      ACQUIA_APP_SECRET: ${{secrets.ACQUIA_APP_SECRET}}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
+      - name: Delete old database backups
+        run: |
+          composer install -n &&
+          drush sws:acquia:clean-databases --app-id=5d2dbbe5-3255-417b-b398-4c1086cec925 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" &&
+          drush sws:acquia:clean-databases --app-id=12c62419-8d5c-40e1-b7ab-f7999e0cc3e9 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" &&
+          drush sws:acquia:clean-databases --app-id=4207734d-7ccd-4a06-8426-4108761c3e10 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET"
+  git-cleanup:
+    name: Clean up unused git branches & tags
+    runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:php8.3
+      options: '--network-alias drupal8ci'
+    env:
+      ACQUIA_APP_KEY: ${{secrets.ACQUIA_APP_KEY}}
+      ACQUIA_APP_SECRET: ${{secrets.ACQUIA_APP_SECRET}}
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+      - uses: actions/checkout@v4
+      - name: Restore Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
+      - name: Delete unused git branches & tags
+        run: |
+          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
+          composer install -n &&
+          drush sws:acquia:clean-git --app-id=5d2dbbe5-3255-417b-b398-4c1086cec925 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n &&
+          rm -rf deploy &&
+          drush sws:acquia:clean-git --app-id=12c62419-8d5c-40e1-b7ab-f7999e0cc3e9 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n &&
+          rm -rf deploy &&
+          drush sws:acquia:clean-git --app-id=4207734d-7ccd-4a06-8426-4108761c3e10 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n
+          rm -rf deploy

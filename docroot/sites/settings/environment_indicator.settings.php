@@ -1,6 +1,6 @@
 <?php
 
-use Acquia\Blt\Robo\Common\EnvironmentDetector;
+use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 
 $config['environment_indicator.indicator']['bg_color'] = '#086601';
 $config['environment_indicator.indicator']['fg_color'] = '#fff';
@@ -31,7 +31,7 @@ if (EnvironmentDetector::isAhDevEnv()) {
   return;
 }
 
-// As site Factory only has dev/stage/prod environments at the moment, this is a catch all for future improvements 
+// As site Factory only has dev/stage/prod environments at the moment, this is a catch all for future improvements
 // where they hopefully add ODEs.
 $config['environment_indicator.indicator']['bg_color'] = '#086601';
 $config['environment_indicator.indicator']['fg_color'] = '#fff';

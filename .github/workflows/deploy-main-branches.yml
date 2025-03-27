@@ -22,11 +22,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
+            2.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.x-${{ hashFiles('composer.json') }}-
+            2.x-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -42,4 +42,4 @@ jobs:
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
           git checkout composer.lock &&
-          blt deploy -v -n
+          drush sws:artifact:deploy -v -n

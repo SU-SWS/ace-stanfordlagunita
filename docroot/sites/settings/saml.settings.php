@@ -5,7 +5,7 @@
  * Simplesamlphp config settings.
  */
 
-use Acquia\Blt\Robo\Common\EnvironmentDetector;
+use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 
 // Don't enable SAML configs if we're on CI systems.
 if (!EnvironmentDetector::isCiEnv()) {

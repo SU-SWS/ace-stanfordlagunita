@@ -30,18 +30,19 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.1-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
           git config --system --add safe.directory '*' &&
           composer install -n &&
-          blt tests:phpunit:coverage
+          drush sws:source:tests:phpunit --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal --with-coverage &&
+          drush sws:tests:phpunit-coverage-check artifacts/phpunit/coverage/xml --clover-file=artifacts/phpunit/coverage/clover.xml -n
       - name: Save Test Results
         uses: actions/upload-artifact@v4
         if: failure()
@@ -64,16 +65,16 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.1-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
       - name: Get Sites
         id: set-matrix
         run: |
           composer install -n &&
-          SITES=$(echo -n "$(blt blt:config:get multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort') &&
+          SITES=$(echo -n "$(drush sws:drush-config command.sws.options.multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort') &&
           echo "matrix=$SITES" >> $GITHUB_OUTPUT
   codeception:
     name: Codeception Test Suites
@@ -113,31 +114,37 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.1-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
       - name: Install Site
         run: |
           git config --system --add safe.directory '*' &&
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
           rm -rf /var/www/html &&
           ln -snf $GITHUB_WORKSPACE /var/www/html &&
-          mkdir -p docroot/sites/default/files &&
-          chmod -R 777 docroot/sites/default/files/ &&
+          mkdir -p -m 777 docroot/sites/default/files &&
           rm -rf docroot/sites/${{ matrix.site }}/files &&
           ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files &&
           apachectl stop &&
           apachectl start &&
           composer install -n &&
-          blt drupal:install --site=${{ matrix.site }} -n &&
+          drush drupal:install --site=${{ matrix.site }} -n &&
           drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1') &&
           drush xmlsitemap:rebuild &&
           drush cr &&
           mkdir -p artifacts/_data/
       - name: Run tests
-        run: blt codeception --test=${{ matrix.site }} --suite=${{ matrix.suite }}
+        run: |
+          mkdir -p -m 777 tests/codeception/${{ matrix.suite }} &&
+          PROFILE=`drush st --fields=install-profile --format=list` &&
+          rsync -r docroot/profiles/lagunita/$PROFILE/tests/codeception/${{ matrix.suite }}/ tests/codeception/${{ matrix.suite }}/$PROFILE &&
+          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} &&
+          if [ ! -f artifacts/report.html ]; then
+            exit 1
+          fi
       - name: Save Test Results
         uses: actions/upload-artifact@v4
         if: always()
@@ -185,25 +192,24 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.1-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
       - name: Sync and Update Site
         run: |
           git config --system --add safe.directory '*' &&
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
           rm -rf /var/www/html &&
           ln -snf $GITHUB_WORKSPACE /var/www/html &&
-          mkdir -p docroot/sites/default/files &&
-          chmod -R 777 docroot/sites/default/files/ &&
+          mkdir -p -m 777 docroot/sites/default/files &&
           rm -rf docroot/sites/${{ matrix.site }}/files &&
           ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files &&
           apachectl stop &&
           apachectl start &&
           composer install -n &&
-          blt drupal:sync --site=${{ matrix.site }} -n &&
+          drush drupal:sync --site=${{ matrix.site }} -n &&
           curl -I http://localhost --fail
   deploy:
     name: Deploy Artifact
@@ -221,11 +227,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.1-${{ hashFiles('blt/blt.yml') }}-
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -240,4 +246,4 @@ jobs:
           git config --global user.name "Github Actions" &&
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
-          blt deploy -v -n
+          drush sws:artifact:deploy -v -n

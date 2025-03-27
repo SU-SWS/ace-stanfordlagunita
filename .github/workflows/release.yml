@@ -52,4 +52,4 @@ jobs:
           git config --global user.name "Github Actions" &&
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
-          blt deploy --tag=$(date +'%Y-%m-%d')"_"${{ steps.tag.outputs.tag }} --commit-msg=${{ steps.tag.outputs.tag }} --no-interaction
+          drush sws:artifact:deploy --tag=$(date +'%Y-%m-%d')"_"${{ steps.tag.outputs.tag }} --no-interaction

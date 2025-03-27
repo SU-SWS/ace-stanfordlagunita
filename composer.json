@@ -50,7 +50,6 @@
     ],
     "require": {
         "php": ">=8.2",
-        "acquia/blt": "^13.5",
         "composer/installers": "^1.9 || ^2.0",
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
@@ -59,14 +58,12 @@
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.0",
         "drupal/pdb": "2.0.0",
-        "drush/drush": "^12.5",
-        "su-sws/blt-sws": "dev-main",
+        "drush/drush": "^13.6",
         "su-sws/stanford_profile": "^11.8",
+        "su-sws/sws-drush-commands": "1.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "acquia/blt-drupal-test": "^1.0",
-        "acquia/blt-multisite": "^1.0",
         "drupal/graphql_compose_fragments-graphql_compose_fragments": "^1.0@beta",
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
@@ -169,7 +166,8 @@
                 "Log graphql queries": "patches/contrib/graphql-logging.patch"
             },
             "drupal/markdown": {
-                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.patch"
+                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.diff",
+                "https://www.drupal.org/project/markdown/issues/3483437": "https://git.drupalcode.org/project/markdown/-/merge_requests/35.diff"
             },
             "drupal/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
@@ -188,9 +186,8 @@
             "patch -Ns -r \"\" --no-backup-if-mismatch -p1 < ./patches/robotstxt.patch"
         ],
         "init-stack": [
-            "vendor/bin/blt blt:telemetry:disable --no-interaction",
-            "vendor/bin/blt blt:init:settings",
-            "vendor/bin/blt sws:keys"
+            "vendor/bin/drush settings",
+            "vendor/bin/drush sws:keys"
         ],
         "pull-sul": [
             "rm -rf docroot/profiles/lagunita",
@@ -222,7 +219,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Gryphon\\": "blt/src/"
+            "Drupal\\LagunitaDrush\\": "drush/lagunita/src"
         }
     }
 }
