@@ -1,6 +1,6 @@
 $su-color-archway-dark: #2f2424;
 $su-color-spirited-dark: #c74632;
-$su-color-sprited: #e04f39;
+$su-color-spirited: #e04f39;
 $su-color-spirited-light: #f4795b;
 $su-color-spirited-light-80:  #f4795b80;
 $su-color-poppy: #e98300;
@@ -98,7 +98,7 @@ $su-color-white: #ffffff;
     .field--name-sum-pill-banner-headline,
     .field--name-sum-pill-banner-descrip,
     .field--name-sum-pill-banner-link {
-      background-color: $su-color-spirited-light;
+      background-color: $su-color-spirited;
     }
   }
 
@@ -174,7 +174,7 @@ $su-color-white: #ffffff;
   &.sum-background-spirited {
     > .su-card {
       .su-card__contents {
-        background-color: $su-color-sprited;
+        background-color: $su-color-spirited-light;
       }
     }
   }
@@ -320,7 +320,7 @@ $su-color-white: #ffffff;
 
   &.sum-background-spirited {
     .testimonial-card-wrapper {
-      background-color: $su-color-sprited;
+      background-color: $su-color-spirited;
       padding: 80px;
     }
   }
@@ -341,7 +341,7 @@ $su-color-white: #ffffff;
 
   &.sum-background-spirited-dark {
     .testimonial-card-wrapper {
-      background-color: $su-color-spirited-light;
+      background-color: $su-color-spirited-dark;
       color: $su-color-white;
       padding: 80px;
     }
@@ -374,7 +374,7 @@ $su-color-white: #ffffff;
 .ds-entity--stanford-banner {
   &.sum-background-spirited {
     .su-card__contents {
-      background-color: $su-color-sprited;
+      background-color: $su-color-spirited-light;
     }
   }
 
