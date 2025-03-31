@@ -13,10 +13,36 @@ dependencies:
     - empty_fields
     - entity_reference_revisions
     - field_formatter_class
+    - field_group
     - field_label
     - link
     - stanford_media
     - text
+third_party_settings:
+  field_group:
+    group_image_with_card:
+      children:
+        - sum_top_banner_image
+        - sum_top_banner_superhead
+        - sum_top_banner_descrip
+        - sum_top_banner_link
+      label: 'Image with Card'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: grid-container-2
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 id: paragraph.sum_top_banner.default
 targetEntityType: paragraph
 bundle: sum_top_banner
@@ -36,23 +62,23 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 4
+    weight: 1
     region: content
   sum_top_banner_descrip:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   sum_top_banner_image:
-    type: media_image_formatter
+    type: media_responsive_image_formatter
     label: hidden
     settings:
       view_mode: default
       link: false
-      image_style: medium_square
-      remove_alt: false
+      image_style: card_2_1
+      remove_alt: 0
     third_party_settings:
       empty_fields:
         handler: ''
@@ -61,7 +87,7 @@ content:
       field_label:
         label_value: ''
         label_tag: ''
-    weight: 5
+    weight: 1
     region: content
   sum_top_banner_link:
     type: link
@@ -73,7 +99,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   sum_top_banner_superhead:
     type: string
@@ -81,7 +107,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

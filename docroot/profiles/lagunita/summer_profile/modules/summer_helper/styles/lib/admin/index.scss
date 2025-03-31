@@ -1,3 +1,17 @@
+$su-color-archway-dark: #2f2424;
+$su-color-spirited-dark: #c74632;
+$su-color-spirited: #e04f39;
+$su-color-spirited-light: #f4795b;
+$su-color-spirited-light-80:  #f4795b80;
+$su-color-poppy: #e98300;
+$su-color-poppy-light: #f9a44a;
+$su-color-poppy-light-80: #f9a44a80;
+$su-color-olive-light: #a6b168;
+$su-color-olive-light-80: #a6b16880;
+
+$su-color-grey: #f4f4f4;
+$su-color-white: #ffffff;
+
 .grid-container-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -8,4 +22,508 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+// Editing form too wide using 1fr.
+.node-form {
+  > .layout-form {
+    grid-template-columns: 99%;
+  }
+}
+
+// Pill Banner header background
+.paragraph-sum-pill-banner {
+  display: flex;
+  flex-direction: column;
+
+  .field {
+    &.field--name-sum-pill-banner-bkgd {
+      order: 5;
+      position: relative;
+      margin-top: -500px;
+      align-self: center;
+      z-index: 1;
+      max-height: 600px;
+      overflow-y: hidden;
+
+      img {
+        height: unset;
+      }
+    }
+  }
+
+  .field--name-sum-pill-banner-descrip {
+    z-index: 5;
+  }
+
+  .field--name-sum-pill-banner-link {
+    z-index: 6;
+  }
+
+  .field--name-sum-pill-banner-cards {
+    &.grid-container-3 {
+      z-index: 3;
+    }
+
+    .su-card {
+      border-bottom-left-radius: 200px;
+      border-bottom-right-radius: 200px;
+    }
+  }
+
+  // Colors
+  &.sum-background-poppy-light {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-poppy-light;
+    }
+  }
+
+  &.sum-background-olive {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-olive-light;
+    }
+  }
+
+  &.sum-background-spirited {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-spirited;
+    }
+  }
+
+  &.sum-background-spirited-dark {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-spirited-dark;
+      color: $su-color-white;
+    }
+  }
+
+  &.sum-background-white {
+    .field--name-sum-pill-banner-bkgd,
+    .field--name-sum-pill-banner-suphead,
+    .field--name-sum-pill-banner-headline,
+    .field--name-sum-pill-banner-descrip,
+    .field--name-sum-pill-banner-link {
+      background-color: $su-color-white;
+    }
+  }
+}
+
+// Pill Card border radius
+.sum-variant-pill,
+.paragraph-sum-pill-banner {
+  .su-card {
+    border: transparent;
+    background: transparent;
+    box-shadow: none;
+
+    img {
+      border-top-left-radius: 220px;
+      border-top-right-radius: 220px;
+    }
+   }
+
+  .field--name-sum-pill-banner-cards {
+    .sum-variant-normal {
+      .su-card {
+        border-bottom-left-radius: 220px;
+        border-bottom-right-radius: 220px;
+
+        article {
+          background-color: $su-color-white;
+        }
+      }
+    }
+  }
+
+  > .su-card {
+    .su-card__contents {
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+  }
+}
+
+.sum-variant-pill {
+  > .su-card {
+    .su-card__contents {
+      border-bottom-right-radius: 30%;
+      border-bottom-left-radius: 30%;
+    }
+  }
+}
+
+// Pill Card
+.sum-variant-pill,
+.paragraph-sum-pill-banner {
+  &.sum-background-spirited {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-spirited-light;
+      }
+    }
+  }
+
+  &.sum-background-olive {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-olive-light;
+      }
+    }
+  }
+
+  &.sum-background-semitransparent-poppy {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-poppy-light-80;
+      }
+    }
+  }
+
+  &.sum-background-poppy-light {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-poppy-light;
+      }
+    }
+  }
+
+  &.sum-background-semitransparent-olive {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-olive-light-80;
+      }
+    }
+  }
+
+  &.sum-background-semitransparent-spirited  {
+    > .su-card {
+      .su-card__contents {
+        background-color: $su-color-spirited-light-80;
+      }
+    }
+  }
+}
+
+// Testimonial.
+.paragraph-sum-testimonial {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 10px;
+  width: fit-content;
+
+  &.sum-align-left {
+    // Grid setup
+    .field--name-sum-testimonial-bkg-img {
+      grid-row: 1 / 9;
+      grid-column: 2 / 2;
+    }
+
+    .field--name-sum-testimonial-hs-video {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-testimonial-heading {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-testimonial-descrip {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-testimonial-name {
+      grid-row: 4 / 5;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-testimonial-type {
+      grid-row: 5 / 6;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-testimonial-affi {
+      grid-row: 6 / 7;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-testimonial-univ {
+      grid-row: 7 / 8;
+      grid-column: 1 / 2;
+    }
+  }
+
+  // Grid setup
+  .field--name-sum-testimonial-bkg-img {
+    grid-row: 1 / 9;
+    grid-column: 1 / 2;
+  }
+
+  .field--name-sum-testimonial-hs-video {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-testimonial-heading {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-testimonial-descrip {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-testimonial-name {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-testimonial-type {
+    grid-row: 5 / 6;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-testimonial-affi {
+    grid-row: 6 / 7;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-testimonial-univ {
+    grid-row: 7 / 8;
+    grid-column: 2 / 3;
+  }
+
+  &.sum-background-olive {
+    .testimonial-card-wrapper {
+      background: $su-color-olive-light;
+      padding: 80px;
+    }
+  }
+
+  &.sum-background-spirited {
+    .testimonial-card-wrapper {
+      background-color: $su-color-spirited;
+      padding: 80px;
+    }
+  }
+
+  &.sum-background-poppy-light {
+    .testimonial-card-wrapper {
+      background-color: $su-color-poppy-light;
+      padding: 80px;
+    }
+  }
+
+  &.sum-background-spirited-light {
+    .testimonial-card-wrapper {
+      background-color: $su-color-spirited-light;
+      padding: 80px;
+    }
+  }
+
+  &.sum-background-spirited-dark {
+    .testimonial-card-wrapper {
+      background-color: $su-color-spirited-dark;
+      color: $su-color-white;
+      padding: 80px;
+    }
+  }
+
+  &.sum-background-white {
+    .testimonial-card-wrapper {
+      background-color: $su-color-white;
+      padding: 80px;
+    }
+  }
+}
+
+// Card Variants. Default is gray and when the "No Card Background"
+// is checked, the background is white.
+.sum-variant-normal {
+  .su-card {
+    background-color: $su-color-grey;
+    border-radius: 25px;
+  }
+
+  &.sum-remove-background {
+    .su-card {
+      background-color: $su-color-white;
+    }
+  }
+}
+
+// Banner
+.ds-entity--stanford-banner {
+  &.sum-background-spirited {
+    .su-card__contents {
+      background-color: $su-color-spirited-light;
+    }
+  }
+
+  &.sum-background-olive {
+    .su-card__contents {
+      background-color: $su-color-olive-light;
+    }
+  }
+
+  &.sum-background-poppy-light {
+    .su-card__contents {
+      background-color: $su-color-poppy-light;
+    }
+  }
+
+  &.sum-background-spirited-light {
+    .su-card__contents {
+      background-color: $su-color-spirited-light;
+    }
+  }
+
+  &.sum-background-spirited-dark {
+    .su-card__contents {
+      background-color: $su-color-spirited-dark;
+      color: $su-color-white;
+    }
+  }
+}
+
+// Top Banner
+.paragraph-sum-top-banner {
+  .grid-container-2 {
+    margin-bottom: 30px;
+  }
+
+  &.sum-overlay-right {
+    .field--name-sum-top-banner-image {
+      grid-row: 1 / 4;
+      grid-column: 2 / 2;
+    }
+
+    .field--name-sum-top-banner-superhead {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-top-banner-descrip {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
+
+    .field--name-sum-top-banner-link {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+  }
+
+  .field--name-sum-top-banner-image {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+  }
+
+  .field--name-sum-top-banner-superhead {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-top-banner-descrip {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  .field--name-sum-top-banner-link {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+}
+
+.sum-background-olive {
+  .grid-container-2 {
+    background-color: $su-color-olive-light;
+    padding: 80px;
+  }
+}
+
+.sum-background-poppy-light {
+  .grid-container-2 {
+    background-color: $su-color-poppy-light;
+    padding: 80px;
+  }
+}
+
+.sum-background-spirited-light {
+  .grid-container-2 {
+    background-color: $su-color-spirited-light;
+    padding: 80px;
+  }
+}
+
+.sum-background-spirited-dark {
+  .grid-container-2 {
+    background-color: $su-color-spirited-dark;
+    color: $su-color-white;
+    padding: 80px;
+  }
+}
+
+// Arc Banner
+// z-index so text is on top of shape to create cut out.
+.fieldset__description {
+  position: relative;
+  z-index: 4;
+}
+
+.paragraph-sum-arc-banner {
+  &.paragraph--type--sum-arc-banner {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .field--name-sum-arc-description {
+      order: -1;
+      z-index: 3;
+    }
+
+    .field--name-sum-arc-superhead {
+      z-index: 2;
+    }
+
+    .field--name-field-media-image {
+      position: relative;
+      background: $su-color-white;
+      width: 100%;
+      height: 400px;
+      z-index: 1;
+
+      &::after {
+        top: 315px;
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        background: $su-color-white;
+        width: 100%;
+        height: 170px;
+      }
+
+      img {
+        height: inherit;
+      }
+    }
+  }
 }
