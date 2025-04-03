@@ -1,0 +1,29 @@
+uuid: c23e8ffe-d0d5-43a2-8f69-8d308b2b5103
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_learner
+    - node.type.sum_summer_courses
+    - taxonomy.vocabulary.sum_course_learner
+id: node.sum_summer_courses.sum_course_learner
+field_name: sum_course_learner
+entity_type: node
+bundle: sum_summer_courses
+label: 'Learner Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sum_course_learner: sum_course_learner
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_course_image
     - field.field.node.sum_summer_courses.sum_course_instructors
     - field.field.node.sum_summer_courses.sum_course_interest_area
+    - field.field.node.sum_summer_courses.sum_course_learner
     - field.field.node.sum_summer_courses.sum_course_length
     - field.field.node.sum_summer_courses.sum_course_notes
     - field.field.node.sum_summer_courses.sum_course_population
@@ -59,6 +60,7 @@ hidden:
   sum_course_image: true
   sum_course_instructors: true
   sum_course_interest_area: true
+  sum_course_learner: true
   sum_course_length: true
   sum_course_notes: true
   sum_course_population: true

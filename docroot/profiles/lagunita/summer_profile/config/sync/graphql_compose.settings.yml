@@ -108,6 +108,8 @@ entity_config:
       enabled: true
     responsive_small:
       enabled: true
+    splide_media:
+      enabled: false
     square_1192:
       enabled: true
     square_1900:
@@ -359,6 +361,8 @@ entity_config:
       enabled: true
     sum_course_interest_area:
       enabled: true
+    sum_course_learner:
+      enabled: false
     sum_course_population:
       enabled: true
     sum_summer_courses:
@@ -830,6 +834,8 @@ field_config:
       sum_course_instructors:
         enabled: true
       sum_course_interest_area:
+        enabled: true
+      sum_course_learner:
         enabled: true
       sum_course_length:
         enabled: true

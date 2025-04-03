@@ -1,0 +1,14 @@
+uuid: 7f139ecb-e090-4b62-b12f-98b459df42c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sum_course_learner
+id: taxonomy_vocabulary_sum_course_learner
+entity_type_id: taxonomy_vocabulary
+entity_id: sum_course_learner
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -1,0 +1,14 @@
+adding:
+  settings:
+    allowed_views:
+      sum_courses: sum_courses
+      manage_content: '0'
+      sum_media: '0'
+      sum_content: '0'
+      sum_entities: '0'
+    allowed_display_types:
+      data_export: '0'
+removing:
+  settings:
+    allowed_views:
+      media: '0'
