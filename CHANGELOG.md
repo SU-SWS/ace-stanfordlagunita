@@ -1,5 +1,14 @@
 # Lagunita
 
+2.8.1
+--------------------------------------------------------------------------------
+_Release Date: 2025-04-08_
+
+- SUM-322 SUM-321: Editing styles to "at a glance" and the "action link" in a card (#174)
+- SUP: Allow unlimited related books
+- SUM: Styles for editing experience. (#168)
+- SUP: Import epub and pdf data for ebooks (#171)
+
 2.8.0
 --------------------------------------------------------------------------------
 _Release Date: 2025-03-12_
