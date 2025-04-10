@@ -13603,16 +13603,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v6.11.0",
+            "version": "v6.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "8f718f4dfc9c5d5f0c994cdfd103921b43592712"
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/8f718f4dfc9c5d5f0c994cdfd103921b43592712",
-                "reference": "8f718f4dfc9c5d5f0c994cdfd103921b43592712",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
                 "shasum": ""
             },
             "require": {
@@ -13660,9 +13660,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.11.0"
+                "source": "https://github.com/firebase/php-jwt/tree/v6.11.1"
             },
-            "time": "2025-01-23T05:11:06+00:00"
+            "time": "2025-04-09T20:32:01+00:00"
         },
         {
             "name": "galbar/jsonpath",
@@ -17820,16 +17820,16 @@
         },
         {
             "name": "su-sws/stanford_fields",
-            "version": "8.5.0",
+            "version": "8.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_fields.git",
-                "reference": "cdada767228384961f8574f50c380a67fc5e851b"
+                "reference": "fed485842ae8a2d8b8c7253e68c6cc5edc375782"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_fields/zipball/cdada767228384961f8574f50c380a67fc5e851b",
-                "reference": "cdada767228384961f8574f50c380a67fc5e851b",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_fields/zipball/fed485842ae8a2d8b8c7253e68c6cc5edc375782",
+                "reference": "fed485842ae8a2d8b8c7253e68c6cc5edc375782",
                 "shasum": ""
             },
             "require": {
@@ -17852,9 +17852,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_fields",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_fields/issues",
-                "source": "https://github.com/SU-SWS/stanford_fields/tree/8.5.0"
+                "source": "https://github.com/SU-SWS/stanford_fields/tree/8.5.1"
             },
-            "time": "2025-04-04T17:31:59+00:00"
+            "time": "2025-04-09T16:13:14+00:00"
         },
         {
             "name": "su-sws/stanford_media",
@@ -18167,12 +18167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "4ccda531731c6500b5e3e60de05efca3ff102a58"
+                "reference": "055f284751f7b30acd52f66376eff587a675594d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/4ccda531731c6500b5e3e60de05efca3ff102a58",
-                "reference": "4ccda531731c6500b5e3e60de05efca3ff102a58",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/055f284751f7b30acd52f66376eff587a675594d",
+                "reference": "055f284751f7b30acd52f66376eff587a675594d",
                 "shasum": ""
             },
             "require": {
@@ -18269,7 +18269,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/9.x"
             },
-            "time": "2025-04-04T20:18:57+00:00"
+            "time": "2025-04-09T18:04:49+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -24640,16 +24640,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "1.3.5",
+            "version": "1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "768385227d17f12ae2af9e872ee368062e92d629"
+                "reference": "23c9ddfae4708be8c78cb9331c50ea10d30803eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/768385227d17f12ae2af9e872ee368062e92d629",
-                "reference": "768385227d17f12ae2af9e872ee368062e92d629",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/23c9ddfae4708be8c78cb9331c50ea10d30803eb",
+                "reference": "23c9ddfae4708be8c78cb9331c50ea10d30803eb",
                 "shasum": ""
             },
             "require": {
@@ -24724,7 +24724,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.3.5"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.3.6"
             },
             "funding": [
                 {
@@ -24740,7 +24740,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-03T20:03:45+00:00"
+            "time": "2025-04-10T16:14:31+00:00"
         },
         {
             "name": "micheh/phpcs-gitlab",

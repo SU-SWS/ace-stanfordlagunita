@@ -234,6 +234,10 @@ source:
       name: series
       label: series
       selector: fieldData/series
+    -
+      name: subjects_press_all
+      label: subjects_press_all
+      selector: fieldData/subjects_press_all
   ids:
     work_id_number:
       type: integer
@@ -442,6 +446,36 @@ process:
       preorder: 0
       add: 0
       none: 1
+  sup_book_subjects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: subjects_press_all
+    -
+      plugin: str_replace
+      regex: true
+      search: /\r$/
+      replace: ''
+    -
+      plugin: explode
+      delimiter: "\r"
+    -
+      plugin: str_replace
+      regex: true
+      search: /^.*?\//
+      replace: ''
+    -
+      plugin: str_replace
+      regex: true
+      search: /^\s+|\s+$/
+      replace: ''
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: sup_book_subjects
+      value_key: name
+      ignore_case: true
   sup_book_series:
     -
       plugin: skip_on_empty
