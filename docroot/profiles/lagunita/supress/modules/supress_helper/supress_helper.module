@@ -310,14 +310,20 @@ function _supress_ebook_formats(): array {
   if ($cached_item = $cache->get('filemaker_ebook_formats')) {
     return $cached_item->data;
   }
-  $search_body = ['query' => [['format_pdf' => '=1'], ['format_epub' => '=1']]];
-  $formats = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
+  $search_body = ['query' => [['format_pdf' => '=yes'], ['format_epub' => '=yes']]];
+  try {
+    $formats = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('supress')->error('An error occurred when fetching ebook formats: @error', ['@error' => $e->getMessage()]);
+    $formats = [];
+  }
 
   $book_formats = [];
-  foreach ($formats as &$item) {
+  foreach ($formats as $item) {
     $book_formats[(int) $item['fieldData']['work_id_number']] = [
-      'epub' => (bool) $item['fieldData']['format_epub'],
-      'pdf' => (bool) $item['fieldData']['format_pdf'],
+      'epub' => $item['fieldData']['format_epub'] == 'yes',
+      'pdf' => $item['fieldData']['format_pdf'] == 'yes',
     ];
   }
   ksort($book_formats);
@@ -341,7 +347,13 @@ function _supress_get_ebook_retailers() {
     'query' => [['link' => 'http']],
     'sort' => [['fieldName' => 'retailer', 'sortOrder' => 'ascend']],
   ];
-  $retailers = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
+  try {
+    $retailers = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('supress')->error('An error occurred when fetching ebook retailer links: @error', ['@error' => $e->getMessage()]);
+    $retailers = [];
+  }
 
   foreach ($retailers as &$record) {
     $record = [
