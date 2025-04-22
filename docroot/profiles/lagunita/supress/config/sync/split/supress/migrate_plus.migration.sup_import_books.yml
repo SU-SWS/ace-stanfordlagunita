@@ -462,20 +462,57 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: '/^.*?\//'
-      replace: ''
-    -
-      plugin: str_replace
-      regex: true
       search: /^\s+|\s+$/
       replace: ''
     -
-      plugin: entity_generate
-      entity_type: taxonomy_term
-      bundle_key: vid
-      bundle: sup_book_subjects
-      value_key: name
-      ignore_case: true
+      plugin: explode
+      delimiter: " / "
+    -
+      plugin: sub_process
+      include_source: false
+      process:
+        hash:
+          -
+            plugin: skip_on_empty
+            method: row
+            source: '0'
+          -
+            plugin: concat
+            delimiter: '|'
+            source:
+              - '0'
+              - '1'
+        parent:
+          plugin: entity_generate
+          entity_type: taxonomy_term
+          bundle_key: vid
+          bundle: sup_book_subjects
+          value_key: name
+          ignore_case: true
+          source: '0'
+          values:
+            sup_subject_hash: '0'
+        child:
+          -
+            plugin: skip_on_empty
+            method: process
+            source: '1'
+          -
+            plugin: entity_generate
+            entity_type: taxonomy_term
+            bundle_key: vid
+            bundle: sup_book_subjects
+            value_key: sup_subject_hash
+            source: '@hash'
+            ignore_case: true
+            values:
+              parent: '@parent'
+              name: '1'
+        target_id:
+          plugin: null_coalesce
+          source:
+            - '@child'
+            - '@parent'
   sup_book_series:
     -
       plugin: skip_on_empty
