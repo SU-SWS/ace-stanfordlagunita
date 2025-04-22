@@ -462,7 +462,7 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: /^.*?\//
+      search: '/^.*?\//'
       replace: ''
     -
       plugin: str_replace
