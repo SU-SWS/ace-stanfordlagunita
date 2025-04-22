@@ -1203,30 +1203,30 @@ display:
             label: Title
             field_identifier: title_asc
           exposed: true
-        sup_book_authors_family:
-          id: sup_book_authors_family
-          table: node__sup_book_authors
-          field: sup_book_authors_family
+        sup_book_authors_full_value:
+          id: sup_book_authors_full_value
+          table: node__sup_book_authors_full
+          field: sup_book_authors_full_value
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: standard
           order: ASC
           expose:
-            label: 'Book Authors (sup_book_authors:family)'
+            label: 'Authors (full) (sup_book_authors_full)'
             field_identifier: author_asc
           exposed: true
-        sup_book_authors_family_1:
-          id: sup_book_authors_family_1
-          table: node__sup_book_authors
-          field: sup_book_authors_family
+        sup_book_authors_full_value_1:
+          id: sup_book_authors_full_value_1
+          table: node__sup_book_authors_full
+          field: sup_book_authors_full_value
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: standard
           order: DESC
           expose:
-            label: 'Book Authors (sup_book_authors:family)'
+            label: 'Authors (full) (sup_book_authors_full)'
             field_identifier: author_desc
           exposed: true
       filters:
