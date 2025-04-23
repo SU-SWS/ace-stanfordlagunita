@@ -66,6 +66,7 @@ complete_list:
   - 'field.field.media.sul_*'
   - 'field.storage.media.sul_*'
   - 'media.type.sul_*'
+  - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_layout
 partial_list:
   - core.entity_view_mode.node.stanford_card
   - field.field.paragraph.stanford_card.su_card_super_header
