@@ -60,6 +60,9 @@ settings:
         -
           label: 'Action Link'
           element: '<a class="su-link--action">'
+        -
+          label: 'Location Link'
+          element: '<a class="su-link--location">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default
