@@ -921,6 +921,8 @@ field_config:
         enabled: true
       sul_card_image_caption:
         enabled: true
+      sul_card_super_head:
+        enabled: true
     stanford_entity:
       su_entity_button:
         enabled: true

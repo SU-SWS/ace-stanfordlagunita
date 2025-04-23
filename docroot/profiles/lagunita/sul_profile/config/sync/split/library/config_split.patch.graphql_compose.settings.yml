@@ -1,7 +1,0 @@
-adding:
-  field_config:
-    paragraph:
-      stanford_card:
-        sul_card_super_head:
-          enabled: true
-removing: {  }
