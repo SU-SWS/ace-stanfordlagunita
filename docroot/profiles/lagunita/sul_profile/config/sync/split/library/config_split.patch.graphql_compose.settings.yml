@@ -1,0 +1,7 @@
+adding: {  }
+removing:
+  field_config:
+    paragraph:
+      stanford_card:
+        su_card_super_header:
+          enabled: true
