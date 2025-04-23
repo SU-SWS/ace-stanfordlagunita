@@ -8,8 +8,8 @@ dependencies:
     - field.field.paragraph.stanford_card.su_card_header
     - field.field.paragraph.stanford_card.su_card_link
     - field.field.paragraph.stanford_card.su_card_media
-    - field.field.paragraph.stanford_card.su_card_super_header
     - field.field.paragraph.stanford_card.sul_card_image_caption
+    - field.field.paragraph.stanford_card.sul_card_super_head
     - paragraphs.paragraphs_type.stanford_card
   module:
     - change_labels
@@ -53,6 +53,7 @@ content:
         class: false
         accesskey: false
         title: false
+      widget_default_open: expandIfValuesSet
     third_party_settings:
       change_labels:
         field_label_overwrite: ''
@@ -69,4 +70,5 @@ hidden:
   status: true
   su_card_super_header: true
   sul_card_image_caption: true
+  sul_card_super_head: true
   unpublish_on: true

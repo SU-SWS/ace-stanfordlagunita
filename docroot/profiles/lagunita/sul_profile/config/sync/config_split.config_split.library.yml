@@ -66,7 +66,6 @@ complete_list:
   - 'field.field.media.sul_*'
   - 'field.storage.media.sul_*'
   - 'media.type.sul_*'
-  - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_layout
 partial_list:
   - field_ui.settings
   - layout_paragraphs.settings
@@ -78,3 +77,5 @@ partial_list:
   - 'search_api.index.*'
   - 'user.role.*'
   - 'jsonapi_extras.jsonapi_resource_config.*'
+  - 'core.entity_form_display.paragraph.stanford_card.*'
+  - 'editor.editor.stanford_*'

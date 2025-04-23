@@ -1,0 +1,20 @@
+uuid: 980bab24-29fe-42fc-a98e-36db7e16f892
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.sul_card_super_head
+field_name: sul_card_super_head
+entity_type: paragraph
+type: text
+settings:
+  max_length: 1000
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

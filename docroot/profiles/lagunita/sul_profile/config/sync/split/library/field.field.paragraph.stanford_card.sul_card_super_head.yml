@@ -1,0 +1,24 @@
+uuid: b253f1b2-f4d3-4787-87e7-ed70903ab238
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_card_super_head
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.stanford_card
+  module:
+    - text
+id: paragraph.stanford_card.sul_card_super_head
+field_name: sul_card_super_head
+entity_type: paragraph
+bundle: stanford_card
+label: 'HTML Superhead'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text

@@ -2,21 +2,69 @@ adding:
   dependencies:
     config:
       - field.field.paragraph.stanford_card.sul_card_image_caption
+      - field.field.paragraph.stanford_card.sul_card_super_head
   third_party_settings:
     ds:
       regions:
         card_image:
+          - sul_card_super_head
           - sul_card_image_caption
+      fields:
+        'display_field_copy:paragraph-su_card_link_title':
+          weight: 6
   content:
+    su_card_body:
+      weight: 4
+    su_card_header:
+      weight: 3
+    su_card_link:
+      weight: 5
     su_card_media:
       settings:
         remove_alt: false
+      weight: 1
+    su_card_super_header:
+      region: content
     sul_card_image_caption:
       type: string
       label: hidden
       settings:
         link_to_entity: false
       third_party_settings: {  }
-      weight: 5
+      weight: 2
       region: card_image
-removing: {  }
+    sul_card_super_head:
+      type: text_default
+      label: hidden
+      settings: {  }
+      third_party_settings: {  }
+      weight: 0
+      region: card_image
+removing:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.su_card_super_header
+  third_party_settings:
+    ds:
+      regions:
+        card_super_headline:
+          - su_card_super_header
+      fields:
+        'display_field_copy:paragraph-su_card_link_title':
+          weight: 5
+  content:
+    su_card_body:
+      weight: 3
+    su_card_header:
+      weight: 2
+    su_card_link:
+      weight: 4
+    su_card_media:
+      weight: 0
+    su_card_super_header:
+      settings:
+        link_to_entity: false
+      region: card_super_headline
+      type: string
+      label: hidden
+      weight: 1
