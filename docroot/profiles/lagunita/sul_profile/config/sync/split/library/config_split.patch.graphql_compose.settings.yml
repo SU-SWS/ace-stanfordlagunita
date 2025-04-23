@@ -1,7 +1,7 @@
-adding: {  }
-removing:
+adding:
   field_config:
     paragraph:
       stanford_card:
-        su_card_super_header:
+        sul_card_super_head:
           enabled: true
+removing: {  }

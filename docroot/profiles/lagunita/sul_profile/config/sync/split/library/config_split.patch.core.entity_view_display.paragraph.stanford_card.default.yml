@@ -23,6 +23,8 @@ adding:
       settings:
         remove_alt: false
       weight: 1
+    su_card_super_header:
+      region: content
     sul_card_image_caption:
       type: string
       label: hidden
@@ -60,10 +62,9 @@ removing:
     su_card_media:
       weight: 0
     su_card_super_header:
-      type: string
-      label: hidden
       settings:
         link_to_entity: false
-      third_party_settings: {  }
-      weight: 1
       region: card_super_headline
+      type: string
+      label: hidden
+      weight: 1
