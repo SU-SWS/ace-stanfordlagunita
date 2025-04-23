@@ -5,10 +5,10 @@ use Acquia\Blt\Robo\Common\EnvironmentDetector;
 $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/summer_profile/config/sync';
 
 $next_domain = FALSE;
-if (EnvironmentDetector::isAhDevEnv()) {
+if (EnvironmentDetector::isDevEnv()) {
   $next_domain = 'https://summer-git-dev-stanford-summer-session.vercel.app';
 }
-elseif (EnvironmentDetector::isAhStageEnv()) {
+elseif (EnvironmentDetector::isStageEnv()) {
   $next_domain = 'https://summer-git-test-stanford-summer-session.vercel.app';
 }
 elseif (EnvironmentDetector::isLocalEnv()) {
