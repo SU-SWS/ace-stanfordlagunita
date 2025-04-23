@@ -38,9 +38,10 @@ adding:
       third_party_settings: {  }
       weight: 0
       region: card_image
-  hidden:
-    su_card_super_header: true
 removing:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.su_card_super_header
   third_party_settings:
     ds:
       regions:

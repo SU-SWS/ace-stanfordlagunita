@@ -49,10 +49,10 @@ adding:
         size: 60
         placeholder: ''
       third_party_settings: {  }
-  hidden:
-    su_card_super_header: true
 removing:
   dependencies:
+    config:
+      - field.field.paragraph.stanford_card.su_card_super_header
     module:
       - link
   content:
@@ -65,4 +65,11 @@ removing:
       weight: 7
     su_card_media:
       weight: 0
-    
+    su_card_super_header:
+      type: string_textfield
+      weight: 1
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }

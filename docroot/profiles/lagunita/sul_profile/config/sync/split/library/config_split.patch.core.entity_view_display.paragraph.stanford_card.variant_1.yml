@@ -19,10 +19,12 @@ adding:
       settings:
         remove_alt: false
   hidden:
-    su_card_super_header: true
     sul_card_image_caption: true
     sul_card_super_head: true
 removing:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.su_card_super_header
   third_party_settings:
     ds:
       regions:

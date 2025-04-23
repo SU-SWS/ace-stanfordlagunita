@@ -12,7 +12,7 @@ id: paragraph.stanford_card.sul_card_super_head
 field_name: sul_card_super_head
 entity_type: paragraph
 bundle: stanford_card
-label: Superhead
+label: 'HTML Superhead'
 description: ''
 required: false
 translatable: false

@@ -25,7 +25,6 @@ complete_list:
   - core.entity_form_mode.paragraph.nested
   - core.entity_view_display.paragraph.collection.default
   - core.entity_view_display.paragraph.collection_card.default
-  - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_layout
   - layout_library.layout.sul_library_full_width
   - paragraphs.paragraphs_type.collection
   - paragraphs.paragraphs_type.collection_card
@@ -70,11 +69,10 @@ complete_list:
 partial_list:
   - core.entity_view_mode.node.stanford_card
   - field.field.paragraph.stanford_card.su_card_super_header
+  - field.storage.paragraph.su_card_super_header
   - field_ui.settings
   - graphql_compose.settings
-  - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_card
   - layout_paragraphs.settings
-  - paragraphs.paragraphs_type.stanford_card
   - '*su_*'
   - '*stanford_*'
   - 'core.entity_view_display.media.*'
@@ -85,3 +83,4 @@ partial_list:
   - 'jsonapi_extras.jsonapi_resource_config.*'
   - 'core.entity_form_display.paragraph.stanford_card.*'
   - 'core.entity_view_display.paragraph.stanford_card.*'
+  - 'editor.editor.stanford_*'
