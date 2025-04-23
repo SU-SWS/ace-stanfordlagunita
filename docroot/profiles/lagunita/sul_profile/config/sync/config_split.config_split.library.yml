@@ -25,7 +25,6 @@ complete_list:
   - core.entity_form_mode.paragraph.nested
   - core.entity_view_display.paragraph.collection.default
   - core.entity_view_display.paragraph.collection_card.default
-  - jsonapi_extras.jsonapi_resource_config.paragraph--stanford_layout
   - layout_library.layout.sul_library_full_width
   - paragraphs.paragraphs_type.collection
   - paragraphs.paragraphs_type.collection_card
