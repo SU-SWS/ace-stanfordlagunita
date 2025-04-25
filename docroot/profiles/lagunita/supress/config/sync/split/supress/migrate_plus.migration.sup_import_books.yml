@@ -282,6 +282,13 @@ process:
   sup_book_authors/3/middle: author_3_middle
   sup_book_authors/3/title: author_3_preceding
   sup_book_authors/3/credentials: author_3_role
+  sup_book_sort_author:
+    plugin: null_coalesce
+    source:
+      - author_0_last_name
+      - author_1_last_name
+      - author_2_last_name
+      - author_3_last_name
   sup_book_author_info/value:
     -
       plugin: str_replace
@@ -466,7 +473,7 @@ process:
       replace: ''
     -
       plugin: explode
-      delimiter: " / "
+      delimiter: ' / '
       limit: 2
     -
       plugin: sub_process

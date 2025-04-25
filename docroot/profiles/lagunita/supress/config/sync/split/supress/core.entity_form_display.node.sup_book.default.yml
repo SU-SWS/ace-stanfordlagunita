@@ -577,6 +577,7 @@ hidden:
   sup_book_cloth_sale_percent: true
   sup_book_cloth_sale_price: true
   sup_book_intl_cart: true
+  sup_book_sort_author: true
   uid: true
   unpublish_on: true
   url_redirects: true

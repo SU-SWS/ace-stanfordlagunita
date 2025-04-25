@@ -1,0 +1,21 @@
+uuid: 1c3438fd-6bb4-4e32-9a3e-f202a2c9a9a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sup_book_sort_author
+field_name: sup_book_sort_author
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

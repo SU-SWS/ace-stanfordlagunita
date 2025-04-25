@@ -1203,30 +1203,30 @@ display:
             label: Title
             field_identifier: title_asc
           exposed: true
-        sup_book_authors_full_value:
-          id: sup_book_authors_full_value
-          table: node__sup_book_authors_full
-          field: sup_book_authors_full_value
+        sup_book_sort_author_value:
+          id: sup_book_sort_author_value
+          table: node__sup_book_sort_author
+          field: sup_book_sort_author_value
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: standard
           order: ASC
           expose:
-            label: 'Authors (full) (sup_book_authors_full)'
+            label: 'Sorting Author Name (sup_book_sort_author)'
             field_identifier: author_asc
           exposed: true
-        sup_book_authors_full_value_1:
-          id: sup_book_authors_full_value_1
-          table: node__sup_book_authors_full
-          field: sup_book_authors_full_value
+        sup_book_sort_author_value_1:
+          id: sup_book_sort_author_value_1
+          table: node__sup_book_sort_author
+          field: sup_book_sort_author_value
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: standard
           order: DESC
           expose:
-            label: 'Authors (full) (sup_book_authors_full)'
+            label: 'Sorting Author Name (sup_book_sort_author)'
             field_identifier: author_desc
           exposed: true
       filters:

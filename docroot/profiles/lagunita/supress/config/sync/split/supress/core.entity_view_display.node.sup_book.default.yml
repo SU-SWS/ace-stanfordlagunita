@@ -458,3 +458,4 @@ hidden:
   su_metatags: true
   sup_book_cloth_sale_price: true
   sup_book_publisher: true
+  sup_book_sort_author: true

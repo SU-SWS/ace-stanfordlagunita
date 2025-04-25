@@ -141,6 +141,7 @@ hidden:
   sup_book_related_titles: true
   sup_book_sales_rank: true
   sup_book_series: true
+  sup_book_sort_author: true
   sup_book_subjects: true
   sup_book_tags: true
   sup_book_type: true
