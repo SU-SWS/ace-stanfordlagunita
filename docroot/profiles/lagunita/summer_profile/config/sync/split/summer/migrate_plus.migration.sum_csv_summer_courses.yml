@@ -246,7 +246,7 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: '^\s+|\s+$'
+      search: ^\s+|\s+$
       replace: ''
     -
       plugin: entity_generate
