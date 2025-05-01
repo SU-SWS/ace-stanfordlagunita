@@ -1,0 +1,20 @@
+uuid: 6ae4ea5a-74e3-4b11-b027-b2c1f7a27561
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.sum_course_learner
+field_name: sum_course_learner
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

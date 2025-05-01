@@ -107,6 +107,10 @@ source:
       name: course_syllabus_file
       label: 'Course Syllabus File'
       selector: course_syllabus_file
+    -
+      name: learner
+      label: 'Learner Type'
+      selector: learner
   ids:
     - unique_import_id
 process:
@@ -231,6 +235,25 @@ process:
       ignore_case: true
       operator: STARTS_WITH
       access_check: false
+  sum_course_learner:
+    -
+      plugin: skip_on_empty
+      source: learner
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: str_replace
+      regex: true
+      search: '/^\s+|\s+$/'
+      replace: ''
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_learner
+      entity_type: taxonomy_term
 destination:
   plugin: 'entity:node'
   default_bundle: sum_summer_courses
