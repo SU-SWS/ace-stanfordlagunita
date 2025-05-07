@@ -104,6 +104,10 @@ source:
       label: 'Course Availability'
       selector: course_availability
     -
+      name: course_syllabus_file
+      label: 'Course Syllabus File'
+      selector: course_syllabus_file
+    -
       name: learner
       label: 'Learner Type'
       selector: learner
@@ -242,7 +246,7 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: '/^\s+|\s+$/'
+      search: /^\s+|\s+$/
       replace: ''
     -
       plugin: entity_generate
