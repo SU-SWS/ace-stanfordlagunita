@@ -1,5 +1,17 @@
 # Lagunita
 
+2.8.2
+--------------------------------------------------------------------------------
+_Release Date: 2025-05-07_
+
+- SUP: Connect book subjects during import
+- SUP: Error handle with API query for ebook data
+- SUL23-768: BE update for card behaviors and fields
+- SUP: Add sorting view option for books
+- SUP: add author last name as separate field for view sorting
+- SUM-316: Add learner type taxonomy and list display
+- SUM: Removed unused column in CSV Importer
+
 2.8.1
 --------------------------------------------------------------------------------
 _Release Date: 2025-04-08_
