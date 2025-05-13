@@ -4,19 +4,19 @@ adding:
       ckeditor5_style:
         styles:
           -
-            label: 'Quote Text'
-            element: '<p class="su-quote-text">'
+            label: 'Location Link'
+            element: '<a class="su-link--location">'
           -
-            label: 'Card Text'
-            element: '<p class="su-related-text">'
+            label: Normal
+            element: '<p class="plain-text">'
           -
-            label: 'Sub Title'
-            element: '<p class="su-subheading">'
+            label: 'Intro Text'
+            element: '<p class="su-intro-text">'
           -
             label: 'Splash Font'
             element: '<p class="su-font-splash">'
           -
-            label: 'Quote Text'
+            label: Quote
             element: '<p class="su-quote-text">'
           -
             label: 'Drop Cap First Letter'
@@ -41,18 +41,6 @@ removing:
     plugins:
       ckeditor5_style:
         styles:
-          -
-            label: Button
-            element: '<a class="su-button">'
-          -
-            label: 'Big Button'
-            element: '<a class="su-button--big">'
-          -
-            label: 'Secondary Button'
-            element: '<a class="su-button--secondary">'
-          -
-            label: 'Action Link'
-            element: '<a class="su-link--action">'
           -
             label: Normal
             element: '<p class="plain-text">'
