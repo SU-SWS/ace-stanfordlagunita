@@ -66,6 +66,13 @@ class CardBehaviors extends ParagraphsBehaviorBase {
       ],
     ];
 
+    $element['display_rosette'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display Rosette'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'display_rosette', TRUE),
+      '#description' => $this->t('Enable to display the rosette for the horizontal card.'),
+    ];
+
     return $element;
   }
 
