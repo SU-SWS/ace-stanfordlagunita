@@ -65,6 +65,14 @@ class CardBehaviors extends ParagraphsBehaviorBase {
         'cardinal_red' => $this->t('Cardinal Red'),
       ],
     ];
+    
+    $element['hide_rosette'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Hide Rosette'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'hide_rosette', FALSE),
+      '#description' => $this->t('Check this box to hide the rosette for the horizontal card.'),
+    ];
+    
 
     return $element;
   }
