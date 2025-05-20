@@ -35,4 +35,5 @@ function supress_config_pages_presave(ConfigPagesInterface $config_page) {
   if (InstallerKernel::installationAttempted()) {
     \Drupal::service('router.builder')->rebuild();
   }
+
 }

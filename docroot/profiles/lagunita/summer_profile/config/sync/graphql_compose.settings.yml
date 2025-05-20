@@ -359,14 +359,14 @@ entity_config:
       enabled: true
     sum_course_availability:
       enabled: true
+    sum_course_grading:
+      enabled: true
     sum_course_interest_area:
       enabled: true
     sum_course_learner:
-      enabled: false
+      enabled: true
     sum_course_population:
       enabled: true
-    sum_summer_courses:
-      enabled: false
 field_config:
   block_content:
     stanford_component_block:
@@ -828,6 +828,8 @@ field_config:
       sum_course_end_date:
         enabled: true
       sum_course_format:
+        enabled: true
+      sum_course_grading:
         enabled: true
       sum_course_image:
         enabled: true

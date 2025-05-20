@@ -18,7 +18,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Course Interest Area'
+name: 'Summer Course Interest Area'
 vid: sum_course_interest_area
 description: null
 weight: 0
