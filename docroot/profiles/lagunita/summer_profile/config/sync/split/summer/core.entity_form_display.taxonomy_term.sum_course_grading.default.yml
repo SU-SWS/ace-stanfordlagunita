@@ -1,15 +1,15 @@
-uuid: cd33d6d0-b93c-4808-84de-9c2c4b9051c9
+uuid: ae7f9b31-5e3f-4341-b43c-c16c28b63e82
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.sum_summer_courses
+    - taxonomy.vocabulary.sum_course_grading
   module:
     - path
     - text
-id: taxonomy_term.sum_summer_courses.default
+id: taxonomy_term.sum_course_grading.default
 targetEntityType: taxonomy_term
-bundle: sum_summer_courses
+bundle: sum_course_grading
 mode: default
 content:
   description:

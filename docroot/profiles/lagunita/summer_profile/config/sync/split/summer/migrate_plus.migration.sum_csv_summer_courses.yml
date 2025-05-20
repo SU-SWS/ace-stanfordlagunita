@@ -107,6 +107,10 @@ source:
       name: learner
       label: 'Learner Type'
       selector: learner
+    -
+      name: grading
+      label: 'Grading'
+      selector: grading
   ids:
     - unique_import_id
 process:
@@ -242,13 +246,32 @@ process:
     -
       plugin: str_replace
       regex: true
-      search: '/^\s+|\s+$/'
+      search: /^\s+|\s+$/
       replace: ''
     -
       plugin: entity_generate
       value_key: name
       bundle_key: vid
       bundle: sum_course_learner
+      entity_type: taxonomy_term
+  sum_course_grading:
+    -
+      plugin: skip_on_empty
+      source: grading
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: str_replace
+      regex: true
+      search: /^\s+|\s+$/
+      replace: ''
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_summer_courses
       entity_type: taxonomy_term
 destination:
   plugin: 'entity:node'

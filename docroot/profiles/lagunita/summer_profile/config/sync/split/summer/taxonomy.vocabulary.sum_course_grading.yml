@@ -1,10 +1,13 @@
-uuid: e97fd21c-8481-40b7-9283-cad7fe7c08c8
+uuid: df293fa0-682f-46af-8f34-5b8eefd8b22f
 langcode: en
 status: true
 dependencies:
   module:
+    - flat_taxonomy
     - scheduler
 third_party_settings:
+  flat_taxonomy:
+    flat: 1
   scheduler:
     expand_fieldset: when_required
     fields_display_mode: vertical_tab
@@ -18,8 +21,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Summer Courses'
-vid: sum_summer_courses
+name: 'Summer Course Grading'
+vid: sum_course_grading
 description: null
 weight: 0
 new_revision: false

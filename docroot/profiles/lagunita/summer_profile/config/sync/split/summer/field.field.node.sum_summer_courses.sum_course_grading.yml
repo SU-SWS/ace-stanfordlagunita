@@ -1,0 +1,29 @@
+uuid: 845e6fd8-f88c-4552-9526-2456b1d79445
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_course_grading
+    - node.type.sum_summer_courses
+    - taxonomy.vocabulary.sum_course_grading
+id: node.sum_summer_courses.sum_course_grading
+field_name: sum_course_grading
+entity_type: node
+bundle: sum_summer_courses
+label: Grading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sum_course_grading: sum_course_grading
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -18,7 +18,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Course Availability'
+name: 'Summer Course Availability'
 vid: sum_course_availability
 description: null
 weight: 0
