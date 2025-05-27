@@ -160,6 +160,9 @@ settings:
           label: 'Action Link'
           element: '<a class="su-link--action">'
         -
+          label: 'Location Link'
+          element: '<a class="su-link--location">'
+        -
           label: Normal
           element: '<p class="plain-text">'
         -
