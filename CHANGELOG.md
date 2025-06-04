@@ -2,6 +2,16 @@
 
 2.8.2
 --------------------------------------------------------------------------------
+_Release Date: 2025-06-04_
+
+- SUM: Updated course form setting
+- SUL23-789 | add boolean for rosette in horizontal card behaviors (#183)
+- SUL23-769 | update SUL ckeditor html styles and add location link style (#182)
+- SUM-328: Add grading taxonomy and field to summer courses (#184)
+- SUL23-792 | update ckeditor configs for link options (#185)
+
+2.8.2
+--------------------------------------------------------------------------------
 _Release Date: 2025-05-07_
 
 - SUP: Connect book subjects during import
