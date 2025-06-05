@@ -35,7 +35,7 @@ class ListsCest {
       'type' => 'stanford_lists',
       'su_list_headline' => $this->faker->words(3, TRUE),
       'su_list_view' => [
-        'target_id' => 'stanford_news',
+        'target_id' => 'sul_news',
         'display_id' => 'block_1',
         'arguments' => '',
         'items_to_display' => NULL,
