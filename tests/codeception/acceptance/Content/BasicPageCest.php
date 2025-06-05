@@ -1,6 +1,7 @@
 <?php
 
-use Drupal\Component\Utility\Unicode;
+use Codeception\Attribute as CodeceptionAttribute;
+use Codeception\Example;
 use Faker\Factory;
 
 /**
@@ -396,6 +397,71 @@ class BasicPageCest {
   protected static function getTimezone() {
     return \Drupal::config('system.date')
       ->get('timezone.default') ?: @date_default_timezone_get();
+  }
+
+  #[CodeceptionAttribute\Examples('f7ecde', NULL, NULL, NULL)]
+  #[CodeceptionAttribute\Examples('dad7cb', NULL, 'none', 'none')]
+  #[CodeceptionAttribute\Examples('f0e5ef', 'none', NULL, 'more')]
+  #[CodeceptionAttribute\Group('layout-backgrounds')]
+  public function testLayoutBackgrounds(AcceptanceTester $I, Example $example) {
+    /** @var \Drupal\paragraphs\ParagraphInterface $layout */
+    $layout = $I->createEntity(['type' => 'stanford_layout'], 'paragraph');
+    $layout->setBehaviorSettings('layout_paragraphs', [
+      'layout' => 'layout_paragraphs_1_column',
+      'config' => [
+        'bg_color' => $example[0],
+        'bottom_margin' => $example[1],
+        'bottom_padding' => $example[2],
+        'top_padding' => $example[3],
+      ],
+    ]);
+    $layout->save();
+    $text = $this->faker->paragraph;
+    /** @var \Drupal\paragraphs\ParagraphInterface $wysiwyg */
+    $wysiwyg = $I->createEntity([
+      'type' => 'stanford_wysiwyg',
+      'su_wysiwyg_text' => ['value' => $text, 'format' => 'stanford_html'],
+    ], 'paragraph');
+    $wysiwyg->setBehaviorSettings('layout_paragraphs', [
+      'parent_uuid' => $layout->uuid(),
+      'region' => 'main',
+    ]);
+    $wysiwyg->save();
+
+    $node = $I->createEntity([
+      'title' => $this->faker->words(3, TRUE),
+      'type' => 'stanford_page',
+      'su_page_components' => [
+        ['target_id' => $layout->id(), 'entity' => $layout],
+        ['target_id' => $wysiwyg->id(), 'entity' => $wysiwyg],
+      ],
+    ]);
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($text);
+    $I->canSeeElement('.bg-' . $example[0] . ' .layout--layout-paragraphs-one-column');
+
+    if ($example[1]) {
+      $I->canSeeNumberOfElements('.bottom-margin-none .layout--layout-paragraphs-one-column', 1);
+    }
+    else {
+      $I->canSeeNumberOfElements('.bottom-margin-none', 0);
+    }
+
+    if ($example[2]) {
+      $I->canSeeNumberOfElements('.bottom-padding-none .layout--layout-paragraphs-one-column', 1);
+    }
+    else {
+      $I->canSeeNumberOfElements('.bottom-padding-none', 0);
+    }
+
+    if ($example[3]) {
+      $I->canSeeNumberOfElements(".top-padding-{$example[3]} .layout--layout-paragraphs-one-column", 1);
+    }
+    else {
+      $I->canSeeNumberOfElements(".top-padding-{$example[3]}", 0);
+    }
   }
 
 }
