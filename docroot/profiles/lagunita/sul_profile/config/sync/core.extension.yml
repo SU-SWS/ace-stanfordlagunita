@@ -7,6 +7,7 @@ module:
   admin_toolbar_tools: 0
   autologout: 0
   basic_auth: 0
+  better_exposed_filters: 0
   block: 0
   block_content: 0
   book: 0
@@ -17,6 +18,7 @@ module:
   ckeditor5: 0
   ckeditor5_icons: 0
   ckeditor5_plugins: 0
+  color_field: 0
   colorbox: 0
   components: 0
   conditional_fields: 0
@@ -137,6 +139,7 @@ module:
   migrate_source_csv: 0
   migrate_tools: 0
   mysql: 0
+  mysql57: 0
   name: 0
   next: 0
   nobots: 0
@@ -178,6 +181,7 @@ module:
   serialization: 0
   shortcut: 0
   shs: 0
+  simple_block: 0
   simple_oauth: 0
   smart_date: 0
   smart_trim: 0
