@@ -1,0 +1,5 @@
+adding:
+  hidden:
+    sup_filemaker_pass: true
+    sup_filemaker_user: true
+removing: {  }

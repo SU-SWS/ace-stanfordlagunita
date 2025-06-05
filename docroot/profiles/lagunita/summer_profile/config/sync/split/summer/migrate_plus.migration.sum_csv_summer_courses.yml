@@ -109,7 +109,7 @@ source:
       selector: learner
     -
       name: grading
-      label: 'Grading'
+      label: Grading
       selector: grading
   ids:
     - unique_import_id

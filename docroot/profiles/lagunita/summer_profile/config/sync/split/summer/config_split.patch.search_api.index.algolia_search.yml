@@ -24,16 +24,6 @@ adding:
         view_mode:
           'entity:node':
             sum_summer_courses: search_indexing
-    sum_course_grading:
-      label: 'Grading » Taxonomy term » Name'
-      datasource_id: 'entity:node'
-      property_path: 'sum_course_grading:entity:name'
-      type: string
-      dependencies:
-        config:
-          - field.storage.node.sum_course_grading
-        module:
-          - taxonomy
     photo:
       configuration:
         value: '[node:sum_course_image:entity:field_media_image:large|node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
@@ -95,6 +85,16 @@ adding:
       dependencies:
         config:
           - field.storage.node.sum_course_format
+    sum_course_grading:
+      label: 'Grading » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'sum_course_grading:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.sum_course_grading
+        module:
+          - taxonomy
     sum_course_instructors:
       label: Instructors
       datasource_id: 'entity:node'
