@@ -49,7 +49,7 @@ class BranchPageCest {
     $I->waitForText('Link URL');
     $ally_url = $this->faker->url;
     $I->fillField('Link URL', $ally_url);
-    $I->click('Save', '.ck-link-form');
+    $I->click('Insert');
 
     $I->click('Add section');
     $I->waitForText('Create new Layout');
@@ -64,7 +64,7 @@ class BranchPageCest {
     $I->click('Link', '.ui-dialog .ck-toolbar__items');
     $I->waitForText('Link URL');
     $I->fillField('Link URL', $paragraph_url);
-    $I->click('Save', '.ck-link-form');
+    $I->click('Insert');
     $I->click('Save', '.ui-dialog-buttonset');
     $I->waitForElementNotVisible('.ui-dialog');
 
