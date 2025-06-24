@@ -45,6 +45,43 @@ function stanford_basic_preprocess_ds_entity_view(&$variables) {
   }
 }
 
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function stanford_basic_preprocess_field__su_stat_headline(&$variables) {
+  $entity = $variables['element']['#object'];
+  $heading_lvl = $entity->get('su_stat_headline_lvl')?->getString() ?: 'h2';
+  if (!str_contains($heading_lvl, '.')) {
+    $heading_lvl .= '.';
+  }
+  // Split the value like div.foo.bar into tag and classes. Then explode the
+  // classes next to build an array.
+  [$tag, $classes] = explode('.', $heading_lvl, 2);
+  $variables['items'][0]['content']['#tag'] = $tag;
+  $variables['items'][0]['content']['#attributes']['class'] = explode('.', $classes);
+
+  if (!!$entity->get('su_stat_heading_hide')?->getString()) {
+    $variables['items'][0]['content']['#attributes']['class'][] = 'visually-hidden';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function stanford_basic_preprocess_field__fontawesome_icon(&$variables) {
+  $variables['items'][0]['content']['#icons'][0]['#field_name'] = $variables['element']['#field_name'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function stanford_basic_theme_suggestions_fontawesomeicons_alter(array &$suggestions, array &$variables) {
+  if (isset($variables['icons'][0]['#field_name'])) {
+    $suggestions[] = 'fontawesomeicons__' . $variables['icons'][0]['#field_name'];
+  }
+}
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
@@ -107,6 +144,12 @@ function stanford_basic_preprocess_node(&$variables) {
     ) {
       $variables['attributes']['class'][] = 'add-more-space-to-top';
     }
+  }
+
+  $variables['attributes']['class'][] = Html::cleanCssIdentifier('node--' . $node_bundle);
+
+  if ($variables['page']) {
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier('node-page--' . $node_bundle);
   }
 }
 
