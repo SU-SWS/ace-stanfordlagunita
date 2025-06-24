@@ -63,6 +63,14 @@ source:
       name: price_digital
       label: price_digital
       selector: fieldData/price_digital
+    -
+      name: ebook_sale_percent
+      label: ebook_sale_percent
+      selector: fieldData/ebook_sale_percent
+    -
+      name: ebook_sale_price
+      label: ebook_sale_price
+      selector: fieldData/ebook_sale_price
   ids:
     work_id_number:
       type: integer
@@ -114,6 +122,8 @@ process:
   sup_paper_discount: paper_sale_percent
   sup_paper_sale: paper_sale_price
   sup_digital_price: price_digital
+  sup_digital_discount: ebook_sale_percent
+  sup_digital_sale: ebook_sale_price
   sup_preorder:
     -
       plugin: skip_on_empty

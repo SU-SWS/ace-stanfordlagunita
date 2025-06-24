@@ -1,0 +1,20 @@
+uuid: a92dec23-fb15-4022-afa7-85fb7ee4a3c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_digital_sale
+field_name: sup_digital_sale
+entity_type: press
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

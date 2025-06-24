@@ -3,6 +3,8 @@
 frontend
 sulgryphon-nextjs
 
+config/envs/local/stage_file_proxy.settings.yml
+
 # Ignore configuration files that may contain sensitive information.
 local.settings.php
 local.drush.yml

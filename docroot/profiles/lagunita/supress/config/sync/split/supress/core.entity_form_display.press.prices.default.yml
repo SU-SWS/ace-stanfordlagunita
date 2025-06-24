@@ -7,7 +7,9 @@ dependencies:
     - field.field.press.prices.sup_cloth_price
     - field.field.press.prices.sup_cloth_sale
     - field.field.press.prices.sup_coming_soon
+    - field.field.press.prices.sup_digital_discount
     - field.field.press.prices.sup_digital_price
+    - field.field.press.prices.sup_digital_sale
     - field.field.press.prices.sup_intl_cart
     - field.field.press.prices.sup_paper_discount
     - field.field.press.prices.sup_paper_price
@@ -21,31 +23,38 @@ mode: default
 content:
   sup_cloth_discount:
     type: number
-    weight: 3
+    weight: 7
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_cloth_price:
     type: number
-    weight: 2
+    weight: 5
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_cloth_sale:
     type: number
-    weight: 4
+    weight: 6
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_coming_soon:
     type: boolean_checkbox
-    weight: 10
+    weight: 2
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  sup_digital_discount:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   sup_digital_price:
     type: number
@@ -54,23 +63,30 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  sup_digital_sale:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   sup_intl_cart:
     type: boolean_checkbox
-    weight: 6
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sup_paper_discount:
     type: number
-    weight: 8
+    weight: 10
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   sup_paper_price:
     type: number
-    weight: 7
+    weight: 8
     region: content
     settings:
       placeholder: ''
@@ -84,7 +100,7 @@ content:
     third_party_settings: {  }
   sup_preorder:
     type: boolean_checkbox
-    weight: 5
+    weight: 3
     region: content
     settings:
       display_label: true

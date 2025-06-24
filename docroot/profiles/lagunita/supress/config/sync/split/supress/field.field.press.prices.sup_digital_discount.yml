@@ -1,0 +1,23 @@
+uuid: 46b9c9d6-eabc-4817-83ad-851ef35d6517
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_digital_discount
+    - supress_helper.press_type.prices
+id: press.prices.sup_digital_discount
+field_name: sup_digital_discount
+entity_type: press
+bundle: prices
+label: 'Digital Sale Precent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

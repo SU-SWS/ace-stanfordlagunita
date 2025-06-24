@@ -1,7 +1,4 @@
 adding:
-  dependencies:
-    module:
-      - field_permissions
   permissions:
     - 'create su_metatags'
     - 'edit own su_metatags'
