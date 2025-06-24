@@ -404,6 +404,9 @@ process:
         field_media_image/alt: constants/alt
         su_media_category/target_id: '@media_tag'
   su_event_ext_image: photo_url
+  su_imported:
+    plugin: default_value
+    default_value: 1
 destination:
   plugin: 'entity:node'
   overwrite_properties:
@@ -430,6 +433,7 @@ destination:
     - su_event_source/uri
     - su_event_subject
     - su_event_type
+    - su_imported
     - tags
     - tags_chunked
     - title
