@@ -61,8 +61,7 @@
         "drupal/pdb": "2.0.0",
         "drush/drush": "^12.5",
         "su-sws/blt-sws": "dev-main",
-        "su-sws/stanford_profile": "11.x-dev",
-        "su-sws/stanford_profile_helper": "9.x-dev as 9.8.9",
+        "su-sws/stanford_profile": "^11.8",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {

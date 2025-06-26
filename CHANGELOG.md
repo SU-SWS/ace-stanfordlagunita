@@ -1,5 +1,29 @@
 # Lagunita
 
+2.8.6
+--------------------------------------------------------------------------------
+_Release Date: 2025-06-26_
+
+- SUP: Add digital sale and discount fields for book prices
+- Inheritance from stanford_profile
+  - D8CORE-6470: Update Event Importer help text
+  - D8CORE-8047: Manage Basic Pages content management view
+  - D8CORE-7836: Improved Events content management
+  - D8CORE-7736: Add unpublished site banner to all pages
+  - D8CORE-8042 - External source field for person
+  - D8CORE-7843 D8CORE-8086 Add stat card and section background color options
+  - D8CORE 8000
+  - Require headline in stat card
+  - D8CORE-8133: Opportunities Default Sort
+  - D8CORE-7987: Copy the utility links and buttons for the mobile display
+  - D8CORE-8045: Adding spacing to header bottom when there is no navigation menu.
+  - Added heading level selection for stat card paragraph
+  - D8CORE-8036: RSS Feed For News
+  - Adjust opportunity filters to use radio buttons
+  - D8CORE-8071 Added an "Imported" field populated
+  - D8CORE-8063 Fix html structure on opportunity list items
+  - D8CORE-8019: Move opportunity fields into a view for better styles
+
 2.8.5
 --------------------------------------------------------------------------------
 _Release Date: 2025-06-05_
