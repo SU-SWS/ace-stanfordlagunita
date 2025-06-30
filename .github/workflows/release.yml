@@ -44,20 +44,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
-      - name: Restore Cache
-        if: ${{ steps.tag.outputs.tag }}
-        uses: actions/cache@v4
-        with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.x-${{ hashFiles('blt/blt.yml') }}-${{ hashFiles('composer.json') }}-
-            2.x-${{ hashFiles('blt/blt.yml') }}-
       - name: Deploy Tag
         if: ${{ steps.tag.outputs.tag }}
         run: |
