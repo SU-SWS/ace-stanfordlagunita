@@ -321,10 +321,15 @@ function _supress_ebook_formats(): array {
 
   $book_formats = [];
   foreach ($formats as $item) {
-    $book_formats[(int) $item['fieldData']['work_id_number']] = [
-      'epub' => $item['fieldData']['format_epub'] == 'yes',
-      'pdf' => $item['fieldData']['format_pdf'] == 'yes',
-    ];
+
+    if (empty($book_formats[(int) $item['fieldData']['work_id_number']]['epub'])) {
+      $book_formats[(int) $item['fieldData']['work_id_number']]['epub'] = $item['fieldData']['format_epub'] == 'yes';
+    }
+
+    if (empty($book_formats[(int) $item['fieldData']['work_id_number']]['pdf'])) {
+      $book_formats[(int) $item['fieldData']['work_id_number']]['pdf'] = $item['fieldData']['format_pdf'] == 'yes';
+    }
+
   }
   ksort($book_formats);
 
