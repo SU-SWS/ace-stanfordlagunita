@@ -157,8 +157,6 @@ entity_config:
       enabled: false
     courses-menu:
       enabled: false
-    devel:
-      enabled: false
     footer:
       enabled: false
     main:
