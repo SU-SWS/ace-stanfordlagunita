@@ -28,7 +28,7 @@ class FileMakerAuthTest extends UnitTestCase {
     $auth_plugin = FileMakerAuth::create($container, [], '', []);
 
     $this->expectException(\Exception::class);
-    $auth_plugin->getAuthenticationOptions();
+    $auth_plugin->getAuthenticationOptions('');
   }
 
   public function testFailedRequestFailure() {
@@ -41,7 +41,7 @@ class FileMakerAuthTest extends UnitTestCase {
     $auth_plugin = FileMakerAuth::create($container, ['token_url' => 'https://localhost', 'client_id' => 'foo', 'client_secret' => 'bar'], '', []);
 
     $this->expectException(ClientException::class);
-    $auth_plugin->getAuthenticationOptions();
+    $auth_plugin->getAuthenticationOptions('');
   }
 
   public function testBadJsonFailure() {
@@ -62,7 +62,7 @@ class FileMakerAuthTest extends UnitTestCase {
     $auth_plugin = FileMakerAuth::create($container, ['token_url' => 'https://localhost', 'client_id' => 'foo', 'client_secret' => 'bar'], '', []);
 
     $this->expectException(\Exception::class);
-    $auth_plugin->getAuthenticationOptions();
+    $auth_plugin->getAuthenticationOptions('');
   }
 
   public function testSuccess() {
@@ -85,7 +85,7 @@ class FileMakerAuthTest extends UnitTestCase {
       'client_secret' => 'bar',
     ], '', []);
 
-    $options = $auth_plugin->getAuthenticationOptions();
+    $options = $auth_plugin->getAuthenticationOptions('');
     $this->assertEquals(['Authorization' => 'Bearer foobarbaz'], $options['headers']);
   }
 
