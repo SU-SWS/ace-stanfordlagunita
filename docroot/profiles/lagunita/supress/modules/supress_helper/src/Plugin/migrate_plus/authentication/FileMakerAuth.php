@@ -52,7 +52,7 @@ class FileMakerAuth extends AuthenticationPluginBase implements ContainerFactory
   /**
    * {@inheritdoc}
    */
-  public function getAuthenticationOptions(): array {
+  public function getAuthenticationOptions($url): array {
     if (
       !isset($this->configuration['token_url']) ||
       !isset($this->configuration['client_id']) ||
