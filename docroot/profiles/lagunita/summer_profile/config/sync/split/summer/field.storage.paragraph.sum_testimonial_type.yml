@@ -19,7 +19,7 @@ settings:
       label: 'High School'
     -
       value: sum_graduate
-      label: Graduate
+      label: 'Graduate Student'
     -
       value: sum_gap_year
       label: 'Gap Year'
