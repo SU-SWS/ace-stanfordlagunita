@@ -456,6 +456,7 @@ content:
 hidden:
   search_api_excerpt: true
   su_metatags: true
+  sup_book_alt_format: true
   sup_book_cloth_sale_price: true
   sup_book_publisher: true
   sup_book_sort_author: true

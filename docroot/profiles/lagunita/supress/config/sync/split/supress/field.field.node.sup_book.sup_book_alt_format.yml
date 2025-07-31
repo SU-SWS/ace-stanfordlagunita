@@ -1,0 +1,19 @@
+uuid: 4161840c-6650-42af-b007-daa993e2221c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sup_book_alt_format
+    - node.type.sup_book
+id: node.sup_book.sup_book_alt_format
+field_name: sup_book_alt_format
+entity_type: node
+bundle: sup_book
+label: 'Alternative Format'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

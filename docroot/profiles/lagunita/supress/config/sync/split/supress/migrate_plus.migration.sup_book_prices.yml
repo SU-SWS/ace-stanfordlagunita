@@ -28,6 +28,10 @@ source:
       label: work_id_number
       selector: fieldData/work_id_number
     -
+      name: alt_format_price
+      label: alt_format_price
+      selector: fieldData/alt_format_price
+    -
       name: cloth_sale_percent
       label: cloth_sale_percent
       selector: fieldData/cloth_sale_percent
@@ -96,6 +100,10 @@ process:
     plugin: skip_on_empty
     source: paper_sale_price
     method: process
+  alt_format_price:
+    plugin: skip_on_empty
+    source: alt_format_price
+    method: process
   price:
     -
       plugin: null_coalesce
@@ -104,6 +112,7 @@ process:
         - '@cloth_price_discounted'
         - '@paper_price'
         - '@paper_price_discounted'
+        - '@alt_format_price'
     -
       plugin: skip_on_empty
       method: row
@@ -114,6 +123,7 @@ process:
     replace: ''
     regex: true
   work_id: work_id_number
+  sup_alt_price: alt_format_price
   sup_cloth_price: price_cloth
   sup_cloth_discount: cloth_sale_percent
   sup_cloth_sale: cloth_sale_price
@@ -149,4 +159,6 @@ process:
 destination:
   plugin: 'entity:press'
   default_bundle: prices
+idMap: {  }
 migration_dependencies: {  }
+include: null

@@ -157,6 +157,8 @@ entity_config:
       enabled: false
     courses-menu:
       enabled: false
+    devel:
+      enabled: false
     footer:
       enabled: false
     main:
@@ -816,6 +818,8 @@ field_config:
     sup_book:
       body:
         enabled: true
+      sup_book_alt_format:
+        enabled: true
       sup_book_author_info:
         enabled: true
       sup_book_authors:
@@ -1095,6 +1099,8 @@ field_config:
       sup_year:
         enabled: true
     prices:
+      sup_alt_price:
+        enabled: true
       sup_cloth_discount:
         enabled: true
       sup_cloth_price:
