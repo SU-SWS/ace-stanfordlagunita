@@ -1,5 +1,14 @@
 # Lagunita
 
+2.8.10
+--------------------------------------------------------------------------------
+_Release Date: 2025-08-01_
+
+- SUP: Add alternative price data
+- SUM: Updated testimonial banner type field option
+- Updated dependencies.
+
+
 2.8.9
 --------------------------------------------------------------------------------
 _Release Date: 2025-07-16_
