@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.press.search_indexing
+    - field.field.press.prices.sup_alt_price
     - field.field.press.prices.sup_cloth_discount
     - field.field.press.prices.sup_cloth_price
     - field.field.press.prices.sup_cloth_sale
@@ -126,6 +127,7 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  sup_alt_price: true
   sup_digital_discount: true
   sup_digital_price: true
   sup_digital_sale: true

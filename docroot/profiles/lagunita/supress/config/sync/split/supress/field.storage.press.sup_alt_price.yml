@@ -1,0 +1,20 @@
+uuid: 73a7a894-716b-42b7-bd9d-31338bd60864
+langcode: en
+status: true
+dependencies:
+  module:
+    - supress_helper
+id: press.sup_alt_price
+field_name: sup_alt_price
+entity_type: press
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

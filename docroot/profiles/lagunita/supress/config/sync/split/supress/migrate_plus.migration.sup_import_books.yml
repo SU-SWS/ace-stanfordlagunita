@@ -143,6 +143,10 @@ source:
       label: description
       selector: fieldData/description
     -
+      name: alt_format
+      label: alt_format
+      selector: fieldData/alt_format
+    -
       name: isbn_13_alt
       label: isbn_13_alt
       selector: fieldData/isbn_13_alt
@@ -543,11 +547,14 @@ process:
       ignore_case: true
   sup_book_pdf_format: pdf
   sup_book_epub_format: epub
+  sup_book_alt_format: alt_format
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book
+idMap: {  }
 migration_dependencies:
   required:
     - sup_book_prices
   optional:
     - sup_awards
+include: null

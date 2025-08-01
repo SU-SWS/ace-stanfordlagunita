@@ -109,6 +109,7 @@ hidden:
   links: true
   search_api_excerpt: true
   su_metatags: true
+  sup_book_alt_format: true
   sup_book_author_info: true
   sup_book_authors: true
   sup_book_authors_full: true

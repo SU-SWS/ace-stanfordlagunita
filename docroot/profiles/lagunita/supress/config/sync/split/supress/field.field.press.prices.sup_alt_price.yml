@@ -1,0 +1,23 @@
+uuid: fb2069ae-c25b-4a3b-b1e7-46fc498b01f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.press.sup_alt_price
+    - supress_helper.press_type.prices
+id: press.prices.sup_alt_price
+field_name: sup_alt_price
+entity_type: press
+bundle: prices
+label: 'Alternative Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

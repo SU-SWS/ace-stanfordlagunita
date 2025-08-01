@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.sup_book.body
     - field.field.node.sup_book.su_metatags
+    - field.field.node.sup_book.sup_book_alt_format
     - field.field.node.sup_book.sup_book_author_info
     - field.field.node.sup_book.sup_book_authors
     - field.field.node.sup_book.sup_book_authors_full
@@ -35,6 +36,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_reviews
     - field.field.node.sup_book.sup_book_sales_rank
     - field.field.node.sup_book.sup_book_series
+    - field.field.node.sup_book.sup_book_sort_author
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
     - field.field.node.sup_book.sup_book_tags
@@ -126,8 +128,9 @@ third_party_settings:
         - sup_book_isbn_13_cloth
         - sup_book_isbn_13_paper
         - sup_book_isbn_13_digital
-        - sup_book_isbn_13_alt
         - sup_book_isbn_13_isw
+        - sup_book_alt_format
+        - sup_book_isbn_13_alt
       label: 'ISBN Information'
       region: content
       parent_name: ''
@@ -207,6 +210,14 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  sup_book_alt_format:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   sup_book_author_info:
     type: text_textarea
@@ -345,7 +356,7 @@ content:
     third_party_settings: {  }
   sup_book_isbn_13_alt:
     type: string_textfield
-    weight: 28
+    weight: 30
     region: content
     settings:
       size: 60
@@ -369,7 +380,7 @@ content:
     third_party_settings: {  }
   sup_book_isbn_13_isw:
     type: string_textfield
-    weight: 29
+    weight: 28
     region: content
     settings:
       size: 60
