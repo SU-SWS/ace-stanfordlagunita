@@ -53,6 +53,7 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_person.layout_builder__layout
+      - field.field.node.stanford_person.su_imported
     module:
       - change_labels
       - layout_paragraphs

@@ -69,6 +69,7 @@ removing:
     config:
       - field.field.node.stanford_event.layout_builder__layout
       - field.field.node.stanford_event.su_event_ext_image
+      - field.field.node.stanford_event.su_imported
     module:
       - change_labels
       - layout_paragraphs
