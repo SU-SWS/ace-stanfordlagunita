@@ -1,0 +1,3 @@
+site:
+  profile: supress
+  remote-alias: supress.prod

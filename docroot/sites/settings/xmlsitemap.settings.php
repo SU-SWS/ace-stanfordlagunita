@@ -1,5 +1,6 @@
 <?php
-use Acquia\Blt\Robo\Common\EnvironmentDetector;
+
+use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 
 // Do not submit to google or bing if on any environment other than prod.
 if (!EnvironmentDetector::isAhProdEnv()) {

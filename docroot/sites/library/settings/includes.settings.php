@@ -1,6 +1,6 @@
 <?php
 
-use Acquia\Blt\Robo\Common\EnvironmentDetector;
+use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 
 $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/sul_profile/config/sync';
 

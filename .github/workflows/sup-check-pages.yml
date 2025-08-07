@@ -1,0 +1,54 @@
+name: Check SUP Paths
+on:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      dow:
+        description: 'Day of week batch'
+        required: false
+        type: choice
+        options:
+          - "1"
+          - "2"
+          - "3"
+          - "4"
+          - "5"
+          - "6"
+          - "7"
+jobs:
+  check-pages:
+    name: Check for 200 responses on SUP pages
+    runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:php8.3
+      options: '--network-alias drupal8ci'
+    env:
+      SUP_REVALIDATION: ${{secrets.SUP_REVALIDATION}}
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+      - uses: actions/checkout@v4
+      - name: Restore Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            2.1-${{ hashFiles('composer.json') }}-
+            2.1-
+      - name: Invalidate 404 paths
+        run: |
+          composer install -n &&
+          .github/sup-check-pages.sh $SUP_REVALIDATION ${{ github.event.inputs.dow }}
+

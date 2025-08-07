@@ -5,7 +5,7 @@
  * Contains any config overrides.
  */
 
-use Acquia\Blt\Robo\Common\EnvironmentDetector;
+use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 
 // Decoupled sites don't need domain redirect, analytics, or search indexing at
 // any time.
