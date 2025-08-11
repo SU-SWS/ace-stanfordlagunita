@@ -58,6 +58,8 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book_ancillary
+idMap: {  }
 migration_dependencies:
   required:
     - sup_import_books
+include: null

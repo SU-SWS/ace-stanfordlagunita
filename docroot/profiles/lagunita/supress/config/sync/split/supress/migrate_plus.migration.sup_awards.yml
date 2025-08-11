@@ -77,4 +77,6 @@ process:
 destination:
   plugin: 'entity:press'
   default_bundle: award
+idMap: {  }
 migration_dependencies: {  }
+include: null

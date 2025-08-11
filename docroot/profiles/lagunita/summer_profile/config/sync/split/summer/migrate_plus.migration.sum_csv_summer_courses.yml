@@ -276,4 +276,6 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: sum_summer_courses
+idMap: {  }
 migration_dependencies: {  }
+include: null
