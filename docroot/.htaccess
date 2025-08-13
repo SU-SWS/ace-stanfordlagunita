@@ -1,3 +1,14 @@
+# Block bad bots
+# See https://docs.acquia.com/cloud-platform/arch/security/restrict/#cloud-blocking-by-ip.
+<ifmodule mod_setenvif.c>
+# See https://support-acquia.force.com/s/case/5006g00000i7TdjAAE/continued-and-ongoing-service-disruption-on-multiple-applications
+SetEnvIf AH_CLIENT_IP ^146\.190\.24\.114$ Deny_Host
+
+Order allow,deny
+Allow from all
+Deny from env=Deny_Host
+</ifmodule>
+
 #
 # Apache/PHP/Drupal settings:
 #
@@ -21,6 +32,12 @@ DirectoryIndex index.php index.html index.htm
 # Add correct encoding for SVGZ.
 AddType image/svg+xml svg svgz
 AddEncoding gzip svgz
+
+# Add correct encoding for webp.
+AddType image/webp .webp
+
+# Add webp MIME type so that Apache knows how to handle WebP images
+AddType image/webp .webp
 
 # Most of the following PHP settings cannot be changed at runtime. See
 # sites/default/default.settings.php and
@@ -60,9 +77,15 @@ AddEncoding gzip svgz
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
-  # Redirect summer sites pro to the edit domain.
-  RewriteCond %{HTTP_HOST} ^summer\.sites-pro\.stanford\.edu$ [NC]
-  RewriteRule ^(.*)$ https://edit-summer.stanford.edu/$1 [R=301,L,QSA]
+  # Rewrite all requests to www.earth.stanford.edu and earth.stanford.edu to
+  # sustainability.stanford.edu. Include request paths and query strings.
+  RewriteCond %{HTTP_HOST} ^earth\.stanford\.edu [NC,OR]
+  RewriteCond %{HTTP_HOST} ^www\.earth\.stanford\.edu [NC]
+  RewriteRule ^(.*)$ https://sustainability.stanford.edu/$1 [R=301,L,QSA]
+
+  # Block access via specific user-agents
+  RewriteCond %{HTTP_USER_AGENT} CQ-API-Spyder [NC]
+  RewriteRule .* - [F,L]
 
   # Block access to specific files/paths to all users except stanford IP's.
   # Each condition blocks unwanted access to all users at the apache level.
@@ -89,12 +112,38 @@ AddEncoding gzip svgz
   RewriteCond %{REQUEST_URI} "/.*(uploadify.php|eval-stdin.php|sssp.pHp5|sssp.php.fla|sssp.php.pjpeg|sssp.phtml|upload.php|connector.minimal.php).*" [NC]
   RewriteRule .* - [F]
 
+  # Ensure non-live sites prevent robots from crawling. This is similar to what
+  # Acquia Cloud does for the *.acquia-sites.com domains.
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} (\d{2,})test [OR]
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} (\d{2,})dev [OR]
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} (\d{2,})testup [OR]
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} (\d{2,})devup [OR]
+  RewriteCond %{HTTP_HOST} \.acsitefactory\.com$ [NC]
+  RewriteCond %{REQUEST_URI} /robots.txt [NC]
+  RewriteRule ^ no_robots.txt [L]
+
+  # Rewrite URLs of the form foo.cardinalsites.acsitefactory.com to
+  # https://foo.sites.stanford.edu
+  # See https://stanfordits.atlassian.net/browse/SITES-129.
+  RewriteCond "%{HTTP_HOST}"   "^(.*)\.cardinalsites\.acsitefactory\.com" [NC]
+  RewriteRule "^/?(.*)"        "https://%1.sites.stanford.edu/$1" [L,R,NE]
+
+  # Test environment.
+  RewriteCond "%{HTTP_HOST}"   "^(.*)\.test-cardinalsites\.acsitefactory\.com" [NC]
+  RewriteRule "^/?(.*)"        "https://%1-test.sites.stanford.edu/$1" [L,R,NE]
+
+  # Dev environment.
+  RewriteCond "%{HTTP_HOST}"   "^(.*)\.dev-cardinalsites\.acsitefactory\.com" [NC]
+  RewriteRule "^/?(.*)"        "https://%1-dev.sites.stanford.edu/$1" [L,R,NE]
+
+  # Remote Administration environment.
+  RewriteCond "%{HTTP_HOST}"   "^(.*)\.acqra-cardinalsites\.acsitefactory\.com" [NC]
+  RewriteRule "^/?(.*)"        "https://%1-acqra.sites.stanford.edu/$1" [L,R,NE]
+
   # Redirect HTTP to HTTPS on cloud
-  RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} prod [NC,OR]
-  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} test [NC,OR]
-  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} dev [NC]
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} ^.*(dev|test|prod|live)$ [NC,OR]
+  RewriteCond %{ENV:AH_SITE_ENVIRONMENT} ^ode.*$ [NC]
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [NE,L,R=301]
 
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
@@ -156,6 +205,11 @@ AddEncoding gzip svgz
   RewriteCond %{REQUEST_URI} !core
   RewriteRule ^ %1/core/%2 [L,QSA,R=301]
 
+  # Redirect sso/login to saml_login
+  # Blame @jbickar if this turns out to be simplistic in the future.
+  # I tried to tell him on 3.18.2020 but nooooooo.
+  RewriteRule ^sso/login$ /saml_login [R=301,QSA,L]
+
   # Rewrite install.php during installation to see if mod_rewrite is working
   RewriteRule ^core/install\.php core/install.php?rewrite=ok [QSA,L]
 
@@ -174,12 +228,6 @@ AddEncoding gzip svgz
   RewriteCond %{REQUEST_URI} !/core/[^/]*\.php$
   # Allow access to test-specific PHP files:
   RewriteCond %{REQUEST_URI} !/core/modules/system/tests/https?\.php
-  # Allow access to simplesaml paths.
-  RewriteCond %{REQUEST_URI} !^/simplesaml
-  # Allow access to Statistics module's custom front controller.
-  # Copy and adapt this rule to directly execute PHP files in contributed or
-  # custom modules or to run another PHP application in the same directory.
-  RewriteCond %{REQUEST_URI} !/core/modules/statistics/statistics\.php$
   # ACSF requirement: allow access to apc_rebuild.php.
   RewriteCond %{REQUEST_URI} !/sites/g/apc_rebuild.php$
   # Deny access to any other PHP files that do not match the rules above.
