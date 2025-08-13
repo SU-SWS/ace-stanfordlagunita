@@ -6,6 +6,7 @@ namespace Drupal\supress_helper\Hook;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Hook\Attribute\Hook;
+use Drupal\Core\Installer\InstallerKernel;
 use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 
@@ -16,6 +17,10 @@ class PressHooks {
 
   #[Hook('entity_create')]
   public function pressCreate(EntityInterface $entity) {
+    if (InstallerKernel::installationAttempted()) {
+      return;
+    }
+
     $migration = self::getBookMigration();
     if (!$migration) {
       return;
@@ -44,7 +49,7 @@ class PressHooks {
 
   protected static function getBookMigration(): ?MigrationInterface {
     return \Drupal::service('plugin.manager.migration')
-      ->createInstance('sup_import_books');
+      ->createInstance('sup_import_books') ?: NULL;
   }
 
 }

@@ -105,3 +105,16 @@ function sul_helper_update_8006() {
     ->set('storage', 'collection')
     ->save();
 }
+
+function _sul_helper_update_9000(){
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('core.extension');
+  $modules = $config->get('module');
+  unset($modules['build_hooks']);
+  unset($modules['dynamic_entity_reference']);
+  $config->set('module', $modules);
+  $config->save(TRUE);
+  $schema = \Drupal::keyValue('system.schema');
+  $schema->delete('build_hooks');
+  $schema->delete('dynamic_entity_reference');
+}
