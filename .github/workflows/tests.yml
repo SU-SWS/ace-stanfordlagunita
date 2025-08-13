@@ -138,7 +138,8 @@ jobs:
           mkdir -p artifacts/_data/
       - name: Run tests
         run: |
-          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} &&
+          PROFILE=`drush st --fields=install-profile --format=list` &&
+          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} --test-dir=docroot/profiles/lagunita/$PROFILE/tests/codeception &&
           if [ ! -f artifacts/report.html ]; then
             exit 1
           fi

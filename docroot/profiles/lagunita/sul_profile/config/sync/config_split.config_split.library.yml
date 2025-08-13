@@ -11,7 +11,6 @@ no_patching: false
 storage: collection
 folder: profiles/lagunita/sul_profile/config/library
 module:
-  dynamic_entity_reference: 0
   link_attributes: 0
   stage_file_proxy: 0
   sul_helper: 0
