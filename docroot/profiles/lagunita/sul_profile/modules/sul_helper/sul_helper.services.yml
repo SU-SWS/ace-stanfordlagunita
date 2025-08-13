@@ -2,8 +2,3 @@ services:
   sul_helper.sul_service:
     class: Drupal\sul_helper\SulService
     arguments: ['@http_client', '@cache.default']
-  sul_helper.form_subscriber:
-    class: Drupal\sul_helper\EventSubscriber\SulFormSubscriber
-    arguments: ['@current_user']
-    tags:
-      - { name: event_subscriber }

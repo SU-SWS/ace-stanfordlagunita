@@ -1,19 +1,15 @@
 <?php
 
-namespace Drupal\sul_helper\EventSubscriber;
+namespace Drupal\sul_helper\Hook;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\core_event_dispatcher\Event\Form\FormIdAlterEvent;
-use Drupal\field_event_dispatcher\Event\Field\WidgetCompleteFormAlterEvent;
-use Drupal\field_event_dispatcher\FieldHookEvents;
-use Drupal\hook_event_dispatcher\HookEventDispatcherInterface;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * SUL Helper form event subscriber.
  */
-class SulFormSubscriber implements EventSubscriberInterface {
+class SulHooks {
 
   /**
    * Event subscriber constructor.
@@ -21,28 +17,14 @@ class SulFormSubscriber implements EventSubscriberInterface {
    * @param \Drupal\Core\Session\AccountProxyInterface $currentUser
    *   Current user account.
    */
-  public function __construct(protected AccountProxyInterface $currentUser) {
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function getSubscribedEvents() {
-    return [
-      FieldHookEvents::WIDGET_COMPLETE_FORM_ALTER => ['onWidgetFormAlter'],
-      HookEventDispatcherInterface::PREFIX . 'form_layout_paragraphs_component_form.alter' => ['layoutParagraphComponentFormAlter'],
-    ];
-  }
+  public function __construct(protected AccountProxyInterface $currentUser) {}
 
   /**
    * Modify the layout paragraph component form.
-   *
-   * @param \Drupal\core_event_dispatcher\Event\Form\FormIdAlterEvent $event
-   *   Triggered Event.
    */
-  public function layoutParagraphComponentFormAlter(FormIdAlterEvent $event): void {
-    $form = &$event->getForm();
-    $paragraph = $event->getFormState()->getFormObject()->getParagraph();
+  #[Hook('form_layout_paragraphs_component_form_alter')]
+  public function layoutParagraphComponentFormAlter(array &$form, FormStateInterface $formState): void {
+    $paragraph = $formState->getFormObject()->getParagraph();
     if ($paragraph->bundle() == 'sul_contact_card') {
       $state = [
         'visible' => ['[name="sul_contact__branch"]' => ['value' => '_none']],
@@ -55,21 +37,16 @@ class SulFormSubscriber implements EventSubscriberInterface {
       $form['sul_contact__title']['#states'] = $state;
       $form['sul_contact__address']['#states'] = $state;
       $form['sul_contact__map_link']['#states'] = $state;
-
     }
   }
 
   /**
    * Widget form alter event.
-   *
-   * @param \Drupal\field_event_dispatcher\Event\Field\WidgetCompleteFormAlterEvent $event
-   *   Triggered event.
    */
-  public function onWidgetFormAlter(WidgetCompleteFormAlterEvent $event): void {
-    $context = $event->getContext();
+  #[Hook('field_widget_complete_form_alter')]
+  public function onWidgetFormAlter(&$field_widget_complete_form, FormStateInterface $form_state, $context): void {
     if ($context['items']->getName() == 'sul_contact__branch') {
-      $widget_form = &$event->getWidgetCompleteForm();
-      $widget_form['widget']['#element_validate'][] = [
+      $field_widget_complete_form['widget']['#element_validate'][] = [
         self::class,
         'validateBranchField',
       ];
