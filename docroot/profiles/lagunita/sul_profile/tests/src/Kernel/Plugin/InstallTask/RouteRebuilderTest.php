@@ -8,8 +8,6 @@ use Drupal\sul_profile\Plugin\InstallTask\RouteRebuilder;
 
 /**
  * Class RouteRebuilderTest.
- *
- * @coversDefaultClass \Drupal\sul_profile\Plugin\InstallTask\RouteRebuilder
  */
 class RouteRebuilderTest extends KernelTestBase {
 

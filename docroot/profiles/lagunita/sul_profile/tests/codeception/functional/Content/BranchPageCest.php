@@ -1,12 +1,12 @@
 <?php
 
 use Faker\Factory;
+use Codeception\Attribute as CodeceptionAttribute;
 
 /**
  * Branch page tests.
- *
- * @group sul-branch
  */
+#[CodeceptionAttribute\Group('sul-branch')]
 class BranchPageCest {
 
   /**

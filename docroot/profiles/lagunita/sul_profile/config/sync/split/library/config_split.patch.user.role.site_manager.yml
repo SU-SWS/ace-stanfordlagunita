@@ -6,8 +6,6 @@ adding:
       - taxonomy.vocabulary.study_place_capacity
       - taxonomy.vocabulary.sul_study_place_features
       - taxonomy.vocabulary.sul_study_place_type
-    module:
-      - build_hooks
   permissions:
     - 'access site in maintenance mode'
     - 'choose layout for node stanford_news'

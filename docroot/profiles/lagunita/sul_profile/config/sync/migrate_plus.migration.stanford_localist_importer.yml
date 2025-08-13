@@ -439,4 +439,6 @@ destination:
     - title
     - type
     - sul_event__image/target_id
+idMap: {  }
 migration_dependencies: {  }
+include: null

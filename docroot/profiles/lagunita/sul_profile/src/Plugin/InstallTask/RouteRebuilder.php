@@ -4,16 +4,14 @@ namespace Drupal\sul_profile\Plugin\InstallTask;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
+use Drupal\sul_profile\Attribute\InstallTask;
 use Drupal\sul_profile\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Rebuilds the routes.
- *
- * @InstallTask(
- *   id="sul_profile_route_rebuilder"
- * )
  */
+#[InstallTask(id: 'sul_profile_route_rebuilder')]
 class RouteRebuilder extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

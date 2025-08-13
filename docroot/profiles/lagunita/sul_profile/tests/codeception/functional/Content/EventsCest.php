@@ -1,10 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 use Drupal\layout_builder\Section;
 use Drupal\layout_builder\SectionComponent;
 use Facebook\WebDriver\WebDriverElement;
 
+#[CodeceptionAttribute\Group('events')]
 class EventsCest {
 
   /**
@@ -23,10 +25,9 @@ class EventsCest {
 
   /**
    * Mini calendar display.
-   *
-   * @group mini-calendar
    */
-  public function _testMiniCalendar(FunctionalTester $I) {
+  #[CodeceptionAttribute\Group('mini-calendar')]
+  protected function testMiniCalendar(FunctionalTester $I) {
     $events = [];
     $current_month = (int) date('n');
     for ($i = $current_month; $i < $current_month + 12; $i++) {
@@ -49,10 +50,10 @@ class EventsCest {
     $uuid_service = \Drupal::service('uuid');
     $components = [
       new SectionComponent($uuid_service->generate(), 'main', [
-        'id' => 'react_component:mini_calendar',
+        'id' => 'pdb_component:mini_calendar',
         'label' => 'Mini Calendar',
         'label_display' => 'hidden',
-        'provider' => 'pdb_react',
+        'provider' => 'stanford_profile_helper',
       ]),
     ];
     $layout = [

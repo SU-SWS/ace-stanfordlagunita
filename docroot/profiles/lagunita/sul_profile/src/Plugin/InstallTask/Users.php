@@ -4,16 +4,14 @@ namespace Drupal\sul_profile\Plugin\InstallTask;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\sul_profile\Attribute\InstallTask;
 use Drupal\sul_profile\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Install users task.
- *
- * @InstallTask(
- *   id="sul_profile_users"
- * )
  */
+#[InstallTask(id: 'sul_profile_users')]
 class Users extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

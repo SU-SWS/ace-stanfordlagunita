@@ -6,6 +6,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\sul_profile\Attribute\InstallTask;
 
 /**
  * Install task plugin manager.
@@ -37,13 +38,7 @@ class InstallTaskManager extends DefaultPluginManager {
    *   The module handler to invoke the alter hook with.
    */
   public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler) {
-    parent::__construct(
-      'Plugin/InstallTask',
-      $namespaces,
-      $module_handler,
-      'Drupal\sul_profile\InstallTaskInterface',
-      'Drupal\sul_profile\Annotation\InstallTask'
-    );
+    parent::__construct('Plugin/InstallTask', $namespaces, $module_handler, InstallTaskInterface::class, InstallTask::class);
     $this->alterInfo('install_task_plugins');
     $this->setCacheBackend($cache_backend, 'install_task_plugins');
   }

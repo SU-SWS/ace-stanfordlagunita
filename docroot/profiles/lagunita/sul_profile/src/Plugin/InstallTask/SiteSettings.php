@@ -10,6 +10,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\State\StateInterface;
 use Drupal\externalauth\AuthmapInterface;
+use Drupal\sul_profile\Attribute\InstallTask;
 use Drupal\sul_profile\InstallTaskBase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
@@ -17,11 +18,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * SNOW site settings installation.
- *
- * @InstallTask(
- *   id="sul_profile_site_settings"
- * )
  */
+#[InstallTask(id: 'sul_profile_site_settings')]
 class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

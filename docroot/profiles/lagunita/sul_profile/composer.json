@@ -11,9 +11,7 @@
             "url": "https://packages.drupal.org/8"
         }
     ],
-    "require": {
-        "drupal/build_hooks": "^3.3"
-    },
+    "require": {},
     "config": {
         "sort-packages": true
     },

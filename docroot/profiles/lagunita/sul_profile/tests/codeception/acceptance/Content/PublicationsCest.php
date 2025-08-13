@@ -1,12 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class PublicationsCest.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 abstract class PublicationsCest {
 
   /**
@@ -47,14 +47,14 @@ abstract class PublicationsCest {
     $I->selectOption('Publication Types (value 1)', $term->id());
     $I->selectOption('su_publication_citation[actions][bundle]', 'Book');
     $I->click('Add Citation');
-    $I->fillField('First Name', $this->faker->firstName);
-    $I->fillField('Last Name/Company', $this->faker->lastName);
-    $I->fillField('Subtitle', $this->faker->text);
-    $I->fillField('Publication Place', $this->faker->text);
-    $I->fillField('Publisher', $this->faker->text);
+    $I->fillField('First Name', $this->faker->firstName());
+    $I->fillField('Last Name/Company', $this->faker->lastName());
+    $I->fillField('Subtitle', $this->faker->text());
+    $I->fillField('Publication Place', $this->faker->text());
+    $I->fillField('Publisher', $this->faker->text());
     $I->fillField('Year', $this->faker->numberBetween(1900, 2020));
-    $I->fillField('su_publication_cta[0][uri]', $this->faker->url);
-    $I->fillField('Link text', $this->faker->text);
+    $I->fillField('su_publication_cta[0][uri]', $this->faker->url());
+    $I->fillField('Link text', $this->faker->text());
 
     $I->click('Save');
     $I->canSee($this->values['node_title'], 'h1');
@@ -63,7 +63,7 @@ abstract class PublicationsCest {
   /**
    * Test out the list pages.
    */
-  protected function testAllPublicationListPage(AcceptanceTester $I) {
+  public function testAllPublicationListPage(AcceptanceTester $I) {
     $this->testBookCitation($I);
 
     $I->amOnPage('/publications');
@@ -107,22 +107,22 @@ abstract class PublicationsCest {
     $I->fillField('Title', $this->values['node_title']);
     $I->selectOption('su_publication_citation[actions][bundle]', 'Other');
     $I->click('Add Citation');
-    $I->fillField('First Name', $this->faker->firstName);
-    $I->fillField('Last Name/Company', $this->faker->lastName);
-    $I->fillField('Subtitle', $this->faker->text);
-    $I->fillField('Publisher', $this->faker->text);
-    $I->fillField('su_publication_cta[0][uri]', $this->faker->url);
-    $I->fillField('Link text', $this->faker->text);
+    $I->fillField('First Name', $this->faker->firstName());
+    $I->fillField('Last Name/Company', $this->faker->lastName());
+    $I->fillField('Subtitle', $this->faker->text());
+    $I->fillField('Publisher', $this->faker->text());
+    $I->fillField('su_publication_cta[0][uri]', $this->faker->url());
+    $I->fillField('Link text', $this->faker->text());
 
     $I->click('Save');
     $I->canSee($this->values['node_title'], 'h1');
-    // $I->canSee('Publication', '.node-stanford-publication-citation-type');
+    $I->canSee('Publication', '.node-stanford-publication-citation-type');
   }
 
   /**
    * Publication list should be in date order.
    */
-  protected function testListSort(AcceptanceTester $I) {
+  public function testListSort(AcceptanceTester $I) {
     $this->values['a_node_title'] = 'A' . $this->faker->words(3, TRUE);
     $this->values['b_node_title'] = 'B' . $this->faker->words(3, TRUE);
     $this->values['c_node_title'] = 'C' . $this->faker->words(3, TRUE);
@@ -182,12 +182,11 @@ abstract class PublicationsCest {
 
   /**
    * Publications should automatically populate on author's page.
-   *
-   * @group D8CORE-4867
    */
+  #[CodeceptionAttribute\Group('D8CORE-4867')]
   public function testPubAuthorPage(AcceptanceTester $I) {
-    $first_name = $this->faker->firstName;
-    $last_name = $this->faker->lastName;
+    $first_name = $this->faker->firstName();
+    $last_name = $this->faker->lastName();
     $author_node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $first_name,
@@ -208,7 +207,7 @@ abstract class PublicationsCest {
     $I->fillField('Last Name/Company', $last_name);
     $I->fillField('Subtitle', $this->faker->words(2, TRUE));
     $I->fillField('Year', date('Y'));
-    $I->fillField('Publisher', $this->faker->company);
+    $I->fillField('Publisher', $this->faker->company());
     $I->click('Save');
 
     $I->amOnPage($author_node->toUrl()->toString());
@@ -222,7 +221,7 @@ abstract class PublicationsCest {
   public function testJournalPublisher(AcceptanceTester $I) {
     $term = $I->createEntity([
       'vid' => 'stanford_publication_topics',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
 
     $this->values['node_title'] = $this->faker->words(3, TRUE);
@@ -232,13 +231,13 @@ abstract class PublicationsCest {
     $I->selectOption('Publication Types (value 1)', $term->id());
     $I->selectOption('su_publication_citation[actions][bundle]', 'Journal Article');
     $I->click('Add Citation');
-    $I->fillField('First Name', $this->faker->firstName);
-    $I->fillField('Last Name/Company', $this->faker->lastName);
+    $I->fillField('First Name', $this->faker->firstName());
+    $I->fillField('Last Name/Company', $this->faker->lastName());
     $I->fillField('Volume', "1");
     $I->fillField('Issue', "1");
     $I->fillField('Page(s)', "1-10");
-    $I->fillField('Publisher', $this->faker->text);
-    $I->fillField('Journal Name', $this->faker->text);
+    $I->fillField('Publisher', $this->faker->text());
+    $I->fillField('Journal Name', $this->faker->text());
     $I->fillField('Year', $this->faker->numberBetween(1900, 2020));
     $I->click('Save');
     $I->canSee($this->values['node_title'], 'h1');

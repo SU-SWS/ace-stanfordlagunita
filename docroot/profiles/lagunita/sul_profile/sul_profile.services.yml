@@ -3,7 +3,7 @@ services:
     class: Drupal\sul_profile\InstallTaskManager
     parent: default_plugin_manager
   sul_profile.event_subscriber:
-    class: '\Drupal\sul_profile\EventSubscriber\EventSubscriber'
+    class: '\Drupal\sul_profile\EventSubscriber\SulProfileEventSubscriber'
     arguments: ['@file_system', '@http_client', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }

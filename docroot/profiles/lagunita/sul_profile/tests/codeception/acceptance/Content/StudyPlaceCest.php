@@ -1,12 +1,12 @@
 <?php
 
 use Faker\Factory;
+use Codeception\Attribute as CodeceptionAttribute;
 
 /**
  * Study Place page tests.
- *
- * @group sul-study-place
  */
+#[CodeceptionAttribute\Group('sul-study-place')]
 class StudyPlaceCest {
 
   /**
@@ -27,15 +27,15 @@ class StudyPlaceCest {
     ]);
     $place_type = $I->createEntity([
       'vid' => 'sul_study_place_type',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $feature = $I->createEntity([
       'vid' => 'sul_study_place_features',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $capacity = $I->createEntity([
       'vid' => 'study_place_capacity',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
 
     $title = $this->faker->words(3, TRUE);
