@@ -9,9 +9,6 @@ use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ProfileMaintainingSectionTest
- *
- * @group stanford_profile
- * @coversDefaultClass \Drupal\summer_profile\Plugin\HelpSection\ProfileHelpMaintainingSection
  */
 class ProfileMaintainingSectionTest extends UnitTestCase {
 

@@ -9,9 +9,6 @@ use Drupal\summer_profile\StanfordProfilePermissions;
 
 /**
  * Class StanfordProfilePermissionsTest.
- *
- * @group summer_profile
- * @coversDefaultClass \Drupal\summer_profile\StanfordProfilePermissions
  */
 class StanfordProfilePermissionsTest extends KernelTestBase {
 

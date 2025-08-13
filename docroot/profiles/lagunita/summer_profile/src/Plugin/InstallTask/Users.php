@@ -4,16 +4,14 @@ namespace Drupal\summer_profile\Plugin\InstallTask;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\summer_profile\Attribute\InstallTask;
 use Drupal\summer_profile\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Install users task.
- *
- * @InstallTask(
- *   id="summer_profile_users"
- * )
  */
+#[InstallTask(id: 'summer_profile_users')]
 class Users extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

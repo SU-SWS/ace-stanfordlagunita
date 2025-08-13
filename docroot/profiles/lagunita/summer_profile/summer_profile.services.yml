@@ -3,7 +3,7 @@ services:
     class: Drupal\summer_profile\InstallTaskManager
     parent: default_plugin_manager
   summer_profile.event_subscriber:
-    class: '\Drupal\summer_profile\EventSubscriber\EventSubscriber'
+    class: '\Drupal\summer_profile\EventSubscriber\SummerProfileEventSubscriber'
     arguments: ['@file_system', '@http_client', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }

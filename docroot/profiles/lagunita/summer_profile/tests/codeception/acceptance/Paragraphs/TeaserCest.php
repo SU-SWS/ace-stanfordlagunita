@@ -1,10 +1,9 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
-/**
- *
- */
+#[CodeceptionAttribute\Group('paragraphs')]
 abstract class TeaserCest {
 
   /**
@@ -21,9 +20,7 @@ abstract class TeaserCest {
     $this->faker = Factory::create();
   }
 
-  /**
-   * @group teaser-headers
-   */
+  #[CodeceptionAttribute\Group('teaser-headers')]
   public function testTeaserParagraphHeaders(AcceptanceTester $I) {
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')

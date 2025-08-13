@@ -3,7 +3,6 @@
 namespace Drupal\summer_profile\EventSubscriber;
 
 use Acquia\DrupalEnvironmentDetector\AcquiaDrupalEnvironmentDetector;
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -11,16 +10,9 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
 use Drupal\Core\Url;
-use Drupal\core_event_dispatcher\EntityHookEvents;
-use Drupal\core_event_dispatcher\Event\Entity\EntityDeleteEvent;
-use Drupal\core_event_dispatcher\Event\Entity\EntityInsertEvent;
-use Drupal\core_event_dispatcher\Event\Entity\EntityPresaveEvent;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
-use Drupal\default_content\Event\DefaultContentEvents;
 use Drupal\default_content\Event\ImportEvent;
 use Drupal\file\FileInterface;
-use Drupal\user\Entity\Role;
-use Drupal\user\RoleInterface;
+use Drupal\stanford_profile_helper\Hook\ConfigPagesHooks;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -33,7 +25,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
  *
  * @package Drupal\summer_profile\EventSubscriber
  */
-class EventSubscriber implements EventSubscriberInterface {
+class SummerProfileEventSubscriber implements EventSubscriberInterface {
 
   /**
    * External site url to fetch the given file from.
@@ -60,10 +52,7 @@ class EventSubscriber implements EventSubscriberInterface {
    */
   public static function getSubscribedEvents() {
     return [
-      DefaultContentEvents::IMPORT => 'onContentImport',
-      EntityHookEvents::ENTITY_INSERT => 'onEntityInsert',
-      EntityHookEvents::ENTITY_PRE_SAVE => 'onEntityPreSave',
-      EntityHookEvents::ENTITY_DELETE => 'onEntityDelete',
+      'default_content.import' => 'onContentImport',
       KernelEvents::REQUEST => 'onKernelRequest',
     ];
   }
@@ -85,44 +74,6 @@ class EventSubscriber implements EventSubscriberInterface {
   }
 
   /**
-   * On entity insert event.
-   *
-   * @param \Drupal\core_event_dispatcher\Event\Entity\EntityInsertEvent $event
-   *   Triggered event.
-   */
-  public function onEntityInsert(EntityInsertEvent $event) {
-    if ($event->getEntity()->getEntityTypeId() == 'user_role') {
-      self::updateSamlauthRoles();
-    }
-  }
-
-  /**
-   * On saving the config page, set the renewal date field.
-   *
-   * @param \Drupal\core_event_dispatcher\Event\Entity\EntityPresaveEvent $event
-   *   Entity presave event.
-   */
-  public static function onEntityPreSave(EntityPresaveEvent $event) {
-    $entity = $event->getEntity();
-
-    // Invalidate the site renewal redirect logic in case the user now has
-    // permissions to make the needed changes.
-    if ($entity->getEntityTypeId() == 'user') {
-      \Drupal::cache()->invalidate('su_renew_site:' . $entity->id());
-    }
-    if (
-      PHP_SAPI != 'cli' &&
-      $entity->getEntityTypeId() == 'config_pages' &&
-      $entity->bundle() == 'stanford_basic_site_settings' &&
-      self::redirectUser()
-    ) {
-      $renewal_date = time() + 60 * 60 * 24 * 365;
-      $entity->set('su_site_renewal_due', date(DateTimeItemInterface::DATETIME_STORAGE_FORMAT, $renewal_date));
-      Cache::invalidateTags(['site-renew-date']);
-    }
-  }
-
-  /**
    * On kernel request, redirect the user to update contact information.
    *
    * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
@@ -135,7 +86,7 @@ class EventSubscriber implements EventSubscriberInterface {
       $event->getRequestType() == HttpKernelInterface::MAIN_REQUEST &&
       (Settings::get('stanford_capture_ownership', FALSE)) &&
       !str_starts_with($current_uri, '/admin/config/system/basic-site-settings') &&
-      self::redirectUser()
+      ConfigPagesHooks::redirectUser()
     ) {
       $config_page_url = Url::fromRoute('config_pages.stanford_basic_site_settings', [], ['query' => ['destination' => $current_uri]])
         ->toString(TRUE)
@@ -143,79 +94,6 @@ class EventSubscriber implements EventSubscriberInterface {
       $this->messenger->addWarning('Please update or verify the site contact information on the "Site Contacts" tab.');
       $event->setResponse(new RedirectResponse($config_page_url . '#contact'));
     }
-  }
-
-  /**
-   * Check if the current user should be redirected to the site settings form.
-   *
-   * @return bool
-   *   Redirect the user.
-   */
-  protected static function redirectUser() {
-    $current_user = \Drupal::currentUser();
-    $cache = \Drupal::cache();
-
-    /** @var \Drupal\Core\Routing\CurrentRouteMatch $route_match */
-    $route_match = \Drupal::service('current_route_match');
-    $name = $route_match->getCurrentRouteMatch()->getRouteName();
-    $ignore_routes = [
-      'system.css_asset',
-      'system.js_asset',
-      'image.style_private',
-      'system.files',
-      'system.private_file_download',
-    ];
-    if (in_array($name, $ignore_routes)) {
-      return FALSE;
-    }
-
-    $cache_data = $cache->get('su_renew_site:' . $current_user->id());
-    if ($cache_data) {
-      return $cache_data->data;
-    }
-
-    /** @var \Drupal\config_pages\ConfigPagesLoaderServiceInterface $config_page_loader */
-    $config_page_loader = \Drupal::service('config_pages.loader');
-    $renewal_date = $config_page_loader->getValue('stanford_basic_site_settings', 'su_site_renewal_due', 0, 'value') ?: date(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
-
-    // Check for config page edit access and ignore if the user is an
-    // administrator. That way devs don't get forced into submitting the form.
-    $site_manager = $current_user->hasPermission('edit stanford_basic_site_settings config page entity') && !in_array('administrator', $current_user->getRoles());
-
-    // If the renewal date has passed, they should be redirected.
-    $needs_renewal = !getenv('CI') && $site_manager && strtotime($renewal_date) < time();
-    $cache->set('su_renew_site:' . $current_user->id(), $needs_renewal, strtotime($renewal_date), ['site-renew-date']);
-
-    return $needs_renewal;
-  }
-
-  /**
-   * On entity delete event.
-   *
-   * @param \Drupal\core_event_dispatcher\Event\Entity\EntityDeleteEvent $event
-   *   Triggered event.
-   */
-  public function onEntityDelete(EntityDeleteEvent $event) {
-    if ($event->getEntity()->getEntityTypeId() == 'user_role') {
-      self::updateSamlauthRoles();
-    }
-  }
-
-  /**
-   * Update samlauth allowed roles settings.
-   */
-  protected static function updateSamlauthRoles() {
-    if (!\Drupal::moduleHandler()->moduleExists('samlauth')) {
-      return;
-    }
-
-    $role_ids = array_keys(Role::loadMultiple());
-    $role_ids = array_combine($role_ids, $role_ids);
-    unset($role_ids[RoleInterface::AUTHENTICATED_ID]);
-    asort($role_ids);
-
-    $config = \Drupal::configFactory()->getEditable('samlauth.authentication');
-    $config->set('map_users_roles', $role_ids)->save();
   }
 
   /**
