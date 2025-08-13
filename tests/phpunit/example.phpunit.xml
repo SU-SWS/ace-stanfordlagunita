@@ -4,15 +4,35 @@
  or your current system user. See core/tests/README.md and
  https://www.drupal.org/node/2116263 for details.
 -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="tests/bootstrap.php" colors="true" beStrictAboutTestsThatDoNotTestAnything="true" beStrictAboutOutputDuringTests="true" beStrictAboutChangesToGlobalState="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage includeUncoveredFiles="true">
+<phpunit
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  bootstrap="tests/bootstrap.php"
+  colors="true"
+  beStrictAboutTestsThatDoNotTestAnything="true"
+  beStrictAboutOutputDuringTests="true"
+  beStrictAboutChangesToGlobalState="true"
+  failOnRisky="true"
+  failOnWarning="true"
+  displayDetailsOnTestsThatTriggerErrors="true"
+  displayDetailsOnTestsThatTriggerWarnings="true"
+  displayDetailsOnTestsThatTriggerDeprecations="false"
+  cacheResult="false"
+  xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+  cacheDirectory=".phpunit.cache"
+>
+  <source ignoreSuppressionOfDeprecations="true">
     <include>
       <directory>../modules/custom</directory>
-      <directory>../profiles/lagunita</directory>
+      <directory>../profiles/custom</directory>
     </include>
     <exclude>
+      <directory suffix="Test.php">../modules/custom/*</directory>
+      <directory suffix="Test.php">../modules/profiles/*</directory>
+      <directory suffix="TestBase.php">../modules/custom/*</directory>
+      <directory suffix="TestBase.php">../modules/profiles/*</directory>
       <directory suffix=".post_update.php">../modules/custom/*</directory>
       <directory suffix=".post_update.php">../profiles/*</directory>
+      <directory suffix=".deploy.php">../modules/custom/*</directory>
       <directory suffix=".deploy.php">../profiles/*</directory>
       <directory>../modules/custom/*/tests</directory>
       <directory>../modules/custom/*/*/tests</directory>
@@ -20,12 +40,12 @@
       <directory>../modules/custom/*/*/*/*/tests</directory>
       <directory>../modules/custom/*/*/*/*/*/tests</directory>
       <directory>../modules/custom/*/*/*/*/*/*/tests</directory>
-      <directory>../profiles/lagunita/*/tests</directory>
-      <directory>../profiles/lagunita/*/*/tests</directory>
-      <directory>../profiles/lagunita/*/*/*/tests</directory>
-      <directory>../profiles/lagunita/*/*/*/*/tests</directory>
+      <directory>../profiles/*/*/tests</directory>
+      <directory>../profiles/*/*/*/tests</directory>
+      <directory>../profiles/*/*/*/*/tests</directory>
+      <directory>../profiles/*/*/*/*/*/tests</directory>
     </exclude>
-  </coverage>
+  </source>
   <!-- set printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter" once
    https://youtrack.jetbrains.com/issue/WI-24808 is resolved. Drupal provides a
    result printer that links to the html output results for functional tests.
@@ -40,7 +60,7 @@
     <!-- Do not limit the amount of memory tests take to run. -->
     <ini name="memory_limit" value="-1"/>
     <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
-    <env name="SIMPLETEST_BASE_URL" value="${project.local.uri}"/>
+    <env name="SIMPLETEST_BASE_URL" value="localhost"/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
     <env name="SIMPLETEST_DB" value="mysql://${drupal.db.username}:${drupal.db.password}@${drupal.db.host}/${drupal.db.database}"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/docrootroot/sites/simpletest/browser_output -->
@@ -68,14 +88,7 @@
     </testsuite>
     <testsuite name="stanford">
       <directory>../modules/custom</directory>
-      <directory>../profiles/lagunita</directory>
+      <directory>../profiles/custom</directory>
     </testsuite>
   </testsuites>
-  <listeners>
-    <listener class="\Drupal\Tests\Listeners\DrupalListener">
-    </listener>
-    <!-- The Symfony deprecation listener has to come after the Drupal listener -->
-    <!--<listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener">-->
-    <!--</listener>-->
-  </listeners>
 </phpunit>

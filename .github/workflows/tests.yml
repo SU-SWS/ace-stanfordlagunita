@@ -11,7 +11,7 @@ jobs:
       image: pookmish/drupal8ci:php8.3
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_DATABASE: drupal
           MYSQL_USER: drupal
@@ -30,11 +30,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -65,11 +65,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Get Sites
         id: set-matrix
         run: |
@@ -95,7 +95,7 @@ jobs:
         image: selenium/standalone-chrome:130.0
         options: '--shm-size="2g"'
       mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_DATABASE: drupal
           MYSQL_USER: drupal
@@ -114,11 +114,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Install Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -138,9 +138,6 @@ jobs:
           mkdir -p artifacts/_data/
       - name: Run tests
         run: |
-          mkdir -p -m 777 tests/codeception/${{ matrix.suite }} &&
-          PROFILE=`drush st --fields=install-profile --format=list` &&
-          rsync -r docroot/profiles/lagunita/$PROFILE/tests/codeception/${{ matrix.suite }}/ tests/codeception/${{ matrix.suite }}/$PROFILE &&
           drush codeception --site-domain=localhost --suite=${{ matrix.suite }} &&
           if [ ! -f artifacts/report.html ]; then
             exit 1
@@ -166,7 +163,7 @@ jobs:
       STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_DATABASE: drupal
           MYSQL_USER: drupal
@@ -192,11 +189,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Sync and Update Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -227,11 +224,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:

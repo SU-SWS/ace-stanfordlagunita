@@ -49,22 +49,20 @@
         }
     ],
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "composer/installers": "^1.9 || ^2.0",
         "cweagans/composer-patches": "^1.6",
         "drupal/acquia_connector": "^4.0",
         "drupal/acquia_purge": "^1.1",
-        "drupal/core": "^10.2",
-        "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "^10.0",
-        "drupal/pdb": "2.0.0",
+        "drupal/core": "^11",
+        "drupal/core-composer-scaffold": "^11",
+        "drupal/core-recommended": "^11",
         "drush/drush": "^13.6",
-        "su-sws/stanford_profile": "^11.8",
+        "su-sws/stanford_profile": "12.x-dev",
         "su-sws/sws-drush-commands": "1.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "drupal/graphql_compose_fragments-graphql_compose_fragments": "^1.0@beta",
         "drupal/upgrade_status": "^4.0",
         "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/drupal-dev": "^10"
@@ -159,9 +157,6 @@
             "drupal/graphql_compose": {
                 "Remove link language setting on field results": "patches/contrib/graphql_compose-link_language.patch"
             },
-            "drupal/hook_event_dispatcher": {
-                "https://www.drupal.org/project/hook_event_dispatcher/issues/3354751": "https://www.drupal.org/files/issues/2023-04-17/hook_event_dispatcher-4.x-3354751.patch"
-            },
             "drupal/graphql": {
                 "Log graphql queries": "patches/contrib/graphql-logging.patch"
             },
@@ -169,14 +164,8 @@
                 "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.diff",
                 "https://www.drupal.org/project/markdown/issues/3483437": "https://git.drupalcode.org/project/markdown/-/merge_requests/35.diff"
             },
-            "drupal/paranoia": {
+            "su-sws/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
-            },
-            "drupal/menu_link": {
-                "https://www.drupal.org/project/menu_link/issues/3358081": "https://git.drupalcode.org/project/menu_link/-/merge_requests/9.patch"
-            },
-            "drupal/menu_link_weight": {
-                "https://www.drupal.org/project/menu_link_weight/issues/2875984": "https://git.drupalcode.org/project/menu_link_weight/-/merge_requests/2.diff"
             }
         }
     },
@@ -193,7 +182,7 @@
             "rm -rf docroot/profiles/lagunita",
             "git checkout docroot/profiles/lagunita",
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
-            "git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 11.x || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/sul_profile --squash stanford_profile 12.x || true",
             "git checkout --ours docroot/profiles/lagunita/sul_profile/composer.json",
             "git checkout --ours docroot/profiles/lagunita/sul_profile/sul_profile.info.yml",
             "git add docroot/profiles/lagunita/sul_profile/composer.json docroot/profiles/lagunita/sul_profile/sul_profile.info.yml"
@@ -202,7 +191,7 @@
             "rm -rf docroot/profiles/lagunita",
             "git checkout docroot/profiles/lagunita",
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
-            "git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 11.x || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/supress --squash stanford_profile 12.x || true",
             "git checkout --ours docroot/profiles/lagunita/supress/composer.json",
             "git checkout --ours docroot/profiles/lagunita/supress/supress.info.yml",
             "git add docroot/profiles/lagunita/supress/composer.json docroot/profiles/lagunita/supress/supress.info.yml"
@@ -211,7 +200,7 @@
             "rm -rf docroot/profiles/lagunita",
             "git checkout docroot/profiles/lagunita",
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
-            "git subtree pull --prefix=docroot/profiles/lagunita/summer_profile --squash stanford_profile 11.x || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/summer_profile --squash stanford_profile 12.x || true",
             "git checkout --ours docroot/profiles/lagunita/summer_profile/composer.json",
             "git checkout --ours docroot/profiles/lagunita/summer_profile/summer_profile.info.yml",
             "git add docroot/profiles/lagunita/summer_profile/composer.json docroot/profiles/lagunita/summer_profile/summer_profile.info.yml"

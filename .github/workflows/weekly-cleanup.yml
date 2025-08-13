@@ -22,11 +22,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Delete old database backups
         run: |
           composer install -n &&
@@ -59,11 +59,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ hashFiles('composer.json') }}-
+            3.x-
       - name: Delete unused git branches & tags
         run: |
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&

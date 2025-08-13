@@ -7,6 +7,8 @@
 
 use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 
+require DRUPAL_ROOT . '/modules/contrib/mysql57/settings.inc';
+
 if (EnvironmentDetector::isAhEnv()) {
   // Lock the UI to read_only when on production or test in Acquia.
   if (
