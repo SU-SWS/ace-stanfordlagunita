@@ -106,8 +106,14 @@ function sul_helper_update_8006() {
     ->save();
 }
 
-function _sul_helper_update_9000(){
+/**
+ * Uninstall build hooks module.
+ */
+function sul_helper_update_9000(){
   $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('ultimate_cron.job.build_hooks_cron')->delete();
+  $config_factory->getEditable('build_hooks.frontend_environment.sul_public')->delete();
+
   $config = $config_factory->getEditable('core.extension');
   $modules = $config->get('module');
   unset($modules['build_hooks']);
