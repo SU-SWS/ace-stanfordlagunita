@@ -3,7 +3,7 @@ services:
     class: Drupal\supress\InstallTaskManager
     parent: default_plugin_manager
   supress.event_subscriber:
-    class: '\Drupal\supress\EventSubscriber\EventSubscriber'
+    class: '\Drupal\supress\EventSubscriber\PressProfileEventSubscriber'
     arguments: ['@file_system', '@http_client', '@logger.factory', '@messenger']
     tags:
       - { name: 'event_subscriber' }

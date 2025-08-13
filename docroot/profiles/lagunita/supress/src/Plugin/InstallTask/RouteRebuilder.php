@@ -4,16 +4,14 @@ namespace Drupal\supress\Plugin\InstallTask;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
+use Drupal\supress\Attribute\InstallTask;
 use Drupal\supress\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Rebuilds the routes.
- *
- * @InstallTask(
- *   id="supress_route_rebuilder"
- * )
  */
+#[InstallTask(id: 'supress_route_rebuilder')]
 class RouteRebuilder extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**

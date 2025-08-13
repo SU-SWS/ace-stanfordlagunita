@@ -1,14 +1,14 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class IntranetCest.
- *
- * @group users
- * @group no-parallel
- * @group intranet
  */
+#[CodeceptionAttribute\Group('users')]
+#[CodeceptionAttribute\Group('no-parallel')]
+#[CodeceptionAttribute\Group('intranet')]
 abstract class IntranetCest {
 
   /**
@@ -136,7 +136,7 @@ abstract class IntranetCest {
   /**
    * Content should be indexed and results displayed.
    */
-  protected function testSearchResults(AcceptanceTester $I) {
+  public function testSearchResults(AcceptanceTester $I) {
     $I->runDrush('sset stanford_intranet 1');
     $I->runDrush('sapi-c');
     $quote = 'Life is like a box of chocolates. You never know what you’re going to get.';

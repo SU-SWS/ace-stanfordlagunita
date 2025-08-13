@@ -4,16 +4,14 @@ namespace Drupal\supress\Plugin\InstallTask;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\supress\Attribute\InstallTask;
 use Drupal\supress\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Install users task.
- *
- * @InstallTask(
- *   id="supress_users"
- * )
  */
+#[InstallTask(id: 'supress_users')]
 class Users extends InstallTaskBase implements ContainerFactoryPluginInterface {
 
   /**
