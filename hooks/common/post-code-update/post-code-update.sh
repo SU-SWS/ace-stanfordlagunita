@@ -28,5 +28,4 @@ export PATH=$repo_root/vendor/bin:$PATH
 cd $repo_root
 
 drush sws:multisite:update:parallel
-
 set +v
