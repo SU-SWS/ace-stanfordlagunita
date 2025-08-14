@@ -19,6 +19,6 @@ repo_root="/var/www/html/$site.$target_env"
 export PATH=$repo_root/vendor/bin:$PATH
 cd $repo_root
 
-drush deploy --uri=$site
+drush deploy --uri=$db_name
 
 set +v
