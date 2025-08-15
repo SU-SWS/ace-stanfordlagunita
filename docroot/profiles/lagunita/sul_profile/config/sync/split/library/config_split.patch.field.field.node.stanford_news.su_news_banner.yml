@@ -1,0 +1,8 @@
+adding:
+  description: 'Maximum one banner media. <em>The “banner media” will display as a full-width image or video above the body text area on the article page. It will also be used as a thumbnail on the list page, and as a thumbnail on the teaser card paragraph if no Featured Media is added.</em>'
+  settings:
+    handler_settings:
+      sort:
+        direction: ASC
+removing:
+  description: 'Maximum one banner media. <em>The “banner media” will display as a full-width image or video above the body text area on the article page.</em>'
