@@ -260,7 +260,7 @@ class NewsCest {
 /**
  * Help text should appear on the news content authoring page for banner media field.
  */
-public function testNewsContentBannerMediaHelpText(AcceptanceTester $I) {
+public function testBannerHelpText(AcceptanceTester $I) {
   $I->logInWithRole('site_manager');
   $I->amOnPage('/node/add/stanford_news');
   $I->canSee('Maximum one banner media.');
