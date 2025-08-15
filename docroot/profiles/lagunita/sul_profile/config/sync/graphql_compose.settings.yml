@@ -256,6 +256,8 @@ entity_config:
     stanford_faq:
       enabled: true
       query_load_enabled: true
+    stanford_filtered_lists:
+      enabled: false
     stanford_gallery:
       enabled: true
       query_load_enabled: true
@@ -276,6 +278,9 @@ entity_config:
       enabled: true
       query_load_enabled: true
     stanford_spacer:
+      enabled: true
+      query_load_enabled: true
+    stanford_stat_card:
       enabled: true
       query_load_enabled: true
     stanford_wysiwyg:
@@ -324,6 +329,8 @@ entity_config:
     opportunity_tag_filters:
       enabled: false
     opportunity_type:
+      enabled: false
+    opportunity_units:
       enabled: false
     site_owner_orgs:
       enabled: false
