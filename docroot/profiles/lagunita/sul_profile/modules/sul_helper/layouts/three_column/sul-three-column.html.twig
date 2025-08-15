@@ -10,34 +10,50 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'layout',
+{% set classes = [
+  'layout',
     'layout--sul-three-column',
-  ]
-%}
+] %}
 
-{% if content %}
-  <div{{ attributes.addClass(classes) }}>
+{% set wrapper_classes = ['layout-background'] %}
 
-    {% if content.left %}
-      <div {{ region_attributes.left.addClass('layout__region', 'layout__region--sidebar') }}>
-        {{ content.left }}
-      </div>
-    {% endif %}
-
-    {% if content.main %}
-      <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
-        {{ content.main }}
-      </div>
-    {% endif %}
-
-    {% if content.right %}
-      <div {{ region_attributes.right.addClass('layout__region', 'layout__region--sidebar') }}>
-        {{ content.right }}
-      </div>
-    {% endif %}
-
-  </div>
+{% if settings.bg_color %}
+  {% set wrapper_classes = wrapper_classes|merge(['background-color', 'bg-' ~ settings.bg_color]) %}
 {% endif %}
 
+{% if settings.bottom_margin %}
+  {% set wrapper_classes = wrapper_classes|merge(['bottom-margin-' ~ settings.bottom_margin]) %}
+{% endif %}
+
+{% if settings.bottom_padding %}
+  {% set wrapper_classes = wrapper_classes|merge(['bottom-padding-' ~ settings.bottom_padding]) %}
+{% endif %}
+
+{% if settings.top_padding %}
+  {% set wrapper_classes = wrapper_classes|merge(['top-padding-' ~ settings.top_padding]) %}
+{% endif %}
+
+{% if content %}
+  <div class="{{ wrapper_classes|join(' ') }}">
+    <div{{ attributes.addClass(classes) }}>
+
+      {% if content.left %}
+        <div {{ region_attributes.left.addClass('layout__region', 'layout__region--sidebar') }}>
+          {{ content.left }}
+        </div>
+      {% endif %}
+
+      {% if content.main %}
+        <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+          {{ content.main }}
+        </div>
+      {% endif %}
+
+      {% if content.right %}
+        <div {{ region_attributes.right.addClass('layout__region', 'layout__region--sidebar') }}>
+          {{ content.right }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
