@@ -256,3 +256,13 @@ class NewsCest {
   }
 
 }
+
+/**
+ * Help text should appear on the news content authoring page for banner media field.
+ */
+public function testNewsContentBannerMediaHelpText(AcceptanceTester $I) {
+  $I->logInWithRole('site_manager');
+  $I->amOnPage('/node/add/stanford_news');
+  $I->canSee('Maximum one banner media.');
+  $I->canSee('The "banner media" will display as a full-width image or video above the body text area on the article page. It will also be used as a thumbnail on the list page, and as a thumbnail on the teaser card paragraph if no Featured Media is added.');
+}
