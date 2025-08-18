@@ -17758,16 +17758,16 @@
         },
         {
             "name": "su-sws/stanford_fields",
-            "version": "8.6.2",
+            "version": "8.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_fields.git",
-                "reference": "59783e1d974119c916c8e4c42db0c140e9f741c2"
+                "reference": "3abfc931a4e652a3c48ea01c6a548b42b4ca0207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_fields/zipball/59783e1d974119c916c8e4c42db0c140e9f741c2",
-                "reference": "59783e1d974119c916c8e4c42db0c140e9f741c2",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_fields/zipball/3abfc931a4e652a3c48ea01c6a548b42b4ca0207",
+                "reference": "3abfc931a4e652a3c48ea01c6a548b42b4ca0207",
                 "shasum": ""
             },
             "require": {
@@ -17790,9 +17790,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_fields",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_fields/issues",
-                "source": "https://github.com/SU-SWS/stanford_fields/tree/8.6.2"
+                "source": "https://github.com/SU-SWS/stanford_fields/tree/8.6.3"
             },
-            "time": "2025-08-13T17:13:55+00:00"
+            "time": "2025-08-15T22:28:52+00:00"
         },
         {
             "name": "su-sws/stanford_media",
@@ -17919,12 +17919,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "4aa4ebe035f29e3d564aad99cc5f0110b1f852bf"
+                "reference": "e050993383183af14dca01dec64171be516b0dba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/4aa4ebe035f29e3d564aad99cc5f0110b1f852bf",
-                "reference": "4aa4ebe035f29e3d564aad99cc5f0110b1f852bf",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/e050993383183af14dca01dec64171be516b0dba",
+                "reference": "e050993383183af14dca01dec64171be516b0dba",
                 "shasum": ""
             },
             "require": {
@@ -18100,7 +18100,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/12.x"
             },
-            "time": "2025-08-13T17:43:52+00:00"
+            "time": "2025-08-15T22:52:06+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -18108,12 +18108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "305a05836a6d617dd01e863926223e52a689b52c"
+                "reference": "1b50349953927bee7be67567be6ec849e00e9103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/305a05836a6d617dd01e863926223e52a689b52c",
-                "reference": "305a05836a6d617dd01e863926223e52a689b52c",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/1b50349953927bee7be67567be6ec849e00e9103",
+                "reference": "1b50349953927bee7be67567be6ec849e00e9103",
                 "shasum": ""
             },
             "require": {
@@ -18211,7 +18211,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2025-08-12T18:41:07+00:00"
+            "time": "2025-08-18T16:09:35+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -18259,12 +18259,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/sws-drush-commands.git",
-                "reference": "013cc14797abda17393c38292f0f5cf543096470"
+                "reference": "92ef9edf128703e0949db7702dbfdc0e7777752d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/013cc14797abda17393c38292f0f5cf543096470",
-                "reference": "013cc14797abda17393c38292f0f5cf543096470",
+                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/92ef9edf128703e0949db7702dbfdc0e7777752d",
+                "reference": "92ef9edf128703e0949db7702dbfdc0e7777752d",
                 "shasum": ""
             },
             "require": {
@@ -18296,7 +18296,7 @@
                 "issues": "https://github.com/SU-SWS/sws-drush-commands/issues",
                 "source": "https://github.com/SU-SWS/sws-drush-commands"
             },
-            "time": "2025-08-14T21:24:17+00:00"
+            "time": "2025-08-15T00:22:11+00:00"
         },
         {
             "name": "symfony/cache",
@@ -25493,16 +25493,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.2",
+            "version": "5.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62"
+                "reference": "94f8051919d1b0369a6bcc7931d679a511c03fe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/92dde6a5919e34835c506ac8c523ef095a95ed62",
-                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94f8051919d1b0369a6bcc7931d679a511c03fe9",
+                "reference": "94f8051919d1b0369a6bcc7931d679a511c03fe9",
                 "shasum": ""
             },
             "require": {
@@ -25551,9 +25551,9 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.2"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.3"
             },
-            "time": "2025-04-13T19:20:35+00:00"
+            "time": "2025-08-01T19:43:32+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -26328,16 +26328,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.32",
+            "version": "11.5.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "101e132dcf9e74a1eb3a309b4f686114ae8f7f36"
+                "reference": "5965e9ff57546cb9137c0ff6aa78cb7442b05cf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/101e132dcf9e74a1eb3a309b4f686114ae8f7f36",
-                "reference": "101e132dcf9e74a1eb3a309b4f686114ae8f7f36",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5965e9ff57546cb9137c0ff6aa78cb7442b05cf6",
+                "reference": "5965e9ff57546cb9137c0ff6aa78cb7442b05cf6",
                 "shasum": ""
             },
             "require": {
@@ -26409,7 +26409,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.32"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.33"
             },
             "funding": [
                 {
@@ -26433,7 +26433,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-12T07:32:49+00:00"
+            "time": "2025-08-16T05:19:02+00:00"
         },
         {
             "name": "ramsey/collection",
