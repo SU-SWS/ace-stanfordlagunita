@@ -1,7 +1,6 @@
 sul_helper_1_column:
   label: '1 Column'
   category: 'SUL Layouts'
-  class: 'Drupal\stanford_layout_paragraphs\Layouts\OneColumn'
   path: layouts/one_column
   template: sul-one-column
   library: sul_helper/one_column
@@ -31,7 +30,7 @@ sul_helper_2_column:
 sul_helper_3_column:
   label: '3 Column'
   category: 'SUL Layouts'
-  class: 'Drupal\stanford_layout_paragraphs\Layouts\ThreeColumn'
+  class: '\Drupal\sul_helper\Layouts\SulThreeColumn'
   path: layouts/three_column
   template: sul-three-column
   library: sul_helper/three_column
