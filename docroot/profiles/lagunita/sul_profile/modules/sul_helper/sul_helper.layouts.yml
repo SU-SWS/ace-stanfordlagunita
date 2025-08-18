@@ -1,6 +1,7 @@
 sul_helper_1_column:
   label: '1 Column'
   category: 'SUL Layouts'
+  class: '\Drupal\sul_helper\Layouts\SulOneColumn'
   path: layouts/one_column
   template: sul-one-column
   library: sul_helper/one_column
