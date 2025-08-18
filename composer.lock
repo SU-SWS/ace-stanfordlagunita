@@ -9754,6 +9754,62 @@
             }
         },
         {
+            "name": "drupal/printable",
+            "version": "3.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/printable.git",
+                "reference": "3.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/printable-3.1.4.zip",
+                "reference": "3.1.4",
+                "shasum": "bd55d2cee6922538508ebcfe8ef11574e6abb588"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10 || ^11",
+                "drupal/pdf_api": "^2.4.0",
+                "wa72/htmlpagedom": "^1.3 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "drupal/pdf_api": "*",
+                "smalot/pdfparser": "^1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.1.4",
+                    "datestamp": "1754530410",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nigel Cunningham",
+                    "homepage": "https://www.drupal.org/user/346106",
+                    "email": "nigel@nigelcunningham.com.au"
+                },
+                {
+                    "name": "nigelcunningham",
+                    "homepage": "https://www.drupal.org/user/250105"
+                }
+            ],
+            "description": "Generates printer friendly version of nodes",
+            "homepage": "https://www.drupal.org/project/printable",
+            "support": {
+                "source": "https://git.drupalcode.org/project/printable",
+                "issues": "https://www.drupal.org/project/issues/printable"
+            }
+        },
+        {
             "name": "drupal/purge",
             "version": "3.6.0",
             "source": {
@@ -17644,49 +17700,6 @@
             "time": "2025-08-01T21:04:07+00:00"
         },
         {
-            "name": "su-sws/printable",
-            "version": "3.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SU-SWS/drupal-printable.git",
-                "reference": "45d425c4e39dc4eed4b5a32c1f2da3c079f82bdc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-printable/zipball/45d425c4e39dc4eed4b5a32c1f2da3c079f82bdc",
-                "reference": "45d425c4e39dc4eed4b5a32c1f2da3c079f82bdc",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/pdf_api": "^2.4",
-                "wa72/htmlpagedom": "^1.3 || ^2.0 || ^3.0"
-            },
-            "conflict": {
-                "drupal/pdf_api": "<2.4.5"
-            },
-            "require-dev": {
-                "smalot/pdfparser": "^1"
-            },
-            "type": "drupal-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Nigel Cunningham",
-                    "email": "nigel@nigelcunningham.com.au"
-                }
-            ],
-            "description": "Generates printer friendly version of nodes",
-            "homepage": "https://www.drupal.org/project/printable",
-            "support": {
-                "issues": "https://www.drupal.org/project/issues/printable",
-                "source": "https://git.drupalcode.org/project/printable"
-            },
-            "time": "2025-08-05T17:58:55+00:00"
-        },
-        {
             "name": "su-sws/react_paragraphs",
             "version": "8.2.18",
             "source": {
@@ -17919,12 +17932,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "e050993383183af14dca01dec64171be516b0dba"
+                "reference": "48832af3929b3e3c363be5a2673cb3f841f2d31d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/e050993383183af14dca01dec64171be516b0dba",
-                "reference": "e050993383183af14dca01dec64171be516b0dba",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/48832af3929b3e3c363be5a2673cb3f841f2d31d",
+                "reference": "48832af3929b3e3c363be5a2673cb3f841f2d31d",
                 "shasum": ""
             },
             "require": {
@@ -18014,6 +18027,7 @@
                 "drupal/path_redirect_import": "^2.0",
                 "drupal/pathauto": "^1.6",
                 "drupal/pdb": "^2.0",
+                "drupal/printable": "^3.1",
                 "drupal/rabbit_hole": "^1.0@beta",
                 "drupal/real_aes": "^2.4",
                 "drupal/redirect": "^1.0-beta1",
@@ -18054,7 +18068,6 @@
                 "su-sws/ckeditor5_plugins": "^1.0",
                 "su-sws/drupal-patches": "^11.0",
                 "su-sws/paranoia": "^1.0@RC",
-                "su-sws/printable": "^3.1",
                 "su-sws/react_paragraphs": "^8.2",
                 "su-sws/stanford_actions": "^8.2",
                 "su-sws/stanford_fields": "^8.4",
@@ -18100,7 +18113,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/12.x"
             },
-            "time": "2025-08-15T22:52:06+00:00"
+            "time": "2025-08-18T18:56:26+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
