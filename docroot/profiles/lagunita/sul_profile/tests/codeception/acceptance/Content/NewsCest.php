@@ -254,4 +254,13 @@ class NewsCest {
     $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
   }
 
+
+  /**
+   * Help text should appear on the news content authoring page for banner media field.
+   */
+  public function testBannerHelpText(AcceptanceTester $I) {
+    $I->logInWithRole('site_manager');
+    $I->amOnPage('/node/add/stanford_news');
+    $I->canSee('It will also be used as a thumbnail on the list page');
+  }
 }
