@@ -7,7 +7,7 @@ use Faker\Factory;
  * Test Publication content type.
  */
 #[CodeceptionAttribute\Group('publication')]
-class PublicationCest {
+abstract class PublicationCest {
 
   /**
    * Faker.
