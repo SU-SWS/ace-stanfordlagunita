@@ -12,7 +12,7 @@
 #}
 {% set classes = [
   'layout',
-    'layout--sul-three-column',
+  'layout--sul-three-column',
 ] %}
 
 {% set wrapper_classes = ['layout-background'] %}
@@ -31,6 +31,10 @@
 
 {% if settings.top_padding %}
   {% set wrapper_classes = wrapper_classes|merge(['top-padding-' ~ settings.top_padding]) %}
+{% endif %}
+
+{% if settings.vertical_dividers %}
+  {% set attributes = attributes.addClass(['vertical-divider']) %}
 {% endif %}
 
 {% if content %}
@@ -57,3 +61,4 @@
     </div>
   </div>
 {% endif %}
+

@@ -33,6 +33,10 @@
   {% set wrapper_classes = wrapper_classes|merge(['top-padding-' ~ settings.top_padding]) %}
 {% endif %}
 
+{% if settings.vertical_dividers %}
+  {% set attributes = attributes.addClass(['vertical-divider']) %}
+{% endif %}
+
 {% if content %}
   <div class="{{ wrapper_classes|join(' ') }}">
     <div{{ attributes.addClass(classes) }}>
