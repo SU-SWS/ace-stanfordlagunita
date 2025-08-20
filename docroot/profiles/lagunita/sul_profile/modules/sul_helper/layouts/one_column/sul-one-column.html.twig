@@ -11,39 +11,10 @@
  */
 #}
 
-{% set classes = [
-  'layout',
-  'layout--sul-one-column',
-] %}
+{% set modified_attributes = attributes.addClass('layout', 'layout--sul-one-column') %}
 
-{% set wrapper_classes = ['layout-background'] %}
+{# Include the template with modified attributes #}
+{% include "@stanford_layout_paragraphs/layouts/one_column/layout-paragraphs-one-column.html.twig" with {
+  'attributes': modified_attributes
+} %}
 
-{% if settings.bg_color %}
-  {% set wrapper_classes = wrapper_classes|merge(['background-color', 'bg-' ~ settings.bg_color]) %}
-{% endif %}
-
-{% if settings.bottom_margin %}
-  {% set wrapper_classes = wrapper_classes|merge(['bottom-margin-' ~ settings.bottom_margin]) %}
-{% endif %}
-
-{% if settings.bottom_padding %}
-  {% set wrapper_classes = wrapper_classes|merge(['bottom-padding-' ~ settings.bottom_padding]) %}
-{% endif %}
-
-{% if settings.top_padding %}
-  {% set wrapper_classes = wrapper_classes|merge(['top-padding-' ~ settings.top_padding]) %}
-{% endif %}
-
-{% if content %}
-  <div class="{{ wrapper_classes|join(' ') }}">
-    <div{{ attributes.addClass(classes) }}>
-
-      {% if content.main %}
-        <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
-          {{ content.main }}
-        </div>
-      {% endif %}
-
-    </div>
-  </div>
-{% endif %}
