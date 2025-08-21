@@ -126,6 +126,10 @@ source:
       name: departments
       label: Departments
       selector: event/departments
+    -
+      name: experience
+      label: experience
+      selector: event/experience
   ids:
     event_id:
       type: string
