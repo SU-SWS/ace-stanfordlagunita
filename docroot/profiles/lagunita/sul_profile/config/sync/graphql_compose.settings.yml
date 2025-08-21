@@ -322,6 +322,8 @@ entity_config:
     event_audience:
       enabled: true
       query_load_enabled: true
+    event_filters:
+      enabled: false
     media_tags:
       enabled: false
     opportunity_sponsor:
@@ -331,6 +333,10 @@ entity_config:
     opportunity_type:
       enabled: false
     opportunity_units:
+      enabled: false
+    person_filters:
+      enabled: false
+    publication_filters:
       enabled: false
     site_owner_orgs:
       enabled: false
@@ -689,6 +695,8 @@ field_config:
       su_event_type:
         enabled: true
       sul_event__image:
+        enabled: true
+      sul_event_experience:
         enabled: true
     stanford_event_series:
       su_event_series_components:
