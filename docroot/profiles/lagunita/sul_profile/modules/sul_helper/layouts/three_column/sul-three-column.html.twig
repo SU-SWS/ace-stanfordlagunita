@@ -11,9 +11,5 @@
  */
 #}
 
-{% set modified_attributes = attributes.addClass('layout', 'layout--sul-three-column') %}
-
 {# Include the template with modified attributes #}
-{% include "@stanford_layout_paragraphs/layouts/three_column/layout-paragraphs-three-column.html.twig" with {
-  'attributes': modified_attributes
-} %}
+{% extends "@stanford_layout_paragraphs/layouts/three_column/layout-paragraphs-three-column.html.twig" %}

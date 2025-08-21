@@ -11,10 +11,6 @@
  */
 #}
 
-{% set modified_attributes = attributes.addClass('layout', 'layout--sul-one-column') %}
-
 {# Include the template with modified attributes #}
-{% include "@stanford_layout_paragraphs/layouts/one_column/layout-paragraphs-one-column.html.twig" with {
-  'attributes': modified_attributes
-} %}
+{% extends "@stanford_layout_paragraphs/layouts/one_column/layout-paragraphs-one-column.html.twig" %}
 

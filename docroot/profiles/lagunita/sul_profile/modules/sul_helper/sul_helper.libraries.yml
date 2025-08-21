@@ -7,24 +7,3 @@ node_form:
 layout_paragraphs:
   js:
     js/sul_helper.layout_paragraphs.js: {}
-
-one_column:
-  css:
-    component:
-      layouts/one_column/one-column.css: {}
-  dependencies:
-    - stanford_layout_paragraphs/layout_colors
-
-two_column:
-  css:
-    component:
-      layouts/two_column/two-column.css: {}
-  dependencies:
-    - stanford_layout_paragraphs/layout_colors
-
-three_column:
-  css:
-    component:
-      layouts/three_column/three-column.css: {}
-  dependencies:
-    - stanford_layout_paragraphs/layout_colors
