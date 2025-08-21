@@ -350,6 +350,7 @@ process:
     plugin: default_value
     source: departments
     default_value: {  }
+  sul_event_experience: experience
   su_event_groups:
     -
       plugin: merge
@@ -438,6 +439,7 @@ destination:
     - su_event_subject
     - su_event_type
     - su_imported
+    - sul_event_experience
     - tags
     - tags_chunked
     - title
