@@ -257,7 +257,7 @@ entity_config:
       enabled: true
       query_load_enabled: true
     stanford_filtered_lists:
-      enabled: false
+      enabled: true
     stanford_gallery:
       enabled: true
       query_load_enabled: true
@@ -322,6 +322,8 @@ entity_config:
     event_audience:
       enabled: true
       query_load_enabled: true
+    event_filters:
+      enabled: false
     media_tags:
       enabled: false
     opportunity_sponsor:
@@ -331,6 +333,10 @@ entity_config:
     opportunity_type:
       enabled: false
     opportunity_units:
+      enabled: false
+    person_filters:
+      enabled: false
+    publication_filters:
       enabled: false
     site_owner_orgs:
       enabled: false
@@ -690,6 +696,8 @@ field_config:
         enabled: true
       sul_event__image:
         enabled: true
+      sul_event_experience:
+        enabled: true
     stanford_event_series:
       su_event_series_components:
         enabled: true
@@ -945,6 +953,13 @@ field_config:
       su_faq_headline:
         enabled: true
       su_faq_questions:
+        enabled: true
+    stanford_filtered_lists:
+      su_filtered_list_view:
+        enabled: true
+      su_list_description:
+        enabled: true
+      su_list_headline:
         enabled: true
     stanford_gallery:
       su_gallery_button:
