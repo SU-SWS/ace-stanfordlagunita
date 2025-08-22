@@ -1,45 +1,5 @@
 adding:
-  dependencies:
-    config:
-      - field.field.node.stanford_event.su_event_ext_image
-      - field.field.node.stanford_event.su_event_tags
-      - field.field.node.stanford_event.su_imported
-      - field.field.node.stanford_event.sul_event__image
-      - field.field.node.stanford_event.sul_event_experience
-  third_party_settings:
-    ds:
-      layout:
-        settings:
-          pattern:
-            variant: default
-      regions:
-        location:
-          - sul_event_experience
-      fields:
-        'display_field_copy:node-event_date_time_2':
-          weight: 1
-        'display_field_copy:node-event_date_time_3':
-          weight: 2
-        'display_field_copy:node-event_date_time_4':
-          weight: 3
-  content:
-    sul_event_experience:
-      type: string
-      label: above
-      settings:
-        link_to_entity: false
-      third_party_settings: {  }
-      weight: 12
-      region: location
   hidden:
     sul_event__image: true
-removing:
-  third_party_settings:
-    ds:
-      fields:
-        'display_field_copy:node-event_date_time_2':
-          weight: 0
-        'display_field_copy:node-event_date_time_3':
-          weight: 0
-        'display_field_copy:node-event_date_time_4':
-          weight: 0
+    sul_event_experience: true
+removing: {  }

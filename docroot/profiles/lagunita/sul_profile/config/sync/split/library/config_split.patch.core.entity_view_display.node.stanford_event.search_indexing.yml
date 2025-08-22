@@ -1,10 +1,4 @@
 adding:
-  dependencies:
-    config:
-      - field.field.node.stanford_event.su_event_tags
-      - field.field.node.stanford_event.su_imported
-      - field.field.node.stanford_event.sul_event__image
-      - field.field.node.stanford_event.sul_event_experience
   hidden:
     sul_event__image: true
     sul_event_experience: true
