@@ -7,11 +7,12 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\layout_builder\Plugin\Layout\MultiWidthLayoutBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\stanford_layout_paragraphs\Layouts\TwoColumn;
 
 /**
  * Two column layout class
  */
-class SulTwoColumn extends MultiWidthLayoutBase implements ContainerFactoryPluginInterface {
+class SulTwoColumn extends TwoColumn implements ContainerFactoryPluginInterface {
 
   /**
    * Current user account.

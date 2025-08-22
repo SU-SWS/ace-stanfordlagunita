@@ -10,28 +10,6 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'layout',
-    'layout--sul-two-column',
-  ]
-%}
 
-{% if content %}
-  <div{{ attributes.addClass(classes) }}>
-
-    {% if content.left %}
-      <div {{ region_attributes.left.addClass('layout__region', 'layout__region--main') }}>
-        {{ content.left }}
-      </div>
-    {% endif %}
-
-    {% if content.right %}
-      <div {{ region_attributes.right.addClass('layout__region', 'layout__region--sidebar') }}>
-        {{ content.right }}
-      </div>
-    {% endif %}
-
-  </div>
-{% endif %}
-
+{# Include the template with modified attributes #}
+{% extends "@stanford_layout_paragraphs/layouts/two_column/layout-paragraphs-two-column.html.twig" %}

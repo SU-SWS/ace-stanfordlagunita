@@ -7,7 +7,7 @@ use Faker\Factory;
  * Test Person content type.
  */
 #[CodeceptionAttribute\Group('person')]
-class PersonCest {
+abstract class PersonCest {
 
   /**
    * Faker.
