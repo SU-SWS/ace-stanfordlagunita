@@ -1,4 +1,5 @@
 adding:
   hidden:
     sul_event__image: true
+    sul_event_experience: true
 removing: {  }

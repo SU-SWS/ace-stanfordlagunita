@@ -1,0 +1,19 @@
+uuid: 23c45b46-4717-4d88-936f-37ef917ff77a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_event_experience
+    - node.type.stanford_event
+id: node.stanford_event.sul_event_experience
+field_name: sul_event_experience
+entity_type: node
+bundle: stanford_event
+label: Experience
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
