@@ -1,0 +1,11 @@
+
+command:
+  sws:
+    options:
+      db-port: 3306
+      db-host: mysql
+      db-user: root
+      db-pass: password
+      db-name: drupal
+      app-key: API-KEY
+      app-secret: API-SECRET
