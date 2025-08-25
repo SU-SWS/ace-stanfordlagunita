@@ -837,16 +837,16 @@
         },
         {
             "name": "consolidation/output-formatters",
-            "version": "4.6.0",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/output-formatters.git",
-                "reference": "5fd5656718d7068a02d046f418a7ba873d5abbfe"
+                "reference": "b6bcaf13bec9f4597e75ae853f3b3ac0d53b798d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/5fd5656718d7068a02d046f418a7ba873d5abbfe",
-                "reference": "5fd5656718d7068a02d046f418a7ba873d5abbfe",
+                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/b6bcaf13bec9f4597e75ae853f3b3ac0d53b798d",
+                "reference": "b6bcaf13bec9f4597e75ae853f3b3ac0d53b798d",
                 "shasum": ""
             },
             "require": {
@@ -885,9 +885,9 @@
             "description": "Format text by applying transformations provided by plug-in formatters.",
             "support": {
                 "issues": "https://github.com/consolidation/output-formatters/issues",
-                "source": "https://github.com/consolidation/output-formatters/tree/4.6.0"
+                "source": "https://github.com/consolidation/output-formatters/tree/4.6.1"
             },
-            "time": "2024-10-18T14:02:48+00:00"
+            "time": "2024-12-13T18:38:45+00:00"
         },
         {
             "name": "consolidation/robo",
@@ -6339,17 +6339,17 @@
         },
         {
             "name": "drupal/google_tag",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/google_tag.git",
-                "reference": "2.0.8"
+                "reference": "2.0.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.8.zip",
-                "reference": "2.0.8",
-                "shasum": "af12c74ec367c1c1319ea710f8fb6feefb100a6e"
+                "url": "https://ftp.drupal.org/files/projects/google_tag-2.0.9.zip",
+                "reference": "2.0.9",
+                "shasum": "78749a4520f6d89ca374061ac4f85f561118b3f1"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10 || ^11"
@@ -6366,8 +6366,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.8",
-                    "datestamp": "1738172706",
+                    "version": "2.0.9",
+                    "datestamp": "1756130983",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -18272,12 +18272,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/sws-drush-commands.git",
-                "reference": "92ef9edf128703e0949db7702dbfdc0e7777752d"
+                "reference": "6fc6d8fb11364fda44d8c1e5b8c0dbd20cb02df2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/92ef9edf128703e0949db7702dbfdc0e7777752d",
-                "reference": "92ef9edf128703e0949db7702dbfdc0e7777752d",
+                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/6fc6d8fb11364fda44d8c1e5b8c0dbd20cb02df2",
+                "reference": "6fc6d8fb11364fda44d8c1e5b8c0dbd20cb02df2",
                 "shasum": ""
             },
             "require": {
@@ -18309,7 +18309,7 @@
                 "issues": "https://github.com/SU-SWS/sws-drush-commands/issues",
                 "source": "https://github.com/SU-SWS/sws-drush-commands"
             },
-            "time": "2025-08-15T00:22:11+00:00"
+            "time": "2025-08-25T16:37:10+00:00"
         },
         {
             "name": "symfony/cache",
@@ -21572,16 +21572,16 @@
         },
         {
             "name": "typhonius/acquia-php-sdk-v2",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/typhonius/acquia-php-sdk-v2.git",
-                "reference": "fbfff01d5e88b8bf93ecf29ca9baf5d37c9b6af1"
+                "reference": "b6cbd491abb405e2083d2459edad9b94823af2ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/typhonius/acquia-php-sdk-v2/zipball/fbfff01d5e88b8bf93ecf29ca9baf5d37c9b6af1",
-                "reference": "fbfff01d5e88b8bf93ecf29ca9baf5d37c9b6af1",
+                "url": "https://api.github.com/repos/typhonius/acquia-php-sdk-v2/zipball/b6cbd491abb405e2083d2459edad9b94823af2ce",
+                "reference": "b6cbd491abb405e2083d2459edad9b94823af2ce",
                 "shasum": ""
             },
             "require": {
@@ -21623,7 +21623,7 @@
             "description": "A PHP SDK for Acquia CloudAPI v2",
             "support": {
                 "issues": "https://github.com/typhonius/acquia-php-sdk-v2/issues",
-                "source": "https://github.com/typhonius/acquia-php-sdk-v2/tree/3.7.1"
+                "source": "https://github.com/typhonius/acquia-php-sdk-v2/tree/3.7.2"
             },
             "funding": [
                 {
@@ -21631,7 +21631,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-05T14:19:07+00:00"
+            "time": "2025-08-25T15:43:27+00:00"
         },
         {
             "name": "wa72/htmlpagedom",
