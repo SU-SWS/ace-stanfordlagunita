@@ -37,10 +37,11 @@ class SimpleButtonBehaviors extends ParagraphsBehaviorBase {
       '#type' => 'select',
       '#title' => $this->t('Background Color'),
       '#description' => $this->t('Change the background color behind the text.'),
-      '#empty_option' => $this->t('Black'),
+      '#empty_option' => $this->t('Black background with red button'),
       '#default_value' => $paragraph->getBehaviorSetting('sul_button_styles', 'background'),
       '#options' => [
-        'gray' => $this->t('Gray'),
+        'gray' => $this->t('Gray background with red button'),
+        'gray-cta' => $this->t('Gray background with blue cta'),
       ],
     ];
 
