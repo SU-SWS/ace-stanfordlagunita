@@ -63,8 +63,6 @@
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "drupal/upgrade_status": "^4.0",
-        "phpspec/prophecy-phpunit": "^2.0",
         "su-sws/drupal-dev": "^10"
     },
     "replace": {
@@ -146,13 +144,8 @@
                 "type:drupal-custom-profile"
             ]
         },
-        "drupal-core-project-message": {
-            "include-keys": [
-                "homepage",
-                "support"
-            ]
-        },
         "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
         "patches": {
             "drupal/graphql_compose": {
                 "Remove link language setting on field results": "patches/contrib/graphql_compose-link_language.patch"

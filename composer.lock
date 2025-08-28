@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e5931f0c2bbc2fe4e0e806aae5d7222",
+    "content-hash": "c22dc895367ffa8f528323f05b7e8a28",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -1846,17 +1846,17 @@
         },
         {
             "name": "drupal/acquia_connector",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/acquia_connector.git",
-                "reference": "4.1.0"
+                "reference": "4.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/acquia_connector-4.1.0.zip",
-                "reference": "4.1.0",
-                "shasum": "9850906100943eae5f18cf90df57536adefc21f6"
+                "url": "https://ftp.drupal.org/files/projects/acquia_connector-4.1.1.zip",
+                "reference": "4.1.1",
+                "shasum": "3c2319501b9f5416a0f9b00466f35fc936dc30af"
             },
             "require": {
                 "drupal/core": "^9.5 || ^10 || ^11",
@@ -1868,8 +1868,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.0",
-                    "datestamp": "1734321322",
+                    "version": "4.1.1",
+                    "datestamp": "1756224602",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4808,17 +4808,17 @@
         },
         {
             "name": "drupal/editoria11y",
-            "version": "2.2.14",
+            "version": "2.2.15",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/editoria11y.git",
-                "reference": "2.2.14"
+                "reference": "2.2.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/editoria11y-2.2.14.zip",
-                "reference": "2.2.14",
-                "shasum": "c13a14c3f05eb5e8c37fce5f52f47787f343f413"
+                "url": "https://ftp.drupal.org/files/projects/editoria11y-2.2.15.zip",
+                "reference": "2.2.15",
+                "shasum": "250a07fab9f8ad62e8732b4fb60fc6f3bbdf652d"
             },
             "require": {
                 "drupal/core": "^9 || ^10 || ^11"
@@ -4829,8 +4829,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.2.14",
-                    "datestamp": "1753991872",
+                    "version": "2.2.15",
+                    "datestamp": "1756225036",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8216,17 +8216,17 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maxlength.git",
-                "reference": "3.1.2"
+                "reference": "3.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/maxlength-3.1.2.zip",
-                "reference": "3.1.2",
-                "shasum": "7a2db91c4c0a37d728f16df4bace96ae122dacdb"
+                "url": "https://ftp.drupal.org/files/projects/maxlength-3.1.3.zip",
+                "reference": "3.1.3",
+                "shasum": "7f063d0a449eda6bc499a718a09d1091907ef054"
             },
             "require": {
                 "drupal/core": "^10 || ^11"
@@ -8234,8 +8234,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.1.2",
-                    "datestamp": "1753430089",
+                    "version": "3.1.3",
+                    "datestamp": "1756373060",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9186,6 +9186,10 @@
                     "name": "Pravin Gaikwad (Rajeshreeputra)",
                     "homepage": "https://www.drupal.org/u/rajeshreeputra",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "robert ngo",
+                    "homepage": "https://www.drupal.org/user/610230"
                 },
                 {
                     "name": "seanb",
@@ -17479,16 +17483,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "11.0.3",
+            "version": "11.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "8b8f11cb70f4a32b5a41c5ed81fa5fc1e28a1857"
+                "reference": "741fd7d1ef67d5cfc5e753440d5b636c1c6cbcea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/8b8f11cb70f4a32b5a41c5ed81fa5fc1e28a1857",
-                "reference": "8b8f11cb70f4a32b5a41c5ed81fa5fc1e28a1857",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/741fd7d1ef67d5cfc5e753440d5b636c1c6cbcea",
+                "reference": "741fd7d1ef67d5cfc5e753440d5b636c1c6cbcea",
                 "shasum": ""
             },
             "require": {
@@ -17520,7 +17524,8 @@
                         "https://www.drupal.org/project/drupal/issues/2353611": "https://www.drupal.org/files/issues/2019-10-15/drupal-link_uuid-2353611-262.patch",
                         "https://www.drupal.org/project/drupal/issues/2577923": "https://www.drupal.org/files/issues/2022-12-02/2577923-154.patch",
                         "https://www.drupal.org/project/drupal/issues/3332063": "https://www.drupal.org/files/issues/2023-03-12/path-alias-not-available-3332063.patch",
-                        "https://www.drupal.org/project/drupal/issues/3474018": "https://www.drupal.org/files/issues/2025-07-03/3474018-27.diff"
+                        "https://www.drupal.org/project/drupal/issues/3474018": "https://www.drupal.org/files/issues/2025-07-03/3474018-27.diff",
+                        "https://www.drupal.org/project/drupal/issues/3519949": "https://www.drupal.org/files/issues/2025-07-03/3519949-revert_3471459-7.diff"
                     },
                     "drupal/diff": {
                         "https://www.drupal.org/project/diff/issues/2882334#comment-13913401": "https://git.drupalcode.org/project/diff/-/merge_requests/42.patch"
@@ -17603,9 +17608,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/11.0.3"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/11.0.4"
             },
-            "time": "2025-08-14T20:39:38+00:00"
+            "time": "2025-08-26T19:53:52+00:00"
         },
         {
             "name": "su-sws/markdown",
@@ -17873,16 +17878,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "9.0.0",
+            "version": "9.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "6c53e57eb6d550d43aaf5b019a92d33e4535c87b"
+                "reference": "27e1ddea14498705a5e92be7b557aecb3935caaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/6c53e57eb6d550d43aaf5b019a92d33e4535c87b",
-                "reference": "6c53e57eb6d550d43aaf5b019a92d33e4535c87b",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/27e1ddea14498705a5e92be7b557aecb3935caaa",
+                "reference": "27e1ddea14498705a5e92be7b557aecb3935caaa",
                 "shasum": ""
             },
             "require": {
@@ -17924,22 +17929,22 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/9.0.0"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/9.0.1"
             },
-            "time": "2025-08-11T18:48:27+00:00"
+            "time": "2025-08-25T21:47:09+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "12.0.0",
+            "version": "12.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "2ac292c6eeae13c3302cd8511334f34b749dd234"
+                "reference": "98d6daa7894fa136eb7d7031413c5a37151efbff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/2ac292c6eeae13c3302cd8511334f34b749dd234",
-                "reference": "2ac292c6eeae13c3302cd8511334f34b749dd234",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/98d6daa7894fa136eb7d7031413c5a37151efbff",
+                "reference": "98d6daa7894fa136eb7d7031413c5a37151efbff",
                 "shasum": ""
             },
             "require": {
@@ -18111,22 +18116,22 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.0.0"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.0.2"
             },
-            "time": "2025-08-22T17:55:17+00:00"
+            "time": "2025-08-26T22:45:12+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "10.0.1",
+            "version": "10.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "dddbdbf352d4e2ec42d1444296f93eb6737a4a19"
+                "reference": "e463b3a1e523899facf97482778ae93106557660"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/dddbdbf352d4e2ec42d1444296f93eb6737a4a19",
-                "reference": "dddbdbf352d4e2ec42d1444296f93eb6737a4a19",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/e463b3a1e523899facf97482778ae93106557660",
+                "reference": "e463b3a1e523899facf97482778ae93106557660",
                 "shasum": ""
             },
             "require": {
@@ -18222,9 +18227,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.0.1"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.0.2"
             },
-            "time": "2025-08-22T19:17:10+00:00"
+            "time": "2025-08-27T17:41:56+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -23255,55 +23260,6 @@
             "time": "2024-05-06T16:37:16+00:00"
         },
         {
-            "name": "dekor/php-array-table",
-            "version": "2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/deniskoronets/php-array-table.git",
-                "reference": "ca40b21ba84eee6a9658a33fc5f897d76baaf8e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/deniskoronets/php-array-table/zipball/ca40b21ba84eee6a9658a33fc5f897d76baaf8e5",
-                "reference": "ca40b21ba84eee6a9658a33fc5f897d76baaf8e5",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^10"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "dekor\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Denis Koronets",
-                    "email": "deniskoronets@woo.zp.ua",
-                    "homepage": "https://woo.zp.ua/"
-                }
-            ],
-            "description": "PHP Library for printing associative arrays as text table (similar to mysql terminal console)",
-            "keywords": [
-                "library",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/deniskoronets/php-array-table/issues",
-                "source": "https://github.com/deniskoronets/php-array-table/tree/2.0"
-            },
-            "time": "2023-02-10T10:13:42+00:00"
-        },
-        {
             "name": "doctrine/common",
             "version": "3.5.0",
             "source": {
@@ -23953,64 +23909,6 @@
                 "source": "https://git.drupal.org/project/masquerade.git",
                 "issues": "https://www.drupal.org/project/issues/masquerade",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/upgrade_status",
-            "version": "4.3.8",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/upgrade_status.git",
-                "reference": "4.3.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/upgrade_status-4.3.8.zip",
-                "reference": "4.3.8",
-                "shasum": "4526741f6d0991f2165d4d79c8830602f5ac8bca"
-            },
-            "require": {
-                "dekor/php-array-table": "^2.0",
-                "drupal/core": "^9 || ^10 || ^11",
-                "mglaman/phpstan-drupal": "^1.2.11|^2.0",
-                "nikic/php-parser": "^4.0.0|^5.0.0",
-                "phpstan/phpstan-deprecation-rules": "^1.0.0|^2.0",
-                "symfony/process": "^3.4|^4.0|^5.0|^6.0|^7.0",
-                "webflo/drupal-finder": "^1.2"
-            },
-            "require-dev": {
-                "drush/drush": "^11|^12|^13"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "4.3.8",
-                    "datestamp": "1751485112",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9 || ^10"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "gábor hojtsy",
-                    "homepage": "https://www.drupal.org/user/4166"
-                }
-            ],
-            "description": "Review Drupal major upgrade readiness of the environment and components of the site.",
-            "homepage": "http://drupal.org/project/upgrade_status",
-            "support": {
-                "source": "https://git.drupalcode.org/project/upgrade_status"
             }
         },
         {
@@ -26000,16 +25898,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "11.0.10",
+            "version": "11.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "1a800a7446add2d79cc6b3c01c45381810367d76"
+                "reference": "4f7722aa9a7b76aa775e2d9d4e95d1ea16eeeef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/1a800a7446add2d79cc6b3c01c45381810367d76",
-                "reference": "1a800a7446add2d79cc6b3c01c45381810367d76",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4f7722aa9a7b76aa775e2d9d4e95d1ea16eeeef4",
+                "reference": "4f7722aa9a7b76aa775e2d9d4e95d1ea16eeeef4",
                 "shasum": ""
             },
             "require": {
@@ -26066,7 +25964,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/show"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0.11"
             },
             "funding": [
                 {
@@ -26086,7 +25984,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-18T08:56:18+00:00"
+            "time": "2025-08-27T14:37:49+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -26335,16 +26233,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.34",
+            "version": "11.5.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3e4c6ef395f7cb61a6206c23e0e04b31724174f2"
+                "reference": "d341ee94ee5007b286fc7907b383aae6b5b3cc91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3e4c6ef395f7cb61a6206c23e0e04b31724174f2",
-                "reference": "3e4c6ef395f7cb61a6206c23e0e04b31724174f2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d341ee94ee5007b286fc7907b383aae6b5b3cc91",
+                "reference": "d341ee94ee5007b286fc7907b383aae6b5b3cc91",
                 "shasum": ""
             },
             "require": {
@@ -26358,7 +26256,7 @@
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.2",
-                "phpunit/php-code-coverage": "^11.0.10",
+                "phpunit/php-code-coverage": "^11.0.11",
                 "phpunit/php-file-iterator": "^5.1.0",
                 "phpunit/php-invoker": "^5.0.1",
                 "phpunit/php-text-template": "^4.0.1",
@@ -26416,7 +26314,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.34"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.35"
             },
             "funding": [
                 {
@@ -26440,7 +26338,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-20T14:41:45+00:00"
+            "time": "2025-08-28T05:13:54+00:00"
         },
         {
             "name": "ramsey/collection",

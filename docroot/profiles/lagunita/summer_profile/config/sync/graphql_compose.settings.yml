@@ -195,7 +195,10 @@ entity_config:
       edges_enabled: true
       routes_enabled: true
     stanford_opportunity:
-      enabled: false
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
     stanford_page:
       enabled: true
       query_load_enabled: true
@@ -236,6 +239,8 @@ entity_config:
     stanford_faq:
       enabled: true
       query_load_enabled: true
+    stanford_filtered_lists:
+      enabled: true
     stanford_gallery:
       enabled: true
       query_load_enabled: true
@@ -259,6 +264,8 @@ entity_config:
     stanford_spacer:
       enabled: true
       query_load_enabled: true
+    stanford_stat_card:
+      enabled: true
     stanford_wysiwyg:
       enabled: true
       query_load_enabled: true
@@ -306,20 +313,38 @@ entity_config:
     basic_page_types:
       enabled: true
       query_load_enabled: true
-      routes_enabled: true
     cap_org_codes:
       enabled: false
     event_audience:
       enabled: true
       query_load_enabled: true
+    event_filters:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
     media_tags:
       enabled: false
     opportunity_sponsor:
-      enabled: false
+      enabled: true
+      query_load_enabled: true
     opportunity_tag_filters:
-      enabled: false
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
     opportunity_type:
-      enabled: false
+      enabled: true
+      query_load_enabled: true
+    opportunity_units:
+      enabled: true
+      query_load_enabled: true
+    person_filters:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+    publication_filters:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
     site_owner_orgs:
       enabled: false
     stanford_event_groups:
@@ -334,39 +359,42 @@ entity_config:
     stanford_event_types:
       enabled: true
       query_load_enabled: true
-      routes_enabled: true
     stanford_news_topics:
       enabled: true
       query_load_enabled: true
-      routes_enabled: true
     stanford_person_types:
       enabled: true
-      routes_enabled: true
+      query_load_enabled: true
     stanford_publication_topics:
       enabled: true
       query_load_enabled: true
-      routes_enabled: true
     su_course_quarters:
       enabled: true
       query_load_enabled: true
     su_course_subjects:
       enabled: true
       query_load_enabled: true
-      routes_enabled: true
     su_course_tags:
       enabled: true
+      query_load_enabled: true
     su_shared_tags:
       enabled: true
+      query_load_enabled: true
     sum_course_availability:
       enabled: true
+      query_load_enabled: true
     sum_course_grading:
       enabled: true
+      query_load_enabled: true
     sum_course_interest_area:
       enabled: true
+      query_load_enabled: true
     sum_course_learner:
       enabled: true
+      query_load_enabled: true
     sum_course_population:
       enabled: true
+      query_load_enabled: true
 field_config:
   block_content:
     stanford_component_block:
@@ -710,6 +738,55 @@ field_config:
         enabled: true
       su_news_topics:
         enabled: true
+    stanford_opportunity:
+      body:
+        enabled: true
+      su_opp_application_deadline:
+        enabled: true
+      su_opp_card_footer:
+        enabled: true
+      su_opp_components:
+        enabled: true
+      su_opp_contact_email:
+        enabled: true
+      su_opp_contact_name:
+        enabled: true
+      su_opp_contact_phone:
+        enabled: true
+      su_opp_contact_url:
+        enabled: true
+      su_opp_course_code:
+        enabled: true
+      su_opp_cta_url:
+        enabled: true
+      su_opp_eligibility:
+        enabled: true
+      su_opp_icon:
+        enabled: true
+      su_opp_image:
+        enabled: true
+      su_opp_learn_more:
+        enabled: true
+      su_opp_open_date:
+        enabled: true
+      su_opp_prerequisites:
+        enabled: true
+      su_opp_source:
+        enabled: true
+      su_opp_sponsor:
+        enabled: true
+      su_opp_start_date:
+        enabled: true
+      su_opp_status:
+        enabled: true
+      su_opp_summary:
+        enabled: true
+      su_opp_tags:
+        enabled: true
+      su_opp_type:
+        enabled: true
+      su_opp_units:
+        enabled: true
     stanford_page:
       layout_selection:
         enabled: true
@@ -772,6 +849,8 @@ field_config:
         enabled: true
       su_person_short_title:
         enabled: true
+      su_person_source:
+        enabled: true
       su_person_telephone:
         enabled: true
       su_person_type_group:
@@ -792,6 +871,8 @@ field_config:
       su_policy_policy_num:
         enabled: true
       su_policy_related:
+        enabled: true
+      su_policy_source:
         enabled: true
       su_policy_subchapter:
         enabled: true
@@ -902,6 +983,13 @@ field_config:
       su_faq_headline:
         enabled: true
       su_faq_questions:
+        enabled: true
+    stanford_filtered_lists:
+      su_filtered_list_view:
+        enabled: true
+      su_list_description:
+        enabled: true
+      su_list_headline:
         enabled: true
     stanford_gallery:
       su_gallery_button:
@@ -1144,6 +1232,10 @@ field_config:
       sum_global_msg_hide:
         enabled: true
       sum_global_msg_link:
+        enabled: true
+  taxonomy_term:
+    su_course_subjects:
+      su_courses_dept_long:
         enabled: true
 settings:
   exclude_unpublished: false
