@@ -34,7 +34,6 @@ adding:
     - 'import stanford_events_importer migration'
     - 'revert sul_library revisions'
     - 'revert sul_study_place revisions'
-    - 'trigger deployments'
     - 'view any unpublished sul_library content'
     - 'view any unpublished sul_study_place content'
     - 'view own unpublished content'
