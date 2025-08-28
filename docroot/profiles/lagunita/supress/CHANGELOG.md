@@ -1,5 +1,17 @@
 # Stanford Profile
 
+12.0.2
+-------------------------------------------------------------------------------
+- D8CORE-8244: Fix label display when fields are empty (#985)
+- Adjust opportunity form display field order
+
+12.0.1
+-------------------------------------------------------------------------------
+
+- D8CORE-8279: A11y changes for federated search (#982)
+- Set title on profile helper cron job
+
+
 12.0.0
 -------------------------------------------------------------------------------
 
