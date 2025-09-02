@@ -368,6 +368,7 @@ entity_config:
     stanford_news_topics:
       enabled: true
       query_load_enabled: true
+      edges_enabled: true
     stanford_person_types:
       enabled: true
       query_load_enabled: true
