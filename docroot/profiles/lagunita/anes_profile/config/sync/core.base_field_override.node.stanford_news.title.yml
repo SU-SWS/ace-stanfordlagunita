@@ -1,0 +1,18 @@
+uuid: e89db5a2-d375-4923-abf6-bd3b65566234
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stanford_news
+id: node.stanford_news.title
+field_name: title
+entity_type: node
+bundle: stanford_news
+label: Headline
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

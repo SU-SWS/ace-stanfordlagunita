@@ -1,0 +1,109 @@
+<?php
+
+use Codeception\Attribute as CodeceptionAttribute;
+use Faker\Factory;
+
+/**
+ * Test for the lockup settings.
+ */
+#[CodeceptionAttribute\Group('navigation')]
+class NavigationDropDownsCest {
+
+  /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
+   * Cleanup after test.
+   */
+  public function _after(FunctionalTester $I) {
+    \Drupal::entityTypeManager()
+      ->getStorage('config_pages')
+      ->load('stanford_basic_site_settings')
+      ->set('su_site_dropdowns', NULL)
+      ->save();
+  }
+
+  /**
+   * Create some content and test the dropdown menu.
+   */
+  #[CodeceptionAttribute\Group('menu_link_weight')]
+  public function testDropdownMenus(FunctionalTester $I) {
+    $org_term = $I->createEntity([
+      'vid' => 'site_owner_orgs',
+      'name' => $this->faker->words(2, TRUE),
+    ], 'taxonomy_term');
+
+    $parent_menu_title = $this->faker->word();
+    $I->createEntity([
+      'title' => $parent_menu_title,
+      'menu_name' => 'main',
+      'link' => ['uri' => 'route:<front>'],
+    ], 'menu_link_content');
+
+    $I->logInWithRole('site_manager');
+    $I->resizeWindow(1400, 2000);
+    $I->amOnPage('/');
+    $I->canSeeLink($parent_menu_title);
+
+    $I->amOnPage('/admin/config/system/basic-site-settings');
+
+    $I->click('#edit-group-site-header-options summary');
+    $I->click('#edit-group-main-menu-options summary');
+    $I->uncheckOption('Use Drop Down Menus');
+
+    $I->click('#edit-group-experimental summary');
+    $I->uncheckOption('Decoupled Main Menu');
+
+    $I->scrollTo('body');
+    $I->click('Site Contacts');
+    $I->waitForText('Site Owner Contact Email');
+    $I->fillField('Site Owner Contact Email (value 1)', $this->faker->email());
+    $I->fillField('Primary Site Manager Email (value 1)', $this->faker->email());
+    $I->fillField('Accessibility Contact Email (value 1)', $this->faker->email());
+    $I->selectOption('.js-form-item-su-site-org-0-target-id select.simpler-select', $org_term->id());
+    $I->click('Save');
+    $I->canSee('Site Settings has been', '.messages-list');
+
+    $I->amOnPage('/');
+    $I->cantSeeElement('button', ['class' => 'su-nav-toggle']);
+
+    $I->amOnPage('/admin/config/system/basic-site-settings');
+
+    $I->click('#edit-group-site-header-options summary');
+    $I->click('#edit-group-main-menu-options summary');
+    $I->checkOption('Use Drop Down Menus');
+
+    $I->click('Save');
+    $I->canSee('Site Settings has been', '.messages-list');
+
+    $node_title = $this->faker->text(20);
+
+    $I->amOnPage('/node/add/stanford_page');
+    $I->fillField('Title', $node_title);
+    $I->click('Menu settings');
+    $I->checkOption('Provide a menu link');
+    $I->fillField('Menu link title', $node_title);
+    // The label on the menu parent changes in D9 vs D8
+    $I->selectOption('.menu-link-form .select-wrapper--level-0 select', '<main>');
+    $I->selectOption('.menu-link-form .select-wrapper--level-1 select', $parent_menu_title);
+    $I->waitForText("Change the weight of the links within the $parent_menu_title menu");
+
+    $I->click('Save');
+    $I->canSeeLink($node_title);
+
+    $I->amOnPage('/');
+    $I->seeElement('button.su-nav-toggle');
+  }
+
+}

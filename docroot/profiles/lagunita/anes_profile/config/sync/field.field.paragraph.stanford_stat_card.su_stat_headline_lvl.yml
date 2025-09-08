@@ -1,0 +1,23 @@
+uuid: 068b8abc-b051-4077-a594-cb781ca4e54f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.su_stat_headline_lvl
+    - paragraphs.paragraphs_type.stanford_stat_card
+  module:
+    - options
+id: paragraph.stanford_stat_card.su_stat_headline_lvl
+field_name: su_stat_headline_lvl
+entity_type: paragraph
+bundle: stanford_stat_card
+label: 'Headling Level'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string
