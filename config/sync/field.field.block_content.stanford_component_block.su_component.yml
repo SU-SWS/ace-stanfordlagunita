@@ -1,0 +1,63 @@
+uuid: 8c926c3c-9eb5-42e1-a5ee-d7570d61f53c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stanford_component_block
+    - field.storage.block_content.su_component
+    - paragraphs.paragraphs_type.stanford_banner
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_media_caption
+    - paragraphs.paragraphs_type.stanford_spacer
+    - paragraphs.paragraphs_type.stanford_wysiwyg
+  module:
+    - entity_reference_revisions
+id: block_content.stanford_component_block.su_component
+field_name: su_component
+entity_type: block_content
+bundle: stanford_component_block
+label: Component
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_banner: stanford_banner
+      stanford_card: stanford_card
+      stanford_media_caption: stanford_media_caption
+      stanford_spacer: stanford_spacer
+      stanford_wysiwyg: stanford_wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_banner:
+        weight: 10
+        enabled: true
+      stanford_card:
+        weight: 11
+        enabled: true
+      stanford_entity:
+        weight: 12
+        enabled: false
+      stanford_lists:
+        weight: 13
+        enabled: false
+      stanford_media_caption:
+        weight: 14
+        enabled: true
+      stanford_person_cta:
+        weight: 15
+        enabled: false
+      stanford_schedule:
+        weight: 16
+        enabled: false
+      stanford_spacer:
+        weight: 17
+        enabled: true
+      stanford_wysiwyg:
+        weight: 18
+        enabled: true
+field_type: entity_reference_revisions

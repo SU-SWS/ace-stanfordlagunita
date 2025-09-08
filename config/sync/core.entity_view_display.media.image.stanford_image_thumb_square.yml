@@ -1,0 +1,44 @@
+uuid: f6b5546b-02e1-436f-9e73-7cb8b733c37c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.stanford_image_thumb_square
+    - field.field.media.image.field_media_image
+    - image.style.thumbnail_square
+    - media.type.image
+  module:
+    - field_formatter_class
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: 4Ny-qpsNb-KZOCogLHV8JHe6zj4XdpwpDi_eu-qFVCs
+id: media.image.stanford_image_thumb_square
+targetEntityType: media
+bundle: image
+mode: stanford_image_thumb_square
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail_square
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  su_media_category: true
+  thumbnail: true
+  uid: true
