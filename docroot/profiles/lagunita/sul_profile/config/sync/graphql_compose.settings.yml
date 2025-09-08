@@ -929,6 +929,10 @@ field_config:
         enabled: true
       su_library__phone:
         enabled: true
+      su_page_description:
+        enabled: true
+      su_shared_tags:
+        enabled: true
       sul_library__a11y:
         enabled: true
       sul_library__ext_url:

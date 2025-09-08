@@ -1,0 +1,19 @@
+uuid: aa22cc66-241a-446e-a489-1931d1a84195
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_page_description
+    - node.type.sul_library
+id: node.sul_library.su_page_description
+field_name: su_page_description
+entity_type: node
+bundle: sul_library
+label: 'Page Description'
+description: 'Maximum 255 characters.  The <i>"page description"</i> is a brief summary that appears below the page title - in smaller font - on the list page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
