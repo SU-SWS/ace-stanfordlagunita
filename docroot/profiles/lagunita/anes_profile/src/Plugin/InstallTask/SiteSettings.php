@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile\Plugin\InstallTask;
+namespace Drupal\anes_profile\Plugin\InstallTask;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -10,8 +10,8 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\State\StateInterface;
 use Drupal\externalauth\AuthmapInterface;
-use Drupal\stanford_profile\Attribute\InstallTask;
-use Drupal\stanford_profile\InstallTaskBase;
+use Drupal\anes_profile\Attribute\InstallTask;
+use Drupal\anes_profile\InstallTaskBase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -94,7 +94,7 @@ class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInte
     $this->authmap = $authmap;
     $this->passwordGenerator = $password_generator;
     $this->state = $state;
-    $this->logger = $logger_factory->get('stanford_profile');
+    $this->logger = $logger_factory->get('anes_profile');
   }
 
   /**
@@ -113,7 +113,7 @@ class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInte
     // @codeCoverageIgnoreStart
     foreach ($node_pages as $page => $uuid) {
       if ($node = $this->getNode($uuid)) {
-        $this->state->set("stanford_profile.$page", '/node/' . $node->id());
+        $this->state->set("anes_profile.$page", '/node/' . $node->id());
       }
     }
 

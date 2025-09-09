@@ -2,20 +2,20 @@
 
 /**
  * @file
- * stanford_profile.install
+ * anes_profile.install
  */
 
 /**
  * Implements hook_update_last_removed().
  */
-function stanford_profile_update_last_removed() {
+function anes_profile_update_last_removed() {
   return 9106;
 }
 
 /**
  * Force uninstall pdb_react from schema since it was removed.
  */
-function stanford_profile_update_11000() {
+function anes_profile_update_11000() {
   $config = \Drupal::configFactory()->getEditable('core.extension');
   $modules = $config->get('module');
   unset($modules['pdb_react']);

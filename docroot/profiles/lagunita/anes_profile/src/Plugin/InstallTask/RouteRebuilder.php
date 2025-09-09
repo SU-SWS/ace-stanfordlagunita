@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\stanford_profile\Plugin\InstallTask;
+namespace Drupal\anes_profile\Plugin\InstallTask;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
-use Drupal\stanford_profile\Attribute\InstallTask;
-use Drupal\stanford_profile\InstallTaskBase;
+use Drupal\anes_profile\Attribute\InstallTask;
+use Drupal\anes_profile\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\stanford_profile;
+namespace Drupal\anes_profile;
 
 /**
  * Install task plugin interface.
  *
- * @package Drupal\stanford_profile
+ * @package Drupal\anes_profile
  */
 interface InstallTaskInterface {
 

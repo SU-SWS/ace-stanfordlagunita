@@ -23,6 +23,10 @@ updates from the `stanford_profile`, use the following commands for each profile
 Though there may be merge conflict in the process and will require manual attention. Most often there will be a merge
 conflict in the composer.json and the info.yml of each profile. The easiest way to resolve that is `git checkout --ours [path/to/file]`
 
+## Add New Sites
+To add a new site to the stack run the command `drush lagunita:new-profile`.
+This will create the git subtree and rename all files to work with the new profile name.
+
 ## Config Splits
 Each profile also contains a separate config split that is always enabled. This is used to isolate the custom configuration
 and/or changes from `stanford_profile`. Any changes different from the stanford_profile will create a config split patch
