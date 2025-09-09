@@ -327,4 +327,6 @@ content:
 hidden:
   created: true
   promote: true
+  su_page_description: true
+  su_shared_tags: true
   uid: true
