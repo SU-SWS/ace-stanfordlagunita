@@ -158,6 +158,9 @@
                 "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.diff",
                 "https://www.drupal.org/project/markdown/issues/3483437": "https://git.drupalcode.org/project/markdown/-/merge_requests/35.diff"
             },
+            "su-sws/markdown": {
+                "https://www.drupal.org/project/markdown/issues/3529633": "https://git.drupalcode.org/project/markdown/-/merge_requests/51.diff"
+            },
             "su-sws/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             }
