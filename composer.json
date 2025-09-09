@@ -81,9 +81,10 @@
     "extra": {
         "merge-plugin": {
             "require": [
+                "docroot/profiles/lagunita/anes_profile/composer.json",
                 "docroot/profiles/lagunita/sul_profile/composer.json",
-                "docroot/profiles/lagunita/supress/composer.json",
-                "docroot/profiles/lagunita/summer_profile/composer.json"
+                "docroot/profiles/lagunita/summer_profile/composer.json",
+                "docroot/profiles/lagunita/supress/composer.json"
             ],
             "merge-extra": true
         },
@@ -157,6 +158,9 @@
                 "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.diff",
                 "https://www.drupal.org/project/markdown/issues/3483437": "https://git.drupalcode.org/project/markdown/-/merge_requests/35.diff"
             },
+            "su-sws/markdown": {
+                "https://www.drupal.org/project/markdown/issues/3529633": "https://git.drupalcode.org/project/markdown/-/merge_requests/51.diff"
+            },
             "su-sws/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             }
@@ -197,6 +201,15 @@
             "git checkout --ours docroot/profiles/lagunita/summer_profile/composer.json",
             "git checkout --ours docroot/profiles/lagunita/summer_profile/summer_profile.info.yml",
             "git add docroot/profiles/lagunita/summer_profile/composer.json docroot/profiles/lagunita/summer_profile/summer_profile.info.yml"
+        ],
+        "pull-anesthesia": [
+            "rm -rf docroot/profiles/lagunita",
+            "git checkout docroot/profiles/lagunita",
+            "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",
+            "git subtree pull --prefix=docroot/profiles/lagunita/anes_profile --squash stanford_profile 12.x || true",
+            "git checkout --ours docroot/profiles/lagunita/anes_profile/composer.json",
+            "git checkout --ours docroot/profiles/lagunita/anes_profile/anes_profile.info.yml",
+            "git add docroot/profiles/lagunita/anes_profile/composer.json docroot/profiles/lagunita/anes_profile/anes_profile.info.yml"
         ]
     },
     "autoload": {

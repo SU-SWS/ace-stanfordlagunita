@@ -40,7 +40,8 @@
         },
         "patches": {
             "drupal/markdown": {
-                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.patch"
+                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.patch",
+                "https://www.drupal.org/project/markdown/issues/3483437": "https://git.drupalcode.org/project/markdown/-/merge_requests/35.diff"
             }
         }
     }

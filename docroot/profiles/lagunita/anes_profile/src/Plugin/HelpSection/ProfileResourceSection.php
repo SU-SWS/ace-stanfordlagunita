@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\stanford_profile\Plugin\HelpSection;
+namespace Drupal\anes_profile\Plugin\HelpSection;
 
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\help\Attribute\HelpSection;
