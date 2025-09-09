@@ -164,13 +164,6 @@
             "su-sws/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             }
-        },
-        "patches-ignore": {
-            "su-sws/drupal-patches": {
-                "drupal/decoupled_router": {
-                    "This patch has known conflicts with our Quick Edit integration": "https://www.drupal.org/files/issues/2024-07-11/decouple_router-3111456-resolve-language-issue-63--get-translation-re-rolled.patch"
-                }
-            }
         }
     },
     "scripts": {

@@ -201,7 +201,13 @@ PHP;
     $this->localMachineHelper()->executeFromCmd("sed -i 's/field_prefix: su_/field_prefix: {$config_prefix}_/g' field_ui.settings.yml", null, "$profile_path/config/sync/");
   }
 
-  protected function getUuid() {
+  /**
+   * Copies the generate method on the uuid service from core.
+   *
+   * @return string
+   *   Generated uuid.
+   */
+  protected function getUuid():string {
     // Obtain a random string of 32 hex characters.
     $hex = bin2hex(random_bytes(16));
 
