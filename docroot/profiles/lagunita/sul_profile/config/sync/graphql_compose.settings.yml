@@ -929,6 +929,10 @@ field_config:
         enabled: true
       su_library__phone:
         enabled: true
+      su_page_description:
+        enabled: true
+      su_shared_tags:
+        enabled: true
       sul_library__a11y:
         enabled: true
       sul_library__ext_url:
@@ -1157,9 +1161,9 @@ field_config:
       sul_libguide_id:
         enabled: true
     sul_location_hours:
-      sul_loc_hours_alert:
-        enabled: true
       sul_loc_alert_icon:
+        enabled: true
+      sul_loc_hours_alert:
         enabled: true
   su_policy_log:
     su_policy_log:
@@ -1178,8 +1182,8 @@ field_config:
 settings:
   exclude_unpublished: false
   expose_entity_ids: false
-  schema_description: "GraphQL Compose"
-  schema_version: "1"
+  schema_description: 'GraphQL Compose'
+  schema_version: '1'
   simple_queries: true
   simple_unions: false
   site_name: true
@@ -1189,5 +1193,5 @@ settings:
   svg_filesize: 100
   inflector_langcode: en
   inflector_singularize: true
-  custom: {}
+  custom: {  }
   edge_max_limit: 1000
