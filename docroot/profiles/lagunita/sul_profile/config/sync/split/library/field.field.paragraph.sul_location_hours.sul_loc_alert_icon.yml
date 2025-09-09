@@ -1,0 +1,21 @@
+uuid: 1139d515-5d86-45c0-a787-bc93452359cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.sul_loc_alert_icon
+    - paragraphs.paragraphs_type.sul_location_hours
+  module:
+    - fontawesome
+id: paragraph.sul_location_hours.sul_loc_alert_icon
+field_name: sul_loc_alert_icon
+entity_type: paragraph
+bundle: sul_location_hours
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon
