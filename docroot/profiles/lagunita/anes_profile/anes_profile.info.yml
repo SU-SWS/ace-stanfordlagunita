@@ -1,4 +1,4 @@
-name: 'Stanford Profile'
+name: 'Anesthesia Profile'
 description: 'Jumpstart Website Profile'
 version: 12.0.2
 type: profile
@@ -101,9 +101,9 @@ install:
   - 'stanford_image_styles:stanford_image_styles'
   - 'stanford_media:media_duplicate_validation'
   - 'stanford_media:stanford_media'
-  - 'stanford_profile_helper:stanford_paragraph_card'
-  - 'stanford_profile_helper:stanford_profile_helper'
-  - 'stanford_profile_helper:stanford_profile_styles'
+  - 'stanford_profile_styles:stanford_paragraph_card'
+  - 'stanford_profile_styles:stanford_profile_styles'
+  - 'stanford_profile_styles:stanford_profile_styles'
   - 'stanford_text_editor:stanford_text_editor'
   - 'token:token'
   - 'ui_patterns:ui_patterns'

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Unit\Config;
+namespace Drupal\Tests\anes_profile\Unit\Config;
 
 use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Cache\CacheableMetadata;
@@ -8,7 +8,7 @@ use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\State\StateInterface;
-use Drupal\stanford_profile\Config\ConfigOverrides;
+use Drupal\anes_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -17,7 +17,7 @@ use Drupal\Tests\UnitTestCase;
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
-   * @var \Drupal\stanford_profile\Config\ConfigOverrides
+   * @var \Drupal\anes_profile\Config\ConfigOverrides
    */
   protected $overrideService;
 
@@ -113,13 +113,13 @@ class ConfigOverridesTest extends UnitTestCase {
    */
   public function getStateCallback($name) {
     switch ($name) {
-      case 'stanford_profile.403_page':
+      case 'anes_profile.403_page':
         return '/node/403';
 
-      case 'stanford_profile.404_page':
+      case 'anes_profile.404_page':
         return '/node/404';
 
-      case 'stanford_profile.front_page':
+      case 'anes_profile.front_page':
         return '/node/99';
 
     }

@@ -1,8 +1,8 @@
-# [Stanford Profile](https://github.com/SU-SWS/stanford_profile)
+# [Stanford Profile](https://github.com/SU-SWS/anes_profile)
 ##### 8.x
-[![CircleCI](https://circleci.com/gh/SU-SWS/stanford_profile.svg?style=svg)](https://circleci.com/gh/SU-SWS/stanford_profile)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9e16872314a79186f4fe/test_coverage)](https://codeclimate.com/github/SU-SWS/stanford_profile/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9e16872314a79186f4fe/maintainability)](https://codeclimate.com/github/SU-SWS/stanford_profile/maintainability)
+[![CircleCI](https://circleci.com/gh/SU-SWS/anes_profile.svg?style=svg)](https://circleci.com/gh/SU-SWS/anes_profile)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9e16872314a79186f4fe/test_coverage)](https://codeclimate.com/github/SU-SWS/anes_profile/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9e16872314a79186f4fe/maintainability)](https://codeclimate.com/github/SU-SWS/anes_profile/maintainability)
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)
 
@@ -47,7 +47,7 @@ Steps to build a new release:
 Troubleshooting
 ---
 
-If you are experiencing issues with this try posting an issue on the [GitHub issues page](https://github.com/SU-SWS/stanford_profile/issues).
+If you are experiencing issues with this try posting an issue on the [GitHub issues page](https://github.com/SU-SWS/anes_profile/issues).
 
 Contribution / Collaboration
 ---

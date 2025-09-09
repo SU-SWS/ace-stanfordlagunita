@@ -1,9 +1,9 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\anes_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\stanford_profile\Plugin\InstallTask\Users;
+use Drupal\anes_profile\Plugin\InstallTask\Users;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 
@@ -25,7 +25,7 @@ class UsersTest extends KernelTestBase {
    */
   public function setup(): void {
     parent::setUp();
-    $this->setInstallProfile('stanford_profile');
+    $this->setInstallProfile('anes_profile');
 
     $this->installEntitySchema('user');
     $this->installEntitySchema('user_role');
