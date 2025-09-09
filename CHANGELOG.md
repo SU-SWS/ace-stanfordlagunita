@@ -1,5 +1,23 @@
 # Lagunita
 
+3.0.0
+--------------------------------------------------------------------------------
+_Release Date: 2025-09-09_
+
+- SUL23-818 | add icon option field to library alert (#209)
+- Create anesthesia profile (#210)
+- SUL23-295: Added fields for branch metadata (#208)
+- SUL: Re-enable news topics edge graphql
+- SUL23-835 | Update events view and add sul button background variant (#207)
+- Updated graphql configs for all sites
+- Added default local drush config
+- SUL23-834 | add experience field to sul localist importer (#204)
+- SUL23-815 | enable stat card graphql fragments and add layout options config (#202)
+- SUL23-394 | update news banner help text (#201)
+- SUP: added drush command to unpublish orphan books
+- Fixed post-db-copy command
+- Updated Drupal 11
+
 2.9.0
 --------------------------------------------------------------------------------
 _Release Date: 2025-08-07_

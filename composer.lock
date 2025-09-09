@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bb707548b66f7144533cf20502f18b0",
+    "content-hash": "19800911f5f213f4fa6454875b2cf756",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -8599,7 +8599,7 @@
                 "drupal/hal": "^1 || ^2 || ^9",
                 "drupal/metatag_dc": "*",
                 "drupal/metatag_open_graph": "*",
-                "drupal/page_manager": "^4.0",
+                "drupal/page_manager": "*",
                 "drupal/redirect": "^1.0",
                 "ergebnis/composer-normalize": "*",
                 "mpyw/phpunit-patch-serializable-comparison": "*"
@@ -17939,16 +17939,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "12.0.2",
+            "version": "12.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "98d6daa7894fa136eb7d7031413c5a37151efbff"
+                "reference": "2a5063fd485b458ad4e7040e0cfee6a14fbae951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/98d6daa7894fa136eb7d7031413c5a37151efbff",
-                "reference": "98d6daa7894fa136eb7d7031413c5a37151efbff",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/2a5063fd485b458ad4e7040e0cfee6a14fbae951",
+                "reference": "2a5063fd485b458ad4e7040e0cfee6a14fbae951",
                 "shasum": ""
             },
             "require": {
@@ -18120,9 +18120,9 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.0.2"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.0.3"
             },
-            "time": "2025-08-26T22:45:12+00:00"
+            "time": "2025-09-09T18:34:56+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -18281,12 +18281,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/sws-drush-commands.git",
-                "reference": "b64c46b977afcdd7bae827f46951e4d02077e269"
+                "reference": "f412f674c00dcc52b1881a09c7763e8535b2c2d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/b64c46b977afcdd7bae827f46951e4d02077e269",
-                "reference": "b64c46b977afcdd7bae827f46951e4d02077e269",
+                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/f412f674c00dcc52b1881a09c7763e8535b2c2d8",
+                "reference": "f412f674c00dcc52b1881a09c7763e8535b2c2d8",
                 "shasum": ""
             },
             "require": {
@@ -18318,7 +18318,7 @@
                 "issues": "https://github.com/SU-SWS/sws-drush-commands/issues",
                 "source": "https://github.com/SU-SWS/sws-drush-commands"
             },
-            "time": "2025-09-03T21:22:57+00:00"
+            "time": "2025-09-09T20:59:48+00:00"
         },
         {
             "name": "symfony/cache",
