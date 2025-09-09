@@ -1161,6 +1161,8 @@ field_config:
       sul_libguide_id:
         enabled: true
     sul_location_hours:
+      sul_loc_alert_icon:
+        enabled: true
       sul_loc_hours_alert:
         enabled: true
   su_policy_log:
