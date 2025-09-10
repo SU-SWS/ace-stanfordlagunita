@@ -1,0 +1,14 @@
+adding:
+  permissions:
+    - 'create su_metatags'
+    - 'edit own su_metatags'
+    - 'edit su_metatags'
+    - 'view own su_metatags'
+    - 'view su_metatags'
+removing:
+  permissions:
+    - 'create su_imported'
+    - 'edit own su_imported'
+    - 'edit su_imported'
+    - 'view own su_imported'
+    - 'view su_imported'

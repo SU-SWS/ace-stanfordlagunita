@@ -1,0 +1,8 @@
+adding:
+  tags:
+    description: '[node:su_news_dek|node:su_news_components:0|node:summary]'
+    twitter_cards_description: '[node:su_news_dek|node:su_news_components:0|node:summary]'
+removing:
+  tags:
+    description: '[node:su_news_dek|node:su_news_byline]'
+    twitter_cards_description: '[node:su_news_dek|node:su_news_byline|node:summary]'

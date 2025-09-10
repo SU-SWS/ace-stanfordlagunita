@@ -1,0 +1,21 @@
+uuid: 0ddbe226-7468-4d5c-b8be-58c30e40418b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_metatags
+    - node.type.sul_library
+  module:
+    - metatag
+id: node.sul_library.su_metatags
+field_name: su_metatags
+entity_type: node
+bundle: sul_library
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

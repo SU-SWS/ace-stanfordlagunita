@@ -1,0 +1,15 @@
+uuid: 63e3ae65-b2ad-4cb9-9249-2df308cd5723
+langcode: en
+status: true
+dependencies: {  }
+id: node__sul_library
+label: 'Content: Branch Location'
+tags:
+  description: '[node:su_page_description|node:summary]'
+  image_src: '[node:su_library__contact_img:entity:field_media_image:card_1192x596|node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:card_1192x596]'
+  og_image: '[node:su_library__contact_img:entity:field_media_image:card_1192x596|node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:card_1192x596]'
+  og_image_alt: '[node:su_library__contact_img:entity:field_media_image:alt|node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:alt]'
+  og_image_url: '[node:su_library__contact_img:entity:field_media_image:card_1192x596|node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:card_1192x596]'
+  title: '[node:title] | [site:name]'
+  twitter_cards_image: '[node:su_library__contact_img:entity:field_media_image:card_1192x596|node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:card_1192x596]'
+  twitter_cards_image_alt: '[node:su_library__contact_img:entity:field_media_image:alt|node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:alt]'
