@@ -5,3 +5,4 @@ package: Stanford
 core_version_requirement: ^11.1
 dependencies:
   - drupal:migrate
+  - search_api_algolia:search_api_algolia

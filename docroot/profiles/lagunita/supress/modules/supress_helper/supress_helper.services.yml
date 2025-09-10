@@ -1,0 +1,4 @@
+services:
+  supress_helper.filemaker:
+    class: Drupal\supress_helper\PressFilemaker
+    arguments: ['@cache.default', '@http_client', '@logger.factory', '@queue']
