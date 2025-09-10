@@ -10,7 +10,7 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: {  }
 migration_group: sup_press
-label: 'Import Awards'
+label: 'Press Awards'
 source:
   orphan_action: delete
   plugin: url

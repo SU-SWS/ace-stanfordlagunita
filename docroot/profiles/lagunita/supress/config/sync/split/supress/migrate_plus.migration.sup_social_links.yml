@@ -8,7 +8,7 @@ field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: sup_press
-label: 'Import Stanford University Press Social Links'
+label: 'Press Social Links'
 source:
   plugin: url
   orphan_action: delete
