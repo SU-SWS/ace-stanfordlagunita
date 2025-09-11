@@ -1,7 +1,7 @@
 adding:
   tags:
-    description: '[node:su_news_dek|node:su_news_components:0|node:summary]'
-    twitter_cards_description: '[node:su_news_dek|node:su_news_components:0|node:summary]'
+    description: '[node:su_news_dek|node:su_news_components:0|node:summary|node:su_news_byline]'
+    twitter_cards_description: '[node:su_news_dek|node:su_news_components:0|node:summary|node:su_news_byline]'
 removing:
   tags:
     description: '[node:su_news_dek|node:su_news_byline]'
