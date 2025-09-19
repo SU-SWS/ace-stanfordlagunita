@@ -49,8 +49,8 @@ complete_list:
   - 'taxonomy.vocabulary.sum_*'
   - 'user.role.sum_*'
   - 'views.view.sum_*'
+  - search_api.index.algolia_search
 partial_list:
   - '*su_*'
   - '*stanford_*'
   - 'user.role.*'
-  - 'search_api.index.*'

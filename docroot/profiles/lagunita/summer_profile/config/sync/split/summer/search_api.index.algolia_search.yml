@@ -16,9 +16,27 @@ dependencies:
     - field.storage.node.su_person_type_group
     - field.storage.node.su_publication_topics
     - field.storage.node.su_shared_tags
+    - field.storage.node.sum_course_availability
+    - field.storage.node.sum_course_catalog_number
+    - field.storage.node.sum_course_class_number
+    - field.storage.node.sum_course_course_cost
+    - field.storage.node.sum_course_cross_listing
+    - field.storage.node.sum_course_end_date
+    - field.storage.node.sum_course_format
+    - field.storage.node.sum_course_grading
+    - field.storage.node.sum_course_instructors
+    - field.storage.node.sum_course_interest_area
+    - field.storage.node.sum_course_length
+    - field.storage.node.sum_course_notes
+    - field.storage.node.sum_course_population
+    - field.storage.node.sum_course_prerequisites
+    - field.storage.node.sum_course_schedule
+    - field.storage.node.sum_course_start_date
+    - field.storage.node.sum_course_units
     - search_api.server.algolia_search
   module:
     - node
+    - stanford_fields
     - stanford_profile_helper
     - taxonomy
 id: algolia_search
@@ -136,6 +154,7 @@ field_settings:
           stanford_person: search_indexing
           stanford_policy: search_indexing
           stanford_publication: search_indexing
+          sum_summer_courses: search_indexing
   news_type:
     label: 'News Types » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -183,7 +202,7 @@ field_settings:
     property_path: custom_value
     type: string
     configuration:
-      value: '[node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
+      value: '[node:sum_course_image:entity:field_media_image:large|node:su_page_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
   publication_type:
     label: 'Publication Types » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -224,6 +243,150 @@ field_settings:
     type: string
     configuration:
       value: '[node:su_event_subheadline|node:su_event_series_subheadline]'
+  sum_course_availability:
+    label: 'Course Availability » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'sum_course_availability:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_availability
+      module:
+        - taxonomy
+  sum_course_catalog_number:
+    label: 'Catalog Number'
+    datasource_id: 'entity:node'
+    property_path: sum_course_catalog_number
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_catalog_number
+  sum_course_class_number:
+    label: 'Class Number'
+    datasource_id: 'entity:node'
+    property_path: sum_course_class_number
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.sum_course_class_number
+  sum_course_course_cost:
+    label: 'Course Cost'
+    datasource_id: 'entity:node'
+    property_path: sum_course_course_cost
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.sum_course_course_cost
+  sum_course_cross_listing:
+    label: 'Cross Listing'
+    datasource_id: 'entity:node'
+    property_path: sum_course_cross_listing
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_cross_listing
+  sum_course_end_date:
+    label: 'End Date'
+    datasource_id: 'entity:node'
+    property_path: sum_course_end_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.sum_course_end_date
+  sum_course_format:
+    label: 'Course Format'
+    datasource_id: 'entity:node'
+    property_path: sum_course_format
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_format
+  sum_course_grading:
+    label: 'Grading » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'sum_course_grading:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_grading
+      module:
+        - taxonomy
+  sum_course_instructors:
+    label: Instructors
+    datasource_id: 'entity:node'
+    property_path: sum_course_instructors
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_instructors
+  sum_course_interest:
+    label: 'Interest Area » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'sum_course_interest_area:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_interest_area
+      module:
+        - taxonomy
+  sum_course_length:
+    label: 'Course Length'
+    datasource_id: 'entity:node'
+    property_path: sum_course_length
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_length
+  sum_course_notes:
+    label: 'Course Notes'
+    datasource_id: 'entity:node'
+    property_path: sum_course_notes
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.sum_course_notes
+  sum_course_population:
+    label: 'Population » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'sum_course_population:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_population
+      module:
+        - taxonomy
+  sum_course_prerequisites:
+    label: Prerequisites
+    datasource_id: 'entity:node'
+    property_path: sum_course_prerequisites
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.sum_course_prerequisites
+  sum_course_schedule:
+    label: Schedule
+    datasource_id: 'entity:node'
+    property_path: sum_course_schedule
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_schedule
+  sum_course_start_date:
+    label: 'Start Date'
+    datasource_id: 'entity:node'
+    property_path: sum_course_start_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.sum_course_start_date
+  sum_course_units:
+    label: Units
+    datasource_id: 'entity:node'
+    property_path: sum_course_units
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.sum_course_units
   summary:
     label: Summary
     property_path: custom_value
@@ -272,69 +435,6 @@ processor_settings:
   custom_value: {  }
   decode_html_entities:
     weights:
-      preprocess_index: -50
-    all_fields: 1
-    fields:
-      - basic_page_type
-      - byline
-      - course_subject
-      - dek
-      - email
-      - event_audience
-      - event_subject
-      - event_type
-      - html
-      - news_type
-      - person_full_title
-      - person_short_title
-      - person_type
-      - phone
-      - photo
-      - publication_type
-      - shared_tags
-      - subheadline
-      - summary
-      - title
-      - type
-      - url
-  entity_status: {  }
-  entity_type: {  }
-  html_filter:
-    weights:
-      preprocess_index: -48
-      preprocess_query: -6
-    all_fields: true
-    fields:
-      - basic_page_type
-      - byline
-      - course_subject
-      - dek
-      - email
-      - event_audience
-      - event_subject
-      - event_type
-      - html
-      - news_type
-      - person_full_title
-      - person_short_title
-      - person_type
-      - phone
-      - photo
-      - publication_type
-      - shared_tags
-      - site_name
-      - subheadline
-      - summary
-      - title
-      - type
-      - url
-    title: false
-    alt: false
-    tags: {  }
-  language_with_fallback: {  }
-  rendered_item: {  }
-  space_tags:
-    weights:
       preprocess_index: -49
     all_fields: 1
     fields:
@@ -355,11 +455,73 @@ processor_settings:
       - photo
       - publication_type
       - shared_tags
+      - site_name
       - subheadline
+      - sum_course_availability
+      - sum_course_catalog_number
+      - sum_course_cross_listing
+      - sum_course_format
+      - sum_course_grading
+      - sum_course_instructors
+      - sum_course_interest
+      - sum_course_length
+      - sum_course_notes
+      - sum_course_population
+      - sum_course_prerequisites
+      - sum_course_schedule
       - summary
       - title
       - type
       - url
+  entity_status: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  strip_tags:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -15
+    all_fields: 1
+    fields:
+      - basic_page_type
+      - byline
+      - course_subject
+      - dek
+      - email
+      - event_audience
+      - event_subject
+      - event_type
+      - html
+      - news_type
+      - person_full_title
+      - person_short_title
+      - person_type
+      - phone
+      - photo
+      - publication_type
+      - shared_tags
+      - site_name
+      - subheadline
+      - sum_course_availability
+      - sum_course_catalog_number
+      - sum_course_cross_listing
+      - sum_course_format
+      - sum_course_grading
+      - sum_course_instructors
+      - sum_course_interest
+      - sum_course_length
+      - sum_course_notes
+      - sum_course_population
+      - sum_course_prerequisites
+      - sum_course_schedule
+      - summary
+      - title
+      - type
+      - url
+    title: true
+    alt: true
+    tags:
+      a: 2.0
 tracker_settings:
   default:
     indexing_order: fifo
