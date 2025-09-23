@@ -254,13 +254,27 @@ class NewsCest {
     $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
   }
 
-
   /**
-   * Help text should appear on the news content authoring page for banner media field.
+   * Help text should appear on the news content authoring page for banner
+   * media field.
    */
   public function testBannerHelpText(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_news');
     $I->canSee('It will also be used as a thumbnail on the list page');
   }
+
+  #[CodeceptionAttribute\Group('body')]
+  public function testBodyField(AcceptanceTester $I) {
+    $body_text = '<p>' . implode('</p><p>', $this->faker->paragraphs()) . '</p>';
+    $node = $I->createEntity([
+      'type' => 'stanford_news',
+      'title' => $this->faker->words(3, TRUE),
+      'body' => ['value' => $body_text, 'format' => 'stanford_html'],
+    ]);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee(strip_tags($body_text));
+  }
+
 }
