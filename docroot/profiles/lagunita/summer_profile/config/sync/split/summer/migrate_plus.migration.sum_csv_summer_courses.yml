@@ -271,7 +271,7 @@ process:
       plugin: entity_generate
       value_key: name
       bundle_key: vid
-      bundle: sum_summer_courses
+      bundle: sum_course_grading
       entity_type: taxonomy_term
 destination:
   plugin: 'entity:node'
