@@ -30,7 +30,6 @@ class StanfordAccordionCest {
 
     $headline = $this->faker->sentence(3);
     $description = $this->faker->sentence(3);
-
     $accordion_items = [];
     for ($i = 0; $i < 3; $i++) {
       $accordion_items[] = $I->createEntity([
@@ -74,14 +73,14 @@ class StanfordAccordionCest {
     $I->canSee($description);
 
     
-    // foreach ($accordion_items as $accordion_item) {
-    //   $accordion_title = $accordion_item->get('su_accordion_title')->value;
-    //   $I->canSee($accordion_title);
-    //   $body_text = $accordion_item->get('su_accordion_body')->value;
-    //   if ($body_text) {
-    //     $plain_text = strip_tags($body_text);
-    //     $I->canSee($plain_text); 
-    //   }
-    // }
+    foreach ($accordion_items as $accordion_item) {
+      $accordion_title = $accordion_item->get('su_accordion_title')->value;
+      $I->canSee($accordion_title);
+      $body_text = $accordion_item->get('su_accordion_body')->value;
+      if ($body_text) {
+        $plain_text = strip_tags($body_text);
+        $I->canSee($plain_text);
+      }
+    }
   }
 }
