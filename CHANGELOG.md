@@ -1,12 +1,23 @@
 # Lagunita
 
+3.0.2
+--------------------------------------------------------------------------------
+_Release Date: 2025-10-01_
+
+- Sum: Adjusted config split settings for search api algolia search
+- SUM: fixup search api
+- SUM: Fix grading field migration import bundle
+- STVP26-74 STVP26-75: Add "Body" field to news and basic pages (#993)
+- SUL23-818 | Update font awesome icon help text (#994)
+- Exposed body field in graphql
+
 3.0.1
 --------------------------------------------------------------------------------
 _Release Date: 2025-09-19_
 
 - SUM-335: Adjust algolia indexing to include links (#216)
 - SUL23-710 | adjust news and branch location metadata (#215)
-- SUP: Add permission to run importer from the UI (#213
+- SUP: Add permission to run importer from the UI (#213)
 
 3.0.0
 --------------------------------------------------------------------------------
