@@ -86,4 +86,69 @@ class AccordionCest {
     }
   }
 
+  #[CodeceptionAttribute\Group('accordion-wysiwyg')]
+  public function testAccordionParagraphRichText(FunctionalTester $I) {
+    $layout = $I->createEntity(['type' => 'stanford_layout'], 'paragraph');
+    $layout->setBehaviorSettings('layout_paragraphs', [
+      'layout' => 'layout_paragraphs_1_column',
+    ]);
+    $layout->save();
+
+    $headline = $this->faker->word(2);
+    $description = $this->faker->sentence(3);
+    
+    // Create accordion items with rich text content
+    $accordion_items = [];
+    $rich_text_samples = [
+      '<h2>Heading 2</h2><p>' . $this->faker->paragraph() . '</p>',
+      '<h3>Heading 3</h3><ul><li>Item 1</li><li>Item 2</li></ul>',
+      '<p><strong>Bold</strong> text</p>',
+    ];
+    
+    for ($i = 0; $i < 3; $i++) {
+      $accordion_items[] = $I->createEntity([
+        'type' => 'stanford_accordion',
+        'su_accordion_title' => "Title " . ($i + 1),
+        'su_accordion_body' => [
+          'value' => $rich_text_samples[$i],
+          'format' => 'stanford_html',
+        ],
+      ], 'paragraph');
+    }
+
+    // Create the accordion paragraph with entity references
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_faq',
+      'su_faq_headline' => $headline,
+      'su_faq_description' => $description,
+      'su_faq_questions' => array_map(function($item) {
+        return [
+          'target_id' => $item->id(),
+          'entity' => $item,
+        ];
+      }, $accordion_items),
+    ], 'paragraph');
+    $paragraph->save();
+
+    // Create the page node
+    $node = $I->createEntity([
+      'title' => $this->faker->words(3, TRUE),
+      'type' => 'stanford_page',
+      'su_page_components' => [
+        ['target_id' => $layout->id(), 'entity' => $layout],
+        ['target_id' => $paragraph->id(), 'entity' => $paragraph],
+      ],
+    ], 'node');
+    
+    $I->logInWithRole('site_manager');
+    
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->canSeeResponseCodeIs(200);
+    
+    $I->seeElement('form.node-stanford-page-edit-form');
+    $I->seeElement('h2', ['text' => 'Heading 2']);
+    $I->see('Paragraph content');
+    $I->seeElement('ul li', ['text' => 'Item 1']);
+    $I->seeElement('ul li', ['text' => 'Item 2']);
+  }
 }
