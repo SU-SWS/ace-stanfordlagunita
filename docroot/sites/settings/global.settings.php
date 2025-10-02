@@ -26,4 +26,12 @@ $settings['file_temp_path'] = '/tmp';
 if (EnvironmentDetector::isAhEnv()) {
   // Set the temp directory as per https://docs.acquia.com/acquia-cloud/manage/files/broken/
   $settings['file_temp_path'] = '/mnt/gfs/' . EnvironmentDetector::getAhGroup() . '.' . EnvironmentDetector::getAhEnv() . '/tmp';
+
+  // Increase memory limit for site install tasks.
+  // The increase is to handle drush site installs because the
+  // install_config_import_batch step consumes upwards of 350+ MB of memory.
+  // See: https://acquia.my.site.com/s/article/360004542293-Conditionally-increasing-memory-limits
+  if (Drupal\Core\Installer\InstallerKernel::installationAttempted()) {
+    ini_set('memory_limit', '1024M');
+  }
 }
