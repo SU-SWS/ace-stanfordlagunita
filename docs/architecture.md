@@ -19,6 +19,7 @@ updates from the `stanford_profile`, use the following commands for each profile
 - `composer pull-sul`
 - `composer pull-press`
 - `composer pull-summer`
+- `composer pull-anes`
 
 Though there may be merge conflict in the process and will require manual attention. Most often there will be a merge
 conflict in the composer.json and the info.yml of each profile. The easiest way to resolve that is `git checkout --ours [path/to/file]`
