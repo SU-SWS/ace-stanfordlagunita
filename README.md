@@ -6,4 +6,4 @@ Read these before setting up or developing:
 
 * [General Architecture](docs/architecture.md)
 * [Local Setup](docs/local-setup.md)
-* [Testing](docs/test.md)
+* [Testing](docs/testing.md)
