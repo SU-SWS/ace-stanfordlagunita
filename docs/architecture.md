@@ -43,6 +43,7 @@ The frontend is build using [NextJS](https://nextjs.org/) and is managed in the 
 - [su-sws/sulgryphon-nextjs](https://github.com/SU-SWS/sulgryphon-nextjs)
 - [su-sws/summer-nextjs](https://github.com/SU-SWS/summer-nextjs)
 - [su-sws/supress-nextjs](https://github.com/SU-SWS/supress-nextjs)
+- [su-sws/anes-nextjs](https://github.com/SU-SWS/anes-nextjs)
 
 See the documentation in those repositories for more information.
 
