@@ -13,16 +13,16 @@ dev:
   host: stanfordgryphondev.ssh.prod.acquia-sites.com
   user: stanfordgryphon.dev
 test:
-  root: /var/www/html/stanfordgryphon.stage/docroot
+  root: /var/www/html/stanfordgryphon.test/docroot
   ac-site: stanfordgryphon
   ac-env: test
   ac-realm: prod
   uri: anes
   test.livedev:
-    parent: '@stanfordgryphon.stage'
-    root: /mnt/gfs/stanfordgryphon.stage/livedev/docroot
-  host: stanfordgryphonstage.ssh.prod.acquia-sites.com
-  user: stanfordgryphon.stage
+    parent: '@stanfordgryphon.test'
+    root: /mnt/gfs/stanfordgryphon.test/livedev/docroot
+  host: stanfordgryphonstg.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.test
 prod:
   root: /var/www/html/stanfordgryphon.prod/docroot
   ac-site: stanfordgryphon
