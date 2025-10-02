@@ -23,6 +23,8 @@ command:
         - 'stanfordlagunita@svn-45197.prod.hosting.acquia.com:stanfordlagunita.git'
         - 'stanfordpress@svn-45197.prod.hosting.acquia.com:stanfordpress.git'
         - 'stanfordsummer@svn-45197.prod.hosting.acquia.com:stanfordsummer.git'
+        # Anesthesiology is on stanfordgryphon.
+        - 'stanfordgryphon@svn-23450.prod.hosting.acquia.com:stanfordgryphon.git'
       post-build-script: drush/deploy-cleanup.sh
       artifact-dir: deploy
       alias-dir: drush/sites
