@@ -35,7 +35,7 @@ command:
         - /mnt/gfs/stanfordlagunita.test/secrets.settings.php
         - /mnt/gfs/stanfordlagunita.test/nobackup/oauth/
       multisites:
-        - anesthesia
+        - anes
         - default
         - library
         - summer
