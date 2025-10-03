@@ -1,0 +1,43 @@
+local:
+  uri: anes
+  root: '${env.cwd}/docroot'
+dev:
+  root: /var/www/html/stanfordgryphon.dev/docroot
+  ac-site: stanfordgryphon
+  ac-env: dev
+  ac-realm: prod
+  uri: anes
+  dev.livedev:
+    parent: '@stanfordgryphon.dev'
+    root: /mnt/gfs/stanfordgryphon.dev/livedev/docroot
+  host: stanfordgryphondev.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.dev
+test:
+  root: /var/www/html/stanfordgryphon.test/docroot
+  ac-site: stanfordgryphon
+  ac-env: test
+  ac-realm: prod
+  uri: anes
+  test.livedev:
+    parent: '@stanfordgryphon.test'
+    root: /mnt/gfs/stanfordgryphon.test/livedev/docroot
+  host: stanfordgryphonstg.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.test
+prod:
+  root: /var/www/html/stanfordgryphon.prod/docroot
+  ac-site: stanfordgryphon
+  ac-env: prod
+  ac-realm: prod
+  uri: anes
+  prod.livedev:
+    parent: '@stanfordgryphon.prod'
+    root: /mnt/gfs/stanfordgryphon.prod/livedev/docroot
+  host: stanfordgryphon.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.prod
+default:
+  root: /var/www/html/stanfordgryphon.prod/docroot
+  ac-site: stanfordgryphon
+  ac-env: prod
+  ac-realm: prod
+  host: stanfordgryphon.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.prod
