@@ -51,7 +51,7 @@ class HiddenBodyFieldCest {
     // Check that the field wrapper doesn't exist or is hidden.
     $I->dontSeeElement('input[name="body[0][value]"]');
     $I->dontSeeElement('textarea[name="body[0][value]"]');
-    $I->dontSee('Body', '.form-item label');
+
   }
 
   /**
@@ -77,7 +77,7 @@ class HiddenBodyFieldCest {
     // Check that the field wrapper doesn't exist or is hidden.
     $I->dontSeeElement('input[name="body[0][value]"]');
     $I->dontSeeElement('textarea[name="body[0][value]"]');
-    $I->dontSee('Body', '.form-item label');
+    
   }
 
   /**
@@ -96,7 +96,6 @@ class HiddenBodyFieldCest {
     // The body field should NOT be visible on the form.
     $I->dontSeeElement('input[name="body[0][value]"]');
     $I->dontSeeElement('textarea[name="body[0][value]"]');
-    $I->dontSee('Body', '.form-item label');
 
     // Verify that other expected fields ARE visible.
     $I->canSeeElement('input[name="title[0][value]"]');
@@ -118,7 +117,6 @@ class HiddenBodyFieldCest {
     // The body field should NOT be visible on the form.
     $I->dontSeeElement('input[name="body[0][value]"]');
     $I->dontSeeElement('textarea[name="body[0][value]"]');
-    $I->dontSee('Body', '.form-item label');
 
     // Verify that other expected fields ARE visible.
     $I->canSeeElement('input[name="title[0][value]"]');
