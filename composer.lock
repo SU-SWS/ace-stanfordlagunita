@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19800911f5f213f4fa6454875b2cf756",
+    "content-hash": "b36e6e838d76baf88a929cc8a1a7073c",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -17896,16 +17896,16 @@
         },
         {
             "name": "su-sws/stanford_migrate",
-            "version": "9.0.4",
+            "version": "9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_migrate.git",
-                "reference": "0f20dbe3ab316e94cbe51bf9332f7104f5b39e88"
+                "reference": "87ee0bd540c3a0ff9d4c13b31869fc65f8ba9eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/0f20dbe3ab316e94cbe51bf9332f7104f5b39e88",
-                "reference": "0f20dbe3ab316e94cbe51bf9332f7104f5b39e88",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_migrate/zipball/87ee0bd540c3a0ff9d4c13b31869fc65f8ba9eba",
+                "reference": "87ee0bd540c3a0ff9d4c13b31869fc65f8ba9eba",
                 "shasum": ""
             },
             "require": {
@@ -17947,9 +17947,9 @@
             "homepage": "https://github.com/SU-SWS/stanford_migrate",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_migrate/issues",
-                "source": "https://github.com/SU-SWS/stanford_migrate/tree/9.0.4"
+                "source": "https://github.com/SU-SWS/stanford_migrate/tree/9.1.0"
             },
-            "time": "2025-09-05T17:34:15+00:00"
+            "time": "2025-10-02T20:04:30+00:00"
         },
         {
             "name": "su-sws/stanford_profile",
@@ -18140,16 +18140,16 @@
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "10.0.2",
+            "version": "10.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "e463b3a1e523899facf97482778ae93106557660"
+                "reference": "daf24a9fff385b3de23ad83387bd293f9a7adbbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/e463b3a1e523899facf97482778ae93106557660",
-                "reference": "e463b3a1e523899facf97482778ae93106557660",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/daf24a9fff385b3de23ad83387bd293f9a7adbbb",
+                "reference": "daf24a9fff385b3de23ad83387bd293f9a7adbbb",
                 "shasum": ""
             },
             "require": {
@@ -18216,6 +18216,7 @@
                 "su-sws/stanford_media": ">=10.0",
                 "su-sws/stanford_migrate": ">=8.4"
             },
+            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18245,9 +18246,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.0.2"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2025-08-27T17:41:56+00:00"
+            "time": "2025-10-02T18:13:40+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -24533,16 +24534,16 @@
         },
         {
             "name": "open-telemetry/api",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentelemetry-php/api.git",
-                "reference": "ee17d937652eca06c2341b6fadc0f74c1c1a5af2"
+                "reference": "610b79ad9d6d97e8368bcb6c4d42394fbb87b522"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentelemetry-php/api/zipball/ee17d937652eca06c2341b6fadc0f74c1c1a5af2",
-                "reference": "ee17d937652eca06c2341b6fadc0f74c1c1a5af2",
+                "url": "https://api.github.com/repos/opentelemetry-php/api/zipball/610b79ad9d6d97e8368bcb6c4d42394fbb87b522",
+                "reference": "610b79ad9d6d97e8368bcb6c4d42394fbb87b522",
                 "shasum": ""
             },
             "require": {
@@ -24562,7 +24563,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "1.4.x-dev"
+                    "dev-main": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -24599,7 +24600,7 @@
                 "issues": "https://github.com/open-telemetry/opentelemetry-php/issues",
                 "source": "https://github.com/open-telemetry/opentelemetry-php"
             },
-            "time": "2025-09-19T00:05:49+00:00"
+            "time": "2025-10-02T23:44:28+00:00"
         },
         {
             "name": "open-telemetry/context",
@@ -24789,22 +24790,22 @@
         },
         {
             "name": "open-telemetry/sdk",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentelemetry-php/sdk.git",
-                "reference": "105c6e81e3d86150bd5704b00c7e4e165e957b89"
+                "reference": "8986bcbcbea79cb1ba9e91c1d621541ad63d6b3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentelemetry-php/sdk/zipball/105c6e81e3d86150bd5704b00c7e4e165e957b89",
-                "reference": "105c6e81e3d86150bd5704b00c7e4e165e957b89",
+                "url": "https://api.github.com/repos/opentelemetry-php/sdk/zipball/8986bcbcbea79cb1ba9e91c1d621541ad63d6b3e",
+                "reference": "8986bcbcbea79cb1ba9e91c1d621541ad63d6b3e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "nyholm/psr7-server": "^1.1",
-                "open-telemetry/api": "^1.6",
+                "open-telemetry/api": "^1.7",
                 "open-telemetry/context": "^1.4",
                 "open-telemetry/sem-conv": "^1.0",
                 "php": "^8.1",
@@ -24839,7 +24840,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-main": "1.0.x-dev"
+                    "dev-main": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -24882,7 +24883,7 @@
                 "issues": "https://github.com/open-telemetry/opentelemetry-php/issues",
                 "source": "https://github.com/open-telemetry/opentelemetry-php"
             },
-            "time": "2025-09-19T00:05:49+00:00"
+            "time": "2025-10-02T23:44:28+00:00"
         },
         {
             "name": "open-telemetry/sem-conv",
@@ -28440,6 +28441,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/filefield_paths": 10,
+        "su-sws/stanford_profile_helper": 20,
         "su-sws/sws-drush-commands": 20
     },
     "prefer-stable": true,
