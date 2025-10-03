@@ -68,6 +68,7 @@ jobs:
       - name: Delete unused git branches & tags
         run: |
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
+          ssh-keyscan -t rsa svn-23450.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
           drush sws:acquia:clean-git --app-id=5d2dbbe5-3255-417b-b398-4c1086cec925 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n &&
           rm -rf deploy &&
