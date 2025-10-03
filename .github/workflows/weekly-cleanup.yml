@@ -75,5 +75,5 @@ jobs:
           rm -rf deploy &&
           drush sws:acquia:clean-git --app-id=4207734d-7ccd-4a06-8426-4108761c3e10 --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n &&
           rm -rf deploy &&
-          drush sws:acquia:clean-git --app-id=8449683b-500e-4728-b70a-5f69d9e8a61a --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n &&
+          drush sws:acquia:clean-git --app-id=8449683b-500e-4728-b70a-5f69d9e8a61a --app-key="$ACQUIA_APP_KEY" --app-secret="$ACQUIA_APP_SECRET" -n
           rm -rf deploy
