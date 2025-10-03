@@ -6,10 +6,10 @@ $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/anes_prof
 
 $next_domain = FALSE;
 if (EnvironmentDetector::isDevEnv()) {
-  $next_domain = 'https://anesthesia-dev.vercel.app';
+  $next_domain = 'https://anes-dev.vercel.app';
 }
 elseif (EnvironmentDetector::isStageEnv()) {
-  $next_domain = 'https://anesthesia-test.vercel.app';
+  $next_domain = 'https://anes-test.vercel.app';
 }
 elseif (EnvironmentDetector::isLocalEnv()) {
   $next_domain = 'http://localhost:3000';

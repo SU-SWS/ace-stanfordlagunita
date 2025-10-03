@@ -1,14 +1,14 @@
 uuid: 09e2b98b-53c3-46b3-beb0-4d3b444db5fc
 langcode: en
 dependencies: {  }
-id: anesthesia
-label: Anesthesia
-description: 'Configuration for Anesthesia'
+id: anes
+label: Anesthesiology
+description: 'Configuration for Anesthesioloy'
 weight: 0
 stackable: false
 no_patching: false
 storage: collection
-folder: profiles/lagunita/anes_profile/config/anesthesia
+folder: profiles/lagunita/anes_profile/config/anes
 module: {  }
 theme: {  }
 complete_list:

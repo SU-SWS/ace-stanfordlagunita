@@ -203,7 +203,7 @@
             "git checkout --ours docroot/profiles/lagunita/summer_profile/summer_profile.info.yml",
             "git add docroot/profiles/lagunita/summer_profile/composer.json docroot/profiles/lagunita/summer_profile/summer_profile.info.yml"
         ],
-        "pull-anesthesia": [
+        "pull-anes": [
             "rm -rf docroot/profiles/lagunita",
             "git checkout docroot/profiles/lagunita",
             "git remote add stanford_profile git@github.com:SU-SWS/stanford_profile.git || true",

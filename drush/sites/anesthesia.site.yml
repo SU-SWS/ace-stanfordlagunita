@@ -1,3 +1,0 @@
-local:
-  uri: anesthesia
-  root: '${env.cwd}/docroot'
