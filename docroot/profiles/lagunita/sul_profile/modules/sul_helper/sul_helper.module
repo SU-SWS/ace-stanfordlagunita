@@ -143,6 +143,13 @@ function sul_helper_form_node_form_alter(&$form, FormStateInterface $form_state,
     $form["#process"][] = '_sul_helper_basic_page_node_form_process';
   }
   $form["#process"][] = '_sul_helper_node_form_process';
+
+  // Hide body field for stanford_page and stanford_news
+  if (in_array($node->bundle(), ['stanford_page', 'stanford_news'])) {
+    if (isset($form['body'])) {
+      $form['body']['#access'] = FALSE;
+    }
+  }
 }
 
 /**
