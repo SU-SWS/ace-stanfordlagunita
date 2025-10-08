@@ -145,7 +145,7 @@ class AccordionCest {
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->canSeeResponseCodeIs(200);
     
-    $I->seeElement('form.node-stanford-page-edit-form');
+    $I->seeElement('form.node-stanford-page-form');
     $I->seeElement('h2', ['text' => 'Heading 2']);
     $I->see('Paragraph');
     $I->seeElement('ul li', ['text' => 'Item 1']);
