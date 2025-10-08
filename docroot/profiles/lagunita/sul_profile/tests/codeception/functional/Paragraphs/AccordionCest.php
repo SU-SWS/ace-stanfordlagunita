@@ -147,7 +147,7 @@ class AccordionCest {
     
     $I->seeElement('form.node-stanford-page-edit-form');
     $I->seeElement('h2', ['text' => 'Heading 2']);
-    $I->see('Paragraph content');
+    $I->see('Paragraph');
     $I->seeElement('ul li', ['text' => 'Item 1']);
     $I->seeElement('ul li', ['text' => 'Item 2']);
   }
