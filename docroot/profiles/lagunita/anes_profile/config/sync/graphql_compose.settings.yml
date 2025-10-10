@@ -618,6 +618,8 @@ field_config:
         enabled: true
       su_event_alt_loc:
         enabled: true
+      su_event_alt_loc_link:
+        enabled: true
       su_event_audience:
         enabled: true
       su_event_components:
@@ -1003,8 +1005,8 @@ settings:
   exclude_unpublished: false
   expose_entity_ids: true
   field_required_override: false
-  schema_description: 'GraphQL Compose'
-  schema_version: '1'
+  schema_description: "GraphQL Compose"
+  schema_version: "1"
   simple_queries: true
   simple_unions: false
   site_name: true
@@ -1014,5 +1016,5 @@ settings:
   svg_filesize: 100
   inflector_langcode: en
   inflector_singularize: true
-  custom: {  }
+  custom: {}
   edge_max_limit: 1000

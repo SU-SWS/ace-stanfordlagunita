@@ -1,0 +1,19 @@
+uuid: 8ad617ae-387f-49cd-afb1-8dfb0ce935ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sul_event_alt_loc_link
+    - node.type.stanford_event
+id: node.stanford_event.sul_event_alt_loc_link
+field_name: sul_event_alt_loc_link
+entity_type: node
+bundle: stanford_event
+label: 'Event alternative location link'
+description: 'Optional. Use this field alongside Event alternative location when Localist does not supply a map link. Enter a direct URL (e.g., Google Maps) for the text-based location provided.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

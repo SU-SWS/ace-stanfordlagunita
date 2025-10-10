@@ -32,8 +32,6 @@ adding:
       weight: 10
     publish_on:
       weight: 11
-    scheduler_settings:
-      weight: 12
     su_metatags:
       weight: 8
     su_news_components:
@@ -43,7 +41,6 @@ adding:
         title_plural: Paragraphs
         edit_mode: closed
         add_mode: dropdown
-        form_display_mode: default
         default_paragraph_type: stanford_wysiwyg
     su_news_hide_social:
       weight: 9
@@ -65,13 +62,11 @@ removing:
       - layout_paragraphs
   content:
     path:
-      weight: 12
+      weight: 11
     publish_on:
-      weight: 52
-    scheduler_settings:
-      weight: 50
+      weight: 13
     su_metatags:
-      weight: 10
+      weight: 9
     su_news_components:
       type: layout_paragraphs
       settings:
@@ -83,8 +78,8 @@ removing:
         change_labels:
           add_another: ''
     su_news_hide_social:
-      weight: 11
+      weight: 10
     su_shared_tags:
-      weight: 9
+      weight: 8
   hidden:
     unpublish_on: true
