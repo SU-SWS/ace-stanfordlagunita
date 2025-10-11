@@ -68,21 +68,13 @@ adding:
         media_types: {  }
       third_party_settings: {  }
     sul_event_alt_loc_link:
-      type: string_textfield
+      type: link_default
       weight: 25
       region: content
       settings:
-        size: 60
-        placeholder: ''
-      third_party_settings:
-        change_labels:
-          field_label_overwrite: ''
-        field_formatter_class:
-          class: ''
-        maxlength:
-          maxlength_js: null
-          maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-          maxlength_js_enforce: false
+        placeholder_url: ''
+        placeholder_title: ''
+      third_party_settings: {  }
     sul_event_experience:
       type: string_textfield
       weight: 100

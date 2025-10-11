@@ -13,8 +13,8 @@ adding:
       sections:
         -
           components:
-            da9e7e8c-a8c2-49a2-b5f2-c68895c5fa9b:
-              uuid: da9e7e8c-a8c2-49a2-b5f2-c68895c5fa9b
+            96ecd98f-1eb9-4656-a739-4a6d8aed413f:
+              uuid: 96ecd98f-1eb9-4656-a739-4a6d8aed413f
               region: main
               configuration:
                 id: 'field_block:node:stanford_event:sul_event_alt_loc_link'
@@ -22,19 +22,27 @@ adding:
                 context_mapping:
                   entity: layout_builder.entity
                 formatter:
-                  type: string
+                  type: link
                   label: above
                   settings:
-                    link_to_entity: false
+                    trim_length: 80
+                    url_only: false
+                    url_plain: false
+                    rel: ''
+                    target: ''
                   third_party_settings: {  }
               weight: -4
               additional: {  }
   content:
     sul_event_alt_loc_link:
-      type: string
+      type: link
       label: above
       settings:
-        link_to_entity: false
+        trim_length: 80
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
       third_party_settings: {  }
       weight: 120
       region: main

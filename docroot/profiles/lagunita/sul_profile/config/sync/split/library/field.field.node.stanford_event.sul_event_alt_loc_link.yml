@@ -1,10 +1,12 @@
-uuid: 8ad617ae-387f-49cd-afb1-8dfb0ce935ee
+uuid: 20a38c21-dd24-4f2b-91c4-3c8bedc4ea53
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.sul_event_alt_loc_link
     - node.type.stanford_event
+  module:
+    - link
 id: node.stanford_event.sul_event_alt_loc_link
 field_name: sul_event_alt_loc_link
 entity_type: node
@@ -15,5 +17,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  title: 0
+  link_type: 16
+field_type: link

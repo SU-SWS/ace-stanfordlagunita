@@ -1,18 +1,16 @@
-uuid: 240e2452-e201-457d-9e42-bc60053a80a8
+uuid: 1d528fb3-8663-4edb-ab27-393cfc77ebb8
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
 id: node.sul_event_alt_loc_link
 field_name: sul_event_alt_loc_link
 entity_type: node
-type: string
-settings:
-  max_length: 300
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true
