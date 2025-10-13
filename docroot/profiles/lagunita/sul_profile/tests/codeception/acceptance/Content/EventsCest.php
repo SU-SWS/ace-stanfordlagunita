@@ -417,6 +417,7 @@ class EventsCest {
       ],
       'su_event_dek' => 'This is a dek field',
       'su_event_alt_loc' => $external ? 'https://events-legacy.stanford.edu/' : '',
+      'su_event_alt_loc' => $external ? 'https://events-legacy.stanford.edu/' : '',
       'su_event_source' => $external ? [
         'uri' => 'http://events-legacy.stanford.edu/events/880/88074',
         'title' => '',
@@ -444,4 +445,15 @@ class EventsCest {
     ]);
   }
 
+
+  /**
+   * Test event alternative location link field.
+   */
+  #[CodeceptionAttribute\Group('event-alt-loc')]
+  public function testEventAltLocLink(AcceptanceTester $I) {
+    $I->logInWithRole('site_manager');
+    $I->amOnPage('/node/add/stanford_event');
+    $I->canSee('Event alternative location link');
+    $I->canSee('Optional. Use this field alongside Event alternative location when Localist does not supply a map link.');
+  }
 }

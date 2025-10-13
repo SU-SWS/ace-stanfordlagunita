@@ -1,5 +1,55 @@
 adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.su_event_tags
+      - field.field.node.stanford_event.sul_event__image
+      - field.field.node.stanford_event.sul_event_alt_loc_link
+      - field.field.node.stanford_event.sul_event_experience
+      - views.view.sul_events
+    module:
+      - views
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            96ecd98f-1eb9-4656-a739-4a6d8aed413f:
+              uuid: 96ecd98f-1eb9-4656-a739-4a6d8aed413f
+              region: main
+              configuration:
+                id: 'field_block:node:stanford_event:sul_event_alt_loc_link'
+                label_display: '0'
+                context_mapping:
+                  entity: layout_builder.entity
+                formatter:
+                  type: link
+                  label: above
+                  settings:
+                    trim_length: 80
+                    url_only: false
+                    url_plain: false
+                    rel: ''
+                    target: ''
+                  third_party_settings: {  }
+              weight: -4
+              additional: {  }
+  content:
+    sul_event_alt_loc_link:
+      type: link
+      label: above
+      settings:
+        trim_length: 80
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
+      third_party_settings: {  }
+      weight: 120
+      region: main
   hidden:
     sul_event__image: true
     sul_event_experience: true
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - views.view.stanford_events

@@ -2,6 +2,7 @@ adding:
   dependencies:
     config:
       - field.field.node.stanford_event.sul_event__image
+      - field.field.node.stanford_event.sul_event_alt_loc_link
       - field.field.node.stanford_event.sul_event_experience
     module:
       - media_library
@@ -12,16 +13,26 @@ adding:
       group_body_content:
         weight: 4
       group_event_details:
+        children:
+          - sul_event_alt_loc_link
         weight: 5
       group_schedule_details:
         weight: 6
       group_taxonomy:
         weight: 9
   content:
+    layout_builder__layout:
+      type: null
+      weight: 101
+      region: content
+      settings: {  }
+      third_party_settings: {  }
     publish_on:
       weight: 12
     status:
       weight: 7
+    su_event_audience:
+      weight: 30
     su_event_components:
       type: paragraphs
       settings:
@@ -37,6 +48,16 @@ adding:
           add_above: '0'
           collapse_edit_all: '0'
           duplicate: duplicate
+    su_event_contact_info:
+      weight: 29
+    su_event_cta:
+      weight: 31
+    su_event_email:
+      weight: 27
+    su_event_map_link:
+      weight: 26
+    su_event_telephone:
+      weight: 28
     su_metatags:
       weight: 10
     sul_event__image:
@@ -45,6 +66,14 @@ adding:
       region: content
       settings:
         media_types: {  }
+      third_party_settings: {  }
+    sul_event_alt_loc_link:
+      type: link_default
+      weight: 25
+      region: content
+      settings:
+        placeholder_url: ''
+        placeholder_title: ''
       third_party_settings: {  }
     sul_event_experience:
       type: string_textfield
@@ -82,9 +111,12 @@ removing:
       weight: 52
     status:
       weight: 6
+    su_event_audience:
+      weight: 29
     su_event_components:
       type: layout_paragraphs
       settings:
+        view_mode: default
         preview_view_mode: default
         nesting_depth: 0
         require_layouts: 1
@@ -92,7 +124,18 @@ removing:
       third_party_settings:
         change_labels:
           add_another: ''
+    su_event_contact_info:
+      weight: 28
+    su_event_cta:
+      weight: 30
+    su_event_email:
+      weight: 26
+    su_event_map_link:
+      weight: 25
+    su_event_telephone:
+      weight: 27
     su_metatags:
       weight: 12
   hidden:
+    layout_builder__layout: true
     unpublish_on: true

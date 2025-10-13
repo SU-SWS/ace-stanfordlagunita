@@ -20,8 +20,6 @@ adding:
     su_card_link:
       weight: 5
     su_card_media:
-      settings:
-        remove_alt: false
       weight: 1
     su_card_super_header:
       region: content
@@ -46,9 +44,6 @@ removing:
       - field.field.paragraph.stanford_card.su_card_super_header
   third_party_settings:
     ds:
-      regions:
-        card_super_headline:
-          - su_card_super_header
       fields:
         'display_field_copy:paragraph-su_card_link_title':
           weight: 5
@@ -56,15 +51,11 @@ removing:
     su_card_body:
       weight: 3
     su_card_header:
-      weight: 2
+      weight: 1
     su_card_link:
       weight: 4
     su_card_media:
       weight: 0
     su_card_super_header:
-      settings:
-        link_to_entity: false
-      region: card_super_headline
-      type: string
+      region: card_body
       label: hidden
-      weight: 1

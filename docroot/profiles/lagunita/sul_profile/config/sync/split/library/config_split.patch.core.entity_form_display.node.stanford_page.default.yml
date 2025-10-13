@@ -7,21 +7,14 @@ adding:
       - conditional_fields
       - link
   content:
-    field_menulink:
-      weight: 15
     layout_selection:
       weight: 6
     publish_on:
       weight: 12
-    scheduler_settings:
-      weight: 13
     su_page_banner:
       weight: 7
     su_page_components:
-      weight: 8
       settings:
-        view_mode: default
-        form_display_mode: default
         empty_message: Empty
       third_party_settings:
         change_labels:
@@ -89,18 +82,13 @@ adding:
       third_party_settings: {  }
 removing:
   content:
-    field_menulink:
-      weight: 26
     layout_selection:
-      weight: 8
+      weight: 9
     publish_on:
-      weight: 13
-    scheduler_settings:
-      weight: 12
+      weight: 14
     su_page_banner:
       weight: 6
     su_page_components:
-      weight: 7
       settings:
         empty_message: ''
       third_party_settings:
