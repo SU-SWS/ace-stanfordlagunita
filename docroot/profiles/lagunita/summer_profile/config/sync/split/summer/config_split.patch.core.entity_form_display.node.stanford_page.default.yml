@@ -10,9 +10,7 @@ adding:
         empty_message: ''
     su_page_components:
       settings:
-        view_mode: default
         preview_view_mode: sum_editing_preview
-        form_display_mode: default
       third_party_settings:
         change_labels:
           field_label_overwrite: ''

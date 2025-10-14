@@ -1,0 +1,5 @@
+adding:
+  settings:
+    allowed_formats:
+      - stanford_html
+removing: {  }
