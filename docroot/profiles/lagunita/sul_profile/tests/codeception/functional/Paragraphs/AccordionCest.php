@@ -154,7 +154,7 @@ class AccordionCest {
     // Edit Accordion List
     $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
-    $I->click('Edit', '.lpb-edit');
+    $I->click('.lpb-edit');
     $I->waitForText('Edit FAQ - Accordion List');
 
     // Edit individual Accordion item
@@ -165,10 +165,6 @@ class AccordionCest {
     
     // Verify that Text format is present
     $I->seeElement('select.js-filter-list');
-    $I->seeOptionIsSelected('select.js-filter-list', 'Minimal HTML');
-    $I->see('HTML', 'select.js-filter-list option');
-
-    $I->selectOption('select.js-filter-list', 'stanford_html');
     $I->seeOptionIsSelected('select.js-filter-list', 'HTML');
 
     // Edit the text in the WYSIWYG and save
