@@ -152,17 +152,24 @@ class AccordionCest {
     $I->seeInSource('<strong>Bold</strong>');
 
     // Edit Accordion List
-    $I->scrollTo('.js-lpb-component', 0, -100);
-    $I->moveMouseOver('.js-lpb-component', 10, 10);
-    $I->click('.lpb-edit');
-    $I->waitForText('Edit FAQ - Accordion List');
+    $I->scrollTo('.js-lpb-component', 0, -300);
+    $I->wait(1);
+    $I->moveMouseOver('.js-lpb-component');
+    $I->wait(1);
+    $I->waitForElementVisible('.lpb-edit', 5);
+    $I->click('Edit', '.js-lpb-component');
+    $I->waitForElementVisible('.ui-dialog', 10);
 
     // Edit individual Accordion item
-    $I->scrollTo('.paragraph-type--stanford-accordion', 0, -100);
-    $I->click('Edit', '.js-form-submit');
+    $I->waitForElementVisible('.form-item--multiple', 10);
+    $I->scrollTo('.form-item--multiple');
+    $I->wait(1);
+    $I->click('input[value="Edit"]');
+    $I->wait(2);
+
     $I->canSee($rich_text_samples[0], '.ck-content');
     $I->waitForText('Text format');
-    
+
     // Verify that Text format is present
     $I->seeElement('select.js-filter-list');
     $I->seeOptionIsSelected('select.js-filter-list', 'HTML');
@@ -170,7 +177,8 @@ class AccordionCest {
     // Edit the text in the WYSIWYG and save
     $newContent = '<h2>Updated Heading</h2><p>This is updated content.</p>';
     $I->fillField('textarea[data-drupal-selector*="su-accordion-body"][data-drupal-selector*="value"]', $newContent);
-    $I->click('Save', '.lpb-btn--save');
+    $I->click('Save', '.ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.ui-dialog', 10);
 
     // Verify the updated content is present
     $I->seeInSource('Updated Heading');
