@@ -1,5 +1,17 @@
 # Lagunita
 
+3.0.3
+--------------------------------------------------------------------------------
+_Release Date: 2025-10-15_
+
+- SUM: Updated accordion body to allow stanford_html
+- SUL23-868 | Add event alternative location link field, enable graphql, and add test (#226)
+- Update README: Add Sites Table, Improve Title & Description (#225)
+- ANES: Removed access content perm from anonymous role (#224)
+- Update local-setup doc. (#223)
+- ANES-368: Add stanfordgryphon (anes) to weekly cleanup (#221)
+- ANES3-368:  Continue setting up Anesthesiology; documentation updates (#220)
+
 3.0.2
 --------------------------------------------------------------------------------
 _Release Date: 2025-10-01_
