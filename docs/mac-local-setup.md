@@ -1,4 +1,4 @@
-# mac-local-setup.md
+# Local Setup: Mac
 
 This guide sets up a local development environment for the ANES, Library  and Summer websites on macOS. Summer is used in many examples.
 
