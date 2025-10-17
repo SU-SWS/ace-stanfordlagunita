@@ -1,0 +1,7 @@
+name: Anesthesiology Helper
+type: module
+description: Provides additional functionality for the Anesthesiology site.
+package: Stanford
+core_version_requirement: ^11.1
+dependencies:
+  - paragraphs:paragraphs
