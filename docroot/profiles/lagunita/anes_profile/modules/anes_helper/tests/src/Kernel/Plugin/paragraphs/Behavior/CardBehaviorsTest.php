@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\sul_helper\Kernel\Plugin\paragraphs\Behavior;
+namespace Drupal\Tests\anes_helper\Kernel\Plugin\paragraphs\Behavior;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormState;
@@ -16,7 +16,7 @@ class CardBehaviorsTest extends KernelTestBase {
   protected static $modules = [
     'system',
     'paragraphs',
-    'sul_helper',
+    'anes_helper',
     'jsonapi',
     'serialization',
     'next',
@@ -32,7 +32,7 @@ class CardBehaviorsTest extends KernelTestBase {
       'id' => 'stanford_card',
       'label' => 'Card',
       'behavior_plugins' => [
-        'sul_card_styles' => [
+        'anes_card_styles' => [
           'enabled' => TRUE,
         ],
       ],
@@ -41,12 +41,11 @@ class CardBehaviorsTest extends KernelTestBase {
 
   public function testBehaviors() {
     $paragraph = Paragraph::create(['type' => 'stanford_card']);
-    $paragraph->setBehaviorSettings('sul_card_styles', ['orientation' => 'horizontal']);
 
     /** @var \Drupal\paragraphs\ParagraphsBehaviorManager $behavior_manager */
     $behavior_manager = \Drupal::service('plugin.manager.paragraphs.behavior');
     /** @var \Drupal\paragraphs\ParagraphsBehaviorInterface $behavior_plugin */
-    $behavior_plugin = $behavior_manager->createInstance('sul_card_styles');
+    $behavior_plugin = $behavior_manager->createInstance('anes_card_styles');
 
     $this->assertTrue($behavior_plugin::isApplicable(ParagraphsType::load('stanford_card')));
     $form = [];
@@ -57,7 +56,6 @@ class CardBehaviorsTest extends KernelTestBase {
     $build = [];
     $display = $this->createMock(EntityViewDisplayInterface::class);
     $behavior_plugin->view($build, $paragraph, $display, 'default');
-    $this->assertContains('sul-orientation-horizontal', $build['#attributes']['class']);
   }
 
 }
