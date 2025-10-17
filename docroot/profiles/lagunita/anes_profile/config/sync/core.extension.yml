@@ -247,7 +247,6 @@ module:
   menu_link_weight: 10
   stanford_profile_helper: 10
   paragraphs: 11
-  anes_profile_helper: 20
   anes_profile: 1000
 theme:
   claro: 0

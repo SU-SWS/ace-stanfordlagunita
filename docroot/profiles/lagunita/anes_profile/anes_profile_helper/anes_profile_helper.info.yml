@@ -1,5 +1,0 @@
-name: 'anes_profile Helper'
-type: module
-description: 'Provides additional functionality for anes_profile Profile'
-package: Stanford
-core_version_requirement: ^11.1
