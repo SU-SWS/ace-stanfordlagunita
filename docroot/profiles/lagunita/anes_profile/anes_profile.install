@@ -11,3 +11,12 @@
 function anes_profile_update_last_removed() {
   return 11000;
 }
+
+/**
+ * Uninstall anes_profile_helper module.
+ */
+function anes_profile_update_11001() {
+  \Drupal::service('module_installer')->uninstall(['anes_profile_helper']);
+  return 'Uninstalled anes_profile_helper module.';
+}
+
