@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
@@ -129,6 +132,22 @@ function sul_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source
 }
 
 /**
+ * Implements hook_entity_field_access().
+ */
+function sul_helper_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  // Hide body field for stanford_page and stanford_news content types.
+  if ($operation == 'edit' && $field_definition->getName() == 'body') {
+    $entity = $items ? $items->getEntity() : NULL;
+    if ($entity && $entity->getEntityTypeId() == 'node') {
+      if (in_array($entity->bundle(), ['stanford_page', 'stanford_news'])) {
+        return AccessResult::forbidden();
+      }
+    }
+  }
+  return AccessResult::neutral();
+}
+
+/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function sul_helper_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -143,13 +162,6 @@ function sul_helper_form_node_form_alter(&$form, FormStateInterface $form_state,
     $form["#process"][] = '_sul_helper_basic_page_node_form_process';
   }
   $form["#process"][] = '_sul_helper_node_form_process';
-
-  // Hide body field for stanford_page and stanford_news
-  if (in_array($node->bundle(), ['stanford_page', 'stanford_news'])) {
-    if (isset($form['body'])) {
-      $form['body']['#access'] = FALSE;
-    }
-  }
 }
 
 /**
