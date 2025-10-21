@@ -587,10 +587,10 @@ display:
         - 'config:field.storage.node.su_person_photo'
         - 'config:field.storage.node.su_person_short_title'
         - 'config:field.storage.node.su_person_type_group'
-  block_1:
-    id: block_1
+  randomized_card_grid:
+    id: randomized_card_grid
     display_title: 'Randomized Card Grid'
-    display_plugin: block
+    display_plugin: viewfield_block
     position: 2
     display_options:
       title: 'Subject Specialist - Randomized Card Grid'
@@ -600,6 +600,19 @@ display:
           offset: 0
           items_per_page: 3
       sorts:
+        random:
+          id: random
+          table: views
+          field: random
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: random
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         su_person_last_name_value:
           id: su_person_last_name_value
           table: node__su_person_last_name
@@ -770,11 +783,27 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: 'Subject Specialist - Randomized'
+            format: stanford_html
+          tokenize: false
       display_extenders: {  }
+      block_description: 'Subject Specialist - Randomized Card Grid'
       block_category: 'People Lists (Views)'
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
