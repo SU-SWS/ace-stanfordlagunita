@@ -18296,12 +18296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/sws-drush-commands.git",
-                "reference": "e7cf6013449ba46a6146a4ae883800f61b169b48"
+                "reference": "6d26647171b8759abeada867dd5250094396b30c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/e7cf6013449ba46a6146a4ae883800f61b169b48",
-                "reference": "e7cf6013449ba46a6146a4ae883800f61b169b48",
+                "url": "https://api.github.com/repos/SU-SWS/sws-drush-commands/zipball/6d26647171b8759abeada867dd5250094396b30c",
+                "reference": "6d26647171b8759abeada867dd5250094396b30c",
                 "shasum": ""
             },
             "require": {
@@ -18333,7 +18333,7 @@
                 "issues": "https://github.com/SU-SWS/sws-drush-commands/issues",
                 "source": "https://github.com/SU-SWS/sws-drush-commands"
             },
-            "time": "2025-09-22T18:36:14+00:00"
+            "time": "2025-10-21T16:37:53+00:00"
         },
         {
             "name": "symfony/cache",

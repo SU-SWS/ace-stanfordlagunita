@@ -84,6 +84,7 @@ jobs:
       fail-fast: false
       matrix:
         suite: [acceptance, functional]
+        shard: [ '1', '2', '3' ]
         site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
@@ -140,7 +141,7 @@ jobs:
       - name: Run tests
         run: |
           PROFILE=`drush st --fields=install-profile --format=list` &&
-          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} --test-dir=docroot/profiles/lagunita/$PROFILE/tests/codeception &&
+          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} --test-dir=docroot/profiles/lagunita/$PROFILE/tests/codeception --shard=${{ matrix.shard }}/3 &&
           if [ ! -f artifacts/report.html ]; then
             exit 1
           fi
@@ -148,7 +149,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ${{ matrix.site }}-${{ matrix.suite }}-tests-results
+          name: ${{ matrix.site }}-${{ matrix.suite }}-${{ matrix.shard }}-tests-results
           path: artifacts
   db_updates:
     name: DB Updates
