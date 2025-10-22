@@ -1,16 +1,16 @@
-uuid: 4190ed7d-7d4c-4834-806a-af481adee1c7
+uuid: dba4c3a8-9e1e-4538-8f9d-07c1c3223462
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - node
-id: node.su_opp_learn_more
-field_name: su_opp_learn_more
+id: node.su_news_quote
+field_name: su_news_quote
 entity_type: node
-type: link
-settings: {  }
-module: link
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

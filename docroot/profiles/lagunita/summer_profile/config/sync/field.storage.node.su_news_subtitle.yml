@@ -1,14 +1,17 @@
-uuid: c391a09d-061c-4229-93f7-e254b48cd9cb
+uuid: 8f861b79-5510-42b6-aed8-ed40af51fe42
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.su_opp_status
-field_name: su_opp_status
+id: node.su_news_subtitle
+field_name: su_news_subtitle
 entity_type: node
-type: boolean
-settings: {  }
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1
