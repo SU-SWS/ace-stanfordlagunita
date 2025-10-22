@@ -281,7 +281,7 @@ class NewsCest {
   }
 
   #[CodeceptionAttribute\Group('related-news')]
-  public function testRelatedNewsPerson(AcceptanceTester $I) {
+  protected function testRelatedNewsPerson(AcceptanceTester $I) {
     $person = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $this->faker->firstName(),

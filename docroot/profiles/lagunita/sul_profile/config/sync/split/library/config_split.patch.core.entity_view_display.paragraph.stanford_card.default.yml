@@ -6,10 +6,10 @@ adding:
   third_party_settings:
     ds:
       regions:
-        card_super_headline:
-          - sul_card_super_head
         card_body:
           - sul_card_image_caption
+        card_super_headline:
+          - sul_card_super_head
   content:
     sul_card_image_caption:
       type: string_list_class

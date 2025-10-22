@@ -97,9 +97,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
         suite: [acceptance, functional]
         shard: ${{fromJSON(needs.shard_matrix.outputs.matrix)}}
-        site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:php8.3
