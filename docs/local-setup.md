@@ -2,6 +2,7 @@
 
 * [Gitpod](gitpod.md)
 * [Lando](lando.md)
+* [Local setup: Mac](mac-local-setup.md)
 * Native lamp stack: see below.
 
 ## Native LAMP Stack
