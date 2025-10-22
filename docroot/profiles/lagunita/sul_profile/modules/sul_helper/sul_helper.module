@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\migrate\Plugin\MigrateSourceInterface;
@@ -126,6 +129,22 @@ function sul_helper_migrate_prepare_row(Row $row, MigrateSourceInterface $source
     asort($calendars);
     $row->setSourceProperty('libcal', array_values($calendars));
   }
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function sul_helper_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  // Hide body field for stanford_page and stanford_news content types.
+  if ($operation == 'edit' && $field_definition->getName() == 'body') {
+    $entity = $items ? $items->getEntity() : NULL;
+    if ($entity && $entity->getEntityTypeId() == 'node') {
+      if (in_array($entity->bundle(), ['stanford_page', 'stanford_news'])) {
+        return AccessResult::forbidden();
+      }
+    }
+  }
+  return AccessResult::neutral();
 }
 
 /**
