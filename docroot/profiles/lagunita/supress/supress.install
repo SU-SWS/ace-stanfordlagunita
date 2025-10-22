@@ -11,19 +11,7 @@ use Drupal\field\Entity\FieldStorageConfig;
  * Implements hook_update_last_removed().
  */
 function supress_update_last_removed() {
-  return 9106;
-}
-
-/**
- * Force uninstall pdb_react from schema since it was removed.
- */
-function supress_update_11000() {
-  $config = \Drupal::configFactory()->getEditable('core.extension');
-  $modules = $config->get('module');
-  unset($modules['pdb_react']);
-  $config->set('module', $modules);
-  $config->save(TRUE);
-  \Drupal::keyValue('system.schema')->delete('pdb_react');
+  return 11000;
 }
 
 /**
@@ -36,7 +24,7 @@ function supress_update_11000() {
  * @param int $newSize
  *   New size of the field.
  */
-function _stanford_profile_update_field_size(string $entityType, string $fieldName, int $newSize): void {
+function _supress_update_field_size(string $entityType, string $fieldName, int $newSize): void {
   $database = \Drupal::database();
   $database->query("ALTER TABLE {$entityType}__$fieldName MODIFY {$fieldName}_value VARCHAR($newSize)");
   $database->query("ALTER TABLE {$entityType}_revision__$fieldName MODIFY {$fieldName}_value VARCHAR($newSize)");
@@ -60,6 +48,6 @@ function _stanford_profile_update_field_size(string $entityType, string $fieldNa
 /**
  * Increase News Dek field size to 500 characters.
  */
-function stanford_profile_update_11001() {
-  _stanford_profile_update_field_size('node', 'su_news_dek', 500);
+function supress_update_11001() {
+  _supress_update_field_size('node', 'su_news_dek', 500);
 }
