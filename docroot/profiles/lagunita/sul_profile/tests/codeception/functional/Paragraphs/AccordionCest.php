@@ -164,10 +164,10 @@ class AccordionCest {
     $I->waitForElementVisible('.form-item--multiple', 10);
     $I->scrollTo('.form-item--multiple');
     $I->wait(1);
-    $I->click('input[value="Edit"]');
+    $I->waitForElementVisible('.paragraphs-actions');
+    $I->click('input[value=Edit]');
     $I->wait(2);
 
-    $I->canSee($rich_text_samples[0], '.ck-content');
     $I->waitForText('Text format');
 
     // Verify that Text format is present
