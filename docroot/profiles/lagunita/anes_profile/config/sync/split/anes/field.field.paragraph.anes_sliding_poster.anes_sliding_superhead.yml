@@ -1,0 +1,19 @@
+uuid: 80feb8c1-53fd-4a0e-8265-6cda6f9b81b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.anes_sliding_superhead
+    - paragraphs.paragraphs_type.anes_sliding_poster
+id: paragraph.anes_sliding_poster.anes_sliding_superhead
+field_name: anes_sliding_superhead
+entity_type: paragraph
+bundle: anes_sliding_poster
+label: Superhead
+description: 'The superhead for the Sliding Poster.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

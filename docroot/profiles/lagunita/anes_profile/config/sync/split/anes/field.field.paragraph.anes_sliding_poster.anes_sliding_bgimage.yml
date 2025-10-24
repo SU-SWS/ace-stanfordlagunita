@@ -1,0 +1,29 @@
+uuid: 6093552a-0292-4663-8edc-bd614f9f4325
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.anes_sliding_bgimage
+    - media.type.image
+    - paragraphs.paragraphs_type.anes_sliding_poster
+id: paragraph.anes_sliding_poster.anes_sliding_bgimage
+field_name: anes_sliding_bgimage
+entity_type: paragraph
+bundle: anes_sliding_poster
+label: 'Background Image'
+description: 'The background image for the Sliding Poster.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
