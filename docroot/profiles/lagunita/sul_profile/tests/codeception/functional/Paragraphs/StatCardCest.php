@@ -63,53 +63,6 @@ class StatCardCest {
     $I->waitForElementNotVisible('.ui-dialog');
     $I->waitForText('123,456,789,012');
     $I->see('123,456,789,012'); // First 12 characters
-    $I->dontSee('1234567890123'); // Full 13 characters
+    $I->dontSee('1,234,567,890,123'); // Full 13 characters
   }
-
-  /**
-   * Test background color options include white.
-   */
-  // public function testBackgroundColorWhiteOption(FunctionalTester $I) {
-  //   $I->logInWithRole('site_manager');
-    
-  //   // Create initial paragraph with stat card
-  //   $paragraph = $I->createEntity([
-  //     'type' => 'stanford_stat_card',
-  //     'su_stat_stat' => '42',
-  //     'su_stat_headline' => $this->faker->words(3, TRUE),
-  //     'su_stat_bg_color' => '#000000', // Start with non-white
-  //   ], 'paragraph');
-
-  //   $node = $I->createEntity([
-  //     'type' => 'stanford_page',
-  //     'title' => $this->faker->words(4, TRUE),
-  //     'su_page_components' => [
-  //       'target_id' => $paragraph->id(),
-  //       'entity' => $paragraph,
-  //     ],
-  //   ]);
-
-  //   // Edit the stat card through LPB controls
-  //   $I->amOnPage($node->toUrl('edit-form')->toString());
-  //   $I->scrollTo('.js-lpb-component', 0, -100);
-  //   $I->moveMouseOver('.js-lpb-component', 10, 10);
-  //   $I->click('Edit', '.lpb-controls');
-  //   $I->scrollTo('.claro-details__summary', 0, -100);
-  //   $I->click('summary[role="button"]');
-  //   $I->scrollTo('.field--type-color-field-type', 0, -100);
-  //   $I->waitForText('Background color');
-    
-  //   // Verify white option exists
-  //   $I->seeElement('button[value="#ffffff"]');
-    
-  //   // Select white background
-  //   $I->click('button[value="#ffffff"]');
-    
-  //   // Save the component
-  //   $I->click('Save', '.ui-dialog-buttonset');
-  //   $I->waitForElementNotVisible('.ui-dialog');
-    
-  //   // Verify white background is applied
-  //   $I->seeElement('.su-stat-card[style*="background-color: #ffffff"]');
-  // }
 }
