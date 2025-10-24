@@ -11,5 +11,12 @@
  */
 #}
 
+{# Show heading in editor preview #}
+{% if settings.heading %}
+  <{{ settings.heading_level|default('h2') }}>
+    {{ settings.heading }}
+  </{{ settings.heading_level|default('h2') }}>
+{% endif %}
+
 {# Include the template with modified attributes #}
-{% extends "@stanford_layout_paragraphs/layouts/three_column/layout-paragraphs-three-column.html.twig" %}
+{% include "@stanford_layout_paragraphs/layouts/three_column/layout-paragraphs-three-column.html.twig" %}
