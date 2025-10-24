@@ -30,8 +30,6 @@ trait LayoutWithHeading {
         'h2' => $this->t('H2'),
         'h3' => $this->t('H3'),
         'h4' => $this->t('H4'),
-        'h5' => $this->t('H5'),
-        'h6' => $this->t('H6'),
       ],
       '#states' => [
         'visible' => [
