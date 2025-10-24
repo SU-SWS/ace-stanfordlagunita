@@ -63,6 +63,9 @@ class SulTwoColumn extends TwoColumn implements ContainerFactoryPluginInterface 
     return $form;
   }
   
+  /**
+   * {@inheritdoc}
+   */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     parent::submitConfigurationForm($form, $form_state);
     $this->submitHeadingForm($form, $form_state);
