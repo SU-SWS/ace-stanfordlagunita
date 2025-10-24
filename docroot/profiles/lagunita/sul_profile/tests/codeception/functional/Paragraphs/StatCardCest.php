@@ -61,7 +61,7 @@ class StatCardCest {
     // Save the component
     $I->click('Save', '.ui-dialog-buttonset');
     $I->waitForElementNotVisible('.ui-dialog');
-    $I->waitForText('123,456,789,012');
+    $I->waitForText('123,456,789,012', 10);
     $I->see('123,456,789,012'); // First 12 characters
     $I->dontSee('1,234,567,890,123'); // Full 13 characters
   }
