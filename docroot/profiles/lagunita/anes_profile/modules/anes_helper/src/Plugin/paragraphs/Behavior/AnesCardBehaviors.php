@@ -22,11 +22,11 @@ class AnesCardBehaviors extends CardBehavior {
    */
   public function buildBehaviorForm(ParagraphInterface $paragraph, array &$form, FormStateInterface $form_state): array {
     $element = parent::buildBehaviorForm($paragraph, $form, $form_state);
-    $element['visual_corner_chip'] = [
+    $element['show_bottom_flourish'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Visual Corner Chip'),
-      '#default_value' => $paragraph->getBehaviorSetting('anes_card_styles', 'visual_corner_chip', FALSE),
-      '#description' => $this->t('Check this box to use the visual corner chip variant.'),
+      '#title' => $this->t('Show Bottom Flourish'),
+      '#default_value' => $paragraph->getBehaviorSetting('anes_card_styles', 'show_bottom_flourish', FALSE),
+      '#description' => $this->t('Add a decorative visual element to the bottom of the card.'),
     ];
     return $element;
   }
