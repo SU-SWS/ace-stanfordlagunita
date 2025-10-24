@@ -1,0 +1,18 @@
+adding:
+  content:
+    su_stat_bg_color:
+      settings:
+        default_colors: '#2e2d29,#53565a,#544948,#8c1515,#620059,#007c92,#175e54,#e98300,#e04f39,#f4f4f4,#ffffff'
+    su_stat_stat:
+      third_party_settings:
+        maxlength:
+          maxlength_js: 12
+removing:
+  content:
+    su_stat_bg_color:
+      settings:
+        default_colors: '#2e2d29,#53565a,#544948,#8c1515,#620059,#007c92,#175e54,#e98300,#e04f39,#f4f4f4'
+    su_stat_stat:
+      third_party_settings:
+        maxlength:
+          maxlength_js: 6
