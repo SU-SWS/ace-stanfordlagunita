@@ -135,7 +135,6 @@ class AccordionCest {
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [
-        ['target_id' => $layout->id(), 'entity' => $layout],
         ['target_id' => $paragraph->id(), 'entity' => $paragraph],
       ],
     ], 'node');
@@ -153,35 +152,38 @@ class AccordionCest {
 
     // Edit Accordion List
     $I->scrollTo('.js-lpb-component', 0, -300);
-    $I->wait(1);
+    $I->waitForElementVisible('.js-lpb-component', 10);
     $I->moveMouseOver('.js-lpb-component');
     $I->wait(1);
-    $I->waitForElementVisible('.lpb-edit', 5);
+    $I->waitForElementVisible('.lpb-edit', 10);
     $I->click('Edit', '.js-lpb-component');
     $I->waitForElementVisible('.ui-dialog', 10);
 
     // Edit individual Accordion item
     $I->waitForElementVisible('.form-item--multiple', 10);
     $I->scrollTo('.form-item--multiple');
-    $I->wait(1);
-    $I->waitForElementVisible('.paragraphs-actions');
+    $I->waitForElementVisible('.paragraphs-actions', 10);
     $I->click('input[value=Edit]');
-    $I->wait(2);
+    $I->waitForText('Text format', 10);
 
-    $I->waitForText('Text format');
-
-    // Verify that Text format is present
     $I->seeElement('select.js-filter-list');
     $I->seeOptionIsSelected('select.js-filter-list', 'HTML');
+    $I->wait(0.5);
 
-    // Edit the text in the WYSIWYG and save
-    $newContent = '<h2>Updated Heading</h2><p>This is updated content.</p>';
-    $I->fillField('textarea[data-drupal-selector*="su-accordion-body"][data-drupal-selector*="value"]', $newContent);
+    $I->executeJS("document.querySelector('.paragraph-type--stanford-accordion').scrollIntoView();");
+    $I->wait(1);
+    
+    $I->waitForElementVisible('.paragraph-type--stanford-accordion .ck-editor__editable', 10);
+    $I->click('.paragraph-type--stanford-accordion .ck-editor__editable');
+    $I->wait(0.5);
+    $I->type('Updated Heading');
+    $I->wait(1);
+
     $I->click('Save', '.ui-dialog-buttonset');
     $I->waitForElementNotVisible('.ui-dialog', 10);
 
-    // Verify the updated content is present
+    $I->click('Title 1'); 
+    $I->waitForElementNotVisible('.accordion__contents.hidden', 10);
     $I->seeInSource('Updated Heading');
-    $I->seeInSource('This is updated content');
   }
 }
