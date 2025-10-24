@@ -1,0 +1,10 @@
+uuid: 7f77f8f3-87d9-4c01-aa32-2d2f89a13f47
+langcode: en
+status: true
+dependencies: {  }
+id: anes_sliding_poster
+label: 'Sliding Poster'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

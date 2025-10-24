@@ -1,0 +1,24 @@
+uuid: e2be9892-37df-4655-894c-6833179c1aad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.anes_sliding_body
+    - filter.format.stanford_minimal_html
+    - paragraphs.paragraphs_type.anes_sliding_poster
+  module:
+    - text
+id: paragraph.anes_sliding_poster.anes_sliding_body
+field_name: anes_sliding_body
+entity_type: paragraph
+bundle: anes_sliding_poster
+label: Description
+description: 'The body text for the Sliding Poster.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+field_type: text_long
