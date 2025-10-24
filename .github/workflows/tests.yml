@@ -77,14 +77,29 @@ jobs:
           composer install -n &&
           SITES=$(echo -n "$(drush sws:drush-config command.sws.options.multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort') &&
           echo "matrix=$SITES" >> $GITHUB_OUTPUT
+  shard_matrix:
+    name: Test Shards
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Generate Shard Matrix
+        id: set-matrix
+        run: |
+          n=${{ vars.TEST_SHARDS || 3 }} &&
+          numbers=($(seq 1 $n)) &&
+          json=$(printf '%s\n' "${numbers[@]}" | jq -R . | jq -s -c .) &&
+          echo "Test shards: $json" &&
+          echo "matrix=$json" >> $GITHUB_OUTPUT
   codeception:
     name: Codeception
-    needs: sites_to_test
+    needs: [sites_to_test, shard_matrix]
     strategy:
       fail-fast: false
       matrix:
-        suite: [acceptance, functional]
         site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
+        suite: [acceptance, functional]
+        shard: ${{fromJSON(needs.shard_matrix.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:php8.3
@@ -139,8 +154,9 @@ jobs:
           mkdir -p artifacts/_data/
       - name: Run tests
         run: |
+          n=${{ vars.TEST_SHARDS || 3 }} &&
           PROFILE=`drush st --fields=install-profile --format=list` &&
-          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} --test-dir=docroot/profiles/lagunita/$PROFILE/tests/codeception &&
+          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} --test-dir=docroot/profiles/lagunita/$PROFILE/tests/codeception --shard=${{ matrix.shard }}/$n &&
           if [ ! -f artifacts/report.html ]; then
             exit 1
           fi
@@ -148,7 +164,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ${{ matrix.site }}-${{ matrix.suite }}-tests-results
+          name: ${{ matrix.site }}-${{ matrix.suite }}-${{ matrix.shard }}-tests-results
           path: artifacts
   db_updates:
     name: DB Updates
@@ -211,6 +227,12 @@ jobs:
           drush sa @${{ matrix.site }}.prod || exit 0 &&
           drush drupal:sync --site=${{ matrix.site }} -n &&
           curl -I http://localhost --fail
+  all-tests-pass:
+    name: All Tests Pass
+    needs: [phpunit, codeception, db_updates]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Passed'
   deploy:
     name: Deploy Artifact
     needs: [phpunit, codeception, db_updates]
