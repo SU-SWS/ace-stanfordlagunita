@@ -1,0 +1,8 @@
+adding:
+  dependencies:
+    config:
+      - filter.format.stanford_html
+  settings:
+    allowed_formats:
+      - stanford_html
+removing: {  }

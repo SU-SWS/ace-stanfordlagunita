@@ -266,15 +266,99 @@ class NewsCest {
 
   #[CodeceptionAttribute\Group('body')]
   public function testBodyField(AcceptanceTester $I) {
+    $dek = substr($this->faker->sentences(20, TRUE), 0, 499);
     $body_text = '<p>' . implode('</p><p>', $this->faker->paragraphs()) . '</p>';
     $node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->words(3, TRUE),
       'body' => ['value' => $body_text, 'format' => 'stanford_html'],
+      'su_news_dek' => $dek,
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
     $I->canSee(strip_tags($body_text));
+    $I->canSee($dek);
+  }
+
+  #[CodeceptionAttribute\Group('related-news')]
+  protected function testRelatedNewsPerson(AcceptanceTester $I) {
+    $person = $I->createEntity([
+      'type' => 'stanford_person',
+      'su_person_first_name' => $this->faker->firstName(),
+      'su_person_last_name' => $this->faker->lastName(),
+    ]);
+    $otherPerson = $I->createEntity([
+      'type' => 'stanford_person',
+      'su_person_first_name' => $this->faker->firstName(),
+      'su_person_last_name' => $this->faker->lastName(),
+    ]);
+    $news = $I->createEntity([
+      'type' => 'stanford_news',
+      'title' => $this->faker->words(3, TRUE),
+      'su_news_person' => $person->id(),
+    ]);
+    $otherNews = $I->createEntity([
+      'type' => 'stanford_news',
+      'title' => $this->faker->words(3, TRUE),
+    ]);
+    $I->amOnPage($person->toUrl()->toString());
+    $I->canSee($person->label(), 'h1');
+    $I->canSee('Related News', 'h2');
+    $I->canSee($news->label(), 'h3');
+    $I->cantSee($otherNews->label());
+
+    $I->amOnPage($otherPerson->toUrl()->toString());
+    $I->canSee($otherPerson->label(), 'h1');
+    $I->cantSee('Related News');
+    $I->cantSee($news->label());
+    $I->cantSee($otherNews->label());
+  }
+
+  /**
+   * Test that news variants display correct fields and can be populated with
+   * contributor roles.
+   */
+  #[CodeceptionAttribute\Group('news-variant')]
+  public function testNewsVariantFieldsDisplay(AcceptanceTester $I) {
+    $I->logInWithRole('contributor');
+    $I->amOnPage('/node/add/stanford_news');
+    $I->canSeeResponseCodeIs(200);
+
+    // Generate test data using faker
+    $testData = [
+      'Dek' => $this->faker->sentence(),
+      'Byline' => $this->faker->name(),
+      'Banner Caption' => $this->faker->sentence(),
+      'Quote' => $this->faker->sentence(),
+      'Subtitle' => $this->faker->words(4, TRUE),
+    ];
+
+    // Fill in required title field
+    $I->fillField('Headline', $this->faker->words(3, TRUE));
+
+    // Verify fields are initially empty using canSeeInField()
+    $I->canSeeInField('Dek', '');
+    $I->canSeeInField('Byline', '');
+    $I->canSeeInField('Banner Caption', '');
+    $I->canSeeInField('Quote / Big Text', '');
+    $I->canSeeInField('Subtitle', '');
+
+    // Fill in the fields
+    $I->fillField('Dek', $testData['Dek']);
+    $I->fillField('Byline', $testData['Byline']);
+    $I->fillField('Banner Caption', $testData['Banner Caption']);
+    $I->fillField('Quote / Big Text', $testData['Quote']);
+    $I->fillField('Subtitle', $testData['Subtitle']);
+
+    // Save the node
+    $I->click('Save');
+    $I->canSeeResponseCodeIs(200);
+    $I->canSee('has been created');
+
+    // Verify the information is reflected on the page
+    $I->canSee($testData['Dek']);
+    $I->canSee($testData['Byline']);
+    $I->canSee($testData['Banner Caption']);
   }
 
 }

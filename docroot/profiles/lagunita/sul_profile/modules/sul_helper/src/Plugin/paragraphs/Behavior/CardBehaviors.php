@@ -47,12 +47,12 @@ class CardBehaviors extends ParagraphsBehaviorBase {
 
     $element['orientation'] = [
       '#type' => 'select',
-      '#title' => $this->t('Orientation'),
-      '#description' => $this->t('Change the way the card looks. This will apply only when the area is large enough.'),
+      '#title' => $this->t('Variant'),
+      '#description' => $this->t('Select how this card should be displayed. Normal cards use the standard vertical layout, while Feature cards display horizontally in single-column layouts and vertically in multi-column layouts.'),
       '#empty_option' => $this->t('Normal'),
       '#default_value' => $paragraph->getBehaviorSetting('sul_card_styles', 'orientation'),
       '#options' => [
-        'horizontal' => $this->t('Horizontal'),
+        'horizontal' => $this->t('Feature'),
       ],
     ];
 

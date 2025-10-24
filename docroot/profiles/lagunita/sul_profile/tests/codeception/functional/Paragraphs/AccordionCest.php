@@ -86,4 +86,104 @@ class AccordionCest {
     }
   }
 
+  #[CodeceptionAttribute\Group('accordion-wysiwyg')]
+  public function testAccordionParagraphRichText(FunctionalTester $I) {
+    $layout = $I->createEntity(['type' => 'stanford_layout'], 'paragraph');
+    $layout->setBehaviorSettings('layout_paragraphs', [
+      'layout' => 'layout_paragraphs_1_column',
+    ]);
+    $layout->save();
+
+    $headline = $this->faker->word(2);
+    $description = $this->faker->sentence(3);
+    
+    // Create accordion items with rich text content
+    $accordion_items = [];
+    $rich_text_samples = [
+      '<h2>Heading 2</h2><p>' . $this->faker->paragraph() . '</p>',
+      '<h3>Heading 3</h3><ul><li>Item 1</li><li>Item 2</li></ul>',
+      '<p><strong>Bold</strong> text</p>',
+    ];
+    
+    for ($i = 0; $i < 3; $i++) {
+      $accordion_items[] = $I->createEntity([
+        'type' => 'stanford_accordion',
+        'su_accordion_title' => "Title " . ($i + 1),
+        'su_accordion_body' => [
+          'value' => $rich_text_samples[$i],
+          'format' => 'stanford_html',
+        ],
+      ], 'paragraph');
+    }
+
+    // Create the accordion paragraph with entity references
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_faq',
+      'su_faq_headline' => $headline,
+      'su_faq_description' => $description,
+      'su_faq_questions' => array_map(function($item) {
+        return [
+          'target_id' => $item->id(),
+          'entity' => $item,
+        ];
+      }, $accordion_items),
+    ], 'paragraph');
+    $paragraph->save();
+
+    // Create the page node
+    $node = $I->createEntity([
+      'title' => $this->faker->words(3, TRUE),
+      'type' => 'stanford_page',
+      'su_page_components' => [
+        ['target_id' => $paragraph->id(), 'entity' => $paragraph],
+      ],
+    ], 'node');
+    
+    $I->logInWithRole('site_manager');
+    
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    
+    $I->seeElement('form.node-stanford-page-edit-form');
+    $I->seeInSource('<h2>Heading 2</h2>');
+    $I->seeInSource('<h3>Heading 3</h3>');
+    $I->seeInSource('<li>Item 1</li>');
+    $I->seeInSource('<li>Item 2</li>');
+    $I->seeInSource('<strong>Bold</strong>');
+
+    // Edit Accordion List
+    $I->scrollTo('.js-lpb-component', 0, -300);
+    $I->waitForElementVisible('.js-lpb-component', 10);
+    $I->moveMouseOver('.js-lpb-component');
+    $I->wait(1);
+    $I->waitForElementVisible('.lpb-edit', 10);
+    $I->click('Edit', '.js-lpb-component');
+    $I->waitForElementVisible('.ui-dialog', 10);
+
+    // Edit individual Accordion item
+    $I->waitForElementVisible('.form-item--multiple', 10);
+    $I->scrollTo('.form-item--multiple');
+    $I->waitForElementVisible('.paragraphs-actions', 10);
+    $I->click('input[value=Edit]');
+    $I->waitForText('Text format', 10);
+
+    $I->seeElement('select.js-filter-list');
+    $I->seeOptionIsSelected('select.js-filter-list', 'HTML');
+    $I->wait(0.5);
+
+    $I->executeJS("document.querySelector('.paragraph-type--stanford-accordion').scrollIntoView();");
+    $I->wait(1);
+    
+    $I->waitForElementVisible('.paragraph-type--stanford-accordion .ck-editor__editable', 10);
+    $I->click('.paragraph-type--stanford-accordion .ck-editor__editable');
+    $I->wait(0.5);
+    $I->type('Updated Heading');
+    $I->wait(1);
+
+    $I->click('Save', '.ui-dialog-buttonset');
+    $I->waitForElementNotVisible('.ui-dialog', 10);
+
+    $I->click('Title 1'); 
+    $I->waitForElementNotVisible('.accordion__contents.hidden', 10);
+    $I->seeInSource('Updated Heading');
+  }
 }
