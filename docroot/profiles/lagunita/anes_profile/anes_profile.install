@@ -51,12 +51,3 @@ function _anes_profile_update_field_size(string $entityType, string $fieldName, 
 function anes_profile_update_11001() {
   _anes_profile_update_field_size('node', 'su_news_dek', 500);
 }
-
-/**
- * Uninstall anes_profile_helper module.
- */
-function anes_profile_update_11002() {
-  \Drupal::service('module_installer')->uninstall(['anes_profile_helper']);
-  return 'Uninstalled anes_profile_helper module.';
-}
-
