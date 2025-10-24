@@ -5,3 +5,4 @@ package: Stanford
 core_version_requirement: ^11.1
 dependencies:
   - paragraphs:paragraphs
+  - stanford_paragraph_card:stanford_paragraph_card
