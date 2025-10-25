@@ -45,6 +45,14 @@ class ListBehaviors extends ParagraphsBehaviorBase {
       ],
     ];
 
+     // Add the heading gradient accent field
+    $element['display_heading_gradient'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display Heading Gradient Accent'),
+      '#description' => $this->t('Add a gradient accent line to the right of list heading.'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_list_styles', 'display_heading_gradient', FALSE),
+    ];
+
     return $element;
   }
 
