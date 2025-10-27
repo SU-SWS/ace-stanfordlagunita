@@ -20,6 +20,7 @@ trait LayoutWithHeading {
       '#description' => $this->t('Optional heading for this section.'),
       '#default_value' => $this->configuration['heading'] ?? '',
       '#maxlength' => 255,
+      '#weight' => -99,
     ];
     
     $form['heading_level'] = [
@@ -36,6 +37,7 @@ trait LayoutWithHeading {
           ':input[name="heading"]' => ['filled' => TRUE],
         ],
       ],
+      '#weight' => -98,
     ];
     
     return $form;
