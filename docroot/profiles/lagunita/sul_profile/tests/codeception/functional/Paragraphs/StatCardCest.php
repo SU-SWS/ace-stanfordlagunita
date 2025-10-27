@@ -54,9 +54,10 @@ class StatCardCest {
     $I->click('Edit', '.lpb-controls');
     $I->waitForText('Stat');
     
+    $I->waitForElement('[data-drupal-selector=edit-su-stat-stat-0-value]', 10);
     // Try to enter more than 12 characters
     $long_stat = '1234567890123'; // 13 characters
-    $I->fillField('su_stat_stat[0][value]', $long_stat);
+    $I->fillField('[data-drupal-selector=edit-su-stat-stat-0-value]', $long_stat);
     
     // Save the component
     $I->click('Save', '.ui-dialog-buttonset');
