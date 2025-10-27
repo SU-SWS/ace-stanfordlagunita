@@ -13,6 +13,7 @@ use Drupal\stanford_layout_paragraphs\Layouts\TwoColumn;
  * Two column layout class
  */
 class SulTwoColumn extends TwoColumn implements ContainerFactoryPluginInterface {
+  use LayoutWithHeading;
 
   /**
    * Current user account.
@@ -58,7 +59,16 @@ class SulTwoColumn extends TwoColumn implements ContainerFactoryPluginInterface 
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
     $form['column_widths']['#access'] = $this->currentUser->hasPermission('choose layout for node stanford_page');
+    $this->addHeadingElement($form, $form_state);
     return $form;
+  }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->submitHeadingForm($form, $form_state);
   }
 
 }
