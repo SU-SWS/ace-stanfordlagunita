@@ -764,12 +764,12 @@ display:
       style:
         type: html_list
         options:
-          grouping: {  }
           row_class: ''
-          default_row_class: true
+          default_row_class: 1
+          uses_fields: 0
           type: ul
           wrapper_class: ''
-          class: 'su-list-unstyled table-container-3'
+          class: 'su-list-unstyled grid-container-3'
       row:
         type: 'entity:node'
         options:
@@ -784,6 +784,8 @@ display:
         filters: false
         filter_groups: false
         header: false
+        arguments: false
+        css_class: false
       display_description: ''
       header:
         area:
@@ -802,6 +804,8 @@ display:
       display_extenders: {  }
       block_description: 'Subject Specialist - Randomized Card Grid'
       block_category: 'People Lists (Views)'
+      arguments: {  }
+      css_class: stanford-people-grid
     cache_metadata:
       max-age: 0
       contexts:
