@@ -44,6 +44,23 @@ class FeaturedCollectionsBehaviors extends ParagraphsBehaviorBase {
         'cta_button' => $this->t('CTA'),
       ],
     ];
+
+     // Disable Wave background
+    $element['disable_wave_background'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Disable Wave Accent Background'),
+      '#description' => $this->t('Remove the wave accent background behind the featured collection cards.'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_feat_collections_styles', 'disable_wave_background', FALSE),
+    ];
+
+     // Add the heading gradient accent field
+    $element['display_heading_gradient'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display Heading Gradient Accent'),
+      '#description' => $this->t('Add a gradient accent line to the right of list heading.'),
+      '#default_value' => $paragraph->getBehaviorSetting('sul_feat_collections_styles', 'display_heading_gradient', FALSE),
+    ];
+
     return $element;
   }
 
