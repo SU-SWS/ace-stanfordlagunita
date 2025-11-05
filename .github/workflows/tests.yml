@@ -41,6 +41,7 @@ jobs:
         run: |
           git config --system --add safe.directory '*' &&
           composer install -n &&
+          mkdir -p docroot/sites/simpletest &&
           drush sws:source:tests:phpunit --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal --with-coverage &&
           drush sws:tests:phpunit-coverage-check artifacts/phpunit/coverage/xml --clover-file=artifacts/phpunit/coverage/clover.xml -n
       - name: Save Test Results

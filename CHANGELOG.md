@@ -1,5 +1,21 @@
 # Lagunita
 
+3.0.4
+--------------------------------------------------------------------------------
+_Release Date: 2025-11-04_
+
+- Update dependencies
+- SUL23-879 | Improve content authoring view for randomized sul people (#237)
+- SUL23-878 | Increase stat card stat field char limit and add white background option (#234)
+- SUL23-876 | Add heading field to section options (#235)
+- SUL23-865 | Enable html wysiwyg for accordion body content (#218)
+- SUL23-877 | Rename card orientation to variant and update help text (#233)
+- Run acceptance tests in shards (#231)
+- Added MAMP local setup documentation (#227)
+- SUL23-866: Hide body field for news and basic pages (#222)
+- SUL23-879 | Randomized card grid view for Library People (#230)
+- SUL: Fix card display settings
+
 3.0.3
 --------------------------------------------------------------------------------
 _Release Date: 2025-10-15_
