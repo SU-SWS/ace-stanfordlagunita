@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.sul_collection__cards
     - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_stat_card
     - paragraphs.paragraphs_type.sul_feat_collection
   module:
     - entity_reference_revisions
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       stanford_card: stanford_card
+      stanford_stat_card: stanford_stat_card
     negate: 0
     target_bundles_drag_drop:
       collection:
@@ -46,14 +48,26 @@ settings:
       stanford_entity:
         weight: 23
         enabled: false
+      stanford_faq:
+        weight: 34
+        enabled: false
+      stanford_filtered_lists:
+        weight: 35
+        enabled: false
       stanford_gallery:
         weight: 24
+        enabled: false
+      stanford_layout:
+        weight: 37
         enabled: false
       stanford_lists:
         weight: 25
         enabled: false
       stanford_media_caption:
         weight: 26
+        enabled: false
+      stanford_page_title_banner:
+        weight: 40
         enabled: false
       stanford_person_cta:
         weight: 27
@@ -64,13 +78,31 @@ settings:
       stanford_spacer:
         weight: 29
         enabled: false
+      stanford_stat_card:
+        weight: 44
+        enabled: true
       stanford_wysiwyg:
         weight: 30
+        enabled: false
+      sul_button:
+        weight: 46
         enabled: false
       sul_contact_card:
         weight: 31
         enabled: false
       sul_feat_collection:
         weight: 32
+        enabled: false
+      sul_home_banner:
+        weight: 49
+        enabled: false
+      sul_home_image:
+        weight: 50
+        enabled: false
+      sul_libguide:
+        weight: 51
+        enabled: false
+      sul_location_hours:
+        weight: 52
         enabled: false
 field_type: entity_reference_revisions
