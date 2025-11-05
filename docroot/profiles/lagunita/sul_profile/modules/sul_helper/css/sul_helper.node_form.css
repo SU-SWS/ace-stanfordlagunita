@@ -89,6 +89,7 @@ iframe.next-site-preview {
 .ck-content a {
   color: #006cb8;
 }
+a.su-button,
 .su-wysiwyg-text a.su-button,
 .ck-content a.su-button {
   display: inline-block;
@@ -96,6 +97,7 @@ iframe.next-site-preview {
   padding: 13px 26px;
   background-color: #830000;
   color: white;
+  font-size: 21px;
 }
 .su-wysiwyg-text a.su-button--big,
 .ck-content a.su-button--big {
@@ -105,13 +107,17 @@ iframe.next-site-preview {
   background-color: #830000;
   color: white;
 }
+.su-stat-card a.stat-button,
+a.su-button--secondary,
 .su-wysiwyg-text a.su-button--secondary,
 .ck-content a.su-button--secondary {
   display: inline-block;
-  border: 2px solid #830000;
+  border: 2px solid #b1040e;
   border-radius: 999px;
   padding: 13px 26px;
-  color: #830000;
+  color: #b1040e;
+  font-size: 21px;
+  box-shadow: none;
 }
 .su-wysiwyg-text a.su-link--action:after,
 .ck-content a.su-link--action:after {
@@ -136,6 +142,12 @@ iframe.next-site-preview {
   width: 100%;
   text-align: center;
   border: 5px solid #fff4f4;
+}
+
+.field--name-sul-collection__cards {
+  grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Remove after https://www.drupal.org/project/drupal/issues/3351603 is resolved. */
