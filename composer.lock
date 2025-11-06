@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b36e6e838d76baf88a929cc8a1a7073c",
+    "content-hash": "4c843ae3fc4ff51dc745fc5f5102a406",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -3595,16 +3595,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "11.2.5",
+            "version": "11.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "cdfdb569ac089c877dba27534c7a89cf3fdd36c4"
+                "reference": "94ea889d00dceb1726b2fd9756cc30be9c7f3b47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/cdfdb569ac089c877dba27534c7a89cf3fdd36c4",
-                "reference": "cdfdb569ac089c877dba27534c7a89cf3fdd36c4",
+                "url": "https://api.github.com/repos/drupal/core/zipball/94ea889d00dceb1726b2fd9756cc30be9c7f3b47",
+                "reference": "94ea889d00dceb1726b2fd9756cc30be9c7f3b47",
                 "shasum": ""
             },
             "require": {
@@ -3761,13 +3761,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/11.2.5"
+                "source": "https://github.com/drupal/core/tree/11.2.6"
             },
-            "time": "2025-10-02T07:24:02+00:00"
+            "time": "2025-11-06T04:00:59+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "11.2.5",
+            "version": "11.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -3811,22 +3811,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.2.5"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.2.6"
             },
             "time": "2025-05-05T16:18:58+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "11.2.5",
+            "version": "11.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "e837a38334533c122db7b0d4727783ccb7a06859"
+                "reference": "04ce4674c562518edde80b0436ef58a0e9f9eba1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/e837a38334533c122db7b0d4727783ccb7a06859",
-                "reference": "e837a38334533c122db7b0d4727783ccb7a06859",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/04ce4674c562518edde80b0436ef58a0e9f9eba1",
+                "reference": "04ce4674c562518edde80b0436ef58a0e9f9eba1",
                 "shasum": ""
             },
             "require": {
@@ -3835,7 +3835,7 @@
                 "doctrine/annotations": "~2.0.2",
                 "doctrine/deprecations": "~1.1.5",
                 "doctrine/lexer": "~2.1.1",
-                "drupal/core": "11.2.5",
+                "drupal/core": "11.2.6",
                 "egulias/email-validator": "~4.0.4",
                 "guzzlehttp/guzzle": "~7.9.3",
                 "guzzlehttp/promises": "~2.2.0",
@@ -3897,9 +3897,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/11.2.5"
+                "source": "https://github.com/drupal/core-recommended/tree/11.2.6"
             },
-            "time": "2025-10-02T07:24:02+00:00"
+            "time": "2025-11-06T04:00:59+00:00"
         },
         {
             "name": "drupal/crop",
@@ -5122,24 +5122,24 @@
         },
         {
             "name": "drupal/entity_usage",
-            "version": "2.0.0-beta24",
+            "version": "2.0.0-beta25",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_usage.git",
-                "reference": "8.x-2.0-beta24"
+                "reference": "8.x-2.0-beta25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta24.zip",
-                "reference": "8.x-2.0-beta24",
-                "shasum": "063cf50d2b5cf7c99bb86a818c03fcfef2082151"
+                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta25.zip",
+                "reference": "8.x-2.0-beta25",
+                "shasum": "1579a29158648e1f65949d4aff1638ccd2c33e80"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11"
             },
             "require-dev": {
                 "drupal/block_field": "~1.0",
-                "drupal/dynamic_entity_reference": "~1.0 || ^2.0 || ^4.0",
+                "drupal/dynamic_entity_reference": "^3.0",
                 "drupal/entity_browser": "~2.0",
                 "drupal/entity_browser_block": "~1.0 || ^2.0",
                 "drupal/entity_embed": "^1.7",
@@ -5147,13 +5147,14 @@
                 "drupal/inline_entity_form": "^1.0@RC || ^3.0@RC",
                 "drupal/paragraphs": "~1.0",
                 "drupal/redirect": "^1.11",
-                "drupal/webform": "^6.0.0-alpha4"
+                "drupal/trash": "~3.0",
+                "drupal/webform": "^6.0.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta24",
-                    "datestamp": "1743745774",
+                    "version": "8.x-2.0-beta25",
+                    "datestamp": "1762358229",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -17523,16 +17524,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "11.0.12",
+            "version": "11.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "e54862064663eb07ce83480c9d8cbbd0205a867d"
+                "reference": "14269857c9f62e97dbb5ebcf353ed2ccd1198136"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/e54862064663eb07ce83480c9d8cbbd0205a867d",
-                "reference": "e54862064663eb07ce83480c9d8cbbd0205a867d",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/14269857c9f62e97dbb5ebcf353ed2ccd1198136",
+                "reference": "14269857c9f62e97dbb5ebcf353ed2ccd1198136",
                 "shasum": ""
             },
             "require": {
@@ -17565,8 +17566,7 @@
                         "https://www.drupal.org/project/drupal/issues/2353611": "https://www.drupal.org/files/issues/2019-10-15/drupal-link_uuid-2353611-262.patch",
                         "https://www.drupal.org/project/drupal/issues/2577923": "https://www.drupal.org/files/issues/2022-12-02/2577923-154.patch",
                         "https://www.drupal.org/project/drupal/issues/3332063": "https://www.drupal.org/files/issues/2023-03-12/path-alias-not-available-3332063.patch",
-                        "https://www.drupal.org/project/drupal/issues/3474018": "https://www.drupal.org/files/issues/2025-07-03/3474018-27.diff",
-                        "https://www.drupal.org/project/drupal/issues/3519949": "https://www.drupal.org/files/issues/2025-07-03/3519949-revert_3471459-7.diff"
+                        "https://www.drupal.org/project/drupal/issues/3474018": "https://www.drupal.org/files/issues/2025-07-03/3474018-27.diff"
                     },
                     "drupal/diff": {
                         "https://www.drupal.org/project/diff/issues/2882334#comment-13913401": "https://git.drupalcode.org/project/diff/-/merge_requests/42.patch"
@@ -17643,9 +17643,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/11.0.12"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/11.0.13"
             },
-            "time": "2025-10-22T15:42:04+00:00"
+            "time": "2025-11-06T17:07:38+00:00"
         },
         {
             "name": "su-sws/markdown",
@@ -18162,12 +18162,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "c489aa2e74f26d3bb676cd3d28e36ff1bae769b8"
+                "reference": "1748ff7f025908f5311360fa29429b5751d48790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/c489aa2e74f26d3bb676cd3d28e36ff1bae769b8",
-                "reference": "c489aa2e74f26d3bb676cd3d28e36ff1bae769b8",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/1748ff7f025908f5311360fa29429b5751d48790",
+                "reference": "1748ff7f025908f5311360fa29429b5751d48790",
                 "shasum": ""
             },
             "require": {
@@ -18266,7 +18266,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2025-10-30T17:54:54+00:00"
+            "time": "2025-11-06T17:44:21+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -21906,25 +21906,25 @@
     "packages-dev": [
         {
             "name": "behat/gherkin",
-            "version": "v4.14.0",
+            "version": "v4.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "34c9b59c59355a7b4c53b9f041c8dbd1c8acc3b4"
+                "reference": "05a7459283e8e6af0d46ec25b8bb5960ca3cfa7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/34c9b59c59355a7b4c53b9f041c8dbd1c8acc3b4",
-                "reference": "34c9b59c59355a7b4c53b9f041c8dbd1c8acc3b4",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/05a7459283e8e6af0d46ec25b8bb5960ca3cfa7b",
+                "reference": "05a7459283e8e6af0d46ec25b8bb5960ca3cfa7b",
                 "shasum": ""
             },
             "require": {
                 "composer-runtime-api": "^2.2",
-                "php": "8.1.* || 8.2.* || 8.3.* || 8.4.*"
+                "php": ">=8.1 <8.6"
             },
             "require-dev": {
-                "cucumber/gherkin-monorepo": "dev-gherkin-v32.1.1",
-                "friendsofphp/php-cs-fixer": "^3.65",
+                "cucumber/gherkin-monorepo": "dev-gherkin-v36.0.0",
+                "friendsofphp/php-cs-fixer": "^3.77",
                 "mikey179/vfsstream": "^1.6",
                 "phpstan/extension-installer": "^1",
                 "phpstan/phpstan": "^2",
@@ -21969,9 +21969,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Behat/Gherkin/issues",
-                "source": "https://github.com/Behat/Gherkin/tree/v4.14.0"
+                "source": "https://github.com/Behat/Gherkin/tree/v4.15.0"
             },
-            "time": "2025-05-23T15:06:40+00:00"
+            "time": "2025-11-05T15:34:04+00:00"
         },
         {
             "name": "behat/mink",
@@ -22767,16 +22767,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.5.8",
+            "version": "1.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "719026bb30813accb68271fee7e39552a58e9f65"
+                "reference": "1905981ee626e6f852448b7aaa978f8666c5bc54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/719026bb30813accb68271fee7e39552a58e9f65",
-                "reference": "719026bb30813accb68271fee7e39552a58e9f65",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/1905981ee626e6f852448b7aaa978f8666c5bc54",
+                "reference": "1905981ee626e6f852448b7aaa978f8666c5bc54",
                 "shasum": ""
             },
             "require": {
@@ -22823,7 +22823,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.5.8"
+                "source": "https://github.com/composer/ca-bundle/tree/1.5.9"
             },
             "funding": [
                 {
@@ -22835,7 +22835,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-20T18:49:47+00:00"
+            "time": "2025-11-06T11:46:17+00:00"
         },
         {
             "name": "composer/class-map-generator",
@@ -23728,7 +23728,7 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "11.2.5",
+            "version": "11.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -23777,7 +23777,7 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/11.2.5"
+                "source": "https://github.com/drupal/core-dev/tree/11.2.6"
             },
             "time": "2025-06-29T21:12:09+00:00"
         },
