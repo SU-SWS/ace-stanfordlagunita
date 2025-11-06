@@ -149,6 +149,9 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/next": {
+                "Fix CORS": "https://sws-devguide.stanford.edu/sites/g/files/sbiybj17516/files/next-cors.patch"
+            },
             "drupal/graphql_compose": {
                 "Remove link language setting on field results": "patches/contrib/graphql_compose-link_language.patch"
             },
