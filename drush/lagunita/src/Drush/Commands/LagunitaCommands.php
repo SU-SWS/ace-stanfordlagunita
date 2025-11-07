@@ -28,8 +28,8 @@ class LagunitaCommands extends DrushCommands {
     if (preg_match('/[^a-z]/', $config_prefix) || strlen($config_prefix) > 4) {
       throw new CommandFailedException('Invalid config prefix. Only lowercase characters and up to 4 characters.');
     }
-    //    $this->localMachineHelper()
-    //      ->executeFromCmd("git subtree add --squash --prefix=docroot/profiles/lagunita/$profile_name git@github.com:SU-SWS/stanford_profile.git 12.x");
+    $this->localMachineHelper()
+      ->executeFromCmd("git subtree add --squash --prefix=docroot/profiles/lagunita/$profile_name git@github.com:SU-SWS/stanford_profile.git 12.x");
     $file_system = $this->localMachineHelper()->getFilesystem();
     $composer = json_decode($file_system->readFile($this->getDir() . '/composer.json'), TRUE, 512, JSON_THROW_ON_ERROR);
     $script = $composer['scripts']['pull-sul'];
@@ -198,7 +198,8 @@ PHP;
     ];
     $file_system->dumpFile("$profile_path/config/sync/config_split.config_split.$site_name.yml", Yaml::encode($config_split));
 
-    $this->localMachineHelper()->executeFromCmd("sed -i 's/field_prefix: su_/field_prefix: {$config_prefix}_/g' field_ui.settings.yml", null, "$profile_path/config/sync/");
+    $this->localMachineHelper()
+      ->executeFromCmd("sed -i 's/field_prefix: su_/field_prefix: {$config_prefix}_/g' field_ui.settings.yml", NULL, "$profile_path/config/sync/");
   }
 
   /**
@@ -207,7 +208,7 @@ PHP;
    * @return string
    *   Generated uuid.
    */
-  protected function getUuid():string {
+  protected function getUuid(): string {
     // Obtain a random string of 32 hex characters.
     $hex = bin2hex(random_bytes(16));
 
