@@ -234,6 +234,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'Passed'
+  something_failed:
+    name: Something Failed
+    if: failure()
+    needs: [phpunit, codeception, db_updates]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "something failed"
+          exit 1
   deploy:
     name: Deploy Artifact
     needs: [phpunit, codeception, db_updates]
