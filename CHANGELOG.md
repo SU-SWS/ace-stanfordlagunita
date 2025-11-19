@@ -1,5 +1,13 @@
 # Lagunita
 
+3.0.6
+--------------------------------------------------------------------------------
+_Release Date: 2025-11-19_
+SUL23-878 | Add stat card option to feature collection (#238)
+3.0.5
+Restore substree part of drush command to make new profile
+Fail github actions if something failed
+
 3.0.4
 --------------------------------------------------------------------------------
 _Release Date: 2025-11-04_
