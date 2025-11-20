@@ -1,11 +1,11 @@
-uuid: 8f861b79-5510-42b6-aed8-ed40af51fe42
+uuid: a21be202-9a29-49b4-94be-544e6515fe40
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.su_news_subtitle
-field_name: su_news_subtitle
+id: node.su_media_season
+field_name: su_media_season
 entity_type: node
 type: string
 settings:
