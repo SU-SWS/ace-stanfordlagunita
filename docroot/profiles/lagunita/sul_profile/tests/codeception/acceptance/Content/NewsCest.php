@@ -364,7 +364,7 @@ class NewsCest {
    *
    */
   #[CodeceptionAttribute\Group('news_variant')]
-  public function testRelatedSpotlightsFiltersByTaxonomy(AcceptanceTester $I) {
+  protected function testRelatedSpotlightsFiltersByTaxonomy(AcceptanceTester $I) {
 
     // Create taxonomy terms.
     $term_a = $I->createEntity([
