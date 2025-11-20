@@ -46,6 +46,19 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "cure53/dompurify",
+                "version": "3.3.0",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/cure53/DOMPurify.git",
+                    "type": "git",
+                    "reference": "3.3.0"
+                }
+            }
         }
     ],
     "require": {
@@ -58,7 +71,7 @@
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-recommended": "^11",
         "drush/drush": "^13.6",
-        "su-sws/stanford_profile": "^12.0",
+        "su-sws/stanford_profile": "12.x-dev",
         "su-sws/stanford_profile_helper": "10.x-dev",
         "su-sws/sws-drush-commands": "1.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
