@@ -25,7 +25,7 @@ class ListCest {
   }
 
   #[CodeceptionAttribute\Group('argument-suggestion')]
-  public function testArgumentSuggestion(FunctionalTester $I) {
+  protected function testArgumentSuggestion(FunctionalTester $I) {
     $news_term = $I->createEntity([
       'vid' => 'stanford_news_topics',
       'name' => $this->faker->unique()->uuid(),

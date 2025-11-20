@@ -149,6 +149,7 @@ entity_config:
       query_load_enabled: true
     sup_protected_file:
       enabled: true
+      query_load_enabled: true
     video:
       enabled: true
       query_load_enabled: true
@@ -285,18 +286,25 @@ entity_config:
       query_load_enabled: true
     sup_author_list:
       enabled: true
+      query_load_enabled: true
     sup_blog:
       enabled: true
+      query_load_enabled: true
     sup_blog_teaser:
       enabled: true
+      query_load_enabled: true
     sup_carousel:
       enabled: true
+      query_load_enabled: true
     sup_carousel_slide:
       enabled: true
+      query_load_enabled: true
     sup_file_list:
       enabled: true
+      query_load_enabled: true
     sup_search_form:
       enabled: true
+      query_load_enabled: true
   press:
     award:
       enabled: true
@@ -404,7 +412,8 @@ entity_config:
       enabled: true
       query_load_enabled: true
     sup_file_groups:
-      enabled: false
+      enabled: true
+      query_load_enabled: true
     sup_imprints:
       enabled: true
       query_load_enabled: true
@@ -549,6 +558,10 @@ field_config:
         enabled: true
       su_site_nobots:
         enabled: true
+      sup_filemaker_pass:
+        enabled: true
+      sup_filemaker_user:
+        enabled: true
     stanford_global_message:
       su_global_msg_enabled:
         enabled: true
@@ -645,6 +658,8 @@ field_config:
     image:
       field_media_image:
         enabled: true
+      sup_book_work_id:
+        enabled: true
     stanford_gallery_images:
       su_gallery_caption:
         enabled: true
@@ -652,6 +667,8 @@ field_config:
         enabled: true
     sup_protected_file:
       sup_media_file:
+        enabled: true
+      sup_media_file_group:
         enabled: true
     video:
       field_media_oembed_video:
@@ -856,6 +873,8 @@ field_config:
         enabled: true
       su_page_image:
         enabled: true
+      sup_page_search_exclude:
+        enabled: true
     stanford_person:
       body:
         enabled: true
@@ -1020,12 +1039,22 @@ field_config:
         enabled: true
       sup_book_work_id_number:
         enabled: true
+      su_metatags:
+        enabled: true
+      sup_book_sort_author:
+        enabled: true
+      sup_book_tags:
+        enabled: true
     sup_book_ancillary:
       body:
         enabled: true
       sup_ancillary_book:
         enabled: true
       sup_ancillary_paragraphs:
+        enabled: true
+      su_metatags:
+        enabled: true
+      sup_ancillary_weight:
         enabled: true
   paragraph:
     stanford_accordion:
@@ -1284,7 +1313,7 @@ field_config:
         enabled: true
 settings:
   exclude_unpublished: false
-  expose_entity_ids: false
+  expose_entity_ids: true
   schema_description: 'GraphQL Compose'
   schema_version: '1'
   simple_queries: true

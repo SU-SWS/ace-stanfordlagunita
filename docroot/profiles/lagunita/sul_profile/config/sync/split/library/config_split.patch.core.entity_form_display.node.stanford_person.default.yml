@@ -59,14 +59,14 @@ removing:
       - layout_paragraphs
   content:
     body:
-      weight: 5
+      weight: 14
     publish_on:
       weight: 12
     su_metatags:
       weight: 10
     su_person_components:
       type: layout_paragraphs
-      weight: 7
+      weight: 15
       settings:
         preview_view_mode: default
         nesting_depth: 0
@@ -76,6 +76,6 @@ removing:
         change_labels:
           add_another: ''
     su_shared_tags:
-      weight: 9
+      weight: 19
   hidden:
     unpublish_on: true

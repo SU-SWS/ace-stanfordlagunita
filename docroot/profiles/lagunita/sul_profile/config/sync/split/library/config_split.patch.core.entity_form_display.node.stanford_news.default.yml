@@ -43,8 +43,6 @@ adding:
         default_paragraph_type: stanford_wysiwyg
     su_news_hide_social:
       weight: 9
-    su_shared_tags:
-      weight: 7
     unpublish_on:
       type: datetime_timestamp_no_default
       weight: 13
@@ -61,11 +59,11 @@ removing:
       - layout_paragraphs
   content:
     path:
-      weight: 13
-    publish_on:
-      weight: 15
-    su_metatags:
       weight: 11
+    publish_on:
+      weight: 13
+    su_metatags:
+      weight: 10
     su_news_components:
       type: layout_paragraphs
       settings:
@@ -77,8 +75,6 @@ removing:
         change_labels:
           add_another: ''
     su_news_hide_social:
-      weight: 12
-    su_shared_tags:
-      weight: 10
+      weight: 7
   hidden:
     unpublish_on: true
