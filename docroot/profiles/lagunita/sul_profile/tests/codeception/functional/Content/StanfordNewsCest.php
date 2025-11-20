@@ -102,7 +102,7 @@ class StanfordNewsCest {
    * Test that conditional fields work correctly for spotlight variants.
    */
   #[CodeceptionAttribute\Group('news_variant')]
-  public function testNewsVariantConditionalFields(FunctionalTester $I) {
+  protected function testNewsVariantConditionalFields(FunctionalTester $I) {
     // Create a default news node
     $default_news = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),

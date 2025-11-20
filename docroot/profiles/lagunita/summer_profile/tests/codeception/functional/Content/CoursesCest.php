@@ -10,7 +10,7 @@ use FunctionalTester;
  * Test course content type.
  */
 #[CodeceptionAttribute\Group('courses')]
-class CoursesCest {
+abstract class CoursesCest {
 
   /**
    * Faker.

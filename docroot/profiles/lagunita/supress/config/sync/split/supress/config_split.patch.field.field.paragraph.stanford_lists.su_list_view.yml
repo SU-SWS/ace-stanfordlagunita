@@ -2,12 +2,12 @@ adding:
   required: true
   settings:
     allowed_views:
+      stanford_shared_tags: '0'
       stanford_courses: '0'
       stanford_events: '0'
       stanford_news: '0'
       stanford_person: '0'
       stanford_publications: '0'
-      stanford_shared_tags: '0'
       sup_books: sup_books
 removing:
   required: false

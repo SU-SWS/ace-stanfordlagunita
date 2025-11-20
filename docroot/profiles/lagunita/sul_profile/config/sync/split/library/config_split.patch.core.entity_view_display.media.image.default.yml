@@ -11,4 +11,7 @@ adding:
       third_party_settings: {  }
       weight: 1
       region: content
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.media.image.su_import_lookup
