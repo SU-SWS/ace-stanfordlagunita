@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
+    - field.field.node.stanford_news.body
     - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.layout_selection
     - field.field.node.stanford_news.stanford_intranet__access
@@ -15,22 +16,30 @@ dependencies:
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
     - field.field.node.stanford_news.su_news_hide_social
+    - field.field.node.stanford_news.su_news_person
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_quote
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_spotlight_filters
-    - field.field.node.stanford_news.su_news_subtitle
     - field.field.node.stanford_news.su_news_topics
     - field.field.node.stanford_news.su_shared_tags
     - node.type.stanford_news
   module:
     - layout_paragraphs
+    - text
     - user
 id: node.stanford_news.search_indexing
 targetEntityType: node
 bundle: stanford_news
 mode: search_indexing
 content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   su_news_banner_media_caption:
     type: string
     label: hidden
@@ -54,7 +63,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   su_news_dek:
     type: string
@@ -73,7 +82,6 @@ content:
     weight: 0
     region: content
 hidden:
-  body: true
   layout_builder__layout: true
   layout_selection: true
   links: true
@@ -88,5 +96,4 @@ hidden:
   su_news_quote: true
   su_news_source: true
   su_news_spotlight_filters: true
-  su_news_subtitle: true
   su_shared_tags: true
