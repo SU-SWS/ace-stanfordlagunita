@@ -189,7 +189,7 @@ class ListsCest {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_news');
     $title = $this->faker->words(3, TRUE);
-    $I->fillField('Headline', $title);
+    $I->fillField('Headline / Name', $title);
     $I->checkOption('[name="status[value]"]');
     $I->click('Save');
     $I->canSee($title, 'h1');
