@@ -14,6 +14,9 @@ adding:
         placeholder: ''
       third_party_settings: {  }
 removing:
+  dependencies:
+    config:
+      - field.field.media.image.su_import_lookup
   content:
     su_media_category:
       weight: 2

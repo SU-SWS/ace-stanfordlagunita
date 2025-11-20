@@ -241,6 +241,7 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
+      routes_enabled: true
   paragraph:
     collection:
       enabled: true
@@ -307,13 +308,16 @@ entity_config:
       query_load_enabled: true
     sul_home_banner:
       enabled: true
+      query_load_enabled: true
     sul_home_image:
       enabled: true
+      query_load_enabled: true
     sul_libguide:
       enabled: true
       query_load_enabled: true
     sul_location_hours:
       enabled: true
+      query_load_enabled: true
   redirect:
     redirect:
       enabled: true
@@ -784,8 +788,6 @@ field_config:
     stanford_news:
       body:
         enabled: true
-      layout_selection:
-        enabled: true
       su_news_banner:
         enabled: true
       su_news_banner_media_caption:
@@ -815,6 +817,8 @@ field_config:
       sul_rel_links:
         enabled: true
       sul_rel_links_heading:
+        enabled: true
+      layout_selection:
         enabled: true
     stanford_opportunity:
       body:
@@ -1005,6 +1009,8 @@ field_config:
       sul_rel_links:
         enabled: true
       sul_rel_links_heading:
+        enabled: true
+      field_menulink:
         enabled: true
     sul_study_place:
       sul_study__additional_info:
@@ -1244,7 +1250,7 @@ field_config:
         enabled: true
 settings:
   exclude_unpublished: false
-  expose_entity_ids: false
+  expose_entity_ids: true
   schema_description: 'GraphQL Compose'
   schema_version: '1'
   simple_queries: true

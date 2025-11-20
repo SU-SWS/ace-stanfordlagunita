@@ -8,7 +8,6 @@ adding:
       - taxonomy.vocabulary.sul_study_place_type
   permissions:
     - 'access site in maintenance mode'
-    - 'choose layout for node stanford_news'
     - 'choose layout for node sul_library'
     - 'create sul_library content'
     - 'create sul_study_place content'

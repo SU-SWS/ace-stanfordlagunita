@@ -15,6 +15,9 @@ adding:
       weight: 1
       region: content
 removing:
+  dependencies:
+    config:
+      - field.field.media.image.su_import_lookup
   content:
     field_media_image:
       weight: 6
