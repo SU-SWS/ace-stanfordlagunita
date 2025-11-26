@@ -30,11 +30,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            3.x-${{ vars.CACHE_KEY }}-
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -67,11 +67,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            3.x-${{ vars.CACHE_KEY }}-
       - name: Get Sites
         id: set-matrix
         run: |
@@ -131,11 +131,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            3.x-${{ vars.CACHE_KEY }}-
       - name: Install Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -208,11 +208,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            3.x-${{ vars.CACHE_KEY }}-
       - name: Sync and Update Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -259,11 +259,11 @@ jobs:
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            3.x-${{ vars.CACHE_KEY }}-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
