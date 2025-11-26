@@ -1,6 +1,7 @@
 <?php
 
 use Codeception\Attribute as CodeceptionAttribute;
+use Codeception\Example;
 use Faker\Factory;
 
 /**
@@ -315,6 +316,10 @@ class NewsCest {
     $I->amOnPage('/node/add/stanford_news');
     $I->canSeeResponseCodeIs(200);
 
+    // Verify contributor role can see the Variant field
+    $I->canSee('Variant');
+    $I->canSeeElement('[name="layout_selection"]');
+
     // Generate test data using faker
     $testData = [
       'Dek' => $this->faker->sentence(),
@@ -349,6 +354,41 @@ class NewsCest {
     $I->canSee($testData['Banner Caption']);
   }
 
+  /**
+   * Test that roles with layout selection permission can select spotlight variant.
+   */
+  #[CodeceptionAttribute\Group('news_variant')]
+  #[CodeceptionAttribute\Examples(role: 'contributor')]
+  #[CodeceptionAttribute\Examples(role: 'site_editor')]
+  #[CodeceptionAttribute\Examples(role: 'site_manager')]
+  public function testRoleCanSelectSpotlightVariant(AcceptanceTester $I, Example $example) {
+    $I->logInWithRole($example['role']);
+    $I->amOnPage('/node/add/stanford_news');
+    $I->canSeeResponseCodeIs(200);
+
+    // Verify Variant field is visible and accessible
+    $I->canSee('Variant');
+    $I->canSeeElement('[name="layout_selection"]');
+
+    // Fill in required title
+    $title = $this->faker->words(3, TRUE);
+    $I->fillField('Headline / Name', $title);
+
+    // Select Spotlight variant
+    $I->selectOption('Variant', 'Spotlight');
+
+    // Fill in spotlight-specific field
+    $quote = $this->faker->sentence();
+    $I->fillField('Quote / Big Text', $quote);
+
+    // Save the node
+    $I->click('Save');
+    $I->canSeeResponseCodeIs(200);
+    $I->canSee('has been created');
+
+    // Verify the spotlight label is displayed
+    $I->canSee('Spotlight', '.su-spotlight-label p');
+  }
 
   /**
    * Test that Related Spotlights filters by matching taxonomy terms.
@@ -356,7 +396,6 @@ class NewsCest {
    */
   #[CodeceptionAttribute\Group('news_variant')]
   public function testRelatedSpotlightsFiltersByTaxonomy(AcceptanceTester $I) {
-
     // Create taxonomy terms.
     $term_a = $I->createEntity([
       'name' => $this->faker->words(3, TRUE),
@@ -438,9 +477,7 @@ class NewsCest {
   /**
    * Test spotlight label displayed correctly on the news spotlight variant page.
    */
-
   #[CodeceptionAttribute\Group('news_variant')]
-
   #[CodeceptionAttribute\Group('spotlight_page')]
   public function testSpotlightCreationAndDisplay(AcceptanceTester $I) {
     // Create a spotlight node.
@@ -456,6 +493,26 @@ class NewsCest {
 
     // Verify the spotlight label exists
     $I->canSee('Spotlight', '.su-spotlight-label p');
+  }
+
+  #[CodeceptionAttribute\Group('unpublished-terms')]
+  public function testUnpublishedTerms(AcceptanceTester $I) {
+    $term = $I->createEntity([
+      'vid' => 'stanford_news_topics',
+      'name' => $this->faker->uuid(),
+    ], 'taxonomy_term');
+    $node = $I->createEntity([
+      'title' => $this->faker->words(3, TRUE),
+      'type' => 'stanford_news',
+      'su_news_topics' => $term->id(),
+    ]);
+    $I->logInWithRole('site_manager');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('News Types (value 1)', $term->label());
+
+    $term->setUnpublished()->save();
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->canSeeOptionIsSelected('News Types (value 1)', $term->label());
   }
 
 }
