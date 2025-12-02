@@ -13,11 +13,7 @@ source:
   plugin: url
   orphan_action: delete
   urls:
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000'
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=1001'
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=2001'
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=3001'
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records?_limit=1000&_offset=4001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records'
   fields:
     -
       name: table_of_contents
