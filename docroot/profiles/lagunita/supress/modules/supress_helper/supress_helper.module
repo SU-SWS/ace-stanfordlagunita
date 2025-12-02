@@ -20,6 +20,56 @@ use Drupal\search_api\IndexInterface;
 use Drupal\Component\Utility\UrlHelper;
 
 /**
+ * Implements hook_migration_plugins_alter().
+ */
+function supress_helper_migration_plugins_alter(array &$migrations) {
+  $recordsUrl = 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records';
+
+  foreach ($migrations as &$migration) {
+    $firstUrl = $migration['source']['urls'][0] ?? '';
+    if ($firstUrl != $recordsUrl) {
+      continue;
+    }
+    $totalRecords = _supress_helper_book_record_count($recordsUrl);
+    for ($i = 0; $i < $totalRecords; $i += 1000) {
+      $urls[] = $recordsUrl . '?' . http_build_query([
+          '_limit' => 1000,
+          '_offset' => $i + 1,
+        ]);
+    }
+    $migration['source']['urls'] = $urls;
+  }
+}
+
+/**
+ * Get the total number of records from the api.
+ *
+ * @param string $recordsUrl
+ *   Base API path.
+ *
+ * @return int
+ */
+function _supress_helper_book_record_count(string $recordsUrl): int {
+  $cache = \Drupal::cache();
+  $cacheKey = 'press-record-count:' . substr(md5($recordsUrl), 0, 5);
+  if ($data = $cache->get($cacheKey)) {
+    return $data->data;
+  }
+  $client = \Drupal::httpClient();
+  $token = _supress_helper_get_api_token();
+  $response = json_decode((string) $client->request('GET', $recordsUrl, [
+    'query' => ['_limit' => 1],
+    'headers' => [
+      'Content-Type' => 'application/json',
+      'Authorization' => 'Bearer ' . $token,
+    ],
+    'timeout' => 15,
+  ])->getBody(), TRUE);
+  $cache->set($cacheKey, $response['response']['dataInfo']['totalRecordCount']);
+  return $response['response']['dataInfo']['totalRecordCount'] ?: 0;
+}
+
+/**
  * Implements hook_page_attachments().
  */
 function supress_helper_page_attachments(array &$attachments) {
@@ -310,18 +360,23 @@ function _supress_ebook_formats(): array {
   if ($cached_item = $cache->get('filemaker_ebook_formats')) {
     return $cached_item->data;
   }
-  $search_body = ['query' => [['format_pdf' => '=yes'], ['format_epub' => '=yes']]];
+  $search_body = [
+    'query' => [
+      ['format_pdf' => '=yes'],
+      ['format_epub' => '=yes'],
+    ],
+  ];
   try {
     $formats = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
   }
   catch (\Exception $e) {
-    \Drupal::logger('supress')->error('An error occurred when fetching ebook formats: @error', ['@error' => $e->getMessage()]);
+    \Drupal::logger('supress')
+      ->error('An error occurred when fetching ebook formats: @error', ['@error' => $e->getMessage()]);
     $formats = [];
   }
 
   $book_formats = [];
   foreach ($formats as $item) {
-
     if (empty($book_formats[(int) $item['fieldData']['work_id_number']]['epub'])) {
       $book_formats[(int) $item['fieldData']['work_id_number']]['epub'] = $item['fieldData']['format_epub'] == 'yes';
     }
@@ -329,7 +384,6 @@ function _supress_ebook_formats(): array {
     if (empty($book_formats[(int) $item['fieldData']['work_id_number']]['pdf'])) {
       $book_formats[(int) $item['fieldData']['work_id_number']]['pdf'] = $item['fieldData']['format_pdf'] == 'yes';
     }
-
   }
   ksort($book_formats);
 
@@ -356,7 +410,8 @@ function _supress_get_ebook_retailers() {
     $retailers = _supress_search_filemaker('https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/EbookRetailers/_find', $search_body, 10000);
   }
   catch (\Exception $e) {
-    \Drupal::logger('supress')->error('An error occurred when fetching ebook retailer links: @error', ['@error' => $e->getMessage()]);
+    \Drupal::logger('supress')
+      ->error('An error occurred when fetching ebook retailer links: @error', ['@error' => $e->getMessage()]);
     $retailers = [];
   }
 
