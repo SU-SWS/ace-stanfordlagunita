@@ -100,7 +100,8 @@
                 "docroot/profiles/lagunita/summer_profile/composer.json",
                 "docroot/profiles/lagunita/supress/composer.json"
             ],
-            "merge-extra": true
+            "merge-extra": true,
+            "merge-extra-deep": true
         },
         "drupal-scaffold": {
             "locations": {
@@ -162,21 +163,11 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/next": {
-                "Fix CORS": "https://sws-devguide.stanford.edu/sites/g/files/sbiybj17516/files/next-cors.patch"
-            },
             "drupal/graphql_compose": {
                 "Remove link language setting on field results": "patches/contrib/graphql_compose-link_language.patch"
             },
             "drupal/graphql": {
                 "Log graphql queries": "patches/contrib/graphql-logging.patch"
-            },
-            "drupal/markdown": {
-                "https://www.drupal.org/project/markdown/issues/3409277": "https://git.drupalcode.org/project/markdown/-/merge_requests/29.diff",
-                "https://www.drupal.org/project/markdown/issues/3483437": "https://git.drupalcode.org/project/markdown/-/merge_requests/35.diff"
-            },
-            "su-sws/markdown": {
-                "https://www.drupal.org/project/markdown/issues/3529633": "https://git.drupalcode.org/project/markdown/-/merge_requests/51.diff"
             },
             "su-sws/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"

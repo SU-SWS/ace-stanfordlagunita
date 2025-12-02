@@ -2,13 +2,23 @@ adding:
   required: true
   settings:
     allowed_views:
-      stanford_courses: '0'
-      stanford_events: '0'
-      stanford_news: '0'
-      stanford_person: '0'
-      stanford_publications: '0'
-      stanford_shared_tags: '0'
       sup_books: sup_books
+      stanford_shared_tags: '0'
+      autocomplete_suggestions: '0'
+      sup_book_entities: '0'
+      stanford_courses: '0'
+      courses_filtered: '0'
+      stanford_events: '0'
+      media_filtered: '0'
+      media_content: '0'
+      stanford_news: '0'
+      autocompletion_callbacks_nodes: '0'
+      stanford_opportunities: '0'
+      stanford_person: '0'
+      people_filtered: '0'
+      stanford_publications: '0'
+    allowed_display_types:
+      autocompletion_callback: '0'
 removing:
   required: false
   settings:
@@ -16,6 +26,8 @@ removing:
       stanford_shared_tags: stanford_shared_tags
       stanford_courses: stanford_courses
       stanford_events: stanford_events
+      media_content: media_content
       stanford_news: stanford_news
+      stanford_opportunities: stanford_opportunities
       stanford_person: stanford_person
       stanford_publications: stanford_publications

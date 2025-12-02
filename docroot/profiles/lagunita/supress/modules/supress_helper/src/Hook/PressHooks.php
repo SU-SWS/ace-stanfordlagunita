@@ -52,4 +52,17 @@ class PressHooks {
       ->createInstance('sup_import_books') ?: NULL;
   }
 
+  /**
+   * Implements hook_viewfield_argument_suggestion_vocabs_alter().)
+   */
+  #[Hook('viewfield_argument_suggestion_vocabs_alter')]
+  public function viewfieldArgVocabs(array &$vocabs, array $view) {
+    if ($view['view'] == 'sup_books') {
+      $vocabs[] = 'sup_book_subjects';
+      $vocabs[] = 'sup_series';
+      $vocabs[] = 'sup_book_tags';
+      $vocabs[] = 'sup_imprints';
+    }
+  }
+
 }
