@@ -15,8 +15,7 @@ source:
   orphan_action: delete
   plugin: url
   urls:
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records?_limit=1000'
-    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records?_limit=1000&_offset=1001'
+    - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records'
   fields:
     -
       name: recordId

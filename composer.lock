@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76e82852a2885fec2553e494b36b55b3",
+    "content-hash": "fb1f866f0dc104cce6f843713ce7e8c0",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -9140,17 +9140,17 @@
         },
         {
             "name": "drupal/next",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/next.git",
-                "reference": "2.0.0"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/next-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "1a7b07042d72fbfafd105c639b2bff062311a099"
+                "url": "https://ftp.drupal.org/files/projects/next-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "d36a513b54267cbb03282f51e4e0835f3366ff84"
             },
             "require": {
                 "drupal/core": "^10 || ^11",
@@ -9171,8 +9171,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1739303969",
+                    "version": "2.0.1",
+                    "datestamp": "1764787542",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
