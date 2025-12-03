@@ -23,19 +23,21 @@ use Drupal\Component\Utility\UrlHelper;
  * Implements hook_migration_plugins_alter().
  */
 function supress_helper_migration_plugins_alter(array &$migrations) {
-  $recordsUrl = 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records';
-
   foreach ($migrations as &$migration) {
     $firstUrl = $migration['source']['urls'][0] ?? '';
-    if ($firstUrl != $recordsUrl) {
+
+    if (!str_starts_with($firstUrl, 'https://memento.stanford.edu')) {
       continue;
     }
-    $totalRecords = _supress_helper_book_record_count($recordsUrl);
+
+    $urls = [];
+    $totalRecords = _supress_helper_book_record_count($firstUrl);
     for ($i = 0; $i < $totalRecords; $i += 1000) {
-      $urls[] = $recordsUrl . '?' . http_build_query([
-          '_limit' => 1000,
-          '_offset' => $i + 1,
-        ]);
+      $query = http_build_query([
+        '_limit' => 1000,
+        '_offset' => $i + 1,
+      ]);
+      $urls[] = "$firstUrl?$query";
     }
     $migration['source']['urls'] = $urls;
   }
@@ -55,6 +57,7 @@ function _supress_helper_book_record_count(string $recordsUrl): int {
   if ($data = $cache->get($cacheKey)) {
     return $data->data;
   }
+
   $client = \Drupal::httpClient();
   $token = _supress_helper_get_api_token();
   $response = json_decode((string) $client->request('GET', $recordsUrl, [
@@ -65,7 +68,8 @@ function _supress_helper_book_record_count(string $recordsUrl): int {
     ],
     'timeout' => 15,
   ])->getBody(), TRUE);
-  $cache->set($cacheKey, $response['response']['dataInfo']['totalRecordCount']);
+
+  $cache->set($cacheKey, $response['response']['dataInfo']['totalRecordCount'], time() + 60 * 60 * 24 * 7, ['press-record-count']);
   return $response['response']['dataInfo']['totalRecordCount'] ?: 0;
 }
 

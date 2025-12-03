@@ -75,4 +75,18 @@ class SulHooks {
     }
   }
 
+  /**
+   * Implements hook_viewfield_argument_suggestion_vocabs_alter().)
+   */
+  #[Hook('viewfield_argument_suggestion_vocabs_alter')]
+  public function viewfieldArgVocabs(array &$vocabs, array $view) {
+    if ($view['view'] == 'sul_people') {
+      $vocabs[] = 'stanford_person_types';
+    }
+    if ($view['view'] == 'sul_events') {
+      $vocabs[] = 'stanford_event_types';
+      $vocabs[] = 'event_audience';
+    }
+  }
+
 }
