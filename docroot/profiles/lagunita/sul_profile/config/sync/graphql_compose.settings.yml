@@ -745,6 +745,8 @@ field_config:
         enabled: true
       sul_event_experience:
         enabled: true
+      su_event_localist_id:
+        enabled: true
     stanford_event_series:
       su_event_series_components:
         enabled: true

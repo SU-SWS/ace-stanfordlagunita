@@ -149,6 +149,7 @@ source:
 process:
   status: constants/one
   type: constants/type
+  su_event_localist_id: id
   canceled:
     -
       plugin: str_replace
@@ -415,6 +416,7 @@ process:
 destination:
   plugin: 'entity:node'
   overwrite_properties:
+    - su_event_localist_id
     - body/format
     - body/value
     - departments
