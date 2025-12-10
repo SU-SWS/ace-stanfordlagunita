@@ -1,5 +1,10 @@
 # Lagunita
 
+3.1.2
+--------------------------------------------------------------------------------
+- Comment out anes to skip it in tests and deployments
+- Update Dependencies
+
 3.1.0
 --------------------------------------------------------------------------------
 - SUP: Make book importer urls dynamic
