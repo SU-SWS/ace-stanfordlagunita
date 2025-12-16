@@ -14,6 +14,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\media\MediaInterface;
 use FFMpeg\Coordinate\TimeCode;
 use FFMpeg\FFMpeg;
+use FFMpeg\FFProbe;
 use FFMpeg\Filters\Audio\SimpleFilter;
 use FFMpeg\Format\Video\X264;
 
@@ -45,7 +46,7 @@ class SummerHooks {
    * Implements hook_ENTITY_TYPE_presave().
    */
   #[Hook('media_presave')]
-  function mediaPresave(MediaInterface $media) {
+  public function mediaPresave(MediaInterface $media) {
     if (
       $media->bundle() == 'video' &&
       $media->get('sum_video_file')->count()
@@ -59,7 +60,9 @@ class SummerHooks {
 
       /** @var \Drupal\file\FileInterface $videoFile */
       $videoFile = $fileStorage->load($fid);
-      if (!$videoFile) {
+      // If the video doesn't exist, or it's already 5 seconds long, no need to
+      // clip the video.
+      if (!$videoFile || $this->getVideoDuration($videoFile->getFileUri()) <= 5) {
         return;
       }
 
@@ -69,31 +72,56 @@ class SummerHooks {
       }
       catch (\Exception $e) {
         $this->messenger()
-          ->addError($this->t('An error occurred when trying to create a gif from the video.'));
+          ->addError($this->t('An error occurred when trying to create a clip from the video.'));
         $this->getLogger('summer_helper')
-          ->error($this->t('An error occurred when trying to create a gif from the video: ' . $e->getMessage()));
+          ->error($this->t('An error occurred when trying to create a clip from the video: @message', ['@message' => $e->getMessage()]));
       }
     }
   }
 
   /**
-   * Create a 5 second gif from the give video file and return the file entity.
+   * Get the duration in seconds of the video.
+   *
+   * @param string $videoPath
+   *   Local path uri.
+   *
+   * @return int
+   *   Duration of the video in seconds.
+   */
+  protected function getVideoDuration(string $videoPath):int {
+    $realPath = $this->fileSystem->realpath($videoPath);
+    return (int) FFProbe::create()->format($realPath)->get('duration');
+  }
+
+  /**
+   * Create a 5-second clip from the video file and return the file entity.
    *
    * @param string $videoPath
    *   Drupal path to the video file.
    */
   protected function clipVideoFile(string $videoPath) {
-    $realPath = $this->fileSystem->realpath($videoPath);
-    $tempPath = $this->fileSystem->tempnam('temporary://', 'video-') . '.mp4';
-    $realTempPath = $this->fileSystem->realpath($tempPath);
+    try {
+      $realPath = $this->fileSystem->realpath($videoPath);
+      $tempPath = $this->fileSystem->tempnam('temporary://', 'video-') . '.mp4';
+      $realTempPath = $this->fileSystem->realpath($tempPath);
 
-    $ffmpeg = FFMpeg::create();
-    $video = $ffmpeg->open($realPath);
-    $video->clip(TimeCode::fromSeconds(0), TimeCode::fromSeconds(5))
-      ->addFilter(new SimpleFilter(['-an']))
-      ->save(new X264(), $realTempPath);
+      $ffmpeg = FFMpeg::create();
+      $video = $ffmpeg->open($realPath);
 
-    $this->fileSystem->move($tempPath, $videoPath, FileExists::Replace);
+      $video->clip(TimeCode::fromSeconds(0), TimeCode::fromSeconds(5))
+        ->addFilter(new SimpleFilter(['-an']))
+        ->save(new X264(), $realTempPath);
+
+      $this->fileSystem->move($tempPath, $videoPath, FileExists::Replace);
+    }
+    catch (\Exception $e) {
+      throw $e;
+    }
+    finally {
+      if (file_exists($this->fileSystem->realpath($tempPath))) {
+        $this->fileSystem->delete($tempPath);
+      }
+    }
   }
 
 }

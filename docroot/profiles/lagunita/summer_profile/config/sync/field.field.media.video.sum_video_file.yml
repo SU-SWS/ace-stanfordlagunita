@@ -12,7 +12,7 @@ field_name: sum_video_file
 entity_type: media
 bundle: video
 label: Video
-description: 'Upload an mp4 video. This will be used for the initial display as an introduction when it comes into view for the user. The video will be trimmed to the first 6 seconds and the audio will be removed.'
+description: 'Upload an mp4 video. This will be used for the initial display as an introduction when it comes into view for the user. The video will be trimmed to the first 5 seconds and the audio will be removed.'
 required: false
 translatable: false
 default_value: {  }
