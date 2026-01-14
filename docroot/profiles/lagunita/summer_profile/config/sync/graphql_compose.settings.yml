@@ -669,6 +669,8 @@ field_config:
         enabled: true
       su_video_subtitles:
         enabled: true
+      sum_video_file:
+        enabled: true
   node:
     stanford_course:
       body:

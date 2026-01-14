@@ -59,5 +59,6 @@ hidden:
   su_video_duration: true
   su_video_subtitles: true
   su_video_transcript: true
+  sum_video_file: true
   uid: true
   unpublish_on: true

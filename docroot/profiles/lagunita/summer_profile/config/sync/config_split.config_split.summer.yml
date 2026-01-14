@@ -21,6 +21,8 @@ theme: {  }
 complete_list:
   - core.entity_view_mode.paragraph.sum_editing_preview
   - filter.format.sum_markdown
+  - metatag.metatag_defaults.node__sum_summer_courses
+  - search_api.index.algolia_search
   - 'config_pages.type.sum_*'
   - 'core.base_field_override.node.sum_*'
   - 'core.entity_form_display.config_pages.sum_*'
@@ -49,7 +51,6 @@ complete_list:
   - 'taxonomy.vocabulary.sum_*'
   - 'user.role.sum_*'
   - 'views.view.sum_*'
-  - search_api.index.algolia_search
 partial_list:
   - '*su_*'
   - '*stanford_*'

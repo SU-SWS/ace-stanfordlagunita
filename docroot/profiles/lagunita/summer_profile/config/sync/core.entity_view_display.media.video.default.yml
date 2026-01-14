@@ -49,5 +49,6 @@ hidden:
   su_media_description: true
   su_video_duration: true
   su_video_subtitles: true
+  sum_video_file: true
   thumbnail: true
   uid: true
