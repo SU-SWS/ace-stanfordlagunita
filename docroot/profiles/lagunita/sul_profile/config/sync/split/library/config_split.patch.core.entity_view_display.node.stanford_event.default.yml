@@ -51,4 +51,5 @@ adding:
 removing:
   dependencies:
     config:
+      - field.field.node.stanford_event.su_event_localist_id
       - views.view.stanford_events
