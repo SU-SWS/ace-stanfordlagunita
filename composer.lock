@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f481b6c61b4344d5403e9b7d04f33b9b",
+    "content-hash": "fb1f866f0dc104cce6f843713ce7e8c0",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -18104,16 +18104,16 @@
         },
         {
             "name": "su-sws/drupal-patches",
-            "version": "11.0.15",
+            "version": "11.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-patches.git",
-                "reference": "419192a9a368c1c518d90a52d3f1f55c78b4a805"
+                "reference": "faea640215ce55de71a8ef8d2bcb5ddbfa3fcb75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/419192a9a368c1c518d90a52d3f1f55c78b4a805",
-                "reference": "419192a9a368c1c518d90a52d3f1f55c78b4a805",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-patches/zipball/faea640215ce55de71a8ef8d2bcb5ddbfa3fcb75",
+                "reference": "faea640215ce55de71a8ef8d2bcb5ddbfa3fcb75",
                 "shasum": ""
             },
             "require": {
@@ -18177,9 +18177,6 @@
                         "https://www.drupal.org/project/field_group/issues/2969051": "https://sws-devguide.stanford.edu/sites/g/files/sbiybj17516/files/field_group-2969051.patch",
                         "https://www.drupal.org/project/field_group/issues/3226844": "https://www.drupal.org/files/issues/2024-10-25/activate-link-by-tab-3226844-12.patch"
                     },
-                    "drupal/rabbit_hole": {
-                        "https://www.drupal.org/project/rabbit_hole/issues/3463826": "https://www.drupal.org/files/issues/2024-07-30/3463826-rh-node-js-textContent-issue-3.patch"
-                    },
                     "drupal/jsonapi_views": {
                         "https://www.drupal.org/project/jsonapi_views/issues/3213575": "https://www.drupal.org/files/issues/2023-09-29/3213575-views_json-pagination-10.patch"
                     },
@@ -18223,9 +18220,9 @@
             "description": "Drupal core and contrib shared patches",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-patches/issues",
-                "source": "https://github.com/SU-SWS/drupal-patches/tree/11.0.15"
+                "source": "https://github.com/SU-SWS/drupal-patches/tree/11.0.16"
             },
-            "time": "2025-12-08T16:54:35+00:00"
+            "time": "2026-01-14T18:51:14+00:00"
         },
         {
             "name": "su-sws/markdown",
