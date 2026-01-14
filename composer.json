@@ -172,6 +172,13 @@
             "su-sws/paranoia": {
                 "https://stanfordits.atlassian.net/browse/D8CORE-1351": "patches/contrib/paranoia.patch"
             }
+        },
+        "patches-ignore": {
+            "su-sws/drupal-patches": {
+                "drupal/rabbit_hole": {
+                    "https://www.drupal.org/files/issues/2024-07-30/3463826-rh-node-js-textContent-issue-3.patch": "https://www.drupal.org/files/issues/2024-07-30/3463826-rh-node-js-textContent-issue-3.patch"
+                }
+            }
         }
     },
     "scripts": {
