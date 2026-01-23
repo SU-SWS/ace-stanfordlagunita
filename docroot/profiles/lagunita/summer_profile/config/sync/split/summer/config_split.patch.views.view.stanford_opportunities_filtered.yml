@@ -1,0 +1,45 @@
+adding:
+  display:
+    default:
+      display_options:
+        sorts:
+          sum_opp_day_value:
+            id: sum_opp_day_value
+            table: node__sum_opp_day
+            field: sum_opp_day_value
+            relationship: none
+            group_type: group
+            admin_label: ''
+            plugin_id: standard
+            order: ASC
+            expose:
+              label: 'Day (sum_opp_day)'
+              field_identifier: day
+            exposed: false
+          sum_opp_month_value:
+            id: sum_opp_month_value
+            table: node__sum_opp_month
+            field: sum_opp_month_value
+            relationship: none
+            group_type: group
+            admin_label: ''
+            plugin_id: standard
+            order: ASC
+            expose:
+              label: ''
+              field_identifier: ''
+            exposed: false
+          sum_opp_year_value:
+            id: sum_opp_year_value
+            table: node__sum_opp_year
+            field: sum_opp_year_value
+            relationship: none
+            group_type: group
+            admin_label: ''
+            plugin_id: standard
+            order: DESC
+            expose:
+              label: ''
+              field_identifier: ''
+            exposed: false
+removing: {  }

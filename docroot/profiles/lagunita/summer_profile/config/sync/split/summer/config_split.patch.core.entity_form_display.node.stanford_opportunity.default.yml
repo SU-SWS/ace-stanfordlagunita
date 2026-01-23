@@ -1,0 +1,62 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_opportunity.sum_opp_day
+      - field.field.node.stanford_opportunity.sum_opp_month
+      - field.field.node.stanford_opportunity.sum_opp_year
+  third_party_settings:
+    field_group:
+      group_contact_information:
+        weight: 14
+      group_taxonomy:
+        children:
+          - sum_opp_year
+          - sum_opp_month
+          - sum_opp_day
+  content:
+    su_opp_cta_url:
+      weight: 15
+    su_opp_tags:
+      weight: 13
+    sum_opp_day:
+      type: options_select
+      weight: 12
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    sum_opp_month:
+      type: options_select
+      weight: 11
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    sum_opp_year:
+      type: options_select
+      weight: 10
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+  hidden:
+    su_opp_application_deadline: true
+removing:
+  dependencies:
+    module:
+      - datetime
+  third_party_settings:
+    field_group:
+      group_contact_information:
+        weight: 11
+      group_taxonomy:
+        children:
+          - su_opp_application_deadline
+  content:
+    su_opp_cta_url:
+      weight: 12
+    su_opp_tags:
+      weight: 10
+    su_opp_application_deadline:
+      type: datetime_default
+      weight: 9
+      region: content
+      settings: {  }
+      third_party_settings: {  }

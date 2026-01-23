@@ -1,0 +1,6 @@
+adding:
+  hidden:
+    sum_opp_day: true
+    sum_opp_month: true
+    sum_opp_year: true
+removing: {  }

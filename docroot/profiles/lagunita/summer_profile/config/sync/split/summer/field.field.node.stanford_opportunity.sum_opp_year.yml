@@ -1,0 +1,21 @@
+uuid: 4812b284-e9be-4666-9061-df30d8d92594
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_opp_year
+    - node.type.stanford_opportunity
+  module:
+    - options
+id: node.stanford_opportunity.sum_opp_year
+field_name: sum_opp_year
+entity_type: node
+bundle: stanford_opportunity
+label: Year
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
