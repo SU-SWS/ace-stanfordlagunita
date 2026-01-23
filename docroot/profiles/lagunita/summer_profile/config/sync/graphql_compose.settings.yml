@@ -854,6 +854,12 @@ field_config:
         enabled: true
       su_opp_units:
         enabled: true
+      sum_opp_year:
+        enabled: true
+      sum_opp_month:
+        enabled: true
+      sum_opp_day:
+        enabled: true
     stanford_page:
       body:
         enabled: true
