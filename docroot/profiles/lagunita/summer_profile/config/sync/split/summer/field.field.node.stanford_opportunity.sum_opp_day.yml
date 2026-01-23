@@ -1,0 +1,21 @@
+uuid: 35159717-2cdf-44a3-88da-9d7887b067bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_opp_day
+    - node.type.stanford_opportunity
+  module:
+    - options
+id: node.stanford_opportunity.sum_opp_day
+field_name: sum_opp_day
+entity_type: node
+bundle: stanford_opportunity
+label: Day
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

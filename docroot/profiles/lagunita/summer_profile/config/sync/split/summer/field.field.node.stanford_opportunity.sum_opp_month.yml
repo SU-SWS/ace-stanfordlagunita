@@ -1,0 +1,21 @@
+uuid: db96dcec-45af-4526-b377-a22d37c746c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_opp_month
+    - node.type.stanford_opportunity
+  module:
+    - options
+id: node.stanford_opportunity.sum_opp_month
+field_name: sum_opp_month
+entity_type: node
+bundle: stanford_opportunity
+label: Month
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
