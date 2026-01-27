@@ -50,13 +50,10 @@ removing:
         children:
           - su_opp_application_deadline
   content:
+    su_opp_application_deadline:
+      type: datetime_default
+      weight: 9
     su_opp_cta_url:
       weight: 12
     su_opp_tags:
       weight: 10
-    su_opp_application_deadline:
-      type: datetime_default
-      weight: 9
-      region: content
-      settings: {  }
-      third_party_settings: {  }
