@@ -83,7 +83,8 @@
         "drupal/coder": "*"
     },
     "conflict": {
-        "drupal/drupal": "*"
+        "drupal/drupal": "*",
+        "drupal/colorbox": ">=2.2.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
