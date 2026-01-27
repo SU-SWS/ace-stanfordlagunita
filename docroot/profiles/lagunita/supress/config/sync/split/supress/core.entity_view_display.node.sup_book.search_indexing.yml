@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_indexing
     - field.field.node.sup_book.body
     - field.field.node.sup_book.su_metatags
+    - field.field.node.sup_book.sup_book_alt_format
     - field.field.node.sup_book.sup_book_author_info
     - field.field.node.sup_book.sup_book_authors
     - field.field.node.sup_book.sup_book_authors_full
@@ -36,6 +37,7 @@ dependencies:
     - field.field.node.sup_book.sup_book_reviews
     - field.field.node.sup_book.sup_book_sales_rank
     - field.field.node.sup_book.sup_book_series
+    - field.field.node.sup_book.sup_book_sort_author
     - field.field.node.sup_book.sup_book_subjects
     - field.field.node.sup_book.sup_book_subtitle
     - field.field.node.sup_book.sup_book_tags
@@ -66,14 +68,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  sup_book_avail_desc:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
   sup_book_awards:
     type: entity_reference_entity_view
     label: hidden
@@ -89,13 +83,6 @@ content:
         label_value: ''
         label_tag: ''
     weight: 2
-    region: content
-  sup_book_reviews:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
     region: content
   sup_book_subtitle:
     type: string
@@ -113,6 +100,7 @@ hidden:
   sup_book_author_info: true
   sup_book_authors: true
   sup_book_authors_full: true
+  sup_book_avail_desc: true
   sup_book_catalog_season_yyyy: true
   sup_book_cloth_sale_percent: true
   sup_book_cloth_sale_price: true
@@ -140,6 +128,7 @@ hidden:
   sup_book_pub_year_first: true
   sup_book_publisher: true
   sup_book_related_titles: true
+  sup_book_reviews: true
   sup_book_sales_rank: true
   sup_book_series: true
   sup_book_sort_author: true
