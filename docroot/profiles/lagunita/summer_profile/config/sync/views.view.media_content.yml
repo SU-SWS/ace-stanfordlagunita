@@ -29,7 +29,7 @@ dependencies:
     - user
     - views_taxonomy_term_name_depth
 id: media_content
-label: 'Media Content'
+label: 'Audio/Visual Content'
 module: views
 description: ''
 tag: ''
@@ -256,7 +256,7 @@ display:
         - 'config:field.storage.node.su_media_audio_video'
   after_first_media:
     id: after_first_media
-    display_title: 'After First Media'
+    display_title: 'After First Audio/Visual'
     display_plugin: block
     position: 4
     display_options:
@@ -510,10 +510,8 @@ display:
           click_sort_column: value
           type: time_duration
           settings:
-            style: long
-            units:
-              - hour
-              - min
+            style: short
+            units: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -694,6 +692,52 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        mid:
+          id: mid
+          table: media_field_data
+          field: mid
+          relationship: su_media_audio_video
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: mid
+          plugin_id: numeric
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: '0'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -735,14 +779,14 @@ display:
           field: su_media_audio_video
           relationship: none
           group_type: group
-          admin_label: 'su_media_audio_video: Media'
+          admin_label: 'su_media_audio_video: Audio/Visual'
           plugin_id: standard
           required: false
       display_description: ''
       header: {  }
       display_extenders: {  }
-      block_description: 'After First Media'
-      block_category: 'Media Lists (Views)'
+      block_description: 'After First Audio/Visual'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -843,7 +887,7 @@ display:
         arguments: false
       display_description: ''
       block_description: 'Default List'
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -1017,7 +1061,7 @@ display:
           exposed: true
           expose:
             operator_id: su_media_filters_target_id_op
-            label: 'Media Filters'
+            label: 'Audio/Visual Filters'
             description: ''
             use_operator: false
             operator: su_media_filters_target_id_op
@@ -1274,7 +1318,7 @@ display:
       style:
         type: html_list
         options:
-          row_class: 'su-margin-bottom-4 su-padding-bottom-4'
+          row_class: 'su-margin-bottom-3 su-padding-bottom-3'
           default_row_class: 1
           uses_fields: 0
           type: ul
@@ -1293,7 +1337,7 @@ display:
         arguments: false
       display_description: ''
       block_description: 'Default List'
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -1307,7 +1351,7 @@ display:
         - 'config:field.storage.node.su_media_audio_video'
   person_list:
     id: person_list
-    display_title: 'Person Media'
+    display_title: 'Person Audio/Visual'
     display_plugin: block
     position: 8
     display_options:
@@ -1387,7 +1431,7 @@ display:
         arguments: false
       display_description: ''
       display_extenders: {  }
-      block_description: 'Person: Related Media'
+      block_description: 'Person: Related Audio/Visual'
       block_category: 'People Lists (Views)'
       block_hide_empty: true
     cache_metadata:
@@ -1632,7 +1676,7 @@ display:
           required: true
       display_description: ''
       display_extenders: {  }
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -1758,7 +1802,7 @@ display:
           settings:
             view_mode: default
             link: false
-            image_style: large
+            image_style: card_1x_478x318
             remove_alt: false
           group_column: target_id
           group_columns: {  }
@@ -1809,7 +1853,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: div
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -2186,11 +2230,14 @@ display:
           break_phrase: false
           not: true
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: su-list-unstyled
       row:
         type: fields
         options:
@@ -2209,7 +2256,7 @@ display:
         filter_groups: true
       display_description: ''
       display_extenders: {  }
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
