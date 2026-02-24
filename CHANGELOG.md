@@ -1,5 +1,9 @@
 # Lagunita
 
+3.2.0
+--------------------------------------------------------------------------------
+- Stanford profile updates, new content type, new layout options.
+
 3.1.2
 --------------------------------------------------------------------------------
 - Comment out anes to skip it in tests and deployments
