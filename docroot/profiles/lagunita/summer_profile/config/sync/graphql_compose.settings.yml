@@ -129,10 +129,18 @@ entity_config:
     tiny_blur:
       enabled: true
   layout:
+    left_anchor_nav:
+      enabled: false
+    left_anchor_no_nav:
+      enabled: false
     news_spotlight:
       enabled: true
     stanford_basic_page_full:
       enabled: true
+    top_anchor_nav:
+      enabled: false
+    top_anchor_nav_full_width:
+      enabled: false
   media:
     embeddable:
       enabled: true
@@ -227,13 +235,11 @@ entity_config:
       edges_enabled: true
       routes_enabled: true
     sum_summer_courses:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
-      routes_enabled: true
+      enabled: false
   paragraph:
     stanford_accordion:
       enabled: true
+      query_load_enabled: true
     stanford_banner:
       enabled: true
       query_load_enabled: true
@@ -248,6 +254,7 @@ entity_config:
       query_load_enabled: true
     stanford_filtered_lists:
       enabled: true
+      query_load_enabled: true
     stanford_gallery:
       enabled: true
       query_load_enabled: true
@@ -273,36 +280,36 @@ entity_config:
       query_load_enabled: true
     stanford_stat_card:
       enabled: true
+      query_load_enabled: true
     stanford_wysiwyg:
       enabled: true
       query_load_enabled: true
     sum_accordions:
-      enabled: true
+      enabled: false
     sum_arc_banner:
-      enabled: true
+      enabled: false
     sum_at_a_glance:
-      enabled: true
+      enabled: false
     sum_calculator:
-      enabled: true
+      enabled: false
     sum_carousel:
-      enabled: true
+      enabled: false
     sum_course_filter:
-      enabled: true
+      enabled: false
     sum_facts:
-      enabled: true
+      enabled: false
     sum_pill_banner:
-      enabled: true
+      enabled: false
     sum_slide_teaser:
-      enabled: true
+      enabled: false
     sum_testimonial:
-      enabled: true
+      enabled: false
     sum_top_banner:
-      enabled: true
+      enabled: false
     sum_user_favorites:
-      enabled: true
+      enabled: false
     sum_video:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
   redirect:
     redirect:
       enabled: true
@@ -313,9 +320,7 @@ entity_config:
       enabled: true
   summer_entity:
     global_msg:
-      enabled: true
-      query_load_enabled: true
-      edges_enabled: true
+      enabled: false
   taxonomy_term:
     basic_page_types:
       enabled: true
@@ -400,23 +405,17 @@ entity_config:
       enabled: true
       query_load_enabled: true
     su_shared_tags:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
     sum_course_availability:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
     sum_course_grading:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
     sum_course_interest_area:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
     sum_course_learner:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
     sum_course_population:
-      enabled: true
-      query_load_enabled: true
+      enabled: false
 field_config:
   block_content:
     stanford_component_block:
@@ -539,6 +538,8 @@ field_config:
         enabled: true
       su_site_algolia:
         enabled: true
+      su_site_algolia_fed:
+        enabled: true
       su_site_algolia_id:
         enabled: true
       su_site_algolia_index:
@@ -549,15 +550,15 @@ field_config:
         enabled: true
       su_site_dropdowns:
         enabled: true
+      su_site_header_button:
+        enabled: true
+      su_site_header_links:
+        enabled: true
       su_site_menu_levels:
         enabled: true
       su_site_name:
         enabled: true
       su_site_nobots:
-        enabled: true
-      sum_site_header_prim:
-        enabled: true
-      sum_site_header_sec:
         enabled: true
     stanford_global_message:
       su_global_msg_enabled:
@@ -667,8 +668,6 @@ field_config:
         enabled: true
       su_video_duration:
         enabled: true
-      su_video_subtitles:
-        enabled: true
       sum_video_file:
         enabled: true
   node:
@@ -720,6 +719,8 @@ field_config:
         enabled: true
       su_event_keywords:
         enabled: true
+      su_event_localist_id:
+        enabled: true
       su_event_location:
         enabled: true
       su_event_map_link:
@@ -738,8 +739,6 @@ field_config:
         enabled: true
       su_event_type:
         enabled: true
-      su_event_localist_id:
-        enabled: true
     stanford_event_series:
       su_event_series_components:
         enabled: true
@@ -755,6 +754,8 @@ field_config:
       body:
         enabled: true
       su_media_audio_video:
+        enabled: true
+      su_media_category:
         enabled: true
       su_media_date:
         enabled: true
@@ -776,11 +777,11 @@ field_config:
         enabled: true
       su_media_source:
         enabled: true
+      su_media_subtitles:
+        enabled: true
       su_media_transcript:
         enabled: true
       su_media_types:
-        enabled: true
-      su_media_category:
         enabled: true
     stanford_news:
       body:
@@ -815,6 +816,8 @@ field_config:
         enabled: true
     stanford_opportunity:
       body:
+        enabled: true
+      layout_builder__layout:
         enabled: true
       su_opp_application_deadline:
         enabled: true
@@ -853,12 +856,6 @@ field_config:
       su_opp_type:
         enabled: true
       su_opp_units:
-        enabled: true
-      sum_opp_year:
-        enabled: true
-      sum_opp_month:
-        enabled: true
-      sum_opp_day:
         enabled: true
     stanford_page:
       body:
@@ -967,53 +964,6 @@ field_config:
       su_publication_image:
         enabled: true
       su_publication_topics:
-        enabled: true
-    sum_summer_courses:
-      sum_course_availability:
-        enabled: true
-      sum_course_catalog_number:
-        enabled: true
-      sum_course_class_number:
-        enabled: true
-      sum_course_course_cost:
-        enabled: true
-      sum_course_cross_listing:
-        enabled: true
-      sum_course_description:
-        enabled: true
-      sum_course_end_date:
-        enabled: true
-      sum_course_format:
-        enabled: true
-      sum_course_grading:
-        enabled: true
-      sum_course_image:
-        enabled: true
-      sum_course_instructors:
-        enabled: true
-      sum_course_interest_area:
-        enabled: true
-      sum_course_learner:
-        enabled: true
-      sum_course_length:
-        enabled: true
-      sum_course_notes:
-        enabled: true
-      sum_course_population:
-        enabled: true
-      sum_course_prerequisites:
-        enabled: true
-      sum_course_schedule:
-        enabled: true
-      sum_course_start_date:
-        enabled: true
-      sum_course_syllabus_file:
-        enabled: true
-      sum_course_unique_import_id:
-        enabled: true
-      sum_course_units:
-        enabled: true
-      sum_students_also_studied:
         enabled: true
   paragraph:
     stanford_accordion:
@@ -1151,145 +1101,6 @@ field_config:
     stanford_wysiwyg:
       su_wysiwyg_text:
         enabled: true
-    sum_accordions:
-      sum_accordions_accords:
-        enabled: true
-      sum_accordions_desc:
-        enabled: true
-      sum_accordions_heading:
-        enabled: true
-    sum_arc_banner:
-      sum_arc_description:
-        enabled: true
-      sum_arc_image:
-        enabled: true
-      sum_arc_superhead:
-        enabled: true
-    sum_at_a_glance:
-      sum_at_a_glance_descrip:
-        enabled: true
-      sum_at_a_glance_facts:
-        enabled: true
-      sum_at_a_glance_headline:
-        enabled: true
-      sum_at_a_glance_link:
-        enabled: true
-    sum_calculator:
-      sum_calc_app_fee:
-        enabled: true
-      sum_calc_books:
-        enabled: true
-      sum_calc_commute_help:
-        enabled: true
-      sum_calc_documents:
-        enabled: true
-      sum_calc_grad_app_help:
-        enabled: true
-      sum_calc_grad_unit_cost:
-        enabled: true
-      sum_calc_grad_unit_help:
-        enabled: true
-      sum_calc_health_fee:
-        enabled: true
-      sum_calc_high_app_help:
-        enabled: true
-      sum_calc_high_unit_cost:
-        enabled: true
-      sum_calc_high_unit_help:
-        enabled: true
-      sum_calc_house_fees:
-        enabled: true
-      sum_calc_house_help:
-        enabled: true
-      sum_calc_i20_fee:
-        enabled: true
-      sum_calc_i20_help:
-        enabled: true
-      sum_calc_ins_help:
-        enabled: true
-      sum_calc_ins_wave_help:
-        enabled: true
-      sum_calc_insurance:
-        enabled: true
-      sum_calc_mail_fee:
-        enabled: true
-      sum_calc_meals:
-        enabled: true
-      sum_calc_prog_fee:
-        enabled: true
-      sum_calc_tech_fee:
-        enabled: true
-      sum_calc_ug_app_help:
-        enabled: true
-      sum_calc_ug_unit_cost:
-        enabled: true
-      sum_calc_ug_unit_help:
-        enabled: true
-    sum_carousel:
-      sum_carousel_description:
-        enabled: true
-      sum_carousel_header:
-        enabled: true
-      sum_carousel_link:
-        enabled: true
-      sum_carousel_slides:
-        enabled: true
-      sum_carousel_superheader:
-        enabled: true
-    sum_facts:
-      sum_facts_label:
-        enabled: true
-      sum_facts_text:
-        enabled: true
-    sum_pill_banner:
-      sum_pill_banner_bkgd:
-        enabled: true
-      sum_pill_banner_cards:
-        enabled: true
-      sum_pill_banner_descrip:
-        enabled: true
-      sum_pill_banner_headline:
-        enabled: true
-      sum_pill_banner_link:
-        enabled: true
-      sum_pill_banner_suphead:
-        enabled: true
-    sum_slide_teaser:
-      sum_slide_teaser_entity:
-        enabled: true
-    sum_testimonial:
-      sum_testimonial_affi:
-        enabled: true
-      sum_testimonial_bkg_img:
-        enabled: true
-      sum_testimonial_button:
-        enabled: true
-      sum_testimonial_descrip:
-        enabled: true
-      sum_testimonial_heading:
-        enabled: true
-      sum_testimonial_hs_video:
-        enabled: true
-      sum_testimonial_name:
-        enabled: true
-      sum_testimonial_type:
-        enabled: true
-      sum_testimonial_univ:
-        enabled: true
-    sum_top_banner:
-      sum_top_banner_cards:
-        enabled: true
-      sum_top_banner_descrip:
-        enabled: true
-      sum_top_banner_image:
-        enabled: true
-      sum_top_banner_link:
-        enabled: true
-      sum_top_banner_superhead:
-        enabled: true
-    sum_video:
-      sum_video_video:
-        enabled: true
   su_policy_log:
     su_policy_log:
       su_policy_date:
@@ -1299,14 +1110,6 @@ field_config:
       su_policy_public:
         enabled: true
       su_policy_title:
-        enabled: true
-  summer_entity:
-    global_msg:
-      sum_global_msg_body:
-        enabled: true
-      sum_global_msg_hide:
-        enabled: true
-      sum_global_msg_link:
         enabled: true
   taxonomy_term:
     su_course_subjects:
