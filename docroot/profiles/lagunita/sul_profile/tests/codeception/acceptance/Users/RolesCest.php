@@ -219,7 +219,7 @@ class RolesCest {
   #[CodeceptionAttribute\Examples(role: 'contributor', access: TRUE)]
   #[CodeceptionAttribute\Examples(role: 'site_manager', access: TRUE)]
   #[CodeceptionAttribute\Examples(role: 'administrator', access: TRUE)]
-  public function testMediaContentCreateAccess(AcceptanceTester $I, Example $example) {
+  protected function testMediaContentCreateAccess(AcceptanceTester $I, Example $example) {
     $I->logInWithRole($example['role']);
     $I->amOnPage('/node/add/stanford_media');
     if ($example['access']) {
@@ -253,7 +253,7 @@ class RolesCest {
   #[CodeceptionAttribute\Group('media-content')]
   #[CodeceptionAttribute\Examples(role: 'contributor', access: FALSE)]
   #[CodeceptionAttribute\Examples(role: 'site_manager', access: TRUE)]
-  public function testMediaTaxonomyAccess(AcceptanceTester $I, Example $example) {
+  protected function testMediaTaxonomyAccess(AcceptanceTester $I, Example $example) {
     $node = $I->createEntity([
       'type' => 'stanford_media',
       'title' => $this->faker->words(3, TRUE),
