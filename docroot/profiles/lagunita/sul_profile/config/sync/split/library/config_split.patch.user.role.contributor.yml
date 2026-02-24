@@ -28,6 +28,7 @@ removing:
       - pathauto
       - scheduler
   permissions:
+    - 'create stanford_media content'
     - 'create stanford_publication content'
     - 'edit any embeddable media'
     - 'edit any file media'
