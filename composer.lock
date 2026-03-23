@@ -4707,6 +4707,10 @@
                     "name": "Contributors",
                     "homepage": "https://www.drupal.org/node/1162080/committers",
                     "role": "Contributors"
+                },
+                {
+                    "name": "niklan",
+                    "homepage": "https://www.drupal.org/user/1450656"
                 }
             ],
             "description": "Provides a field type with two separate sub-fields.",

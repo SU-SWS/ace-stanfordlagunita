@@ -65,6 +65,7 @@ complete_list:
   - 'field.storage.media.sul_*'
   - 'media.type.sul_*'
 partial_list:
+  - field.field.paragraph.stanford_banner.su_banner_body
   - field_ui.settings
   - layout_paragraphs.settings
   - '*su_*'
