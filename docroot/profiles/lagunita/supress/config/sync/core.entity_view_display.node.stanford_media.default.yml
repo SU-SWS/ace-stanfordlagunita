@@ -5,26 +5,31 @@ dependencies:
   config:
     - field.field.node.stanford_media.body
     - field.field.node.stanford_media.su_media_audio_video
+    - field.field.node.stanford_media.su_media_category
     - field.field.node.stanford_media.su_media_date
     - field.field.node.stanford_media.su_media_dek
     - field.field.node.stanford_media.su_media_duration
     - field.field.node.stanford_media.su_media_episode
+    - field.field.node.stanford_media.su_media_filters
     - field.field.node.stanford_media.su_media_image
     - field.field.node.stanford_media.su_media_person
     - field.field.node.stanford_media.su_media_season
     - field.field.node.stanford_media.su_media_series
     - field.field.node.stanford_media.su_media_source
+    - field.field.node.stanford_media.su_media_subtitles
     - field.field.node.stanford_media.su_media_transcript
     - field.field.node.stanford_media.su_media_types
     - node.type.stanford_media
     - views.view.media_content
   module:
     - datetime
+    - file
     - jumpstart_ui
     - layout_builder
     - layout_builder_restrictions
     - layout_library
     - link
+    - options
     - printable
     - text
     - user
@@ -34,27 +39,6 @@ third_party_settings:
     enabled: true
     allow_custom: false
     sections:
-      -
-        layout_id: jumpstart_ui_one_column
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-          extra_classes: ''
-          centered: centered-container
-          columns: default
-        components:
-          8337a414-ee34-42a0-a5f3-789835ae3017:
-            uuid: 8337a414-ee34-42a0-a5f3-789835ae3017
-            region: main
-            configuration:
-              id: jumpstart_ui_skipnav_main_anchor
-              label: 'Main content anchor target'
-              label_display: '0'
-              provider: jumpstart_ui
-              context_mapping: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
       -
         layout_id: media_content
         layout_settings:
@@ -120,7 +104,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:stanford_media:su_media_season'
               label: Season
-              label_display: '0'
+              label_display: visible
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
@@ -146,7 +130,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:stanford_media:su_media_episode'
               label: Episode
-              label_display: '0'
+              label_display: visible
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
@@ -248,7 +232,7 @@ third_party_settings:
             region: eyebrow
             configuration:
               id: 'field_block:node:stanford_media:su_media_types'
-              label: 'Media Types'
+              label: 'Audio/Visual Types'
               label_display: '0'
               provider: layout_builder
               context_mapping:
@@ -417,17 +401,6 @@ third_party_settings:
             weight: 2
             additional: {  }
         third_party_settings: {  }
-      -
-        layout_id: jumpstart_ui_two_column
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-          extra_classes: ''
-          centered: centered-container
-          orientation: left
-          force_regions: 0
-        components: {  }
-        third_party_settings: {  }
   layout_library:
     enable: false
   layout_builder_restrictions:
@@ -449,7 +422,7 @@ third_party_settings:
       - 'Inline blocks'
       - 'Jumpstart UI'
       - 'Lists (Views)'
-      - 'Media Lists (Views)'
+      - 'Audio/Visual Lists (Views)'
       - Menus
       - 'News Lists (Views)'
       - 'Opportunities (Views)'
@@ -550,6 +523,13 @@ content:
         class: ''
     weight: 1
     region: main
+  su_media_category:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: main
   su_media_date:
     type: datetime_default
     label: above
@@ -628,6 +608,14 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 7
+    region: main
+  su_media_subtitles:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 15
     region: main
   su_media_transcript:
     type: text_default

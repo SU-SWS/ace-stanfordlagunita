@@ -10,4 +10,7 @@ adding:
     sul_event__image: true
     sul_event_alt_loc_link: true
     sul_event_experience: true
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_event.su_event_localist_id

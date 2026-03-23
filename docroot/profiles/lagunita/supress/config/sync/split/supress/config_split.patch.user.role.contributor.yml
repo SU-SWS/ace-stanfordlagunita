@@ -36,6 +36,7 @@ removing:
   permissions:
     - 'add content to books'
     - 'create stanford_event content'
+    - 'create stanford_media content'
     - 'create stanford_news content'
     - 'create stanford_opportunity content'
     - 'create stanford_person content'

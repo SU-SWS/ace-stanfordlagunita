@@ -8,8 +8,11 @@ dependencies:
     - field.storage.media.su_media_description
     - field.storage.media.su_video_duration
     - field.storage.node.su_media_audio_video
+    - field.storage.node.su_media_category
     - field.storage.node.su_media_date
+    - field.storage.node.su_media_dek
     - field.storage.node.su_media_image
+    - field.storage.node.su_media_series
     - field.storage.node.su_person_short_title
     - node.type.stanford_media
     - taxonomy.vocabulary.media_content_filters
@@ -18,6 +21,7 @@ dependencies:
     - graphql_compose_views
     - media
     - node
+    - options
     - stanford_fields
     - stanford_media
     - stanford_profile_helper
@@ -25,7 +29,7 @@ dependencies:
     - user
     - views_taxonomy_term_name_depth
 id: media_content
-label: 'Media Content'
+label: 'Audio/Visual Content'
 module: views
 description: ''
 tag: ''
@@ -252,7 +256,7 @@ display:
         - 'config:field.storage.node.su_media_audio_video'
   after_first_media:
     id: after_first_media
-    display_title: 'After First Media'
+    display_title: 'After First Audio/Visual'
     display_plugin: block
     position: 4
     display_options:
@@ -506,10 +510,8 @@ display:
           click_sort_column: value
           type: time_duration
           settings:
-            style: long
-            units:
-              - hour
-              - min
+            style: short
+            units: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -690,6 +692,52 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        mid:
+          id: mid
+          table: media_field_data
+          field: mid
+          relationship: su_media_audio_video
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: mid
+          plugin_id: numeric
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: '0'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -731,14 +779,14 @@ display:
           field: su_media_audio_video
           relationship: none
           group_type: group
-          admin_label: 'su_media_audio_video: Media'
+          admin_label: 'su_media_audio_video: Audio/Visual'
           plugin_id: standard
           required: false
       display_description: ''
       header: {  }
       display_extenders: {  }
-      block_description: 'After First Media'
-      block_category: 'Media Lists (Views)'
+      block_description: 'After First Audio/Visual'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -839,7 +887,7 @@ display:
         arguments: false
       display_description: ''
       block_description: 'Default List'
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -1013,7 +1061,7 @@ display:
           exposed: true
           expose:
             operator_id: su_media_filters_target_id_op
-            label: 'Media Filters'
+            label: 'Audio/Visual Filters'
             description: ''
             use_operator: false
             operator: su_media_filters_target_id_op
@@ -1270,7 +1318,7 @@ display:
       style:
         type: html_list
         options:
-          row_class: 'su-margin-bottom-4 su-padding-bottom-4'
+          row_class: 'su-margin-bottom-3 su-padding-bottom-3'
           default_row_class: 1
           uses_fields: 0
           type: ul
@@ -1289,7 +1337,7 @@ display:
         arguments: false
       display_description: ''
       block_description: 'Default List'
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -1303,7 +1351,7 @@ display:
         - 'config:field.storage.node.su_media_audio_video'
   person_list:
     id: person_list
-    display_title: 'Person Media'
+    display_title: 'Person Audio/Visual'
     display_plugin: block
     position: 8
     display_options:
@@ -1383,7 +1431,7 @@ display:
         arguments: false
       display_description: ''
       display_extenders: {  }
-      block_description: 'Person: Related Media'
+      block_description: 'Person: Related Audio/Visual'
       block_category: 'People Lists (Views)'
       block_hide_empty: true
     cache_metadata:
@@ -1628,7 +1676,7 @@ display:
           required: true
       display_description: ''
       display_extenders: {  }
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -1754,7 +1802,7 @@ display:
           settings:
             view_mode: default
             link: false
-            image_style: large
+            image_style: card_1x_478x318
             remove_alt: false
           group_column: target_id
           group_columns: {  }
@@ -1805,7 +1853,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: div
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -1885,6 +1933,194 @@ display:
           settings:
             timezone_override: ''
             format_type: stanford_month_two_digit_day_year
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        su_media_dek:
+          id: su_media_dek
+          table: node__su_media_dek
+          field: su_media_dek
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        su_media_series:
+          id: su_media_series
+          table: node__su_media_series
+          field: su_media_series
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        su_media_category:
+          id: su_media_category
+          table: node__su_media_category
+          field: su_media_category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<div class="{{ su_media_category__value }}">{{ su_media_category }} </div>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1994,11 +2230,14 @@ display:
           break_phrase: false
           not: true
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: su-list-unstyled
       row:
         type: fields
         options:
@@ -2017,7 +2256,7 @@ display:
         filter_groups: true
       display_description: ''
       display_extenders: {  }
-      block_category: 'Media Lists (Views)'
+      block_category: 'Audio/Visual Lists (Views)'
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -2028,5 +2267,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.su_media_category'
         - 'config:field.storage.node.su_media_date'
+        - 'config:field.storage.node.su_media_dek'
         - 'config:field.storage.node.su_media_image'
+        - 'config:field.storage.node.su_media_series'

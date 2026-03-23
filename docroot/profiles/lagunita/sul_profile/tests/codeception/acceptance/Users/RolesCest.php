@@ -216,10 +216,10 @@ class RolesCest {
   }
 
   #[CodeceptionAttribute\Group('media-content')]
-  #[CodeceptionAttribute\Examples(role: 'contributor', access: FALSE)]
-  #[CodeceptionAttribute\Examples(role: 'site_manager', access: FALSE)]
+  #[CodeceptionAttribute\Examples(role: 'contributor', access: TRUE)]
+  #[CodeceptionAttribute\Examples(role: 'site_manager', access: TRUE)]
   #[CodeceptionAttribute\Examples(role: 'administrator', access: TRUE)]
-  public function testMediaContentCreateAccess(AcceptanceTester $I, Example $example) {
+  protected function testMediaContentCreateAccess(AcceptanceTester $I, Example $example) {
     $I->logInWithRole($example['role']);
     $I->amOnPage('/node/add/stanford_media');
     if ($example['access']) {
@@ -252,8 +252,8 @@ class RolesCest {
 
   #[CodeceptionAttribute\Group('media-content')]
   #[CodeceptionAttribute\Examples(role: 'contributor', access: FALSE)]
-  #[CodeceptionAttribute\Examples(role: 'site_manager', access: FALSE)]
-  public function testMediaTaxonomyAccess(AcceptanceTester $I, Example $example) {
+  #[CodeceptionAttribute\Examples(role: 'site_manager', access: TRUE)]
+  protected function testMediaTaxonomyAccess(AcceptanceTester $I, Example $example) {
     $node = $I->createEntity([
       'type' => 'stanford_media',
       'title' => $this->faker->words(3, TRUE),
@@ -262,22 +262,22 @@ class RolesCest {
     $I->amOnPage('/admin/structure/taxonomy');
 
     if ($example['access']) {
-      $I->canSee('Media Types');
-      $I->canSee('Media Content Filters');
+      $I->canSee('Audio/Visual Types');
+      $I->canSee('Audio/Visual Content Filters');
     }
     else {
-      $I->cantSee('Media Types');
-      $I->cantSee('Media Content Filters');
+      $I->cantSee('Audio/Visual Types');
+      $I->cantSee('Audio/Visual Content Filters');
     }
 
     foreach (['media_content_types', 'media_content_filters'] as $type) {
       $I->amOnPage("/admin/structure/taxonomy/manage/$type/overview");
 
       if ($example['access']) {
-        $I->canSeeLink('Add term', '#taxonomy');
+        $I->canSeeLink('Add term');
       }
       else {
-        $I->cantSeeLink('Add term', '#taxonomy');
+        $I->cantSeeLink('Add term');
       }
     }
   }

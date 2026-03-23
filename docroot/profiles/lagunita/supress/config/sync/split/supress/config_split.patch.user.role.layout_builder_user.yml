@@ -1,0 +1,7 @@
+adding: {  }
+removing:
+  dependencies:
+    config:
+      - core.entity_view_display.node.stanford_media.default
+  permissions:
+    - 'configure editable stanford_media node layout overrides'

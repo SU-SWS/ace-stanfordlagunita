@@ -19,6 +19,7 @@ dependencies:
     - field.storage.node.su_page_image
     - field.storage.node.su_person_type_group
     - field.storage.node.su_publication_topics
+    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_media
     - node.type.stanford_news
@@ -2412,8 +2413,8 @@ display:
           plugin_id: bundle
           operator: in
           value:
-            stanford_media: stanford_media
-          group: 1
+            stanford_course: stanford_course
+          group: 0
           exposed: false
           expose:
             operator_id: type_1_op
@@ -3489,11 +3490,11 @@ display:
         - 'config:field.storage.node.su_imported'
   manage_media:
     id: manage_media
-    display_title: Media
+    display_title: Audio/Visual
     display_plugin: page
     position: 3
     display_options:
-      title: Media
+      title: Audio/Visual
       fields:
         views_bulk_operations_bulk_form:
           id: views_bulk_operations_bulk_form
@@ -3601,7 +3602,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Media Types'
+          label: 'Audio/Visual Types'
           exclude: false
           alter:
             alter_text: false
@@ -4054,7 +4055,7 @@ display:
           exposed: true
           expose:
             operator_id: su_media_types_target_id_op
-            label: 'Media Types'
+            label: 'Audio/Visual Types'
             description: ''
             use_operator: false
             operator: su_media_types_target_id_op
@@ -4253,12 +4254,12 @@ display:
           admin_label: ''
           plugin_id: result
           empty: true
-          content: "<p>Media can be used for creating series/collections of videos, podcasts, or embedded content from the Stanford Digital Repository. Media is similar to News in that it has a published date, information about related people, and more.</p>\r\n<p><a href=\"https://sitesuserguide.stanford.edu/build/page-types/media-content-type\">Learn more about the Media content type</a></p>\r\n<hr/>\r\n<p>Total number of News items in this list: <strong>@total items</strong></p>"
+          content: "<p>Audio/Visual can be used for creating series/collections of videos, podcasts, or embedded content from the Stanford Digital Repository. Audio/Visual is similar to News in that it has a published date, information about related people, and more.</p>\r\n<p><a href=\"https://sitesuserguide.stanford.edu/build/page-types/media-content-type\">Learn more about the Audio/Visual content type</a></p>\r\n<hr/>\r\n<p>Total number of News items in this list: <strong>@total items</strong></p>"
       display_extenders: {  }
       path: admin/content/media-content
       menu:
         type: tab
-        title: 'Manage Media'
+        title: 'Manage Audio/Visual'
         description: ''
         weight: 0
         expanded: false

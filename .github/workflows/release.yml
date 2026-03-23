@@ -53,4 +53,5 @@ jobs:
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           ssh-keyscan -t rsa svn-23450.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
           composer install -n &&
+          git reset --hard &&
           drush sws:artifact:deploy --tag=$(date +'%Y-%m-%d')"_"${{ steps.tag.outputs.tag }} --no-interaction
