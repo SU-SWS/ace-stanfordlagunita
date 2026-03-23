@@ -3,11 +3,17 @@ adding:
     module:
       - change_labels
       - link_attributes
+      - maxlength
   content:
     status:
       weight: 4
     su_banner_body:
       weight: 2
+      third_party_settings:
+        maxlength:
+          maxlength_js: 350
+          maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+          maxlength_js_enforce: false
     su_banner_button:
       type: link_attributes
       weight: 3
