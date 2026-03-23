@@ -1,0 +1,4 @@
+adding:
+  description: 'The main content area for the banner. Text appears in an opaque box over the image. Text should not exceed 350 characters to ensure correct display within the image area.'
+removing:
+  description: 'The main content area for the banner. Shows up in an opaque box over the image. '
