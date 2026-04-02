@@ -1,0 +1,4 @@
+adding:
+  targetBundle: _disabled
+removing:
+  targetBundle: stanford_page
