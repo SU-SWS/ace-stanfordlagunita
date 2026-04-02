@@ -9,23 +9,27 @@ use Codeception\Attribute\Group;
  * Anchor nav tests.
  */
 #[Group('anchor-nav')]
-class AnchorNavCest {
+class AnchorNavCest
+{
 
   /**
    * @var \Faker\Generator
    */
   protected $faker;
 
-  public function __construct() {
+  public function __construct()
+  {
     $this->faker = Factory::create();
   }
 
-  #[Examples(layout: 'left_anchor_nav')]
-  #[Examples(layout: 'left_anchor_no_nav')]
+  // IDM - Temporarily remove the new layouts. See SUL23-984
+  // #[Examples(layout: 'left_anchor_nav')]
+  // #[Examples(layout: 'left_anchor_no_nav')]
   #[Examples(layout: 'stanford_basic_page_full')]
-  #[Examples(layout: 'top_anchor_nav')]
-  #[Examples(layout: 'top_anchor_nav_full_width')]
-  public function testAnchorNav(FunctionalTester $I, Example $example) {
+  // #[Examples(layout: 'top_anchor_nav')]
+  // #[Examples(layout: 'top_anchor_nav_full_width')]
+  public function testAnchorNav(FunctionalTester $I, Example $example)
+  {
     $parentTitle = $this->faker->unique()->uuid();
     $parent = $I->createEntity([
       'title' => $this->faker->unique()->uuid(),
@@ -93,5 +97,4 @@ class AnchorNavCest {
       $I->canSeeLink($heading, "#$heading");
     }
   }
-
 }
