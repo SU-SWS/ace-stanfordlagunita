@@ -25,9 +25,9 @@ class AnchorNavCest
   // IDM - Temporarily remove the new layouts. See SUL23-984
   // #[Examples(layout: 'left_anchor_nav')]
   // #[Examples(layout: 'left_anchor_no_nav')]
-  #[Examples(layout: 'stanford_basic_page_full')]
   // #[Examples(layout: 'top_anchor_nav')]
   // #[Examples(layout: 'top_anchor_nav_full_width')]
+  #[Examples(layout: 'stanford_basic_page_full')]
   public function testAnchorNav(FunctionalTester $I, Example $example)
   {
     $parentTitle = $this->faker->unique()->uuid();
