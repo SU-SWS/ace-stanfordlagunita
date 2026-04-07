@@ -1,5 +1,11 @@
 # Lagunita
 
+3.2.1
+--------------------------------------------------------------------------------
+- SUL23-969: Image banner text: Add help text to authoring environment
+- SUM: Corrected graphql compose settings
+- Git reset when deploying tag
+
 3.2.0
 --------------------------------------------------------------------------------
 - Stanford profile updates, new content type, new layout options.
