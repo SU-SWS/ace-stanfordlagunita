@@ -108,7 +108,7 @@ class SupressSocialMedia extends SourcePluginBase implements ContainerFactoryPlu
     $token = $this->pressHelper->getApiToken();
     $allRecords = [];
     if (!$token) {
-      return \ArrayIterator($allRecords);
+      return new \ArrayIterator($allRecords);
     }
 
     foreach ($this->pressHelper->getMigrationUrls($url) as $pagedUrl) {
