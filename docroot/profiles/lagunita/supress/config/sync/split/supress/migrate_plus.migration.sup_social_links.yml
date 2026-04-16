@@ -6,15 +6,14 @@ id: sup_social_links
 class: null
 field_plugin_method: null
 cck_plugin_method: null
-migration_tags: null
+migration_tags: {  }
 migration_group: sup_press
 label: 'Press Social Links'
 source:
-  plugin: url
-  orphan_action: delete
-  data_fetcher_plugin: file
-  urls:
-    - 'public://social-links.json'
+  plugin: supress_social_media
+  orphan_action: unpublish
+  url: 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records'
+  data_parser_plugin: supress_social_json
   fields:
     -
       name: workId
@@ -66,6 +65,9 @@ process:
   sup_ancillary_weight:
     plugin: default_value
     default_value: 99
+  status:
+    plugin: default_value
+    default_value: 1
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book_ancillary
