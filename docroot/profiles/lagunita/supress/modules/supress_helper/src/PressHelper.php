@@ -135,14 +135,22 @@ final class PressHelper implements PressHelperInterface {
     }
     $token = $this->getApiToken();
 
-    $response = json_decode((string) $this->httpClient->request('GET', $recordsUrl, [
-      'query' => ['_limit' => 1],
-      'headers' => [
-        'Content-Type' => 'application/json',
-        'Authorization' => 'Bearer ' . $token,
-      ],
-      'timeout' => 15,
-    ])->getBody(), TRUE);
+    if (!$token) {
+      return 0;
+    }
+    try {
+      $response = json_decode((string) $this->httpClient->request('GET', $recordsUrl, [
+        'query' => ['_limit' => 1],
+        'headers' => [
+          'Content-Type' => 'application/json',
+          'Authorization' => 'Bearer ' . $token,
+        ],
+        'timeout' => 15,
+      ])->getBody(), TRUE);
+    }
+    catch (\Throwable $e) {
+      return 0;
+    }
 
     $this->cache->set($cacheKey, $response['response']['dataInfo']['totalRecordCount'], time() + 60 * 60 * 24 * 7, ['press-record-count']);
     return $response['response']['dataInfo']['totalRecordCount'] ?: 0;

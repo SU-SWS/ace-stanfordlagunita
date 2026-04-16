@@ -36,7 +36,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @code
  * source:
  *   plugin: supress_social_media
- *   url: 'https://example.com/fmi/data/v2/databases/Web/layouts/SocialMedia/records'
+ *   url:
+ *   'https://example.com/fmi/data/v2/databases/Web/layouts/SocialMedia/records'
  * @endcode
  */
 #[MigrateSource(id: 'supress_social_media')]
@@ -105,8 +106,11 @@ class SupressSocialMedia extends SourcePluginBase implements ContainerFactoryPlu
   protected function initializeIterator(): \ArrayIterator {
     $url = $this->configuration['url'] ?? self::ENDPOINT;
     $token = $this->pressHelper->getApiToken();
-
     $allRecords = [];
+    if (!$token) {
+      return \ArrayIterator($allRecords);
+    }
+
     foreach ($this->pressHelper->getMigrationUrls($url) as $pagedUrl) {
       $response = $this->httpClient->request('GET', $pagedUrl, [
         'headers' => ['Authorization' => 'Bearer ' . $token],

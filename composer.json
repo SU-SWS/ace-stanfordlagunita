@@ -70,6 +70,7 @@
         "drupal/core": "^11",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-recommended": "^11",
+        "drupal/js_cookie": "^2.0",
         "drush/drush": "^13.6",
         "su-sws/stanford_profile": "12.x-dev",
         "su-sws/stanford_profile_helper": "10.x-dev",

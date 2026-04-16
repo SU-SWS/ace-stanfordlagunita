@@ -13,7 +13,6 @@ source:
   plugin: supress_social_media
   orphan_action: unpublish
   url: 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records'
-  data_parser_plugin: supress_social_json
   fields:
     -
       name: workId
