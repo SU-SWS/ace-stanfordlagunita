@@ -555,9 +555,9 @@ process:
       source: imprint
     -
       plugin: entity_lookup
-      entity_type: sup_imprints
+      entity_type: taxonomy_term
       bundle_key: vid
-      bundle: sup_series
+      bundle: sup_imprints
       value_key: name
       ignore_case: true
 destination:
