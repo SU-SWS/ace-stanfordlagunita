@@ -21,9 +21,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor
@@ -45,7 +45,7 @@ jobs:
           drush sws:source:tests:phpunit --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal --with-coverage &&
           drush sws:tests:phpunit-coverage-check artifacts/phpunit/coverage/xml --clover-file=artifacts/phpunit/coverage/clover.xml -n
       - name: Save Test Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: unit-tests-results
@@ -58,9 +58,9 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor
@@ -122,9 +122,9 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor
@@ -162,7 +162,7 @@ jobs:
             exit 1
           fi
       - name: Save Test Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ${{ matrix.site }}-${{ matrix.suite }}-${{ matrix.shard }}-tests-results
@@ -199,9 +199,9 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor
@@ -250,9 +250,9 @@ jobs:
     container:
       image: pookmish/drupal8ci:php8.3
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor
