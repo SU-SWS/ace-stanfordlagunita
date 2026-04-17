@@ -13,9 +13,9 @@ jobs:
       ACQUIA_APP_KEY: ${{secrets.ACQUIA_APP_KEY}}
       ACQUIA_APP_SECRET: ${{secrets.ACQUIA_APP_SECRET}}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor
@@ -51,9 +51,9 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Restore Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             vendor

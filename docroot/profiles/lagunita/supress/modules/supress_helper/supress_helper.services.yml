@@ -1,0 +1,4 @@
+services:
+  supress_helper:
+    class: Drupal\supress_helper\PressHelper
+    arguments: ['@http_client', '@config_pages.loader', '@queue', '@cache.default']

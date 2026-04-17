@@ -6,7 +6,7 @@ id: sup_import_books
 class: null
 field_plugin_method: null
 cck_plugin_method: null
-migration_tags: null
+migration_tags: {  }
 migration_group: sup_press
 label: 'Press Books'
 source:
@@ -238,6 +238,10 @@ source:
       name: subjects_press_all
       label: subjects_press_all
       selector: fieldData/subjects_press_all
+    -
+      name: imprint
+      label: imprint
+      selector: fieldData/imprint
   ids:
     work_id_number:
       type: integer
@@ -544,6 +548,18 @@ process:
   sup_book_pdf_format: pdf
   sup_book_epub_format: epub
   sup_book_alt_format: alt_format
+  sup_book_imprint:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: imprint
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: sup_imprints
+      value_key: name
+      ignore_case: true
 destination:
   plugin: 'entity:node'
   default_bundle: sup_book

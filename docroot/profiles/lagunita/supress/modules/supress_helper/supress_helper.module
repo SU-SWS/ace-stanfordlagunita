@@ -29,48 +29,10 @@ function supress_helper_migration_plugins_alter(array &$migrations) {
     if (!str_starts_with($firstUrl, 'https://memento.stanford.edu')) {
       continue;
     }
-
-    $urls = [];
-    $totalRecords = _supress_helper_book_record_count($firstUrl);
-    for ($i = 0; $i < $totalRecords; $i += 1000) {
-      $query = http_build_query([
-        '_limit' => 1000,
-        '_offset' => $i + 1,
-      ]);
-      $urls[] = "$firstUrl?$query";
-    }
-    $migration['source']['urls'] = $urls;
+    /** @var \Drupal\supress_helper\PressHelperInterface $service */
+    $service = \Drupal::service('supress_helper');
+    $migration['source']['urls'] = $service->getMigrationUrls($firstUrl);
   }
-}
-
-/**
- * Get the total number of records from the api.
- *
- * @param string $recordsUrl
- *   Base API path.
- *
- * @return int
- */
-function _supress_helper_book_record_count(string $recordsUrl): int {
-  $cache = \Drupal::cache();
-  $cacheKey = 'press-record-count:' . substr(md5($recordsUrl), 0, 5);
-  if ($data = $cache->get($cacheKey)) {
-    return $data->data;
-  }
-
-  $client = \Drupal::httpClient();
-  $token = _supress_helper_get_api_token();
-  $response = json_decode((string) $client->request('GET', $recordsUrl, [
-    'query' => ['_limit' => 1],
-    'headers' => [
-      'Content-Type' => 'application/json',
-      'Authorization' => 'Bearer ' . $token,
-    ],
-    'timeout' => 15,
-  ])->getBody(), TRUE);
-
-  $cache->set($cacheKey, $response['response']['dataInfo']['totalRecordCount'], time() + 60 * 60 * 24 * 7, ['press-record-count']);
-  return $response['response']['dataInfo']['totalRecordCount'] ?: 0;
 }
 
 /**
@@ -116,171 +78,9 @@ function supress_helper_media_access(MediaInterface $media, $operation, AccountI
  * Implements hook_cron().
  */
 function supress_helper_cron() {
-  $token = _supress_helper_get_api_token();
-  if (!$token) {
-    return;
-  }
-  _supress_helper_build_social_links($token);
-  _supress_helper_queue_cover_images($token);
-}
-
-/**
- * Build the social links json used for the migration.
- *
- * @param string $token
- *   Auth token.
- */
-function _supress_helper_build_social_links(string $token) {
-  $client = \Drupal::httpClient();
-  $page_num = 0;
-  $fetch_more = TRUE;
-  $pages = [];
-
-  while ($fetch_more) {
-    try {
-      $offset = $page_num ? '&_offset=' . $page_num * 1000 + 1 : '';
-      $page = json_decode((string) $client->request('GET', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records?_limit=1000' . $offset, [
-        'headers' => [
-          'Content-Type' => 'application/json',
-          'Authorization' => 'Bearer ' . $token,
-        ],
-        'timeout' => 15,
-      ])->getBody(), TRUE);
-      $pages = [...$pages, ...$page['response']['data']];
-    }
-    catch (\Exception $e) {
-      // Once the offset returns 0 records, the API will throw an error.
-      $fetch_more = FALSE;
-    }
-    $page_num++;
-  }
-
-  $data = [];
-  foreach ($pages as $item) {
-    $item = $item['fieldData'];
-    if (empty($item['title'])) {
-      continue;
-    }
-    $work_id = $item['work_id_number'];
-    $item_html = "<h2><a href=\"{$item['url']}\">{$item['title']}</a></h2><p>";
-    if (!empty($item['description'])) {
-      preg_match_all('/(<iframe.*?>)/', $item['description'], $iframes);
-      if (!empty($iframes[1])) {
-        foreach ($iframes[1] as $iframe) {
-          $modified_iframe = $iframe;
-          if (!str_contains(' title="', $iframe)) {
-            $iframe_title = Html::escape($item['title']);
-            $modified_iframe = str_replace('<iframe ', "<iframe title=\"$iframe_title\" ", $modified_iframe);
-          }
-          $item['description'] = str_replace($iframe, $modified_iframe, $item['description']);
-        }
-      }
-      $item_html .= $item['description'];
-    }
-    if (!empty($item['source'])) {
-      $item_html .= "<br />&mdash;{$item['source']}";
-    }
-    $item_html .= "</p>";
-    $item_html = str_replace('<p></p>', '', $item_html);
-
-    if (isset($data[$work_id])) {
-      $data[$work_id]['html'] .= $item_html;
-    }
-    else {
-      $data[$work_id] = [
-        'workId' => $work_id,
-        'html' => $item_html,
-      ];
-    }
-  }
-  $data = array_values($data);
-  file_put_contents('public://social-links.json', json_encode(['response' => ['data' => $data]], JSON_PRETTY_PRINT));
-}
-
-/**
- * Queue up cover images for future cron jobs.
- *
- * @param string $token
- *   Auth token.
- */
-function _supress_helper_queue_cover_images(string $token) {
-  /** @var \Drupal\Core\Queue\QueueFactory $queue_factory */
-  $queue_factory = \Drupal::service('queue');
-  $queue = $queue_factory->get('press_cover_downloader');
-  if ($queue->numberOfItems() > 0) {
-    return;
-  }
-
-  $client = \Drupal::httpClient();
-
-  // Post a query to find the covers that are flagged to be updated. The API
-  // is slow to respond so limiting to only 100 items will make it more
-  // reliable.
-  try {
-    $covers_response = (string) $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Covers/_find?_limit=100', [
-      'headers' => [
-        'Content-Type' => 'application/json',
-        'Authorization' => 'Bearer ' . $token,
-      ],
-      'body' => json_encode(['query' => [['flag' => '=x']]]),
-      'timeout' => 60,
-    ])->getBody();
-  }
-  catch (\Exception $e) {
-    // When there are no covers that match, the response is a 500 "error" even
-    // though it should actually be a 204. Only log when the message doesn't
-    // mention "no records".
-    if (!str_contains($e->getMessage(), 'No records match the request')) {
-      throw $e;
-    }
-    return;
-  }
-
-  // Create a cron queue task for each cover.
-  $covers = json_decode($covers_response, TRUE, 512, JSON_THROW_ON_ERROR);
-  foreach ($covers['response']['data'] as $cover) {
-    $queue->createItem($cover['recordId']);
-  }
-}
-
-/**
- * Get the filemaker api token.
- *
- * @return string|false
- *   Token or false and any failure.
- */
-function _supress_helper_get_api_token(): string|false {
-  $cache = \Drupal::cache();
-  if ($cached_item = $cache->get('filemaker_api_token')) {
-    return $cached_item->data;
-  }
-  $config_page_loader = \Drupal::service('config_pages.loader');
-  $client_id = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_user', 0, 'value');
-  $client_secret = $config_page_loader->getValue('stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value');
-
-  if (
-    !$client_id ||
-    !$client_secret ||
-    InstallerKernel::installationAttempted()
-  ) {
-    return FALSE;
-  }
-
-  try {
-    $client = \Drupal::httpClient();
-    // Grab the OAuth-like token from the api.
-    $token_response = $client->request('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', [
-      'headers' => ['Content-Type' => 'application/json'],
-      'auth' => [$client_id, $client_secret],
-    ]);
-    $token = json_decode((string) $token_response->getBody(), TRUE, 512, JSON_THROW_ON_ERROR);
-    $token = $token['response']['token'];
-    $cache->set('filemaker_api_token', $token, time() + 60 * 5);
-    return $token;
-  }
-  catch (\Exception $e) {
-    return FALSE;
-  }
+  /** @var \Drupal\supress_helper\PressHelperInterface $service */
+  $service = \Drupal::service('supress_helper');
+  $service->queueCoverImages();
 }
 
 /**
@@ -448,7 +248,10 @@ function _supress_get_ebook_retailers() {
  * @see https://help.claris.com/en/data-api-guide/content/perform-find-request.html
  */
 function _supress_search_filemaker(string $endpoint, array $body, int $limit = 1000): array {
-  $token = _supress_helper_get_api_token();
+  /** @var \Drupal\supress_helper\PressHelperInterface $service */
+  $service = \Drupal::service('supress_helper');
+  $token = $service->getApiToken();
+
   if (!$token) {
     return [];
   }
