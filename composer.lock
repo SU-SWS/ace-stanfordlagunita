@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3e0433ddf7d22496e81820ce5b24014",
+    "content-hash": "51aed02f5d02d42686f8033406a4df5b",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -22483,16 +22483,16 @@
         },
         {
             "name": "typhonius/acquia-php-sdk-v2",
-            "version": "3.7.3",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/typhonius/acquia-php-sdk-v2.git",
-                "reference": "eca4b1d1b250ff7a29f9a2fab9a6fc3d558c22b8"
+                "reference": "ad549fa3b1277c4c86148593124769ba363d5d4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/typhonius/acquia-php-sdk-v2/zipball/eca4b1d1b250ff7a29f9a2fab9a6fc3d558c22b8",
-                "reference": "eca4b1d1b250ff7a29f9a2fab9a6fc3d558c22b8",
+                "url": "https://api.github.com/repos/typhonius/acquia-php-sdk-v2/zipball/ad549fa3b1277c4c86148593124769ba363d5d4f",
+                "reference": "ad549fa3b1277c4c86148593124769ba363d5d4f",
                 "shasum": ""
             },
             "require": {
@@ -22534,7 +22534,7 @@
             "description": "A PHP SDK for Acquia CloudAPI v2",
             "support": {
                 "issues": "https://github.com/typhonius/acquia-php-sdk-v2/issues",
-                "source": "https://github.com/typhonius/acquia-php-sdk-v2/tree/3.7.3"
+                "source": "https://github.com/typhonius/acquia-php-sdk-v2/tree/3.8.0"
             },
             "funding": [
                 {
@@ -22542,7 +22542,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-09-08T15:28:31+00:00"
+            "time": "2026-04-13T19:20:36+00:00"
         },
         {
             "name": "wa72/htmlpagedom",
@@ -26657,11 +26657,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.49",
+            "version": "2.1.50",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d0082955396e7f5ba19cf298224b85e1099f0ed8",
-                "reference": "d0082955396e7f5ba19cf298224b85e1099f0ed8",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
+                "reference": "d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
                 "shasum": ""
             },
             "require": {
@@ -26706,7 +26706,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-16T21:10:58+00:00"
+            "time": "2026-04-17T13:10:32+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -28644,16 +28644,16 @@
         },
         {
             "name": "su-sws/drupal-dev",
-            "version": "10.0.0",
+            "version": "11.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/drupal-dev.git",
-                "reference": "e3720b52c9cb599b346ebdb543f434a110e9d318"
+                "reference": "4fce2742dbfa3b7f4a414b5d73ea87a69fb9feab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/drupal-dev/zipball/e3720b52c9cb599b346ebdb543f434a110e9d318",
-                "reference": "e3720b52c9cb599b346ebdb543f434a110e9d318",
+                "url": "https://api.github.com/repos/SU-SWS/drupal-dev/zipball/4fce2742dbfa3b7f4a414b5d73ea87a69fb9feab",
+                "reference": "4fce2742dbfa3b7f4a414b5d73ea87a69fb9feab",
                 "shasum": ""
             },
             "require": {
@@ -28662,22 +28662,15 @@
                 "codeception/module-phpbrowser": ">=1.0",
                 "codeception/module-webdriver": ">=1.0",
                 "drupal/config_inspector": ">=1.0",
-                "drupal/core": ">=9.0",
-                "drupal/core-dev": ">=9.0",
+                "drupal/core": ">=11.0",
+                "drupal/core-dev": ">=11.0",
                 "drupal/devel": ">=4.0",
                 "drupal/devel_php": ">=1.1",
                 "drupal/masquerade": ">=2.0",
                 "league/oauth2-client": ">=2.4",
-                "su-sws/stanford-caravan": "10.x-dev"
+                "su-sws/stanford-caravan": "11.x-dev"
             },
             "type": "metapackage",
-            "extra": {
-                "patches": {
-                    "drupal/simplesamlphp_auth": {
-                        "https://www.drupal.org/project/simplesamlphp_auth/issues/2124117": "https://www.drupal.org/files/issues/2020-02-01/2124117-6-reroll-14.patch"
-                    }
-                }
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
@@ -28691,22 +28684,22 @@
             "description": "Drupal dev dependencies manager",
             "support": {
                 "issues": "https://github.com/SU-SWS/drupal-dev/issues",
-                "source": "https://github.com/SU-SWS/drupal-dev/tree/10.0.0"
+                "source": "https://github.com/SU-SWS/drupal-dev/tree/11.0.0"
             },
-            "time": "2023-09-09T00:16:09+00:00"
+            "time": "2025-08-15T18:29:49+00:00"
         },
         {
             "name": "su-sws/stanford-caravan",
-            "version": "10.x-dev",
+            "version": "11.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford-caravan.git",
-                "reference": "20a80ffb2217b7e6436ee3bb8c6bcc92fff31dba"
+                "reference": "05f03ea3bb28038b09ea2cdf69ae37b1cb285d98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/20a80ffb2217b7e6436ee3bb8c6bcc92fff31dba",
-                "reference": "20a80ffb2217b7e6436ee3bb8c6bcc92fff31dba",
+                "url": "https://api.github.com/repos/SU-SWS/stanford-caravan/zipball/05f03ea3bb28038b09ea2cdf69ae37b1cb285d98",
+                "reference": "05f03ea3bb28038b09ea2cdf69ae37b1cb285d98",
                 "shasum": ""
             },
             "require": {
@@ -28714,7 +28707,6 @@
                 "fakerphp/faker": "^1.19",
                 "league/html-to-markdown": "^5.1"
             },
-            "default-branch": true,
             "bin": [
                 "sws-caravan"
             ],
@@ -28734,9 +28726,9 @@
             "description": "Tools for testing Drupal 8 on CI/CD",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford-caravan/issues",
-                "source": "https://github.com/SU-SWS/stanford-caravan/tree/10.x"
+                "source": "https://github.com/SU-SWS/stanford-caravan/tree/11.x"
             },
-            "time": "2025-08-08T20:42:58+00:00"
+            "time": "2026-01-08T19:35:38+00:00"
         },
         {
             "name": "symfony/browser-kit",

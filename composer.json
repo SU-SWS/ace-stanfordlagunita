@@ -78,7 +78,7 @@
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "su-sws/drupal-dev": "^10"
+        "su-sws/drupal-dev": "^11"
     },
     "replace": {
         "drupal/coder": "*"
