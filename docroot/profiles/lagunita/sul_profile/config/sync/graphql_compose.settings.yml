@@ -127,6 +127,10 @@ entity_config:
     tiny_blur:
       enabled: true
   layout:
+    left_anchor_nav:
+      enabled: false
+    left_anchor_no_nav:
+      enabled: false
     news_spotlight:
       enabled: true
     stanford_basic_page_full:
@@ -138,6 +142,10 @@ entity_config:
     sul_news_side_nav:
       enabled: false
     sul_side_nav:
+      enabled: false
+    top_anchor_nav:
+      enabled: false
+    top_anchor_nav_full_width:
       enabled: false
   media:
     embeddable:
@@ -273,7 +281,7 @@ entity_config:
       enabled: true
       query_load_enabled: true
     stanford_layout:
-      enabled: false
+      enabled: true
     stanford_lists:
       enabled: true
       query_load_enabled: true
@@ -699,8 +707,6 @@ field_config:
         enabled: true
       su_event_alt_loc:
         enabled: true
-      sul_event_alt_loc_link:
-        enabled: true
       su_event_audience:
         enabled: true
       su_event_components:
@@ -720,6 +726,8 @@ field_config:
       su_event_groups:
         enabled: true
       su_event_keywords:
+        enabled: true
+      su_event_localist_id:
         enabled: true
       su_event_location:
         enabled: true
@@ -741,9 +749,9 @@ field_config:
         enabled: true
       sul_event__image:
         enabled: true
-      sul_event_experience:
+      sul_event_alt_loc_link:
         enabled: true
-      su_event_localist_id:
+      sul_event_experience:
         enabled: true
     stanford_event_series:
       su_event_series_components:
@@ -760,6 +768,8 @@ field_config:
       body:
         enabled: true
       su_media_audio_video:
+        enabled: true
+      su_media_category:
         enabled: true
       su_media_date:
         enabled: true
@@ -781,16 +791,16 @@ field_config:
         enabled: true
       su_media_source:
         enabled: true
+      su_media_subtitles:
+        enabled: true
       su_media_transcript:
         enabled: true
       su_media_types:
         enabled: true
-      su_media_category:
-        enabled: true
-      su_media_subtitles:
-        enabled: true
     stanford_news:
       body:
+        enabled: true
+      layout_selection:
         enabled: true
       su_news_banner:
         enabled: true
@@ -821,8 +831,6 @@ field_config:
       sul_rel_links:
         enabled: true
       sul_rel_links_heading:
-        enabled: true
-      layout_selection:
         enabled: true
     stanford_opportunity:
       body:
@@ -1013,8 +1021,6 @@ field_config:
       sul_rel_links:
         enabled: true
       sul_rel_links_heading:
-        enabled: true
-      field_menulink:
         enabled: true
     sul_study_place:
       sul_study__additional_info:

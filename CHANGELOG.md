@@ -1,5 +1,10 @@
 # Lagunita
 
+3.2.2
+--------------------------------------------------------------------------------
+- SUP: Improve social links by using a custom migrate source instead of json file
+- Updated dependencies
+
 3.2.1
 --------------------------------------------------------------------------------
 - SUL23-969: Image banner text: Add help text to authoring environment

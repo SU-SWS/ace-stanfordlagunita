@@ -18627,12 +18627,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "6ba35db61f331f69d9d08559c540b96aae58b28d"
+                "reference": "07c2bf8e01133fcc5294190aa1e02111cb4eca74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/6ba35db61f331f69d9d08559c540b96aae58b28d",
-                "reference": "6ba35db61f331f69d9d08559c540b96aae58b28d",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/07c2bf8e01133fcc5294190aa1e02111cb4eca74",
+                "reference": "07c2bf8e01133fcc5294190aa1e02111cb4eca74",
                 "shasum": ""
             },
             "require": {
@@ -18816,7 +18816,7 @@
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/12.x"
             },
-            "time": "2026-04-16T15:11:10+00:00"
+            "time": "2026-04-17T17:08:52+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -18824,12 +18824,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "e0cbdf314286b6ccc693096362978e0a10493fd7"
+                "reference": "6d2454dcf0c18b4e65c9142bb3648e415df854d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/e0cbdf314286b6ccc693096362978e0a10493fd7",
-                "reference": "e0cbdf314286b6ccc693096362978e0a10493fd7",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/6d2454dcf0c18b4e65c9142bb3648e415df854d4",
+                "reference": "6d2454dcf0c18b4e65c9142bb3648e415df854d4",
                 "shasum": ""
             },
             "require": {
@@ -18933,7 +18933,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2026-03-24T18:36:03+00:00"
+            "time": "2026-04-17T17:07:12+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
