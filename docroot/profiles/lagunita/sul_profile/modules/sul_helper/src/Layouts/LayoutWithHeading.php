@@ -2,7 +2,6 @@
 // sul_helper/src/Layouts/LayoutWithHeading.php
 
 namespace Drupal\sul_helper\Layouts;
-
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -38,6 +37,14 @@ trait LayoutWithHeading {
         ],
       ],
       '#weight' => -98,
+    ];
+
+    $form['display_heading_gradient'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display Heading Gradient Accent'),
+      '#description' => $this->t('Add a gradient accent line to the right of list heading.'),
+      '#default_value' => $this->configuration['display_heading_gradient'] ?? FALSE,
+      '#weight' => -97,
     ];
     
     return $form;
