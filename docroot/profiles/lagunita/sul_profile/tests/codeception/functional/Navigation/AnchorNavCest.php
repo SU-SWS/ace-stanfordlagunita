@@ -9,25 +9,26 @@ use Codeception\Attribute\Group;
  * Anchor nav tests.
  */
 #[Group('anchor-nav')]
-class AnchorNavCest {
+class AnchorNavCest
+{
 
   /**
    * @var \Faker\Generator
    */
   protected $faker;
 
-  public function __construct() {
+  public function __construct()
+  {
     $this->faker = Factory::create();
   }
 
   // IDM - New anchor nav layouts temporarily disabled for library. See SUL23-984
-  // #[Examples(layout: 'left_anchor_nav')]
-  // #[Examples(layout: 'left_anchor_no_nav')]
-  // #[Examples(layout: 'top_anchor_nav')]
-  // #[Examples(layout: 'top_anchor_nav_full_width')]
-  #[Examples(layout: 'sul_side_nav')]
+  #[Examples(layout: 'left_anchor_nav')]
+  #[Examples(layout: 'left_anchor_no_nav')]
+  #[Examples(layout: 'top_anchor_nav')]
+  #[Examples(layout: 'top_anchor_nav_full_width')]
   #[Examples(layout: 'stanford_basic_page_full')]
-  public function testAnchorNav(FunctionalTester $I, Example $example) {
+  private function testAnchorNav(FunctionalTester $I, Example $example) {
     $parentTitle = $this->faker->unique()->uuid();
     $parent = $I->createEntity([
       'title' => $this->faker->unique()->uuid(),
