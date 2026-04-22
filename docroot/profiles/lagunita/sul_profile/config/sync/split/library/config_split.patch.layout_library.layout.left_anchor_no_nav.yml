@@ -1,4 +1,4 @@
 adding:
-  targetBundle: _disabled
+  status: false
 removing:
-  targetBundle: stanford_page
+  status: true
