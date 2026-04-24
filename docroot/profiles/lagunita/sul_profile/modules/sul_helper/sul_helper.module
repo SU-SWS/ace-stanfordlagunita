@@ -213,6 +213,18 @@ function _sul_helper_basic_page_node_form_process(array $form, FormStateInterfac
 }
 
 /**
+ * Implements hook_field_widget_complete_WIDGET_TYPE_form_alter().
+ */
+function sul_helper_field_widget_complete_layout_library_icons_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  foreach (array_keys($field_widget_complete_form['widget']['#options']) as $layout_id) {
+    $config = \Drupal::config("layout_library.layout.$layout_id");
+    if ($config->get('id') && !$config->get('status')) {
+      unset($field_widget_complete_form['widget']['#options'][$layout_id]);
+    }
+  }
+}
+
+/**
  * Implements hook_field_widget_complete_form_alter().
  */
 function sul_helper_field_widget_complete_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {

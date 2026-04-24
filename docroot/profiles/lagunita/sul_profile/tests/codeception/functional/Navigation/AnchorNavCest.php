@@ -20,12 +20,13 @@ class AnchorNavCest {
     $this->faker = Factory::create();
   }
 
+  // IDM - New anchor nav layouts temporarily disabled for library. See SUL23-984
   #[Examples(layout: 'left_anchor_nav')]
   #[Examples(layout: 'left_anchor_no_nav')]
   #[Examples(layout: 'stanford_basic_page_full')]
   #[Examples(layout: 'top_anchor_nav')]
   #[Examples(layout: 'top_anchor_nav_full_width')]
-  public function testAnchorNav(FunctionalTester $I, Example $example) {
+  private function testAnchorNav(FunctionalTester $I, Example $example) {
     $parentTitle = $this->faker->unique()->uuid();
     $parent = $I->createEntity([
       'title' => $this->faker->unique()->uuid(),
@@ -93,5 +94,4 @@ class AnchorNavCest {
       $I->canSeeLink($heading, "#$heading");
     }
   }
-
 }
