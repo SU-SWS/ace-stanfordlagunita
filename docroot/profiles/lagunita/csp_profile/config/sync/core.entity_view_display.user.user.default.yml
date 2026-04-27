@@ -1,0 +1,28 @@
+uuid: dcca3c7a-774c-4bf3-9f34-ace097d8efe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.su_display_name
+  module:
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  su_display_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  search_api_excerpt: true

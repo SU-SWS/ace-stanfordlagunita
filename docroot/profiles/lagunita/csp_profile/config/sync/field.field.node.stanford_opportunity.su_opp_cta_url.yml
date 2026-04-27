@@ -1,0 +1,27 @@
+uuid: 491d8b27-49a7-4d16-be2f-f87b6bf9a17e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_opp_cta_url
+    - node.type.stanford_opportunity
+  module:
+    - link
+    - stanford_fields
+third_party_settings:
+  stanford_fields:
+    force_relative: true
+id: node.stanford_opportunity.su_opp_cta_url
+field_name: su_opp_cta_url
+entity_type: node
+bundle: stanford_opportunity
+label: 'Call to Action'
+description: 'Use this field to direct users to the next step for this opportunity. Links may be external to your site or internal. A button with this link will show in the sidebar on the individual opportunity page. Typical uses include registration links, application form links, schedule an appointment links, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

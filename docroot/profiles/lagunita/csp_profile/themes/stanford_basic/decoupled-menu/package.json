@@ -1,0 +1,42 @@
+{
+  "name": "preact-island-starter",
+  "version": "1.0.0",
+  "description": "No configuration starter project for Preact Island",
+  "license": "MIT",
+  "author": "Marcus Wood",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --env prod",
+    "codegen": "npx playwright codegen",
+    "dev": "webpack serve --env dev",
+    "test": "npx playwright test",
+    "test-headed": "npx playwright test --headed",
+    "test-headed-slow": "SLOW=true npx playwright test --headed",
+    "tsc": "tsc --noEmit -p tsconfig.app.json",
+    "prettier": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier-fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "jsona": "^1.12.1",
+    "preact": "10.20.2",
+    "styled-components": "^6.1.19",
+    "usehooks-ts": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/webpack": "^5.28.5",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.1",
+    "html-webpack-plugin": "^5.6.3",
+    "preact-island": "^1.2.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "packageManager": "yarn@4.9.2"
+}

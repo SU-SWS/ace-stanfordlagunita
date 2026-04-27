@@ -1,0 +1,487 @@
+uuid: 282be7f0-2802-4613-82f6-6318875d7499
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_indexing
+    - field.storage.node.su_basic_page_type
+    - field.storage.node.su_course_filters
+    - field.storage.node.su_course_subject
+    - field.storage.node.su_event_audience
+    - field.storage.node.su_event_date_time
+    - field.storage.node.su_event_subject
+    - field.storage.node.su_event_type
+    - field.storage.node.su_media_category
+    - field.storage.node.su_media_date
+    - field.storage.node.su_media_duration
+    - field.storage.node.su_media_episode
+    - field.storage.node.su_media_filters
+    - field.storage.node.su_media_season
+    - field.storage.node.su_media_series
+    - field.storage.node.su_media_types
+    - field.storage.node.su_news_spotlight_filters
+    - field.storage.node.su_news_topics
+    - field.storage.node.su_opp_tags
+    - field.storage.node.su_person_full_title
+    - field.storage.node.su_person_short_title
+    - field.storage.node.su_person_type_group
+    - field.storage.node.su_publication_topics
+    - field.storage.node.su_shared_tags
+    - search_api.server.algolia_search
+  module:
+    - node
+    - stanford_profile_helper
+    - taxonomy
+id: algolia_search
+name: 'Algolia Search'
+description: ''
+read_only: true
+field_settings:
+  basic_page_type:
+    label: 'Basic Page Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_basic_page_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_basic_page_type
+      module:
+        - taxonomy
+  byline:
+    label: Byline
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_news_byline]'
+  course_subject:
+    label: 'Course Subject » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_course_subject:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_course_subject
+      module:
+        - taxonomy
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  dek:
+    label: Dek
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_event_dek|node:su_media_dek|node:su_event_series_dek|node:su_news_dek]'
+  email:
+    label: Email
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_event_email|node:su_person_email]'
+  event_audience:
+    label: 'Audience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_event_audience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_event_audience
+      module:
+        - taxonomy
+  event_end:
+    label: 'Date & Time » End timestamp value'
+    datasource_id: 'entity:node'
+    property_path: 'su_event_date_time:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.su_event_date_time
+  event_start:
+    label: 'Date & Time'
+    datasource_id: 'entity:node'
+    property_path: su_event_date_time
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.su_event_date_time
+  event_subject:
+    label: 'Subject » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_event_subject:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_event_subject
+      module:
+        - taxonomy
+  event_type:
+    label: 'Event Types » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_event_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_event_type
+      module:
+        - taxonomy
+  filters_course:
+    label: 'Course Filters'
+    datasource_id: 'entity:node'
+    property_path: su_course_filters
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_course_filters
+  filters_media:
+    label: 'Audio/Visual Filters'
+    datasource_id: 'entity:node'
+    property_path: su_media_filters
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_media_filters
+  filters_opportunities:
+    label: 'Opportunity Tags/Filters'
+    datasource_id: 'entity:node'
+    property_path: su_opp_tags
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_opp_tags
+  filters_spotlights:
+    label: 'Spotlight Filters'
+    datasource_id: 'entity:node'
+    property_path: su_news_spotlight_filters
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_news_spotlight_filters
+  html:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: string
+    configuration:
+      roles:
+        - authenticated
+      view_mode:
+        'entity:node':
+          ':default': search_indexing
+          stanford_course: ':default'
+          stanford_event: ':default'
+          stanford_event_series: ':default'
+          stanford_media: ':default'
+          stanford_news: ':default'
+          stanford_opportunity: ':default'
+          stanford_page: ':default'
+          stanford_person: ':default'
+          stanford_policy: ':default'
+          stanford_publication: ':default'
+  media_date:
+    label: 'Published Date'
+    datasource_id: 'entity:node'
+    property_path: su_media_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.su_media_date
+  media_duration:
+    label: Duration
+    datasource_id: 'entity:node'
+    property_path: su_media_duration
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.su_media_duration
+  media_episode:
+    label: Episode
+    datasource_id: 'entity:node'
+    property_path: su_media_episode
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_media_episode
+  media_icon:
+    label: 'Media Icon'
+    datasource_id: 'entity:node'
+    property_path: su_media_category
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_media_category
+  media_season:
+    label: Season
+    datasource_id: 'entity:node'
+    property_path: su_media_season
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_media_season
+  media_series:
+    label: Series
+    datasource_id: 'entity:node'
+    property_path: su_media_series
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_media_series
+  media_type:
+    label: 'Media Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_media_types:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_media_types
+      module:
+        - taxonomy
+  news_type:
+    label: 'News Types » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_news_topics:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_news_topics
+      module:
+        - taxonomy
+  person_full_title:
+    label: 'Full Title'
+    datasource_id: 'entity:node'
+    property_path: su_person_full_title
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_person_full_title
+  person_short_title:
+    label: 'Short Title'
+    datasource_id: 'entity:node'
+    property_path: su_person_short_title
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_person_short_title
+  person_type:
+    label: 'Person Types & Groups » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_person_type_group:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_person_type_group
+      module:
+        - taxonomy
+  phone:
+    label: Phone
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_event_telephone]'
+  photo:
+    label: Photo
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_page_image:entity:field_media_image:large|node:su_media_image:entity:field_media_image:large|node:su_page_banner:entity:su_banner_image:entity:field_media_image:large|node:su_person_photo:entity:field_media_image:large|node:su_news_featured_media:entity:field_media_image:large|node:su_news_banner:entity:field_media_image:large|node:su_event_ext_image]'
+  publication_type:
+    label: 'Publication Types » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_publication_topics:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_publication_topics
+      module:
+        - taxonomy
+  shared_tags:
+    label: 'Shared Tags » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_shared_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_shared_tags
+      module:
+        - taxonomy
+  site_name:
+    label: 'Site Name'
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[config_page:stanford_basic_site_settings:su_site_algolia_fed_name|site:name]'
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  subheadline:
+    label: SubHeadline
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_event_subheadline|node:su_event_series_subheadline]'
+  summary:
+    label: Summary
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:su_page_description|node:summary]'
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content Type'
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:content-type:name]'
+  updated:
+    label: Updated
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  url:
+    label: 'Page URL'
+    property_path: custom_value
+    type: string
+    configuration:
+      value: '[node:url:absolute]'
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  decode_html_entities:
+    weights:
+      preprocess_index: -50
+    all_fields: 1
+    fields:
+      - basic_page_type
+      - byline
+      - course_subject
+      - dek
+      - email
+      - event_audience
+      - event_subject
+      - event_type
+      - html
+      - news_type
+      - person_full_title
+      - person_short_title
+      - person_type
+      - phone
+      - photo
+      - publication_type
+      - shared_tags
+      - subheadline
+      - summary
+      - title
+      - type
+      - url
+  entity_status: {  }
+  entity_type: {  }
+  html_filter:
+    weights:
+      preprocess_index: -48
+      preprocess_query: -6
+    all_fields: true
+    fields:
+      - basic_page_type
+      - byline
+      - course_subject
+      - dek
+      - email
+      - event_audience
+      - event_subject
+      - event_type
+      - filters_course
+      - filters_media
+      - filters_opportunities
+      - filters_spotlights
+      - html
+      - media_episode
+      - media_icon
+      - media_season
+      - media_series
+      - media_type
+      - news_type
+      - person_full_title
+      - person_short_title
+      - person_type
+      - phone
+      - photo
+      - publication_type
+      - shared_tags
+      - site_name
+      - subheadline
+      - summary
+      - title
+      - type
+      - url
+    title: false
+    alt: false
+    tags: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  space_tags:
+    weights:
+      preprocess_index: -49
+    all_fields: 1
+    fields:
+      - basic_page_type
+      - byline
+      - course_subject
+      - dek
+      - email
+      - event_audience
+      - event_subject
+      - event_type
+      - html
+      - news_type
+      - person_full_title
+      - person_short_title
+      - person_type
+      - phone
+      - photo
+      - publication_type
+      - shared_tags
+      - subheadline
+      - summary
+      - title
+      - type
+      - url
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: false
+  track_changes_in_references: true
+  algolia_index_name: ''
+  algolia_index_batch_deletion: '1'
+  object_id_field: uuid
+  algolia_index_list: ''
+server: algolia_search
