@@ -1,10 +1,10 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\csp_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\stanford_profile\Plugin\InstallTask\RouteRebuilder;
+use Drupal\csp_profile\Plugin\InstallTask\RouteRebuilder;
 
 /**
  * Class RouteRebuilderTest.
@@ -25,7 +25,7 @@ class RouteRebuilderTest extends KernelTestBase {
    */
   public function setup(): void {
     parent::setUp();
-    $this->setInstallProfile('stanford_profile');
+    $this->setInstallProfile('csp_profile');
     $this->installEntitySchema('user');
     $this->installEntitySchema('node');
     $this->installSchema('node', 'node_access');

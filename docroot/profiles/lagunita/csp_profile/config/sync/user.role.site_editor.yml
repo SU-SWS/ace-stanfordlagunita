@@ -50,7 +50,7 @@ dependencies:
     - pathauto
     - scheduler
     - stanford_policy
-    - stanford_profile
+    - csp_profile
     - stanford_publication
     - system
     - taxonomy

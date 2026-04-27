@@ -1,7 +1,0 @@
-{
-    "name": "su-sws/anes_profile",
-    "description": "'Installation profile for Anesthesia'",
-    "type": "drupal-custom-profile",
-    "minimum-stability": "dev",
-    "require": {}
-}

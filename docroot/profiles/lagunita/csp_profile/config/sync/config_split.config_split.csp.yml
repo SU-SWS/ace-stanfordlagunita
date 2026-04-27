@@ -1,0 +1,38 @@
+uuid: aa360a03-08c0-457c-b454-506928146405
+langcode: en
+dependencies: {  }
+id: csp
+label: Csp
+description: 'Configuration for Csp'
+weight: 0
+stackable: false
+no_patching: false
+storage: collection
+folder: profiles/lagunita/csp_profile/config/csp
+module: {  }
+theme: {  }
+complete_list:
+  - 'field.field.node.csp_*'
+  - 'field.field.media.csp_*'
+  - 'field.field.paragraph.csp_*'
+  - 'field.field.config_pages.csp_*'
+  - 'field.field.taxonomy_term.csp_*'
+  - 'field.storage.node.csp_*'
+  - 'field.storage.media.csp_*'
+  - 'field.storage.paragraph.csp_*'
+  - 'field.storage.config_pages.csp_*'
+  - 'field.storage.taxonomy_term.csp_*'
+  - 'node.type.csp_*'
+  - 'paragraphs.paragraphs_type.csp_*'
+  - 'taxonomy.vocabulary.csp_*'
+  - 'user.role.csp_*'
+  - 'views.view.csp_*'
+  - 'migrate_plus.migration_group.csp_*'
+  - 'migrate_plus.migration.csp_*'
+  - 'pathauto.pattern.csp_*'
+  - 'media.type.csp_*'
+  - 'metatag.metatag_defaults.node__csp_*'
+partial_list:
+  - '*su_*'
+  - '*stanford_*'
+  - 'user.role.*'

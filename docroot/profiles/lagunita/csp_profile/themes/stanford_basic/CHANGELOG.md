@@ -274,7 +274,7 @@ _Release Date: 2020-02-05_
 - Added default GitHub issue/feature/pull-request templates.
 - D8CORE-1099: Added z-index to the masthead to keep the shadow on top.
 - D8CORE-1231: Fixed bug on footer closing tag.
-- D8CORE-941: Moved WYSIWYG paragraph styles to stanford_profile where they belong.
+- D8CORE-941: Moved WYSIWYG paragraph styles to csp_profile where they belong.
 - Updated Decanter to version 6.0.1 which removed many layout templates from dist.
 
 8.x-4.0-alpha3

@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\Tests\stanford_profile\Kernel;
+namespace Drupal\Tests\csp_profile\Kernel;
 
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
 use Drupal\node\Entity\NodeType;
-use Drupal\stanford_profile\StanfordProfilePermissions;
+use Drupal\csp_profile\StanfordProfilePermissions;
 
 /**
  * Class StanfordProfilePermissionsTest.
