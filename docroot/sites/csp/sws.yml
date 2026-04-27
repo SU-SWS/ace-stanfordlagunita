@@ -1,0 +1,3 @@
+site:
+  profile: csp_profile
+  remote_alias: csp.prod

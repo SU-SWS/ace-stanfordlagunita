@@ -51,7 +51,7 @@
       * `sudo a2ensite lagunita`
       * `sudo service apache2 reload`
 1. Add the local URL's to your local hosts file.
-    * This will be different for Windows vs Linux vs MacOS. You'll want to point any local URL's (using the conventions setup) to your localhost. 
+    * This will be different for Windows vs Linux vs MacOS. You'll want to point any local URL's (using the conventions setup) to your localhost.
     * On Windows with WSL2 using the conventions in this file (`lagunita-*.test`) this looks like:
       ```
       ::1	lagunita-library.test
@@ -79,6 +79,6 @@ Because these are decoupled Drupal applications, each site has their own corresp
   * https://github.com/SU-SWS/sulgryphon-nextjs
   * https://github.com/SU-SWS/press-nextjs
   * https://github.com/SU-SWS/summer-nextjs
-  * https://github.com/SU-SWS/anes-nextjs
+  * https://github.com/SU-SWS/csp-nextjs
 
 The set up instructions will be included in those repositories.

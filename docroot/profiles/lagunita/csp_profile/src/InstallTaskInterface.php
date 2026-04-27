@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\stanford_profile;
+namespace Drupal\csp_profile;
 
 /**
  * Install task plugin interface.
  *
- * @package Drupal\stanford_profile
+ * @package Drupal\csp_profile
  */
 interface InstallTaskInterface {
 

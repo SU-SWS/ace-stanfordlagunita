@@ -10,9 +10,9 @@ Read these before setting up or developing:
 
 ## Sites
 
-| Site         | /sites path | Acquia Application   | Profile Name      | Front-End Repo                                    |
-|------------------|------------|---------------------|-------------------|---------------------------------------------------|
-| Anesthesiology   | `anes`       | `stanfordgryphon`   | `anes_profile`    | https://github.com/SU-SWS/anes-nextjs             |
-| Library          | `library`    | `stanfordlagunita`  | `sul_profile`     | https://github.com/SU-SWS/sulgryphon-nextjs       |
-| Summer           | `summer`     | `stanfordsummer`    | `summer_profile`  | https://github.com/SU-SWS/summer-nextjs           |
-| Press            | `supress`    | `stanfordpress`     | `supress`         | https://github.com/SU-SWS/supress-nextjs          |
+| Site               | /sites path | Acquia Application | Profile Name     | Front-End Repo                              |
+|--------------------|-------------|--------------------|------------------|---------------------------------------------|
+| Continuing studies | `csp`       | `[unknown]`        | `csp_profile`    | https://github.com/SU-SWS/csp-nextjs        |
+| Library            | `library`   | `stanfordlagunita` | `sul_profile`    | https://github.com/SU-SWS/sulgryphon-nextjs |
+| Summer             | `summer`    | `stanfordsummer`   | `summer_profile` | https://github.com/SU-SWS/summer-nextjs     |
+| Press              | `supress`   | `stanfordpress`    | `supress`        | https://github.com/SU-SWS/supress-nextjs    |

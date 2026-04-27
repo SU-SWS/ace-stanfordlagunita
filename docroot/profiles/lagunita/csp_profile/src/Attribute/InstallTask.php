@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\stanford_profile\Attribute;
+namespace Drupal\csp_profile\Attribute;
 
 use Drupal\Component\Plugin\Attribute\AttributeBase;
 

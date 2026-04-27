@@ -19,7 +19,7 @@ updates from the `stanford_profile`, use the following commands for each profile
 - `composer pull-sul`
 - `composer pull-press`
 - `composer pull-summer`
-- `composer pull-anes`
+- `composer pull-csp`
 
 Though there may be merge conflict in the process and will require manual attention. Most often there will be a merge
 conflict in the composer.json and the info.yml of each profile. The easiest way to resolve that is `git checkout --ours [path/to/file]`
@@ -43,7 +43,7 @@ The frontend is build using [NextJS](https://nextjs.org/) and is managed in the 
 - [su-sws/sulgryphon-nextjs](https://github.com/SU-SWS/sulgryphon-nextjs)
 - [su-sws/summer-nextjs](https://github.com/SU-SWS/summer-nextjs)
 - [su-sws/supress-nextjs](https://github.com/SU-SWS/supress-nextjs)
-- [su-sws/anes-nextjs](https://github.com/SU-SWS/anes-nextjs)
+- [su-sws/csp-nextjs](https://github.com/SU-SWS/csp-nextjs)
 
 See the documentation in those repositories for more information.
 

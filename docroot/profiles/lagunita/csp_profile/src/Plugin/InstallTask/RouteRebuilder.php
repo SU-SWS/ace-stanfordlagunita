@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\stanford_profile\Plugin\InstallTask;
+namespace Drupal\csp_profile\Plugin\InstallTask;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
-use Drupal\stanford_profile\Attribute\InstallTask;
-use Drupal\stanford_profile\InstallTaskBase;
+use Drupal\csp_profile\Attribute\InstallTask;
+use Drupal\csp_profile\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
