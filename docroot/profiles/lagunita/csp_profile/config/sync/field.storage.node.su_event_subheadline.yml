@@ -1,0 +1,21 @@
+uuid: 22f080de-bc55-412d-a39e-c1a84e54f49e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.su_event_subheadline
+field_name: su_event_subheadline
+entity_type: node
+type: string
+settings:
+  max_length: 140
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
