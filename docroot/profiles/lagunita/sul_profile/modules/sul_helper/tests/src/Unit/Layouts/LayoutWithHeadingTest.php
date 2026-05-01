@@ -81,6 +81,11 @@ class LayoutWithHeadingTest extends UnitTestCase {
     // Verify states for conditional visibility.
     $this->assertArrayHasKey('#states', $result['heading_level']);
     $this->assertArrayHasKey('visible', $result['heading_level']['#states']);
+
+    // Verify display_heading_gradient checkbox exists.
+    $this->assertArrayHasKey('display_heading_gradient', $result);
+    $this->assertEquals('checkbox', $result['display_heading_gradient']['#type']);
+    $this->assertFalse($result['display_heading_gradient']['#default_value']);
   }
 
   /**
@@ -96,6 +101,7 @@ class LayoutWithHeadingTest extends UnitTestCase {
     $this->mockLayout->configuration = [
       'heading' => 'Test Heading',
       'heading_level' => 'h3',
+      'display_heading_gradient' => TRUE,
     ];
 
     $result = $this->mockLayout->publicAddHeadingElement($form, $form_state);
@@ -103,6 +109,7 @@ class LayoutWithHeadingTest extends UnitTestCase {
     // Verify default values come from configuration.
     $this->assertEquals('Test Heading', $result['heading']['#default_value']);
     $this->assertEquals('h3', $result['heading_level']['#default_value']);
+    $this->assertTrue($result['display_heading_gradient']['#default_value']);
   }
 
   /**
@@ -115,11 +122,12 @@ class LayoutWithHeadingTest extends UnitTestCase {
     $form_state = $this->createMock(FormStateInterface::class);
 
     // Mock form state getValue method.
-    $form_state->expects($this->exactly(2))
+    $form_state->expects($this->exactly(3))
       ->method('getValue')
       ->willReturnMap([
         ['heading', 'My Section Heading'],
         ['heading_level', 'h4'],
+        ['display_heading_gradient', TRUE],
       ]);
 
     $this->mockLayout->publicSubmitHeadingForm($form, $form_state);
@@ -127,6 +135,7 @@ class LayoutWithHeadingTest extends UnitTestCase {
     // Verify configuration was set.
     $this->assertEquals('My Section Heading', $this->mockLayout->configuration['heading']);
     $this->assertEquals('h4', $this->mockLayout->configuration['heading_level']);
+    $this->assertTrue($this->mockLayout->configuration['display_heading_gradient']);
   }
 
   /**
