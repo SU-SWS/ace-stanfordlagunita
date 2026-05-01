@@ -56,5 +56,6 @@ trait LayoutWithHeading {
   protected function submitHeadingForm(array &$form, FormStateInterface $form_state) {
     $this->configuration['heading'] = $form_state->getValue('heading');
     $this->configuration['heading_level'] = $form_state->getValue('heading_level');
+    $this->configuration['display_heading_gradient'] = $form_state->getValue('display_heading_gradient');
   }
 }
