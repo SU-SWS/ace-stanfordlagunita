@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2deec8455aebae066c5d304eed75f74",
+    "content-hash": "d134211137cf3f51fc81e4ae6821a89b",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -18627,16 +18627,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "12.x-dev",
+            "version": "12.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "3af8f194651f19111b8f467d753a812fb0489e5f"
+                "reference": "ffbb3db831c39bbc45081a968c4b5315d90b6b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/3af8f194651f19111b8f467d753a812fb0489e5f",
-                "reference": "3af8f194651f19111b8f467d753a812fb0489e5f",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/ffbb3db831c39bbc45081a968c4b5315d90b6b62",
+                "reference": "ffbb3db831c39bbc45081a968c4b5315d90b6b62",
                 "shasum": ""
             },
             "require": {
@@ -18784,7 +18784,6 @@
             "conflict": {
                 "drupal/colorbox": ">=2.2.0"
             },
-            "default-branch": true,
             "type": "drupal-custom-profile",
             "extra": {
                 "drush": {
@@ -18819,22 +18818,22 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.x"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.2.2"
             },
-            "time": "2026-05-05T16:47:51+00:00"
+            "time": "2026-04-17T20:43:45+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "10.x-dev",
+            "version": "10.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "7700318bb93430bd90924d2a1ae8b925a7808dcc"
+                "reference": "5f6ea96089a4fc31f00159c4cb18f4217069a326"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/7700318bb93430bd90924d2a1ae8b925a7808dcc",
-                "reference": "7700318bb93430bd90924d2a1ae8b925a7808dcc",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/5f6ea96089a4fc31f00159c4cb18f4217069a326",
+                "reference": "5f6ea96089a4fc31f00159c4cb18f4217069a326",
                 "shasum": ""
             },
             "require": {
@@ -18901,7 +18900,6 @@
                 "su-sws/stanford_media": ">=10.0",
                 "su-sws/stanford_migrate": ">=8.4"
             },
-            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18936,9 +18934,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.2.2"
             },
-            "time": "2026-05-01T16:09:33+00:00"
+            "time": "2026-04-17T19:59:31+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -19131,16 +19129,16 @@
         },
         {
             "name": "symfony/cache-contracts",
-            "version": "v3.6.0",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache-contracts.git",
-                "reference": "5d68a57d66910405e5c0b63d6f0af941e66fc868"
+                "reference": "225e8a254166bd3442e370c6f50145465db63831"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/5d68a57d66910405e5c0b63d6f0af941e66fc868",
-                "reference": "5d68a57d66910405e5c0b63d6f0af941e66fc868",
+                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/225e8a254166bd3442e370c6f50145465db63831",
+                "reference": "225e8a254166bd3442e370c6f50145465db63831",
                 "shasum": ""
             },
             "require": {
@@ -19154,7 +19152,7 @@
                     "name": "symfony/contracts"
                 },
                 "branch-alias": {
-                    "dev-main": "3.6-dev"
+                    "dev-main": "3.7-dev"
                 }
             },
             "autoload": {
@@ -19187,7 +19185,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/cache-contracts/tree/v3.6.0"
+                "source": "https://github.com/symfony/cache-contracts/tree/v3.7.0"
             },
             "funding": [
                 {
@@ -19199,11 +19197,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-13T15:25:07+00:00"
+            "time": "2026-05-05T15:33:14+00:00"
         },
         {
             "name": "symfony/console",
@@ -29357,8 +29359,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/filefield_paths": 10,
-        "su-sws/stanford_profile": 20,
-        "su-sws/stanford_profile_helper": 20,
         "su-sws/sws-drush-commands": 20
     },
     "prefer-stable": true,
