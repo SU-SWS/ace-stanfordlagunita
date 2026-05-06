@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d134211137cf3f51fc81e4ae6821a89b",
+    "content-hash": "b2deec8455aebae066c5d304eed75f74",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -18627,16 +18627,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "12.2.2",
+            "version": "12.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "ffbb3db831c39bbc45081a968c4b5315d90b6b62"
+                "reference": "3af8f194651f19111b8f467d753a812fb0489e5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/ffbb3db831c39bbc45081a968c4b5315d90b6b62",
-                "reference": "ffbb3db831c39bbc45081a968c4b5315d90b6b62",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/3af8f194651f19111b8f467d753a812fb0489e5f",
+                "reference": "3af8f194651f19111b8f467d753a812fb0489e5f",
                 "shasum": ""
             },
             "require": {
@@ -18784,6 +18784,7 @@
             "conflict": {
                 "drupal/colorbox": ">=2.2.0"
             },
+            "default-branch": true,
             "type": "drupal-custom-profile",
             "extra": {
                 "drush": {
@@ -18818,22 +18819,22 @@
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
                 "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.2.2"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.x"
             },
-            "time": "2026-04-17T20:43:45+00:00"
+            "time": "2026-05-05T16:47:51+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "10.2.2",
+            "version": "10.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "5f6ea96089a4fc31f00159c4cb18f4217069a326"
+                "reference": "7700318bb93430bd90924d2a1ae8b925a7808dcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/5f6ea96089a4fc31f00159c4cb18f4217069a326",
-                "reference": "5f6ea96089a4fc31f00159c4cb18f4217069a326",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/7700318bb93430bd90924d2a1ae8b925a7808dcc",
+                "reference": "7700318bb93430bd90924d2a1ae8b925a7808dcc",
                 "shasum": ""
             },
             "require": {
@@ -18900,6 +18901,7 @@
                 "su-sws/stanford_media": ">=10.0",
                 "su-sws/stanford_migrate": ">=8.4"
             },
+            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18934,9 +18936,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.2.2"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2026-04-17T19:59:31+00:00"
+            "time": "2026-05-01T16:09:33+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -29359,6 +29361,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/filefield_paths": 10,
+        "su-sws/stanford_profile": 20,
+        "su-sws/stanford_profile_helper": 20,
         "su-sws/sws-drush-commands": 20
     },
     "prefer-stable": true,
