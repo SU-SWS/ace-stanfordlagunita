@@ -72,8 +72,8 @@
         "drupal/core-recommended": "^11",
         "drupal/js_cookie": "^2.0",
         "drush/drush": "^13.6",
-        "su-sws/stanford_profile": "12.x-dev",
-        "su-sws/stanford_profile_helper": "10.x-dev",
+        "su-sws/stanford_profile": "12.2.2",
+        "su-sws/stanford_profile_helper": "10.2.2",
         "su-sws/sws-drush-commands": "1.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
     },

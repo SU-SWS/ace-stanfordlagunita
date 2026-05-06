@@ -1,0 +1,4 @@
+adding:
+  pattern: '/publications/[term:parents:join-path]/[term:name]'
+removing:
+  pattern: 'publications/[term:parents:join-path]/[term:name]'

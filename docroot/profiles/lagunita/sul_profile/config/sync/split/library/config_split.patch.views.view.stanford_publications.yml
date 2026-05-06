@@ -1,4 +1,32 @@
 adding:
   status: false
+  display:
+    related:
+      display_options:
+        row:
+          options:
+            default_field_elements: false
+            inline:
+              type: '0'
+              view_node: '0'
+              su_url: '0'
+              title: '0'
+              su_publication_topics_1: '0'
+              edit_node: '0'
+            hide_empty: false
 removing:
   status: true
+  display:
+    related:
+      display_options:
+        row:
+          options:
+            default_field_elements: 0
+            inline:
+              type: 0
+              view_node: 0
+              su_url: 0
+              title: 0
+              su_publication_topics_1: 0
+              edit_node: 0
+            hide_empty: 0

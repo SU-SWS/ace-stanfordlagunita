@@ -1,4 +1,32 @@
 adding:
   status: false
+  display:
+    default:
+      display_options:
+        row:
+          options:
+            default_field_elements: false
+            inline:
+              su_event_series_type: '0'
+              title: '0'
+              su_event_series_subheadline: '0'
+              su_event_series_dek: '0'
+              edit_node: '0'
+              view_node: '0'
+            hide_empty: true
 removing:
   status: true
+  display:
+    default:
+      display_options:
+        row:
+          options:
+            default_field_elements: 0
+            inline:
+              su_event_series_type: 0
+              title: 0
+              su_event_series_subheadline: 0
+              su_event_series_dek: 0
+              edit_node: 0
+              view_node: 0
+            hide_empty: 1

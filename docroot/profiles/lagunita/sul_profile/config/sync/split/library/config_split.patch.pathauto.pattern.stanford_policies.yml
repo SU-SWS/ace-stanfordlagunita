@@ -1,0 +1,4 @@
+adding:
+  pattern: '/[node:book:parent:url:relative|node:menu-link:parent:url:relative]/[node:su_policy_title]'
+removing:
+  pattern: '[node:book:parent:url:relative|node:menu-link:parent:url:relative]/[node:su_policy_title]'
