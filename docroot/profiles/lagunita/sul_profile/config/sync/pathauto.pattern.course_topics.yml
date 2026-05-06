@@ -7,7 +7,7 @@ dependencies:
 id: course_topics
 label: 'Course Topics'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'courses/[term:parents:join-path]/[term:name]'
+pattern: '/courses/[term:parents:join-path]/[term:name]'
 selection_criteria:
   7251f4a0-ce54-4f21-b7b8-2e9e03f55a4a:
     id: 'entity_bundle:taxonomy_term'

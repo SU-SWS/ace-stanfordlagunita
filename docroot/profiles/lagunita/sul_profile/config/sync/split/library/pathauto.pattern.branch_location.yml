@@ -7,7 +7,7 @@ dependencies:
 id: branch_location
 label: 'Branch Location'
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parent:url:relative|"libraries"]/[node:title]'
+pattern: '/[node:menu-link:parent:url:relative|"libraries"]/[node:title]'
 selection_criteria:
   7b8b09d2-6ee7-4777-a6df-446250fd3555:
     id: 'entity_bundle:node'
