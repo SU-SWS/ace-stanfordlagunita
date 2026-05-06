@@ -7,7 +7,7 @@ dependencies:
 id: sul_study_places
 label: 'Study Places'
 type: 'canonical_entities:node'
-pattern: '[node:sul_study__branch:entity:url:relative]/[node:title]'
+pattern: '/[node:sul_study__branch:entity:url:relative]/[node:title]'
 selection_criteria:
   47929553-1dff-49b9-88ad-c02695b0c61f:
     id: 'entity_bundle:node'

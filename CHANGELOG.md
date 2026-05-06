@@ -1,5 +1,15 @@
 # Lagunita
 
+3.2.4
+--------------------------------------------------------------------------------
+- Updated dependencies
+
+3.2.3
+--------------------------------------------------------------------------------
+- SUL23-984: Temporarily disable new layouts for stanford_page 
+- SUL23-990: Adding the checkbox to the gradient for section headings
+- Created CSP profile. Removed ANES profile
+
 3.2.2
 --------------------------------------------------------------------------------
 - SUP: Improve social links by using a custom migrate source instead of json file
