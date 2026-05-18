@@ -22,3 +22,13 @@ if ($next_domain) {
     'revalidate_url' => "$next_domain/api/revalidate",
   ];
 }
+
+if (!EnvironmentDetector::isProdEnv()) {
+  /**
+   * @var string $site_name
+   */
+  $config['stage_file_proxy.settings'] = [
+    'origin' => 'https://edit-csp.stanford.edu',
+    'origin_dir' => 'sites/csp/files',
+  ];
+}

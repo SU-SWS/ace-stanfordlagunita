@@ -20,7 +20,7 @@ command:
   sws:
     options:
       git-url:
-        #- 'csp git url'
+        - 'stanfordgryphon@svn-23450.prod.hosting.acquia.com:stanfordgryphon.git'
         - 'stanfordlagunita@svn-45197.prod.hosting.acquia.com:stanfordlagunita.git'
         - 'stanfordpress@svn-45197.prod.hosting.acquia.com:stanfordpress.git'
         - 'stanfordsummer@svn-45197.prod.hosting.acquia.com:stanfordsummer.git'
