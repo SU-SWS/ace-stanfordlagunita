@@ -2,6 +2,8 @@ uuid: cb8872c0-da94-4447-8a66-9d9d7c1a5ae0
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.stanford_news_topics
   module:
     - taxonomy
 id: news_topics
@@ -12,7 +14,6 @@ selection_criteria:
   0ee0a4fe-7620-4ed6-9aa2-b09655827f3d:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 0ee0a4fe-7620-4ed6-9aa2-b09655827f3d
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
