@@ -2,6 +2,8 @@ uuid: 5d63b576-0c26-4a85-9da4-065419b2f24b
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.stanford_event
   module:
     - node
 id: event_nodes
@@ -12,7 +14,6 @@ selection_criteria:
   640078f3-4fdd-4235-89c4-cf879ccadd84:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 640078f3-4fdd-4235-89c4-cf879ccadd84
     context_mapping:
       node: node
     bundles:

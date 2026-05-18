@@ -2,6 +2,9 @@ uuid: 4e764660-5566-4249-be23-11ed87cf9a57
 langcode: en
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.su_course_quarters
+    - taxonomy.vocabulary.su_course_subjects
   module:
     - taxonomy
 id: course_topics
@@ -12,7 +15,6 @@ selection_criteria:
   7251f4a0-ce54-4f21-b7b8-2e9e03f55a4a:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 7251f4a0-ce54-4f21-b7b8-2e9e03f55a4a
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
