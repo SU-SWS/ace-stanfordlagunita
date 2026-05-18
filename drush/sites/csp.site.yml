@@ -1,3 +1,37 @@
 local:
   uri: csp
   root: '${env.cwd}/docroot'
+dev:
+  root: /var/www/html/stanfordgryphon.dev/docroot
+  ac-site: stanfordgryphon
+  ac-env: dev
+  ac-realm: prod
+  uri: csp
+  dev.livedev:
+    parent: '@csp.dev'
+    root: /mnt/gfs/stanfordgryphon.dev/livedev/docroot
+  host: stanfordgryphondev.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.dev
+test:
+  root: /var/www/html/stanfordgryphon.test/docroot
+  ac-site: stanfordgryphon
+  ac-env: test
+  ac-realm: prod
+  uri: csp
+  test.livedev:
+    parent: '@csp.test'
+    root: /mnt/gfs/stanfordgryphon.test/livedev/docroot
+  host: stanfordgryphonstg.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.test
+prod:
+  root: /var/www/html/stanfordgryphon.prod/docroot
+  ac-site: stanfordgryphon
+  ac-env: prod
+  ac-realm: prod
+  uri: csp
+  prod.livedev:
+    parent: '@csp.prod'
+    root: /mnt/gfs/stanfordgryphon.prod/livedev/docroot
+  host: stanfordgryphon.ssh.prod.acquia-sites.com
+  user: stanfordgryphon.prod
+
