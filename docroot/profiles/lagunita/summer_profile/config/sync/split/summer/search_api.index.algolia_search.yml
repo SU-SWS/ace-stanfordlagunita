@@ -1,6 +1,6 @@
 uuid: 282be7f0-2802-4613-82f6-6318875d7499
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
@@ -39,6 +39,7 @@ dependencies:
     - stanford_fields
     - stanford_profile_helper
     - taxonomy
+    - trash
 id: algolia_search
 name: 'Algolia Search'
 description: ''
@@ -483,45 +484,46 @@ processor_settings:
       preprocess_query: -15
     all_fields: 1
     fields:
+      - basic_page_type
       - byline
-      - type
+      - course_subject
       - dek
       - email
-      - url
+      - event_audience
+      - event_subject
+      - event_type
+      - html
+      - news_type
+      - person_full_title
+      - person_short_title
+      - person_type
       - phone
       - photo
-      - html
+      - publication_type
+      - shared_tags
       - site_name
       - subheadline
-      - summary
-      - event_audience
-      - basic_page_type
-      - sum_course_catalog_number
       - sum_course_availability
-      - sum_course_format
-      - sum_course_length
-      - sum_course_notes
-      - course_subject
+      - sum_course_catalog_number
       - sum_course_cross_listing
-      - event_type
-      - person_full_title
+      - sum_course_format
       - sum_course_grading
       - sum_course_instructors
       - sum_course_interest
-      - news_type
-      - person_type
+      - sum_course_length
+      - sum_course_notes
       - sum_course_population
       - sum_course_prerequisites
-      - publication_type
       - sum_course_schedule
-      - shared_tags
-      - person_short_title
-      - event_subject
+      - summary
       - title
+      - type
+      - url
     title: true
     alt: true
     tags:
       a: 2.0
+  trash_status: {  }
 tracker_settings:
   default:
     indexing_order: fifo

@@ -299,12 +299,17 @@ class SystemSiteConfigCest {
     $I->amOnPage("/$source_path");
     $I->canSeeResponseCodeIs(404);
 
+    $I->amOnPage('/admin/config/search/redirect');
+    $I->fillField('From', $source_path);
+    $I->click('Filter');
+    $I->cantSee($source_path);
+
     $I->amOnPage('/admin/config/search/redirect/add');
     $I->fillField('Path', $source_path);
-    $I->fillField('To', '/');
+    $I->fillField('To', '<front>');
     $I->click('Save');
     $I->canSeeResponseCodeIs(200);
-    $I->canSee("The source path $source_path appears to be a valid path");
+    $I->canSee('The redirect has been saved');
   }
 
 }
