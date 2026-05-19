@@ -34,7 +34,7 @@ command:
         - /mnt/gfs/stanfordlagunita.test/secrets.settings.php
         - /mnt/gfs/stanfordlagunita.test/nobackup/oauth/
       multisites:
-        #- csp
+        - csp
         - default
         - library
         - summer
