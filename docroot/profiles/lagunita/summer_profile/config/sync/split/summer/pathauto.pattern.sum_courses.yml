@@ -7,7 +7,7 @@ dependencies:
 id: sum_courses
 label: 'Summer Courses'
 type: 'canonical_entities:node'
-pattern: 'courses/[node:sum_course_interest_area:entity:name]/[node:title]'
+pattern: '/courses/[node:sum_course_interest_area:entity:name]/[node:title]'
 selection_criteria:
   c9d13827-0008-473f-9788-c10988c30cf2:
     id: 'entity_bundle:node'

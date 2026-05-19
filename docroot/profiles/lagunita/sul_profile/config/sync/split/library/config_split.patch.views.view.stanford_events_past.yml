@@ -1,48 +1,4 @@
 adding:
   status: false
-  display:
-    default:
-      display_options:
-        row:
-          options:
-            default_field_elements: false
-            inline:
-              view_node: '0'
-              title: '0'
-              su_event_date_time: '0'
-              su_event_date_time_value: '0'
-              su_event_date_time_end_value: '0'
-              su_event_date_time_value_1: '0'
-              su_event_date_time_end_value_1: '0'
-              su_event_dek: '0'
-              su_event_alt_loc: '0'
-              su_event_type: '0'
-              su_event_location: '0'
-              su_event_subheadline: '0'
-              su_event_source: '0'
-              su_event_date_time_end_value_2: '0'
-            hide_empty: true
 removing:
   status: true
-  display:
-    default:
-      display_options:
-        row:
-          options:
-            default_field_elements: 0
-            inline:
-              view_node: 0
-              title: 0
-              su_event_date_time: 0
-              su_event_date_time_value: 0
-              su_event_date_time_end_value: 0
-              su_event_date_time_value_1: 0
-              su_event_date_time_end_value_1: 0
-              su_event_dek: 0
-              su_event_alt_loc: 0
-              su_event_type: 0
-              su_event_location: 0
-              su_event_subheadline: 0
-              su_event_source: 0
-              su_event_date_time_end_value_2: 0
-            hide_empty: 1

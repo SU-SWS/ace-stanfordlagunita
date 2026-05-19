@@ -7,7 +7,7 @@ dependencies:
 id: sup_book_subjects_taxonomy
 label: 'Book Subjects Taxonomy'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'books/[term:parents:join-path]/[term:name]'
+pattern: '/books/[term:parents:join-path]/[term:name]'
 selection_criteria:
   86f3d6da-bdda-42ec-a5de-52f2ad482e14:
     id: 'entity_bundle:taxonomy_term'

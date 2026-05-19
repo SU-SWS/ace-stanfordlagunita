@@ -1,4 +1,0 @@
-adding:
-  pattern: '/publications/[node:su_publication_topics:0:entity:name]/[node:title]'
-removing:
-  pattern: 'publications/[node:su_publication_topics:0:entity:name]/[node:title]'

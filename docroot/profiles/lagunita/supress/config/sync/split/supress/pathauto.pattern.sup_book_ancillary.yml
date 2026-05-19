@@ -7,7 +7,7 @@ dependencies:
 id: sup_book_ancillary
 label: 'Book Ancilary Page'
 type: 'canonical_entities:node'
-pattern: '[node:sup_ancillary_book:entity:url:relative]/excerpt/[node:title]'
+pattern: '/[node:sup_ancillary_book:entity:url:relative]/excerpt/[node:title]'
 selection_criteria:
   df58eb26-a384-4216-a08d-c6df70dfd630:
     id: 'entity_bundle:node'
