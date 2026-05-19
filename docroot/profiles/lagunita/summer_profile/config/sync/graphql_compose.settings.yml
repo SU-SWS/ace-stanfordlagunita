@@ -286,28 +286,40 @@ entity_config:
       query_load_enabled: true
     sum_accordions:
       enabled: true
+      query_load_enabled: true
     sum_arc_banner:
       enabled: true
+      query_load_enabled: true
     sum_at_a_glance:
       enabled: true
+      query_load_enabled: true
     sum_calculator:
       enabled: true
+      query_load_enabled: true
     sum_carousel:
       enabled: true
+      query_load_enabled: true
     sum_course_filter:
       enabled: true
+      query_load_enabled: true
     sum_facts:
       enabled: true
+      query_load_enabled: true
     sum_pill_banner:
       enabled: true
+      query_load_enabled: true
     sum_slide_teaser:
       enabled: true
+      query_load_enabled: true
     sum_testimonial:
       enabled: true
+      query_load_enabled: true
     sum_top_banner:
       enabled: true
+      query_load_enabled: true
     sum_user_favorites:
       enabled: true
+      query_load_enabled: true
     sum_video:
       enabled: true
       query_load_enabled: true

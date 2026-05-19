@@ -17,7 +17,6 @@ label: 'Anonymous user'
 weight: -9
 is_admin: false
 permissions:
-  - 'access content'
   - 'issue subrequests'
   - 'view field_media_embeddable_code'
   - 'view lockup_settings config page entity'
