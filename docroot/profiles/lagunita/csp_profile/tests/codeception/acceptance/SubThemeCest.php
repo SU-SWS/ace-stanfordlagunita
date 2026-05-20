@@ -9,7 +9,7 @@ use Faker\Factory;
  */
 #[CodeceptionAttribute\Group('no-parallel')]
 #[CodeceptionAttribute\Group('subthemes')]
-class SubThemeCest {
+abstract class SubThemeCest {
 
   /**
    * Human readable name for the theme.
