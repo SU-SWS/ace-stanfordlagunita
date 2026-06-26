@@ -10,6 +10,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\Attribute\QueueWorker;
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
 use Drupal\SwsDrush\Helpers\EnvironmentDetector;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Cookie\CookieJar;
@@ -38,7 +39,8 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
       $container->get('http_client'),
       $container->get('file_system'),
       $container->get('entity_type.manager'),
-      $container->get('config_pages.loader')
+      $container->get('config_pages.loader'),
+      $container->get('plugin.manager.migration')
     );
   }
 
@@ -59,8 +61,19 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
    *   Entity type manager service.
    * @param \Drupal\config_pages\ConfigPagesLoaderServiceInterface $configPagesLoader
    *   Config page service to load values.
+   * @param \Drupal\migrate\Plugin\MigrationPluginManagerInterface $migrationPluginManager
+   *   Plugin manager for migrations.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected ClientInterface $client, protected FileSystemInterface $fileSystem, protected EntityTypeManagerInterface $entityTypeManager, protected ConfigPagesLoaderServiceInterface $configPagesLoader) {
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    protected ClientInterface $client,
+    protected FileSystemInterface $fileSystem,
+    protected EntityTypeManagerInterface $entityTypeManager,
+    protected ConfigPagesLoaderServiceInterface $configPagesLoader,
+    protected MigrationPluginManagerInterface $migrationPluginManager
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
@@ -169,7 +182,8 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
     // Create a temporary image derivative, and then replace the original image
     // with that.
     $temp = "temporary://" . basename($new_file_path);
-    $image_style = $this->entityTypeManager->getStorage('image_style')->load("breakpoint_2xl_1x");
+    $image_style = $this->entityTypeManager->getStorage('image_style')
+      ->load("breakpoint_2xl_1x");
     $success = $image_style->createDerivative($new_file_path, $temp);
     if ($success) {
       $this->fileSystem->move($temp, $new_file_path, FileExists::Replace);
@@ -196,6 +210,14 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
         'alt' => '',
         'target_id' => $new_file->id(),
       ])->save();
+
+      // Resave all books with this image to trigger re-indexing.
+      $books = $this->entityTypeManager->getStorage('node')
+        ->loadByProperties(['sup_book_image' => $media->id()]);
+      foreach ($books as $book) {
+        $book->save();
+      }
+
       return $media->id();
     }
 
@@ -209,6 +231,11 @@ class BookCoverDownloader extends QueueWorkerBase implements ContainerFactoryPlu
       ],
     ]);
     $media->save();
+
+    /** @var \Drupal\migrate\Plugin\Migration $migration */
+    $migration = $this->migrationPluginManager->createInstance('sup_import_books');
+    $migration?->getIdMap()?->setUpdate(['work_id_number' => $work_id_number]);
+
     return $media->id();
   }
 
