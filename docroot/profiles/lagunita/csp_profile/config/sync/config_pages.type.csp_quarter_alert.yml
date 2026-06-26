@@ -1,0 +1,17 @@
+uuid: c4ccfc14-118f-4eb7-8ab8-7dd32c1124a8
+langcode: en
+status: true
+dependencies: {  }
+id: csp_quarter_alert
+label: 'Quarter Alert'
+token: false
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/system/quarter-alert
+  weight: 0
+  description: ''

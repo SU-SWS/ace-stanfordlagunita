@@ -1,0 +1,23 @@
+uuid: 5117dbbc-c7f6-4d1a-886a-6d4e64efb425
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.csp_quarter_alert
+    - field.storage.config_pages.csp_qa_color
+  module:
+    - options
+id: config_pages.csp_quarter_alert.csp_qa_color
+field_name: csp_qa_color
+entity_type: config_pages
+bundle: csp_quarter_alert
+label: Color
+description: 'The background color theme for the Quarter Alert bar. Each color maps to Stanford Identity Toolkit token pairs used by the frontend.'
+required: false
+translatable: false
+default_value:
+  -
+    value: cardinal
+default_value_callback: ''
+settings: {  }
+field_type: list_string

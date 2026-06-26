@@ -1,0 +1,19 @@
+uuid: 6e9f2144-24e8-4cd8-80d5-15aaa46909f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.csp_quarter_alert
+    - field.storage.config_pages.csp_qa_label
+id: config_pages.csp_quarter_alert.csp_qa_label
+field_name: csp_qa_label
+entity_type: config_pages
+bundle: csp_quarter_alert
+label: 'Quarter Label'
+description: 'The quarter identifier displayed in all-caps in the alert (e.g., "WINTER QUARTER"). Enter the quarter name and year.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
