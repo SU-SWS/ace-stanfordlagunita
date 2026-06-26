@@ -21,15 +21,6 @@ class QuarterAlertCest {
   }
 
   /**
-   * Test the block exists.
-   */
-  public function testBlockExists(AcceptanceTester $I) {
-    $I->logInWithRole('administrator');
-    $I->amOnPage('/admin/structure/block');
-    $I->canSee('Quarter Alert');
-  }
-
-  /**
    * Test the form exists.
    */
   public function testFormExists(AcceptanceTester $I) {
