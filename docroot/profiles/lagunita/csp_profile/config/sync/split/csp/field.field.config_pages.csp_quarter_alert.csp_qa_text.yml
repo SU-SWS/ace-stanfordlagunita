@@ -1,0 +1,24 @@
+uuid: 9c7c088e-e645-44df-97cb-c83fdcfd3d0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.csp_quarter_alert
+    - field.storage.config_pages.csp_qa_text
+  module:
+    - text
+id: config_pages.csp_quarter_alert.csp_qa_text
+field_name: csp_qa_text
+entity_type: config_pages
+bundle: csp_quarter_alert
+label: 'Alert Text'
+description: 'The body text of the Quarter Alert. Supports an inline link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - stanford_minimal_html
+    - plain_text
+field_type: text_long

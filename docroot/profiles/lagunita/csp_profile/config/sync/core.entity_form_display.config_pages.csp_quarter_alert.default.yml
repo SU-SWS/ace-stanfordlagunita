@@ -1,0 +1,25 @@
+uuid: a9bd0cc3-58d4-4665-b5b2-dbba7069e691
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.csp_quarter_alert
+id: config_pages.csp_quarter_alert.default
+targetEntityType: config_pages
+bundle: csp_quarter_alert
+mode: default
+content:
+  csp_qa_color:
+    settings: {  }
+    third_party_settings: {  }
+  csp_qa_enabled:
+    settings: {  }
+    third_party_settings: {  }
+  csp_qa_label:
+    settings: {  }
+    third_party_settings: {  }
+  csp_qa_text:
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  label: true

@@ -1,0 +1,23 @@
+uuid: 6d7c6ab6-98d3-475d-9b01-391ccafe9215
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.csp_quarter_alert
+    - field.storage.config_pages.csp_qa_enabled
+id: config_pages.csp_quarter_alert.csp_qa_enabled
+field_name: csp_qa_enabled
+entity_type: config_pages
+bundle: csp_quarter_alert
+label: 'Enable Quarter Alert'
+description: 'Check this box to display the Quarter Alert in the masthead. Uncheck to hide it without deleting the content.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

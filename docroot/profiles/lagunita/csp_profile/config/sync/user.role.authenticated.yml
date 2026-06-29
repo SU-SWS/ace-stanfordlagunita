@@ -27,6 +27,7 @@ permissions:
   - 'execute graphql_compose_server persisted graphql requests'
   - 'issue subrequests'
   - 'view field_media_embeddable_code'
+  - 'view csp_quarter_alert config page entity'
   - 'view lockup_settings config page entity'
   - 'view media'
   - 'view own field_media_embeddable_code'

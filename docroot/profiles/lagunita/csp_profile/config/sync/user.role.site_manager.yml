@@ -229,6 +229,7 @@ permissions:
   - 'edit any video media'
   - 'edit behavior plugin settings'
   - 'edit citation entities'
+  - 'edit csp_quarter_alert config page entity'
   - 'edit field_media_embeddable_code'
   - 'edit lockup_settings config page entity'
   - 'edit own embeddable media'

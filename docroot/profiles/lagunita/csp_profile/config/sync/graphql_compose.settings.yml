@@ -31,6 +31,10 @@ entity_config:
       enabled: false
     stanford_events_importer:
       enabled: false
+    csp_quarter_alert:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
     stanford_global_message:
       enabled: true
       query_load_enabled: true
@@ -459,6 +463,15 @@ field_config:
       su_year:
         enabled: true
   config_pages:
+    csp_quarter_alert:
+      csp_qa_color:
+        enabled: true
+      csp_qa_enabled:
+        enabled: true
+      csp_qa_label:
+        enabled: true
+      csp_qa_text:
+        enabled: true
     lockup_settings:
       su_line_1:
         enabled: true
