@@ -1,0 +1,19 @@
+uuid: 2335e192-3409-4ef8-acca-69cd7652644e
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - text
+id: config_pages.csp_qa_text
+field_name: csp_qa_text
+entity_type: config_pages
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

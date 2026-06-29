@@ -1,0 +1,36 @@
+uuid: 403eb592-9003-4b95-9126-dd4aba5289eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - options
+id: config_pages.csp_qa_color
+field_name: csp_qa_color
+entity_type: config_pages
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: lagunita
+      label: Lagunita
+    -
+      value: cardinal
+      label: Cardinal
+    -
+      value: plum
+      label: Plum
+    -
+      value: palo-alto
+      label: 'Palo Alto'
+    -
+      value: black
+      label: Black
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

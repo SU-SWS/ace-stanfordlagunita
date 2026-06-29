@@ -1,0 +1,36 @@
+adding:
+  dependencies:
+    config:
+      - field.field.config_pages.csp_quarter_alert.csp_qa_color
+      - field.field.config_pages.csp_quarter_alert.csp_qa_enabled
+      - field.field.config_pages.csp_quarter_alert.csp_qa_label
+      - field.field.config_pages.csp_quarter_alert.csp_qa_text
+    module:
+      - options
+      - text
+  content:
+    csp_qa_color:
+      type: list_default
+      label: hidden
+      settings: {  }
+      third_party_settings: {  }
+      weight: 2
+      region: content
+    csp_qa_label:
+      type: string
+      label: hidden
+      settings:
+        link_to_entity: false
+      third_party_settings: {  }
+      weight: 0
+      region: content
+    csp_qa_text:
+      type: text_default
+      label: hidden
+      settings: {  }
+      third_party_settings: {  }
+      weight: 1
+      region: content
+  hidden:
+    csp_qa_enabled: true
+removing: {  }
