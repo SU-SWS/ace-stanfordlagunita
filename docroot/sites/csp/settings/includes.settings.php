@@ -6,10 +6,10 @@ $settings['config_sync_directory'] = DRUPAL_ROOT . '/profiles/lagunita/csp_profi
 
 $next_domain = FALSE;
 if (EnvironmentDetector::isDevEnv()) {
-  $next_domain = 'https://continuingstudies-git-dev-sws-developers.vercel.app/';
+  $next_domain = 'https://continuingstudies-git-dev-sws-developers.vercel.app';
 }
 elseif (EnvironmentDetector::isStageEnv()) {
-  $next_domain = 'https://continuingstudies-git-test-sws-developers.vercel.app/';
+  $next_domain = 'https://continuingstudies-git-test-sws-developers.vercel.app';
 }
 elseif (EnvironmentDetector::isLocalEnv()) {
   $next_domain = 'http://localhost:3000';
