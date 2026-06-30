@@ -18720,12 +18720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "148221e8e31a7ef89829bddf531f3ee637c32a21"
+                "reference": "de8c333f5810ce503eb4a2a2f46f6d0d60bc6048"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/148221e8e31a7ef89829bddf531f3ee637c32a21",
-                "reference": "148221e8e31a7ef89829bddf531f3ee637c32a21",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/de8c333f5810ce503eb4a2a2f46f6d0d60bc6048",
+                "reference": "de8c333f5810ce503eb4a2a2f46f6d0d60bc6048",
                 "shasum": ""
             },
             "require": {
@@ -18831,7 +18831,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2026-06-30T16:59:24+00:00"
+            "time": "2026-06-30T19:37:50+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
