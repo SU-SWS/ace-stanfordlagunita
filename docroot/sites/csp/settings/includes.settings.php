@@ -16,7 +16,7 @@ elseif (EnvironmentDetector::isLocalEnv()) {
 }
 
 if ($next_domain) {
-  $config['next.next_site.vercel'] = [
+  $config['next.next_site.prod'] = [
     'base_url' => $next_domain,
     'preview_url' => "$next_domain/api/draft",
     'revalidate_url' => "$next_domain/api/revalidate",
