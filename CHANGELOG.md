@@ -1,5 +1,12 @@
 # Lagunita
 
+3.3.0
+--------------------------------------------------------------------------------
+- CSP: Fixed next config override config
+- Updated dependencies
+- CSP-84: Backend updates for quarter alerts (#261)
+- SUP: Reindex books or triggeer for update when a media cover is downloaded
+
 3.2.5
 --------------------------------------------------------------------------------
 - Updated dependencies
