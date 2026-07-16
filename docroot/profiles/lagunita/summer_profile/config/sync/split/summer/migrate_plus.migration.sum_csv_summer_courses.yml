@@ -111,6 +111,10 @@ source:
       name: grading
       label: Grading
       selector: grading
+    -
+      name: weekdays
+      label: Weekdays
+      selector: weekdays
   ids:
     - unique_import_id
 process:
@@ -273,6 +277,33 @@ process:
       bundle_key: vid
       bundle: sum_course_grading
       entity_type: taxonomy_term
+  weekdays:
+    -
+      plugin: skip_on_empty
+      source: weekdays
+      method: process
+    -
+      plugin: callback
+      callable: strtolower
+    -
+      plugin: explode
+      delimiter: ','
+  sum_course_weekday:
+    -
+      plugin: skip_on_empty
+      source: weekdays
+      method: process
+    -
+      plugin: callback
+      callable: strtolower
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: str_replace
+      regex: true
+      search: '/^(?!(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)$).*$/'
+      replace: ''
 destination:
   plugin: 'entity:node'
   default_bundle: sum_summer_courses
