@@ -1,0 +1,8 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.body
+      - field.field.node.stanford_page.sum_search_exclude
+  hidden:
+    sum_search_exclude: true
+removing: {  }

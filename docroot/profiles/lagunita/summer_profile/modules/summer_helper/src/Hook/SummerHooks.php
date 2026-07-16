@@ -12,6 +12,8 @@ use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\media\MediaInterface;
+use Drupal\node\NodeInterface;
+use Drupal\stanford_profile_helper\Hook\AlgoliaHooks;
 use FFMpeg\Coordinate\TimeCode;
 use FFMpeg\FFMpeg;
 use FFMpeg\FFProbe;
@@ -40,6 +42,25 @@ class SummerHooks {
     if ($view['view'] == 'sum_courses') {
       $vocabs[] = 'sum_course_learner';
     }
+  }
+
+  /**
+   * Implements hook_ENTITY_TYPE_presave().
+   */
+  #[Hook('node_presave')]
+  public function nodePresave(NodeInterface $node) {
+    if (!$node->hasField('sum_search_exclude')) {
+      return;
+    }
+
+    $tags = json_decode($node->get('su_metatags')->getString(), TRUE) ?? [];
+    unset($tags['robots']);
+    if (!!$node->get('sum_search_exclude')?->getString()) {
+      $tags['robots'] = 'noindex, nofollow';
+
+      self::clearAlgolia($node);
+    }
+    $node->set('su_metatags', json_encode($tags));
   }
 
   /**
@@ -88,7 +109,7 @@ class SummerHooks {
    * @return int
    *   Duration of the video in seconds.
    */
-  protected function getVideoDuration(string $videoPath):int {
+  protected function getVideoDuration(string $videoPath): int {
     $realPath = $this->fileSystem->realpath($videoPath);
     return (int) FFProbe::create()->format($realPath)->get('duration');
   }
@@ -121,6 +142,18 @@ class SummerHooks {
       if (file_exists($this->fileSystem->realpath($tempPath))) {
         $this->fileSystem->delete($tempPath);
       }
+    }
+  }
+
+  /**
+   * Clear the algolia index item immediately.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   Node to delete.
+   */
+  protected static function clearAlgolia(NodeInterface $node) {
+    if (\Drupal::hasService('search_api_algolia.helper')) {
+      \Drupal::service('search_api_algolia.helper')->entityDelete($node);
     }
   }
 

@@ -25,9 +25,11 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_course_syllabus_file
     - field.field.node.sum_summer_courses.sum_course_unique_import_id
     - field.field.node.sum_summer_courses.sum_course_units
+    - field.field.node.sum_summer_courses.sum_course_weekday
     - field.field.node.sum_summer_courses.sum_students_also_studied
     - node.type.sum_summer_courses
   module:
+    - options
     - text
     - user
 id: node.sum_summer_courses.default
@@ -144,6 +146,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 11
+    region: content
+  sum_course_weekday:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
     region: content
   sum_students_also_studied:
     type: number_integer

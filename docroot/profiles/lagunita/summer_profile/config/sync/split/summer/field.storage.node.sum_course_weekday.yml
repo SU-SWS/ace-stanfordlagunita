@@ -1,0 +1,42 @@
+uuid: 4537d666-059e-4af6-83d9-89fd6a51e7c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.sum_course_weekday
+field_name: sum_course_weekday
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: sunday
+      label: Sunday
+    -
+      value: monday
+      label: Monday
+    -
+      value: tuesday
+      label: Tuesday
+    -
+      value: wednesday
+      label: Wednesday
+    -
+      value: thursday
+      label: Thursday
+    -
+      value: friday
+      label: Friday
+    -
+      value: saturday
+      label: Saturday
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

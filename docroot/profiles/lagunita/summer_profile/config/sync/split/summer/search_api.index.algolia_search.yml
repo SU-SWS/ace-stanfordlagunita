@@ -33,9 +33,11 @@ dependencies:
     - field.storage.node.sum_course_schedule
     - field.storage.node.sum_course_start_date
     - field.storage.node.sum_course_units
+    - field.storage.node.sum_course_weekday
     - search_api.server.algolia_search
   module:
     - node
+    - search_api_exclude_entity
     - stanford_fields
     - stanford_profile_helper
     - taxonomy
@@ -388,6 +390,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.sum_course_units
+  sum_course_weekday:
+    label: 'Days of the week'
+    datasource_id: 'entity:node'
+    property_path: sum_course_weekday
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_weekday
   summary:
     label: Summary
     property_path: custom_value
@@ -470,6 +480,7 @@ processor_settings:
       - sum_course_population
       - sum_course_prerequisites
       - sum_course_schedule
+      - sum_course_weekday
       - summary
       - title
       - type
@@ -478,6 +489,10 @@ processor_settings:
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
+  search_api_exclude_entity_processor:
+    fields:
+      node:
+        - sum_search_exclude
   strip_tags:
     weights:
       preprocess_index: -6
@@ -515,6 +530,7 @@ processor_settings:
       - sum_course_population
       - sum_course_prerequisites
       - sum_course_schedule
+      - sum_course_weekday
       - summary
       - title
       - type

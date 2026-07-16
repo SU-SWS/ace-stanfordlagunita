@@ -9,6 +9,8 @@ adding:
       - taxonomy.vocabulary.sup_file_groups
       - taxonomy.vocabulary.sup_imprints
       - taxonomy.vocabulary.sup_series
+    module:
+      - search_api_exclude_entity
   permissions:
     - 'create sup_book content'
     - 'create sup_book_ancillary content'
@@ -37,6 +39,7 @@ adding:
     - 'edit own sup_book content'
     - 'edit own sup_book_ancillary content'
     - 'edit own sup_protected_file media'
+    - 'edit search api exclude entity'
     - 'edit terms in sup_book_subjects'
     - 'edit terms in sup_book_tags'
     - 'edit terms in sup_file_groups'

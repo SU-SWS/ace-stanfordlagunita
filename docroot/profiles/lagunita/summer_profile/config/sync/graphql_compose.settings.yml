@@ -895,6 +895,8 @@ field_config:
         enabled: true
       su_page_image:
         enabled: true
+      sum_search_exclude:
+        enabled: true
     stanford_person:
       body:
         enabled: true
@@ -1034,6 +1036,8 @@ field_config:
       sum_course_units:
         enabled: true
       sum_students_also_studied:
+        enabled: true
+      sum_course_weekday:
         enabled: true
   paragraph:
     stanford_accordion:
