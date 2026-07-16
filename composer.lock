@@ -12685,17 +12685,17 @@
         },
         {
             "name": "drupal/views_bulk_operations",
-            "version": "4.4.6",
+            "version": "4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
-                "reference": "4.4.6"
+                "reference": "4.4.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.4.6.zip",
-                "reference": "4.4.6",
-                "shasum": "681c96f65a4f590f6a72f20592d97323daadadb6"
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.4.7.zip",
+                "reference": "4.4.7",
+                "shasum": "eacf78c01dba6dabb44a65db8761aabff504f88b"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -12704,6 +12704,7 @@
                 "drush/drush": "<12.5.1"
             },
             "require-dev": {
+                "drupal/search_api": "^1.35",
                 "drush/drush": "^12 || ^13",
                 "phpstan/phpstan-deprecation-rules": "^1",
                 "phpstan/phpstan-strict-rules": "^1"
@@ -12714,8 +12715,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.4.6",
-                    "datestamp": "1784034597",
+                    "version": "4.4.7",
+                    "datestamp": "1784189101",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -18719,12 +18720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "34ce2a3a2f5ce59a390c7e8a998887df35137183"
+                "reference": "940ff2a356fa2d865f15ba16e8a42006be28429e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/34ce2a3a2f5ce59a390c7e8a998887df35137183",
-                "reference": "34ce2a3a2f5ce59a390c7e8a998887df35137183",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/940ff2a356fa2d865f15ba16e8a42006be28429e",
+                "reference": "940ff2a356fa2d865f15ba16e8a42006be28429e",
                 "shasum": ""
             },
             "require": {
@@ -18830,7 +18831,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
             },
-            "time": "2026-07-15T22:05:19+00:00"
+            "time": "2026-07-16T15:45:45+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",

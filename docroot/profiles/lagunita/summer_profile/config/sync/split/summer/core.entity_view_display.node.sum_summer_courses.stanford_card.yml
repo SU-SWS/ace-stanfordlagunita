@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_course_syllabus_file
     - field.field.node.sum_summer_courses.sum_course_unique_import_id
     - field.field.node.sum_summer_courses.sum_course_units
+    - field.field.node.sum_summer_courses.sum_course_weekday
     - field.field.node.sum_summer_courses.sum_students_also_studied
     - node.type.sum_summer_courses
   module:
@@ -86,4 +87,5 @@ hidden:
   sum_course_syllabus_file: true
   sum_course_unique_import_id: true
   sum_course_units: true
+  sum_course_weekday: true
   sum_students_also_studied: true

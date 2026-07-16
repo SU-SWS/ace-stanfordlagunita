@@ -9,11 +9,29 @@ use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Installer\InstallerKernel;
 use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * SuPress hooks.
  */
 class PressHooks {
+
+  /**
+   * Implements hook_ENTITY_TYPE_presave().
+   */
+  #[Hook('node_presave')]
+  public function nodePresave(NodeInterface $node) {
+    if (!$node->hasField('sup_page_search_exclude')) {
+      return;
+    }
+    $tags = json_decode($node->get('su_metatags')->getString(), TRUE) ?? [];
+    unset($tags['robots']);
+    if (!!$node->get('sup_page_search_exclude')?->getString()) {
+      $tags['robots'] = 'noindex, nofollow';
+      self::clearAlgolia($node);
+    }
+    $node->set('su_metatags', json_encode($tags));
+  }
 
   #[Hook('entity_create')]
   public function pressCreate(EntityInterface $entity) {
@@ -62,6 +80,18 @@ class PressHooks {
       $vocabs[] = 'sup_series';
       $vocabs[] = 'sup_book_tags';
       $vocabs[] = 'sup_imprints';
+    }
+  }
+
+  /**
+   * Clear the algolia index item immediately.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   Node to delete.
+   */
+  protected static function clearAlgolia(NodeInterface $node) {
+    if (\Drupal::hasService('search_api_algolia.helper')) {
+      \Drupal::service('search_api_algolia.helper')->entityDelete($node);
     }
   }
 
