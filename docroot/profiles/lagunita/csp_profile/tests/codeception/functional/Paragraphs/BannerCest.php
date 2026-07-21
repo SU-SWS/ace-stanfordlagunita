@@ -74,6 +74,12 @@ class BannerCest {
     $I->click('Edit', '.lpb-controls');
     $I->waitForText('Behaviors');
     $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+
+    // Unlimited cardinality & button type attribute.
+    $I->canSeeElement( '[data-drupal-selector="edit-su-banner-button"] input[value="Add another item"]');
+    $I->canSeeOptionIsSelected('Button Type', 'Primary');
+    $I->selectOption('Button Type', 'Secondary');
+
     $I->selectOption('Text Overlay Position', 'Right');;
     $I->selectOption('Heading Level', 'h3');
 

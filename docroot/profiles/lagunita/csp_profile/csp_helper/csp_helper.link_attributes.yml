@@ -1,0 +1,6 @@
+button_type:
+  title: Button Type
+  type: select
+  empty_option: 'Primary'
+  options:
+    secondary: Secondary

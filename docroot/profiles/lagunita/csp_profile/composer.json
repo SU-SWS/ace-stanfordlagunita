@@ -9,5 +9,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "drupal/link_attributes": "^2.1"
+    }
 }

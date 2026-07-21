@@ -1,0 +1,36 @@
+adding:
+  dependencies:
+    module:
+      - change_labels
+      - field_formatter_class
+      - link_attributes
+  content:
+    su_banner_button:
+      type: link_attributes
+      settings:
+        enabled_attributes:
+          button_type: true
+          id: false
+          name: false
+          target: false
+          rel: false
+          class: false
+          accesskey: false
+          aria-label: false
+          title: false
+        widget_default_open: expanded
+      third_party_settings:
+        change_labels:
+          add_another: ''
+          field_label_overwrite: ''
+          hide_add_another: 0
+          force_single_cardinality: 0
+        field_formatter_class:
+          class: ''
+removing:
+  dependencies:
+    module:
+      - link
+  content:
+    su_banner_button:
+      type: link_default
