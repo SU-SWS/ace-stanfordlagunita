@@ -85,7 +85,8 @@
     },
     "conflict": {
         "drupal/drupal": "*",
-        "drupal/colorbox": ">=2.2.0"
+        "drupal/colorbox": ">=2.2.0",
+        "doctrine/instantiator": ">=2.1.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
