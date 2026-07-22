@@ -77,8 +77,8 @@ class BannerCest {
 
     // Unlimited cardinality & button type attribute.
     $I->canSeeElement( '[data-drupal-selector="edit-su-banner-button"] input[value="Add another item"]');
-    $I->canSeeOptionIsSelected('Button Type', 'Solid red');
-    $I->selectOption('Button Type', 'Border brown');
+    $I->canSeeOptionIsSelected('Image Banner Button Type', 'Solid red');
+    $I->selectOption('Image Banner Button Type', 'Border brown');
 
     $I->selectOption('Text Overlay Position', 'Right');;
     $I->selectOption('Heading Level', 'h3');
