@@ -1,6 +1,6 @@
-button_type:
-  title: Button Type
+image_banner_button_type:
+  title: Image Banner Button Type
   type: select
-  empty_option: 'Primary'
+  empty_option: 'Solid red'
   options:
-    secondary: Secondary
+    archway: 'Border brown'

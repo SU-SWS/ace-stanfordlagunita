@@ -9,7 +9,7 @@ adding:
       type: link_attributes
       settings:
         enabled_attributes:
-          button_type: true
+          image_banner_button_type: true
           id: false
           name: false
           target: false
