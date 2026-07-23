@@ -72,7 +72,7 @@ content:
       closed_mode_threshold: 1
       add_mode: button
       form_display_mode: default
-      default_paragraph_type: csp_course_card_instructor
+      default_paragraph_type: _none
       features:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
