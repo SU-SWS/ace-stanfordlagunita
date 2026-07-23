@@ -1,0 +1,19 @@
+uuid: aa632e01-16bc-447a-9012-7d048100b22a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_course_card_format
+    - paragraphs.paragraphs_type.csp_faux_course_card
+id: paragraph.csp_faux_course_card.csp_course_card_format
+field_name: csp_course_card_format
+entity_type: paragraph
+bundle: csp_faux_course_card
+label: Format
+description: 'Optional. E.g. "On Campus" or "Online". Displayed inline with Location by the frontend.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

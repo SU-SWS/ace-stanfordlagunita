@@ -229,6 +229,12 @@ entity_config:
       edges_enabled: true
       routes_enabled: true
   paragraph:
+    csp_course_card_instructor:
+      enabled: true
+      query_load_enabled: true
+    csp_faux_course_card:
+      enabled: true
+      query_load_enabled: true
     stanford_accordion:
       enabled: true
       query_load_enabled: true

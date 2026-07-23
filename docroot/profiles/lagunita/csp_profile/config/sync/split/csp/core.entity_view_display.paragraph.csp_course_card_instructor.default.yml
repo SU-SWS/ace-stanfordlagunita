@@ -1,0 +1,56 @@
+uuid: f3c6a2ec-5005-4943-8d17-ef88e0083241
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.csp_course_card_instructor.csp_instructor_headshot
+    - field.field.paragraph.csp_course_card_instructor.csp_instructor_name
+    - field.field.paragraph.csp_course_card_instructor.csp_instructor_title
+    - field.field.paragraph.csp_course_card_instructor.csp_instructor_url
+    - paragraphs.paragraphs_type.csp_course_card_instructor
+  module:
+    - link
+id: paragraph.csp_course_card_instructor.default
+targetEntityType: paragraph
+bundle: csp_course_card_instructor
+mode: default
+content:
+  csp_instructor_headshot:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  csp_instructor_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  csp_instructor_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  csp_instructor_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

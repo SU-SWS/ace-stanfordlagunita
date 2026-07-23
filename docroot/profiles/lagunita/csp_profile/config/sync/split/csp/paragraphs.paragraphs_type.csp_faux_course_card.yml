@@ -1,0 +1,10 @@
+uuid: ac4cedb9-a66d-4537-bebb-d0729476de5b
+langcode: en
+status: true
+dependencies: {  }
+id: csp_faux_course_card
+label: 'Faux Course Card'
+icon_uuid: null
+icon_default: null
+description: 'A manually authored card resembling a CSP course/program card: image, title, format/location, a color bar, and up to 3 instructors.'
+behavior_plugins: {  }

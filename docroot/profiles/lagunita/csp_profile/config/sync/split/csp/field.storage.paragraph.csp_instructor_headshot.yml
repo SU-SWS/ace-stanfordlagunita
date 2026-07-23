@@ -1,0 +1,20 @@
+uuid: a42a3c62-ad6b-4391-9e3b-9f3d67c4da35
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.csp_instructor_headshot
+field_name: csp_instructor_headshot
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
