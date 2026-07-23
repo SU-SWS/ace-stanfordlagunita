@@ -1,0 +1,4 @@
+course_card_preview:
+  css:
+    component:
+      css/course-card-preview.css: {}

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Rough Drupal-side preview of a Course Card Instructor sub-paragraph.
+ * See paragraph--csp-faux-course-card.html.twig for context.
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'csp-course-card-preview__instructor',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if content.csp_instructor_headshot %}
+    {{ content.csp_instructor_headshot }}
+  {% endif %}
+  <div class="csp-course-card-preview__instructor-text">
+    <div class="csp-course-card-preview__instructor-name">{{ content.csp_instructor_name }}</div>
+    {% if content.csp_instructor_title %}
+      <div class="csp-course-card-preview__instructor-title">{{ content.csp_instructor_title }}</div>
+    {% endif %}
+  </div>
+</div>

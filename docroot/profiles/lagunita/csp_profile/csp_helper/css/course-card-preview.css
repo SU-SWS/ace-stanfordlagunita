@@ -1,0 +1,96 @@
+/**
+ * Rough structural preview of the Faux Course Card paragraph, shown on the
+ * canonical Drupal node page only. This approximates the CSP-87 design so
+ * editors get a sense of composition/content balance while authoring - it is
+ * not a pixel match for the Next.js frontend, which owns the real styling.
+ */
+.csp-course-card-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 800px;
+  padding: 12px;
+  border: 1px solid #e5e1d8;
+  border-radius: 16px;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+.csp-course-card-preview__image {
+  flex: 0 0 auto;
+  width: 260px;
+  max-width: 100%;
+}
+
+.csp-course-card-preview__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.csp-course-card-preview__body {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.csp-course-card-preview__color-bar {
+  width: 50px;
+  height: 4px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.csp-course-card-preview__meta {
+  color: #53565a;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.csp-course-card-preview__meta .divider {
+  margin: 0 6px;
+}
+
+.csp-course-card-preview__title {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+.csp-course-card-preview__title a {
+  color: #2e2d29;
+  text-decoration: none;
+}
+
+.csp-course-card-preview__instructors {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.csp-course-card-preview__instructor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.csp-course-card-preview__instructor img {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.csp-course-card-preview__instructor-text {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.csp-course-card-preview__instructor-name {
+  font-family: Georgia, serif;
+}
+
+.csp-course-card-preview__instructor-title {
+  color: #53565a;
+}
