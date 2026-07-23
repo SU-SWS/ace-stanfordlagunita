@@ -135,6 +135,16 @@ class FauxCourseCardCest {
       'instructor_name' => $this->faker->name(),
     ];
 
+    // The Image field is required, so attach a media image up front.
+    $file_system = \Drupal::service('file_system');
+    $uri = $file_system->copy(__DIR__ . '/logo.jpg', 'public://fcc-authoring-logo.jpg', \Drupal\Core\File\FileExists::Replace);
+    $file = $I->createEntity(['uri' => $uri, 'status' => 1], 'file');
+    $media = $I->createEntity([
+      'bundle' => 'image',
+      'name' => 'FCC Authoring Test Image',
+      'field_media_image' => ['target_id' => $file->id(), 'alt' => 'Test'],
+    ], 'media');
+
     $paragraph = $I->createEntity([
       'type' => 'csp_faux_course_card',
       'csp_course_card_title' => $this->faker->words(3, TRUE),
@@ -144,6 +154,7 @@ class FauxCourseCardCest {
         'options' => [],
       ],
       'csp_course_card_color' => 'olive',
+      'csp_course_card_image' => ['target_id' => $media->id()],
     ], 'paragraph');
 
     $node = $I->createEntity([
@@ -172,8 +183,8 @@ class FauxCourseCardCest {
     $I->wait(1);
     $I->selectOption('select[name^="csp_course_card_color"]', 'Plum');
 
-    // Add an instructor block through the nested paragraphs widget.
-    $I->click('Add Instructor', '.ui-dialog');
+    // Add an instructor block through the nested paragraphs widget. 
+    $I->click('Add Course Card Instructor', '.ui-dialog');
     $I->waitForElement('[name*="csp_instructor_name"]');
     $I->fillField('[name*="csp_instructor_name"]', $field_values['instructor_name']);
 
