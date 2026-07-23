@@ -932,6 +932,30 @@ field_config:
       su_publication_topics:
         enabled: true
   paragraph:
+    csp_course_card_instructor:
+      csp_instructor_headshot:
+        enabled: true
+      csp_instructor_name:
+        enabled: true
+      csp_instructor_title:
+        enabled: true
+      csp_instructor_url:
+        enabled: true
+    csp_faux_course_card:
+      csp_course_card_color:
+        enabled: true
+      csp_course_card_format:
+        enabled: true
+      csp_course_card_image:
+        enabled: true
+      csp_course_card_instructors:
+        enabled: true
+      csp_course_card_link:
+        enabled: true
+      csp_course_card_location:
+        enabled: true
+      csp_course_card_title:
+        enabled: true
     stanford_accordion:
       su_accordion_body:
         enabled: true
