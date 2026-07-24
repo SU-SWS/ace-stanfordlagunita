@@ -1,0 +1,21 @@
+uuid: fbe74416-7487-46d1-94d2-1d54f9c7d7d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.csp_instructor_title
+field_name: csp_instructor_title
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

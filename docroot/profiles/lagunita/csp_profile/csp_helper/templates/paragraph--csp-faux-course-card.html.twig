@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Maps the Faux Course Card paragraph onto the course_card_preview component.
+ *
+ * Field values are read straight off the paragraph rather than the rendered
+ * fields: the field templates wrap their output in a div, which is not valid
+ * inside the component's heading. '?? ...' coerces empty (NULL) fields to the
+ * empty string the component's string props require.
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+{% set color = paragraph.csp_course_card_color.color %}
+{{ include('csp_helper:course_card_preview', {
+  attributes: attributes.addClass(classes),
+  title: paragraph.csp_course_card_title.value ?? '',
+  color_hex: color ? '#' ~ color : '#e5e1d8',
+  format: paragraph.csp_course_card_format.value ?? '',
+  location: paragraph.csp_course_card_location.value ?? '',
+  url: paragraph.csp_course_card_link.isEmpty ? '' : paragraph.csp_course_card_link.0.getUrl.toString,
+  image: paragraph.csp_course_card_image.isEmpty ? null : content.csp_course_card_image,
+  instructors: paragraph.csp_course_card_instructors.isEmpty ? null : content.csp_course_card_instructors,
+}, with_context = false) }}

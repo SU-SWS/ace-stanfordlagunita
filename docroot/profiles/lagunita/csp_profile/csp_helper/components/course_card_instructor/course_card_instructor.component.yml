@@ -1,0 +1,35 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+name: Course Card Instructor
+status: stable
+description: >
+  A single instructor within a Course Card Preview. Rendered by the Course Card
+  Instructor paragraph, which the parent card places in its instructors slot.
+
+props:
+  type: object
+  required:
+    - name
+  properties:
+    name:
+      type: string
+      title: Name
+      examples:
+        - Ada Lovelace
+    title:
+      type: string
+      title: Title
+      description: Job title, shown beneath the name.
+      examples:
+        - Lecturer in Mathematics
+    url:
+      type: string
+      title: Profile URL
+      description: When set, the name links here.
+      examples:
+        - https://continuingstudies.stanford.edu/instructors/ada
+
+slots:
+  headshot:
+    title: Headshot
+    description: Rendered headshot image media.

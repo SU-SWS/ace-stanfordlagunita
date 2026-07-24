@@ -1,0 +1,10 @@
+uuid: de923c7a-a8f3-4690-ade6-24466d51cc18
+langcode: en
+status: true
+dependencies: {  }
+id: csp_course_card_instructor
+label: 'Course Card Instructor'
+icon_uuid: null
+icon_default: null
+description: 'An instructor block (headshot, name, title/role, URL) referenced by the Faux Course Card paragraph.'
+behavior_plugins: {  }

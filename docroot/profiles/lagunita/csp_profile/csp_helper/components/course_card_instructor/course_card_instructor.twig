@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Course Card Instructor component.
+ *
+ * See the course_card_preview component for context.
+ */
+#}
+<div{{ attributes.addClass('csp-course-card-preview__instructor') }}>
+  {% if headshot %}
+    {{ headshot }}
+  {% endif %}
+
+  <div class="csp-course-card-preview__instructor-text">
+    <div class="csp-course-card-preview__instructor-name">
+      {% if url %}
+        <a href="{{ url }}">{{ name }}</a>
+      {% else %}
+        {{ name }}
+      {% endif %}
+    </div>
+
+    {% if title %}
+      <div class="csp-course-card-preview__instructor-title">{{ title }}</div>
+    {% endif %}
+  </div>
+</div>

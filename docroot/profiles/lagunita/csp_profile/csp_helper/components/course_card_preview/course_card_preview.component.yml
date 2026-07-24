@@ -1,0 +1,52 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+name: Course Card Preview
+status: stable
+description: >
+  Rough Drupal-side preview of a Faux Course Card, shown to editors on the
+  canonical node page. The Next.js frontend owns the real presentation; this
+  only needs to convey composition and content balance.
+
+props:
+  type: object
+  required:
+    - title
+    - color_hex
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The course title, used as the heading and link text.
+      examples:
+        - Introduction to Baroque Music
+    color_hex:
+      type: string
+      title: Color bar
+      description: "'#'-prefixed hex for the accent bar."
+      examples:
+        - '#81337a'
+    format:
+      type: string
+      title: Format
+      description: Delivery format, shown alongside the location.
+      examples:
+        - On Campus
+    location:
+      type: string
+      title: Location
+      examples:
+        - Stanford, CA
+    url:
+      type: string
+      title: Link URL
+      description: When set, the image and heading link here.
+      examples:
+        - https://continuingstudies.stanford.edu/
+
+slots:
+  image:
+    title: Image
+    description: Rendered course image media.
+  instructors:
+    title: Instructors
+    description: Rendered Course Card Instructor paragraphs.

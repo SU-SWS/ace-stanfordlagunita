@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Course Card Preview component.
+ *
+ * The title is printed as plain text rather than a rendered field: field
+ * templates wrap their output in a div, which is not valid inside a heading.
+ */
+#}
+<div{{ attributes.addClass('csp-course-card-preview') }}>
+  {% if image %}
+    <div class="csp-course-card-preview__image">
+      {% if url %}
+        <a href="{{ url }}">{{ image }}</a>
+      {% else %}
+        {{ image }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="csp-course-card-preview__body">
+    <div class="csp-course-card-preview__color-bar" style="background-color: {{ color_hex }}"></div>
+
+    {% if format or location %}
+      <div class="csp-course-card-preview__meta">
+        {{- format -}}
+        {%- if format and location %}<span class="divider">|</span>{% endif -%}
+        {{- location -}}
+      </div>
+    {% endif %}
+
+    <h3 class="csp-course-card-preview__title">
+      {% if url %}
+        <a href="{{ url }}">{{ title }}</a>
+      {% else %}
+        {{ title }}
+      {% endif %}
+    </h3>
+
+    {% if instructors %}
+      <div class="csp-course-card-preview__instructors">
+        {{ instructors }}
+      </div>
+    {% endif %}
+  </div>
+</div>

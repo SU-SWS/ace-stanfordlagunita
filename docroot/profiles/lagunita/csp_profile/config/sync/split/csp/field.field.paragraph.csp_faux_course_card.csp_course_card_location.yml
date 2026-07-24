@@ -1,0 +1,19 @@
+uuid: 32c782c9-c2cd-4f9e-9e01-357bee1c6182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_course_card_location
+    - paragraphs.paragraphs_type.csp_faux_course_card
+id: paragraph.csp_faux_course_card.csp_course_card_location
+field_name: csp_course_card_location
+entity_type: paragraph
+bundle: csp_faux_course_card
+label: Location
+description: 'Optional. Displayed inline with Format by the frontend, with a divider when both are present.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

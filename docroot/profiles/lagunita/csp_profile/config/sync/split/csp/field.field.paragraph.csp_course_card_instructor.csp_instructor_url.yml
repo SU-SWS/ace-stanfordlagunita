@@ -1,0 +1,23 @@
+uuid: f7053ac0-d6d2-42c6-840a-a2175f6b225c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_instructor_url
+    - paragraphs.paragraphs_type.csp_course_card_instructor
+  module:
+    - link
+id: paragraph.csp_course_card_instructor.csp_instructor_url
+field_name: csp_instructor_url
+entity_type: paragraph
+bundle: csp_course_card_instructor
+label: URL
+description: 'Optional. Link the instructor to a profile or website.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

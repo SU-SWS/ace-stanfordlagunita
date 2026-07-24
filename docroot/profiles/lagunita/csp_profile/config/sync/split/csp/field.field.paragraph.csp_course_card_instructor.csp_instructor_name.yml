@@ -1,0 +1,19 @@
+uuid: 1b96be7f-4a56-406b-8932-86616cd121bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_instructor_name
+    - paragraphs.paragraphs_type.csp_course_card_instructor
+id: paragraph.csp_course_card_instructor.csp_instructor_name
+field_name: csp_instructor_name
+entity_type: paragraph
+bundle: csp_course_card_instructor
+label: Name
+description: "Add the instructor's full name."
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

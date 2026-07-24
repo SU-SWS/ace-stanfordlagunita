@@ -1,0 +1,19 @@
+uuid: 5e6d9c0e-4ed0-4ea6-9cea-25b109463f33
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.csp_course_card_link
+field_name: csp_course_card_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

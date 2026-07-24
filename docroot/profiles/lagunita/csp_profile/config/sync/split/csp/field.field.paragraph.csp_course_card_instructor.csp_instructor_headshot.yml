@@ -1,0 +1,28 @@
+uuid: 702533e9-6195-44f7-9a76-93b95d944e82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_instructor_headshot
+    - media.type.image
+    - paragraphs.paragraphs_type.csp_course_card_instructor
+id: paragraph.csp_course_card_instructor.csp_instructor_headshot
+field_name: csp_instructor_headshot
+entity_type: paragraph
+bundle: csp_course_card_instructor
+label: Headshot
+description: 'Optional. 57x57px, displayed as a circle.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

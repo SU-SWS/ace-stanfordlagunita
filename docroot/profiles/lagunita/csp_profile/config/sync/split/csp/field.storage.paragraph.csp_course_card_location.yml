@@ -1,0 +1,21 @@
+uuid: f64c8ef2-e8eb-4d6a-a5ee-df5db4876427
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.csp_course_card_location
+field_name: csp_course_card_location
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

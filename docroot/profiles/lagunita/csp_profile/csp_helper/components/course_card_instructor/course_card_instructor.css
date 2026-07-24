@@ -1,0 +1,30 @@
+/**
+ * Instructor row within the Faux Course Card editor preview.
+ * See course_card_preview.css for context.
+ */
+.csp-course-card-preview__instructor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.csp-course-card-preview__instructor img {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.csp-course-card-preview__instructor-text {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.csp-course-card-preview__instructor-name {
+  font-family: Georgia, serif;
+}
+
+.csp-course-card-preview__instructor-title {
+  color: #53565a;
+}

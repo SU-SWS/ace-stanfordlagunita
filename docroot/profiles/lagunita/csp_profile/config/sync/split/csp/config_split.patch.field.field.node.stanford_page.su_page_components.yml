@@ -1,0 +1,13 @@
+adding:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.csp_faux_course_card
+  settings:
+    handler_settings:
+      target_bundles:
+        csp_faux_course_card: csp_faux_course_card
+      target_bundles_drag_drop:
+        csp_faux_course_card:
+          weight: 40
+          enabled: true
+removing: {  }

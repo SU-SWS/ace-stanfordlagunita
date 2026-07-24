@@ -1,0 +1,28 @@
+uuid: 0ee9c410-e3ef-4c20-9811-d45f138e4c75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_course_card_image
+    - media.type.image
+    - paragraphs.paragraphs_type.csp_faux_course_card
+id: paragraph.csp_faux_course_card.csp_course_card_image
+field_name: csp_course_card_image
+entity_type: paragraph
+bundle: csp_faux_course_card
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

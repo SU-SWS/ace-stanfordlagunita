@@ -1,0 +1,19 @@
+uuid: 01afa9c0-472f-4d59-9680-6dead6704704
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.csp_instructor_url
+field_name: csp_instructor_url
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
