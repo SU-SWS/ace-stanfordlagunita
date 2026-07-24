@@ -3,10 +3,6 @@
  * @file
  * Maps the Course Card Instructor paragraph onto the matching component.
  *
- * Variables:
- * - instructor_name: plain text Name value.
- * - instructor_title: plain text Title value.
- * - instructor_url: resolved URL for the instructor's profile, if any.
  */
 #}
 {%
@@ -19,8 +15,8 @@
 %}
 {{ include('csp_helper:course_card_instructor', {
   attributes: attributes.addClass(classes),
-  name: instructor_name,
-  title: instructor_title,
-  url: instructor_url,
+  name: paragraph.csp_instructor_name.value ?? '',
+  title: paragraph.csp_instructor_title.value ?? '',
+  url: paragraph.csp_instructor_url.isEmpty ? '' : paragraph.csp_instructor_url.0.getUrl.toString,
   headshot: content.csp_instructor_headshot,
 }, with_context = false) }}

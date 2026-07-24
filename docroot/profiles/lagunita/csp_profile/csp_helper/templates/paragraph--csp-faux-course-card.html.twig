@@ -3,12 +3,10 @@
  * @file
  * Maps the Faux Course Card paragraph onto the course_card_preview component.
  *
- * Variables:
- * - course_card_color_hex: hex for the selected color bar.
- * - course_card_title: plain text Title value.
- * - course_card_format: plain text Format value.
- * - course_card_location: plain text Location value.
- * - course_card_url: resolved URL for the card link.
+ * Field values are read straight off the paragraph rather than the rendered
+ * fields: the field templates wrap their output in a div, which is not valid
+ * inside the component's heading. '?? ...' coerces empty (NULL) fields to the
+ * empty string the component's string props require.
  */
 #}
 {%
@@ -19,13 +17,14 @@
     not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
+{% set color = paragraph.csp_course_card_color.color %}
 {{ include('csp_helper:course_card_preview', {
   attributes: attributes.addClass(classes),
-  title: course_card_title,
-  color_hex: course_card_color_hex,
-  format: course_card_format,
-  location: course_card_location,
-  url: course_card_url,
+  title: paragraph.csp_course_card_title.value ?? '',
+  color_hex: color ? '#' ~ color : '#e5e1d8',
+  format: paragraph.csp_course_card_format.value ?? '',
+  location: paragraph.csp_course_card_location.value ?? '',
+  url: paragraph.csp_course_card_link.isEmpty ? '' : paragraph.csp_course_card_link.0.getUrl.toString,
   image: paragraph.csp_course_card_image.isEmpty ? null : content.csp_course_card_image,
-  instructors: content.csp_course_card_instructors,
+  instructors: paragraph.csp_course_card_instructors.isEmpty ? null : content.csp_course_card_instructors,
 }, with_context = false) }}
