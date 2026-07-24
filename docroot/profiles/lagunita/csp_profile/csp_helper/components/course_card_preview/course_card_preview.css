@@ -1,8 +1,7 @@
 /**
  * Rough structural preview of the Faux Course Card paragraph, shown on the
- * canonical Drupal node page only. This approximates the CSP-87 design so
- * editors get a sense of composition/content balance while authoring - it is
- * not a pixel match for the Next.js frontend, which owns the real styling.
+ * canonical Drupal node page only. This approximates the design so
+ * editors get a sense of composition/content balance while authoring.
  */
 .csp-course-card-preview {
   display: flex;
@@ -66,31 +65,4 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.csp-course-card-preview__instructor {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.csp-course-card-preview__instructor img {
-  width: 57px;
-  height: 57px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex: 0 0 auto;
-}
-
-.csp-course-card-preview__instructor-text {
-  font-size: 14px;
-  line-height: 1.3;
-}
-
-.csp-course-card-preview__instructor-name {
-  font-family: Georgia, serif;
-}
-
-.csp-course-card-preview__instructor-title {
-  color: #53565a;
 }

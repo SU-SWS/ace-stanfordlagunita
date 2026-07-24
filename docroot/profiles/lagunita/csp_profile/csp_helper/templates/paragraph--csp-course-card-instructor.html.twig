@@ -1,8 +1,7 @@
 {#
 /**
  * @file
- * Rough Drupal-side preview of a Course Card Instructor sub-paragraph.
- * See paragraph--csp-faux-course-card.html.twig for context.
+ * Maps the Course Card Instructor paragraph onto the matching component.
  *
  * Variables:
  * - instructor_name: plain text Name value.
@@ -16,23 +15,12 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'csp-course-card-preview__instructor',
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {% if content.csp_instructor_headshot %}
-    {{ content.csp_instructor_headshot }}
-  {% endif %}
-  <div class="csp-course-card-preview__instructor-text">
-    <div class="csp-course-card-preview__instructor-name">
-      {% if instructor_url %}
-        <a href="{{ instructor_url }}">{{ instructor_name }}</a>
-      {% else %}
-        {{ instructor_name }}
-      {% endif %}
-    </div>
-    {% if instructor_title %}
-      <div class="csp-course-card-preview__instructor-title">{{ instructor_title }}</div>
-    {% endif %}
-  </div>
-</div>
+{{ include('csp_helper:course_card_instructor', {
+  attributes: attributes.addClass(classes),
+  name: instructor_name,
+  title: instructor_title,
+  url: instructor_url,
+  headshot: content.csp_instructor_headshot,
+}, with_context = false) }}

@@ -1,6 +1,7 @@
 {#
 /**
  * @file
+ * Maps the Faux Course Card paragraph onto the course_card_preview component.
  *
  * Variables:
  * - course_card_color_hex: hex for the selected color bar.
@@ -16,45 +17,15 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'csp-course-card-preview',
   ]
 %}
-
-<div{{ attributes.addClass(classes) }}>
-  {% if content.csp_course_card_image %}
-    <div class="csp-course-card-preview__image">
-      {% if course_card_url %}
-        <a href="{{ course_card_url }}">{{ content.csp_course_card_image }}</a>
-      {% else %}
-        {{ content.csp_course_card_image }}
-      {% endif %}
-    </div>
-  {% endif %}
-  <div class="csp-course-card-preview__body">
-    <div class="csp-course-card-preview__color-bar" style="background-color: {{ course_card_color_hex }}"></div>
-
-    {% if course_card_format or course_card_location %}
-      <div class="csp-course-card-preview__meta">
-        {{ course_card_format }}
-        {% if course_card_format and course_card_location %}
-          <span class="divider">|</span>
-        {% endif %}
-        {{ course_card_location }}
-      </div>
-    {% endif %}
-
-    <h3 class="csp-course-card-preview__title">
-      {% if course_card_url %}
-        <a href="{{ course_card_url }}">{{ course_card_title }}</a>
-      {% else %}
-        {{ course_card_title }}
-      {% endif %}
-    </h3>
-
-    {% if content.csp_course_card_instructors %}
-      <div class="csp-course-card-preview__instructors">
-        {{ content.csp_course_card_instructors }}
-      </div>
-    {% endif %}
-  </div>
-</div>
+{{ include('csp_helper:course_card_preview', {
+  attributes: attributes.addClass(classes),
+  title: course_card_title,
+  color_hex: course_card_color_hex,
+  format: course_card_format,
+  location: course_card_location,
+  url: course_card_url,
+  image: content.csp_course_card_image,
+  instructors: content.csp_course_card_instructors,
+}, with_context = false) }}
