@@ -51,6 +51,7 @@ class FauxCourseCardCest {
       'location' => 'Stanford, CA',
       'instructor_one_name' => $this->faker->name(),
       'instructor_one_title' => $this->faker->jobTitle(),
+      'instructor_one_uri' => $this->faker->url(),
       'instructor_two_name' => $this->faker->name(),
     ];
 
@@ -60,6 +61,11 @@ class FauxCourseCardCest {
       'type' => 'csp_course_card_instructor',
       'csp_instructor_name' => $field_values['instructor_one_name'],
       'csp_instructor_title' => $field_values['instructor_one_title'],
+      'csp_instructor_url' => [
+        'uri' => $field_values['instructor_one_uri'],
+        'title' => '',
+        'options' => [],
+      ],
     ], 'paragraph');
     $instructor_two = $I->createEntity([
       'type' => 'csp_course_card_instructor',
@@ -97,6 +103,14 @@ class FauxCourseCardCest {
     $I->canSee($field_values['instructor_one_title']);
     $I->canSee($field_values['instructor_two_name']);
     $I->canSeeNumberOfElements('.paragraph--type--csp-course-card-instructor', 2);
+
+    // An instructor with a profile URL links their name; one without does not.
+    $I->canSeeLink($field_values['instructor_one_name'], $field_values['instructor_one_uri']);
+    $I->cantSeeLink($field_values['instructor_two_name']);
+
+    // The heading holds phrasing content only - rendering the title field
+    // here instead of its plain value would nest a div inside the h3.
+    $I->cantSeeElement('.csp-course-card-preview__title div');
   }
 
   /**
