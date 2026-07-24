@@ -3,34 +3,15 @@ langcode: en
 status: true
 dependencies:
   module:
-    - options
+    - color_field
     - paragraphs
 id: paragraph.csp_course_card_color
 field_name: csp_course_card_color
 entity_type: paragraph
-type: list_string
+type: color_field_type
 settings:
-  allowed_values:
-    -
-      value: lagunita
-      label: Lagunita
-    -
-      value: plum
-      label: Plum
-    -
-      value: palo-verde
-      label: 'Palo Verde'
-    -
-      value: olive
-      label: Olive
-    -
-      value: cardinal
-      label: Cardinal
-    -
-      value: archway
-      label: Archway
-  allowed_values_function: ''
-module: options
+  format: hexhex
+module: color_field
 locked: false
 cardinality: 1
 translatable: true

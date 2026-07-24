@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.csp_course_card_color
     - paragraphs.paragraphs_type.csp_faux_course_card
   module:
-    - options
+    - color_field
 id: paragraph.csp_faux_course_card.csp_course_card_color
 field_name: csp_course_card_color
 entity_type: paragraph
@@ -17,5 +17,6 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  opacity: 0
+field_type: color_field_type

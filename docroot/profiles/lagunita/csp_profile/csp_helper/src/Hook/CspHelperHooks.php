@@ -12,22 +12,6 @@ use Drupal\Core\Hook\Attribute\Hook;
 class CspHelperHooks {
 
   /**
-   * Color bar token approximations for the Drupal-side preview only.
-   *
-   * These are rough stand-ins for the real CSP design tokens (see CSP-105/
-   * CSP-87) so editors get a sense of which bar they picked. The Next.js
-   * frontend owns the real color values.
-   */
-  protected const COLOR_PREVIEW_HEX = [
-    'lagunita' => '#00778B',
-    'plum' => '#620059',
-    'palo-verde' => '#175E54',
-    'olive' => '#4F4821',
-    'cardinal' => '#8C1515',
-    'archway' => '#D2C295',
-  ];
-
-  /**
    * Implements hook_theme().
    *
    * Registers the Faux Course Card preview templates as suggestions of the
@@ -54,9 +38,15 @@ class CspHelperHooks {
   public function preprocessFauxCourseCard(array &$variables): void {
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
     $paragraph = $variables['paragraph'];
-    $variables['course_card_color_hex'] = self::COLOR_PREVIEW_HEX[$paragraph->get('csp_course_card_color')->value ?? ''] ?? '#e5e1d8';
+    $color = $paragraph->get('csp_course_card_color')->color;
+    $variables['course_card_color_hex'] = $color ? '#' . ltrim((string) $color, '#') : '#e5e1d8';
+
+    // Plain values rather than the rendered fields: the field templates wrap
+    // their output in a div, which is not valid inside the heading below.
+    $variables['course_card_title'] = $paragraph->get('csp_course_card_title')->value;
     $variables['course_card_format'] = $paragraph->get('csp_course_card_format')->value;
     $variables['course_card_location'] = $paragraph->get('csp_course_card_location')->value;
+
     $link_item = $paragraph->get('csp_course_card_link')->first();
     $variables['course_card_url'] = $link_item ? $link_item->getUrl()->toString() : '';
 
@@ -68,6 +58,14 @@ class CspHelperHooks {
    */
   #[Hook('preprocess_paragraph__csp_course_card_instructor')]
   public function preprocessInstructor(array &$variables): void {
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $variables['paragraph'];
+    $variables['instructor_name'] = $paragraph->get('csp_instructor_name')->value;
+    $variables['instructor_title'] = $paragraph->get('csp_instructor_title')->value;
+
+    $url_item = $paragraph->get('csp_instructor_url')->first();
+    $variables['instructor_url'] = $url_item ? $url_item->getUrl()->toString() : '';
+
     $this->attachPreviewLibrary($variables);
   }
 

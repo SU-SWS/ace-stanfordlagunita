@@ -12,10 +12,10 @@ dependencies:
     - field.field.paragraph.csp_faux_course_card.csp_course_card_title
     - paragraphs.paragraphs_type.csp_faux_course_card
   module:
+    - color_field
     - field_group
     - link
     - media_library
-    - options
     - paragraphs
 third_party_settings:
   field_group:
@@ -39,10 +39,11 @@ bundle: csp_faux_course_card
 mode: default
 content:
   csp_course_card_color:
-    type: options_select
+    type: color_field_widget_box
     weight: 0
     region: content
-    settings: {  }
+    settings:
+      default_colors: '#009ab4,#81337a,#279989,#8f993e,#8c1515,#766253'
     third_party_settings: {  }
   csp_course_card_format:
     type: string_textfield

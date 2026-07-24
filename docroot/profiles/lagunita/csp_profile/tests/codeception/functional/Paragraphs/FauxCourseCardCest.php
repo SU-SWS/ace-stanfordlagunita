@@ -11,6 +11,21 @@ use Faker\Factory;
 class FauxCourseCardCest {
 
   /**
+   * The approved color bar palette, by CSP design token name.
+   *
+   * Values are lowercase hex without a leading '#', the form the field stores.
+   * Callers add the '#' where a CSS or DOM value is being built.
+   */
+  const PALETTE = [
+    'lagunita-light' => '009ab4',
+    'plum-80' => '81337a',
+    'palo-verde' => '279989',
+    'olive' => '8f993e',
+    'cardinal-red' => '8c1515',
+    'archway-light' => '766253',
+  ];
+
+  /**
    * Faker service.
    *
    * @var \Faker\Generator
@@ -51,8 +66,7 @@ class FauxCourseCardCest {
       'csp_instructor_name' => $field_values['instructor_two_name'],
     ], 'paragraph');
 
-    $paragraph = $I->createEntity([
-      'type' => 'csp_faux_course_card',
+    $node = $this->createPageWithCard($I, [
       'csp_course_card_title' => $field_values['title'],
       'csp_course_card_link' => [
         'uri' => $field_values['uri'],
@@ -61,7 +75,6 @@ class FauxCourseCardCest {
       ],
       'csp_course_card_format' => $field_values['format'],
       'csp_course_card_location' => $field_values['location'],
-      'csp_course_card_color' => 'lagunita',
       'csp_course_card_instructors' => [
         [
           'target_id' => $instructor_one->id(),
@@ -71,15 +84,6 @@ class FauxCourseCardCest {
           'target_id' => $instructor_two->id(),
           'entity' => $instructor_two,
         ],
-      ],
-    ], 'paragraph');
-
-    $node = $I->createEntity([
-      'type' => 'stanford_page',
-      'title' => $this->faker->words(4, TRUE),
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
       ],
     ]);
 
@@ -99,24 +103,8 @@ class FauxCourseCardCest {
    * An instructor block that was never added should produce no DOM output.
    */
   public function testEmptyInstructorBlockProducesNoOutput(FunctionalTester $I) {
-    $paragraph = $I->createEntity([
-      'type' => 'csp_faux_course_card',
-      'csp_course_card_title' => $this->faker->words(3, TRUE),
-      'csp_course_card_link' => [
-        'uri' => $this->faker->url(),
-        'title' => $this->faker->words(2, TRUE),
-        'options' => [],
-      ],
-      'csp_course_card_color' => 'cardinal',
-    ], 'paragraph');
-
-    $node = $I->createEntity([
-      'type' => 'stanford_page',
-      'title' => $this->faker->words(4, TRUE),
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
+    $node = $this->createPageWithCard($I, [
+      'csp_course_card_color' => ['color' => self::PALETTE['cardinal-red']],
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
@@ -145,45 +133,25 @@ class FauxCourseCardCest {
       'field_media_image' => ['target_id' => $file->id(), 'alt' => 'Test'],
     ], 'media');
 
-    $paragraph = $I->createEntity([
-      'type' => 'csp_faux_course_card',
-      'csp_course_card_title' => $this->faker->words(3, TRUE),
-      'csp_course_card_link' => [
-        'uri' => $this->faker->url(),
-        'title' => $this->faker->words(2, TRUE),
-        'options' => [],
-      ],
-      'csp_course_card_color' => 'olive',
+    $node = $this->createPageWithCard($I, [
+      'csp_course_card_color' => ['color' => self::PALETTE['olive']],
       'csp_course_card_image' => ['target_id' => $media->id()],
-    ], 'paragraph');
-
-    $node = $I->createEntity([
-      'type' => 'stanford_page',
-      'title' => $this->faker->words(4, TRUE),
-      'su_page_components' => [
-        'target_id' => $paragraph->id(),
-        'entity' => $paragraph,
-      ],
     ]);
 
-    $I->logInWithRole('site_manager');
-    $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->scrollTo('.js-lpb-component', 0, -100);
-    $I->moveMouseOver('.js-lpb-component', 10, 10);
-    $I->click('Edit', '.lpb-controls');
-
-    // Wait for the paragraph's own Title field inside the dialog.
-    $I->waitForElement('.ui-dialog [name="csp_course_card_title[0][value]"]');
+    $this->openCardEditForm($I, $node);
     $I->fillField('[name="csp_course_card_title[0][value]"]', $field_values['title']);
     $I->fillField('[name="csp_course_card_format[0][value]"]', $field_values['format']);
     $I->fillField('[name="csp_course_card_location[0][value]"]', $field_values['location']);
 
-    // The color bar select lives inside the collapsed "Styles" group.
+    // The color bar swatches live inside the collapsed "Styles" group. The
+    // color_field_widget_box widget hides the text input and renders the
+    // palette as buttons via JS, so wait for those to appear before clicking.
     $I->click('.ui-dialog .field-group-details summary');
-    $I->wait(1);
-    $I->selectOption('select[name^="csp_course_card_color"]', 'Plum');
+    $swatch = '.ui-dialog .color_field_widget_box__square[color="#' . self::PALETTE['plum-80'] . '"]';
+    $I->waitForElementVisible($swatch);
+    $I->click($swatch);
 
-    // Add an instructor block through the nested paragraphs widget. 
+    // Add an instructor block through the nested paragraphs widget.
     $I->click('Add Course Card Instructor', '.ui-dialog');
     $I->waitForElement('[name*="csp_instructor_name"]');
     $I->fillField('[name*="csp_instructor_name"]', $field_values['instructor_name']);
@@ -197,6 +165,62 @@ class FauxCourseCardCest {
     $I->canSee($field_values['format']);
     $I->canSee($field_values['location']);
     $I->canSee($field_values['instructor_name']);
+
+    // The swatch the editor picked should drive the preview color bar.
+    $style = strtolower((string) $I->grabAttributeFrom('.csp-course-card-preview__color-bar', 'style'));
+    $I->assertStringContainsString('#' . self::PALETTE['plum-80'], $style);
+  }
+
+  /**
+   * Create a basic page holding one Faux Course Card.
+   *
+   * @param \FunctionalTester $I
+   *   Tester.
+   * @param array $card_fields
+   *   Field values for the card, merged over the required defaults.
+   *
+   * @return \Drupal\node\NodeInterface
+   *   The saved node.
+   */
+  protected function createPageWithCard(FunctionalTester $I, array $card_fields = []) {
+    $paragraph = $I->createEntity($card_fields + [
+      'type' => 'csp_faux_course_card',
+      'csp_course_card_title' => $this->faker->words(3, TRUE),
+      'csp_course_card_link' => [
+        'uri' => $this->faker->url(),
+        'title' => $this->faker->words(2, TRUE),
+        'options' => [],
+      ],
+      'csp_course_card_color' => ['color' => self::PALETTE['lagunita-light']],
+    ], 'paragraph');
+
+    return $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->words(4, TRUE),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+  }
+
+  /**
+   * Open the card's edit dialog in the Layout Paragraphs editor.
+   *
+   * @param \FunctionalTester $I
+   *   Tester.
+   * @param \Drupal\node\NodeInterface $node
+   *   Node holding the card.
+   */
+  protected function openCardEditForm(FunctionalTester $I, $node): void {
+    $I->logInWithRole('site_manager');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+
+    // Wait for the paragraph's own Title field inside the dialog.
+    $I->waitForElement('.ui-dialog [name="csp_course_card_title[0][value]"]');
   }
 
 }

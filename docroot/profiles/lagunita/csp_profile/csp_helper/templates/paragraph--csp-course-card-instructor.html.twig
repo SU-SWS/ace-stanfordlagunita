@@ -3,6 +3,11 @@
  * @file
  * Rough Drupal-side preview of a Course Card Instructor sub-paragraph.
  * See paragraph--csp-faux-course-card.html.twig for context.
+ *
+ * Variables:
+ * - instructor_name: plain text Name value.
+ * - instructor_title: plain text Title value.
+ * - instructor_url: resolved URL for the instructor's profile, if any.
  */
 #}
 {%
@@ -19,9 +24,15 @@
     {{ content.csp_instructor_headshot }}
   {% endif %}
   <div class="csp-course-card-preview__instructor-text">
-    <div class="csp-course-card-preview__instructor-name">{{ content.csp_instructor_name }}</div>
-    {% if content.csp_instructor_title %}
-      <div class="csp-course-card-preview__instructor-title">{{ content.csp_instructor_title }}</div>
+    <div class="csp-course-card-preview__instructor-name">
+      {% if instructor_url %}
+        <a href="{{ instructor_url }}">{{ instructor_name }}</a>
+      {% else %}
+        {{ instructor_name }}
+      {% endif %}
+    </div>
+    {% if instructor_title %}
+      <div class="csp-course-card-preview__instructor-title">{{ instructor_title }}</div>
     {% endif %}
   </div>
 </div>

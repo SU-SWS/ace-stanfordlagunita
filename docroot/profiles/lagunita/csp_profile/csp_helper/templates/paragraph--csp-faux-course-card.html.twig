@@ -1,10 +1,10 @@
 {#
 /**
  * @file
-
  *
  * Variables:
- * - course_card_color_hex: approximate hex for the selected color bar.
+ * - course_card_color_hex: hex for the selected color bar.
+ * - course_card_title: plain text Title value.
  * - course_card_format: plain text Format value.
  * - course_card_location: plain text Location value.
  * - course_card_url: resolved URL for the card link.
@@ -45,9 +45,9 @@
 
     <h3 class="csp-course-card-preview__title">
       {% if course_card_url %}
-        <a href="{{ course_card_url }}">{{ content.csp_course_card_title }}</a>
+        <a href="{{ course_card_url }}">{{ course_card_title }}</a>
       {% else %}
-        {{ content.csp_course_card_title }}
+        {{ course_card_title }}
       {% endif %}
     </h3>
 

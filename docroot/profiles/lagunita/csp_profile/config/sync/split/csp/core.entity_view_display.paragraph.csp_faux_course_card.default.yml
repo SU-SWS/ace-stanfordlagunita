@@ -14,19 +14,11 @@ dependencies:
   module:
     - entity_reference_revisions
     - link
-    - options
 id: paragraph.csp_faux_course_card.default
 targetEntityType: paragraph
 bundle: csp_faux_course_card
 mode: default
 content:
-  csp_course_card_color:
-    type: list_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
   csp_course_card_format:
     type: string
     label: hidden
@@ -82,4 +74,5 @@ content:
     weight: 1
     region: content
 hidden:
+  csp_course_card_color: true
   search_api_excerpt: true
