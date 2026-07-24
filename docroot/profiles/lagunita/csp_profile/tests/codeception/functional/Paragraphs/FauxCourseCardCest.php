@@ -114,9 +114,10 @@ class FauxCourseCardCest {
   }
 
   /**
-   * An instructor block that was never added should produce no DOM output.
+   * Optional fields left empty should produce no stray DOM output.
    */
-  public function testEmptyInstructorBlockProducesNoOutput(FunctionalTester $I) {
+  public function testEmptyOptionalFieldsProduceNoOutput(FunctionalTester $I) {
+    // The default card has no image and no instructors.
     $node = $this->createPageWithCard($I, [
       'csp_course_card_color' => ['color' => self::PALETTE['cardinal-red']],
     ]);
@@ -124,6 +125,9 @@ class FauxCourseCardCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
     $I->canSeeNumberOfElements('.paragraph--type--csp-course-card-instructor', 0);
+
+    // The image is optional; its wrapper should be absent when unset.
+    $I->cantSeeElement('.csp-course-card-preview__image');
   }
 
   /**
@@ -137,7 +141,8 @@ class FauxCourseCardCest {
       'instructor_name' => $this->faker->name(),
     ];
 
-    // The Image field is required, so attach a media image up front.
+    // The image is optional, but attach one so this covers the with-image
+    // authoring path.
     $file_system = \Drupal::service('file_system');
     $uri = $file_system->copy(__DIR__ . '/logo.jpg', 'public://fcc-authoring-logo.jpg', \Drupal\Core\File\FileExists::Replace);
     $file = $I->createEntity(['uri' => $uri, 'status' => 1], 'file');

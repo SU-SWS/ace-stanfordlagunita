@@ -26,6 +26,6 @@
   format: course_card_format,
   location: course_card_location,
   url: course_card_url,
-  image: content.csp_course_card_image,
+  image: paragraph.csp_course_card_image.isEmpty ? null : content.csp_course_card_image,
   instructors: content.csp_course_card_instructors,
 }, with_context = false) }}
