@@ -1,0 +1,20 @@
+uuid: 64290b91-c9bb-46db-bf16-6483175f2b3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - paragraphs
+id: paragraph.csp_course_card_color
+field_name: csp_course_card_color
+entity_type: paragraph
+type: color_field_type
+settings:
+  format: hexhex
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
