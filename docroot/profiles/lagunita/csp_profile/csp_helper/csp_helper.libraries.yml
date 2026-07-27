@@ -1,0 +1,5 @@
+card_poster_preview:
+  version: 1.x
+  css:
+    theme:
+      css/card-poster-preview.css: {}

@@ -1,0 +1,22 @@
+uuid: 5c49d169-e0f5-4420-8555-1f69e8087e09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_card_bg_color
+    - paragraphs.paragraphs_type.stanford_card
+  module:
+    - color_field
+id: paragraph.stanford_card.csp_card_bg_color
+field_name: csp_card_bg_color
+entity_type: paragraph
+bundle: stanford_card
+label: 'Poster background color'
+description: 'The background color used behind the card when displayed in the Poster variant.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

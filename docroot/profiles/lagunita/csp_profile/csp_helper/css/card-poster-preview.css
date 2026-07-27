@@ -1,0 +1,26 @@
+/* Editor-preview styling for the Poster card variant (CSP-115).
+   Public rendering is handled by the Next.js frontend (CSP-108). */
+.csp-card-variant-poster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.375rem;
+  box-shadow: none;
+  background: transparent;
+}
+
+.csp-card-variant-poster .paragraph-su-card-media,
+.csp-card-variant-poster [class*="card_image"] {
+  flex: 1 1 45%;
+  min-width: 12rem;
+}
+
+.csp-card-variant-poster .paragraph-su-card-body,
+.csp-card-variant-poster [class*="card_body"] {
+  flex: 1 1 45%;
+  min-width: 12rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: #fff;
+  background: var(--csp-poster-bg, #8c1515);
+}
