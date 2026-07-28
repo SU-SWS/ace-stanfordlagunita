@@ -301,6 +301,20 @@ process:
       delimiter: ','
     -
       plugin: str_replace
+      search:
+        - m
+        - t
+        - w
+        - r
+        - f
+      replace:
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+    -
+      plugin: str_replace
       regex: true
       search: '/^(?!(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)$).*$/'
       replace: ''
