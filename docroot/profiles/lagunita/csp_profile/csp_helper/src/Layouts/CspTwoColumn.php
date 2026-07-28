@@ -8,11 +8,19 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\stanford_layout_paragraphs\Layouts\TwoColumn;
 
 /**
- * Two column layout with the CSP "Ultra slim" space-below option.
+ * Two column layout with the CSP "Ultra slim" and "Section width" options.
  */
 class CspTwoColumn extends TwoColumn {
 
   use UltraSlimMarginTrait;
+  use SectionWidthTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration() {
+    return parent::defaultConfiguration() + ['section_width' => 'full'];
+  }
 
   /**
    * {@inheritdoc}
@@ -20,7 +28,16 @@ class CspTwoColumn extends TwoColumn {
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
     $this->addUltraSlimMarginOption($form);
+    $this->addSectionWidthElement($form);
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->submitSectionWidth($form_state);
   }
 
 }
