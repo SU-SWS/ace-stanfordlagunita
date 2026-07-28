@@ -4,4 +4,4 @@ description: 'Provides additional functionality for csp_profile Profile'
 package: Stanford
 core_version_requirement: ^11.1
 dependencies:
-  - stanford_layout_paragraphs:stanford_layout_paragraphs
+  - stanford_profile_helper:stanford_layout_paragraphs
