@@ -9,16 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Adds the CSP "Section width" select to multi-column layouts.
  *
- * Authors can constrain the maximum width of 2- and 3-column sections so that
- * they no longer stretch to the site's full width, giving an "hourglass"
- * effect when alternating inset and full sections down the page. The selected
- * value is stored in the layout section's config (behaviors JSON) as
- * `section_width` and read by the Next.js front end, which maps it to a
- * max-width (full = 1500px, wide = 1300px, standard = 1140px).
- *
  * This trait is mixed into the CSP 2- and 3-column layout subclasses only.
- * Single-column sections are intentionally excluded — they keep their fixed
- * 980px max-width.
+ * Single-column sections are intentionally excluded.
  */
 trait SectionWidthTrait {
 
