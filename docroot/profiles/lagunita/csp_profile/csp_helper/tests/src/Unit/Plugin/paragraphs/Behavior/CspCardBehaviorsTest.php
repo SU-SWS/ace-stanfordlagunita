@@ -61,9 +61,9 @@ class CspCardBehaviorsTest extends UnitTestCase {
         return $key === 'csp_card_variant' ? 'poster' : NULL;
       });
 
-    // Mock the color field: get('csp_card_bg_color')->first()->get('color')->getString() === '#620059'
+    // Mock the color field.
     $color_prop = $this->createMock(TypedDataInterface::class);
-    $color_prop->method('getString')->willReturn('#620059');
+    $color_prop->method('getString')->willReturn('620059');
     $item = $this->createMock(ColorFieldType::class);
     $item->method('get')->with('color')->willReturn($color_prop);
     $list = $this->createMock(FieldItemListInterface::class);

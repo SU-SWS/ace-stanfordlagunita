@@ -46,7 +46,7 @@ class CspCardBehaviors extends CardBehavior {
       $hex = $paragraph->get('csp_card_bg_color')->first()->get('color')->getString();
       if ($hex) {
         $style = $build['#attributes']['style'] ?? '';
-        $build['#attributes']['style'] = $style . '--csp-poster-bg:' . $hex . ';';
+        $build['#attributes']['style'] = $style . '--csp-poster-bg:#' . ltrim($hex, '#') . ';';
       }
     }
   }
