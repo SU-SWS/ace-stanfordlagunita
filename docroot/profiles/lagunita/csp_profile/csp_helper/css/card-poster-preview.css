@@ -1,55 +1,64 @@
 /* Editor-preview styling for the Poster card variant (CSP-115).
    This approximates the design inside the Layout Paragraphs builder
    so editors can tell a Poster card apart from a default card.
+   The Next.js frontend owns the real presentation.
 
-   CspCardBehaviors::view() switches the ui_patterns variant to "postcard",
-   so Decanter's .su-card--horizontal supplies the grid.
-   Only the poster's color treatment lives in this file.
-
-   The variant class sits on the paragraph wrapper, which is the
-   .js-lpb-component div rather than the card itself, so the card is always
-   addressed as a descendant.
+   CspHelperHooks::uiPatternsInfoAlter() registers a "poster" variant on the
+   card pattern and CspCardBehaviors::view() selects it, so the card carries
+   the CSP-owned "su-card--poster" modifier class.
 */
 
-/* A little breathing room around the image and the color panel. Matching the
-   upstream selector's specificity, which sets padding: 3rem here. */
-.csp-card-variant-poster .su-card--horizontal:not(.su-card--link) {
+/* Image beside the color panel. */
+.su-card.su-card--poster {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 2.31rem;
   padding: 1rem;
   border: 0;
   box-shadow: none;
 }
 
+@media only screen and (min-width: 576px) {
+  .su-card.su-card--poster {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .su-card.su-card--poster {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.6rem;
+  }
+}
+
 /* The grid stretches the media wrapper to the row height already; these pass
    that height down to the image so it matches the color panel. */
-.csp-card-variant-poster .su-card .media-entity-wrapper,
-.csp-card-variant-poster .su-card .media-entity-wrapper > *,
-.csp-card-variant-poster .su-card picture {
+.su-card--poster .media-entity-wrapper,
+.su-card--poster .media-entity-wrapper > *,
+.su-card--poster picture {
   display: block;
   height: 100%;
 }
 
-.csp-card-variant-poster .su-card img {
+.su-card--poster img {
   width: 100%;
   height: 100%;
   border-radius: 12px;
   object-fit: cover;
 }
 
-/* Upstream zeroes the contents padding in horizontal mode; the poster needs it
-   back so the text sits inside the color panel. */
-.csp-card-variant-poster .su-card .su-card__contents {
+.su-card--poster .su-card__contents {
   padding: 1em;
   border-radius: 12px;
   color: var(--csp-poster-fg, #fff);
   background: var(--csp-poster-bg, #8c1515);
 }
 
-/* Upstream pulls the panel's first child up by -.3em, which lifts the
-   superhead out through the top of the color panel. */
-.csp-card-variant-poster .su-card .su-card__contents > :first-child {
+/* Keep the superhead from riding up out of the top of the color panel. */
+.su-card--poster .su-card__contents > :first-child {
   margin-top: 0;
 }
 
-.csp-card-variant-poster .su-card .su-card__contents a {
+.su-card--poster .su-card__contents a {
   color: var(--csp-poster-fg, #fff);
 }

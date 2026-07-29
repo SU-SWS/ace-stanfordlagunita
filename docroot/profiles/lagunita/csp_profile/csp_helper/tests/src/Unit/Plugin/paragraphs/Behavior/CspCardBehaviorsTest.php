@@ -68,7 +68,7 @@ class CspCardBehaviorsTest extends UnitTestCase {
     $this->assertContains('csp_helper/card_poster_preview', $build['#attached']['library']);
   }
 
-  public function testPosterViewSwitchesToHorizontalPattern(): void {
+  public function testPosterViewSelectsPosterPattern(): void {
     $field_manager = $this->createMock(EntityFieldManagerInterface::class);
     $behavior = new CspCardBehaviors([], '', [], $field_manager);
 
@@ -77,10 +77,11 @@ class CspCardBehaviorsTest extends UnitTestCase {
     $build = [];
     $behavior->view($build, $paragraph, $display, 'default');
 
-    // "postcard" carries Decanter's su-card--horizontal modifier class, which
-    // is what lays the card out side by side.
+    // "poster" is the CSP-owned variant registered by
+    // CspHelperHooks::uiPatternsInfoAlter(); it carries the su-card--poster
+    // modifier class that card-poster-preview.css lays out.
     $this->assertSame(
-      'postcard',
+      'poster',
       $build['#ds_configuration']['layout']['settings']['pattern']['variant']
     );
   }
@@ -101,10 +102,14 @@ class CspCardBehaviorsTest extends UnitTestCase {
   }
 
   /**
-   * The six colors offered by the color_field_widget_box widget.
+   * Background colors and the text color that stays readable on each.
    *
-   * Mirrors the "default_colors" setting on the csp_card_bg_color widget in
-   * config_split.patch.core.entity_form_display.paragraph.stanford_card.default.
+   * The first six are the swatches currently offered by the
+   * color_field_widget_box widget. The rest are not in that palette on
+   * purpose: the text color is derived from the background's relative
+   * luminance, so a site builder can edit the widget's "default_colors"
+   * setting, or a value can arrive through the widget's text input, without
+   * producing unreadable text.
    */
   public static function providerPosterBackgroundColors(): array {
     return [
@@ -115,6 +120,13 @@ class CspCardBehaviorsTest extends UnitTestCase {
       'black' => ['2e2d29', '#fff'],
       // The one light swatch, which needs dark text to stay readable.
       'fog light' => ['f4f4f4', '#2e2d29'],
+      // Outside the current palette.
+      'white' => ['ffffff', '#2e2d29'],
+      'yellow' => ['ffff00', '#2e2d29'],
+      'mid grey' => ['c2c2c2', '#2e2d29'],
+      'pale cyan' => ['9fe1e7', '#2e2d29'],
+      'navy' => ['00205b', '#fff'],
+      'uppercase hex' => ['8C1515', '#fff'],
     ];
   }
 

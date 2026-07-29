@@ -3,3 +3,5 @@ card_poster_preview:
   css:
     theme:
       css/card-poster-preview.css: {}
+  dependencies:
+    - jumpstart_ui/components.card

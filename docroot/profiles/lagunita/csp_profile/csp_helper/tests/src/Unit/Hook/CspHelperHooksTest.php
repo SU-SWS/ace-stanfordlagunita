@@ -13,6 +13,7 @@ use Drupal\csp_helper\Layouts\CspOneColumn;
 use Drupal\csp_helper\Layouts\CspThreeColumn;
 use Drupal\csp_helper\Layouts\CspTwoColumn;
 use Drupal\Tests\UnitTestCase;
+use Drupal\ui_patterns\Definition\PatternDefinition;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
@@ -54,6 +55,43 @@ class CspHelperHooksTest extends UnitTestCase {
     $hooks->fieldWidgetSingleElementFormAlter($element, $form_state, $context);
 
     $this->assertArrayNotHasKey('#states', $element);
+  }
+
+  /**
+   * The card pattern gains a "poster" variant with its own modifier class.
+   *
+   * jumpstart_ui_preprocess() reads the modifier class out of the definition
+   * as an array, so assert against toArray() rather than the object.
+   */
+  public function testPosterVariantIsRegistered(): void {
+    $definitions = [
+      'yaml:card' => new PatternDefinition([
+        'id' => 'card',
+        'variants' => ['postcard' => ['label' => 'Postcard', 'modifier_class' => 'su-card--horizontal']],
+      ]),
+      'yaml:stat_card' => new PatternDefinition(['id' => 'stat_card']),
+    ];
+
+    (new CspHelperHooks())->uiPatternsInfoAlter($definitions);
+
+    $variants = $definitions['yaml:card']->toArray()['variants'];
+    $this->assertSame('su-card--poster', $variants['poster']['modifier_class']);
+    $this->assertSame('Poster', $variants['poster']['label']);
+    // Upstream variants must survive.
+    $this->assertSame('su-card--horizontal', $variants['postcard']['modifier_class']);
+    // A pattern whose id merely contains "card" must be left alone.
+    $this->assertArrayNotHasKey('poster', $definitions['yaml:stat_card']->toArray()['variants']);
+  }
+
+  /**
+   * The hook is a no-op when the card pattern is not present.
+   */
+  public function testPosterVariantWithoutCardPattern(): void {
+    $definitions = ['yaml:quote' => new PatternDefinition(['id' => 'quote'])];
+
+    (new CspHelperHooks())->uiPatternsInfoAlter($definitions);
+
+    $this->assertArrayNotHasKey('poster', $definitions['yaml:quote']->toArray()['variants']);
   }
 
   /**

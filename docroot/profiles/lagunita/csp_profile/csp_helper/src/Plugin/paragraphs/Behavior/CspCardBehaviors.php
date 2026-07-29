@@ -42,9 +42,10 @@ class CspCardBehaviors extends CardBehavior {
     $build['#attributes']['class'][] = 'csp-card-variant-poster';
     $build['#attached']['library'][] = 'csp_helper/card_poster_preview';
 
-    // Render through Decanter's horizontal card by switching the ui_patterns
-    // variant, which adds the "su-card--horizontal" modifier class. 
-    $build['#ds_configuration']['layout']['settings']['pattern']['variant'] = 'postcard';
+    // Switch to the "poster" ui_patterns variant registered by
+    // CspHelperHooks::uiPatternsInfoAlter(), which adds the CSP-owned
+    // "su-card--poster" modifier class that card-poster-preview.css targets.
+    $build['#ds_configuration']['layout']['settings']['pattern']['variant'] = 'poster';
 
     if ($paragraph->hasField('csp_card_bg_color') && !$paragraph->get('csp_card_bg_color')->isEmpty()) {
       $hex = $paragraph->get('csp_card_bg_color')->first()->get('color')->getString();
@@ -67,7 +68,15 @@ class CspCardBehaviors extends CardBehavior {
    *   Either '#fff' or '#2e2d29'.
    */
   private static function contrastColor(string $hex): string {
-    return strtolower($hex) === 'f4f4f4' ? '#2e2d29' : '#fff';
+    $channels = [];
+    foreach (sscanf($hex, '%2x%2x%2x') ?: [0, 0, 0] as $value) {
+      $channel = $value / 255;
+      $channels[] = $channel <= 0.04045 ? $channel / 12.92 : (($channel + 0.055) / 1.055) ** 2.4;
+    }
+    // WCAG relative luminance. 0.179 is the crossover point at which white and
+    // dark text give equal contrast against the background.
+    $luminance = 0.2126 * $channels[0] + 0.7152 * $channels[1] + 0.0722 * $channels[2];
+    return $luminance > 0.179 ? '#2e2d29' : '#fff';
   }
 
 }
