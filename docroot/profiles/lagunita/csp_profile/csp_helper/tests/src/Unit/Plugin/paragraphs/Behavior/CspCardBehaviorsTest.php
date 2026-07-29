@@ -13,6 +13,7 @@ use Drupal\csp_helper\Plugin\paragraphs\Behavior\CspCardBehaviors;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @coversDefaultClass \Drupal\csp_helper\Plugin\paragraphs\Behavior\CspCardBehaviors
@@ -51,19 +52,84 @@ class CspCardBehaviorsTest extends UnitTestCase {
     $this->assertArrayHasKey('heading', $element);
   }
 
-  public function testPosterViewAddsClassAndColor(): void {
+  #[DataProvider('providerPosterBackgroundColors')]
+  public function testPosterViewAddsClassAndColor(string $hex, string $expected_fg): void {
     $field_manager = $this->createMock(EntityFieldManagerInterface::class);
     $behavior = new CspCardBehaviors([], '', [], $field_manager);
 
+    $paragraph = $this->mockPosterParagraph($hex);
+    $display = $this->createMock(EntityViewDisplayInterface::class);
+    $build = [];
+    $behavior->view($build, $paragraph, $display, 'default');
+
+    $this->assertContains('csp-card-variant-poster', $build['#attributes']['class']);
+    $this->assertStringContainsString("--csp-poster-bg:#$hex", $build['#attributes']['style']);
+    $this->assertStringContainsString("--csp-poster-fg:$expected_fg", $build['#attributes']['style']);
+    $this->assertContains('csp_helper/card_poster_preview', $build['#attached']['library']);
+  }
+
+  public function testPosterViewSwitchesToHorizontalPattern(): void {
+    $field_manager = $this->createMock(EntityFieldManagerInterface::class);
+    $behavior = new CspCardBehaviors([], '', [], $field_manager);
+
+    $paragraph = $this->mockPosterParagraph('8c1515');
+    $display = $this->createMock(EntityViewDisplayInterface::class);
+    $build = [];
+    $behavior->view($build, $paragraph, $display, 'default');
+
+    // "postcard" carries Decanter's su-card--horizontal modifier class, which
+    // is what lays the card out side by side.
+    $this->assertSame(
+      'postcard',
+      $build['#ds_configuration']['layout']['settings']['pattern']['variant']
+    );
+  }
+
+  public function testNonPosterViewIsUntouched(): void {
+    $field_manager = $this->createMock(EntityFieldManagerInterface::class);
+    $behavior = new CspCardBehaviors([], '', [], $field_manager);
+
+    $paragraph = $this->createMock(ParagraphInterface::class);
+    $paragraph->method('getBehaviorSetting')->willReturn(NULL);
+
+    $display = $this->createMock(EntityViewDisplayInterface::class);
+    $build = [];
+    $behavior->view($build, $paragraph, $display, 'default');
+
+    $this->assertArrayNotHasKey('#ds_configuration', $build);
+    $this->assertArrayNotHasKey('#attributes', $build);
+  }
+
+  /**
+   * The six colors offered by the color_field_widget_box widget.
+   *
+   * Mirrors the "default_colors" setting on the csp_card_bg_color widget in
+   * config_split.patch.core.entity_form_display.paragraph.stanford_card.default.
+   */
+  public static function providerPosterBackgroundColors(): array {
+    return [
+      'cardinal red' => ['8c1515', '#fff'],
+      'lagunita blue' => ['007c92', '#fff'],
+      'plum' => ['620059', '#fff'],
+      'palo verde' => ['175e54', '#fff'],
+      'black' => ['2e2d29', '#fff'],
+      // The one light swatch, which needs dark text to stay readable.
+      'fog light' => ['f4f4f4', '#2e2d29'],
+    ];
+  }
+
+  /**
+   * Builds a Poster-variant paragraph with the given background color.
+   */
+  private function mockPosterParagraph(string $hex): ParagraphInterface {
     $paragraph = $this->createMock(ParagraphInterface::class);
     $paragraph->method('getBehaviorSetting')
       ->willReturnCallback(function ($module, $key) {
         return $key === 'csp_card_variant' ? 'poster' : NULL;
       });
 
-    // Mock the color field.
     $color_prop = $this->createMock(TypedDataInterface::class);
-    $color_prop->method('getString')->willReturn('620059');
+    $color_prop->method('getString')->willReturn($hex);
     $item = $this->createMock(ColorFieldType::class);
     $item->method('get')->with('color')->willReturn($color_prop);
     $list = $this->createMock(FieldItemListInterface::class);
@@ -72,13 +138,7 @@ class CspCardBehaviorsTest extends UnitTestCase {
     $paragraph->method('hasField')->with('csp_card_bg_color')->willReturn(TRUE);
     $paragraph->method('get')->with('csp_card_bg_color')->willReturn($list);
 
-    $display = $this->createMock(EntityViewDisplayInterface::class);
-    $build = [];
-    $behavior->view($build, $paragraph, $display, 'default');
-
-    $this->assertContains('csp-card-variant-poster', $build['#attributes']['class']);
-    $this->assertStringContainsString('--csp-poster-bg:#620059', $build['#attributes']['style']);
-    $this->assertContains('csp_helper/card_poster_preview', $build['#attached']['library']);
+    return $paragraph;
   }
 
 }

@@ -42,13 +42,32 @@ class CspCardBehaviors extends CardBehavior {
     $build['#attributes']['class'][] = 'csp-card-variant-poster';
     $build['#attached']['library'][] = 'csp_helper/card_poster_preview';
 
+    // Render through Decanter's horizontal card by switching the ui_patterns
+    // variant, which adds the "su-card--horizontal" modifier class. 
+    $build['#ds_configuration']['layout']['settings']['pattern']['variant'] = 'postcard';
+
     if ($paragraph->hasField('csp_card_bg_color') && !$paragraph->get('csp_card_bg_color')->isEmpty()) {
       $hex = $paragraph->get('csp_card_bg_color')->first()->get('color')->getString();
       if ($hex) {
+        $hex = ltrim($hex, '#');
         $style = $build['#attributes']['style'] ?? '';
-        $build['#attributes']['style'] = $style . '--csp-poster-bg:#' . ltrim($hex, '#') . ';';
+        $build['#attributes']['style'] = $style . '--csp-poster-bg:#' . $hex . ';'
+          . '--csp-poster-fg:' . self::contrastColor($hex) . ';';
       }
     }
+  }
+
+  /**
+   * Picks a readable text color for a poster background.
+   *
+   * @param string $hex
+   *   A background color as a six-digit hex string, without a leading "#".
+   *
+   * @return string
+   *   Either '#fff' or '#2e2d29'.
+   */
+  private static function contrastColor(string $hex): string {
+    return strtolower($hex) === 'f4f4f4' ? '#2e2d29' : '#fff';
   }
 
 }
