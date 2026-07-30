@@ -1,0 +1,7 @@
+paragraphs.behavior.settings.csp_course_card_styles:
+  type: paragraphs.behavior.settings_base
+  label: 'Faux Course Card Styles'
+  mapping:
+    heading:
+      type: string
+      label: 'Heading Level'

@@ -109,8 +109,49 @@ class FauxCourseCardCest {
     $I->cantSeeLink($field_values['instructor_two_name']);
 
     // The heading holds phrasing content only - rendering the title field
-    // here instead of its plain value would nest a div inside the h3.
+    // here instead of its plain value would nest a div inside the heading.
     $I->cantSeeElement('.csp-course-card-preview__title div');
+  }
+
+  /**
+   * The card title tag should follow the Heading Level behavior setting.
+   */
+  public function testHeadingLevelBehavior(FunctionalTester $I) {
+    // A card carrying no behavior settings falls back to H2.
+    $default = $this->createPageWithCard($I);
+
+    $I->amOnPage($default->toUrl()->toString());
+    $I->canSeeElement('h2.csp-course-card-preview__title');
+    $I->cantSeeElement('h3.csp-course-card-preview__title');
+
+    $h3 = $this->createPageWithCard($I, [
+      'behavior_settings' => serialize(['csp_course_card_styles' => ['heading' => 'h3']]),
+    ]);
+
+    $I->amOnPage($h3->toUrl()->toString());
+    $I->canSeeElement('h3.csp-course-card-preview__title');
+    $I->cantSeeElement('h2.csp-course-card-preview__title');
+  }
+
+  /**
+   * Editors should get the Heading Level select in the card's edit dialog.
+   */
+  public function testHeadingLevelIsEditable(FunctionalTester $I) {
+    $node = $this->createPageWithCard($I);
+
+    $this->openCardEditForm($I, $node);
+
+    $I->waitForText('Behaviors');
+    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
+    $I->selectOption('Heading Level', 'h3');
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->click('Save', '#edit-actions');
+    $I->waitForText('has been updated');
+
+    $I->canSeeElement('h3.csp-course-card-preview__title');
+    $I->cantSeeElement('h2.csp-course-card-preview__title');
   }
 
   /**
