@@ -25,12 +25,8 @@ class PosterCardCest {
   }
 
   /**
-   * Selecting the Poster variant renders the variant class and bg-color style.
+   * Selecting the Poster variant renders the variant and bg-color classes.
    *
-   * This exercises the whole integration the unit tests cannot: the
-   * paragraphs_behavior_info_alter() swap that surfaces the "Card variant"
-   * select, the field_widget #states that reveals the color field, and the
-   * CspCardBehaviors::view() output on render.
    */
   public function testPosterVariantRenders(FunctionalTester $I) {
     $header = $this->faker->words(3, TRUE);
@@ -79,8 +75,7 @@ class PosterCardCest {
     $I->click('Save', '#edit-actions');
     $I->canSee($node->label(), 'h1');
     $I->canSeeElement('.csp-card-variant-poster');
-    // The stored hex ("620059") is normalized back to a valid "#620059" color.
-    $I->canSeeElement('.csp-card-variant-poster[style*="--csp-poster-bg:#620059"]');
+    $I->canSeeElement('.csp-card-variant-poster.csp-card-bg-620059');
   }
 
 }

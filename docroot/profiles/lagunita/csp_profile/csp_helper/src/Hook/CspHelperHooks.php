@@ -49,28 +49,6 @@ class CspHelperHooks {
   }
 
   /**
-   * Implements hook_ui_patterns_info_alter().
-   *
-   * Registers a "Poster" variant on the card pattern so the CSP poster
-   * styling gets a modifier class of its own.
-   */
-  #[Hook('ui_patterns_info_alter')]
-  public function uiPatternsInfoAlter(array &$definitions): void {
-    foreach ($definitions as $definition) {
-      if ($definition->id() === 'card') {
-        $definition->setVariants([
-          'poster' => [
-            'label' => 'Poster',
-            'description' => 'CSP poster card: image beside a solid color panel.',
-            'modifier_class' => 'su-card--poster',
-          ],
-        ]);
-        break;
-      }
-    }
-  }
-
-  /**
    * Implements hook_field_widget_single_element_form_alter().
    *
    * Show the poster background color field only when the card's variant is
