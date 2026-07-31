@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.csp_faux_course_card.csp_course_card_color
     - field.field.paragraph.csp_faux_course_card.csp_course_card_format
+    - field.field.paragraph.csp_faux_course_card.csp_course_card_heading
     - field.field.paragraph.csp_faux_course_card.csp_course_card_image
     - field.field.paragraph.csp_faux_course_card.csp_course_card_instructors
     - field.field.paragraph.csp_faux_course_card.csp_course_card_link
@@ -16,12 +17,14 @@ dependencies:
     - field_group
     - link
     - media_library
+    - options
     - paragraphs
 third_party_settings:
   field_group:
     group_styles:
       children:
         - csp_course_card_color
+        - csp_course_card_heading
       label: Styles
       region: content
       parent_name: ''
@@ -52,6 +55,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  csp_course_card_heading:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
     third_party_settings: {  }
   csp_course_card_image:
     type: media_library_widget

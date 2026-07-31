@@ -21,6 +21,7 @@
 {{ include('csp_helper:course_card_preview', {
   attributes: attributes.addClass(classes),
   title: paragraph.csp_course_card_title.value ?? '',
+  heading: paragraph.csp_course_card_heading.value ?? 'h2',
   color_hex: color ? '#' ~ color : '#e5e1d8',
   format: paragraph.csp_course_card_format.value ?? '',
   location: paragraph.csp_course_card_location.value ?? '',

@@ -109,8 +109,51 @@ class FauxCourseCardCest {
     $I->cantSeeLink($field_values['instructor_two_name']);
 
     // The heading holds phrasing content only - rendering the title field
-    // here instead of its plain value would nest a div inside the h3.
+    // here instead of its plain value would nest a div inside the heading.
     $I->cantSeeElement('.csp-course-card-preview__title div');
+  }
+
+  /**
+   * The card title tag should follow the Heading Level field.
+   */
+  public function testHeadingLevelField(FunctionalTester $I) {
+    // A card saved without the field set falls back to its H2 default.
+    $default = $this->createPageWithCard($I);
+
+    $I->amOnPage($default->toUrl()->toString());
+    $I->canSeeElement('h2.csp-course-card-preview__title');
+    $I->cantSeeElement('h3.csp-course-card-preview__title');
+
+    $h3 = $this->createPageWithCard($I, [
+      'csp_course_card_heading' => 'h3',
+    ]);
+
+    $I->amOnPage($h3->toUrl()->toString());
+    $I->canSeeElement('h3.csp-course-card-preview__title');
+    $I->cantSeeElement('h2.csp-course-card-preview__title');
+  }
+
+  /**
+   * Editors should get the Heading Level select in the card's edit dialog.
+   */
+  public function testHeadingLevelIsEditable(FunctionalTester $I) {
+    $node = $this->createPageWithCard($I);
+
+    $this->openCardEditForm($I, $node);
+
+    // The select lives in the collapsed "Styles" group alongside the color bar.
+    $I->click('.ui-dialog .field-group-details summary');
+    $heading_select = '.ui-dialog [name="csp_course_card_heading"]';
+    $I->waitForElementVisible($heading_select);
+    $I->selectOption($heading_select, 'h3');
+
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->click('Save', '#edit-actions');
+    $I->waitForText('has been updated');
+
+    $I->canSeeElement('h3.csp-course-card-preview__title');
+    $I->cantSeeElement('h2.csp-course-card-preview__title');
   }
 
   /**

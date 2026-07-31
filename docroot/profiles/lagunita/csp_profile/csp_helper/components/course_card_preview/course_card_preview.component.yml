@@ -42,6 +42,16 @@ props:
       description: When set, the image and heading link here.
       examples:
         - https://continuingstudies.stanford.edu/
+    heading:
+      type: string
+      title: Heading level
+      description: >
+        Tag used for the card title, from the paragraph's Heading Level
+        field.
+      enum:
+        - h2
+        - h3
+      default: h2
 
 slots:
   image:

@@ -29,13 +29,14 @@
       </div>
     {% endif %}
 
-    <h3 class="csp-course-card-preview__title">
+    {% set heading_tag = heading in ['h2', 'h3'] ? heading : 'h2' %}
+    <{{ heading_tag }} class="csp-course-card-preview__title">
       {% if url %}
         <a href="{{ url }}">{{ title }}</a>
       {% else %}
         {{ title }}
       {% endif %}
-    </h3>
+    </{{ heading_tag }}>
 
     {% if instructors %}
       <div class="csp-course-card-preview__instructors">

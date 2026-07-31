@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.csp_faux_course_card.csp_course_card_color
     - field.field.paragraph.csp_faux_course_card.csp_course_card_format
+    - field.field.paragraph.csp_faux_course_card.csp_course_card_heading
     - field.field.paragraph.csp_faux_course_card.csp_course_card_image
     - field.field.paragraph.csp_faux_course_card.csp_course_card_instructors
     - field.field.paragraph.csp_faux_course_card.csp_course_card_link
@@ -75,4 +76,5 @@ content:
     region: content
 hidden:
   csp_course_card_color: true
+  csp_course_card_heading: true
   search_api_excerpt: true
