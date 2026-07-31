@@ -16,6 +16,7 @@ complete_list:
   - 'field.field.node.csp_*'
   - 'field.field.media.csp_*'
   - 'field.field.paragraph.csp_*'
+  - 'field.field.paragraph.stanford_card.csp_*'
   - 'field.field.config_pages.csp_*'
   - 'field.field.taxonomy_term.csp_*'
   - 'field.storage.node.csp_*'
