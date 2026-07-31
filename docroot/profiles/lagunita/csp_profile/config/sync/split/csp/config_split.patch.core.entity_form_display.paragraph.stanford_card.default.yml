@@ -1,0 +1,15 @@
+adding:
+  dependencies:
+    config:
+      - field.field.paragraph.stanford_card.csp_card_bg_color
+    module:
+      - color_field
+  content:
+    csp_card_bg_color:
+      type: color_field_widget_box
+      weight: 7
+      region: content
+      settings:
+        default_colors: '#8c1515,#007c92,#620059,#175e54,#2e2d29,#f4f4f4'
+      third_party_settings: {  }
+removing: {  }

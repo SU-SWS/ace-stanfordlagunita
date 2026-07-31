@@ -1,0 +1,20 @@
+uuid: 9e81a7d3-c7c0-42a9-a749-908556b9c404
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - paragraphs
+id: paragraph.csp_card_bg_color
+field_name: csp_card_bg_color
+entity_type: paragraph
+type: color_field_type
+settings:
+  format: hexhex
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

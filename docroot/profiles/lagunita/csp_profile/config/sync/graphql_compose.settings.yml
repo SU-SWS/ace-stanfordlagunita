@@ -983,6 +983,8 @@ field_config:
         enabled: true
       su_card_super_header:
         enabled: true
+      csp_card_bg_color:
+        enabled: true
     stanford_entity:
       su_entity_button:
         enabled: true

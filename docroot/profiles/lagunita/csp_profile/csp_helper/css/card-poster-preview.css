@@ -1,0 +1,88 @@
+/* Editor-preview styling for the Poster card variant (CSP-115).
+   This approximates the design inside the Layout Paragraphs builder
+   so editors can tell a Poster card apart from a default card.
+   The Next.js frontend owns the real presentation.
+ */
+.su-card.csp-card-variant-poster,
+.csp-card-variant-poster .su-card {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 2.31rem;
+  padding: 1rem;
+  border: 0;
+  box-shadow: none;
+}
+
+@media only screen and (min-width: 576px) {
+  .su-card.csp-card-variant-poster,
+  .csp-card-variant-poster .su-card {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .su-card.csp-card-variant-poster,
+  .csp-card-variant-poster .su-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.6rem;
+  }
+}
+
+/* The grid stretches the media wrapper to the row height already; these pass
+   that height down to the image so it matches the color panel. */
+.csp-card-variant-poster .media-entity-wrapper,
+.csp-card-variant-poster .media-entity-wrapper > *,
+.csp-card-variant-poster picture {
+  display: block;
+  height: 100%;
+}
+
+.csp-card-variant-poster img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Cardinal red is the panel default, used until a color is picked. */
+.csp-card-variant-poster .su-card__contents {
+  padding: 1em;
+  border-radius: 12px;
+  background: #8c1515;
+  color: #fff;
+}
+
+.csp-card-variant-poster .su-card__contents a {
+  color: #fff;
+}
+
+/* Keep the superhead from riding up out of the top of the color panel. */
+.csp-card-variant-poster .su-card__contents > :first-child {
+  margin-top: 0;
+}
+
+/* One rule per swatch offered by the color_field_widget_box widget. */
+.csp-card-bg-007c92 .su-card__contents {
+  background: #007c92;
+}
+
+.csp-card-bg-620059 .su-card__contents {
+  background: #620059;
+}
+
+.csp-card-bg-175e54 .su-card__contents {
+  background: #175e54;
+}
+
+.csp-card-bg-2e2d29 .su-card__contents {
+  background: #2e2d29;
+}
+
+.csp-card-bg-f4f4f4 .su-card__contents {
+  background: #f4f4f4;
+  color: #2e2d29;
+}
+
+.csp-card-bg-f4f4f4 .su-card__contents a {
+  color: #2e2d29;
+}
