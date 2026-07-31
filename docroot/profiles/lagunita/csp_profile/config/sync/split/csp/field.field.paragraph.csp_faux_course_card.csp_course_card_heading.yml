@@ -1,0 +1,23 @@
+uuid: e9e1fdcb-d2f0-412d-ac11-4cb2a7619bb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.csp_course_card_heading
+    - paragraphs.paragraphs_type.csp_faux_course_card
+  module:
+    - options
+id: paragraph.csp_faux_course_card.csp_course_card_heading
+field_name: csp_course_card_heading
+entity_type: paragraph
+bundle: csp_faux_course_card
+label: 'Heading Level'
+description: 'The card title is a heading. Choose the level that sits one step below the heading above this card, so the page outline stays in order.'
+required: true
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

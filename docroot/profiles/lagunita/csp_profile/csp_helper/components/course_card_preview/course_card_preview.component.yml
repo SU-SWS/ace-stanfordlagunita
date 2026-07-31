@@ -47,7 +47,7 @@ props:
       title: Heading level
       description: >
         Tag used for the card title, from the paragraph's Heading Level
-        behavior setting.
+        field.
       enum:
         - h2
         - h3

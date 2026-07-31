@@ -114,10 +114,10 @@ class FauxCourseCardCest {
   }
 
   /**
-   * The card title tag should follow the Heading Level behavior setting.
+   * The card title tag should follow the Heading Level field.
    */
-  public function testHeadingLevelBehavior(FunctionalTester $I) {
-    // A card carrying no behavior settings falls back to H2.
+  public function testHeadingLevelField(FunctionalTester $I) {
+    // A card saved without the field set falls back to its H2 default.
     $default = $this->createPageWithCard($I);
 
     $I->amOnPage($default->toUrl()->toString());
@@ -125,7 +125,7 @@ class FauxCourseCardCest {
     $I->cantSeeElement('h3.csp-course-card-preview__title');
 
     $h3 = $this->createPageWithCard($I, [
-      'behavior_settings' => serialize(['csp_course_card_styles' => ['heading' => 'h3']]),
+      'csp_course_card_heading' => 'h3',
     ]);
 
     $I->amOnPage($h3->toUrl()->toString());
@@ -141,9 +141,11 @@ class FauxCourseCardCest {
 
     $this->openCardEditForm($I, $node);
 
-    $I->waitForText('Behaviors');
-    $I->clickWithLeftButton('.lpb-behavior-plugins summary');
-    $I->selectOption('Heading Level', 'h3');
+    // The select lives in the collapsed "Styles" group alongside the color bar.
+    $I->click('.ui-dialog .field-group-details summary');
+    $heading_select = '.ui-dialog [name="csp_course_card_heading"]';
+    $I->waitForElementVisible($heading_select);
+    $I->selectOption($heading_select, 'h3');
 
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
