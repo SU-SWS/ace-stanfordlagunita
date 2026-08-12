@@ -13,7 +13,7 @@ field_name: csp_course_card_instructors
 entity_type: paragraph
 bundle: csp_faux_course_card
 label: Instructors
-description: 'Up to 3 instructor blocks.'
+description: 'Instructor blocks.'
 required: false
 translatable: false
 default_value: {  }
@@ -28,4 +28,55 @@ settings:
       csp_course_card_instructor:
         weight: 0
         enabled: true
+      csp_faux_course_card:
+        weight: 20
+        enabled: false
+      stanford_accordion:
+        weight: 21
+        enabled: false
+      stanford_banner:
+        weight: 22
+        enabled: false
+      stanford_card:
+        weight: 23
+        enabled: false
+      stanford_entity:
+        weight: 24
+        enabled: false
+      stanford_faq:
+        weight: 25
+        enabled: false
+      stanford_filtered_lists:
+        weight: 26
+        enabled: false
+      stanford_gallery:
+        weight: 27
+        enabled: false
+      stanford_layout:
+        weight: 28
+        enabled: false
+      stanford_lists:
+        weight: 29
+        enabled: false
+      stanford_media_caption:
+        weight: 30
+        enabled: false
+      stanford_page_title_banner:
+        weight: 31
+        enabled: false
+      stanford_person_cta:
+        weight: 32
+        enabled: false
+      stanford_schedule:
+        weight: 33
+        enabled: false
+      stanford_spacer:
+        weight: 34
+        enabled: false
+      stanford_stat_card:
+        weight: 35
+        enabled: false
+      stanford_wysiwyg:
+        weight: 36
+        enabled: false
 field_type: entity_reference_revisions
