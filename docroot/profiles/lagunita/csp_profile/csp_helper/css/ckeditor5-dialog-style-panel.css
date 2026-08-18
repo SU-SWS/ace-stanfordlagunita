@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Keeps the CKEditor 5 Styles panel reachable inside a modal dialog.
+ *
+ * CKEditor renders toolbar dropdown panels inline, anchored to their toolbar
+ * button, and caps the Styles panel at `--ck-style-panel-max-height: 470px`
+ * with its own scrollbar. That works on a normal field, but inside a modal the
+ * panel is clipped.
+ * 
+ * On the Text Area paragraph this prevents hiding all four "Text styles" (Button, Big
+ * Button, Secondary Button, Action Link) at common laptop sizes. See CSP-130.
+ *
+ */
+
+.ui-dialog .ck.ck-style-panel {
+  --ck-style-panel-max-height: clamp(160px, calc(100vh - 400px), 300px);
+}
