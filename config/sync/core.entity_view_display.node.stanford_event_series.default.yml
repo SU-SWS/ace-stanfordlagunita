@@ -170,8 +170,6 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: su-event-series-items
-                  ds:
-                    ds_limit: ''
             weight: 1
             additional: {  }
           5543da25-15ba-4ff0-ba8e-6b50f32b7d86:
@@ -220,7 +218,6 @@ third_party_settings:
     entity_view_mode_restriction:
       allowed_layouts:
         - jumpstart_ui_one_column
-        - jumpstart_ui_one_column_overlay
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
       denylisted_blocks:
