@@ -5,3 +5,9 @@ card_poster_preview:
       css/card-poster-preview.css: {}
   dependencies:
     - jumpstart_ui/components.card
+
+ckeditor5_dialog_style_panel:
+  version: 1.x
+  css:
+    theme:
+      css/ckeditor5-dialog-style-panel.css: {}
