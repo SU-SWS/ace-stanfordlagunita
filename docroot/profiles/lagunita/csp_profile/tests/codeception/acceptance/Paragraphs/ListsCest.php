@@ -80,7 +80,7 @@ class ListsCest {
    * Shared tags on each content type are identical.
    */
   #[CodeceptionAttribute\Group('jsonapi')]
-  public function testSharedTags(AcceptanceTester $I) {
+  protected function testSharedTags(AcceptanceTester $I) {
     $shared_tag = $I->createEntity([
       'name' => $this->faker->jobTitle(),
       'vid' => 'su_shared_tags',
