@@ -66,8 +66,6 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-      ds:
-        ds_limit: ''
     weight: 10
     region: content
   su_event_components:
@@ -190,4 +188,5 @@ hidden:
   su_event_tags: true
   su_imported: true
   su_metatags: true
+  su_search_exclusion: true
   su_shared_tags: true
