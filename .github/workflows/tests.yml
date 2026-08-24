@@ -21,20 +21,20 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            3.x-${{ vars.CACHE_KEY }}-
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            4.x-${{ vars.CACHE_KEY }}-
       - name: Run Unit Tests
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
@@ -58,20 +58,20 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            3.x-${{ vars.CACHE_KEY }}-
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            4.x-${{ vars.CACHE_KEY }}-
       - name: Get Sites
         id: set-matrix
         run: |
@@ -122,20 +122,20 @@ jobs:
           - 33306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            3.x-${{ vars.CACHE_KEY }}-
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            4.x-${{ vars.CACHE_KEY }}-
       - name: Install Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -199,20 +199,20 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            3.x-${{ vars.CACHE_KEY }}-
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            4.x-${{ vars.CACHE_KEY }}-
       - name: Sync and Update Site
         run: |
           git config --system --add safe.directory '*' &&
@@ -250,20 +250,20 @@ jobs:
     container:
       image: pookmish/drupal8ci:php8.3
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            3.x-${{ vars.CACHE_KEY }}-
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            4.x-${{ vars.CACHE_KEY }}-
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:

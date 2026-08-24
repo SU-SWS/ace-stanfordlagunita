@@ -1,7 +1,6 @@
 name: Clean Databases & Git
 on:
-  schedule:
-    - cron: "0 9 * * 0"
+  workflow_dispatch:
 jobs:
   database-cleanup:
     name: Clean up old database backups
@@ -13,20 +12,20 @@ jobs:
       ACQUIA_APP_KEY: ${{secrets.ACQUIA_APP_KEY}}
       ACQUIA_APP_SECRET: ${{secrets.ACQUIA_APP_SECRET}}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            4.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ hashFiles('composer.json') }}-
+            4.x-
       - name: Delete old database backups
         run: |
           composer install -n &&
@@ -51,20 +50,20 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Restore Cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             vendor
             docroot/core
             docroot/libraries
             docroot/modules/contrib
-          key: 3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          key: 4.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            3.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            3.x-${{ hashFiles('composer.json') }}-
-            3.x-
+            4.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ hashFiles('composer.json') }}-
+            4.x-
       - name: Delete unused git branches & tags
         run: |
           ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
