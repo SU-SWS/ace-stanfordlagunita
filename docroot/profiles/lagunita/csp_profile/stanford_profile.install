@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * stanford_profile.install
+ */
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function stanford_profile_update_last_removed() {
+  return 11001;
+}
