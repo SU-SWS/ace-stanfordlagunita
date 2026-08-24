@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41acbee2b56f40de2bbbcdb4f348674d",
+    "content-hash": "1e596a551851dbe769526a9157d2ce2c",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -18273,16 +18273,16 @@
         },
         {
             "name": "su-sws/react_paragraphs",
-            "version": "8.2.20",
+            "version": "8.2.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/react_paragraphs.git",
-                "reference": "21a13e65944ef1859e016ba7810fcdb9a4bc4096"
+                "reference": "f1f6ab153c870c12d942e1ebaee4e17ae717e180"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/react_paragraphs/zipball/21a13e65944ef1859e016ba7810fcdb9a4bc4096",
-                "reference": "21a13e65944ef1859e016ba7810fcdb9a4bc4096",
+                "url": "https://api.github.com/repos/SU-SWS/react_paragraphs/zipball/f1f6ab153c870c12d942e1ebaee4e17ae717e180",
+                "reference": "f1f6ab153c870c12d942e1ebaee4e17ae717e180",
                 "shasum": ""
             },
             "require": {
@@ -18302,9 +18302,9 @@
             ],
             "description": "An advanced UI for editing paragraphs in Drupal.",
             "support": {
-                "source": "https://github.com/SU-SWS/react_paragraphs/tree/8.2.20"
+                "source": "https://github.com/SU-SWS/react_paragraphs/tree/8.2.19"
             },
-            "time": "2026-08-05T20:41:19+00:00"
+            "time": "2026-04-17T22:12:58+00:00"
         },
         {
             "name": "su-sws/stanford_actions",
