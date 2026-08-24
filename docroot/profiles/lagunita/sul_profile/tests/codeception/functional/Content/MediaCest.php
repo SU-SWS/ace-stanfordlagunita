@@ -117,15 +117,26 @@ class MediaCest {
    * Test adding SDR to wysiwyg.
    */
   public function testAddSdrMedia(FunctionalTester $I) {
+    $paragraph = $I->createEntity(['type' => 'stanford_wysiwyg'], 'paragraph');
+
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(2, TRUE),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
     ]);
     $I->logInWithRole('site_manager');
+    $I->resizeWindow(1200, 1000);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+
     $I->waitForElement('[data-cke-tooltip-text="Insert Media"]');
     $I->click('Insert Media');
 
@@ -138,6 +149,10 @@ class MediaCest {
     $I->click('//button[contains(text(), "Save and insert")]');
 
     $I->waitForElementNotVisible('.media-library-add-form');
+    $I->wait(1);
+    $I->click('Save', '.ui-dialog-buttonpane');
+    $I->waitForElementNotVisible('.ui-dialog');
+    $I->wait(1);
     $I->click('Save');
 
     $I->canSee($node->label(), 'h1');

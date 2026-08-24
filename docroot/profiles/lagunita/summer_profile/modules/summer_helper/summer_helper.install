@@ -5,6 +5,9 @@
  * summer_helper.install
  */
 
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+
 /**
  * Implements hook_install().
  */
@@ -13,45 +16,39 @@ function summer_helper_install() {
 }
 
 /**
- * Move card background image behavior settings.
+ * Move search exclude field value
  */
-function summer_helper_update_9001() {
-  $ps = \Drupal::entityTypeManager()->getStorage('paragraph');
-  $pids = $ps->getQuery()
-    ->accessCheck(FALSE)
-    ->condition('type', 'stanford_card')
-    ->execute();
-  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
-  foreach ($ps->loadMultiple($pids) as $paragraph) {
-    $behaviors = $paragraph->getAllBehaviorSettings();
-    if (isset($behaviors['su_card_styles']['sum_card_bg_color_variant'])) {
-      $behaviors['su_card_styles']['sum_card_pill_bg_color_variant'] = $behaviors['su_card_styles']['sum_card_bg_color_variant'];
-      unset($behaviors['su_card_styles']['sum_card_bg_color_variant']);
-      $paragraph->setAllBehaviorSettings($behaviors);
-      $paragraph->save();
-    }
+function summer_helper_update_9004() {
+  $field_storage = FieldStorageConfig::loadByName('node', 'su_search_exclusion');
+  if (!$field_storage) {
+    $field_storage = FieldStorageConfig::create([
+      'uuid' => '6c547417-9862-490a-b1e5-8e1b3abaf2fd',
+      'field_name' => 'su_search_exclusion',
+      'entity_type' => 'node',
+      'type' => 'search_api_exclude_entity',
+      'cardinality' => 1,
+    ]);
+    $field_storage->save();
   }
-}
 
-/**
- * Update config split storage.
- */
-function summer_helper_update_9002() {
-  \Drupal::configFactory()
-    ->getEditable('config_split.config_split.summer')
-    ->set('storage', 'collection')
-    ->save();
-}
+  $field = FieldConfig::loadByName('node', 'stanford_page', 'su_search_exclusion');
+  if (!$field) {
+    FieldConfig::create([
+      'uuid' => '505979e7-eac5-4712-bd77-0bd40c88d80a',
+      'field_storage' => $field_storage,
+      'bundle' => 'stanford_page',
+      'label' => 'Search Exclusion',
+    ])->save();
+  }
+  $ns = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = $ns->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', 'stanford_page')
+    ->condition('sum_search_exclude', 1)
+    ->execute();
 
-/**
- * Install new summer entity type.
- */
-function summer_helper_update_9003() {
-  \Drupal::service('scheduler.manager')->invalidatePluginCache();
-  $summer_type = \Drupal::entityTypeManager()
-    ->getDefinition('summer_entity_type');
-  \Drupal::entityDefinitionUpdateManager()->installEntityType($summer_type);
-
-  $summer_entity = \Drupal::entityTypeManager()->getDefinition('summer_entity');
-  \Drupal::entityDefinitionUpdateManager()->installEntityType($summer_entity);
+  foreach ($ns->loadMultiple($nids) as $node) {
+    $node->set('su_search_exclusion', TRUE);
+    $node->save();
+  }
 }

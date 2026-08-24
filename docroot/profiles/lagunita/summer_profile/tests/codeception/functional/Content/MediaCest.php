@@ -122,6 +122,7 @@ class MediaCest {
       'title' => $this->faker->words(2, TRUE),
     ]);
     $I->logInWithRole('site_manager');
+    $I->resizeWindow(1200, 1000);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
 
