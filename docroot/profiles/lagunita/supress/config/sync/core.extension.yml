@@ -40,10 +40,8 @@ module:
   decoupled_router: 0
   default_content: 0
   diff: 0
-  display_field_copy: 0
   domain_301_redirect: 0
   dropzonejs: 0
-  ds_extras: 0
   dynamic_page_cache: 0
   editor: 0
   editoria11y: 0
@@ -153,7 +151,6 @@ module:
   printable: 0
   r4032login: 0
   rabbit_hole: 0
-  react_paragraphs: 0
   react_paragraphs_behaviors: 0
   readonly_field_widget: 0
   real_aes: 0
@@ -167,9 +164,21 @@ module:
   samlauth: 0
   samlauth_user_fields: 0
   scheduler: 0
+  schema_article: 0
+  schema_book: 0
+  schema_course: 0
+  schema_event: 0
+  schema_job_posting: 0
+  schema_metatag: 0
+  schema_movie: 0
+  schema_organization: 0
+  schema_person: 0
+  schema_web_page: 0
+  schema_web_site: 0
   search_api: 0
   search_api_algolia: 0
   search_api_db: 0
+  search_api_exclude_entity: 0
   search_autocomplete: 0
   seckit: 0
   serialization: 0
@@ -220,11 +229,9 @@ module:
   token_or: 0
   toolbar: 0
   trash: 0
+  twig_tweak: 0
   typed_data: 0
   ui_patterns: 0
-  ui_patterns_ds: 0
-  ui_patterns_layouts: 0
-  ui_patterns_library: 0
   ui_patterns_views: 0
   ultimate_cron: 0
   user: 0
@@ -242,7 +249,6 @@ module:
   views_ui: 0
   webp: 0
   xmlsitemap_engines: 0
-  ds: 1
   extlink: 1
   menu_admin_per_menu: 1
   menu_link_content: 1
