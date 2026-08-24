@@ -487,8 +487,6 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: su-person-affiliations
-                  ds:
-                    ds_limit: ''
             weight: 4
             additional: {  }
           b6ebfc7d-2035-4b63-a17c-adc15ba17fbe:
@@ -509,8 +507,6 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: su-person-research
-                  ds:
-                    ds_limit: ''
             weight: 3
             additional: {  }
           1c0fe326-6520-4837-8022-65865025a1ac:
@@ -532,8 +528,6 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: su-person-education
-                  ds:
-                    ds_limit: ''
             weight: 2
             additional: {  }
           42f48ce2-9cfb-442c-9c7a-55a63ddf63e4:
@@ -940,7 +934,7 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
       rel: ''
@@ -977,4 +971,5 @@ hidden:
   su_person_research_interests: true
   su_person_scholarly_interests: true
   su_person_tags: true
+  su_search_exclusion: true
   su_shared_tags: true
