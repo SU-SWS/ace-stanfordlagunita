@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupalsummer_profile\Hook;
+namespace Drupal\summer_profile\Hook;
 
 use Drupal\config_pages\ConfigPagesInterface;
 use Drupal\Core\Hook\Attribute\Hook;

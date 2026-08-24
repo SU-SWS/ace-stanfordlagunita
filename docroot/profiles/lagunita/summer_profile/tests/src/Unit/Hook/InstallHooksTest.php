@@ -7,8 +7,8 @@ namespace Drupal\Testssummer_profile\Unit\Hook;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\config_pages\ConfigPagesInterface;
-use Drupalsummer_profile\Hook\InstallHooks;
-use Drupalsummer_profile\InstallTaskManager;
+use Drupal\summer_profile\Hook\InstallHooks;
+use Drupal\summer_profile\InstallTaskManager;
 use Drupal\Tests\UnitTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
@@ -23,7 +23,7 @@ class InstallHooksTest extends UnitTestCase {
   /**
    * The hook class under test.
    *
-   * @var \Drupalsummer_profile\Hook\InstallHooks
+   * @var \Drupal\summer_profile\Hook\InstallHooks
    */
   protected InstallHooks $hooks;
 
