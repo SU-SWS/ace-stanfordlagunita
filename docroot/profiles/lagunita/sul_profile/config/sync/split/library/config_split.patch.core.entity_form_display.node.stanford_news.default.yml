@@ -44,11 +44,7 @@ adding:
     su_news_hide_social:
       weight: 9
     unpublish_on:
-      type: datetime_timestamp_no_default
       weight: 13
-      region: content
-      settings: {  }
-      third_party_settings: {  }
   hidden:
     sul_rel_links: true
     sul_rel_links_heading: true
@@ -76,5 +72,5 @@ removing:
           add_another: ''
     su_news_hide_social:
       weight: 7
-  hidden:
-    unpublish_on: true
+    unpublish_on:
+      weight: 14

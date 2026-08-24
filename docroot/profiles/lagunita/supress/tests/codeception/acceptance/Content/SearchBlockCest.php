@@ -60,6 +60,9 @@ class SearchBlockCest {
    */
   #[CodeceptionAttribute\Group('search-results')]
   public function testExcludeFromSearchResults(AcceptanceTester $I) {
+    $I->runDrush('cset search_api.index.full_site_content status 1 -y');
+    $I->runDrush('cset search_api.server.database_search status 1 -y');
+
     $body_text = $this->faker->unique()->sentence(10);
     $node = $I->createEntity([
       'type' => 'stanford_page',

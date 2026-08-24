@@ -52,4 +52,5 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_event.su_event_localist_id
+      - field.field.node.stanford_event.su_search_exclusion
       - views.view.stanford_events

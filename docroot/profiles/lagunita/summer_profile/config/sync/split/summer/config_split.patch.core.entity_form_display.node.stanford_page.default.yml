@@ -1,9 +1,4 @@
 adding:
-  dependencies:
-    config:
-      - field.field.node.stanford_page.sum_search_exclude
-    module:
-      - search_api_exclude_entity
   content:
     su_page_banner:
       type: layout_paragraphs
@@ -21,14 +16,6 @@ adding:
           field_label_overwrite: ''
           hide_add_another: 0
           force_single_cardinality: 0
-    sum_search_exclude:
-      type: search_api_exclude_entity_widget
-      weight: 27
-      region: content
-      settings:
-        field_label: 'Yes, exclude this entity from the search indexes.'
-        use_details_container: true
-      third_party_settings: {  }
 removing:
   dependencies:
     module:
@@ -37,11 +24,6 @@ removing:
     su_page_banner:
       type: paragraphs
       settings:
-        features:
-          add_above: '0'
-          collapse_edit_all: '0'
-          convert: '0'
-          duplicate: '0'
         title: Paragraph
         title_plural: Paragraphs
         edit_mode: closed
@@ -50,6 +32,11 @@ removing:
         closed_mode_threshold: 0
         add_mode: dropdown
         default_paragraph_type: _none
+        features:
+          add_above: '0'
+          collapse_edit_all: '0'
+          convert: '0'
+          duplicate: '0'
     su_page_components:
       settings:
         preview_view_mode: default

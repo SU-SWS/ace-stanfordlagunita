@@ -1,12 +1,11 @@
 adding:
   dependencies:
     config:
-      - field.field.node.stanford_event.su_event_ext_image
-      - field.field.node.stanford_event.su_event_tags
-      - field.field.node.stanford_event.su_imported
       - field.field.node.stanford_event.sul_event__image
       - field.field.node.stanford_event.sul_event_alt_loc_link
       - field.field.node.stanford_event.sul_event_experience
+    module:
+      - text
   hidden:
     sul_event__image: true
     sul_event_alt_loc_link: true
@@ -15,3 +14,9 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_event.su_event_localist_id
+      - field.field.node.stanford_event.su_search_exclusion
+    module:
+      - empty_fields
+      - field_formatter_range
+      - field_label
+      - smart_trim

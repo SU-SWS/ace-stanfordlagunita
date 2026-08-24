@@ -15,8 +15,6 @@ adding:
       - field.storage.node.sup_book_subjects
       - field.storage.node.sup_book_subtitle
       - field.storage.node.sup_book_type
-    module:
-      - search_api_exclude_entity
   field_settings:
     book_authors:
       label: 'Sup Book Authors (full)'
@@ -185,10 +183,6 @@ adding:
         - isbn_13_digital
         - isbn_13_isw
         - isbn_13_paper
-    search_api_exclude_entity_processor:
-      fields:
-        node:
-          - sup_page_search_exclude
     space_tags:
       fields:
         - book_authors

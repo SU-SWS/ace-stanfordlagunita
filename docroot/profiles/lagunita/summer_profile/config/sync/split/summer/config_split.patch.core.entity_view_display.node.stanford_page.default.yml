@@ -1,41 +1,5 @@
 adding:
   dependencies:
     config:
-      - field.field.node.stanford_page.sum_search_exclude
-    module:
-      - search_api_exclude_entity
-  third_party_settings:
-    layout_builder:
-      sections:
-        -
-          components:
-            7c985353-8376-4251-bdca-b45e0624c31c:
-              uuid: 7c985353-8376-4251-bdca-b45e0624c31c
-              region: main
-              configuration:
-                id: 'field_block:node:stanford_page:sum_search_exclude'
-                label_display: '0'
-                context_mapping:
-                  entity: layout_builder.entity
-                formatter:
-                  type: search_api_exclude_entity_formatter
-                  label: above
-                  settings:
-                    format: yes-no
-                    format_custom_false: ''
-                    format_custom_true: ''
-                  third_party_settings: {  }
-              weight: 1
-              additional: {  }
-  content:
-    sum_search_exclude:
-      type: search_api_exclude_entity_formatter
-      label: above
-      settings:
-        format: yes-no
-        format_custom_false: ''
-        format_custom_true: ''
-      third_party_settings: {  }
-      weight: 9
-      region: main
+      - field.field.node.stanford_page.su_search_exclusion
 removing: {  }

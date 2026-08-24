@@ -327,12 +327,13 @@ class ListsCest {
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
+      'status' => TRUE,
       'su_page_components' => [
         'target_id' => $paragraph->id(),
         'entity' => $paragraph,
       ],
     ]);
-
+    $I->logInWithRole('authenticated');
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
     $I->canSee($headline_text, 'h2');

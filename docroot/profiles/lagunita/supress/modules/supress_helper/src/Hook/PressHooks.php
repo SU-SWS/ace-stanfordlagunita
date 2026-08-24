@@ -16,23 +16,6 @@ use Drupal\node\NodeInterface;
  */
 class PressHooks {
 
-  /**
-   * Implements hook_ENTITY_TYPE_presave().
-   */
-  #[Hook('node_presave')]
-  public function nodePresave(NodeInterface $node) {
-    if (!$node->hasField('sup_page_search_exclude')) {
-      return;
-    }
-    $tags = json_decode($node->get('su_metatags')->getString(), TRUE) ?? [];
-    unset($tags['robots']);
-    if (!!$node->get('sup_page_search_exclude')?->getString()) {
-      $tags['robots'] = 'noindex, nofollow';
-      self::clearAlgolia($node);
-    }
-    $node->set('su_metatags', json_encode($tags));
-  }
-
   #[Hook('entity_create')]
   public function pressCreate(EntityInterface $entity) {
     if (InstallerKernel::installationAttempted()) {

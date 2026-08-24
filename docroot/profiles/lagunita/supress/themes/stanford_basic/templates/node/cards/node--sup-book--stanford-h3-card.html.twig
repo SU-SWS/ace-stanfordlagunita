@@ -1,0 +1,13 @@
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:card", {
+    attributes: attributes,
+    header_tag: "h3",
+    image: node.sup_book_image.get(0).value ? content.sup_book_image : null,
+    headline: node.label,
+    headline_url: url,
+    body: content.body
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>
