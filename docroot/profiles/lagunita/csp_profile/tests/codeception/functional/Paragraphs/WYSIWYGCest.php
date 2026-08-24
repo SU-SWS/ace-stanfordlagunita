@@ -120,6 +120,51 @@ class WYSIWYGCest {
   }
 
   /**
+   * Every style option should be reachable from inside the editing dialog.
+   *
+   * CKEditor anchors toolbar dropdown panels to their button, so a panel taller
+   * than the dialog's scrolling content area is clipped by it - and because the
+   * panel scrolls in lockstep with the dialog, the clipped band can never be
+   * brought into view. That hid the "Text styles" (button and action link)
+   * options on the Text Area paragraph. See CSP-130.
+   */
+  #[CodeceptionAttribute\Group('wysiwyg-styles')]
+  public function testStylesPanelFitsInsideDialog(FunctionalTester $I) {
+    $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
+    $I->logInWithRole('site_manager');
+
+    // A laptop-height window: the panel has room to spare on taller screens,
+    // so a short viewport is what actually exercises the clipping.
+    $I->resizeWindow(1440, 800);
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->scrollTo('.js-lpb-component', 0, -100);
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForElementVisible('.ck-toolbar');
+
+    // Wait a second for any click events to be applied.
+    $I->wait(1);
+
+    $I->click('.ui-dialog .ck-style-dropdown .ck-dropdown__button');
+    $I->waitForElementVisible('.ck-style-panel');
+
+    // How far the panel hangs below the dialog's visible area. Anything above
+    // zero is a band of styles the editor cannot scroll to.
+    $overflow = (int) $I->executeJS(<<<'JS'
+      const panel = document.querySelector('.ck-style-panel');
+      const content = document.querySelector('.ui-dialog > .ui-dialog-content');
+      return Math.round(panel.getBoundingClientRect().bottom - content.getBoundingClientRect().bottom);
+    JS);
+
+    $I->assertLessThanOrEqual(0, $overflow, "The Styles panel hangs {$overflow}px below the dialog's visible area, so the styles in that band cannot be reached.");
+
+    // The panel keeps its own scrollbar, which is what makes the shorter panel
+    // acceptable - all the styles are still there, just scrolled.
+    $scrollable = $I->executeJS('const p = document.querySelector(".ck-style-panel"); return p.scrollHeight > p.clientHeight ? 1 : 0;');
+    $I->assertEquals(1, (int) $scrollable, 'The Styles panel should scroll internally so no option is lost.');
+  }
+
+  /**
    * Images in the WYSIWYG should display correctly.
    */
   public function testEmbeddedImage(FunctionalTester $I) {
