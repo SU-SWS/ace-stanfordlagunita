@@ -84,11 +84,7 @@ adding:
         placeholder: ''
       third_party_settings: {  }
     unpublish_on:
-      type: datetime_timestamp_no_default
       weight: 54
-      region: content
-      settings: {  }
-      third_party_settings: {  }
 removing:
   dependencies:
     config:
@@ -138,6 +134,7 @@ removing:
       weight: 27
     su_metatags:
       weight: 12
+    unpublish_on:
+      weight: 53
   hidden:
     layout_builder__layout: true
-    unpublish_on: true

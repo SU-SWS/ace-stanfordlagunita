@@ -42,6 +42,7 @@ removing:
   dependencies:
     module:
       - datetime
+      - scheduler
   third_party_settings:
     field_group:
       group_contact_information:

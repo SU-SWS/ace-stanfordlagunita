@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
     - core.entity_view_mode.node.stanford_h3_card
+    - core.entity_view_mode.node.teaser
     - field.storage.node.su_event_alt_loc
     - field.storage.node.su_event_date_time
     - field.storage.node.su_event_dek
@@ -661,7 +662,10 @@ display:
           wrapper_class: ''
           class: su-list-unstyled
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       query:
         type: views_query
         options:
@@ -2161,111 +2165,13 @@ display:
           plugin_id: field
       defaults:
         fields: false
-        style: false
-        row: false
+        style: true
+        row: true
         arguments: false
         link_display: false
         link_url: false
         filters: false
         filter_groups: false
-      style:
-        type: html_list
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: 1
-          type: ul
-          wrapper_class: ''
-          class: su-list-unstyled
-      row:
-        type: ui_patterns
-        options:
-          default_field_elements: 0
-          inline:
-            view_node: 0
-            su_event_source: 0
-            title: 0
-            su_event_type: 0
-            su_event_subheadline: 0
-            su_event_dek: 0
-            su_event_date_time_value_1: 0
-            su_event_date_time_value: 0
-            su_event_date_time_end_value: 0
-            su_event_date_time_end_value_1: 0
-            su_event_alt_loc: 0
-            su_event_date_time: 0
-            su_event_location: 0
-            edit_node: 0
-          separator: ''
-          hide_empty: 1
-          pattern: events_list
-          pattern_mapping:
-            'views_row:su_event_source':
-              destination: url
-              weight: 0
-              plugin: views_row
-              source: su_event_source
-            'views_row:title':
-              destination: headline
-              weight: 1
-              plugin: views_row
-              source: title
-            'views_row:su_event_date_time':
-              destination: date_time
-              weight: 2
-              plugin: views_row
-              source: su_event_date_time
-            'views_row:su_event_date_time_value_1':
-              destination: start_month
-              weight: 3
-              plugin: views_row
-              source: su_event_date_time_value_1
-            'views_row:su_event_alt_loc':
-              destination: location
-              weight: 4
-              plugin: views_row
-              source: su_event_alt_loc
-            'views_row:su_event_date_time_value':
-              destination: start_date
-              weight: 5
-              plugin: views_row
-              source: su_event_date_time_value
-            'views_row:su_event_date_time_end_value_1':
-              destination: end_date
-              weight: 6
-              plugin: views_row
-              source: su_event_date_time_end_value_1
-            'views_row:su_event_date_time_end_value':
-              destination: end_month
-              weight: 7
-              plugin: views_row
-              source: su_event_date_time_end_value
-            'views_row:su_event_type':
-              destination: event_type
-              weight: 8
-              plugin: views_row
-              source: su_event_type
-            'views_row:su_event_subheadline':
-              destination: subheadline
-              weight: 9
-              plugin: views_row
-              source: su_event_subheadline
-            'views_row:su_event_dek':
-              destination: dek
-              weight: 10
-              plugin: views_row
-              source: su_event_dek
-            'views_row:su_event_location':
-              destination: address
-              weight: 11
-              plugin: views_row
-              source: su_event_location
-            'views_row:edit_node':
-              destination: edit
-              weight: 12
-              plugin: views_row
-              source: edit_node
-          pattern_variant: h3_header
       arguments:
         term_node_taxonomy_name_depth:
           id: term_node_taxonomy_name_depth
@@ -4504,107 +4410,9 @@ display:
           plugin_id: field
       defaults:
         fields: false
-        style: false
-        row: false
+        style: true
+        row: true
         arguments: false
-      style:
-        type: html_list
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: 1
-          type: ul
-          wrapper_class: ''
-          class: su-list-unstyled
-      row:
-        type: ui_patterns
-        options:
-          default_field_elements: 0
-          inline:
-            view_node: 0
-            su_event_source: 0
-            title: 0
-            su_event_type: 0
-            su_event_subheadline: 0
-            su_event_dek: 0
-            su_event_date_time_value_1: 0
-            su_event_date_time_value: 0
-            su_event_date_time_end_value: 0
-            su_event_date_time_end_value_1: 0
-            su_event_alt_loc: 0
-            su_event_date_time: 0
-            su_event_location: 0
-            edit_node: 0
-          separator: ''
-          hide_empty: 1
-          pattern: events_list
-          pattern_mapping:
-            'views_row:su_event_source':
-              destination: url
-              weight: 0
-              plugin: views_row
-              source: su_event_source
-            'views_row:title':
-              destination: headline
-              weight: 1
-              plugin: views_row
-              source: title
-            'views_row:su_event_date_time':
-              destination: date_time
-              weight: 2
-              plugin: views_row
-              source: su_event_date_time
-            'views_row:su_event_date_time_value_1':
-              destination: start_month
-              weight: 3
-              plugin: views_row
-              source: su_event_date_time_value_1
-            'views_row:su_event_alt_loc':
-              destination: location
-              weight: 4
-              plugin: views_row
-              source: su_event_alt_loc
-            'views_row:su_event_date_time_value':
-              destination: start_date
-              weight: 5
-              plugin: views_row
-              source: su_event_date_time_value
-            'views_row:su_event_date_time_end_value_1':
-              destination: end_date
-              weight: 6
-              plugin: views_row
-              source: su_event_date_time_end_value_1
-            'views_row:su_event_date_time_end_value':
-              destination: end_month
-              weight: 7
-              plugin: views_row
-              source: su_event_date_time_end_value
-            'views_row:su_event_type':
-              destination: event_type
-              weight: 8
-              plugin: views_row
-              source: su_event_type
-            'views_row:su_event_subheadline':
-              destination: subheadline
-              weight: 9
-              plugin: views_row
-              source: su_event_subheadline
-            'views_row:su_event_dek':
-              destination: dek
-              weight: 10
-              plugin: views_row
-              source: su_event_dek
-            'views_row:su_event_location':
-              destination: address
-              weight: 11
-              plugin: views_row
-              source: su_event_location
-            'views_row:edit_node':
-              destination: edit
-              weight: 12
-              plugin: views_row
-              source: edit_node
-          pattern_variant: h3_header
       arguments:
         term_node_taxonomy_name_depth:
           id: term_node_taxonomy_name_depth
@@ -5652,112 +5460,9 @@ display:
           break_phrase: false
           depth: 10
           use_taxonomy_term_path: false
-      style:
-        type: html_list
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: ''
-          class: su-list-unstyled
-      row:
-        type: ui_patterns
-        options:
-          default_field_elements: false
-          inline:
-            view_node: '0'
-            su_event_source: '0'
-            title: '0'
-            su_event_type: '0'
-            su_event_subheadline: '0'
-            su_event_dek: '0'
-            su_event_date_time_value_1: '0'
-            su_event_date_time_value: '0'
-            su_event_date_time_end_value: '0'
-            su_event_date_time_end_value_1: '0'
-            su_event_alt_loc: '0'
-            su_event_date_time: '0'
-            su_event_location: '0'
-            edit_node: '0'
-          separator: ''
-          hide_empty: true
-          pattern: events_list
-          pattern_mapping:
-            'views_row:title':
-              plugin: views_row
-              source: title
-              destination: headline
-              weight: 0
-            'views_row:su_event_date_time':
-              plugin: views_row
-              source: su_event_date_time
-              destination: date_time
-              weight: 1
-            'views_row:su_event_date_time_value_1':
-              plugin: views_row
-              source: su_event_date_time_value_1
-              destination: start_month
-              weight: 2
-            'views_row:su_event_alt_loc':
-              plugin: views_row
-              source: su_event_alt_loc
-              destination: location
-              weight: 3
-            'views_row:su_event_date_time_value':
-              plugin: views_row
-              source: su_event_date_time_value
-              destination: start_date
-              weight: 4
-            'views_row:su_event_date_time_end_value_1':
-              plugin: views_row
-              source: su_event_date_time_end_value_1
-              destination: end_date
-              weight: 5
-            'views_row:su_event_date_time_end_value':
-              plugin: views_row
-              source: su_event_date_time_end_value
-              destination: end_month
-              weight: 6
-            'views_row:su_event_type':
-              plugin: views_row
-              source: su_event_type
-              destination: event_type
-              weight: 7
-            'views_row:su_event_subheadline':
-              plugin: views_row
-              source: su_event_subheadline
-              destination: subheadline
-              weight: 8
-            'views_row:su_event_dek':
-              plugin: views_row
-              source: su_event_dek
-              destination: dek
-              weight: 9
-            'views_row:su_event_location':
-              plugin: views_row
-              source: su_event_location
-              destination: address
-              weight: 10
-            'views_row:edit_node':
-              plugin: views_row
-              source: edit_node
-              destination: edit
-              weight: 11
-          variants:
-            alert: default
-            brandbar: default
-            button: default
-            card: default
-            cta: default
-            date-stacked: default
-            hero: default
-            link: default
-            lockup: a
-            media: default
       defaults:
-        style: false
-        row: false
+        style: true
+        row: true
         fields: false
         arguments: false
       display_description: 'List - All Items'

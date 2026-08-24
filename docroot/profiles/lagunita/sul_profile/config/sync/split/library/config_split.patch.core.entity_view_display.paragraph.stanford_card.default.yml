@@ -36,6 +36,7 @@ adding:
 removing:
   dependencies:
     module:
+      - ds
       - empty_fields
       - field_formatter_class
       - field_label

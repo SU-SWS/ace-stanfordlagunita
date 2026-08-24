@@ -47,25 +47,6 @@ class SummerHooks {
   /**
    * Implements hook_ENTITY_TYPE_presave().
    */
-  #[Hook('node_presave')]
-  public function nodePresave(NodeInterface $node) {
-    if (!$node->hasField('sum_search_exclude')) {
-      return;
-    }
-
-    $tags = json_decode($node->get('su_metatags')->getString(), TRUE) ?? [];
-    unset($tags['robots']);
-    if (!!$node->get('sum_search_exclude')?->getString()) {
-      $tags['robots'] = 'noindex, nofollow';
-
-      self::clearAlgolia($node);
-    }
-    $node->set('su_metatags', json_encode($tags));
-  }
-
-  /**
-   * Implements hook_ENTITY_TYPE_presave().
-   */
   #[Hook('media_presave')]
   public function mediaPresave(MediaInterface $media) {
     if (

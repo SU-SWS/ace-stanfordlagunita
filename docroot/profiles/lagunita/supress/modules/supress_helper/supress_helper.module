@@ -288,18 +288,6 @@ function _supress_search_filemaker(string $endpoint, array $body, int $limit = 1
 }
 
 /**
- * Implements hook_ENTITY_TYPE_update().
- */
-function supress_helper_node_update(NodeInterface $node) {
-  if (
-    $node->hasField('sup_page_search_exclude') &&
-    $node->get('sup_page_search_exclude')->getString()
-  ) {
-    \Drupal::service('search_api_algolia.helper')->entityDelete($node);
-  }
-}
-
-/**
  * Implements hook_field_widget_single_element_form_alter().
  */
 /**

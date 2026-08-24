@@ -492,7 +492,7 @@ processor_settings:
   search_api_exclude_entity_processor:
     fields:
       node:
-        - sum_search_exclude
+        - su_search_exclusion
   strip_tags:
     weights:
       preprocess_index: -6

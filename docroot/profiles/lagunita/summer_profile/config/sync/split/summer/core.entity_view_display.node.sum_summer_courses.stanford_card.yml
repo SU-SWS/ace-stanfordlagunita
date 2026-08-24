@@ -30,33 +30,7 @@ dependencies:
     - field.field.node.sum_summer_courses.sum_students_also_studied
     - node.type.sum_summer_courses
   module:
-    - ds
-    - layout_builder
     - user
-third_party_settings:
-  layout_builder:
-    enabled: false
-    allow_custom: false
-  ds:
-    layout:
-      id: pattern_card
-      library: null
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        pattern:
-          field_templates: default
-          variant: default
-    regions:
-      card_body:
-        - node_title
-        - sum_course_name
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 0
-        label: hidden
-        formatter: default
 id: node.sum_summer_courses.stanford_card
 targetEntityType: node
 bundle: sum_summer_courses

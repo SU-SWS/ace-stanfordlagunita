@@ -5,167 +5,43 @@
  * supress_helper.install
  */
 
-/**
- * Install sup_award entity type.
- */
-function supress_helper_update_9001() {
-  $update_manager = \Drupal::entityDefinitionUpdateManager();
-  $entity_type = \Drupal::entityTypeManager()->getDefinition('sup_award');
-  $update_manager->installEntityType($entity_type);
-}
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
 
 /**
- * Update list paragraph arguments.
+ * Move search exclude field value
  */
-function supress_helper_update_9002() {
-  $paragraph_storage = \Drupal::entityTypeManager()
-    ->getStorage('paragraph');
-  $paragraphs = $paragraph_storage->getQuery()
+function supress_helper_update_9012() {
+  $field_storage = FieldStorageConfig::loadByName('node', 'su_search_exclusion');
+  if (!$field_storage) {
+    $field_storage = FieldStorageConfig::create([
+      'uuid' => '6c547417-9862-490a-b1e5-8e1b3abaf2fd',
+      'field_name' => 'su_search_exclusion',
+      'entity_type' => 'node',
+      'type' => 'search_api_exclude_entity',
+      'cardinality' => 1,
+    ]);
+    $field_storage->save();
+  }
+
+  $field = FieldConfig::loadByName('node', 'stanford_page', 'su_search_exclusion');
+  if (!$field) {
+    FieldConfig::create([
+      'uuid' => '505979e7-eac5-4712-bd77-0bd40c88d80a',
+      'field_storage' => $field_storage,
+      'bundle' => 'stanford_page',
+      'label' => 'Search Exclusion',
+    ])->save();
+  }
+  $ns = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = $ns->getQuery()
     ->accessCheck(FALSE)
-    ->condition('su_list_view.target_id', 'sup_books')
-    ->condition('su_list_view.arguments', "", '!=')
+    ->condition('type', 'stanford_page')
+    ->condition('sup_page_search_exclude', 1)
     ->execute();
-  foreach ($paragraph_storage->loadMultiple($paragraphs) as $paragraph) {
-    $view_settings = $paragraph->get('su_list_view')->getValue();
-    $view_settings[0]['arguments'] = str_replace('/', '/""/', $view_settings[0]['arguments']);
-    $paragraph->set('su_list_view', $view_settings)->save();
+
+  foreach ($ns->loadMultiple($nids) as $node) {
+    $node->set('su_search_exclusion', TRUE);
+    $node->save();
   }
-}
-
-/**
- * Update config split storage.
- */
-function supress_helper_update_9003() {
-  \Drupal::configFactory()
-    ->getEditable('config_split.config_split.supress')
-    ->set('storage', 'collection')
-    ->save();
-}
-
-/**
- * Queue cover images to be resized.
- */
-function supress_helper_update_9004() {
-  $fids = \Drupal::entityTypeManager()
-    ->getStorage('file')
-    ->getQuery()
-    ->accessCheck(FALSE)
-    ->condition('uri', 'public://media/covers/%', 'LIKE')
-    ->execute();
-  /** @var \Drupal\Core\Queue\QueueFactory $queue_factory */
-  $queue_factory = \Drupal::service('queue');
-  $queue = $queue_factory->get('press_image_resize');
-  foreach ($fids as $fid) {
-    $queue->createItem($fid);
-  }
-}
-
-/**
- * Delete embeddable media that needs to be recreated.
- */
-function supress_helper_update_9005() {
-  $ms = \Drupal::entityTypeManager()->getStorage('media');
-  /** @var \Drupal\media\MediaInterface[] $media_items */
-  $media_items = $ms->loadByProperties(['bundle' => 'embeddable', 'uid' => 0]);
-  foreach ($media_items as $media) {
-    if ($media->getCreatedTime() > 1725638520) {
-      $media->delete();
-    }
-  }
-  /** @var \Drupal\Core\File\FileSystemInterface $file_system */
-  $file_system = \Drupal::service('file_system');
-  $file_system->delete('public://social-links.json');
-  supress_helper_cron();
-}
-
-/**
- * Resize images over 2MB.
- */
-function supress_helper_updates_9006() {
-  $file_ids = \Drupal::entityTypeManager()
-    ->getStorage('file')
-    ->getQuery()
-    ->accessCheck(FALSE)
-    ->condition('filesize', 2004591, '>')
-    ->condition('filemime', 'image%', 'LIKE')
-    ->execute();
-  $queue_factory = \Drupal::service('queue');
-  $queue = $queue_factory->get('press_image_resize');
-  foreach ($file_ids as $fid) {
-    $queue->createItem($fid);
-  }
-}
-
-/**
- * Install new press entity type.
- */
-function supress_helper_update_9007() {
-  $press_type = \Drupal::entityTypeManager()->getDefinition('press_type');
-  \Drupal::entityDefinitionUpdateManager()->installEntityType($press_type);
-
-  $press_entity = \Drupal::entityTypeManager()->getDefinition('press');
-  \Drupal::entityDefinitionUpdateManager()->installEntityType($press_entity);
-}
-
-/**
- * Create new next entity configs.
- */
-function supress_helper_update_9008() {
-  $next_storage = \Drupal::entityTypeManager()
-    ->getStorage('next_entity_type_config');
-  /** @var \Drupal\next\Entity\NextEntityTypeConfigInterface $entity */
-  $entity = $next_storage->create([
-    'id' => 'press.prices',
-  ]);
-  $entity->setSiteResolver('site_selector')
-    ->setSiteResolverConfiguration('site_selector', ['sites' => ['vercel' => 'vercel']])
-    ->setRevalidator('path')
-    ->setRevalidatorConfiguration('path', ['additional_paths' => '/tags/prices:[press:uuid]'])
-    ->save();
-
-  if ($entity = $next_storage->load('node.sup_book_ancillary')) {
-    $entity->setRevalidatorConfiguration('path', [
-      'revalidate_page' => TRUE,
-      'additional_paths' => '/tags/excerpts:[node:sup_ancillary_book:entity:uuid]',
-    ])
-      ->save();
-  }
-}
-
-/**
- * Fixed book e-retailers urls with trailing spaces.
- */
-function supress_helper_update_9009() {
-  \Drupal::database()
-    ->query('UPDATE node__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')
-    ->execute();
-  \Drupal::database()
-    ->query('UPDATE node_revision__sup_book_e_retailers SET sup_book_e_retailers_uri = RTRIM(sup_book_e_retailers_uri)')
-    ->execute();
-}
-
-/**
- * Rollback award migration.
- */
-function supress_helper_update_9010(&$sandbox) {
-  $award_storage = \Drupal::entityTypeManager()->getStorage('sup_award');
-  if (empty($sandbox['ids'])) {
-    $sandbox['ids'] = $award_storage->getQuery()
-      ->accessCheck(FALSE)
-      ->execute();
-    $sandbox['total'] = count($sandbox['ids']);
-  }
-
-  $award_ids = array_splice($sandbox['ids'], 0, 50);
-  foreach ($award_storage->loadMultiple($award_ids) as $award) {
-    $award->delete();
-  }
-  $sandbox['#finished'] = count($sandbox['ids']) ? 1 - count($sandbox['ids']) / $sandbox['total'] : 1;
-}
-
-/**
- * Truncate award migration table.
- */
-function supress_helper_update_9011() {
-  \Drupal::database()->truncate('migrate_map_sup_awards')->execute();
 }

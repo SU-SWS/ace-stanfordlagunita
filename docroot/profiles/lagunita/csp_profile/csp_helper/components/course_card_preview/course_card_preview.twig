@@ -7,8 +7,9 @@
  * templates wrap their output in a div, which is not valid inside a heading.
  */
 #}
+
 <div{{ attributes.addClass('csp-course-card-preview') }}>
-  {% if image %}
+  {% if image|render_clean("<img> <picture>") %}
     <div class="csp-course-card-preview__image">
       {% if url %}
         <a href="{{ url }}">{{ image }}</a>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e596a551851dbe769526a9157d2ce2c",
+    "content-hash": "17ee0e1d3a173bf267d5c6ffb0796d6e",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -4807,6 +4807,52 @@
                 "source": "http://git.drupal.org/project/ds.git",
                 "issues": "https://www.drupal.org/project/issues/ds",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/ds_extras",
+            "version": "3.37.0",
+            "require": {
+                "drupal/core": "^10.2 || ^11",
+                "drupal/ds": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.37",
+                    "datestamp": "1771000261",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "aspilicious",
+                    "homepage": "https://www.drupal.org/user/172527"
+                },
+                {
+                    "name": "bceyssens",
+                    "homepage": "https://www.drupal.org/user/2743951"
+                },
+                {
+                    "name": "jyve",
+                    "homepage": "https://www.drupal.org/user/591438"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                }
+            ],
+            "description": "Contains additional features for Display Suite.",
+            "homepage": "https://www.drupal.org/project/ds",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ds"
             }
         },
         {
@@ -10787,6 +10833,89 @@
             }
         },
         {
+            "name": "drupal/schema_metatag",
+            "version": "3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/schema_metatag.git",
+                "reference": "3.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/schema_metatag-3.0.4.zip",
+                "reference": "3.0.4",
+                "shasum": "bdc9ee4efc6a995e6b0e75a517e65e1355226c95"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11",
+                "drupal/metatag": "^2.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "drupal/metatag_views": "*",
+                "drupal/schema_article": "*",
+                "drupal/schema_organization": "*",
+                "ergebnis/composer-normalize": "*",
+                "mpyw/phpunit-patch-serializable-comparison": "*",
+                "phpcompatibility/php-compatibility": "^9.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.4",
+                    "datestamp": "1771516335",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "composer-normalize": {
+                    "indent-size": 2,
+                    "indent-style": "space"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "damienmckenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
+                    "name": "karens",
+                    "homepage": "https://www.drupal.org/user/45874"
+                },
+                {
+                    "name": "thejimbirch",
+                    "homepage": "https://www.drupal.org/user/2507260"
+                },
+                {
+                    "name": "wells",
+                    "homepage": "https://www.drupal.org/user/2452278"
+                }
+            ],
+            "description": "Metatag implementation of Schema.org structured data (JSON-LD)",
+            "homepage": "https://www.drupal.org/project/schema_metatag",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/schema_metatag",
+                "issues": "https://www.drupal.org/project/issues/schema_metatag"
+            }
+        },
+        {
             "name": "drupal/search_api",
             "version": "1.41.0",
             "source": {
@@ -12160,6 +12289,74 @@
             }
         },
         {
+            "name": "drupal/twig_tweak",
+            "version": "3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twig_tweak.git",
+                "reference": "3.4.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twig_tweak-3.4.2.zip",
+                "reference": "3.4.2",
+                "shasum": "c31272a550c05981ca21b1eacc37abfe62cf2598"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11.0",
+                "ext-json": "*",
+                "php": ">=8.1",
+                "twig/twig": "^3.10.3"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Better dump() function for debugging Twig variables"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.4.2",
+                    "datestamp": "1776781834",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "chi",
+                    "homepage": "https://www.drupal.org/user/556138"
+                },
+                {
+                    "name": "grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                }
+            ],
+            "description": "A Twig extension with some useful functions and filters for Drupal development.",
+            "homepage": "https://www.drupal.org/project/twig_tweak",
+            "keywords": [
+                "Drupal",
+                "Twig"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/twig_tweak",
+                "issues": "https://www.drupal.org/project/issues/twig_tweak"
+            }
+        },
+        {
             "name": "drupal/typed_data",
             "version": "2.1.1",
             "source": {
@@ -12210,30 +12407,31 @@
         },
         {
             "name": "drupal/ui_patterns",
-            "version": "1.15.0",
+            "version": "2.0.19",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ui_patterns.git",
-                "reference": "8.x-1.15"
+                "reference": "2.0.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ui_patterns-8.x-1.15.zip",
-                "reference": "8.x-1.15",
-                "shasum": "8a56a658ae87ae535b0fcd52806f243b5d3108dd"
+                "url": "https://ftp.drupal.org/files/projects/ui_patterns-2.0.19.zip",
+                "reference": "2.0.19",
+                "shasum": "e49ecbf90e78c26e5635724eb2c9f71820916d3c"
             },
             "require": {
-                "drupal/core": "^9 || ^10 || ^11"
+                "drupal/core": "^10.3 || ^11",
+                "justinrainbow/json-schema": "^5.2 || ^6.3"
             },
             "require-dev": {
-                "drupal/ds": "^3.18",
-                "drupal/field_group": "^4"
+                "drupal/ui_patterns_library": "*",
+                "drush/drush": "^12 || ^13"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.15",
-                    "datestamp": "1775641228",
+                    "version": "2.0.19",
+                    "datestamp": "1786034887",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12282,7 +12480,130 @@
                     "homepage": "https://www.drupal.org/user/436244"
                 }
             ],
-            "description": "UI Patterns.",
+            "description": "Define and expose self-contained UI components and use them seamlessly in development and site-building.",
+            "homepage": "https://www.drupal.org/project/ui_patterns",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ui_patterns"
+            }
+        },
+        {
+            "name": "drupal/ui_patterns_ds",
+            "version": "1.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ui_patterns_ds.git",
+                "reference": "1.0.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ui_patterns_ds-1.0.0-alpha3.zip",
+                "reference": "1.0.0-alpha3",
+                "shasum": "8a34dc7fac61a7311ef8f0c3e44e3ff0865ca4d4"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11",
+                "drupal/ds": "^3.28",
+                "drupal/ds_extras": "*",
+                "drupal/ui_patterns": "^2.0",
+                "drupal/ui_patterns_layouts": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha3",
+                    "datestamp": "1787607158",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "just_like_good_vibes",
+                    "homepage": "https://www.drupal.org/user/792018"
+                },
+                {
+                    "name": "pdureau",
+                    "homepage": "https://www.drupal.org/user/1903334"
+                },
+                {
+                    "name": "sharique",
+                    "homepage": "https://www.drupal.org/user/73545"
+                }
+            ],
+            "description": "Provides integration between UI Patterns and Display Suite.",
+            "homepage": "https://www.drupal.org/project/ui_patterns_ds",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ui_patterns_ds",
+                "issues": "https://www.drupal.org/project/issues/ui_patterns_ds"
+            }
+        },
+        {
+            "name": "drupal/ui_patterns_layouts",
+            "version": "2.0.19",
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "drupal/ui_patterns": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.19",
+                    "datestamp": "1786034887",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ademarco",
+                    "homepage": "https://www.drupal.org/user/186696"
+                },
+                {
+                    "name": "bircher",
+                    "homepage": "https://www.drupal.org/user/1344166"
+                },
+                {
+                    "name": "christian.wiedemann",
+                    "homepage": "https://www.drupal.org/user/861002"
+                },
+                {
+                    "name": "duaelfr",
+                    "homepage": "https://www.drupal.org/user/931394"
+                },
+                {
+                    "name": "g4mbini",
+                    "homepage": "https://www.drupal.org/user/2533498"
+                },
+                {
+                    "name": "grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "just_like_good_vibes",
+                    "homepage": "https://www.drupal.org/user/792018"
+                },
+                {
+                    "name": "pdureau",
+                    "homepage": "https://www.drupal.org/user/1903334"
+                },
+                {
+                    "name": "pescetti",
+                    "homepage": "https://www.drupal.org/user/436244"
+                }
+            ],
+            "description": "Use UI components as layouts plugins.",
             "homepage": "https://www.drupal.org/project/ui_patterns",
             "support": {
                 "source": "https://git.drupalcode.org/project/ui_patterns"
@@ -18273,16 +18594,16 @@
         },
         {
             "name": "su-sws/react_paragraphs",
-            "version": "8.2.19",
+            "version": "8.2.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/react_paragraphs.git",
-                "reference": "f1f6ab153c870c12d942e1ebaee4e17ae717e180"
+                "reference": "21a13e65944ef1859e016ba7810fcdb9a4bc4096"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/react_paragraphs/zipball/f1f6ab153c870c12d942e1ebaee4e17ae717e180",
-                "reference": "f1f6ab153c870c12d942e1ebaee4e17ae717e180",
+                "url": "https://api.github.com/repos/SU-SWS/react_paragraphs/zipball/21a13e65944ef1859e016ba7810fcdb9a4bc4096",
+                "reference": "21a13e65944ef1859e016ba7810fcdb9a4bc4096",
                 "shasum": ""
             },
             "require": {
@@ -18302,9 +18623,9 @@
             ],
             "description": "An advanced UI for editing paragraphs in Drupal.",
             "support": {
-                "source": "https://github.com/SU-SWS/react_paragraphs/tree/8.2.19"
+                "source": "https://github.com/SU-SWS/react_paragraphs/tree/8.2.20"
             },
-            "time": "2026-04-17T22:12:58+00:00"
+            "time": "2026-08-05T20:41:19+00:00"
         },
         {
             "name": "su-sws/stanford_actions",
@@ -18503,16 +18824,16 @@
         },
         {
             "name": "su-sws/stanford_profile",
-            "version": "12.2.4",
+            "version": "13.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "8a91a53eaa7898504de8963ad43435b193b20603"
+                "reference": "05e08db9bcc669c64518e5aba325f8b3898851ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/8a91a53eaa7898504de8963ad43435b193b20603",
-                "reference": "8a91a53eaa7898504de8963ad43435b193b20603",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/05e08db9bcc669c64518e5aba325f8b3898851ec",
+                "reference": "05e08db9bcc669c64518e5aba325f8b3898851ec",
                 "shasum": ""
             },
             "require": {
@@ -18545,7 +18866,7 @@
                 "drupal/core": "~11.3.0",
                 "drupal/cshs": "^4.0",
                 "drupal/default_content": "^2.0@alpha",
-                "drupal/diff": "^1.3",
+                "drupal/diff": "^2.1",
                 "drupal/display_field_copy": "^2.0.",
                 "drupal/domain_301_redirect": "^2.0",
                 "drupal/ds": "^3.3",
@@ -18613,8 +18934,10 @@
                 "drupal/responsive_tables_filter": "^2.0",
                 "drupal/role_delegation": "^1.0@beta",
                 "drupal/scheduler": "^2.0",
+                "drupal/schema_metatag": "^3.0",
                 "drupal/search_api": "^1.19",
                 "drupal/search_api_algolia": "^3.0@beta",
+                "drupal/search_api_exclude_entity": "^3.0",
                 "drupal/search_autocomplete": "^4.0",
                 "drupal/seckit": "^2.0",
                 "drupal/shield": "^1.8",
@@ -18629,7 +18952,8 @@
                 "drupal/taxonomy_menu": "^3.5",
                 "drupal/token_or": "^2.0",
                 "drupal/trash": "^3.0",
-                "drupal/ui_patterns": "^1.0",
+                "drupal/twig_tweak": "^3.4",
+                "drupal/ui_patterns": "^2.0",
                 "drupal/ultimate_cron": "^2.0@beta",
                 "drupal/view_unpublished": "^1.0",
                 "drupal/viewfield": "^3.0@beta",
@@ -18654,12 +18978,13 @@
                 "su-sws/stanford_actions": "^8.2",
                 "su-sws/stanford_media": "^11.3",
                 "su-sws/stanford_migrate": "^9.0",
-                "su-sws/stanford_profile_helper": "^10.2",
+                "su-sws/stanford_profile_helper": "11.x-dev",
                 "su-sws/stanford_samlauth": "^2.0"
             },
             "conflict": {
                 "drupal/colorbox": ">=2.2.0"
             },
+            "default-branch": true,
             "type": "drupal-custom-profile",
             "extra": {
                 "drush": {
@@ -18693,23 +19018,22 @@
             ],
             "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
             "support": {
-                "issues": "https://github.com/SU-SWS/stanford_profile/issues",
-                "source": "https://github.com/SU-SWS/stanford_profile/tree/12.2.4"
+                "source": "https://github.com/SU-SWS/stanford_profile/tree/13.x"
             },
-            "time": "2026-06-17T19:43:03+00:00"
+            "time": "2026-08-24T18:50:05+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
-            "version": "10.x-dev",
+            "version": "11.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "940ff2a356fa2d865f15ba16e8a42006be28429e"
+                "reference": "63c098abddc1298b40f28c85f2e5ab121d6b27a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/940ff2a356fa2d865f15ba16e8a42006be28429e",
-                "reference": "940ff2a356fa2d865f15ba16e8a42006be28429e",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/63c098abddc1298b40f28c85f2e5ab121d6b27a6",
+                "reference": "63c098abddc1298b40f28c85f2e5ab121d6b27a6",
                 "shasum": ""
             },
             "require": {
@@ -18764,7 +19088,6 @@
                 "drupal/smart_trim": ">=2.1",
                 "drupal/taxonomy_menu": ">=3.6",
                 "drupal/token_or": ">=2.3",
-                "drupal/ui_patterns": "^1.7",
                 "drupal/ultimate_cron": ">=2.0@alpha",
                 "drupal/viewfield": "^3.0@beta",
                 "drupal/views_block_filter_block": ">=2.0",
@@ -18778,6 +19101,7 @@
                 "su-sws/stanford_media": ">=10.0",
                 "su-sws/stanford_migrate": ">=8.4"
             },
+            "default-branch": true,
             "type": "drupal-custom-module",
             "extra": {
                 "drush": {
@@ -18812,9 +19136,9 @@
             ],
             "description": "Helper Module For Stanford Profile",
             "support": {
-                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/10.x"
+                "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/11.x"
             },
-            "time": "2026-07-16T15:45:45+00:00"
+            "time": "2026-08-11T19:36:46+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
@@ -29331,17 +29655,12 @@
             "time": "2026-06-15T15:31:57+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "drupal/diff",
-            "version": "2.1.1.0",
-            "alias": "1.3.0",
-            "alias_normalized": "1.3.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/filefield_paths": 10,
+        "drupal/ui_patterns_ds": 15,
+        "su-sws/stanford_profile": 20,
         "su-sws/stanford_profile_helper": 20,
         "su-sws/sws-drush-commands": 20
     },
