@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17ee0e1d3a173bf267d5c6ffb0796d6e",
+    "content-hash": "04a72fa0e10f1c924ef2b2bd1ee44091",
     "packages": [
         {
             "name": "acquia/drupal-environment-detector",
@@ -14754,16 +14754,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.23",
+            "version": "v0.3.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221"
+                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221",
-                "reference": "b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/5d3cdef29e93ca3b62b1871359db3078cd99908b",
+                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b",
                 "shasum": ""
             },
             "require": {
@@ -14807,9 +14807,9 @@
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.23"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.24"
             },
-            "time": "2026-08-11T18:58:24+00:00"
+            "time": "2026-08-20T12:55:36+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -18828,12 +18828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile.git",
-                "reference": "05e08db9bcc669c64518e5aba325f8b3898851ec"
+                "reference": "d27fc68fbe9539f82eade22c2ad040542cfc1095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/05e08db9bcc669c64518e5aba325f8b3898851ec",
-                "reference": "05e08db9bcc669c64518e5aba325f8b3898851ec",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile/zipball/d27fc68fbe9539f82eade22c2ad040542cfc1095",
+                "reference": "d27fc68fbe9539f82eade22c2ad040542cfc1095",
                 "shasum": ""
             },
             "require": {
@@ -19020,7 +19020,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile/tree/13.x"
             },
-            "time": "2026-08-24T18:50:05+00:00"
+            "time": "2026-08-25T21:15:01+00:00"
         },
         {
             "name": "su-sws/stanford_profile_helper",
@@ -19028,12 +19028,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SU-SWS/stanford_profile_helper.git",
-                "reference": "63c098abddc1298b40f28c85f2e5ab121d6b27a6"
+                "reference": "7fefee7049c738b86e219ce491512469ea336aca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/63c098abddc1298b40f28c85f2e5ab121d6b27a6",
-                "reference": "63c098abddc1298b40f28c85f2e5ab121d6b27a6",
+                "url": "https://api.github.com/repos/SU-SWS/stanford_profile_helper/zipball/7fefee7049c738b86e219ce491512469ea336aca",
+                "reference": "7fefee7049c738b86e219ce491512469ea336aca",
                 "shasum": ""
             },
             "require": {
@@ -19138,7 +19138,7 @@
             "support": {
                 "source": "https://github.com/SU-SWS/stanford_profile_helper/tree/11.x"
             },
-            "time": "2026-08-11T19:36:46+00:00"
+            "time": "2026-08-25T21:34:46+00:00"
         },
         {
             "name": "su-sws/stanford_samlauth",
