@@ -245,13 +245,16 @@ source:
   ids:
     work_id_number:
       type: integer
+  constants:
+    keep_tags: '<i>'
 process:
   title:
-    plugin: str_replace
-    source: title
-    search: '/<.*?>/'
-    replace: ''
-    regex: true
+    plugin: callback
+    callable: strip_tags
+    unpack_source: true
+    source:
+      - title
+      - constants/keep_tags
   sup_book_type:
     -
       plugin: str_replace
@@ -374,10 +377,12 @@ process:
       method: process
       source: subtitle
     -
-      plugin: str_replace
-      regex: true
-      search: '/<.*?>/'
-      replace: ''
+      plugin: callback
+      callable: strip_tags
+      unpack_source: true
+      source:
+        - subtitle
+        - constants/keep_tags
   sup_book_url_isw: url_isw
   sup_book_work_id_number: work_id_number
   sup_book_awards:
