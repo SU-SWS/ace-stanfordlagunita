@@ -1,5 +1,21 @@
 # Stanford Profile
 
+13.0.5
+-------------------------------------------------------------------------------
+- Adjusted content widths in the local footer
+
+13.0.4
+-------------------------------------------------------------------------------
+- Adjusted card displays for news and AV content types.
+
+13.0.3
+-------------------------------------------------------------------------------
+- Reduced unwanted markup around images in basic page teasers.
+
+13.0.2
+-------------------------------------------------------------------------------
+- Adjusted local footer and minimally branded theme.
+
 13.0.0
 -------------------------------------------------------------------------------
 - Refactor display logic to use SDC instead of UI Patterns (#1094)
