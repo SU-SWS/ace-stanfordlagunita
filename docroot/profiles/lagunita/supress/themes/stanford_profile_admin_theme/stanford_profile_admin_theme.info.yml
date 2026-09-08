@@ -2,8 +2,13 @@ name: 'Stanford Profile Admin Theme'
 type: theme
 description: 'Stanford Profile admin theme.'
 package: Stanford
+<<<<<<< HEAD
 version: 9.0.0
 core_version_requirement: ^11.1
+=======
+version: 13.0.4
+core_version_requirement: ^11.2 || ^12
+>>>>>>> fe46fdf90221f3b89355696cc84a59dbb9d48380
 'base theme': claro
 regions:
   header: 'Header'
