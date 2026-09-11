@@ -1,0 +1,18 @@
+adding:
+  dependencies:
+    config:
+      - field.field.config_pages.stanford_local_footer.sum_min_local_foot_second
+  content:
+    sum_min_local_foot_second:
+      type: link
+      label: above
+      settings:
+        trim_length: 80
+        url_only: false
+        url_plain: false
+        rel: ''
+        target: ''
+      third_party_settings: {  }
+      weight: 22
+      region: content
+removing: {  }
