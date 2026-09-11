@@ -214,6 +214,7 @@ jobs:
             4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
             4.x-${{ vars.CACHE_KEY }}-
       - name: Sync and Update Site
+        id: sync
         run: |
           git config --system --add safe.directory '*' &&
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
@@ -227,7 +228,46 @@ jobs:
           composer install -n &&
           drush sa @${{ matrix.site }}.prod || exit 0 &&
           drush drupal:sync --site=${{ matrix.site }} -n &&
-          curl -I http://localhost --fail
+          curl -I http://localhost --fail &&
+          echo 'synced=true' >> $GITHUB_OUTPUT
+      - name: Build Front End
+        if: steps.sync.outputs.synced == 'true'
+        env:
+          BUILD_PAGES: ${{ vars.FRONTEND_BUILD_PAGES || 100 }}
+          BUILD_COMPLETE: 'true'
+          LIBGUIDE_CLIENT_ID: ${{secrets.LIBGUIDE_CLIENT_ID}}
+          LIBGUIDE_CLIENT_SECRET: ${{secrets.LIBGUIDE_CLIENT_SECRET}}
+        run: |
+          # Each multisite is served by its own Next.js front end repository.
+          case '${{ matrix.site }}' in
+            csp) frontend_repo=csp-nextjs ;;
+            library) frontend_repo=sulgryphon-nextjs ;;
+            summer) frontend_repo=summer-nextjs ;;
+            supress) frontend_repo=press-nextjs ;;
+            *)
+              echo 'No front end repository is configured for ${{ matrix.site }}.'
+              exit 0
+              ;;
+          esac
+          # Algolia is unreachable during the build, so drop its credentials.
+          for algolia_table in config_pages__su_site_algolia_id config_pages__su_site_algolia_index config_pages__su_site_algolia_key; do
+            drush sqlq "truncate $algolia_table" || true
+          done
+          git clone --depth 1 --single-branch "https://github.com/SU-SWS/$frontend_repo.git" $GITHUB_WORKSPACE/frontend &&
+          cd $GITHUB_WORKSPACE/frontend &&
+          cp .env.example .env.local &&
+          sed -i -r "s|^#?NEXT_PUBLIC_DRUPAL_BASE_URL.*|NEXT_PUBLIC_DRUPAL_BASE_URL=http://localhost|g" .env.local &&
+          # Not every .env.example ends in a newline, so the appended
+          # credentials below would otherwise land on the last existing line.
+          echo >> .env.local &&
+          cd $GITHUB_WORKSPACE &&
+          # Creates the next_site entity plus the service accounts the front end
+          # authenticates with, then prints the matching credentials.
+          drush su-next-connect >> $GITHUB_WORKSPACE/frontend/.env.local &&
+          cd $GITHUB_WORKSPACE/frontend &&
+          yarn &&
+          yarn next telemetry disable &&
+          yarn build
   all-tests-pass:
     name: All Tests Pass
     needs: [phpunit, codeception, db_updates]
