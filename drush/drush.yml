@@ -12,6 +12,16 @@ drush:
     - /usr/share/drush/commands
 project:
   profile: stanford_profile
+  # Next.js front end repository for each multisite, keyed by the site name used
+  # in `command.sws.options.multisites` below. All repositories are assumed to
+  # live in the SU-SWS GitHub organization. CI builds the front end of every
+  # site listed here against the synced database; a site with no entry is
+  # skipped.
+  frontend-repos:
+    csp: csp-nextjs
+    library: sulgryphon-nextjs
+    summer: summer-nextjs
+    supress: press-nextjs
 command:
   sql:
     sanitize:
