@@ -1,0 +1,5 @@
+adding:
+  permissions:
+    - 'view own sum_minimal_head_foot'
+    - 'view sum_minimal_head_foot'
+removing: {  }

@@ -1,0 +1,21 @@
+uuid: 72934be9-3604-4abc-9cc7-7b88c458db5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sum_minimal_head_foot
+    - node.type.stanford_page
+id: node.stanford_page.sum_minimal_head_foot
+field_name: sum_minimal_head_foot
+entity_type: node
+bundle: stanford_page
+label: 'Minimal Header & Footer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,28 @@
+adding:
+  dependencies:
+    config:
+      - field.field.config_pages.stanford_local_footer.sum_min_local_foot_second
+  third_party_settings:
+    field_group:
+      group_secondary_links:
+        children:
+          - sum_min_local_foot_second
+  content:
+    su_local_foot_loc_img:
+      weight: 48
+    su_local_foot_use_logo:
+      weight: 47
+    sum_min_local_foot_second:
+      type: link_default
+      weight: 7
+      region: content
+      settings:
+        placeholder_url: ''
+        placeholder_title: ''
+      third_party_settings: {  }
+removing:
+  content:
+    su_local_foot_loc_img:
+      weight: 35
+    su_local_foot_use_logo:
+      weight: 34

@@ -650,6 +650,8 @@ field_config:
         enabled: true
       su_local_foot_use_logo:
         enabled: true
+      sum_min_local_foot_second:
+        enabled: true
     stanford_super_footer:
       su_super_foot_enabled:
         enabled: true
@@ -900,6 +902,8 @@ field_config:
       su_page_description:
         enabled: true
       su_page_image:
+        enabled: true
+      sum_minimal_head_foot:
         enabled: true
     stanford_person:
       body:

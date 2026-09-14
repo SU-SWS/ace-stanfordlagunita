@@ -1,7 +1,7 @@
 adding:
   dependencies:
     config:
-      - field.field.node.stanford_page.su_search_exclusion
+      - field.field.node.stanford_page.sum_minimal_head_foot
   hidden:
     sum_minimal_head_foot: true
 removing: {  }
