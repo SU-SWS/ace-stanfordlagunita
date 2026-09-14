@@ -2,6 +2,10 @@
 
 4.0.0
 --------------------------------------------------------------------------------
+- SUM: Remove portions of the header and footer for desired pages
+
+4.0.0
+--------------------------------------------------------------------------------
 - Updated dependencies.
 - Profile refactor from UI Patterns to SDC
 
