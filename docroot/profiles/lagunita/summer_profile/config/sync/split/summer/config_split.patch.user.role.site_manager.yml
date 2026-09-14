@@ -10,6 +10,7 @@ adding:
       - summer_helper
   permissions:
     - 'administer summer entities'
+    - 'create sum_minimal_head_foot'
     - 'create sum_summer_courses content'
     - 'create terms in sum_course_availability'
     - 'create terms in sum_course_interest_area'
@@ -21,7 +22,9 @@ adding:
     - 'delete terms in sum_course_interest_area'
     - 'delete terms in sum_course_population'
     - 'edit any sum_summer_courses content'
+    - 'edit own sum_minimal_head_foot'
     - 'edit own sum_summer_courses content'
+    - 'edit sum_minimal_head_foot'
     - 'edit terms in sum_course_availability'
     - 'edit terms in sum_course_interest_area'
     - 'edit terms in sum_course_population'

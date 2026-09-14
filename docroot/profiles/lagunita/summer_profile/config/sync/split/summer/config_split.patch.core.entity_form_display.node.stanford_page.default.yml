@@ -1,4 +1,7 @@
 adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.sum_minimal_head_foot
   content:
     su_page_banner:
       type: layout_paragraphs
@@ -16,6 +19,15 @@ adding:
           field_label_overwrite: ''
           hide_add_another: 0
           force_single_cardinality: 0
+    su_search_exclusion:
+      weight: 16
+    sum_minimal_head_foot:
+      type: boolean_checkbox
+      weight: 17
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
 removing:
   dependencies:
     module:
@@ -40,3 +52,5 @@ removing:
     su_page_components:
       settings:
         preview_view_mode: default
+    su_search_exclusion:
+      weight: 27

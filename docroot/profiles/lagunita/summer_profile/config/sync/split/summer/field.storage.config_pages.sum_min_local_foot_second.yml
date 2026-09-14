@@ -1,0 +1,19 @@
+uuid: b84f87f2-5ab5-4cf3-873d-a001883f224c
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - link
+id: config_pages.sum_min_local_foot_second
+field_name: sum_min_local_foot_second
+entity_type: config_pages
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

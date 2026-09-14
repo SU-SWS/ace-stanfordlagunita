@@ -2,4 +2,7 @@ adding:
   permissions:
     config_split_sequence_s3dub4tgfmf0af2j: 'access content'
     config_split_sequence_1_s3dub4tgfmf0af2j: 'access content'
+    config_split_sequence_2_s3dub4tgfmf0af2j: 'access content'
+    config_split_sequence_29ktlaslu2l8s8dv: 'view own sum_minimal_head_foot'
+    config_split_sequence_pt13v6hfjllhr61v: 'view sum_minimal_head_foot'
 removing: {  }
