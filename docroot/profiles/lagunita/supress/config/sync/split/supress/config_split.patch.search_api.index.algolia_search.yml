@@ -169,14 +169,19 @@ adding:
         - book_subject
         - book_subtitle
         - book_type
+        - isbn_13_alt
+        - isbn_13_cloth
+        - isbn_13_digital
+        - isbn_13_isw
+        - isbn_13_paper
     html_filter:
+      all_fields: false
       fields:
         - book_authors
         - book_authors_last_name
         - book_imprint
         - book_series
         - book_subject
-        - book_subtitle
         - book_type
         - isbn_13_alt
         - isbn_13_cloth
@@ -192,6 +197,11 @@ adding:
         - book_subject
         - book_subtitle
         - book_type
+        - isbn_13_alt
+        - isbn_13_cloth
+        - isbn_13_digital
+        - isbn_13_isw
+        - isbn_13_paper
 removing:
   field_settings:
     photo:
@@ -200,3 +210,8 @@ removing:
     summary:
       configuration:
         value: '[node:su_page_description|node:summary]'
+  processor_settings:
+    html_filter:
+      all_fields: true
+      fields:
+        - title
