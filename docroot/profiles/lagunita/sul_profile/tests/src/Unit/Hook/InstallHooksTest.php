@@ -10,14 +10,12 @@ use Drupal\config_pages\ConfigPagesInterface;
 use Drupal\sul_profile\Hook\InstallHooks;
 use Drupal\sul_profile\InstallTaskManager;
 use Drupal\Tests\UnitTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Unit tests for InstallHooks.
  */
-#[Group('stanford_profile')]
-#[CoversClass(InstallHooks::class)]
+#[Group('sul_profile')]
 class InstallHooksTest extends UnitTestCase {
 
   /**
@@ -50,13 +48,13 @@ class InstallHooksTest extends UnitTestCase {
     $installTaskManager = $this->createMock(InstallTaskManager::class);
     $installTaskManager->expects($this->once())
       ->method('runTasks')
-      ->with(['parameters' => ['profile' => 'stanford_profile']]);
+      ->with(['parameters' => ['profile' => 'sul_profile']]);
 
     $container = new ContainerBuilder();
     $container->set('plugin.manager.install_tasks', $installTaskManager);
     \Drupal::setContainer($container);
 
-    $install_state = ['parameters' => ['profile' => 'stanford_profile']];
+    $install_state = ['parameters' => ['profile' => 'sul_profile']];
     InstallHooks::finalTask($install_state);
   }
 
