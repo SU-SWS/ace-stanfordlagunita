@@ -35,6 +35,7 @@ dependencies:
   module:
     - book
     - content_lock
+    - csp_profile
     - dropzonejs
     - editoria11y
     - field_permissions
@@ -49,7 +50,6 @@ dependencies:
     - pathauto
     - scheduler
     - stanford_policy
-    - csp_profile
     - stanford_publication
     - system
     - taxonomy

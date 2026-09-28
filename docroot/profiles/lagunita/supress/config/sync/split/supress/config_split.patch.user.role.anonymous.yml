@@ -1,5 +1,15 @@
 adding: {  }
 removing:
   dependencies:
+    config:
+      - config_pages.type.lockup_settings
+      - config_pages.type.policy_settings
+      - config_pages.type.stanford_basic_site_settings
+      - config_pages.type.stanford_global_message
+      - config_pages.type.stanford_local_footer
+      - config_pages.type.stanford_super_footer
     module:
+      - book
       - system
+  permissions:
+    - 'access book list'

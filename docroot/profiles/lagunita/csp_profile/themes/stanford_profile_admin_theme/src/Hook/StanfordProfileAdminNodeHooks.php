@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\csp_profile_admin_theme\Hook;
+namespace Drupal\stanford_profile_admin_theme\Hook;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Hook\Attribute\Hook;

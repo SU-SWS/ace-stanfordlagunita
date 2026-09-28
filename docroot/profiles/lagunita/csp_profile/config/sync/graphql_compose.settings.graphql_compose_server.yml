@@ -25,16 +25,10 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    policy_settings:
-      enabled: false
     stanford_basic_site_settings:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_courses_importer:
-      enabled: false
-    stanford_events_importer:
-      enabled: false
     stanford_global_message:
       enabled: true
       query_load_enabled: true
@@ -43,10 +37,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_person_importer:
-      enabled: false
-    stanford_saml:
-      enabled: false
     stanford_super_footer:
       enabled: true
       query_load_enabled: true
@@ -131,18 +121,10 @@ entity_config:
     tiny_blur:
       enabled: true
   layout:
-    left_anchor_nav:
-      enabled: false
-    left_anchor_no_nav:
-      enabled: false
     news_spotlight:
       enabled: true
     stanford_basic_page_full:
       enabled: true
-    top_anchor_nav:
-      enabled: false
-    top_anchor_nav_full_width:
-      enabled: false
   media:
     embeddable:
       enabled: true
@@ -166,28 +148,8 @@ entity_config:
       enabled: true
       query_load_enabled: true
   menu:
-    account:
-      enabled: false
-    admin:
-      enabled: false
-    courses-menu:
-      enabled: false
-    devel:
-      enabled: false
-    footer:
-      enabled: false
     main:
       enabled: true
-    news-topics:
-      enabled: false
-    stanford-event-types:
-      enabled: false
-    stanford-person-type:
-      enabled: false
-    stanford-publication-topics:
-      enabled: false
-    tools:
-      enabled: false
   node:
     stanford_course:
       enabled: true
@@ -305,8 +267,6 @@ entity_config:
     basic_page_types:
       enabled: true
       query_load_enabled: true
-    cap_org_codes:
-      enabled: false
     course_filters:
       enabled: true
       query_load_enabled: true
@@ -325,8 +285,6 @@ entity_config:
     media_content_types:
       enabled: true
       query_load_enabled: true
-    media_tags:
-      enabled: false
     opportunity_sponsor:
       enabled: true
       query_load_enabled: true
@@ -348,8 +306,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    site_owner_orgs:
-      enabled: false
     stanford_event_groups:
       enabled: true
       query_load_enabled: true
@@ -384,8 +340,6 @@ entity_config:
     su_course_tags:
       enabled: true
       query_load_enabled: true
-    su_shared_tags:
-      enabled: false
 field_config:
   block_content:
     stanford_component_block:

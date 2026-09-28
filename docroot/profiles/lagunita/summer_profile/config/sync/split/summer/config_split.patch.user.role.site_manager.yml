@@ -38,6 +38,7 @@ adding:
 removing:
   dependencies:
     config:
+      - config_pages.type.stanford_global_message
       - taxonomy.vocabulary.event_audience
       - taxonomy.vocabulary.media_content_filters
       - taxonomy.vocabulary.media_content_types
