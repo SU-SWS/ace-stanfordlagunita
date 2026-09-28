@@ -13,7 +13,7 @@ use PHPUnit\Framework\Attributes\Group;
  * Unit tests for LibraryHooks.
  */
 #[Group('jemison')]
-abstract nclass LibraryHooksTest extends UnitTestCase {
+abstract class LibraryHooksTest extends UnitTestCase {
 
   /**
    * The hook class under test.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\stanford_profile_admin_theme\Hook;
+namespace Drupal\csp_profile_admin_theme\Hook;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Hook\Attribute\Hook;
@@ -44,7 +44,7 @@ class StanfordProfileAdminNodeHooks {
         !$node->get('su_page_banner')->count() &&
         $node->get('su_page_components')->count() >= 2 &&
         $node->get('su_page_components')
-          ->get(1)->entity->bundle() == 'stanford_wysiwyg'
+          ->get(1)->entity?->bundle() == 'stanford_wysiwyg'
       ) {
         $variables['attributes']['class'][] = 'add-more-space-to-top';
       }

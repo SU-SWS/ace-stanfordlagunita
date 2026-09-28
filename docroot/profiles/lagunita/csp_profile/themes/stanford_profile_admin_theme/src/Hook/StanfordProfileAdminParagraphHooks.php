@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\stanford_profile_admin_theme\Hook;
+namespace Drupal\csp_profile_admin_theme\Hook;
 
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Routing\RouteObjectInterface;
