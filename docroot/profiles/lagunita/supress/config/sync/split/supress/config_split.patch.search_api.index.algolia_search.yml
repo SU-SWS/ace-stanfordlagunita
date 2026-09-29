@@ -203,6 +203,9 @@ adding:
         - isbn_13_isw
         - isbn_13_paper
 removing:
+  dependencies:
+    module:
+      - book
   field_settings:
     photo:
       configuration:

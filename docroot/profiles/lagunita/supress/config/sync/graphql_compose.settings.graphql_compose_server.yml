@@ -21,16 +21,10 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    policy_settings:
-      enabled: false
     stanford_basic_site_settings:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_courses_importer:
-      enabled: false
-    stanford_events_importer:
-      enabled: false
     stanford_global_message:
       enabled: true
       query_load_enabled: true
@@ -39,10 +33,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    stanford_person_importer:
-      enabled: false
-    stanford_saml:
-      enabled: false
     stanford_super_footer:
       enabled: true
       query_load_enabled: true
@@ -127,26 +117,10 @@ entity_config:
     tiny_blur:
       enabled: true
   layout:
-    left_anchor_nav:
-      enabled: false
-    left_anchor_no_nav:
-      enabled: false
     news_spotlight:
       enabled: true
     stanford_basic_page_full:
       enabled: true
-    sul_branch_side_nav:
-      enabled: false
-    sul_library_full_width:
-      enabled: false
-    sul_news_side_nav:
-      enabled: false
-    sul_side_nav:
-      enabled: false
-    top_anchor_nav:
-      enabled: false
-    top_anchor_nav_full_width:
-      enabled: false
   media:
     embeddable:
       enabled: true
@@ -160,37 +134,18 @@ entity_config:
     image:
       enabled: true
       query_load_enabled: true
-    sdr:
-      enabled: false
     stanford_gallery_images:
+      enabled: true
+      query_load_enabled: true
+    sup_protected_file:
       enabled: true
       query_load_enabled: true
     video:
       enabled: true
       query_load_enabled: true
   menu:
-    account:
-      enabled: false
-    admin:
-      enabled: false
-    courses-menu:
-      enabled: false
-    devel:
-      enabled: false
-    footer:
-      enabled: false
     main:
       enabled: true
-    news-topics:
-      enabled: false
-    stanford-event-types:
-      enabled: false
-    stanford-person-type:
-      enabled: false
-    stanford-publication-topics:
-      enabled: false
-    tools:
-      enabled: false
   node:
     stanford_course:
       enabled: true
@@ -242,26 +197,17 @@ entity_config:
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
-    sul_library:
+    sup_book:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
-    sul_study_place:
+    sup_book_ancillary:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
   paragraph:
-    collection:
-      enabled: true
-      query_load_enabled: true
-    collection_card:
-      enabled: true
-      query_load_enabled: true
-    layout:
-      enabled: true
-      query_load_enabled: true
     stanford_accordion:
       enabled: true
       query_load_enabled: true
@@ -284,6 +230,7 @@ entity_config:
       query_load_enabled: true
     stanford_layout:
       enabled: true
+      query_load_enabled: true
     stanford_lists:
       enabled: true
       query_load_enabled: true
@@ -292,6 +239,7 @@ entity_config:
       query_load_enabled: true
     stanford_page_title_banner:
       enabled: true
+      query_load_enabled: true
     stanford_person_cta:
       enabled: true
       query_load_enabled: true
@@ -303,29 +251,35 @@ entity_config:
       query_load_enabled: true
     stanford_stat_card:
       enabled: true
-      query_load_enabled: true
     stanford_wysiwyg:
       enabled: true
       query_load_enabled: true
-    sul_button:
+    sup_author_list:
       enabled: true
       query_load_enabled: true
-    sul_contact_card:
+    sup_blog:
       enabled: true
       query_load_enabled: true
-    sul_feat_collection:
+    sup_blog_teaser:
       enabled: true
       query_load_enabled: true
-    sul_home_banner:
+    sup_carousel:
       enabled: true
       query_load_enabled: true
-    sul_home_image:
+    sup_carousel_slide:
       enabled: true
       query_load_enabled: true
-    sul_libguide:
+    sup_file_list:
       enabled: true
       query_load_enabled: true
-    sul_location_hours:
+    sup_search_form:
+      enabled: true
+      query_load_enabled: true
+  press:
+    award:
+      enabled: true
+      query_load_enabled: true
+    prices:
       enabled: true
       query_load_enabled: true
   redirect:
@@ -340,8 +294,6 @@ entity_config:
     basic_page_types:
       enabled: true
       query_load_enabled: true
-    cap_org_codes:
-      enabled: false
     course_filters:
       enabled: true
       query_load_enabled: true
@@ -360,8 +312,6 @@ entity_config:
     media_content_types:
       enabled: true
       query_load_enabled: true
-    media_tags:
-      enabled: false
     opportunity_sponsor:
       enabled: true
       query_load_enabled: true
@@ -383,8 +333,6 @@ entity_config:
       enabled: true
       query_load_enabled: true
       edges_enabled: true
-    site_owner_orgs:
-      enabled: false
     stanford_event_groups:
       enabled: true
       query_load_enabled: true
@@ -404,14 +352,10 @@ entity_config:
     stanford_news_topics:
       enabled: true
       query_load_enabled: true
-      edges_enabled: true
     stanford_person_types:
       enabled: true
       query_load_enabled: true
     stanford_publication_topics:
-      enabled: true
-      query_load_enabled: true
-    study_place_capacity:
       enabled: true
       query_load_enabled: true
     su_course_quarters:
@@ -425,11 +369,19 @@ entity_config:
       query_load_enabled: true
     su_shared_tags:
       enabled: true
-      query_load_enabled: true
-    sul_study_place_features:
+    sup_book_subjects:
       enabled: true
       query_load_enabled: true
-    sul_study_place_type:
+    sup_book_tags:
+      enabled: true
+      query_load_enabled: true
+    sup_file_groups:
+      enabled: true
+      query_load_enabled: true
+    sup_imprints:
+      enabled: true
+      query_load_enabled: true
+    sup_series:
       enabled: true
       query_load_enabled: true
 field_config:
@@ -570,6 +522,10 @@ field_config:
         enabled: true
       su_site_nobots:
         enabled: true
+      sup_filemaker_pass:
+        enabled: true
+      sup_filemaker_user:
+        enabled: true
     stanford_global_message:
       su_global_msg_enabled:
         enabled: true
@@ -666,12 +622,17 @@ field_config:
     image:
       field_media_image:
         enabled: true
-      sul_image_credit:
+      sup_book_work_id:
         enabled: true
     stanford_gallery_images:
       su_gallery_caption:
         enabled: true
       su_gallery_image:
+        enabled: true
+    sup_protected_file:
+      sup_media_file:
+        enabled: true
+      sup_media_file_group:
         enabled: true
     video:
       field_media_oembed_video:
@@ -749,12 +710,6 @@ field_config:
         enabled: true
       su_event_type:
         enabled: true
-      sul_event__image:
-        enabled: true
-      sul_event_alt_loc_link:
-        enabled: true
-      sul_event_experience:
-        enabled: true
     stanford_event_series:
       su_event_series_components:
         enabled: true
@@ -830,10 +785,6 @@ field_config:
         enabled: true
       su_news_topics:
         enabled: true
-      sul_rel_links:
-        enabled: true
-      sul_rel_links_heading:
-        enabled: true
     stanford_opportunity:
       body:
         enabled: true
@@ -890,10 +841,6 @@ field_config:
         enabled: true
       su_page_image:
         enabled: true
-      sul_rel_links:
-        enabled: true
-      sul_rel_links_heading:
-        enabled: true
     stanford_person:
       body:
         enabled: true
@@ -943,15 +890,9 @@ field_config:
         enabled: true
       su_person_short_title:
         enabled: true
-      su_person_source:
-        enabled: true
       su_person_telephone:
         enabled: true
       su_person_type_group:
-        enabled: true
-      sul_person__libcal_id:
-        enabled: true
-      sul_person__libguide_id:
         enabled: true
     stanford_policy:
       body:
@@ -969,8 +910,6 @@ field_config:
       su_policy_policy_num:
         enabled: true
       su_policy_related:
-        enabled: true
-      su_policy_source:
         enabled: true
       su_policy_subchapter:
         enabled: true
@@ -991,71 +930,99 @@ field_config:
         enabled: true
       su_publication_topics:
         enabled: true
-    sul_library:
-      layout_selection:
+    sup_book:
+      body:
         enabled: true
-      su_library__address:
+      sup_book_alt_format:
         enabled: true
-      su_library__banner:
+      sup_book_author_info:
         enabled: true
-      su_library__contact_img:
+      sup_book_authors:
         enabled: true
-      su_library__email:
+      sup_book_authors_full:
         enabled: true
-      su_library__hours:
+      sup_book_avail_desc:
         enabled: true
-      su_library__map_link:
+      sup_book_awards:
         enabled: true
-      su_library__paragraphs:
+      sup_book_catalog_season_yyyy:
         enabled: true
-      su_library__phone:
+      sup_book_copublisher_name:
         enabled: true
-      su_page_description:
+      sup_book_digital_comp_link:
         enabled: true
-      su_shared_tags:
+      sup_book_e_retailers:
         enabled: true
-      sul_library__a11y:
+      sup_book_epub_format:
         enabled: true
-      sul_library__ext_url:
+      sup_book_image:
         enabled: true
-      sul_library__type:
+      sup_book_imprint:
         enabled: true
-      sul_rel_links:
+      sup_book_isbn_13_alt:
         enabled: true
-      sul_rel_links_heading:
+      sup_book_isbn_13_cloth:
         enabled: true
-    sul_study_place:
-      sul_study__additional_info:
+      sup_book_isbn_13_digital:
         enabled: true
-      sul_study__branch:
+      sup_book_isbn_13_isw:
         enabled: true
-      sul_study__capacity:
+      sup_book_isbn_13_paper:
         enabled: true
-      sul_study__features:
+      sup_book_no_cart:
         enabled: true
-      sul_study__hours:
+      sup_book_pages:
         enabled: true
-      sul_study__image:
+      sup_book_pdf_format:
         enabled: true
-      sul_study__libcal_id:
+      sup_book_price_data:
         enabled: true
-      sul_study__room_donor_name:
+      sup_book_print_desk_copies:
         enabled: true
-      sul_study__room_number:
+      sup_book_pub_date_cloth:
         enabled: true
-      sul_study__type:
+      sup_book_pub_date_first:
+        enabled: true
+      sup_book_pub_year_first:
+        enabled: true
+      sup_book_publisher:
+        enabled: true
+      sup_book_related_titles:
+        enabled: true
+      sup_book_reviews:
+        enabled: true
+      sup_book_sales_rank:
+        enabled: true
+      sup_book_series:
+        enabled: true
+      sup_book_sort_author:
+        enabled: true
+      sup_book_subjects:
+        enabled: true
+      sup_book_subtitle:
+        enabled: true
+      sup_book_tags:
+        enabled: true
+      sup_book_type:
+        enabled: true
+      sup_book_url_isw:
+        enabled: true
+      sup_book_work_id_number:
+        enabled: true
+      su_metatags:
+        enabled: true
+    sup_book_ancillary:
+      body:
+        enabled: true
+      sup_ancillary_book:
+        enabled: true
+      sup_ancillary_paragraphs:
+        enabled: true
+      sup_ancillary_weight:
+        enabled: true
+      su_metatags:
         enabled: true
   paragraph:
-    collection:
-      sul_collection_card:
-        enabled: true
-      sul_collection_heading:
-        enabled: true
-    collection_card:
-      sul_card:
-        enabled: true
-      sul_card_info:
-        enabled: true
     stanford_accordion:
       su_accordion_body:
         enabled: true
@@ -1082,10 +1049,6 @@ field_config:
       su_card_media:
         enabled: true
       su_card_super_header:
-        enabled: true
-      sul_card_image_caption:
-        enabled: true
-      sul_card_super_head:
         enabled: true
     stanford_entity:
       su_entity_button:
@@ -1128,6 +1091,8 @@ field_config:
         enabled: true
       su_list_view:
         enabled: true
+      sup_list_eyebrow:
+        enabled: true
     stanford_media_caption:
       su_media_caption_caption:
         enabled: true
@@ -1137,6 +1102,8 @@ field_config:
         enabled: true
     stanford_page_title_banner:
       su_title_banner_image:
+        enabled: true
+      sup_title_banner_color:
         enabled: true
     stanford_person_cta:
       su_person_cta_image:
@@ -1195,56 +1162,100 @@ field_config:
     stanford_wysiwyg:
       su_wysiwyg_text:
         enabled: true
-    sul_button:
-      sul_button_headline:
+    sup_blog:
+      sup_blog_body:
         enabled: true
-      sul_button_link:
+      sup_blog_image:
         enabled: true
-    sul_contact_card:
-      sul_contact__address:
+      sup_blog_title:
         enabled: true
-      sul_contact__branch:
+      sup_blog_url:
         enabled: true
-      sul_contact__email:
+    sup_blog_teaser:
+      sup_blog_teaser_header:
         enabled: true
-      sul_contact__hours:
+      sup_blog_teaser_items:
         enabled: true
-      sul_contact__image:
+      sup_blog_teaser_link:
         enabled: true
-      sul_contact__link:
+    sup_carousel:
+      sup_carousel_slides:
         enabled: true
-      sul_contact__map_link:
+      sup_carousel_top_hero:
         enabled: true
-      sul_contact__phone:
+    sup_carousel_slide:
+      sup_slide_bg_image:
         enabled: true
-      sul_contact__title:
+      sup_slide_body:
         enabled: true
-    sul_feat_collection:
-      sul_collection__cards:
+      sup_slide_button:
         enabled: true
-      sul_collection__headline:
+      sup_slide_color:
         enabled: true
-      sul_collection__link:
+      sup_slide_eyebrow:
         enabled: true
-    sul_home_banner:
-      sul_home_images:
+      sup_slide_hide:
         enabled: true
-    sul_home_image:
-      sul_home_image:
+      sup_slide_image:
         enabled: true
-      sul_home_image_credits:
+      sup_slide_orientation:
         enabled: true
-    sul_libguide:
-      sul_libguide__desc:
+      sup_slide_subtitle:
         enabled: true
-      sul_libguide__headline:
+      sup_slide_title:
         enabled: true
-      sul_libguide_id:
+      sup_slide_title_size:
         enabled: true
-    sul_location_hours:
-      sul_loc_alert_icon:
+    sup_file_list:
+      sup_file_list_display:
         enabled: true
-      sul_loc_hours_alert:
+      sup_file_list_files:
+        enabled: true
+      sup_file_list_label:
+        enabled: true
+    sup_search_form:
+      sup_search_books_only:
+        enabled: true
+      sup_search_subject:
+        enabled: true
+  press:
+    award:
+      sup_association:
+        enabled: true
+      sup_description:
+        enabled: true
+      sup_place:
+        enabled: true
+      sup_rank:
+        enabled: true
+      sup_year:
+        enabled: true
+    prices:
+      sup_alt_price:
+        enabled: true
+      sup_cloth_discount:
+        enabled: true
+      sup_cloth_price:
+        enabled: true
+      sup_cloth_sale:
+        enabled: true
+      sup_coming_soon:
+        enabled: true
+      sup_digital_discount:
+        enabled: true
+      sup_digital_price:
+        enabled: true
+      sup_digital_sale:
+        enabled: true
+      sup_intl_cart:
+        enabled: true
+      sup_paper_discount:
+        enabled: true
+      sup_paper_price:
+        enabled: true
+      sup_paper_sale:
+        enabled: true
+      sup_preorder:
         enabled: true
   su_policy_log:
     su_policy_log:
@@ -1259,6 +1270,12 @@ field_config:
   taxonomy_term:
     su_course_subjects:
       su_courses_dept_long:
+        enabled: true
+    sup_book_subjects:
+      sup_subject_hash:
+        enabled: true
+    sup_series:
+      sup_series_page:
         enabled: true
 settings:
   exclude_unpublished: false

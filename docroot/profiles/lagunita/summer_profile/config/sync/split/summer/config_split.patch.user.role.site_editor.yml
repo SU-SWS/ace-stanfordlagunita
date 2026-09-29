@@ -35,7 +35,6 @@ removing:
   dependencies:
     config:
       - taxonomy.vocabulary.event_audience
-      - taxonomy.vocabulary.media_content_filters
       - taxonomy.vocabulary.media_content_types
       - taxonomy.vocabulary.stanford_event_types
       - taxonomy.vocabulary.stanford_news_topics
@@ -57,7 +56,6 @@ removing:
     - 'create stanford_policy content'
     - 'create stanford_publication content'
     - 'create terms in event_audience'
-    - 'create terms in media_content_filters'
     - 'create terms in media_content_types'
     - 'create terms in stanford_event_types'
     - 'create terms in stanford_news_topics'
@@ -70,7 +68,6 @@ removing:
     - 'delete any stanford_person content'
     - 'delete any stanford_publication content'
     - 'delete terms in event_audience'
-    - 'delete terms in media_content_filters'
     - 'delete terms in media_content_types'
     - 'delete terms in stanford_event_types'
     - 'delete terms in stanford_news_topics'
@@ -91,7 +88,6 @@ removing:
     - 'edit own stanford_policy content'
     - 'edit own stanford_publication content'
     - 'edit terms in event_audience'
-    - 'edit terms in media_content_filters'
     - 'edit terms in media_content_types'
     - 'edit terms in stanford_event_types'
     - 'edit terms in stanford_news_topics'

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\LagunitaDrush\Drush\Commands;
 
+use Consolidation\AnnotatedCommand\CommandData;
+use Consolidation\AnnotatedCommand\Hooks\HookManager;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\SwsDrush\Drush\Commands\SwsCommandsTrait;
 use Drush\Commands\DrushCommands;
@@ -13,6 +15,24 @@ use Drush\Exceptions\CommandFailedException;
 class LagunitaCommands extends DrushCommands {
 
   use SwsCommandsTrait;
+
+  #[CLI\Hook(type: HookManager::PRE_COMMAND_HOOK, target: 'updatedb')]
+  public function preDbUpdate(CommandData $commandData) {
+    /** @var \Drupal\Core\Update\UpdateHookRegistry $updateRegistry */
+    $updateRegistry = \Drupal::service("update.update_hook_registry");
+
+    $skip = [
+      'book' => 103007,
+      'graphql_compose' => 30000,
+      'ui_patterns_library' => 10201,
+    ];
+    foreach ($skip as $module => $version) {
+      $currentVersion = $updateRegistry->getInstalledVersion($module);
+      if ($currentVersion < $version) {
+        $updateRegistry->setInstalledVersion($module, $version);
+      }
+    }
+  }
 
   #[CLI\Command(name: 'lagunita:new-profile')]
   #[CLI\Argument(name: 'profile_name', description: 'Machine name of the new profile')]

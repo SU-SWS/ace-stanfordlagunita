@@ -36,6 +36,11 @@ removing:
     su_page_banner:
       type: paragraphs
       settings:
+        features:
+          add_above: '0'
+          collapse_edit_all: '0'
+          convert: '0'
+          duplicate: '0'
         title: Paragraph
         title_plural: Paragraphs
         edit_mode: closed
@@ -44,11 +49,6 @@ removing:
         closed_mode_threshold: 0
         add_mode: dropdown
         default_paragraph_type: _none
-        features:
-          add_above: '0'
-          collapse_edit_all: '0'
-          convert: '0'
-          duplicate: '0'
     su_page_components:
       settings:
         preview_view_mode: default
