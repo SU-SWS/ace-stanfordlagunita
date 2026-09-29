@@ -16,6 +16,11 @@ $config['google_analytics.settings']['account'] = '';
 $config['search_api.index.algolia_search']['read_only'] = !EnvironmentDetector::isProdEnv();
 
 if (!EnvironmentDetector::isProdEnv()) {
+  // Blanking the admin key means we cannot reach the production index
+  // from a non-production environment. The search-only key on the config page
+  // is untouched: it is public by design and the decoupled front end needs it.
+  $config['search_api.server.algolia_search']['backend_config']['api_key'] = '';
+
   /**
    * This is always set and exposed by the Acquia BLT.
    *
