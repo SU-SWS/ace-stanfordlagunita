@@ -137,6 +137,10 @@ process:
       method: process
       source: cross_listing
     -
+      plugin: str_replace
+      search: ', '
+      replace: ','
+    -
       plugin: explode
       delimiter: ','
   sum_course_description/value: description
@@ -167,6 +171,10 @@ process:
       source: instructors
       method: process
     -
+      plugin: str_replace
+      search: ', '
+      replace: ','
+    -
       plugin: explode
       delimiter: ','
   sum_course_interest_area:
@@ -185,6 +193,10 @@ process:
       plugin: skip_on_empty
       method: process
       source: population
+    -
+      plugin: str_replace
+      search: ', '
+      replace: ','
     -
       plugin: explode
       delimiter: ','
@@ -274,6 +286,10 @@ process:
       source: learner
       method: process
     -
+      plugin: str_replace
+      search: ', '
+      replace: ','
+    -
       plugin: explode
       delimiter: ','
     -
@@ -293,6 +309,10 @@ process:
       source: grading
       method: process
     -
+      plugin: str_replace
+      search: ', '
+      replace: ','
+    -
       plugin: explode
       delimiter: ','
     -
@@ -306,17 +326,6 @@ process:
       bundle_key: vid
       bundle: sum_course_grading
       entity_type: taxonomy_term
-  weekdays:
-    -
-      plugin: skip_on_empty
-      source: weekdays
-      method: process
-    -
-      plugin: callback
-      callable: strtolower
-    -
-      plugin: explode
-      delimiter: ','
   sum_course_weekday:
     -
       plugin: skip_on_empty
@@ -325,6 +334,10 @@ process:
     -
       plugin: callback
       callable: strtolower
+    -
+      plugin: str_replace
+      search: ', '
+      replace: ','
     -
       plugin: explode
       delimiter: ','
