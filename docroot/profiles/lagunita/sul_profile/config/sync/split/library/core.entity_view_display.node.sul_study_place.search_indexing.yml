@@ -1,0 +1,87 @@
+uuid: 4b9f4c23-ffa8-448b-bde4-95faffbbe892
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_indexing
+    - field.field.node.sul_study_place.sul_study__additional_info
+    - field.field.node.sul_study_place.sul_study__branch
+    - field.field.node.sul_study_place.sul_study__capacity
+    - field.field.node.sul_study_place.sul_study__features
+    - field.field.node.sul_study_place.sul_study__hours
+    - field.field.node.sul_study_place.sul_study__image
+    - field.field.node.sul_study_place.sul_study__libcal_id
+    - field.field.node.sul_study_place.sul_study__room_donor_name
+    - field.field.node.sul_study_place.sul_study__room_number
+    - field.field.node.sul_study_place.sul_study__type
+    - node.type.sul_study_place
+  module:
+    - layout_builder
+    - layout_library
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+id: node.sul_study_place.search_indexing
+targetEntityType: node
+bundle: sul_study_place
+mode: search_indexing
+content:
+  sul_study__additional_info:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  sul_study__branch:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  sul_study__capacity:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  sul_study__features:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  sul_study__room_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  sul_study__type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true
+  sul_study__hours: true
+  sul_study__image: true
+  sul_study__libcal_id: true
+  sul_study__room_donor_name: true
