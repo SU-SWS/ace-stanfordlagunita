@@ -1,0 +1,10 @@
+adding:
+  field_settings:
+    summary:
+      configuration:
+        value: '[node:su_page_description|node:su_news_dek|node:su_event_dek|node:su_person_full_title|node:sul_study__additional_info|node:summary]'
+removing:
+  field_settings:
+    summary:
+      configuration:
+        value: '[node:su_page_description|node:summary]'
