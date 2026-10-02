@@ -22,11 +22,3 @@ if ($next_domain) {
     'revalidate_url' => "$next_domain/api/revalidate",
   ];
 }
-
-// Use the public search-only key: queries (the /search page, and the Algolia-backed JSON:API
-// index route Bento reads) keep working, while writes are impossible.
-// Set $settings['algolia_search_only_key'] in the environment's secrets.settings.php; this file
-// loads after that secrets file, unlike sites/settings/config.settings.php.
-if (!EnvironmentDetector::isProdEnv()) {
-  $config['search_api.server.algolia_search']['backend_config']['api_key'] = $settings['algolia_search_only_key'] ?? '';
-}
