@@ -181,7 +181,7 @@ field_settings:
     label: 'Short Title'
     datasource_id: 'entity:node'
     property_path: su_person_short_title
-    type: date
+    type: string
     dependencies:
       config:
         - field.storage.node.su_person_short_title
@@ -237,7 +237,7 @@ field_settings:
     label: status
     datasource_id: 'entity:node'
     property_path: status
-    type: string
+    type: boolean
     dependencies:
       module:
         - node
@@ -285,7 +285,7 @@ field_settings:
     label: 'Cross Listing'
     datasource_id: 'entity:node'
     property_path: sum_course_cross_listing
-    type: date
+    type: string
     dependencies:
       config:
         - field.storage.node.sum_course_cross_listing
@@ -293,7 +293,7 @@ field_settings:
     label: 'End Date'
     datasource_id: 'entity:node'
     property_path: sum_course_end_date
-    type: string
+    type: date
     dependencies:
       config:
         - field.storage.node.sum_course_end_date
@@ -363,7 +363,7 @@ field_settings:
     label: 'Population » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'sum_course_population:entity:name'
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.sum_course_population
@@ -389,7 +389,7 @@ field_settings:
     label: 'Start Date'
     datasource_id: 'entity:node'
     property_path: sum_course_start_date
-    type: boolean
+    type: date
     dependencies:
       config:
         - field.storage.node.sum_course_start_date
@@ -397,7 +397,7 @@ field_settings:
     label: Units
     datasource_id: 'entity:node'
     property_path: sum_course_units
-    type: date
+    type: integer
     dependencies:
       config:
         - field.storage.node.sum_course_units
@@ -405,7 +405,7 @@ field_settings:
     label: 'Days of the week'
     datasource_id: 'entity:node'
     property_path: sum_course_weekday
-    type: date
+    type: string
     dependencies:
       config:
         - field.storage.node.sum_course_weekday
@@ -419,7 +419,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: integer
+    type: string
     dependencies:
       module:
         - node
@@ -510,42 +510,44 @@ processor_settings:
       preprocess_query: -15
     all_fields: 1
     fields:
-      - basic_page_type
       - byline
-      - course_subject
+      - type
       - dek
       - email
-      - event_audience
-      - event_end
-      - event_subject
-      - event_type
-      - html
-      - news_type
-      - person_full_title
-      - person_type
+      - url
       - phone
       - photo
-      - publication_type
-      - shared_tags
+      - html
       - site_name
-      - status
       - subheadline
-      - sum_course_availability
+      - summary
+      - event_audience
+      - basic_page_type
       - sum_course_catalog_number
-      - sum_course_end_date
+      - sum_course_availability
       - sum_course_format
-      - sum_course_grading
-      - sum_course_instructors
-      - sum_course_interest
       - sum_course_length
       - sum_course_not_available
       - sum_course_notes
+      - course_subject
+      - sum_course_cross_listing
+      - event_end
+      - sum_course_weekday
+      - event_type
+      - person_full_title
+      - sum_course_grading
+      - sum_course_instructors
+      - sum_course_interest
+      - news_type
+      - person_type
       - sum_course_population
       - sum_course_prerequisites
+      - publication_type
       - sum_course_schedule
-      - summary
-      - type
-      - url
+      - shared_tags
+      - person_short_title
+      - event_subject
+      - title
     title: true
     alt: true
     tags:
