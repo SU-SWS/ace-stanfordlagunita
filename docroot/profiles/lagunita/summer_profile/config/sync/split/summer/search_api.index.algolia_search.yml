@@ -27,6 +27,7 @@ dependencies:
     - field.storage.node.sum_course_instructors
     - field.storage.node.sum_course_interest_area
     - field.storage.node.sum_course_length
+    - field.storage.node.sum_course_not_available
     - field.storage.node.sum_course_notes
     - field.storage.node.sum_course_population
     - field.storage.node.sum_course_prerequisites
@@ -107,7 +108,7 @@ field_settings:
     label: 'Date & Time » End timestamp value'
     datasource_id: 'entity:node'
     property_path: 'su_event_date_time:end_value'
-    type: date
+    type: string
     dependencies:
       config:
         - field.storage.node.su_event_date_time
@@ -180,7 +181,7 @@ field_settings:
     label: 'Short Title'
     datasource_id: 'entity:node'
     property_path: su_person_short_title
-    type: string
+    type: date
     dependencies:
       config:
         - field.storage.node.su_person_short_title
@@ -236,7 +237,7 @@ field_settings:
     label: status
     datasource_id: 'entity:node'
     property_path: status
-    type: boolean
+    type: string
     dependencies:
       module:
         - node
@@ -284,7 +285,7 @@ field_settings:
     label: 'Cross Listing'
     datasource_id: 'entity:node'
     property_path: sum_course_cross_listing
-    type: string
+    type: date
     dependencies:
       config:
         - field.storage.node.sum_course_cross_listing
@@ -292,7 +293,7 @@ field_settings:
     label: 'End Date'
     datasource_id: 'entity:node'
     property_path: sum_course_end_date
-    type: date
+    type: string
     dependencies:
       config:
         - field.storage.node.sum_course_end_date
@@ -340,11 +341,21 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.sum_course_length
+  sum_course_not_available:
+    label: 'Course Not Availability » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'sum_course_not_available:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.sum_course_not_available
+      module:
+        - taxonomy
   sum_course_notes:
     label: 'Course Notes'
     datasource_id: 'entity:node'
     property_path: sum_course_notes
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.sum_course_notes
@@ -352,7 +363,7 @@ field_settings:
     label: 'Population » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'sum_course_population:entity:name'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.sum_course_population
@@ -362,7 +373,7 @@ field_settings:
     label: Prerequisites
     datasource_id: 'entity:node'
     property_path: sum_course_prerequisites
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.sum_course_prerequisites
@@ -378,7 +389,7 @@ field_settings:
     label: 'Start Date'
     datasource_id: 'entity:node'
     property_path: sum_course_start_date
-    type: date
+    type: boolean
     dependencies:
       config:
         - field.storage.node.sum_course_start_date
@@ -386,7 +397,7 @@ field_settings:
     label: Units
     datasource_id: 'entity:node'
     property_path: sum_course_units
-    type: integer
+    type: date
     dependencies:
       config:
         - field.storage.node.sum_course_units
@@ -394,7 +405,7 @@ field_settings:
     label: 'Days of the week'
     datasource_id: 'entity:node'
     property_path: sum_course_weekday
-    type: string
+    type: date
     dependencies:
       config:
         - field.storage.node.sum_course_weekday
@@ -408,7 +419,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: integer
     dependencies:
       module:
         - node
@@ -455,34 +466,34 @@ processor_settings:
       - dek
       - email
       - event_audience
+      - event_end
       - event_subject
       - event_type
       - html
       - news_type
       - person_full_title
-      - person_short_title
       - person_type
       - phone
       - photo
       - publication_type
       - shared_tags
       - site_name
+      - status
       - subheadline
       - sum_course_availability
       - sum_course_catalog_number
-      - sum_course_cross_listing
+      - sum_course_end_date
       - sum_course_format
       - sum_course_grading
       - sum_course_instructors
       - sum_course_interest
       - sum_course_length
+      - sum_course_not_available
       - sum_course_notes
       - sum_course_population
       - sum_course_prerequisites
       - sum_course_schedule
-      - sum_course_weekday
       - summary
-      - title
       - type
       - url
   entity_status: {  }
@@ -505,34 +516,34 @@ processor_settings:
       - dek
       - email
       - event_audience
+      - event_end
       - event_subject
       - event_type
       - html
       - news_type
       - person_full_title
-      - person_short_title
       - person_type
       - phone
       - photo
       - publication_type
       - shared_tags
       - site_name
+      - status
       - subheadline
       - sum_course_availability
       - sum_course_catalog_number
-      - sum_course_cross_listing
+      - sum_course_end_date
       - sum_course_format
       - sum_course_grading
       - sum_course_instructors
       - sum_course_interest
       - sum_course_length
+      - sum_course_not_available
       - sum_course_notes
       - sum_course_population
       - sum_course_prerequisites
       - sum_course_schedule
-      - sum_course_weekday
       - summary
-      - title
       - type
       - url
     title: true

@@ -9,7 +9,6 @@ adding:
       type: link_attributes
       settings:
         enabled_attributes:
-          image_banner_button_type: true
           id: false
           name: false
           target: false
@@ -18,6 +17,7 @@ adding:
           accesskey: false
           aria-label: false
           title: false
+          image_banner_button_type: true
         widget_default_open: expanded
       third_party_settings:
         change_labels:

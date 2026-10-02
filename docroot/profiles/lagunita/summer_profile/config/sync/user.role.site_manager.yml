@@ -209,7 +209,6 @@ permissions:
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
   - 'delete terms in stanford_publication_topics'
-  
   - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
   - 'edit any embeddable media'

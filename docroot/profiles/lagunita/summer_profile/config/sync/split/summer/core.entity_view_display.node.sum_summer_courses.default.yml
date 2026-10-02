@@ -170,6 +170,7 @@ hidden:
   sum_course_course_cost: true
   sum_course_end_date: true
   sum_course_grading: true
+  sum_course_not_available: true
   sum_course_start_date: true
   sum_course_syllabus_file: true
   sum_course_unique_import_id: true
