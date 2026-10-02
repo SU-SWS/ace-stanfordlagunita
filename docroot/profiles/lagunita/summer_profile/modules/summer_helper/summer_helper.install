@@ -52,3 +52,13 @@ function summer_helper_update_9004() {
     $node->save();
   }
 }
+
+/**
+ * Configure decoupled intranet states.
+ */
+function summer_helper_update_11000() {
+  $state = \Drupal::state();
+  $state->set('stanford_intranet', TRUE);
+  $state->set('stanford_intranet.allow_file_uploads', 'public');
+  $state->set('stanford_intranet.no_granular_access', TRUE);
+}

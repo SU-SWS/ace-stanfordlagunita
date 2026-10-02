@@ -115,6 +115,10 @@ source:
       name: weekdays
       label: Weekdays
       selector: weekdays
+    -
+      name: not_available
+      label: 'Not Available To'
+      selector: not_available
   ids:
     - unique_import_id
 process:
@@ -200,6 +204,31 @@ process:
       plugin: skip_on_empty
       method: process
       source: course_availability
+    -
+      plugin: str_replace
+      search: ', '
+      replace: ','
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_generate
+      value_key: name
+      bundle_key: vid
+      bundle: sum_course_availability
+      entity_type: taxonomy_term
+  sum_course_not_available:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: not_available
+    -
+      plugin: str_replace
+      search: ', '
+      replace: ','
+    -
+      plugin: explode
+      delimiter: ','
     -
       plugin: entity_generate
       value_key: name
