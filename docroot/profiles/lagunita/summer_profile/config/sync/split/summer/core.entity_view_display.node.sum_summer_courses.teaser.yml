@@ -57,6 +57,7 @@ hidden:
   sum_course_interest_area: true
   sum_course_learner: true
   sum_course_length: true
+  sum_course_not_available: true
   sum_course_notes: true
   sum_course_population: true
   sum_course_prerequisites: true

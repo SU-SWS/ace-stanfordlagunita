@@ -1047,6 +1047,8 @@ field_config:
         enabled: true
       sum_students_also_studied:
         enabled: true
+      sum_course_not_available:
+        enabled: true
   paragraph:
     stanford_accordion:
       su_accordion_body:
