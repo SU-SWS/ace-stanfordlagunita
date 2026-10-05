@@ -6,14 +6,8 @@ adding:
   content:
     field_media_image:
       weight: 0
-    sul_image_credit:
-      type: string
-      label: hidden
-      settings:
-        link_to_entity: false
-      third_party_settings: {  }
-      weight: 1
-      region: content
+  hidden:
+    sul_image_credit: true
 removing:
   dependencies:
     config:

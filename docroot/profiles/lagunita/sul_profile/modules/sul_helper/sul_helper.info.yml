@@ -5,5 +5,7 @@ package: Stanford
 core_version_requirement: ^11.1
 dependencies:
   - layout_paragraphs:layout_paragraphs
+  - drupal:filter
   - drupal:jsonapi
+  - drupal:media
   - next:next
