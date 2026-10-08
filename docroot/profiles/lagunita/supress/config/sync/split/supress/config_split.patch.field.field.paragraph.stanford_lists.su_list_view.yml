@@ -2,19 +2,19 @@ adding:
   required: true
   settings:
     allowed_views:
-      stanford_shared_tags: '0'
       stanford_courses: '0'
       stanford_events: '0'
-      media_content: '0'
       stanford_news: '0'
-      stanford_opportunities: '0'
       stanford_person: '0'
       stanford_publications: '0'
+      stanford_shared_tags: '0'
       sup_books: sup_books
+      stanford_opportunities: '0'
       autocomplete_suggestions: '0'
       sup_book_entities: '0'
       courses_filtered: '0'
       media_filtered: '0'
+      media_content: '0'
       autocompletion_callbacks_nodes: '0'
       people_filtered: '0'
     allowed_display_types:
