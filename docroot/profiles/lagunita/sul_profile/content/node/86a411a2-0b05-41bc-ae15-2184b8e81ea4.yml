@@ -40,7 +40,7 @@ default:
           version: '1.0'
           entity_type: paragraph
           uuid: c1729c68-8fa5-466c-af6e-d03b6fbc5faa
-          bundle: stanford_layout
+          bundle: sul_helper_1_column
           default_langcode: en
         default:
           status:
