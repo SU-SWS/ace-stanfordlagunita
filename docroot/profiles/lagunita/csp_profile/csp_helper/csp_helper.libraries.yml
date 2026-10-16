@@ -11,3 +11,9 @@ ckeditor5_dialog_style_panel:
   css:
     theme:
       css/ckeditor5-dialog-style-panel.css: {}
+
+ckeditor5_styles:
+  version: 1.x
+  css:
+    theme:
+      css/ckeditor5-styles.css: {}

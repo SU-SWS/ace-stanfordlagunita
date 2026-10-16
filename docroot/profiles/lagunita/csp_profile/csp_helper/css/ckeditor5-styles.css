@@ -1,0 +1,139 @@
+/**
+ * @file
+ * Shows the CKEditor 5 Styles on the CSP editor and in the Styles dropdown.
+ */
+
+.ck.ck-content .su-intro-text,
+.ck.ck-content .su-callout-text,
+.ck.ck-content .su-drop-cap {
+  font-size: 1.5625em; /* type-2 */
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+.ck.ck-content .su-font-splash {
+  font-size: 2.4414em; /* type-4 */
+  font-weight: 400;
+  letter-spacing: -0.016em;
+}
+
+.ck.ck-content .su-drop-cap::first-letter {
+  float: left;
+  margin: 5px 10px 5px 0;
+  font-size: 3.8147em; /* type-6 */
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ck.ck-content .su-quote-text {
+  margin-bottom: 3.05em;
+  padding: 1.83em;
+  border-left: 3px solid #b6b1a9; /* fog-dark */
+  font-size: 1.25em; /* type-1 */
+  letter-spacing: -0.01em;
+}
+
+.ck.ck-content .su-related-text {
+  padding: 1.9em;
+  border: 1px solid #b6b1a9;
+  border-radius: 0.76em; /* rounded-csp-md */
+  font-weight: 400;
+}
+
+/* Buttons. */
+.ck.ck-content a.su-button,
+.ck.ck-content a.su-button--big,
+.ck.ck-content a.su-button--secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28em;
+  padding: 0.556em 0.833em 0.556em 1.11em;
+  border: 1px solid #7a0000; /* csp-digital-red-xdark */
+  border-radius: 0.5em; /* rounded-csp-sm */
+  background-color: #8c1515; /* cardinal-red */
+  color: #fff;
+  font-size: 0.857em; /* 18px against the 21px body text */
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.ck.ck-content a.su-button--big {
+  padding: 0.67em 1.15em 0.77em;
+  font-size: 1.25em; /* type-1 */
+}
+
+.ck.ck-content a.su-button--secondary {
+  padding: 0.556em 0.972em 0.694em 1.11em;
+  border-color: currentColor;
+  background-color: transparent;
+  color: #2f2424; /* archway-dark */
+}
+
+/* Heroicons arrow-right, drawn in the text color. */
+.ck.ck-content a.su-button::after,
+.ck.ck-content a.su-button--big::after,
+.ck.ck-content a.su-button--secondary::after {
+  flex-shrink: 0;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: currentColor;
+  content: "";
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Action link */
+.ck.ck-content a.su-link--action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  color: #2f2424; /* archway-dark */
+  font-size: 0.857em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.ck.ck-content a.su-link--action::after {
+  flex-shrink: 0;
+  width: 1.44em;
+  height: 1.44em;
+  box-sizing: border-box;
+  border: 1px solid #7a0000; /* csp-digital-red-xdark */
+  border-radius: 50%;
+  background: #b1040e /* digital-red */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23fff'%3E%3Cpath d='M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E") center / 100% no-repeat;
+  content: "";
+}
+
+.ck.ck-style-grid__button__preview {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ck.ck-style-grid__button__preview.ck-content > * {
+  margin: 0;
+}
+
+.ck.ck-style-grid__button__preview .su-quote-text {
+  padding: 0.2em 0.5em;
+}
+
+.ck.ck-style-grid__button__preview .su-related-text {
+  padding: 0.3em 0.5em;
+}
+
+/* The sample text pushes the circle out of view, so pin it to the tile edge. */
+.ck.ck-style-grid__button__preview {
+  position: relative;
+}
+
+.ck.ck-style-grid__button__preview a.su-link--action::after {
+  position: absolute;
+  top: 50%;
+  right: var(--ck-spacing-medium);
+  transform: translateY(-50%);
+}
+
+.ck.ck-style-grid__button__preview .su-drop-cap::first-letter {
+  margin: 0 4px 0 0;
+  font-size: 1.6em;
+}

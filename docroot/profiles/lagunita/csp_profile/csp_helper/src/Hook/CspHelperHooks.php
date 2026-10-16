@@ -66,12 +66,14 @@ class CspHelperHooks {
    * Implements hook_library_info_alter().
    *
    * Loads the CSP fix for the CKEditor 5 Styles panel being clipped inside
-   * modal dialogs.
+   * modal dialogs, and the CSS that makes each CKEditor 5 style visible in the
+   * editor and the Styles dropdown.
    */
   #[Hook('library_info_alter')]
   public function libraryInfoAlter(array &$libraries, string $extension): void {
     if ($extension === 'ckeditor5' && isset($libraries['internal.drupal.ckeditor5'])) {
       $libraries['internal.drupal.ckeditor5']['dependencies'][] = 'csp_helper/ckeditor5_dialog_style_panel';
+      $libraries['internal.drupal.ckeditor5']['dependencies'][] = 'csp_helper/ckeditor5_styles';
     }
   }
 
