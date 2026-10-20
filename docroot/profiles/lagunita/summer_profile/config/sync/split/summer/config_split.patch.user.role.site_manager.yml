@@ -1,6 +1,7 @@
 adding:
   dependencies:
     config:
+      - config_pages.type.stanford_global_message
       - filter.format.sum_markdown
       - node.type.sum_summer_courses
       - taxonomy.vocabulary.sum_course_availability

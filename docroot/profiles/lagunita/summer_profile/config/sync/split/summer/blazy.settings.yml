@@ -20,7 +20,6 @@ unstyled_extensions: ''
 use_encodedbox: false
 use_oembed: false
 max_region_count: 0
-extras: {  }
 blazy:
   loadInvisible: false
   offset: 100
@@ -32,3 +31,4 @@ io:
   rootMargin: 0px
   threshold: '0'
   disconnect: false
+extras: {  }

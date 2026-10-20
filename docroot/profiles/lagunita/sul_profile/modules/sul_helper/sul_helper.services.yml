@@ -2,3 +2,7 @@ services:
   sul_helper.sul_service:
     class: Drupal\sul_helper\SulService
     arguments: ['@http_client', '@cache.default']
+  sul_helper.config_overrides:
+    class: Drupal\sul_helper\Config\ConfigOverrides
+    tags:
+      - {name: config.factory.override, priority: 5}

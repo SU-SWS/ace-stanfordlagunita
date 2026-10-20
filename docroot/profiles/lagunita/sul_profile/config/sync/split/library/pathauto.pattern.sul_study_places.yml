@@ -12,11 +12,11 @@ selection_criteria:
   47929553-1dff-49b9-88ad-c02695b0c61f:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 47929553-1dff-49b9-88ad-c02695b0c61f
     context_mapping:
       node: node
     bundles:
       sul_study_place: sul_study_place
+    uuid: 47929553-1dff-49b9-88ad-c02695b0c61f
 selection_logic: and
 weight: -5
 relationships: {  }
