@@ -4,6 +4,8 @@ namespace Drupal\sul_helper\Plugin\paragraphs\Behavior;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\paragraphs\Attribute\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -11,13 +13,12 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
  * Card paragraph behaviors.
- *
- * @ParagraphsBehavior(
- *   id = "sul_card_styles",
- *   label = @Translation("SUL Card Styles"),
- *   description = @Translation("Style options for card paragraph")
- * )
  */
+#[ParagraphsBehavior(
+  id: 'sul_card_styles',
+  label: new TranslatableMarkup('SUL Card Styles'),
+  description: new TranslatableMarkup('Style options for card paragraph'),
+)]
 class CardBehaviors extends ParagraphsBehaviorBase {
 
   /**

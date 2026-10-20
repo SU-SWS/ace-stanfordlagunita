@@ -28,6 +28,7 @@ schema_configuration:
       graphql_compose_views: graphql_compose_views
       stanford_decoupled: stanford_decoupled
       stanford_fields: stanford_fields
+      sul_helper: sul_helper
       graphql_compose_layouts: graphql_compose_layouts
 persisted_queries_settings:
   automatic_persisted_query:

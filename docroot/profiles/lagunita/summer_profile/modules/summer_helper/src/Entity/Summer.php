@@ -4,66 +4,67 @@ declare(strict_types=1);
 
 namespace Drupal\summer_helper\Entity;
 
+use Drupal\Core\Entity\Attribute\ContentEntityType;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\summer_helper\SummerInterface;
 
 /**
  * Defines the summer entity class.
- *
- * @ContentEntityType(
- *   id = "summer_entity",
- *   label = @Translation("Summer Entity"),
- *   label_collection = @Translation("Summer Entities"),
- *   label_singular = @Translation("summer entity"),
- *   label_plural = @Translation("summer entities"),
- *   label_count = @PluralTranslation(
- *     singular = "@count summer entities",
- *     plural = "@count summer entities",
- *   ),
- *   constraints = {
- *     "UniqueGlobalMessage" = {}
- *   },
- *   bundle_label = @Translation("Summer Entity type"),
- *   handlers = {
- *     "list_builder" = "Drupal\summer_helper\SummerListBuilder",
- *     "views_data" = "Drupal\views\EntityViewsData",
- *     "access" = "Drupal\summer_helper\SummerAccessControlHandler",
- *     "form" = {
- *       "add" = "Drupal\summer_helper\Form\SummerForm",
- *       "edit" = "Drupal\summer_helper\Form\SummerForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\summer_helper\Routing\SummerHtmlRouteProvider",
- *     },
- *   },
- *   base_table = "summer_entity",
- *   admin_permission = "administer summer entities",
- *   entity_keys = {
- *     "id" = "id",
- *     "bundle" = "bundle",
- *     "label" = "label",
- *     "uuid" = "uuid",
- *     "published" = "status"
- *   },
- *   links = {
- *     "collection" = "/admin/content/summer-entity",
- *     "add-form" = "/admin/content/summer/add/{summer_entity_type}",
- *     "add-page" = "/admin/content/summer/add",
- *     "canonical" = "/admin/content/summer/{summer_entity}",
- *     "edit-form" = "/admin/content/summer/{summer_entity}",
- *     "delete-form" = "/admin/content/summer/{summer_entity}/delete",
- *     "delete-multiple-form" = "/admin/content/summer-entity/delete-multiple",
- *   },
- *   bundle_entity_type = "summer_entity_type",
- *   field_ui_base_route = "entity.summer_entity_type.edit_form",
- * )
  */
+#[ContentEntityType(
+  id: 'summer_entity',
+  label: new TranslatableMarkup('Summer Entity'),
+  label_collection: new TranslatableMarkup('Summer Entities'),
+  label_singular: new TranslatableMarkup('summer entity'),
+  label_plural: new TranslatableMarkup('summer entities'),
+  label_count: [
+    'singular' => '@count summer entities',
+    'plural' => '@count summer entities',
+  ],
+  constraints: [
+    'UniqueGlobalMessage' => [],
+  ],
+  bundle_label: new TranslatableMarkup('Summer Entity type'),
+  handlers: [
+    'list_builder' => 'Drupal\summer_helper\SummerListBuilder',
+    'views_data' => 'Drupal\views\EntityViewsData',
+    'access' => 'Drupal\summer_helper\SummerAccessControlHandler',
+    'form' => [
+      'add' => 'Drupal\summer_helper\Form\SummerForm',
+      'edit' => 'Drupal\summer_helper\Form\SummerForm',
+      'delete' => 'Drupal\Core\Entity\ContentEntityDeleteForm',
+      'delete-multiple-confirm' => 'Drupal\Core\Entity\Form\DeleteMultipleForm',
+    ],
+    'route_provider' => [
+      'html' => 'Drupal\summer_helper\Routing\SummerHtmlRouteProvider',
+    ],
+  ],
+  base_table: 'summer_entity',
+  admin_permission: 'administer summer entities',
+  entity_keys: [
+    'id' => 'id',
+    'bundle' => 'bundle',
+    'label' => 'label',
+    'uuid' => 'uuid',
+    'published' => 'status',
+  ],
+  links: [
+    'collection' => '/admin/content/summer-entity',
+    'add-form' => '/admin/content/summer/add/{summer_entity_type}',
+    'add-page' => '/admin/content/summer/add',
+    'canonical' => '/admin/content/summer/{summer_entity}',
+    'edit-form' => '/admin/content/summer/{summer_entity}',
+    'delete-form' => '/admin/content/summer/{summer_entity}/delete',
+    'delete-multiple-form' => '/admin/content/summer-entity/delete-multiple',
+  ],
+  bundle_entity_type: 'summer_entity_type',
+  field_ui_base_route: 'entity.summer_entity_type.edit_form',
+)]
 final class Summer extends ContentEntityBase implements SummerInterface {
 
   use EntityChangedTrait;

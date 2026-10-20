@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Drupal\sul_helper\Plugin\GraphQLCompose\SchemaType;
 
+use Drupal\graphql_compose\Attribute\SchemaType;
 use Drupal\graphql_compose\Plugin\GraphQLCompose\GraphQLComposeSchemaTypeBase;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
 
 /**
  * {@inheritdoc}
- *
- * @GraphQLComposeSchemaType(
- *   id = "LinkAttributes"
- * )
  */
+#[SchemaType(
+  id: 'LinkAttributes',
+)]
 class LinkAttributesType extends GraphQLComposeSchemaTypeBase {
 
   /**

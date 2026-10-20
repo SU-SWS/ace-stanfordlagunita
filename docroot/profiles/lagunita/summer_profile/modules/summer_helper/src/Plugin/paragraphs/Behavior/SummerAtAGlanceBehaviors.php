@@ -5,6 +5,8 @@ namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\paragraphs\Attribute\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -14,14 +16,13 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * Manages and controlling the behavior and display of "facts" element.
  *
  * @codeCoverageIgnore
- *
- * @ParagraphsBehavior(
- *   id = "sum_at_a_glance_behavior",
- *   label = @Translation("Summer Top Banner Behavior"),
- *   description = @Translation("This plugin offers top banner variants."),
- *   weight = 0,
- * )
  */
+#[ParagraphsBehavior(
+  id: 'sum_at_a_glance_behavior',
+  label: new TranslatableMarkup('Summer Top Banner Behavior'),
+  description: new TranslatableMarkup('This plugin offers top banner variants.'),
+  weight: 0,
+)]
 class SummerAtAGlanceBehaviors extends ParagraphsBehaviorBase {
 
   /**
