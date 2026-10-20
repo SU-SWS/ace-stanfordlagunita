@@ -5,6 +5,8 @@ namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\paragraphs\Attribute\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -14,14 +16,13 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * Manages and controlling the behavior and display of banner component.
  *
  * @codeCoverageIgnore
- *
- * @ParagraphsBehavior(
- *   id = "sum_banner_behaviors",
- *   label = @Translation("Summer Banner Component Behavior"),
- *   description = @Translation("This plugin offers banner variants."),
- *   weight = 0,
- * )
  */
+#[ParagraphsBehavior(
+  id: 'sum_banner_behaviors',
+  label: new TranslatableMarkup('Summer Banner Component Behavior'),
+  description: new TranslatableMarkup('This plugin offers banner variants.'),
+  weight: 0,
+)]
 class SummerBannerBehaviors extends ParagraphsBehaviorBase {
 
   /**

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\supress_helper\Entity;
 
+use Drupal\Core\Entity\Attribute\ContentEntityType;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -12,53 +13,52 @@ use Drupal\supress_helper\PressEntityInterface;
 
 /**
  * Defines the Book Data entity class.
- *
- * @ContentEntityType(
- *   id = "press",
- *   label = @Translation("Book Data"),
- *   label_collection = @Translation("Book Data Entities"),
- *   label_singular = @Translation("Book Data Entity"),
- *   label_plural = @Translation("Book Data Entities"),
- *   label_count = @PluralTranslation(
- *     singular = "@count Book Data Entity",
- *     plural = "@count Book Data Entities",
- *   ),
- *   bundle_label = @Translation("Book Data Entity type"),
- *   handlers = {
- *     "list_builder" = "Drupal\supress_helper\PressEntityListBuilder",
- *     "views_data" = "Drupal\views\EntityViewsData",
- *     "access" = "Drupal\supress_helper\PressAccessControlHandler",
- *     "form" = {
- *       "add" = "Drupal\supress_helper\Form\PressEntityForm",
- *       "edit" = "Drupal\supress_helper\Form\PressEntityForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
- *     },
- *   },
- *   base_table = "press",
- *   admin_permission = "administer press types",
- *   entity_keys = {
- *     "id" = "id",
- *     "bundle" = "bundle",
- *     "label" = "title",
- *     "uuid" = "uuid",
- *   },
- *   links = {
- *     "collection" = "/admin/content/book-data",
- *     "add-form" = "/admin/content/book-data/add/{press_type}",
- *     "add-page" = "/admin/content/book-data/add",
- *     "canonical" = "/admin/content/book-data/{press}",
- *     "edit-form" = "/admin/content/book-data/{press}/edit",
- *     "delete-form" = "/admin/content/book-data/{press}/delete",
- *     "delete-multiple-form" = "/admin/content/book-data/delete-multiple",
- *   },
- *   bundle_entity_type = "press_type",
- *   field_ui_base_route = "entity.press_type.edit_form",
- * )
  */
+#[ContentEntityType(
+  id: 'press',
+  label: new TranslatableMarkup('Book Data'),
+  label_collection: new TranslatableMarkup('Book Data Entities'),
+  label_singular: new TranslatableMarkup('Book Data Entity'),
+  label_plural: new TranslatableMarkup('Book Data Entities'),
+  label_count: [
+    'singular' => '@count Book Data Entity',
+    'plural' => '@count Book Data Entities',
+  ],
+  bundle_label: new TranslatableMarkup('Book Data Entity type'),
+  handlers: [
+    'list_builder' => 'Drupal\supress_helper\PressEntityListBuilder',
+    'views_data' => 'Drupal\views\EntityViewsData',
+    'access' => 'Drupal\supress_helper\PressAccessControlHandler',
+    'form' => [
+      'add' => 'Drupal\supress_helper\Form\PressEntityForm',
+      'edit' => 'Drupal\supress_helper\Form\PressEntityForm',
+      'delete' => 'Drupal\Core\Entity\ContentEntityDeleteForm',
+      'delete-multiple-confirm' => 'Drupal\Core\Entity\Form\DeleteMultipleForm',
+    ],
+    'route_provider' => [
+      'html' => 'Drupal\Core\Entity\Routing\AdminHtmlRouteProvider',
+    ],
+  ],
+  base_table: 'press',
+  admin_permission: 'administer press types',
+  entity_keys: [
+    'id' => 'id',
+    'bundle' => 'bundle',
+    'label' => 'title',
+    'uuid' => 'uuid',
+  ],
+  links: [
+    'collection' => '/admin/content/book-data',
+    'add-form' => '/admin/content/book-data/add/{press_type}',
+    'add-page' => '/admin/content/book-data/add',
+    'canonical' => '/admin/content/book-data/{press}',
+    'edit-form' => '/admin/content/book-data/{press}/edit',
+    'delete-form' => '/admin/content/book-data/{press}/delete',
+    'delete-multiple-form' => '/admin/content/book-data/delete-multiple',
+  ],
+  bundle_entity_type: 'press_type',
+  field_ui_base_route: 'entity.press_type.edit_form',
+)]
 final class PressEntity extends ContentEntityBase implements PressEntityInterface {
 
   /**

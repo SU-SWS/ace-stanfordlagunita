@@ -4,6 +4,7 @@ namespace Drupal\sul_helper\Plugin\migrate\process;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\migrate\Attribute\MigrateProcess;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use GuzzleHttp\ClientInterface;
@@ -19,11 +20,10 @@ use GuzzleHttp\ClientInterface;
  *     plugin: libguide_lookup
  *     source: foo
  * @endcode
- *
- * @MigrateProcessPlugin(
- *   id = "libguide_lookup"
- * )
  */
+#[MigrateProcess(
+  id: 'libguide_lookup',
+)]
 class LibGuideLookupProcess extends LibLookupProcessBase {
 
   /**

@@ -3,10 +3,12 @@
 namespace Drupal\sul_helper\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Field\Attribute\FieldWidget;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\StringTextfieldWidget;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -14,13 +16,14 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Defines the 'sul_branch_selector' field widget.
  *
  * @codeCoverageIgnore
- *
- * @FieldWidget(
- *   id = "sul_branch_selector",
- *   label = @Translation("SUL Branch Selector"),
- *   field_types = {"string"},
- * )
  */
+#[FieldWidget(
+  id: 'sul_branch_selector',
+  label: new TranslatableMarkup('SUL Branch Selector'),
+  field_types: [
+    'string',
+  ],
+)]
 class SulBranchSelectorWidget extends StringTextfieldWidget {
 
   /**

@@ -71,20 +71,6 @@ function sul_helper_preprocess_paragraph__stanford_spacer(&$variables) {
 }
 
 /**
- * Implements hook_graphql_compose_field_type_alter().
- */
-function sul_helper_graphql_compose_field_type_alter(array &$field_types) {
-  $field_types['link']['class'] = 'Drupal\sul_helper\Plugin\GraphQLCompose\FieldType\SulLinkItem';
-}
-
-/**
- * Implements hook_graphql_compose_graphql_type_alter().
- */
-function sul_helper_graphql_compose_graphql_type_alter(array &$entity_types) {
-  $entity_types['Link']['class'] = 'Drupal\sul_helper\Plugin\GraphQLCompose\SchemaType\SulLinkType';
-}
-
-/**
  * Implements hook_migrate_prepare_row().
  *
  * On the person importer, we have a process plugin that sets the libcal and

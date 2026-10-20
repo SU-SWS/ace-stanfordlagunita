@@ -4,6 +4,8 @@ namespace Drupal\sul_helper\Plugin\paragraphs\Behavior;
 
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\paragraphs\Attribute\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -11,13 +13,12 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
  * Teaser paragraph behaviors.
- *
- * @ParagraphsBehavior(
- *   id = "sul_teaser_styles",
- *   label = @Translation("SUL Teaser Styles"),
- *   description = @Translation("Style options for teaser paragraph")
- * )
  */
+#[ParagraphsBehavior(
+  id: 'sul_teaser_styles',
+  label: new TranslatableMarkup('SUL Teaser Styles'),
+  description: new TranslatableMarkup('Style options for teaser paragraph'),
+)]
 class TeaserBehaviors extends ParagraphsBehaviorBase {
 
   /**
