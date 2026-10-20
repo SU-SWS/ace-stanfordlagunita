@@ -49,6 +49,7 @@ class LinkItCest {
       ],
     ]);
     $I->logInWithRole('contributor');
+    $I->resizeWindow(2000, 1000);
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->clickWithLeftButton('.test-me');
     $I->pressKey('.test-me', ['ctrl', 'k']);
