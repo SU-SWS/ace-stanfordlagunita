@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\supress_helper\Entity;
 
+use Drupal\Core\Entity\Attribute\ContentEntityType;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
@@ -11,39 +12,39 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\user\EntityOwnerInterface;
 use Drupal\user\EntityOwnerTrait;
 
 /**
  * Defines the press award entity class.
- *
- * @ContentEntityType(
- *   id = "sup_award",
- *   label = @Translation("Press Award"),
- *   label_collection = @Translation("Press Awards"),
- *   label_singular = @Translation("press award"),
- *   label_plural = @Translation("press awards"),
- *   label_count = @PluralTranslation(
- *     singular = "@count press awards",
- *     plural = "@count press awards",
- *   ),
- *   handlers = {
- *     "views_data" = "Drupal\views\EntityViewsData",
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
- *     },
- *   },
- *   base_table = "sup_award",
- *   admin_permission = "administer sup_award",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "name",
- *     "uuid" = "uuid",
- *     "owner" = "uid",
- *   },
- *   field_ui_base_route = "entity.sup_award.settings",
- * )
  */
+#[ContentEntityType(
+  id: 'sup_award',
+  label: new TranslatableMarkup('Press Award'),
+  label_collection: new TranslatableMarkup('Press Awards'),
+  label_singular: new TranslatableMarkup('press award'),
+  label_plural: new TranslatableMarkup('press awards'),
+  label_count: [
+    'singular' => '@count press awards',
+    'plural' => '@count press awards',
+  ],
+  handlers: [
+    'views_data' => 'Drupal\views\EntityViewsData',
+    'route_provider' => [
+      'html' => 'Drupal\Core\Entity\Routing\AdminHtmlRouteProvider',
+    ],
+  ],
+  base_table: 'sup_award',
+  admin_permission: 'administer sup_award',
+  entity_keys: [
+    'id' => 'id',
+    'label' => 'name',
+    'uuid' => 'uuid',
+    'owner' => 'uid',
+  ],
+  field_ui_base_route: 'entity.sup_award.settings',
+)]
 final class PressAward extends ContentEntityBase implements ContentEntityInterface, EntityOwnerInterface, EntityChangedInterface {
 
   use EntityChangedTrait;

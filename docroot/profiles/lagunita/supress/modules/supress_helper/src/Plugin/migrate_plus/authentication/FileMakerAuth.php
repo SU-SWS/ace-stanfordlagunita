@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Drupal\supress_helper\Plugin\migrate_plus\authentication;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\migrate_plus\Attribute\Authentication;
 use Drupal\migrate_plus\AuthenticationPluginBase;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -18,12 +20,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *     token_url: '[filemaker url]'
  *     client_id: '[api user]'
  *     client_secret: '[api password'
- *
- * @Authentication(
- *   id = "press_filemaker",
- *   title = @Translation("Press Filemaker")
- * )
  */
+#[Authentication(
+  id: 'press_filemaker',
+  title: new TranslatableMarkup('Press Filemaker'),
+)]
 class FileMakerAuth extends AuthenticationPluginBase implements ContainerFactoryPluginInterface {
 
   /**

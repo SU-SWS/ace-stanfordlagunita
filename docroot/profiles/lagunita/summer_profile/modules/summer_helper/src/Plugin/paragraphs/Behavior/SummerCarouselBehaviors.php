@@ -5,6 +5,8 @@ namespace Drupal\summer_helper\Plugin\paragraphs\Behavior;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\paragraphs\Attribute\ParagraphsBehavior;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\Entity\ParagraphsType;
 use Drupal\paragraphs\ParagraphInterface;
@@ -14,13 +16,12 @@ use Drupal\paragraphs\ParagraphsBehaviorBase;
  * Manages and controlling the behavior and display of "Carousel" element.
  *
  * @codeCoverageIgnore
- *
- * @ParagraphsBehavior(
- *   id = "sum_carousel",
- *   label = @Translation("Summer Carousel Behavior"),
- *   description = @Translation("This plugin offers carousel variants.")
- * )
  */
+#[ParagraphsBehavior(
+  id: 'sum_carousel',
+  label: new TranslatableMarkup('Summer Carousel Behavior'),
+  description: new TranslatableMarkup('This plugin offers carousel variants.'),
+)]
 class SummerCarouselBehaviors extends ParagraphsBehaviorBase {
 
   public static function isApplicable(ParagraphsType $paragraphs_type) {

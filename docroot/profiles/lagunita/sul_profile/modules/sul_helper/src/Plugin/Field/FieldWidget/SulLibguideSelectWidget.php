@@ -4,26 +4,27 @@ namespace Drupal\sul_helper\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\Attribute\FieldWidget;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsSelectWidget;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Defines the 'sul_libguide_select' field widget.
- *
- * @FieldWidget(
- *   id = "sul_libguide_select",
- *   label = @Translation("LibGuide Select"),
- *   field_types = {
- *     "integer"
- *   },
- *   multiple_values = TRUE
- * )
  */
+#[FieldWidget(
+  id: 'sul_libguide_select',
+  label: new TranslatableMarkup('LibGuide Select'),
+  field_types: [
+    'integer',
+  ],
+  multiple_values: TRUE,
+)]
 class SulLibguideSelectWidget extends OptionsSelectWidget {
 
   /**
