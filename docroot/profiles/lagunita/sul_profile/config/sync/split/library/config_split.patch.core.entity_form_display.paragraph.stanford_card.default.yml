@@ -7,6 +7,7 @@ adding:
       - change_labels
       - conditional_fields
       - link_attributes
+      - sul_helper
   content:
     su_card_body:
       weight: 4
@@ -32,6 +33,12 @@ adding:
           field_label_overwrite: ''
     su_card_media:
       weight: 1
+    su_card_super_header:
+      type: sul_branch_selector
+      weight: null
+      region: content
+      settings:
+        only_primary: false
     sul_card_image_caption:
       type: string_textfield
       weight: 2
@@ -51,8 +58,6 @@ adding:
       third_party_settings: {  }
 removing:
   dependencies:
-    config:
-      - field.field.paragraph.stanford_card.su_card_super_header
     module:
       - link
   content:
@@ -66,8 +71,8 @@ removing:
     su_card_media:
       weight: 0
     su_card_super_header:
+      type: string_textfield
+      weight: 8
       settings:
         size: 60
         placeholder: ''
-      type: string_textfield
-      weight: 1
