@@ -12,11 +12,11 @@ selection_criteria:
   86f3d6da-bdda-42ec-a5de-52f2ad482e14:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 86f3d6da-bdda-42ec-a5de-52f2ad482e14
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       sup_book_subjects: sup_book_subjects
+    uuid: 86f3d6da-bdda-42ec-a5de-52f2ad482e14
 selection_logic: and
 weight: -5
 relationships: {  }

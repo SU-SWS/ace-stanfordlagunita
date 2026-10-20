@@ -41,14 +41,16 @@ class LinkItCest {
     ], 'media');
 
     $node = $I->createEntity([
-      'type' => 'stanford_page',
+      'type' => 'stanford_course',
       'title' => $this->faker->words(3, TRUE),
       'body' => [
         'value' => '<p class="test-me">' . $this->faker->words(3, TRUE) . '</p>',
         'format' => 'stanford_html',
       ],
+      'su_course_link' => ['uri' => $this->faker->url()],
     ]);
-    $I->logInWithRole('contributor');
+    $I->logInWithRole('site_manager');
+    $I->resizeWindow(2000, 1000);
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->clickWithLeftButton('.test-me');
     $I->pressKey('.test-me', ['ctrl', 'k']);
