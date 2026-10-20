@@ -12,11 +12,11 @@ selection_criteria:
   51765d5e-48c8-440e-9290-484d3b12b246:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 51765d5e-48c8-440e-9290-484d3b12b246
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       sup_imprints: sup_imprints
+    uuid: 51765d5e-48c8-440e-9290-484d3b12b246
 selection_logic: and
 weight: -5
 relationships: {  }

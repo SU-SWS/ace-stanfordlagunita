@@ -24,6 +24,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * `data-caption` attribute so that core's caption filter renders it in the
  * `<figcaption>` it already builds.
  *
+ * This filter is enabled on text formats through a config override instead of
+ * the stored format config. If the stored format depended on sul_helper,
+ * config split would completely split the format, and everything depending on
+ * it, into the library split instead of creating a partial split patch. As a
+ * result, the filter does not appear on the text format admin form.
+ *
+ * @see \Drupal\sul_helper\Config\ConfigOverrides
  * @see \Drupal\filter\Plugin\Filter\FilterCaption
  * @see \Drupal\media\Plugin\Filter\MediaEmbed
  */

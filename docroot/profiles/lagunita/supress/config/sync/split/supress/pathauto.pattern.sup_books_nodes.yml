@@ -12,11 +12,11 @@ selection_criteria:
   0404f437-9c05-4ae1-a297-174fbaa0612a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 0404f437-9c05-4ae1-a297-174fbaa0612a
     context_mapping:
       node: node
     bundles:
       sup_book: sup_book
+    uuid: 0404f437-9c05-4ae1-a297-174fbaa0612a
 selection_logic: and
 weight: -5
 relationships: {  }
