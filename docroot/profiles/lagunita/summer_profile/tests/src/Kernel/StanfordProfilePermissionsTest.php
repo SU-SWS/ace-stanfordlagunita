@@ -5,11 +5,15 @@ namespace Drupal\Tests\summer_profile\Kernel;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
 use Drupal\node\Entity\NodeType;
-use Drupal\summer_profile\StanfordProfilePermissions;
+use Drupal\stanford_profile\StanfordProfilePermissions;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Class StanfordProfilePermissionsTest.
  */
+#[Group('stanford_profile')]
+#[RunTestsInSeparateProcesses]
 class StanfordProfilePermissionsTest extends KernelTestBase {
 
   /**
@@ -29,7 +33,7 @@ class StanfordProfilePermissionsTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public function setup(): void {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('user');
