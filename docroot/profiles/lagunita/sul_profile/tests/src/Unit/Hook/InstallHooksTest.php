@@ -10,14 +10,12 @@ use Drupal\config_pages\ConfigPagesInterface;
 use Drupal\sul_profile\Hook\InstallHooks;
 use Drupal\sul_profile\InstallTaskManager;
 use Drupal\Tests\UnitTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Unit tests for InstallHooks.
  */
 #[Group('stanford_profile')]
-#[CoversClass(InstallHooks::class)]
 class InstallHooksTest extends UnitTestCase {
 
   /**
