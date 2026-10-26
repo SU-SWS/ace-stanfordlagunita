@@ -23,6 +23,12 @@ $databases = array(
       'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
       'driver' => 'mysql',
       'prefix' => '',
+      // The MariaDB client verifies server certs by default, and the CI
+      // mysql service's cert is self-signed. Drush passes this on to the
+      // mysql client. Pdo\Mysql replaces the PDO constant as of PHP 8.4.
+      'pdo' => array(
+        (defined('Pdo\Mysql::ATTR_SSL_VERIFY_SERVER_CERT') ? Pdo\Mysql::ATTR_SSL_VERIFY_SERVER_CERT : PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT) => FALSE,
+      ),
     ),
   ),
 );

@@ -11,7 +11,7 @@ jobs:
     name: Deploy Main Artifact
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
     steps:
       - uses: actions/checkout@v7
       - name: Restore Cache

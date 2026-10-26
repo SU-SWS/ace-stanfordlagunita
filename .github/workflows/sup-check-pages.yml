@@ -21,7 +21,7 @@ jobs:
     name: Check for 200 responses on SUP pages
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
       options: '--network-alias drupal8ci'
     env:
       SUP_REVALIDATION: ${{secrets.SUP_REVALIDATION}}
