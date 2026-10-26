@@ -6,7 +6,7 @@ jobs:
     name: Clean up old database backups
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
       options: '--network-alias drupal8ci'
     env:
       ACQUIA_APP_KEY: ${{secrets.ACQUIA_APP_KEY}}
@@ -37,7 +37,7 @@ jobs:
     name: Clean up unused git branches & tags
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
       options: '--network-alias drupal8ci'
     env:
       ACQUIA_APP_KEY: ${{secrets.ACQUIA_APP_KEY}}
