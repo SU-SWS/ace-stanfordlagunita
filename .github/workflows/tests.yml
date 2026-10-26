@@ -8,7 +8,7 @@ jobs:
     name: PHPUnit
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
     services:
       mysql:
         image: mysql:8.0
@@ -54,7 +54,7 @@ jobs:
     name: Sites to test
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       frontend_repos: ${{ steps.set-matrix.outputs.frontend_repos }}
@@ -107,7 +107,7 @@ jobs:
         shard: ${{fromJSON(needs.shard_matrix.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
       options: '--network-alias drupal8ci'
     env:
       STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
@@ -143,6 +143,7 @@ jobs:
       - name: Install Site
         run: |
           git config --system --add safe.directory '*' &&
+                    printf '[client]\nskip-ssl-verify-server-cert\n' > /etc/mysql/conf.d/ci.cnf &&
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
           rm -rf /var/www/html &&
           ln -snf $GITHUB_WORKSPACE /var/www/html &&
@@ -180,7 +181,7 @@ jobs:
         site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
       options: '--network-alias drupal8ci'
     env:
       STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
@@ -221,6 +222,7 @@ jobs:
         id: sync
         run: |
           git config --system --add safe.directory '*' &&
+                    printf '[client]\nskip-ssl-verify-server-cert\n' > /etc/mysql/conf.d/ci.cnf &&
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
           rm -rf /var/www/html &&
           ln -snf $GITHUB_WORKSPACE /var/www/html &&
@@ -285,7 +287,7 @@ jobs:
     needs: [phpunit, codeception, db_updates]
     runs-on: ubuntu-latest
     container:
-      image: pookmish/drupal8ci:php8.3
+      image: pookmish/drupal8ci:php8.4
     steps:
       - uses: actions/checkout@v7
       - name: Restore Cache
