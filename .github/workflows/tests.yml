@@ -6,6 +6,10 @@ concurrency:
 jobs:
   phpunit:
     name: PHPUnit
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:php8.4
@@ -36,20 +40,63 @@ jobs:
             4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
             4.x-${{ vars.CACHE_KEY }}-
       - name: Run Unit Tests
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
           git config --system --add safe.directory '*' &&
           composer install -n &&
           mkdir -p docroot/sites/simpletest &&
-          drush sws:source:tests:phpunit --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal --with-coverage &&
-          drush sws:tests:phpunit-coverage-check artifacts/phpunit/coverage/xml --clover-file=artifacts/phpunit/coverage/clover.xml -n
+          drush sws:source:tests:phpunit:config --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal &&
+          .github/phpunit-shard.sh ${{ strategy.job-index }} ${{ strategy.job-total }}
+      - name: Save Coverage
+        uses: actions/upload-artifact@v7
+        with:
+          name: phpunit-coverage-${{ matrix.shard }}
+          path: artifacts/phpunit/coverage/*.cov
+          if-no-files-found: ignore
       - name: Save Test Results
         uses: actions/upload-artifact@v7
         if: failure()
         with:
-          name: unit-tests-results
-          path: $GITHUB_WORKSPACE/artifacts
+          name: unit-tests-results-${{ matrix.shard }}
+          path: artifacts
+  phpunit_coverage:
+    name: PHPUnit Coverage
+    needs: phpunit
+    runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:php8.4
+    steps:
+      - uses: actions/checkout@v7
+      - name: Restore Cache
+        uses: actions/cache@v6
+        with:
+          path: |
+            vendor
+            docroot/core
+            docroot/libraries
+            docroot/modules/contrib
+          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
+            4.x-${{ vars.CACHE_KEY }}-
+      - name: Download Coverage
+        uses: actions/download-artifact@v7
+        with:
+          pattern: phpunit-coverage-*
+          path: artifacts/phpunit/shards
+          merge-multiple: true
+      - name: Check Coverage
+        run: |
+          git config --system --add safe.directory '*' &&
+          composer install -n &&
+          php -d memory_limit=-1 .github/phpunit-merge-coverage.php artifacts/phpunit/shards artifacts/phpunit/coverage &&
+          drush sws:tests:phpunit-coverage-check artifacts/phpunit/coverage/xml --clover-file=artifacts/phpunit/coverage/clover.xml -n
+      - name: Save Coverage Report
+        uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: unit-tests-coverage
+          path: artifacts/phpunit/coverage
   sites_to_test:
     name: Sites to test
     runs-on: ubuntu-latest
@@ -269,14 +316,14 @@ jobs:
           yarn build
   all-tests-pass:
     name: All Tests Pass
-    needs: [phpunit, codeception, db_updates]
+    needs: [phpunit, phpunit_coverage, codeception, db_updates]
     runs-on: ubuntu-latest
     steps:
       - run: echo 'Passed'
   something_failed:
     name: Something Failed
     if: failure()
-    needs: [phpunit, codeception, db_updates]
+    needs: [phpunit, phpunit_coverage, codeception, db_updates]
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -284,7 +331,7 @@ jobs:
           exit 1
   deploy:
     name: Deploy Artifact
-    needs: [phpunit, codeception, db_updates]
+    needs: [phpunit, phpunit_coverage, codeception, db_updates]
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:php8.4
