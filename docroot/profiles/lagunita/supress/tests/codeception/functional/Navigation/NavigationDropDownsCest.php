@@ -51,6 +51,7 @@ abstract class NavigationDropDownsCest {
       'link' => ['uri' => 'route:<front>'],
     ], 'menu_link_content');
 
+    $I->runDrush('cache:rebuild');
     $I->logInWithRole('site_manager');
     $I->resizeWindow(1400, 2000);
     $I->amOnPage('/');
