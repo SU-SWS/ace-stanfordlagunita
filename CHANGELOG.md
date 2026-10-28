@@ -1,8 +1,39 @@
 # Lagunita
 
-4.0.0
+4.0.6
 --------------------------------------------------------------------------------
-- SUM: Remove portions of the header and footer for desired pages
+- Updated dependencies
+- SUM: Disable FAQ accordion paragraph (#294)
+- CSP-195: Show style previews in CKEditor Styles dropdown (#291)
+- Update plugin annotations to attributes (#292)
+- Fix inheritance configuration
+- SUL: Removed unused config
+
+4.0.5
+--------------------------------------------------------------------------------
+- Update drupal core dependencies (#290)
+- SUP: Disable nightly cache refresh
+
+4.0.4
+--------------------------------------------------------------------------------
+- SUL23-1049: Backend changes for image credit display (#287)
+
+4.0.3
+--------------------------------------------------------------------------------
+- SUM: Fix algolia data structure
+
+4.0.2
+--------------------------------------------------------------------------------
+- Updated dependencies
+- SUL23-1051: Drupal changes for algolia search (#284)
+- SUM: Add field for course not available to (#285)
+- SUM: Remove Access Content permission from anonymous
+- SUP: Disable html processing on title and subtitle fields
+- Updated CSP preview path
+
+4.0.1
+--------------------------------------------------------------------------------
+- SUM: Remove portions of the header and footer for desired pages (#279)
 
 4.0.0
 --------------------------------------------------------------------------------
