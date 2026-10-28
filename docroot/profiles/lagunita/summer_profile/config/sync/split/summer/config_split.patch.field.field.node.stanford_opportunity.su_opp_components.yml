@@ -1,0 +1,62 @@
+adding:
+  settings:
+    handler_settings:
+      target_bundles_drag_drop:
+        stanford_faq:
+          enabled: false
+        stanford_filtered_lists:
+          weight: 35
+          enabled: false
+        stanford_stat_card:
+          weight: 44
+          enabled: false
+        sum_accordions:
+          weight: 46
+          enabled: false
+        sum_arc_banner:
+          weight: 47
+          enabled: false
+        sum_at_a_glance:
+          weight: 48
+          enabled: false
+        sum_calculator:
+          weight: 49
+          enabled: false
+        sum_carousel:
+          weight: 50
+          enabled: false
+        sum_course_filter:
+          weight: 51
+          enabled: false
+        sum_facts:
+          weight: 52
+          enabled: false
+        sum_pill_banner:
+          weight: 53
+          enabled: false
+        sum_slide_teaser:
+          weight: 54
+          enabled: false
+        sum_testimonial:
+          weight: 55
+          enabled: false
+        sum_top_banner:
+          weight: 56
+          enabled: false
+        sum_user_favorites:
+          weight: 57
+          enabled: false
+        sum_video:
+          weight: 58
+          enabled: false
+removing:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.stanford_faq
+  settings:
+    handler_settings:
+      target_bundles:
+        stanford_faq: stanford_faq
+      target_bundles_drag_drop:
+        stanford_faq:
+          enabled: true

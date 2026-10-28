@@ -23,6 +23,8 @@ adding:
         sum_pill_banner: sum_pill_banner
         sum_testimonial: sum_testimonial
       target_bundles_drag_drop:
+        stanford_faq:
+          enabled: false
         stanford_page_title_banner:
           weight: 24
         sum_accordions:
@@ -65,8 +67,15 @@ adding:
           weight: 34
           enabled: true
 removing:
+  dependencies:
+    config:
+      - paragraphs.paragraphs_type.stanford_faq
   settings:
     handler_settings:
+      target_bundles:
+        stanford_faq: stanford_faq
       target_bundles_drag_drop:
+        stanford_faq:
+          enabled: true
         stanford_page_title_banner:
           weight: 23
