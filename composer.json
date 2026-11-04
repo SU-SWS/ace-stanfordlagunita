@@ -74,7 +74,7 @@
         "drush/drush": "^13.6",
         "su-sws/stanford_profile": "13.x-dev",
         "su-sws/stanford_profile_helper": "11.x-dev",
-        "su-sws/sws-drush-commands": "1.x-dev",
+        "su-sws/sws-drush-commands": "2.x-dev",
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
