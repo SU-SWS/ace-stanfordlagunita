@@ -92,7 +92,8 @@
     "config": {
         "sort-packages": true,
         "discard-changes": true,
-        "allow-plugins": true
+        "allow-plugins": true,
+        "policy": false
     },
     "extra": {
         "merge-plugin": {
