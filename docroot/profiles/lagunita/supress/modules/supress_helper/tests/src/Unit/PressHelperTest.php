@@ -64,14 +64,6 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * Returns the record-count cache key for a given URL, matching PressHelper's
-   * own key derivation logic.
-   */
-  protected function recordCountCacheKey(string $url): string {
-    return 'press-record-count:' . substr(md5($url), 0, 5);
-  }
-
-  /**
    * Builds a default config-page loader that returns the given credentials.
    */
   protected function buildConfigLoader(string $user = 'api-user', string $pass = 'api-pass'): ConfigPagesLoaderServiceInterface {
@@ -100,9 +92,19 @@ class PressHelperTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
+  protected function setUp(): void {
+    parent::setUp();
+    // Cover images are only queued on production.
+    putenv('AH_SITE_ENVIRONMENT=prod');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   protected function tearDown(): void {
-    // Ensure installer globals never leak between tests.
+    // Ensure installer globals and environment never leak between tests.
     unset($GLOBALS['install_state']);
+    putenv('AH_SITE_ENVIRONMENT');
     parent::tearDown();
   }
 
@@ -235,157 +237,6 @@ class PressHelperTest extends UnitTestCase {
   }
 
   // ---------------------------------------------------------------------------
-  // getMigrationUrls tests
-  // ---------------------------------------------------------------------------
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsReturnsEmptyArrayWhenZeroRecords(): void {
-    $url = 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/SocialMedia/records';
-    $cache = $this->buildCacheWithToken('tok');
-    // Record count cache miss; HTTP returns 0 total records.
-    $response = $this->buildResponse(['response' => ['dataInfo' => ['totalRecordCount' => 0]]]);
-
-    $client = $this->createMock(GuzzleClient::class);
-    $client->method('request')->willReturn($response);
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $this->assertSame([], $helper->getMigrationUrls($url));
-  }
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsReturnsSingleUrlForSmallCount(): void {
-    $url = 'https://example.com/records';
-    $cache = $this->buildCacheWithToken('tok');
-    $response = $this->buildResponse(['response' => ['dataInfo' => ['totalRecordCount' => 500]]]);
-
-    $client = $this->createMock(GuzzleClient::class);
-    $client->method('request')->willReturn($response);
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $urls = $helper->getMigrationUrls($url);
-
-    $this->assertCount(1, $urls);
-    $this->assertStringContainsString('_limit=1000', $urls[0]);
-    $this->assertStringContainsString('_offset=1', $urls[0]);
-    $this->assertStringStartsWith($url, $urls[0]);
-  }
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsPaginatesCorrectly(): void {
-    $url = 'https://example.com/records';
-    $cache = $this->buildCacheWithToken('tok');
-    // 2500 records → 3 pages: offsets 1, 1001, 2001.
-    $response = $this->buildResponse(['response' => ['dataInfo' => ['totalRecordCount' => 2500]]]);
-
-    $client = $this->createMock(GuzzleClient::class);
-    $client->method('request')->willReturn($response);
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $urls = $helper->getMigrationUrls($url);
-
-    $this->assertCount(3, $urls);
-    $this->assertStringContainsString('_offset=1', $urls[0]);
-    $this->assertStringContainsString('_offset=1001', $urls[1]);
-    $this->assertStringContainsString('_offset=2001', $urls[2]);
-  }
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsGeneratesExactPageBoundary(): void {
-    $url = 'https://example.com/records';
-    $cache = $this->buildCacheWithToken('tok');
-    // Exactly 1000 records → exactly 1 page.
-    $response = $this->buildResponse(['response' => ['dataInfo' => ['totalRecordCount' => 1000]]]);
-
-    $client = $this->createMock(GuzzleClient::class);
-    $client->method('request')->willReturn($response);
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $this->assertCount(1, $helper->getMigrationUrls($url));
-  }
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsUsesCachedRecordCount(): void {
-    $url = 'https://example.com/records';
-    $cacheKey = $this->recordCountCacheKey($url);
-
-    $cache = $this->createMock(CacheBackendInterface::class);
-    $cache->method('get')->willReturnCallback(function (string $key) use ($cacheKey) {
-      if ($key === $cacheKey) {
-        return $this->cacheItem(750);
-      }
-      return FALSE;
-    });
-
-    // HTTP client must not be called at all when the count is cached.
-    $client = $this->createMock(GuzzleClient::class);
-    $client->expects($this->never())->method('request');
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $urls = $helper->getMigrationUrls($url);
-
-    $this->assertCount(1, $urls);
-  }
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsCachesRecordCount(): void {
-    $url = 'https://example.com/records';
-    $cacheKey = $this->recordCountCacheKey($url);
-
-    $cache = $this->buildCacheWithToken('tok');
-    $cache->expects($this->once())
-      ->method('set')
-      ->with($cacheKey, 300, $this->greaterThan(time()), ['press-record-count']);
-
-    $response = $this->buildResponse(['response' => ['dataInfo' => ['totalRecordCount' => 300]]]);
-
-    $client = $this->createMock(GuzzleClient::class);
-    $client->method('request')->willReturn($response);
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $helper->getMigrationUrls($url);
-  }
-
-  /**
-   * @covers ::getMigrationUrls
-   */
-  public function testGetMigrationUrlsPassesTokenInRecordCountRequest(): void {
-    $url = 'https://example.com/records';
-    $cache = $this->buildCacheWithToken('my-token');
-
-    $response = $this->buildResponse(['response' => ['dataInfo' => ['totalRecordCount' => 1]]]);
-
-    $client = $this->createMock(GuzzleClient::class);
-    $client->expects($this->once())
-      ->method('request')
-      ->with('GET', $url, $this->callback(function (array $opts) {
-        return ($opts['headers']['Authorization'] ?? '') === 'Bearer my-token';
-      }))
-      ->willReturn($response);
-
-    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
-
-    $helper->getMigrationUrls($url);
-  }
-
-  // ---------------------------------------------------------------------------
   // queueCoverImages tests
   // ---------------------------------------------------------------------------
 
@@ -400,14 +251,80 @@ class PressHelperTest extends UnitTestCase {
     $loader = $this->createMock(ConfigPagesLoaderServiceInterface::class);
     $loader->method('getValue')->willReturn(NULL);
 
+    $queue = $this->createMock(QueueInterface::class);
+    $queue->method('numberOfItems')->willReturn(0);
+    $queue->expects($this->never())->method('createItem');
     $queueFactory = $this->createMock(QueueFactory::class);
-    $queueFactory->expects($this->never())->method('get');
+    $queueFactory->method('get')->willReturn($queue);
 
     $client = $this->createMock(GuzzleClient::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $loader, $queueFactory, $cache);
     $helper->queueCoverImages(); // Must not throw.
+  }
+
+  /**
+   * @covers ::queueCoverImages
+   */
+  public function testQueueCoverImagesSkipsOutsideProduction(): void {
+    putenv('AH_SITE_ENVIRONMENT=dev');
+
+    $queueFactory = $this->createMock(QueueFactory::class);
+    $queueFactory->expects($this->never())->method('get');
+
+    $client = $this->createMock(GuzzleClient::class);
+    $client->expects($this->never())->method('request');
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $this->buildCacheWithToken('tok'));
+    $helper->queueCoverImages();
+  }
+
+  /**
+   * @covers ::queueCoverImages
+   * @covers ::findRecords
+   * @covers ::isNoRecordsError
+   */
+  public function testQueueCoverImagesDetectsNoRecordsFromResponseBody(): void {
+    $queue = $this->createMock(QueueInterface::class);
+    $queue->method('numberOfItems')->willReturn(0);
+    $queue->expects($this->never())->method('createItem');
+    $queueFactory = $this->createMock(QueueFactory::class);
+    $queueFactory->method('get')->willReturn($queue);
+
+    // Guzzle truncates the body in the message, so rely on the response.
+    $errorResponse = $this->buildResponse(['messages' => [['message' => 'No records match the request', 'code' => '401']], 'response' => []]);
+    $exception = new ServerException('Server error: 500 Internal Server Error', $this->createMock(RequestInterface::class), $errorResponse);
+
+    $client = $this->createMock(GuzzleClient::class);
+    $client->method('request')->willThrowException($exception);
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $this->buildCacheWithToken('tok'));
+    $helper->queueCoverImages(); // Must not throw.
+  }
+
+  /**
+   * @covers ::queueCoverImages
+   */
+  public function testQueueCoverImagesSendsLimitInBody(): void {
+    $queue = $this->createMock(QueueInterface::class);
+    $queue->method('numberOfItems')->willReturn(0);
+    // The record without a recordId is ignored.
+    $queue->expects($this->once())->method('createItem')->with('record-1');
+    $queueFactory = $this->createMock(QueueFactory::class);
+    $queueFactory->method('get')->willReturn($queue);
+
+    $client = $this->createMock(GuzzleClient::class);
+    $client->expects($this->once())
+      ->method('request')
+      ->with('POST', PressHelper::COVERS_ENDPOINT, $this->callback(function (array $opts) {
+        $body = json_decode($opts['body'], TRUE);
+        return $body['limit'] === 100 && $body['query'] === [['flag' => '=x']];
+      }))
+      ->willReturn($this->buildResponse(['response' => ['data' => [['recordId' => 'record-1'], ['fieldData' => []]]]]));
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $this->buildCacheWithToken('tok'));
+    $helper->queueCoverImages();
   }
 
   /**
@@ -517,6 +434,124 @@ class PressHelperTest extends UnitTestCase {
 
     $this->expectException(ServerException::class);
     $helper->queueCoverImages();
+  }
+
+  // ---------------------------------------------------------------------------
+  // getEbookData tests
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Builds a FileMaker find response from a list of fieldData arrays.
+   */
+  protected function buildFindResponse(array $fieldData): ResponseInterface {
+    return $this->buildResponse([
+      'response' => [
+        'data' => array_map(fn($fields) => ['fieldData' => $fields], $fieldData),
+      ],
+    ]);
+  }
+
+  /**
+   * @covers ::getEbookData
+   * @covers ::searchFileMaker
+   */
+  public function testGetEbookDataGroupsRecordsByWork(): void {
+    $client = $this->createMock(GuzzleClient::class);
+    $client->expects($this->once())
+      ->method('request')
+      ->with('POST', PressHelper::EBOOK_RETAILERS_ENDPOINT, $this->callback(function (array $options) {
+        $body = json_decode($options['body'], TRUE);
+        return $options['headers']['Authorization'] === 'Bearer tok'
+          && count($body['query']) === 3
+          && $body['offset'] === 1;
+      }))
+      ->willReturn($this->buildFindResponse([
+        ['work_id_number' => '00012', 'retailer' => 'Amazon', 'link' => ' https://amazon.example.com ', 'format_epub' => 'yes', 'format_pdf' => ''],
+        ['work_id_number' => '12', 'retailer' => 'Kobo', 'link' => 'https://kobo.example.com', 'format_epub' => '', 'format_pdf' => 'yes'],
+        ['work_id_number' => '34', 'retailer' => 'Bad', 'link' => 'not a url', 'format_epub' => '', 'format_pdf' => ''],
+        ['work_id_number' => '56', 'retailer' => '', 'link' => '', 'format_epub' => 'yes', 'format_pdf' => ''],
+        ['work_id_number' => '', 'retailer' => 'Orphan', 'link' => 'https://orphan.example.com', 'format_epub' => 'yes', 'format_pdf' => 'yes'],
+      ]));
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $this->buildCacheWithToken('tok'));
+
+    $this->assertSame([
+      12 => [
+        'retailers' => [
+          ['title' => 'Amazon', 'uri' => 'https://amazon.example.com'],
+          ['title' => 'Kobo', 'uri' => 'https://kobo.example.com'],
+        ],
+        'epub' => TRUE,
+        'pdf' => TRUE,
+      ],
+      56 => ['epub' => TRUE, 'pdf' => FALSE],
+    ], $helper->getEbookData());
+  }
+
+  /**
+   * @covers ::getEbookData
+   * @covers ::searchFileMaker
+   */
+  public function testGetEbookDataFetchesAllPages(): void {
+    $full_page = array_fill(0, 10000, ['work_id_number' => '1', 'retailer' => 'A', 'link' => 'https://a.example.com']);
+    $client = $this->createMock(GuzzleClient::class);
+    $client->expects($this->exactly(2))
+      ->method('request')
+      ->willReturnOnConsecutiveCalls(
+        $this->buildFindResponse($full_page),
+        $this->buildFindResponse([['work_id_number' => '2', 'retailer' => 'B', 'link' => 'https://b.example.com']]),
+      );
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $this->buildCacheWithToken('tok'));
+    $data = $helper->getEbookData();
+
+    $this->assertCount(10000, $data[1]['retailers']);
+    $this->assertCount(1, $data[2]['retailers']);
+  }
+
+  /**
+   * @covers ::getEbookData
+   * @covers ::searchFileMaker
+   */
+  public function testGetEbookDataReturnsEmptyWhenNoRecordsMatch(): void {
+    $exception = new ServerException('No records match the request', $this->createMock(RequestInterface::class), $this->createMock(ResponseInterface::class));
+    $client = $this->createMock(GuzzleClient::class);
+    $client->method('request')->willThrowException($exception);
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $this->buildCacheWithToken('tok'));
+    $this->assertSame([], $helper->getEbookData());
+  }
+
+  /**
+   * @covers ::getEbookData
+   * @covers ::searchFileMaker
+   */
+  public function testGetEbookDataThrowsOnRequestFailure(): void {
+    $exception = new ServerException('Internal server error', $this->createMock(RequestInterface::class), $this->createMock(ResponseInterface::class));
+    $client = $this->createMock(GuzzleClient::class);
+    $client->method('request')->willThrowException($exception);
+
+    $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $this->buildCacheWithToken('tok'));
+    $this->expectException(ServerException::class);
+    $helper->getEbookData();
+  }
+
+  /**
+   * @covers ::getEbookData
+   * @covers ::searchFileMaker
+   */
+  public function testGetEbookDataThrowsWithoutToken(): void {
+    $cache = $this->createMock(CacheBackendInterface::class);
+    $cache->method('get')->willReturn(FALSE);
+    $loader = $this->createMock(ConfigPagesLoaderServiceInterface::class);
+    $loader->method('getValue')->willReturn(NULL);
+
+    $client = $this->createMock(GuzzleClient::class);
+    $client->expects($this->never())->method('request');
+
+    $helper = $this->buildHelper($client, $loader, $this->createMock(QueueFactory::class), $cache);
+    $this->expectException(\RuntimeException::class);
+    $helper->getEbookData();
   }
 
 }

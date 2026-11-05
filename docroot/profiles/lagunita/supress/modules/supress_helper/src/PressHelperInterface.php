@@ -23,11 +23,17 @@ interface PressHelperInterface {
   public function queueCoverImages(): void;
 
   /**
-   * Using the first url with no parameters, build a list of all urls to fetch.
+   * Fetch ebook retailer links and format flags from FileMaker.
    *
-   * @return string[]
-   *   Urls with page and offset parameters.
+   * @return array
+   *   Keyed by work id number. Each value may contain:
+   *   - retailers: list of ['title' => string, 'uri' => string].
+   *   - epub: bool, only set for works that have an ebook format record.
+   *   - pdf: bool, only set for works that have an ebook format record.
+   *
+   * @throws \Exception
+   *   When the API can not be reached or authentication fails.
    */
-  public function getMigrationUrls(string $firstUrl): array;
+  public function getEbookData(): array;
 
 }

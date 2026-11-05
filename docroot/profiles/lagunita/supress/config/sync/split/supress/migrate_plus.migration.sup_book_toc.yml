@@ -10,7 +10,7 @@ migration_tags: {  }
 migration_group: sup_press
 label: 'Press Table Of Contents'
 source:
-  plugin: url
+  plugin: supress_filemaker
   orphan_action: delete
   urls:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Web/records'

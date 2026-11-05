@@ -6,3 +6,5 @@ core_version_requirement: ^11.1
 dependencies:
   - drupal:migrate
   - config_pages:config_pages
+  - migrate_plus:migrate_plus
+  - stanford_migrate:stanford_migrate
