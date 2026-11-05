@@ -8,6 +8,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Utility\Token;
+use Drupal\supress_helper\PressHelperInterface;
 use Drush\Attributes as CLI;
 use Drush\Commands\AutowireTrait;
 use Drush\Commands\DrushCommands;
@@ -31,8 +32,11 @@ final class PressCommands extends DrushCommands {
     private readonly Token $token,
     private readonly EntityTypeManagerInterface $entityTypeManager,
     private readonly ClientInterface $httpClient,
-    #[Autowire(service: 'cache.default')] private readonly CacheBackendInterface $cacheDefault,
-    LoggerChannelFactoryInterface $loggerFactory
+    #[Autowire(service: 'cache.default')]
+    private readonly CacheBackendInterface $cacheDefault,
+    LoggerChannelFactoryInterface $loggerFactory,
+    #[Autowire(service: 'supress_helper')]
+    private readonly PressHelperInterface $pressHelper,
   ) {
     parent::__construct();
     $this->pressLogger = $loggerFactory->get('supress');
@@ -72,6 +76,8 @@ final class PressCommands extends DrushCommands {
    * @return array
    *   Array of book data.
    *
+   * @throws \Drush\Exceptions\CommandFailedException
+   *   When unable to authenticate with the API.
    * @throws \JsonException
    */
   protected function getAllBooks() {
@@ -79,9 +85,12 @@ final class PressCommands extends DrushCommands {
     if ($cache) {
       return $cache->data;
     }
-    $token = $this->getPressToken();
+    $token = $this->pressHelper->getApiToken();
+    if (!$token) {
+      throw new CommandFailedException('Unable to authenticate with the FileMaker API. Check the FileMaker credentials in the site settings.');
+    }
     $page = 0;
-    $limit = 1000;
+    $limit = 5000;
     $fetch_more = TRUE;
 
     $data = [];
@@ -99,33 +108,6 @@ final class PressCommands extends DrushCommands {
     }
     $this->cacheDefault->set('press-all-books', $data, time() + (60 * 60 * 24));
     return $data;
-  }
-
-  /**
-   * Get the API auth token.
-   *
-   * @return string
-   *   Auth token.
-   *
-   * @throws \JsonException
-   */
-  protected function getPressToken(): string {
-    $cache = $this->cacheDefault->get('press-api-token');
-    if ($cache) {
-      return $cache->data;
-    }
-    $response = $this->httpClient->post('https://memento.stanford.edu/fmi/data/v1/databases/Web/sessions', [
-      'headers' => [
-        'Content-Type' => 'application/json',
-      ],
-      'auth' => [
-        'api',
-        'REDACTED',
-      ],
-    ]);
-    $token_response = json_decode((string) $response->getBody(), TRUE, 512, JSON_THROW_ON_ERROR);
-    $this->cacheDefault->set('press-api-token', $token_response['response']['token'], time() + (60 * 5));
-    return $token_response['response']['token'];
   }
 
 }

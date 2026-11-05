@@ -1,0 +1,9 @@
+# Findings that gitleaks should not report, one fingerprint per line.
+#
+# Only add a fingerprint here once the credential has been rotated or confirmed
+# to be a false positive, and note why. Fingerprints are printed in the scan
+# output as <commit>:<file>:<rule>:<line>.
+
+# FileMaker API credentials hardcoded in PressCommands::getPressToken(), removed
+# from the code. The password must be rotated on the FileMaker server.
+aadbbe5ae985662ee9a2a0c71665cefe7ffbd6b0:docroot/profiles/lagunita/supress/modules/supress_helper/src/Drush/Commands/PressCommands.php:http-basic-auth-literal:121
