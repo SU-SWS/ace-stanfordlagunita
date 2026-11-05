@@ -3,10 +3,12 @@
 namespace Drupal\Tests\supress_helper\Kernel\Entity;
 
 use Drupal\KernelTests\KernelTestBase;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * @coversDefaultClass \Drupal\supress_helper\Entity\PressAward
  */
+#[RunTestsInSeparateProcesses]
 class PressEntityTest extends KernelTestBase {
 
   protected static $modules = [
@@ -15,6 +17,7 @@ class PressEntityTest extends KernelTestBase {
     'field',
     'user',
     'migrate',
+    'config_pages',
   ];
 
   protected function setUp(): void {

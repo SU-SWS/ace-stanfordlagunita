@@ -8,7 +8,7 @@ title: 'Queues cover image downloading'
 id: supress_helper_cron
 weight: 0
 module: supress_helper
-callback: supress_helper_cron
+callback: 'supress_helper#cron'
 scheduler:
   id: simple
 launcher:
