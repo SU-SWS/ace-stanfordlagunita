@@ -24,6 +24,20 @@ updates from the `stanford_profile`, use the following commands for each profile
 Though there may be merge conflict in the process and will require manual attention. Most often there will be a merge
 conflict in the composer.json and the info.yml of each profile. The easiest way to resolve that is `git checkout --ours [path/to/file]`
 
+Notes when running the pull commands:
+- Work on a feature branch, not `4.x`. Each `git subtree pull` creates a squash commit plus a merge commit.
+- The working tree must be clean before each command. The commands run `rm -rf docroot/profiles/lagunita` and
+  `git checkout docroot/profiles/lagunita`, and `git subtree` refuses to run with uncommitted changes. Finish and commit
+  each profile's merge (`git commit --no-edit`) before running the next pull command.
+- The message `error: remote stanford_profile already exists.` is expected and harmless.
+- The commands resolve the composer.json and info.yml conflicts automatically with `--ours`. Any other conflict is left
+  unresolved, so check with `git diff --name-only --diff-filter=U` before committing.
+- The `csp_profile` and `summer_profile` profiles replace the upstream `CHANGELOG.md` with a one-line heading, so it
+  conflicts on every update. Keep the local version: `git checkout --ours docroot/profiles/lagunita/<profile>/CHANGELOG.md`.
+- Because the info.yml is always kept as `--ours`, upstream changes to `stanford_profile.info.yml` (like new
+  `install` dependencies or themes) are discarded. Compare the upstream info.yml between the old and new squash commits
+  and copy any needed changes into each profile's info.yml by hand.
+
 ## Add New Sites
 To add a new site to the stack run the command `drush lagunita:new-profile`.
 This will create the git subtree and rename all files to work with the new profile name.
