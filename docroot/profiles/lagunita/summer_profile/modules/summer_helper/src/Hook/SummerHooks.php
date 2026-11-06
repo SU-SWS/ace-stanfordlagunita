@@ -4,16 +4,19 @@ declare(strict_types=1);
 
 namespace Drupal\summer_helper\Hook;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Logger\LoggerChannelTrait;
 use Drupal\Core\Messenger\MessengerTrait;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
-use Drupal\stanford_profile_helper\Hook\AlgoliaHooks;
+use Drupal\summer_helper\Plugin\paragraphs\Behavior\SummerCardBehaviors;
 use FFMpeg\Coordinate\TimeCode;
 use FFMpeg\FFMpeg;
 use FFMpeg\FFProbe;
@@ -31,8 +34,63 @@ class SummerHooks {
 
   public function __construct(
     protected EntityTypeManagerInterface $entityTypeManager,
-    protected FileSystemInterface $fileSystem
+    protected FileSystemInterface $fileSystem,
+    protected ModuleExtensionList $moduleExtensionList,
   ) {}
+
+  /**
+   * Implements hook_paragraphs_behavior_info_alter().
+   */
+  #[Hook('paragraphs_behavior_info_alter')]
+  public function paragraphsBehaviorInfoAlter(array &$paragraphs_behavior): void {
+    $paragraphs_behavior['su_card_styles']['class'] = SummerCardBehaviors::class;
+  }
+
+  /**
+   * Implements hook_page_attachments().
+   */
+  #[Hook('page_attachments')]
+  public function pageAttachments(array &$attachments): void {
+    $attachments['#attached']['library'][] = 'summer_helper/admin';
+  }
+
+  /**
+   * Implements hook_library_info_alter().
+   */
+  #[Hook('library_info_alter')]
+  public function libraryInfoAlter(array &$libraries, string $extension): void {
+    if ($extension === 'ckeditor5') {
+      $module_path = $this->moduleExtensionList->getPath('summer_helper');
+      $libraries['internal.drupal.ckeditor5.stylesheets'] = [
+        'css' => [
+          'theme' => [
+            "/$module_path/styles/dist/css/ckeditor.css" => [],
+          ],
+        ],
+      ];
+    }
+  }
+
+  /**
+   * Implements hook_form_BASE_FORM_ID_alter().
+   */
+  #[Hook('form_summer_entity_form_alter')]
+  public function summerEntityFormAlter(array &$form, FormStateInterface $form_state, string $form_id): void {
+    $status_element = &$form['status']['widget']['value'];
+    $status_element['#states'] = [
+      'disabled' => [':input[name="publish_on[0][value][time]"]' => ['filled' => TRUE]],
+    ];
+  }
+
+  /**
+   * Implements hook_preprocess_HOOK().
+   */
+  #[Hook('preprocess_paragraph')]
+  public function preprocessParagraph(array &$variables): void {
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $variables['paragraph'];
+    $variables['attributes']['class'][] = Html::cleanCssIdentifier('paragraph-' . $paragraph->bundle());
+  }
 
   /**
    * Implements hook_viewfield_argument_suggestion_vocabs_alter().)
