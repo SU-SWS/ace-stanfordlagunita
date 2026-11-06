@@ -43,6 +43,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 #[MigrateSource(id: 'supress_social_media')]
 class SupressSocialMedia extends SourcePluginBase implements ContainerFactoryPluginInterface {
 
+  use FileMakerPagedUrlsTrait;
+
   /**
    * The default FileMaker Data API endpoint for Social Media records.
    */
@@ -105,13 +107,13 @@ class SupressSocialMedia extends SourcePluginBase implements ContainerFactoryPlu
    */
   protected function initializeIterator(): \ArrayIterator {
     $url = $this->configuration['url'] ?? self::ENDPOINT;
+    // Throws if the API can't be reached. Returning no records would cause
+    // every social media item to be unpublished as an orphan.
+    $pagedUrls = $this->getPagedUrls($url);
     $token = $this->pressHelper->getApiToken();
     $allRecords = [];
-    if (!$token) {
-      return new \ArrayIterator($allRecords);
-    }
 
-    foreach ($this->pressHelper->getMigrationUrls($url) as $pagedUrl) {
+    foreach ($pagedUrls as $pagedUrl) {
       $response = $this->httpClient->request('GET', $pagedUrl, [
         'headers' => ['Authorization' => 'Bearer ' . $token],
       ]);

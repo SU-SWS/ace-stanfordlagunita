@@ -27,6 +27,7 @@ class BookCoverDownloaderTest extends UnitTestCase {
     $this->client = $this->createMock('\GuzzleHttp\ClientInterface');
     $this->configPageLoader = $this->createMock('\Drupal\config_pages\ConfigPagesLoaderServiceInterface');
     $this->fileSystem = $this->createMock('\Drupal\Core\File\FileSystemInterface');
+    $this->fileSystem->method('move')->willReturn('public://media/covers/321.jpg');
     $this->entityTypeManager = $this->createMock('\Drupal\Core\Entity\EntityTypeManagerInterface');
   }
 
@@ -93,6 +94,7 @@ class BookCoverDownloaderTest extends UnitTestCase {
     $container->set('file_system', $this->fileSystem);
     $container->set('entity_type.manager', $this->entityTypeManager);
     $container->set('config_pages.loader', $this->configPageLoader);
+    $container->set('plugin.manager.migration', $this->createMock('\Drupal\migrate\Plugin\MigrationPluginManagerInterface'));
     return $container;
   }
 

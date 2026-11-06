@@ -13,7 +13,7 @@ migration_group: sup_press
 label: 'Press Awards'
 source:
   orphan_action: delete
-  plugin: url
+  plugin: supress_filemaker
   urls:
     - 'https://memento.stanford.edu/fmi/data/v2/databases/Web/layouts/Awards/records'
   fields:

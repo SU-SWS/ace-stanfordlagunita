@@ -60,6 +60,7 @@ process:
       plugin: sup_social_embedded_media
       source: html
       media_name: '@media_name'
+      lookup_id: workId
   body/format: constants/stanford_html
   sup_ancillary_weight:
     plugin: default_value

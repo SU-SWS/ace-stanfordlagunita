@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\supress_helper\Unit\Plugin\migrate\source;
 
+use Drupal\migrate\MigrateException;
 use Drupal\supress_helper\Plugin\migrate\source\SupressSocialMedia;
 use Drupal\supress_helper\PressHelperInterface;
 use Drupal\Tests\UnitTestCase;
@@ -45,7 +46,27 @@ class SupressSocialMediaTest extends UnitTestCase {
   // ---------------------------------------------------------------------------
 
   /**
+   * Builds a FileMaker response reporting the total record count.
+   */
+  protected function buildCountResponse(int $total): ResponseInterface {
+    return $this->buildResponse(json_encode([
+      'response' => ['dataInfo' => ['totalRecordCount' => $total], 'data' => []],
+    ]));
+  }
+
+  /**
+   * Builds a press helper mock that returns the given token.
+   */
+  protected function buildPressHelper(string|false $token = 'test-token'): PressHelperInterface {
+    $pressHelper = $this->createMock(PressHelperInterface::class);
+    $pressHelper->method('getApiToken')->willReturn($token);
+    return $pressHelper;
+  }
+
+  /**
    * @covers ::initializeIterator
+   * @covers ::getPagedUrls
+   * @covers ::getRecordCount
    */
   public function testInitializeIteratorFetchesAllPages(): void {
     $page1 = $this->buildResponse(json_encode([
@@ -63,25 +84,26 @@ class SupressSocialMediaTest extends UnitTestCase {
       ],
     ]));
 
+    $requested = [];
     $client = $this->createMock(ClientInterface::class);
-    $client->expects($this->exactly(2))
+    $client->expects($this->exactly(3))
       ->method('request')
-      ->willReturnOnConsecutiveCalls($page1, $page2);
+      ->willReturnCallback(function (string $method, string $url, array $options) use (&$requested, $page1, $page2) {
+        $this->assertSame('Bearer test-token', $options['headers']['Authorization']);
+        $requested[] = $url;
+        return [$this->buildCountResponse(7500), $page1, $page2][count($requested) - 1];
+      });
 
-    $pressHelper = $this->createMock(PressHelperInterface::class);
-    $pressHelper->method('getApiToken')->willReturn('test-token');
-    $pressHelper->method('getMigrationUrls')
-      ->with(SupressSocialMedia::ENDPOINT)
-      ->willReturn([
-        SupressSocialMedia::ENDPOINT . '?_limit=1000&_offset=1',
-        SupressSocialMedia::ENDPOINT . '?_limit=1000&_offset=1001',
-      ]);
-
-    $plugin = $this->buildPlugin($client, $pressHelper);
+    $plugin = $this->buildPlugin($client, $this->buildPressHelper());
 
     $method = new \ReflectionMethod($plugin, 'initializeIterator');
     $iterator = $method->invoke($plugin);
 
+    $this->assertSame([
+      SupressSocialMedia::ENDPOINT,
+      SupressSocialMedia::ENDPOINT . '?_limit=5000&_offset=1',
+      SupressSocialMedia::ENDPOINT . '?_limit=5000&_offset=5001',
+    ], $requested);
     $this->assertInstanceOf(\ArrayIterator::class, $iterator);
     $this->assertCount(2, $iterator);
   }
@@ -108,13 +130,9 @@ class SupressSocialMediaTest extends UnitTestCase {
     ]));
 
     $client = $this->createMock(ClientInterface::class);
-    $client->method('request')->willReturnOnConsecutiveCalls($page1, $page2);
+    $client->method('request')->willReturnOnConsecutiveCalls($this->buildCountResponse(10000), $page1, $page2);
 
-    $pressHelper = $this->createMock(PressHelperInterface::class);
-    $pressHelper->method('getApiToken')->willReturn('test-token');
-    $pressHelper->method('getMigrationUrls')->willReturn(['https://url1', 'https://url2']);
-
-    $plugin = $this->buildPlugin($client, $pressHelper);
+    $plugin = $this->buildPlugin($client, $this->buildPressHelper());
 
     $method = new \ReflectionMethod($plugin, 'initializeIterator');
     $iterator = $method->invoke($plugin);
@@ -127,45 +145,39 @@ class SupressSocialMediaTest extends UnitTestCase {
 
   /**
    * @covers ::initializeIterator
+   * @covers ::getPagedUrls
    */
-  public function testInitializeIteratorPassesTokenInHeader(): void {
-    $response = $this->buildResponse(json_encode(['response' => ['data' => []]]));
-
+  public function testInitializeIteratorThrowsWithoutToken(): void {
     $client = $this->createMock(ClientInterface::class);
-    $client->expects($this->once())
-      ->method('request')
-      ->with('GET', 'https://paged-url', $this->callback(function (array $opts) {
-        return ($opts['headers']['Authorization'] ?? '') === 'Bearer my-token';
-      }))
-      ->willReturn($response);
+    $client->expects($this->never())->method('request');
 
-    $pressHelper = $this->createMock(PressHelperInterface::class);
-    $pressHelper->method('getApiToken')->willReturn('my-token');
-    $pressHelper->method('getMigrationUrls')->willReturn(['https://paged-url']);
-
-    $plugin = $this->buildPlugin($client, $pressHelper);
+    $plugin = $this->buildPlugin($client, $this->buildPressHelper(FALSE));
 
     $method = new \ReflectionMethod($plugin, 'initializeIterator');
+    $this->expectException(MigrateException::class);
     $method->invoke($plugin);
   }
 
   /**
    * @covers ::initializeIterator
+   * @covers ::getPagedUrls
    */
   public function testInitializeIteratorUsesConfiguredUrl(): void {
-    $response = $this->buildResponse(json_encode(['response' => ['data' => []]]));
-
     $client = $this->createMock(ClientInterface::class);
-    $client->method('request')->willReturn($response);
+    $client->expects($this->exactly(2))
+      ->method('request')
+      ->willReturnCallback(function (string $method, string $url) {
+        static $call = 0;
+        $call++;
+        if ($call == 1) {
+          $this->assertSame('https://custom.example.com/records', $url);
+          return $this->buildCountResponse(1);
+        }
+        $this->assertSame('https://custom.example.com/records?_limit=5000&_offset=1', $url);
+        return $this->buildResponse(json_encode(['response' => ['data' => []]]));
+      });
 
-    $pressHelper = $this->createMock(PressHelperInterface::class);
-    $pressHelper->method('getApiToken')->willReturn('tok');
-    $pressHelper->expects($this->once())
-      ->method('getMigrationUrls')
-      ->with('https://custom.example.com/records')
-      ->willReturn(['https://custom.example.com/records?_limit=1000&_offset=1']);
-
-    $plugin = $this->buildPlugin($client, $pressHelper, ['url' => 'https://custom.example.com/records']);
+    $plugin = $this->buildPlugin($client, $this->buildPressHelper(), ['url' => 'https://custom.example.com/records']);
 
     $method = new \ReflectionMethod($plugin, 'initializeIterator');
     $method->invoke($plugin);
