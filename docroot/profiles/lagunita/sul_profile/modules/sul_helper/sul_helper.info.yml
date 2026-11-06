@@ -2,7 +2,7 @@ name: SUL Helper
 type: module
 description: Provides additional functionality for the site.
 package: Stanford
-core_version_requirement: ^11.1
+core_version_requirement: ^11.2
 dependencies:
   - layout_paragraphs:layout_paragraphs
   - drupal:filter
