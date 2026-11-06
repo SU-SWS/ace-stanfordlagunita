@@ -15,9 +15,11 @@ use Drupal\media\MediaInterface;
 use Drupal\migrate\Plugin\MigrateIdMapInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
+use Drupal\node\NodeInterface;
 use Drupal\supress_helper\Hook\PressHooks;
 use Drupal\supress_helper\PressHelperInterface;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @coversDefaultClass \Drupal\supress_helper\Hook\PressHooks
@@ -137,6 +139,54 @@ class PressHooksTest extends UnitTestCase {
 
     $hooks->viewfieldArgVocabs($vocabs, ['view' => 'sup_books']);
     $this->assertEquals(['sup_book_subjects', 'sup_series', 'sup_book_tags', 'sup_imprints'], $vocabs);
+  }
+
+  /**
+   * Ancillary weights are set from the title when empty.
+   */
+  #[DataProvider('ancillaryWeightProvider')]
+  public function testAncillaryWeight(string $bundle, string $title, bool $empty, ?int $expected): void {
+    $field = $this->createMock(FieldItemListInterface::class);
+    $field->method('isEmpty')->willReturn($empty);
+
+    $node = $this->createMock(NodeInterface::class);
+    $node->method('bundle')->willReturn($bundle);
+    $node->method('label')->willReturn($title);
+    $node->method('hasField')->willReturn(TRUE);
+    $node->method('get')->willReturn($field);
+
+    if ($expected === NULL) {
+      $node->expects($this->never())->method('set');
+    }
+    else {
+      $node->expects($this->once())->method('set')->with('sup_ancillary_weight', $expected);
+    }
+    $this->getHooks()->nodePresave($node);
+  }
+
+  /**
+   * Data provider for ::testAncillaryWeight().
+   */
+  public static function ancillaryWeightProvider(): array {
+    return [
+      ['sup_book_ancillary', 'Table of Contents', TRUE, 1],
+      ['sup_book_ancillary', 'Contents', TRUE, 1],
+      ['sup_book_ancillary', 'Foreword', TRUE, 5],
+      ['sup_book_ancillary', 'Forword', TRUE, 5],
+      ['sup_book_ancillary', 'Preface to the Second Edition', TRUE, 10],
+      ['sup_book_ancillary', 'Acknowledgements', TRUE, 15],
+      ['sup_book_ancillary', 'Acknowledgments', TRUE, 15],
+      ['sup_book_ancillary', 'INTRODUCTION', TRUE, 20],
+      ['sup_book_ancillary', 'Introduction Excerpt', TRUE, 20],
+      ['sup_book_ancillary', 'Translator Introduction', TRUE, 20],
+      ['sup_book_ancillary', 'Prologue', TRUE, 25],
+      ['sup_book_ancillary', 'Epilogue', TRUE, 85],
+      ['sup_book_ancillary', 'Afterword', TRUE, 90],
+      ['sup_book_ancillary', 'Appendix A: Data', TRUE, 95],
+      ['sup_book_ancillary', 'Chapter 1', TRUE, 50],
+      ['sup_book_ancillary', 'Introduction', FALSE, NULL],
+      ['stanford_page', 'Introduction', TRUE, NULL],
+    ];
   }
 
   /**

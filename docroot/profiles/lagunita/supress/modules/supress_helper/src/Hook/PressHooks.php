@@ -28,6 +28,28 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
  */
 class PressHooks {
 
+  /**
+   * Ancillary title patterns mapped to their default weight.
+   *
+   * Order matters: the first pattern that matches the title wins.
+   */
+  protected const ANCILLARY_WEIGHTS = [
+    '(table of )?contents?' => 1,
+    'fore?word' => 5,
+    'preface' => 10,
+    'acknowledge?ments?' => 15,
+    'introduction' => 20,
+    'prologue' => 25,
+    'epilogue' => 85,
+    'afterword' => 90,
+    'append(ix|ices)' => 95,
+  ];
+
+  /**
+   * Weight for ancillary titles that match none of the patterns.
+   */
+  protected const ANCILLARY_DEFAULT_WEIGHT = 50;
+
   public function __construct(
     protected readonly EntityTypeManagerInterface $entityTypeManager,
     protected readonly RouteMatchInterface $routeMatch,
@@ -129,6 +151,31 @@ class PressHooks {
         $object['book_subject'] = array_values(array_unique($object['book_subject']));
       }
     }
+  }
+
+  /**
+   * Implements hook_ENTITY_TYPE_presave() for node entities.
+   */
+  #[Hook('node_presave')]
+  public function nodePresave(NodeInterface $node): void {
+    if (
+      $node->bundle() != 'sup_book_ancillary' ||
+      !$node->hasField('sup_ancillary_weight') ||
+      !$node->get('sup_ancillary_weight')->isEmpty()
+    ) {
+      return;
+    }
+
+    $title = (string) $node->label();
+    foreach (self::ANCILLARY_WEIGHTS as $pattern => $weight) {
+      if (preg_match("/\\b$pattern\\b/i", $title)) {
+        $node->set('sup_ancillary_weight', $weight);
+        return;
+      }
+    }
+
+    // Anything else sits between the front and back matter.
+    $node->set('sup_ancillary_weight', self::ANCILLARY_DEFAULT_WEIGHT);
   }
 
   #[Hook('entity_create')]
