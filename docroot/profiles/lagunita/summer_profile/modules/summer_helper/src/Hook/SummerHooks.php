@@ -93,7 +93,7 @@ class SummerHooks {
   }
 
   /**
-   * Implements hook_viewfield_argument_suggestion_vocabs_alter().)
+   * Implements hook_viewfield_argument_suggestion_vocabs_alter().
    */
   #[Hook('viewfield_argument_suggestion_vocabs_alter')]
   public function viewfieldArgVocabs(array &$vocabs, array $view) {
