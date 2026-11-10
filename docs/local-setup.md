@@ -1,7 +1,5 @@
 # Setup Local Environment
 
-* [Gitpod](gitpod.md)
-* [Lando](lando.md)
 * [Local setup: Mac](mac-local-setup.md)
 * Native lamp stack: see below.
 
@@ -61,6 +59,7 @@
 1. Test a site sync locally
     * `drush sws:site:sync --site=<site_alias>`
     * E.g., `drush sws:site:sync --site=summer`
+    * The site aliases are `csp`, `library`, `summer` and `supress` (see `drush/sites`).
 
 ### Troubleshooting
 
@@ -81,4 +80,10 @@ Because these are decoupled Drupal applications, each site has their own corresp
   * https://github.com/SU-SWS/summer-nextjs
   * https://github.com/SU-SWS/csp-nextjs
 
-The set up instructions will be included in those repositories.
+The set up instructions will be included in those repositories. The same mapping is kept in `project.frontend-repos`
+in `drush/drush.yml`.
+
+Each site's `includes.settings.php` already points the Next site at `http://localhost:3000` on local environments.
+A synced database keeps prod's preview and revalidate secrets and API user passwords, so a local front end needs the
+same values as prod in its `.env.local`. See [Connecting a Front End](decoupled-frontend.md) for the variables and
+for `drush su-next-connect`, which generates new values (and resets the API user passwords).

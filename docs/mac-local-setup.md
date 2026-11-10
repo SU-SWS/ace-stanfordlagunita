@@ -1,9 +1,8 @@
 # Local Setup: Mac
 
-This guide sets up a local development environment for the ANES, Library  and Summer websites on macOS. Summer is used in many examples.
+This guide sets up a local development environment for the Library and Summer websites on macOS. Summer is used in many examples. The same steps work for the other sites (`csp`, `supress`).
 
 Local URLs:
-- http://anes.lagunita.loc/
 - http://library.lagunita.loc/
 - http://summer.lagunita.loc/
 
@@ -60,7 +59,6 @@ Hosts file (/etc/hosts):
 - Add:
 ```
   127.0.0.1 summer.lagunita.loc lagunita.loc
-  127.0.0.1 anes.lagunita.loc lagunita.loc
   127.0.0.1 library.lagunita.loc lagunita.loc
 ```
 Virtual hosts:

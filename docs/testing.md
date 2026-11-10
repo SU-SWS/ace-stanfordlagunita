@@ -1,8 +1,8 @@
 # Testing
 
 ## Github Actions
-Github actions is configured to run 3 separate tests:
-1. PHPUnit tests with coverage
+The `Tests` workflow runs on every push:
+1. PHPUnit tests with coverage. The job fails if coverage drops below the required level, so new code needs tests.
 2. Acceptance tests
    - These are codeception tests that do not require javascript. These are the fastest acceptance tests and should be
      primarily used if possible.
@@ -16,6 +16,16 @@ If the variable doesn't exist, the Github action will default to 3 shards. The
 number of shards is used per test type and per site. So each site will run (2 * n)
 number of github action tasks.
 
+The list of sites to test comes from `command.sws.options.multisites` in `drush/drush.yml` (minus `default`).
+
+The workflow also has a `DB Updates` job. For each site it syncs the production database, runs the database
+updates and config import, and then clones and builds the site's Next.js front end (from `project.frontend-repos`
+in `drush/drush.yml`) against it. This catches back-end changes that break a front-end build before they are
+deployed.
+
+A separate `Secret Scan` workflow runs gitleaks on pull requests, on pushes to `4.x` and weekly. If it reports a
+real secret, rotate it: it is already in the git history. Add false positives to `.gitleaksignore` with a comment.
+
 ## Local Testing
 
 
@@ -27,7 +37,7 @@ To run all PHPUnit tests, use:
 `drush sws:source:tests:phpunit`
 
 To run individual tests during development, ensure `docroot/core/phpunit.xml` exists (see above). Then run:
-`cd docroot && ../vendor/bin/phpunit -c core profiles/custom/sul_profile/...`
+`cd docroot && ../vendor/bin/phpunit -c core profiles/lagunita/sul_profile/...`
 
 To run with test coverage, add:
 `--with-coverage` to the `drush sws:source:tests:phpunit` command, or use PHPUnit's `--coverage-html=../artifacts` option.
@@ -35,6 +45,10 @@ To run with test coverage, add:
 ### Acceptance
 To run acceptance tests, use:
 `drush codeception --suite=acceptance`
+
+Each profile keeps its Codeception tests in `docroot/profiles/lagunita/<profile>/tests/codeception`. CI points at
+them with `--test-dir`, for example:
+`drush codeception --suite=acceptance --test-dir=docroot/profiles/lagunita/sul_profile/tests/codeception`
 
 To run a specific test or group, use the `--group` and `--test` options. For example:
 `drush codeception --suite=acceptance --group=lists --test=supress`

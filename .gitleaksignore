@@ -5,5 +5,7 @@
 # output as <commit>:<file>:<rule>:<line>.
 
 # FileMaker API credentials hardcoded in PressCommands::getPressToken(), removed
-# from the code. The password must be rotated on the FileMaker server.
+# from the code. The password was rotated on the FileMaker server.
 aadbbe5ae985662ee9a2a0c71665cefe7ffbd6b0:docroot/profiles/lagunita/supress/modules/supress_helper/src/Drush/Commands/PressCommands.php:http-basic-auth-literal:121
+# Same FileMaker credential, from the copy of that commit on the 4.x branch.
+2837b3de8bafe23c363d26b32032be6890d53503:docroot/profiles/lagunita/supress/modules/supress_helper/src/Drush/Commands/PressCommands.php:http-basic-auth-literal:121
