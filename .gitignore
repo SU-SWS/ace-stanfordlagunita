@@ -174,3 +174,6 @@ notes.txt
 
 # ignore the NextJS frontend directories
 frontend-*
+
+# Claude Code personal settings (shared skills/settings in .claude/ are tracked)
+.claude/settings.local.json
