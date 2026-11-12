@@ -1,5 +1,18 @@
 # Lagunita
 
+4.0.7
+--------------------------------------------------------------------------------
+- Updated dependencies (Drupal core 11.4.12, Drush 13.8.1)
+- Update profiles from stanford_profile and composer dependencies (#302)
+- Update profiles from stanford_profile 13.0.12
+- SUL/Summer: Move procedural hooks into hook classes (#300)
+- SUP: Refactor migration sources and move hooks from module to classes (#299)
+- SUP: Use the shared API token helper in Press drush commands
+- Added gitleaks secret scanning
+- Updated league/commonmark (#298)
+- Updated sws drush commands (#297)
+- Updated documentation and added AGENTS.md
+
 4.0.6
 --------------------------------------------------------------------------------
 - Updated dependencies
