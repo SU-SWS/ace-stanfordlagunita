@@ -15,13 +15,14 @@ use Drupal\supress_helper\Plugin\migrate\source\SupressBooks;
 use Drupal\supress_helper\PressHelperInterface;
 use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\ClientInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Unit tests for the SupressBooks migrate source plugin.
- *
- * @coversDefaultClass \Drupal\supress_helper\Plugin\migrate\source\SupressBooks
- * @group supress_helper
  */
+#[Group('supress_helper')]
+#[CoversClass(SupressBooks::class)]
 class SupressBooksTest extends UnitTestCase {
 
   /**
@@ -62,8 +63,7 @@ class SupressBooksTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::prepareRow
-   * @covers ::getEbookData
+   * Tests prepare row adds ebook data.
    */
   public function testPrepareRowAddsEbookData(): void {
     $helper = $this->createMock(PressHelperInterface::class);
@@ -93,8 +93,7 @@ class SupressBooksTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::prepareRow
-   * @covers ::getEbookData
+   * Tests prepare row fails when ebook data unavailable.
    */
   public function testPrepareRowFailsWhenEbookDataUnavailable(): void {
     $helper = $this->createMock(PressHelperInterface::class);

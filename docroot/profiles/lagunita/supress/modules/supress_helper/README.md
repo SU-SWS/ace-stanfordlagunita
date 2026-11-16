@@ -175,6 +175,20 @@ FileMaker flags covers that changed with `flag = x`. On cron:
 3. The worker runs the `ClearFlags` script so the cover isn't queued again.
    If it fails, the cover stays flagged and is queued on a later cron run.
 
+## Drush commands
+
+| Command | What it does |
+|---|---|
+| `drush supress:cleanup [--delete] [--dry-run]` | Runs the three commands below in order: books, then ancillary nodes, then press entities. `--delete` applies to the ancillary step. With `--dry-run`, the later steps treat the books the first step would unpublish as unpublished, so the output matches a real run. |
+| `drush supress:unpublish-orphans [--dry-run]` | Unpublishes published `sup_book` nodes whose `work_id_number` is no longer in the FileMaker `Web` layout. It doesn't prompt. `--dry-run` lists the books and changes nothing. |
+| `drush supress:ancillary-orphans [--delete] [--dry-run]` | Finds `sup_book_ancillary` nodes whose `sup_ancillary_book` is empty, points to a deleted node, or points to an unpublished book. Unpublishes the published ones by default; `--delete` deletes all of them, published or not. It asks before changing anything (`-y` to skip the prompt). `--dry-run` lists the nodes it would change, with the reason for each, and changes nothing. |
+| `drush supress:press-orphans [--dry-run]` | Deletes `press` entities (awards and prices) when no published `sup_book` has their `work_id` or references them in `sup_book_awards` or `sup_book_price_data`. Press entities have no published status, so it only deletes. It also removes their rows from the `sup_awards` and `sup_book_prices` migration maps, so a later import recreates them if their book comes back. It asks first (`-y` to skip); `--dry-run` lists them and changes nothing. |
+
+Run the individual commands in that same order, or use `supress:cleanup`, so the
+ancillary nodes and press entities of newly unpublished books are caught too. The
+ancillary and press steps prompt before changing anything; pass `-y` to skip the
+prompts, for example in a scheduled job.
+
 ## Testing
 
 ```

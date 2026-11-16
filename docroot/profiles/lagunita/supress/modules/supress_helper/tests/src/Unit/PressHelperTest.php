@@ -4,24 +4,25 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\supress_helper\Unit;
 
+use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Queue\QueueFactory;
 use Drupal\Core\Queue\QueueInterface;
-use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\supress_helper\PressHelper;
 use Drupal\Tests\UnitTestCase;
-use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Psr7\Stream;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Unit tests for the PressHelper service.
- *
- * @coversDefaultClass \Drupal\supress_helper\PressHelper
- * @group supress_helper
  */
+#[Group('supress_helper')]
+#[CoversClass(PressHelper::class)]
 class PressHelperTest extends UnitTestCase {
 
   /**
@@ -33,7 +34,7 @@ class PressHelperTest extends UnitTestCase {
    * Builds a PressHelper with the given dependencies.
    */
   protected function buildHelper(
-    GuzzleClient $client,
+    ClientInterface $client,
     ConfigPagesLoaderServiceInterface $configLoader,
     QueueFactory $queueFactory,
     CacheBackendInterface $cache,
@@ -113,7 +114,7 @@ class PressHelperTest extends UnitTestCase {
   // ---------------------------------------------------------------------------
 
   /**
-   * @covers ::getApiToken
+   * Tests get API token returns cached token.
    */
   public function testGetApiTokenReturnsCachedToken(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
@@ -123,7 +124,7 @@ class PressHelperTest extends UnitTestCase {
       ->willReturn($this->cacheItem('cached-token'));
 
     // HTTP client and config loader must not be called when cache hit.
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
@@ -132,7 +133,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getApiToken
+   * Tests get API token returns false when user missing.
    */
   public function testGetApiTokenReturnsFalseWhenUserMissing(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
@@ -144,7 +145,7 @@ class PressHelperTest extends UnitTestCase {
       ['stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value', 'pass'],
     ]);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $loader, $this->createMock(QueueFactory::class), $cache);
@@ -153,7 +154,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getApiToken
+   * Tests get API token returns false when password missing.
    */
   public function testGetApiTokenReturnsFalseWhenPasswordMissing(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
@@ -165,7 +166,7 @@ class PressHelperTest extends UnitTestCase {
       ['stanford_basic_site_settings', 'sup_filemaker_pass', 0, 'value', NULL],
     ]);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $loader, $this->createMock(QueueFactory::class), $cache);
@@ -174,7 +175,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getApiToken
+   * Tests get API token returns false when installer is running.
    */
   public function testGetApiTokenReturnsFalseWhenInstallerIsRunning(): void {
     // Simulate an in-progress installation.
@@ -183,7 +184,7 @@ class PressHelperTest extends UnitTestCase {
     $cache = $this->createMock(CacheBackendInterface::class);
     $cache->method('get')->willReturn(FALSE);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
@@ -192,13 +193,13 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getApiToken
+   * Tests get API token returns false on request exception.
    */
   public function testGetApiTokenReturnsFalseOnRequestException(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
     $cache->method('get')->willReturn(FALSE);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->method('request')->willThrowException(new \RuntimeException('Connection refused'));
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $cache);
@@ -207,7 +208,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getApiToken
+   * Tests get API token fetches token and caches it.
    */
   public function testGetApiTokenFetchesTokenAndCachesIt(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
@@ -222,7 +223,7 @@ class PressHelperTest extends UnitTestCase {
 
     $response = $this->buildResponse(['response' => ['token' => 'fresh-token']]);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->once())
       ->method('request')
       ->with('POST', 'https://memento.stanford.edu/fmi/data/v2/databases/Web/sessions', $this->callback(function (array $opts) {
@@ -241,7 +242,7 @@ class PressHelperTest extends UnitTestCase {
   // ---------------------------------------------------------------------------
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images skips when no token.
    */
   public function testQueueCoverImagesSkipsWhenNoToken(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
@@ -257,7 +258,7 @@ class PressHelperTest extends UnitTestCase {
     $queueFactory = $this->createMock(QueueFactory::class);
     $queueFactory->method('get')->willReturn($queue);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $loader, $queueFactory, $cache);
@@ -265,7 +266,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images skips outside production.
    */
   public function testQueueCoverImagesSkipsOutsideProduction(): void {
     putenv('AH_SITE_ENVIRONMENT=dev');
@@ -273,7 +274,7 @@ class PressHelperTest extends UnitTestCase {
     $queueFactory = $this->createMock(QueueFactory::class);
     $queueFactory->expects($this->never())->method('get');
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $this->buildCacheWithToken('tok'));
@@ -281,9 +282,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
-   * @covers ::findRecords
-   * @covers ::isNoRecordsError
+   * Tests queue cover images detects no records from response body.
    */
   public function testQueueCoverImagesDetectsNoRecordsFromResponseBody(): void {
     $queue = $this->createMock(QueueInterface::class);
@@ -296,7 +295,7 @@ class PressHelperTest extends UnitTestCase {
     $errorResponse = $this->buildResponse(['messages' => [['message' => 'No records match the request', 'code' => '401']], 'response' => []]);
     $exception = new ServerException('Server error: 500 Internal Server Error', $this->createMock(RequestInterface::class), $errorResponse);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->method('request')->willThrowException($exception);
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $this->buildCacheWithToken('tok'));
@@ -304,7 +303,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images sends limit in body.
    */
   public function testQueueCoverImagesSendsLimitInBody(): void {
     $queue = $this->createMock(QueueInterface::class);
@@ -314,7 +313,7 @@ class PressHelperTest extends UnitTestCase {
     $queueFactory = $this->createMock(QueueFactory::class);
     $queueFactory->method('get')->willReturn($queue);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->once())
       ->method('request')
       ->with('POST', PressHelper::COVERS_ENDPOINT, $this->callback(function (array $opts) {
@@ -328,7 +327,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images skips when queue already has items.
    */
   public function testQueueCoverImagesSkipsWhenQueueAlreadyHasItems(): void {
     $cache = $this->buildCacheWithToken('tok');
@@ -340,7 +339,7 @@ class PressHelperTest extends UnitTestCase {
     $queueFactory = $this->createMock(QueueFactory::class);
     $queueFactory->method('get')->with('press_cover_downloader')->willReturn($queue);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     // The HTTP request for covers must not be made.
     $client->expects($this->never())->method('request');
 
@@ -349,7 +348,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images creates item for each cover.
    */
   public function testQueueCoverImagesCreatesItemForEachCover(): void {
     $cache = $this->buildCacheWithToken('tok');
@@ -375,7 +374,7 @@ class PressHelperTest extends UnitTestCase {
     ]);
     $response = $this->buildResponse($coversBody);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->once())
       ->method('request')
       ->with('POST', $this->stringContains('Covers/_find'), $this->callback(function (array $opts) {
@@ -388,7 +387,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images swallows no records exception.
    */
   public function testQueueCoverImagesSwallowsNoRecordsException(): void {
     $cache = $this->buildCacheWithToken('tok');
@@ -404,7 +403,7 @@ class PressHelperTest extends UnitTestCase {
     $errorResponse = $this->createMock(ResponseInterface::class);
     $exception = new ServerException('No records match the request', $request, $errorResponse);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->method('request')->willThrowException($exception);
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $cache);
@@ -412,7 +411,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::queueCoverImages
+   * Tests queue cover images rethrows other exceptions.
    */
   public function testQueueCoverImagesRethrowsOtherExceptions(): void {
     $cache = $this->buildCacheWithToken('tok');
@@ -427,7 +426,7 @@ class PressHelperTest extends UnitTestCase {
     $errorResponse = $this->createMock(ResponseInterface::class);
     $exception = new ServerException('Internal server error', $request, $errorResponse);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->method('request')->willThrowException($exception);
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $queueFactory, $cache);
@@ -452,11 +451,10 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getEbookData
-   * @covers ::searchFileMaker
+   * Tests get ebook data groups records by work.
    */
   public function testGetEbookDataGroupsRecordsByWork(): void {
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->once())
       ->method('request')
       ->with('POST', PressHelper::EBOOK_RETAILERS_ENDPOINT, $this->callback(function (array $options) {
@@ -489,12 +487,11 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getEbookData
-   * @covers ::searchFileMaker
+   * Tests get ebook data fetches all pages.
    */
   public function testGetEbookDataFetchesAllPages(): void {
     $full_page = array_fill(0, 10000, ['work_id_number' => '1', 'retailer' => 'A', 'link' => 'https://a.example.com']);
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->exactly(2))
       ->method('request')
       ->willReturnOnConsecutiveCalls(
@@ -510,12 +507,11 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getEbookData
-   * @covers ::searchFileMaker
+   * Tests get ebook data returns empty when no records match.
    */
   public function testGetEbookDataReturnsEmptyWhenNoRecordsMatch(): void {
     $exception = new ServerException('No records match the request', $this->createMock(RequestInterface::class), $this->createMock(ResponseInterface::class));
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->method('request')->willThrowException($exception);
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $this->buildCacheWithToken('tok'));
@@ -523,12 +519,11 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getEbookData
-   * @covers ::searchFileMaker
+   * Tests get ebook data throws on request failure.
    */
   public function testGetEbookDataThrowsOnRequestFailure(): void {
     $exception = new ServerException('Internal server error', $this->createMock(RequestInterface::class), $this->createMock(ResponseInterface::class));
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->method('request')->willThrowException($exception);
 
     $helper = $this->buildHelper($client, $this->buildConfigLoader(), $this->createMock(QueueFactory::class), $this->buildCacheWithToken('tok'));
@@ -537,8 +532,7 @@ class PressHelperTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getEbookData
-   * @covers ::searchFileMaker
+   * Tests get ebook data throws without token.
    */
   public function testGetEbookDataThrowsWithoutToken(): void {
     $cache = $this->createMock(CacheBackendInterface::class);
@@ -546,7 +540,7 @@ class PressHelperTest extends UnitTestCase {
     $loader = $this->createMock(ConfigPagesLoaderServiceInterface::class);
     $loader->method('getValue')->willReturn(NULL);
 
-    $client = $this->createMock(GuzzleClient::class);
+    $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
 
     $helper = $this->buildHelper($client, $loader, $this->createMock(QueueFactory::class), $cache);

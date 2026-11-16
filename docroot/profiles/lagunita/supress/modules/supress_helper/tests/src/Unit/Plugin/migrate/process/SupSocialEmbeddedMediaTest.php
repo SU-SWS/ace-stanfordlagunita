@@ -12,10 +12,14 @@ use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use Drupal\supress_helper\Plugin\migrate\process\SupSocialEmbeddedMedia;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
- * @coversDefaultClass \Drupal\supress_helper\Plugin\migrate\process\SupSocialEmbeddedMedia
+ * Tests the SupSocialEmbeddedMedia class.
  */
+#[Group('supress_helper')]
+#[CoversClass(SupSocialEmbeddedMedia::class)]
 class SupSocialEmbeddedMediaTest extends UnitTestCase {
 
   /**

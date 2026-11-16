@@ -15,15 +15,16 @@ use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Stream;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Unit tests for the SupressFileMaker migrate source plugin.
- *
- * @coversDefaultClass \Drupal\supress_helper\Plugin\migrate\source\SupressFileMaker
- * @group supress_helper
  */
+#[Group('supress_helper')]
+#[CoversClass(SupressFileMaker::class)]
 class SupressFileMakerTest extends UnitTestCase {
 
   const URL = 'https://example.com/layouts/Web/records';
@@ -65,7 +66,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::__construct
+   * Tests constructor makes no API requests.
    */
   public function testConstructorMakesNoApiRequests(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -75,11 +76,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getSourceUrls
-   * @covers ::getDataParserPlugin
-   * @covers ::expandUrls
-   * @covers ::getPagedUrls
-   * @covers ::getRecordCount
+   * Tests URLs expanded once and passed to parser.
    */
   public function testUrlsExpandedOnceAndPassedToParser(): void {
     $paged = [
@@ -101,7 +98,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getPagedUrls
+   * Tests exact page boundary.
    */
   public function testExactPageBoundary(): void {
     $plugin = $this->buildPlugin($this->buildCountClient(5000));
@@ -109,7 +106,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::expandUrls
+   * Tests throws when no records.
    */
   public function testThrowsWhenNoRecords(): void {
     $parser_manager = $this->createMock(DataParserPluginManager::class);
@@ -120,7 +117,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getPagedUrls
+   * Tests throws without token.
    */
   public function testThrowsWithoutToken(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -131,7 +128,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getRecordCount
+   * Tests request failure is not swallowed.
    */
   public function testRequestFailureIsNotSwallowed(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -142,7 +139,7 @@ class SupressFileMakerTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::expandUrls
+   * Tests throws when no URL configured.
    */
   public function testThrowsWhenNoUrlConfigured(): void {
     $client = $this->createMock(ClientInterface::class);
