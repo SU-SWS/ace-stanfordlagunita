@@ -628,6 +628,10 @@ field_config:
         enabled: true
       su_course_tags:
         enabled: true
+      csp_course_format:
+        enabled: true
+      csp_course_department:
+        enabled: true
     stanford_event:
       body:
         enabled: true

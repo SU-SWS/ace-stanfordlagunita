@@ -1,0 +1,21 @@
+uuid: cbf57bb4-c3ae-45eb-af2d-570e3cfa657f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.csp_course_department
+field_name: csp_course_department
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,6 @@
+adding:
+  dependencies:
+    config:
+      - field.storage.node.csp_course_department
+      - field.storage.node.csp_course_format
+removing: {  }

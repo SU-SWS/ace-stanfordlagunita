@@ -1,0 +1,5 @@
+adding:
+  hidden:
+    csp_course_department: true
+    csp_course_format: true
+removing: {  }

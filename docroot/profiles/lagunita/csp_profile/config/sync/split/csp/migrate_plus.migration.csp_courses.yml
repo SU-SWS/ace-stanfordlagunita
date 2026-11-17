@@ -14,18 +14,18 @@ source:
     plugin: oauth2_client
     grant_type: client_credentials
     provider_options:
-      clientId: "[clientId]"
-      clientSecret: "[clientSecret]"
-      urlAuthorize: https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/oauth2/token
-      urlResourceOwnerDetails: https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/oauth2/token
-      urlAccessToken: https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/oauth2/token
+      clientId: '[clientId]'
+      clientSecret: '[clientSecret]'
+      urlAuthorize: 'https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/oauth2/token'
+      urlResourceOwnerDetails: 'https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/oauth2/token'
+      urlAccessToken: 'https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/oauth2/token'
   track_changes: true
   plugin: url
   data_fetcher_plugin: http
   urls:
-    - https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/apexrest/csp/products/v1/courses?page=1&pageSize=100
-    - https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/apexrest/csp/products/v1/courses?page=2&pageSize=100
-    - https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/apexrest/csp/products/v1/courses?page=3&pageSize=100
+    - 'https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/apexrest/csp/products/v1/courses?page=1&pageSize=100'
+    - 'https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/apexrest/csp/products/v1/courses?page=2&pageSize=100'
+    - 'https://stanforduniversity3--devmain.sandbox.my.salesforce.com/services/apexrest/csp/products/v1/courses?page=3&pageSize=100'
   data_parser_plugin: json
   item_selector: courses
   fields:
@@ -45,6 +45,30 @@ source:
       name: url
       label: URL
       selector: url
+    -
+      name: subjectArea
+      label: subjectArea
+      selector: subjectArea
+    -
+      name: instructors
+      label: instructors
+      selector: instructors
+    -
+      name: format
+      label: format
+      selector: format
+    -
+      name: department
+      label: department
+      selector: department
+    -
+      name: term
+      label: term
+      selector: term/name
+    -
+      name: shortTitle
+      label: shortTitle
+      selector: shortTitle
   ids:
     id:
       type: string
@@ -55,8 +79,25 @@ source:
 process:
   status: constants/status
   title: title
-  body/value: description
+  body/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: description
+    -
+      plugin: str_replace
+      regex: true
+      search: /^(\w)/
+      replace: '<p>$1'
+    -
+      plugin: str_replace
+      regex: true
+      search: /(\w)$/
+      replace: $1</p>
   body/format: constants/stanford_html
+  su_course_code: shortTitle
+  csp_course_department: department
+  csp_course_format: format
   su_course_link/uri: url
   su_course_link/title:
     plugin: default_value
@@ -64,6 +105,37 @@ process:
   su_imported:
     plugin: default_value
     default_value: 1
+  su_course_quarters:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: term
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: su_course_quarters
+      value_key: name
+  su_course_subject:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: subjectArea
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: su_course_subjects
+      value_key: name
+  su_course_instructors:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: instructors
+    -
+      plugin: sub_process
+      process:
+        value: name
 destination:
   plugin: 'entity:node'
   default_bundle: stanford_course
