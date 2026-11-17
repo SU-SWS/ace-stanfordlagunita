@@ -5,10 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_indexing
     - field.storage.node.su_basic_page_type
-    - field.storage.node.su_course_code
     - field.storage.node.su_course_filters
-    - field.storage.node.su_course_instructors
-    - field.storage.node.su_course_quarters
     - field.storage.node.su_course_subject
     - field.storage.node.su_event_audience
     - field.storage.node.su_event_date_time
@@ -32,7 +29,6 @@ dependencies:
     - field.storage.node.su_shared_tags
     - search_api.server.algolia_search
   module:
-    - book
     - node
     - search_api_exclude_entity
     - stanford_profile_helper
@@ -59,16 +55,6 @@ field_settings:
     type: string
     configuration:
       value: '[node:su_news_byline]'
-  course_quarters:
-    label: 'Course Quarters » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'su_course_quarters:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.su_course_quarters
-      module:
-        - taxonomy
   course_subject:
     label: 'Course Subject » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -87,22 +73,6 @@ field_settings:
     dependencies:
       module:
         - node
-  csp_course_department:
-    label: Department
-    datasource_id: 'entity:node'
-    property_path: csp_course_department
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.csp_course_department
-  csp_course_format:
-    label: Format
-    datasource_id: 'entity:node'
-    property_path: csp_course_format
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.csp_course_format
   dek:
     label: Dek
     property_path: custom_value
@@ -353,22 +323,6 @@ field_settings:
     dependencies:
       module:
         - node
-  su_course_code:
-    label: 'Course Code'
-    datasource_id: 'entity:node'
-    property_path: su_course_code
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.su_course_code
-  su_course_instructors:
-    label: Instructors
-    datasource_id: 'entity:node'
-    property_path: su_course_instructors
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.su_course_instructors
   subheadline:
     label: SubHeadline
     property_path: custom_value
@@ -420,7 +374,6 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
-  book_fields: {  }
   custom_value: {  }
   decode_html_entities:
     weights:
@@ -470,8 +423,6 @@ processor_settings:
       - basic_page_type
       - byline
       - course_subject
-      - csp_course_department
-      - csp_course_format
       - dek
       - email
       - event_audience
@@ -487,8 +438,6 @@ processor_settings:
       - media_season
       - media_series
       - media_type
-      - name
-      - name_1
       - news_type
       - person_full_title
       - person_short_title
@@ -498,8 +447,6 @@ processor_settings:
       - publication_type
       - shared_tags
       - site_name
-      - su_course_code
-      - su_course_instructors
       - subheadline
       - summary
       - title

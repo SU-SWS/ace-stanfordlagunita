@@ -35,6 +35,7 @@ complete_list:
   - 'media.type.csp_*'
   - 'metatag.metatag_defaults.node__csp_*'
 partial_list:
+  - search_api.index.algolia_search
   - '*su_*'
   - '*stanford_*'
   - 'user.role.*'
