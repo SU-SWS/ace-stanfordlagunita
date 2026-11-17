@@ -85,15 +85,7 @@ process:
       method: process
       source: description
     -
-      plugin: str_replace
-      regex: true
-      search: /^(\w)/
-      replace: '<p>$1'
-    -
-      plugin: str_replace
-      regex: true
-      search: /(\w)$/
-      replace: $1</p>
+      plugin: csp_html_paragraphs
   body/format: constants/stanford_html
   su_course_code: shortTitle
   csp_course_department: department

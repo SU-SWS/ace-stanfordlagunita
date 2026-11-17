@@ -27,34 +27,26 @@ removing:
     su_course_academic_year:
       weight: 4
     su_course_code:
-      type: string
-      label: hidden
       settings:
         link_to_entity: false
-      third_party_settings: {  }
+      type: string
+      label: hidden
       weight: 1
-      region: content
     su_course_instructors:
-      type: string
-      label: hidden
       settings:
         link_to_entity: false
-      third_party_settings: {  }
+      type: string
+      label: hidden
       weight: 3
-      region: content
     su_course_quarters:
-      type: entity_reference_label
-      label: hidden
       settings:
         link: true
-      third_party_settings: {  }
+      type: entity_reference_label
+      label: hidden
       weight: 6
-      region: content
     su_course_subject:
-      type: entity_reference_label
-      label: hidden
       settings:
         link: true
-      third_party_settings: {  }
+      type: entity_reference_label
+      label: hidden
       weight: 5
-      region: content

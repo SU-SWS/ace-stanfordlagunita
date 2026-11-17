@@ -59,6 +59,16 @@ field_settings:
     type: string
     configuration:
       value: '[node:su_news_byline]'
+  course_quarters:
+    label: 'Course Quarters » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'su_course_quarters:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.su_course_quarters
+      module:
+        - taxonomy
   course_subject:
     label: 'Course Subject » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -259,16 +269,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.su_media_types
-      module:
-        - taxonomy
-  course_quarters:
-    label: 'Course Quarters » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'su_course_quarters:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.su_course_quarters
       module:
         - taxonomy
   news_type:
