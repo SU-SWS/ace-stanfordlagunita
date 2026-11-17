@@ -127,7 +127,10 @@ final class PressCommands extends DrushCommands {
           $rows[] = [$node->id(), $node->label(), $node->get('sup_book_work_id_number')->value];
           continue;
         }
-        $this->pressLogger->notice('Unpublished orphan book: %title', ['%title' => $node->label()]);
+        $this->pressLogger->notice('Unpublished orphan book: %title (@nid)', [
+          '%title' => $this->singleLine($node->label()),
+          '@nid' => $node->id(),
+        ]);
         $node->setUnpublished()->save();
       }
       $node_storage->resetCache($chunk);
@@ -218,7 +221,7 @@ final class PressCommands extends DrushCommands {
       foreach ($nodes as $node) {
         $this->pressLogger->notice('@action orphan book ancillary: %title (@nid)', [
           '@action' => $delete ? 'Deleted' : 'Unpublished',
-          '%title' => $node->label(),
+          '%title' => $this->singleLine($node->label()),
           '@nid' => $node->id(),
         ]);
         if (!$delete) {
@@ -344,7 +347,7 @@ final class PressCommands extends DrushCommands {
       foreach ($entities as $entity) {
         $this->pressLogger->notice('Deleted orphan press @bundle: %title (@id)', [
           '@bundle' => $entity->bundle(),
-          '%title' => $entity->label(),
+          '%title' => $this->singleLine($entity->label()),
           '@id' => $entity->id(),
         ]);
       }
@@ -434,6 +437,9 @@ final class PressCommands extends DrushCommands {
 
   /**
    * Reduce a value to a single line of plain text.
+   *
+   * Used for table cells and for titles in log messages, which Drush also
+   * prints to the terminal.
    *
    * FileMaker stores line breaks as carriage returns, so a title like
    * "Book Award\r-Science category" was entered as two lines. A line that
