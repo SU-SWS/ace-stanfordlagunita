@@ -15,6 +15,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * Tests the csp_html_paragraphs migrate process plugin.
  */
 #[CoversClass(HtmlParagraphs::class)]
+#[Group('csp_helper')]
 class HtmlParagraphsTest extends UnitTestCase {
 
   /**
