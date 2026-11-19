@@ -1,0 +1,96 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_course.csp_course_department
+      - field.field.node.stanford_course.csp_course_format
+  content:
+    body:
+      weight: 3
+    created:
+      weight: 5
+    csp_course_department:
+      type: string_textfield
+      weight: 20
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    csp_course_format:
+      type: string_textfield
+      weight: 19
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings: {  }
+    path:
+      weight: 6
+    status:
+      weight: 8
+    su_course_academic_year:
+      weight: 13
+    su_course_code:
+      weight: 1
+    su_course_filters:
+      weight: 18
+    su_course_instructors:
+      weight: 11
+    su_course_link:
+      weight: 2
+    su_course_quarters:
+      weight: 16
+    su_course_section_units:
+      weight: 10
+    su_course_subject:
+      weight: 15
+    su_course_tags:
+      weight: 9
+    su_metatags:
+      weight: 17
+    su_search_exclusion:
+      weight: 12
+    su_shared_tags:
+      weight: 14
+    uid:
+      weight: 4
+    url_redirects:
+      weight: 7
+removing:
+  content:
+    body:
+      weight: 5
+    created:
+      weight: 9
+    path:
+      weight: 10
+    status:
+      weight: 12
+    su_course_academic_year:
+      weight: 28
+    su_course_code:
+      weight: 2
+    su_course_filters:
+      weight: 33
+    su_course_instructors:
+      weight: 27
+    su_course_link:
+      weight: 4
+    su_course_quarters:
+      weight: 31
+    su_course_section_units:
+      weight: 16
+    su_course_subject:
+      weight: 30
+    su_course_tags:
+      weight: 15
+    su_metatags:
+      weight: 32
+    su_search_exclusion:
+      weight: 27
+    su_shared_tags:
+      weight: 29
+    uid:
+      weight: 6
+    url_redirects:
+      weight: 11

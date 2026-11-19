@@ -1,0 +1,52 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_course.csp_course_department
+      - field.field.node.stanford_course.csp_course_format
+      - field.field.node.stanford_course.su_course_filters
+      - field.field.node.stanford_course.su_imported
+      - field.field.node.stanford_course.su_search_exclusion
+  content:
+    body:
+      weight: 1
+    su_course_academic_year:
+      settings:
+        link_rel: canonical
+      weight: 2
+  hidden:
+    csp_course_department: true
+    csp_course_format: true
+    su_course_code: true
+    su_course_instructors: true
+    su_course_quarters: true
+    su_course_subject: true
+removing:
+  content:
+    body:
+      weight: 2
+    su_course_academic_year:
+      weight: 4
+    su_course_code:
+      settings:
+        link_to_entity: false
+      type: string
+      label: hidden
+      weight: 1
+    su_course_instructors:
+      settings:
+        link_to_entity: false
+      type: string
+      label: hidden
+      weight: 3
+    su_course_quarters:
+      settings:
+        link: true
+      type: entity_reference_label
+      label: hidden
+      weight: 6
+    su_course_subject:
+      settings:
+        link: true
+      type: entity_reference_label
+      label: hidden
+      weight: 5

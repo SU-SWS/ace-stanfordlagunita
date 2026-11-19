@@ -1,0 +1,64 @@
+adding:
+  dependencies:
+    config:
+      - field.storage.node.csp_course_department
+      - field.storage.node.csp_course_format
+      - field.storage.node.su_course_code
+      - field.storage.node.su_course_instructors
+      - field.storage.node.su_course_quarters
+    module:
+      - book
+  field_settings:
+    course_quarters:
+      label: 'Course Quarters » Taxonomy term » Name'
+      datasource_id: 'entity:node'
+      property_path: 'su_course_quarters:entity:name'
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.su_course_quarters
+        module:
+          - taxonomy
+    csp_course_department:
+      label: Department
+      datasource_id: 'entity:node'
+      property_path: csp_course_department
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.csp_course_department
+    csp_course_format:
+      label: Format
+      datasource_id: 'entity:node'
+      property_path: csp_course_format
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.csp_course_format
+    su_course_code:
+      label: 'Course Code'
+      datasource_id: 'entity:node'
+      property_path: su_course_code
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.su_course_code
+    su_course_instructors:
+      label: Instructors
+      datasource_id: 'entity:node'
+      property_path: su_course_instructors
+      type: string
+      dependencies:
+        config:
+          - field.storage.node.su_course_instructors
+  processor_settings:
+    book_fields: {  }
+    html_filter:
+      fields:
+        - csp_course_department
+        - csp_course_format
+        - name
+        - name_1
+        - su_course_code
+        - su_course_instructors
+removing: {  }

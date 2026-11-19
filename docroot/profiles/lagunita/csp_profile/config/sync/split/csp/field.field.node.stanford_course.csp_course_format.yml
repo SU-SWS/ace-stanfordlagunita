@@ -1,0 +1,19 @@
+uuid: 334b9dde-6036-489c-a456-97fefc2ba92f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.csp_course_format
+    - node.type.stanford_course
+id: node.stanford_course.csp_course_format
+field_name: csp_course_format
+entity_type: node
+bundle: stanford_course
+label: Format
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
