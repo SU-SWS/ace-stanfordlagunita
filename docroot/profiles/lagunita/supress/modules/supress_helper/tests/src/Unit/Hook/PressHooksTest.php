@@ -19,11 +19,15 @@ use Drupal\node\NodeInterface;
 use Drupal\supress_helper\Hook\PressHooks;
 use Drupal\supress_helper\PressHelperInterface;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
- * @coversDefaultClass \Drupal\supress_helper\Hook\PressHooks
+ * Tests the PressHooks class.
  */
+#[Group('supress_helper')]
+#[CoversClass(PressHooks::class)]
 class PressHooksTest extends UnitTestCase {
 
   /**

@@ -7,10 +7,14 @@ use Drupal\image\ImageStyleInterface;
 use Drupal\supress_helper\Plugin\QueueWorker\BookCoverDownloader;
 use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\Psr7\Stream;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
- * @coversDefaultClass \Drupal\supress_helper\Plugin\QueueWorker\BookCoverDownloader
+ * Tests the BookCoverDownloader class.
  */
+#[Group('supress_helper')]
+#[CoversClass(BookCoverDownloader::class)]
 class BookCoverDownloaderTest extends UnitTestCase {
 
   protected $client;

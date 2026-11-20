@@ -11,15 +11,17 @@ use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Stream;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Unit tests for the FileMaker authentication plugin.
- *
- * @coversDefaultClass \Drupal\supress_helper\Plugin\migrate_plus\authentication\FileMakerAuth
- * @group supress_helper
  */
+#[Group('supress_helper')]
+#[CoversClass(FileMakerAuth::class)]
 class FileMakerAuthTest extends UnitTestCase {
 
   const CONFIG = [
@@ -52,12 +54,8 @@ class FileMakerAuthTest extends UnitTestCase {
 
   /**
    * Missing or placeholder settings fail before any request is made.
-   *
-   * @covers ::getAuthenticationOptions
-   * @covers ::getToken
-   *
-   * @dataProvider providerInvalidConfig
    */
+  #[DataProvider('providerInvalidConfig')]
   public function testInvalidConfigFailure(array $config, string $message): void {
     $client = $this->createMock(ClientInterface::class);
     $client->expects($this->never())->method('request');
@@ -79,7 +77,7 @@ class FileMakerAuthTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getToken
+   * Tests failed request failure.
    */
   public function testFailedRequestFailure(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -90,7 +88,7 @@ class FileMakerAuthTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getToken
+   * Tests bad JSON failure.
    */
   public function testBadJsonFailure(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -101,7 +99,7 @@ class FileMakerAuthTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::getToken
+   * Tests missing token failure.
    */
   public function testMissingTokenFailure(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -113,9 +111,6 @@ class FileMakerAuthTest extends UnitTestCase {
 
   /**
    * The session is only created once and reused for later requests.
-   *
-   * @covers ::getAuthenticationOptions
-   * @covers ::getToken
    */
   public function testSuccessReusesToken(): void {
     $client = $this->createMock(ClientInterface::class);

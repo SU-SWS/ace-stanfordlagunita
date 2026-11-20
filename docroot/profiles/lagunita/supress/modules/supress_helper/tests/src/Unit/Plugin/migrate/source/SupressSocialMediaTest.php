@@ -10,14 +10,15 @@ use Drupal\supress_helper\PressHelperInterface;
 use Drupal\Tests\UnitTestCase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Stream;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * Unit tests for the SupressSocialMedia migrate source plugin.
- *
- * @coversDefaultClass \Drupal\supress_helper\Plugin\migrate\source\SupressSocialMedia
- * @group supress_helper
  */
+#[Group('supress_helper')]
+#[CoversClass(SupressSocialMedia::class)]
 class SupressSocialMediaTest extends UnitTestCase {
 
   /**
@@ -64,9 +65,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::initializeIterator
-   * @covers ::getPagedUrls
-   * @covers ::getRecordCount
+   * Tests initialize iterator fetches all pages.
    */
   public function testInitializeIteratorFetchesAllPages(): void {
     $page1 = $this->buildResponse(json_encode([
@@ -109,7 +108,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::initializeIterator
+   * Tests initialize iterator combines records across pages.
    */
   public function testInitializeIteratorCombinesRecordsAcrossPages(): void {
     // Both pages contain a record for work_id 1 — they should be merged into
@@ -144,8 +143,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::initializeIterator
-   * @covers ::getPagedUrls
+   * Tests initialize iterator throws without token.
    */
   public function testInitializeIteratorThrowsWithoutToken(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -159,8 +157,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::initializeIterator
-   * @covers ::getPagedUrls
+   * Tests initialize iterator uses configured URL.
    */
   public function testInitializeIteratorUsesConfiguredUrl(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -188,7 +185,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   // ---------------------------------------------------------------------------
 
   /**
-   * @covers ::processRecords
+   * Tests process records empty input.
    */
   public function testProcessRecordsEmptyInput(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -199,7 +196,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processRecords
+   * Tests process records skips records missing title or work ID.
    */
   public function testProcessRecordsSkipsRecordsMissingTitleOrWorkId(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -215,7 +212,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processRecords
+   * Tests process records single record.
    */
   public function testProcessRecordsSingleRecord(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -244,7 +241,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processRecords
+   * Tests process records groups by work ID.
    */
   public function testProcessRecordsGroupsByWorkId(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -267,7 +264,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processRecords
+   * Tests process records adds iframe title when missing.
    */
   public function testProcessRecordsAddsIframeTitleWhenMissing(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -291,7 +288,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processRecords
+   * Tests process records preserves existing iframe title.
    */
   public function testProcessRecordsPreservesExistingIframeTitle(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -316,7 +313,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processRecords
+   * Tests process records omits empty paragraph.
    */
   public function testProcessRecordsOmitsEmptyParagraph(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -344,7 +341,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   // ---------------------------------------------------------------------------
 
   /**
-   * @covers ::getIds
+   * Tests get IDs.
    */
   public function testGetIds(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -354,7 +351,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::fields
+   * Tests fields.
    */
   public function testFields(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -366,7 +363,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::__toString
+   * Tests to string defaults to endpoint constant.
    */
   public function testToStringDefaultsToEndpointConstant(): void {
     $client = $this->createMock(ClientInterface::class);
@@ -376,7 +373,7 @@ class SupressSocialMediaTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::__toString
+   * Tests to string uses configured URL.
    */
   public function testToStringUsesConfiguredUrl(): void {
     $client = $this->createMock(ClientInterface::class);

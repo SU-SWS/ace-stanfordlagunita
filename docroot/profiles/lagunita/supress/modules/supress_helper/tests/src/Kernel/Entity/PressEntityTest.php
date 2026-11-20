@@ -3,11 +3,16 @@
 namespace Drupal\Tests\supress_helper\Kernel\Entity;
 
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\supress_helper\Entity\PressEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
- * @coversDefaultClass \Drupal\supress_helper\Entity\PressAward
+ * Tests the PressEntity class.
  */
+#[Group('supress_helper')]
+#[CoversClass(PressEntity::class)]
 #[RunTestsInSeparateProcesses]
 class PressEntityTest extends KernelTestBase {
 

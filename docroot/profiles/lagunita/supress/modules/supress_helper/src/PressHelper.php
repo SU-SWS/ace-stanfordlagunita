@@ -10,8 +10,8 @@ use Drupal\config_pages\ConfigPagesLoaderServiceInterface;
 use Drupal\Core\Installer\InstallerKernel;
 use Drupal\Core\Queue\QueueFactory;
 use Drupal\SwsDrush\Helpers\EnvironmentDetector;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
-use Psr\Http\Client\ClientInterface;
 
 /**
  * Press helper service.
