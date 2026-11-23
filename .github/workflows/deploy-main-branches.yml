@@ -6,27 +6,15 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+permissions:
+  contents: read
 jobs:
   deploy:
     name: Deploy Main Artifact
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
-        with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 4.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            4.x-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            4.x-${{ hashFiles('composer.json') }}-
-            4.x-
+      - uses: ./.github/actions/setup-project
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -34,13 +22,11 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - name: Deploy Artifact
+      - name: Deploy artifact
         run: |
-          git config --system --add safe.directory '*' &&
-          git config --global user.email "sws-developers@lists.stanford.edu" &&
-          git config --global user.name "Github Actions" &&
-          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
-          ssh-keyscan -t rsa svn-23450.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
-          composer install -n &&
-          git checkout composer.lock &&
+          git config --global user.email "sws-developers@lists.stanford.edu"
+          git config --global user.name "Github Actions"
+          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa svn-23450.prod.hosting.acquia.com >> ~/.ssh/known_hosts
+          git checkout composer.lock
           drush sws:artifact:deploy -v -n

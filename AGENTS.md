@@ -77,7 +77,10 @@ What is **tracked in this repo**:
 - `tests/` — Codeception config templates (`codeception.dist.yml`, `*.suite.dist.yml`) and
   `_support`. Per-site tests live in each profile.
 - `.github/workflows/` — `tests.yml`, `deploy-main-branches.yml`, `release.yml`,
-  `secret-scan.yml`, `sup-check-pages.yml`, `weekly-cleanup.yml`.
+  `secret-scan.yml`, `sup-check-pages.yml`, `weekly-cleanup.yml`. The jobs run on the GitHub runner itself (no
+  container): `.github/actions/setup-project` sets up PHP 8.4 and the composer build, and
+  `.github/ci/start-web-server.sh` serves the site with Apache and php-fpm (`.github/ci/apache.conf`,
+  `.github/ci/php-fpm.conf`) so `docroot/.htaccess` applies.
 - `.ddev/`, `lando/`, `.gitpod.yml` — optional local environments. All three are out of date and no longer
   documented (see "Stale tooling").
 

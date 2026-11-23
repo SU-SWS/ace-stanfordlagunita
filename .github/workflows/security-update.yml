@@ -1,0 +1,63 @@
+# Production security update.
+#
+# Builds security hotfixes of what production runs, using the shared workflow
+# in SU-SWS/drupal-security-update (its README and workflow header describe
+# the process). This code runs on four Cloud Platform
+# applications, listed in acquia-apps. Applications on the same tag share one
+# hotfix; each different tag gets its own.
+# Nothing is deployed.
+#
+# Secrets (repository or organization):
+#   ACQUIA_SSH_PRIVATE_KEY  Push access to the Acquia git repositories.
+#   ACQUIA_API_KEY,         Cloud Platform API key and secret, to find what
+#   ACQUIA_API_SECRET       each application's prod environment runs.
+#   CONFIG_PR_TOKEN         Optional. Opens pull requests in packages whose
+#                           config/sync the database updates change.
+#   SLACK_WEBHOOK_URL       Optional. "Ready to deploy" and failure messages.
+
+name: Production security update
+
+on:
+  schedule:
+    # Daily, plus Wednesday evening after Drupal security releases.
+    - cron: '0 14 * * *'
+    - cron: '0 22 * * 3'
+  workflow_dispatch:
+    inputs:
+      prod-ref:
+        description: 'Acquia tag to audit (e.g. 2026-10-30_4.0.7). Leave empty to ask Acquia what production runs.'
+        required: false
+        default: ''
+      scope:
+        description: 'Which vulnerable packages to update.'
+        type: choice
+        options: [drupal, all]
+        default: drupal
+      dry-run:
+        description: 'Build the artifacts but push nothing.'
+        type: boolean
+        default: false
+
+# Pushes security/* branches and refs/security/* to this repository, and
+# opens pull requests here for config committed in this repository.
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  security-update:
+    # Keep the ref here and tools-ref below the same.
+    uses: SU-SWS/drupal-security-update/.github/workflows/security-update.yml@main
+    with:
+      tools-ref: main
+      ref-source: cloud
+      # Production of each application this code runs on.
+      acquia-apps: |
+        8449683b-500e-4728-b70a-5f69d9e8a61a
+        12c62419-8d5c-40e1-b7ab-f7999e0cc3e9
+        5d2dbbe5-3255-417b-b398-4c1086cec925
+        4207734d-7ccd-4a06-8426-4108761c3e10
+      prod-ref: ${{ inputs.prod-ref || '' }}
+      scope: ${{ inputs.scope || 'drupal' }}
+      dry-run: ${{ inputs.dry-run || false }}
+    secrets: inherit
