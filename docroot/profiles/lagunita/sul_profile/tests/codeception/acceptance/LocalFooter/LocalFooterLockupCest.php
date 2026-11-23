@@ -10,6 +10,7 @@ require_once __DIR__ . '/../TestFilesTrait.php';
  */
 #[CodeceptionAttribute\Group('local-footer')]
 #[CodeceptionAttribute\Group('local-footer-lockup')]
+// phpcs:ignore DrupalPractice.General.ClassName.ClassPrefix
 abstract class LocalFooterLockupCest {
 
   use TestFilesTrait;
@@ -18,9 +19,10 @@ abstract class LocalFooterLockupCest {
    * Setup work before running tests.
    *
    * @param AcceptanceTester $I
-   *  The working class.
+   *   The working class.
    */
-  function _before(AcceptanceTester $I) {
+  // phpcs:ignore Drupal.NamingConventions.ValidFunctionName.ScopeNotCamelCaps
+  public function _before(AcceptanceTester $I) {
     $this->prepareImage();
   }
 
@@ -30,6 +32,7 @@ abstract class LocalFooterLockupCest {
    * @param \AcceptanceTester $I
    *   Tester.
    */
+  // phpcs:ignore Drupal.NamingConventions.ValidFunctionName.ScopeNotCamelCaps
   public function _after(AcceptanceTester $I) {
     if ($config_page = ConfigPages::load('stanford_local_footer')) {
       $config_page->delete();
@@ -375,7 +378,7 @@ abstract class LocalFooterLockupCest {
       $I->click('Remove');
     }
 
-    // For CircleCI
+    // For CircleCI.
     $I->attachFile('input[name="files[su_local_foot_loc_img_0]"]', $this->logoPath);
     $I->click('Upload');
 

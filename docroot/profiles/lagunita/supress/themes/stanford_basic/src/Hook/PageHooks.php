@@ -10,6 +10,9 @@ use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\layout_builder\Plugin\SectionStorage\DefaultsSectionStorage;
 
+/**
+ * Adds brand bar, footer and layout variables to the page template.
+ */
 class PageHooks {
 
   public function __construct(
@@ -49,10 +52,7 @@ class PageHooks {
   protected function preprocessNotNodes(&$vars): void {
     $pbag = $this->routeMatch->getParameters();
     $pkeys = $pbag->keys();
-    $block_list = [
-      'node', // Node Types.
-      'page_manager_page', // Panels.
-    ];
+    $block_list = ['node'];
 
     foreach ($block_list as $key) {
       if (in_array($key, $pkeys)) {

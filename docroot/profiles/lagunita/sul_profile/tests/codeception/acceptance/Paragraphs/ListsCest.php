@@ -4,10 +4,11 @@ use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
- * Class ListsCest.
+ * Tests for the lists paragraph type and its view filters.
  */
 #[CodeceptionAttribute\Group('paragraphs')]
 #[CodeceptionAttribute\Group('lists')]
+// phpcs:ignore DrupalPractice.General.ClassName.ClassPrefix
 class ListsCest {
 
   /**
@@ -890,6 +891,7 @@ class ListsCest {
    *   Keyed field value.
    *
    * @return bool|\Drupal\node\NodeInterface
+   *   The created node.
    */
   protected function getNodeWithList(AcceptanceTester $I, array $view) {
     $paragraph = $I->createEntity([
@@ -917,6 +919,8 @@ class ListsCest {
   }
 
   /**
+   * Create a taxonomy term in the given vocabulary.
+   *
    * @param \AcceptanceTester $I
    *   Tester.
    * @param string $vid
@@ -924,6 +928,7 @@ class ListsCest {
    * @param string|null $name
    *   Taxonomy name.
    * @param int|null $parent_id
+   *   Parent term ID.
    *
    * @return \Drupal\taxonomy\TermInterface
    *   Generated taxonomy term.

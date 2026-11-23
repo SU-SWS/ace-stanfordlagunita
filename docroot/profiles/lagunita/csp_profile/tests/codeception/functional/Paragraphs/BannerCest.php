@@ -4,10 +4,11 @@ use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
- * Class BannerCest.
+ * Tests the display of the banner paragraph fields.
  */
 #[CodeceptionAttribute\Group('paragraphs')]
 #[CodeceptionAttribute\Group('banner')]
+// phpcs:ignore DrupalPractice.General.ClassName.ClassPrefix
 class BannerCest {
 
   /**
@@ -76,11 +77,12 @@ class BannerCest {
     $I->clickWithLeftButton('.lpb-behavior-plugins summary');
 
     // Unlimited cardinality & button type attribute.
-    $I->canSeeElement( '[data-drupal-selector="edit-su-banner-button"] input[value="Add another item"]');
+    $I->canSeeElement('[data-drupal-selector="edit-su-banner-button"] input[value="Add another item"]');
     $I->canSeeOptionIsSelected('Image Banner Button Type', 'Solid red');
     $I->selectOption('Image Banner Button Type', 'Border brown');
 
-    $I->selectOption('Text Overlay Position', 'Right');;
+    $I->selectOption('Text Overlay Position', 'Right');
+
     $I->selectOption('Heading Level', 'h3');
 
     $I->click('Save', '.ui-dialog-buttonpane');

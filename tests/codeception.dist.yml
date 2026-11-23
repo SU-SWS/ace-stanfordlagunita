@@ -57,7 +57,13 @@ env:
           host: selenium
           port: 4444
           restart: true
-#          capabilities:
+          capabilities:
+            goog:chromeOptions:
+              # The site is served over plain http, so Chrome would not treat it
+              # as a secure context and APIs such as crypto.subtle would be
+              # missing (Editoria11y needs it). Real sites use https.
+              args:
+                - '--unsafely-treat-insecure-origin-as-secure=http://drupal8ci'
 #            os: Windows
 #            os_version: 11
 #            'browserstack.user': '${ci.BROWSERSTACK_USERNAME}'
