@@ -22,8 +22,8 @@ function supress_removed_post_updates() {
     'supress_post_update_samlauth' => '11.4.0',
     'supress_post_update_site_orgs' => '11.4.0',
     'supress_post_update_event_pages' => '12.0.0',
-    'supress_post_update_header_links_block' =>'12.0.0',
-    'supress_post_update_unpublished_site_banner' =>'12.0.0',
+    'supress_post_update_header_links_block' => '12.0.0',
+    'supress_post_update_unpublished_site_banner' => '12.0.0',
     'supress_post_update_rabbit_hole_block' => '13.0.0',
   ];
 }
