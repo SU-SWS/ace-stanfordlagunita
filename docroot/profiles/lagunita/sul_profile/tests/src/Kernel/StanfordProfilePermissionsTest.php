@@ -9,7 +9,7 @@ use Drupal\sul_profile\StanfordProfilePermissions;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 /**
- * Class StanfordProfilePermissionsTest.
+ * Tests the layout library permissions callback.
  */
 #[Group('stanford_profile')]
 #[RunTestsInSeparateProcesses]
