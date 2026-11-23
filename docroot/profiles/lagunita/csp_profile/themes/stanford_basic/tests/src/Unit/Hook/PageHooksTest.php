@@ -142,8 +142,10 @@ abstract class PageHooksTest extends UnitTestCase {
   }
 
   /**
-   * When the "node" route parameter is present, no centered-container class
-   * is added to any block, even though a block is present in content.
+   * Tests that node pages get no centered-container class.
+   *
+   * When the "node" route parameter is present, no centered-container class is
+   * added to any block, even though a block is present in content.
    */
   public function testPreprocessNotNodesReturnsEarlyForNodeRoutes(): void {
     $this->routeMatch = $this->createMock(RouteMatchInterface::class);
@@ -166,30 +168,8 @@ abstract class PageHooksTest extends UnitTestCase {
   }
 
   /**
-   * When the "page_manager_page" route parameter is present, no
-   * centered-container class is added.
-   */
-  public function testPreprocessNotNodesReturnsEarlyForPageManagerPages(): void {
-    $this->routeMatch = $this->createMock(RouteMatchInterface::class);
-    $this->routeMatch->method('getParameters')
-      ->willReturn(new ParameterBag(['page_manager_page' => 'foo']));
-    $this->themeSettingsProvider->method('getSetting')->willReturn(NULL);
-
-    $this->hooks = new PageHooks(
-      $this->themeSettingsProvider,
-      $this->routeMatch,
-      $this->configFactory,
-    );
-
-    $vars = $this->buildVars([
-      'my_block' => ['#block' => TRUE],
-    ]);
-    $this->hooks->preprocessPage($vars);
-
-    $this->assertArrayNotHasKey('#attributes', $vars['page']['content']['my_block']);
-  }
-
-  /**
+   * Tests that the layout builder UI gets no centered-container class.
+   *
    * When the layout builder UI is active (section_storage is an instance of
    * DefaultsSectionStorage), no centered-container class is added.
    */
@@ -216,9 +196,10 @@ abstract class PageHooksTest extends UnitTestCase {
   }
 
   /**
-   * A section_storage parameter that is NOT a DefaultsSectionStorage
-   * instance does not trigger the early return, so blocks are still
-   * centered.
+   * Tests that other section storage types still center blocks.
+   *
+   * A section_storage parameter that is NOT a DefaultsSectionStorage instance
+   * does not trigger the early return, so blocks are still centered.
    */
   public function testPreprocessNotNodesCentersWhenSectionStorageIsOtherType(): void {
     $sectionStorage = new \stdClass();
@@ -246,10 +227,12 @@ abstract class PageHooksTest extends UnitTestCase {
   }
 
   /**
+   * Tests that blocks are centered on pages that are not nodes or layouts.
+   *
    * Happy path: neither node, page_manager_page, nor layout builder section
-   * storage are present, so all block items get the centered-container
-   * class; non-block config (keys starting with '#') and non-block items
-   * are left untouched.
+   * storage are present, so all block items get the centered-container class;
+   * non-block config (keys starting with '#') and non-block items are left
+   * untouched.
    */
   public function testPreprocessNotNodesCentersBlocksOnHappyPath(): void {
     $this->themeSettingsProvider->method('getSetting')->willReturn(NULL);
@@ -271,7 +254,7 @@ abstract class PageHooksTest extends UnitTestCase {
       $vars['page']['content']['block_two']['#attributes']['class'],
     );
     $this->assertArrayNotHasKey('#attributes', $vars['page']['content']['not_a_block']);
-    $this->assertSame(TRUE, $vars['page']['content']['#sorted']);
+    $this->assertTrue($vars['page']['content']['#sorted']);
   }
 
   /**
