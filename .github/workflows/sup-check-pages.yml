@@ -32,6 +32,8 @@ jobs:
           if_key_exists: fail
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-project
+        with:
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Invalidate 404 paths
         env:
           SUP_REVALIDATION: ${{ secrets.SUP_REVALIDATION }}

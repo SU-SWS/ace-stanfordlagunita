@@ -4,6 +4,12 @@ description: >-
   install), vendor/bin on the PATH, and the host names the CI settings and the
   Codeception config use (mysql, selenium, drupal8ci), pointed at this runner.
 inputs:
+  cache-key:
+    description: >-
+      Extra part of the composer cache key; change it to start a fresh cache.
+      Composite actions can't read the vars context, so callers pass
+      vars.CACHE_KEY.
+    default: ''
   coverage:
     description: setup-php coverage driver (none, pcov or xdebug).
     default: none
@@ -25,10 +31,10 @@ runs:
           docroot/core
           docroot/libraries
           docroot/modules/contrib
-        key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+        key: 4.x-${{ inputs.cache-key }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
         restore-keys: |
-          4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-          4.x-${{ vars.CACHE_KEY }}-
+          4.x-${{ inputs.cache-key }}-${{ hashFiles('composer.json') }}-
+          4.x-${{ inputs.cache-key }}-
     - name: Composer install
       shell: bash
       run: |

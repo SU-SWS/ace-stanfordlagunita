@@ -38,6 +38,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-project
         with:
+          cache-key: ${{ vars.CACHE_KEY }}
           coverage: pcov
       - name: Run unit tests
         run: |
@@ -62,6 +63,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-project
+        with:
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Sites, shards and front ends
         id: matrix
         env:
@@ -110,6 +113,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-project
+        with:
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Install the site
         env:
           SITE: ${{ matrix.site }}
@@ -172,6 +177,8 @@ jobs:
           if_key_exists: fail
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-project
+        with:
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Sync and update the site
         id: sync
         env:
@@ -251,6 +258,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-project
+        with:
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:

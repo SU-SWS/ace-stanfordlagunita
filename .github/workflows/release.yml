@@ -39,6 +39,8 @@ jobs:
           ref: ${{ github.sha }}
       - uses: ./.github/actions/setup-project
         if: steps.tag.outputs.tag
+        with:
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Install SSH key
         if: steps.tag.outputs.tag
         uses: shimataro/ssh-key-action@v2
