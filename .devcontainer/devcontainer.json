@@ -1,0 +1,75 @@
+{
+  "name": "lagunita",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "remoteUser": "vscode",
+  "features": {
+    // Theme builds (yarn), and gh for pull requests.
+    "ghcr.io/devcontainers/features/node:1": {"version": "lts"},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  // Drush and the other composer tools, from any directory.
+  "remoteEnv": {"PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/vendor/bin"},
+  // One port per site: .devcontainer/site-ports.php.
+  "forwardPorts": [8001, 8002, 8003, 8004],
+  "portsAttributes": {
+    "8001": {"label": "CSP", "onAutoForward": "notify"},
+    "8002": {"label": "Library", "onAutoForward": "notify"},
+    "8003": {"label": "Summer", "onAutoForward": "notify"},
+    "8004": {"label": "Press", "onAutoForward": "notify"}
+  },
+  "onCreateCommand": ".devcontainer/on-create.sh",
+  "postStartCommand": ".devcontainer/post-start.sh",
+  "secrets": {
+    "SSH_PRIVATE_KEY": {
+      "description": "Optional password-less SSH private key with access to Acquia (drush sws:keys and site syncs), base64 encoded: `base64 -w 0 < ~/.ssh/id_rsa`."
+    },
+    "GITCONFIG": {
+      "description": "Optional git config, base64 encoded: `base64 -w 0 < ~/.gitconfig`."
+    },
+    "ACQUIA_KEY": {
+      "description": "Optional Acquia API key, for drush sws:site:sync."
+    },
+    "ACQUIA_SECRET": {
+      "description": "Optional Acquia API secret, for drush sws:site:sync."
+    },
+    "STANFORD_ENCRYPT": {
+      "description": "Optional key for the encrypted fields in a synced production database. Without it, salt.txt is used."
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": false,
+        "editor.rulers": [80],
+        "files.associations": {
+          "*.inc": "php",
+          "*.module": "php",
+          "*.install": "php",
+          "*.theme": "php",
+          "*.profile": "php",
+          "*.test": "php",
+          "*.info": "ini"
+        },
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "telemetry.telemetryLevel": "off",
+        // deploy/ is the build artifact (AGENTS.md): never a source of truth.
+        "files.exclude": {"deploy": true},
+        "files.watcherExclude": {"**/deploy/**": true, "**/vendor/**": true},
+        "search.exclude": {"deploy": true},
+        "intelephense.files.exclude": ["**/.git/**", "**/node_modules/**", "**/deploy/**"]
+      },
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "dbaeumer.vscode-eslint",
+        "mblode.twig-language-2",
+        "redhat.vscode-yaml",
+        "xdebug.php-debug"
+      ]
+    }
+  }
+}

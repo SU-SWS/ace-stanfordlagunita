@@ -81,8 +81,10 @@ What is **tracked in this repo**:
   container): `.github/actions/setup-project` sets up PHP 8.4 and the composer build, and
   `.github/ci/start-web-server.sh` serves the site with Apache and php-fpm (`.github/ci/apache.conf`,
   `.github/ci/php-fpm.conf`) so `docroot/.htaccess` applies.
-- `.ddev/`, `lando/`, `.gitpod.yml` — optional local environments. All three are out of date and no longer
-  documented (see "Stale tooling").
+- `.devcontainer/` — the dev container (VS Code / Codespaces): PHP 8.4, Apache and MySQL 8.0. Each site is served
+  on its own port (`.devcontainer/site-ports.php`). See "Local environment".
+- `.ddev/`, `lando/` — optional local environments. Both are out of date and no longer documented (see "Stale
+  tooling").
 
 What is **installed by Composer and gitignored** (do not expect changes here to show up in this
 repo's `git status`):
@@ -143,8 +145,9 @@ Each runs `git subtree pull --squash` from `stanford_profile` `13.x` into one pr
 
 Scaffold it with `drush lagunita:new-profile <profile_name> <site_name> <config_prefix>`. Then add the site to
 `command.sws.options.multisites` (CI builds its test matrix from that list), `project.frontend-repos`, the Acquia
-`git-url` list if it has a new application, the merge-plugin list in `composer.json`, a `pull-*` script, and the
-README's Sites table.
+`git-url` list if it has a new application, the merge-plugin list in `composer.json`, a `pull-*` script, the
+README's Sites table, and a port in `.devcontainer/site-ports.php` plus `forwardPorts` in
+`.devcontainer/devcontainer.json`.
 
 ## Code conventions
 
@@ -193,6 +196,13 @@ short: `composer install` → copy `drush/default.local.drush.yml` to `drush/loc
 `drush sws:multisite:settings` → `drush sws:keys` → create `docroot/sites/local.sites.php` →
 `drush sws:site:sync --site=<site>`. Most build and ops tooling comes from
 `su-sws/sws-drush-commands` (`drush sws:*`).
+
+The dev container (`.devcontainer/`, documented in `docs/local-setup.md`) runs those same steps in
+`on-create.sh`, except for keys and syncs. It serves the repository's `docroot` directly, one Apache port per site
+(`site-ports.php`, routed by `.devcontainer/sites.php` through `local.sites.php`). It sets `DEVCONTAINER=1`, which the
+local settings template uses to turn off SAML. The profiles' own `.devcontainer/` directories come from the
+`stanford_profile` subtree and build `stanford_profile` standalone. They don't work for this repo, but leave them
+alone so subtree pulls don't conflict.
 
 Local `STANFORD_ENCRYPT` falls back to `salt.txt`; on Acquia it comes from the environment.
 Detect environments with `Drupal\SwsDrush\Helpers\EnvironmentDetector`.
@@ -271,6 +281,5 @@ The full connection setup (API users, Next site entity, secrets, Vault, Vercel) 
 
 - `lando/setup_lando.sh` still calls `blt`, which is no longer installed (the Lando docs have been removed).
 - `.ddev/config.yaml` still targets `drupal10`, PHP 8.2 and Node 16, which don't match the current stack.
-- `.gitpod.yml` remains, but the Gitpod docs have been removed.
 
 Fix these or say so rather than relying on them.
