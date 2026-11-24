@@ -1,0 +1,39 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    environment:
+      # Read by docroot/sites/settings/local.settings.php (SAML and the
+      # Codespaces proxy) and by the scripts in this directory.
+      DEVCONTAINER: 1
+      # The database the sites' local.settings.php files point at. Each site
+      # gets its own database, drupal_<site>.
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: drupal
+      DB_NAME: drupal
+    command: sleep infinity
+    depends_on:
+      mysql:
+        condition: service_healthy
+  mysql:
+    image: mysql:8.0
+    command: --max_allowed_packet=67108864
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_ROOT_PASSWORD: drupal
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - '33306:3306'
+volumes:
+  mysql-data:

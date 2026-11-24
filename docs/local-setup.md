@@ -1,7 +1,63 @@
 # Setup Local Environment
 
+* [Dev container](#dev-container) (VS Code or GitHub Codespaces): see below.
 * [Local setup: Mac](mac-local-setup.md)
 * Native lamp stack: see below.
+
+## Dev container
+
+`.devcontainer/` runs the codebase in Docker with PHP 8.4, Apache and MySQL 8.0, the same versions CI uses. Open the
+repository in VS Code with the Dev Containers extension ("Reopen in Container"), or create a GitHub Codespace from it.
+
+When the container is created, `.devcontainer/on-create.sh` does the native setup steps below for you: `composer
+install`, `drush/local.drush.yml`, `drush sws:multisite:settings`, and `docroot/sites/local.sites.php`. It also
+creates an empty database for each site. Files that already exist are left alone, so if this checkout was set up for
+a native stack, delete its `local.settings.php` files first (the script warns about any that don't point at the
+container's database).
+
+Each site is served on its own port, forwarded by VS Code or Codespaces:
+
+| Site    | Port |
+|---------|------|
+| CSP     | 8001 |
+| Library | 8002 |
+| Summer  | 8003 |
+| Press   | 8004 |
+
+To get links that open in the browser, give Drush the site's port as its URI, for example
+`drush --uri=http://localhost:8002 uli` for Library. VS Code opens `localhost` links through its port forwarding, in
+Codespaces too. `--uri=library` and `@library.local` still select the site, but their links use `http://library`. SAML
+is turned off in the container, so log in with `drush uli` or a local account.
+
+A site needs a database before it loads. Either install it fresh:
+
+```
+drush drupal:install --site=library -n
+```
+
+or sync it from production, which needs access to Acquia:
+
+```
+drush sws:keys
+drush sws:site:sync --site=library
+```
+
+Syncing needs an SSH key that Acquia accepts and an Acquia API key and secret. In Codespaces, add them as
+[Codespaces secrets](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces)
+for this repository, before you create the codespace:
+
+* `SSH_PRIVATE_KEY`: a password-less private key, base64 encoded (`base64 -w 0 < ~/.ssh/id_rsa`).
+* `ACQUIA_KEY` and `ACQUIA_SECRET`: written to `drush/local.drush.yml` when the container is created.
+* `STANFORD_ENCRYPT`: optional. It's the key for the encrypted fields in a production database. Without it,
+  `salt.txt` is used.
+* `GITCONFIG`: optional. Your git config, base64 encoded.
+
+Outside Codespaces, edit `app-key` and `app-secret` in `drush/local.drush.yml`, and make your SSH key available in the
+container (VS Code forwards your SSH agent).
+
+The database is published on port 33306 of the host (user `root`, with the password from
+`.devcontainer/docker-compose.yml`). To start over, delete `drush/local.drush.yml` and the sites' `local.settings.php`
+and `local.drush.yml` files, then run `.devcontainer/on-create.sh`.
 
 ## Native LAMP Stack
 

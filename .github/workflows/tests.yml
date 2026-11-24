@@ -1,14 +1,28 @@
+# Tests for every push: PHPUnit with coverage, Codeception for each site
+# (both suites, in shards), database updates against each site's production
+# database plus a build of its front end, then a branch artifact deploy.
+#
+# Jobs run on the runner itself. .github/actions/setup-project sets up PHP and
+# the composer build; the site is served with Apache and php-fpm
+# (.github/ci/start-web-server.sh). "All Tests Pass" is the required status
+# check on 4.x.
 name: Tests
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+permissions:
+  contents: read
+env:
+  # For the installs, the web server and the tests. The web server is the
+  # process that renders pages, so a step-level variable isn't enough.
+  STANFORD_ENCRYPT: ${{ secrets.STANFORD_ENCRYPT }}
 jobs:
   phpunit:
     name: PHPUnit
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
+    runs-on: ubuntu-24.04
     services:
       mysql:
         image: mysql:8.0
@@ -18,103 +32,74 @@ jobs:
           MYSQL_PASSWORD: drupal
           MYSQL_ROOT_PASSWORD: drupal
         ports:
-          - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=5s --health-retries=20
     steps:
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
+      - uses: ./.github/actions/setup-project
         with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            4.x-${{ vars.CACHE_KEY }}-
-      - name: Run Unit Tests
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+          cache-key: ${{ vars.CACHE_KEY }}
+          coverage: pcov
+      - name: Run unit tests
         run: |
-          git config --system --add safe.directory '*' &&
-          composer install -n &&
-          mkdir -p docroot/sites/simpletest &&
-          drush sws:source:tests:phpunit --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal --with-coverage &&
+          mkdir -p docroot/sites/simpletest
+          drush sws:source:tests:phpunit --db-host=mysql --db-pass=drupal --db-name=drupal --db-user=drupal --with-coverage
           drush sws:tests:phpunit-coverage-check artifacts/phpunit/coverage/xml --clover-file=artifacts/phpunit/coverage/clover.xml -n
-      - name: Save Test Results
+      - name: Save test results
         uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: unit-tests-results
-          path: $GITHUB_WORKSPACE/artifacts
-  sites_to_test:
-    name: Sites to test
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
+          path: artifacts
+          if-no-files-found: ignore
+
+  matrix:
+    name: Test Matrix
+    runs-on: ubuntu-24.04
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-      frontend_repos: ${{ steps.set-matrix.outputs.frontend_repos }}
+      sites: ${{ steps.matrix.outputs.sites }}
+      shards: ${{ steps.matrix.outputs.shards }}
+      frontend_repos: ${{ steps.matrix.outputs.frontend_repos }}
     steps:
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
+      - uses: ./.github/actions/setup-project
         with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            4.x-${{ vars.CACHE_KEY }}-
-      - name: Get Sites
-        id: set-matrix
+          cache-key: ${{ vars.CACHE_KEY }}
+      - name: Sites, shards and front ends
+        id: matrix
+        env:
+          SHARDS: ${{ vars.TEST_SHARDS || 3 }}
         run: |
-          composer install -n &&
-          SITES=$(echo -n "$(drush sws:drush-config command.sws.options.multisites | grep -v default)" | jq -R -s -c 'split("\n") | sort') &&
-          echo "matrix=$SITES" >> $GITHUB_OUTPUT &&
-          FRONTEND_REPOS=$(drush sws:drush-config project.frontend-repos --format=json | jq -c '. // {}') &&
-          echo "Front end repositories: $FRONTEND_REPOS" &&
-          echo "frontend_repos=$FRONTEND_REPOS" >> $GITHUB_OUTPUT
-  shard_matrix:
-    name: Test Shards
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - name: Generate Shard Matrix
-        id: set-matrix
-        run: |
-          n=${{ vars.TEST_SHARDS || 3 }} &&
-          numbers=($(seq 1 $n)) &&
-          json=$(printf '%s\n' "${numbers[@]}" | jq -R . | jq -s -c .) &&
-          echo "Test shards: $json" &&
-          echo "matrix=$json" >> $GITHUB_OUTPUT
+          SITES=$(drush sws:drush-config command.sws.options.multisites | grep -v '^default$' | jq -R -s -c 'split("\n") | map(select(. != "")) | sort')
+          echo "Sites: $SITES"
+          echo "sites=$SITES" >> "$GITHUB_OUTPUT"
+          SHARD_LIST=$(seq 1 "$SHARDS" | jq -s -c 'map(tostring)')
+          echo "Shards: $SHARD_LIST"
+          echo "shards=$SHARD_LIST" >> "$GITHUB_OUTPUT"
+          FRONTEND_REPOS=$(drush sws:drush-config project.frontend-repos --format=json | jq -c '. // {}')
+          echo "Front end repositories: $FRONTEND_REPOS"
+          echo "frontend_repos=$FRONTEND_REPOS" >> "$GITHUB_OUTPUT"
+
   codeception:
-    name: Codeception
-    needs: [sites_to_test, shard_matrix]
+    name: Codeception (${{ matrix.site }}, ${{ matrix.suite }}, ${{ matrix.shard }})
+    needs: [matrix]
     strategy:
       fail-fast: false
       matrix:
-        site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
+        site: ${{ fromJSON(needs.matrix.outputs.sites) }}
         suite: [acceptance, functional]
-        shard: ${{fromJSON(needs.shard_matrix.outputs.matrix)}}
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
-      options: '--network-alias drupal8ci'
-    env:
-      STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
+        shard: ${{ fromJSON(needs.matrix.outputs.shards) }}
+    runs-on: ubuntu-24.04
     services:
       selenium:
-        image: selenium/standalone-chrome:130.0
-        options: '--shm-size="2g"'
+        # Only the functional suite uses WebDriver. An empty image skips the service.
+        image: ${{ matrix.suite == 'functional' && 'selenium/standalone-chrome:130.0' || '' }}
+        ports:
+          - 4444:4444
+        # The browser loads the site from http://drupal8ci/, the runner.
+        options: >-
+          --shm-size=2g
+          --add-host=drupal8ci:host-gateway
       mysql:
         image: mysql:8.0
         env:
@@ -123,68 +108,54 @@ jobs:
           MYSQL_PASSWORD: drupal
           MYSQL_ROOT_PASSWORD: drupal
         ports:
-          - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=5s --health-retries=20
     steps:
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
+      - uses: ./.github/actions/setup-project
         with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            4.x-${{ vars.CACHE_KEY }}-
-      - name: Install Site
+          cache-key: ${{ vars.CACHE_KEY }}
+      - name: Install the site
+        env:
+          SITE: ${{ matrix.site }}
         run: |
-          git config --system --add safe.directory '*' &&
-                    printf '[client]\nskip-ssl-verify-server-cert\n' > /etc/mysql/conf.d/ci.cnf &&
-          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
-          rm -rf /var/www/html &&
-          ln -snf $GITHUB_WORKSPACE /var/www/html &&
-          mkdir -p -m 777 docroot/sites/default/files &&
-          rm -rf docroot/sites/${{ matrix.site }}/files &&
-          ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files &&
-          apachectl stop &&
-          apachectl start &&
-          composer install -n &&
-          drush drupal:install --site=${{ matrix.site }} -n &&
-          drush image:derive thumbnail $(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1') &&
-          drush xmlsitemap:rebuild &&
-          drush cr &&
-          mkdir -p artifacts/_data/
+          mysql -h 127.0.0.1 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
+          # Requests to localhost reach the default site, which uses the same
+          # database; share the files directory so file URLs work too.
+          mkdir -p docroot/sites/default/files
+          rm -rf "docroot/sites/$SITE/files"
+          ln -s ../default/files "docroot/sites/$SITE/files"
+          drush drupal:install --site="$SITE" -n
+          drush image:derive thumbnail "$(drush sql:query 'select uri from file_managed where uri like "%//media/%" limit 1')"
+          drush xmlsitemap:rebuild
+          drush cr
+          mkdir -p artifacts/_data
+      - name: Start the web server
+        run: .github/ci/start-web-server.sh
       - name: Run tests
+        env:
+          SUITE: ${{ matrix.suite }}
+          SHARD: ${{ matrix.shard }}/${{ vars.TEST_SHARDS || 3 }}
         run: |
-          n=${{ vars.TEST_SHARDS || 3 }} &&
-          PROFILE=`drush st --fields=install-profile --format=list` &&
-          drush codeception --site-domain=localhost --suite=${{ matrix.suite }} --test-dir=docroot/profiles/lagunita/$PROFILE/tests/codeception --shard=${{ matrix.shard }}/$n &&
-          if [ ! -f artifacts/report.html ]; then
-            exit 1
-          fi
-      - name: Save Test Results
+          PROFILE=$(drush st --fields=install-profile --format=list)
+          drush codeception --site-domain=localhost --suite="$SUITE" \
+            --test-dir="docroot/profiles/lagunita/$PROFILE/tests/codeception" --shard="$SHARD"
+      - name: Save test results
         uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ${{ matrix.site }}-${{ matrix.suite }}-${{ matrix.shard }}-tests-results
           path: artifacts
+          if-no-files-found: ignore
+
   db_updates:
-    name: DB Updates
-    needs: sites_to_test
+    name: DB Updates (${{ matrix.site }})
+    needs: [matrix]
     strategy:
       fail-fast: false
       matrix:
-        site: ${{fromJSON(needs.sites_to_test.outputs.matrix)}}
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
-      options: '--network-alias drupal8ci'
-    env:
-      STANFORD_ENCRYPT: ${{secrets.STANFORD_ENCRYPT}}
+        site: ${{ fromJSON(needs.matrix.outputs.sites) }}
+    runs-on: ubuntu-24.04
     services:
       mysql:
         image: mysql:8.0
@@ -194,8 +165,8 @@ jobs:
           MYSQL_PASSWORD: drupal
           MYSQL_ROOT_PASSWORD: drupal
         ports:
-          - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=5s --health-retries=20
     steps:
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
@@ -205,104 +176,90 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
+      - uses: ./.github/actions/setup-project
         with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            4.x-${{ vars.CACHE_KEY }}-
-      - name: Sync and Update Site
+          cache-key: ${{ vars.CACHE_KEY }}
+      - name: Sync and update the site
         id: sync
+        env:
+          SITE: ${{ matrix.site }}
         run: |
-          git config --system --add safe.directory '*' &&
-                    printf '[client]\nskip-ssl-verify-server-cert\n' > /etc/mysql/conf.d/ci.cnf &&
-          mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
-          rm -rf /var/www/html &&
-          ln -snf $GITHUB_WORKSPACE /var/www/html &&
-          mkdir -p -m 777 docroot/sites/default/files &&
-          rm -rf docroot/sites/${{ matrix.site }}/files &&
-          ln -sL ../default/files/ docroot/sites/${{ matrix.site }}/files &&
-          apachectl stop &&
-          apachectl start &&
-          composer install -n &&
-          drush sa @${{ matrix.site }}.prod || exit 0 &&
-          drush drupal:sync --site=${{ matrix.site }} -n &&
-          curl -I http://localhost --fail &&
-          echo 'synced=true' >> $GITHUB_OUTPUT
+          # A site without a production alias has nothing to sync.
+          if ! drush sa "@$SITE.prod" > /dev/null; then
+            echo "No @$SITE.prod alias; skipping."
+            exit 0
+          fi
+          mysql -h 127.0.0.1 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;'
+          mkdir -p docroot/sites/default/files
+          rm -rf "docroot/sites/$SITE/files"
+          ln -s ../default/files "docroot/sites/$SITE/files"
+          drush drupal:sync --site="$SITE" -n
+          .github/ci/start-web-server.sh
+          curl -sS -I --fail http://localhost/
+          echo 'synced=true' >> "$GITHUB_OUTPUT"
       # Each multisite is served by its own Next.js front end repository. The
       # site to repository mapping lives in `project.frontend-repos` in
-      # drush/drush.yml; a site with no entry there skips this step.
-      - name: Build Front End
-        if: steps.sync.outputs.synced == 'true' && fromJSON(needs.sites_to_test.outputs.frontend_repos)[matrix.site]
+      # drush/drush.yml; a site with no entry there skips these steps.
+      - name: Check out the front end
+        id: frontend
+        if: steps.sync.outputs.synced == 'true' && fromJSON(needs.matrix.outputs.frontend_repos)[matrix.site]
         env:
-          FRONTEND_REPO: ${{ fromJSON(needs.sites_to_test.outputs.frontend_repos)[matrix.site] }}
+          FRONTEND_REPO: ${{ fromJSON(needs.matrix.outputs.frontend_repos)[matrix.site] }}
+        run: |
+          git clone --depth 1 --single-branch "https://github.com/SU-SWS/$FRONTEND_REPO.git" frontend
+          echo 'cloned=true' >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v7
+        if: steps.frontend.outputs.cloned == 'true'
+        with:
+          node-version-file: frontend/.nvmrc
+      - name: Build the front end
+        if: steps.frontend.outputs.cloned == 'true'
+        env:
           BUILD_PAGES: ${{ vars.FRONTEND_BUILD_PAGES || 100 }}
           BUILD_COMPLETE: 'true'
-          LIBGUIDE_CLIENT_ID: ${{secrets.LIBGUIDE_CLIENT_ID}}
-          LIBGUIDE_CLIENT_SECRET: ${{secrets.LIBGUIDE_CLIENT_SECRET}}
+          LIBGUIDE_CLIENT_ID: ${{ secrets.LIBGUIDE_CLIENT_ID }}
+          LIBGUIDE_CLIENT_SECRET: ${{ secrets.LIBGUIDE_CLIENT_SECRET }}
         run: |
           # Algolia is unreachable during the build, so drop its credentials.
           for algolia_table in config_pages__su_site_algolia_id config_pages__su_site_algolia_index config_pages__su_site_algolia_key; do
             drush sqlq "truncate $algolia_table" || true
           done
-          git clone --depth 1 --single-branch "https://github.com/SU-SWS/$FRONTEND_REPO.git" $GITHUB_WORKSPACE/frontend &&
-          cd $GITHUB_WORKSPACE/frontend &&
-          cp .env.example .env.local &&
-          sed -i -r "s|^#?NEXT_PUBLIC_DRUPAL_BASE_URL.*|NEXT_PUBLIC_DRUPAL_BASE_URL=http://localhost|g" .env.local &&
+          cp frontend/.env.example frontend/.env.local
+          sed -i -r "s|^#?NEXT_PUBLIC_DRUPAL_BASE_URL.*|NEXT_PUBLIC_DRUPAL_BASE_URL=http://localhost|g" frontend/.env.local
           # Not every .env.example ends in a newline, so the appended
           # credentials below would otherwise land on the last existing line.
-          echo >> .env.local &&
-          cd $GITHUB_WORKSPACE &&
+          echo >> frontend/.env.local
           # Creates the next_site entity plus the service accounts the front end
           # authenticates with, then prints the matching credentials.
-          drush su-next-connect >> $GITHUB_WORKSPACE/frontend/.env.local &&
-          cd $GITHUB_WORKSPACE/frontend &&
-          yarn &&
-          yarn next telemetry disable &&
+          drush su-next-connect >> frontend/.env.local
+          cd frontend
+          # The front ends pin their Yarn version in package.json.
+          corepack enable
+          yarn
+          yarn next telemetry disable
           yarn build
+
   all-tests-pass:
     name: All Tests Pass
+    if: always()
     needs: [phpunit, codeception, db_updates]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - run: echo 'Passed'
-  something_failed:
-    name: Something Failed
-    if: failure()
-    needs: [phpunit, codeception, db_updates]
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "something failed"
-          exit 1
+      - env:
+          RESULTS: ${{ toJSON(needs.*.result) }}
+        run: |
+          echo "Results: $RESULTS"
+          [ "$(jq -r 'all(. == "success")' <<< "$RESULTS")" = true ]
+
   deploy:
     name: Deploy Artifact
     needs: [phpunit, codeception, db_updates]
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
+      - uses: ./.github/actions/setup-project
         with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            4.x-${{ vars.CACHE_KEY }}-${{ hashFiles('composer.json') }}-
-            4.x-${{ vars.CACHE_KEY }}-
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -310,12 +267,10 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
-      - name: Deploy Artifact
+      - name: Deploy artifact
         run: |
-          git config --system --add safe.directory '*' &&
-          git config --global user.email "sws-developers@lists.stanford.edu" &&
-          git config --global user.name "Github Actions" &&
-          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
-          ssh-keyscan -t rsa svn-23450.prod.hosting.acquia.com >> /root/.ssh/known_hosts &&
-          composer install -n &&
+          git config --global user.email "sws-developers@lists.stanford.edu"
+          git config --global user.name "Github Actions"
+          ssh-keyscan -t rsa svn-45197.prod.hosting.acquia.com >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa svn-23450.prod.hosting.acquia.com >> ~/.ssh/known_hosts
           drush sws:artifact:deploy -v -n

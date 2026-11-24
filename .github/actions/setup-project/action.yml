@@ -1,0 +1,52 @@
+name: Set up the project
+description: >-
+  PHP 8.4, ImageMagick, the composer build (restored from cache, then composer
+  install), vendor/bin on the PATH, and the host names the CI settings and the
+  Codeception config use (mysql, selenium, drupal8ci), pointed at this runner.
+inputs:
+  cache-key:
+    description: >-
+      Extra part of the composer cache key; change it to start a fresh cache.
+      Composite actions can't read the vars context, so callers pass
+      vars.CACHE_KEY.
+    default: ''
+  coverage:
+    description: setup-php coverage driver (none, pcov or xdebug).
+    default: none
+runs:
+  using: composite
+  steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.4'
+        extensions: bz2, calendar, gd, imagick, intl, mysqli, pdo_mysql, zip
+        coverage: ${{ inputs.coverage }}
+        ini-values: memory_limit=-1, max_execution_time=300
+        tools: composer:v2
+    - name: Restore the composer build
+      uses: actions/cache@v6
+      with:
+        path: |
+          vendor
+          docroot/core
+          docroot/libraries
+          docroot/modules/contrib
+        key: 4.x-${{ inputs.cache-key }}-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
+        restore-keys: |
+          4.x-${{ inputs.cache-key }}-${{ hashFiles('composer.json') }}-
+          4.x-${{ inputs.cache-key }}-
+    - name: Composer install
+      shell: bash
+      run: |
+        # ci.settings.php connects to "mysql"; codeception.dist.yml's ci env
+        # uses "selenium" and "drupal8ci". The services publish their ports
+        # here, on the runner.
+        echo '127.0.0.1 mysql selenium drupal8ci' | sudo tee -a /etc/hosts > /dev/null
+        # The sites' image toolkit.
+        if ! command -v convert > /dev/null; then
+          sudo apt-get install -y -q --no-install-recommends imagemagick \
+            || { sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends imagemagick; }
+        fi
+        # Drush commands run "drush" by name.
+        echo "$GITHUB_WORKSPACE/vendor/bin" >> "$GITHUB_PATH"
+        composer install -n

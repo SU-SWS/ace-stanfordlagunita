@@ -28,12 +28,19 @@ if (file_exists(DRUPAL_ROOT . '/../keys/secrets.settings.php')) {
   include DRUPAL_ROOT . '/../keys/secrets.settings.php';
 }
 
-// Saml login doesn't work on gitpod or tugboat, don't set config values.
-if (getenv('GITPOD_WORKSPACE_URL') || getenv('TUGBOAT_REPO')) {
+// SAML login doesn't work in the dev container (.devcontainer) or on tugboat,
+// don't set config values.
+if (getenv('DEVCONTAINER') || getenv('TUGBOAT_REPO')) {
   unset($config['samlauth.authentication']);
 
   $config['stanford_samlauth.settings'] = [
     'hide_local_login' => FALSE,
     'local_login_fieldset_open' => true,
   ];
+
+  // Codespaces serves the sites through an HTTPS proxy.
+  if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && !empty($_SERVER['REMOTE_ADDR'])) {
+    $settings['reverse_proxy'] = TRUE;
+    $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
+  }
 }

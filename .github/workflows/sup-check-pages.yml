@@ -16,15 +16,12 @@ on:
           - "5"
           - "6"
           - "7"
+permissions:
+  contents: read
 jobs:
   check-pages:
     name: Check for 200 responses on SUP pages
-    runs-on: ubuntu-latest
-    container:
-      image: pookmish/drupal8ci:php8.4
-      options: '--network-alias drupal8ci'
-    env:
-      SUP_REVALIDATION: ${{secrets.SUP_REVALIDATION}}
+    runs-on: ubuntu-24.04
     steps:
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
@@ -34,21 +31,11 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           if_key_exists: fail
       - uses: actions/checkout@v7
-      - name: Restore Cache
-        uses: actions/cache@v6
+      - uses: ./.github/actions/setup-project
         with:
-          path: |
-            vendor
-            docroot/core
-            docroot/libraries
-            docroot/modules/contrib
-          key: 2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            2.1-${{ hashFiles('composer.json') }}-${{ hashFiles('composer.lock') }}
-            2.1-${{ hashFiles('composer.json') }}-
-            2.1-
+          cache-key: ${{ vars.CACHE_KEY }}
       - name: Invalidate 404 paths
-        run: |
-          composer install -n &&
-          .github/sup-check-pages.sh $SUP_REVALIDATION ${{ github.event.inputs.dow }}
-
+        env:
+          SUP_REVALIDATION: ${{ secrets.SUP_REVALIDATION }}
+          DOW: ${{ inputs.dow }}
+        run: .github/sup-check-pages.sh "$SUP_REVALIDATION" "$DOW"
